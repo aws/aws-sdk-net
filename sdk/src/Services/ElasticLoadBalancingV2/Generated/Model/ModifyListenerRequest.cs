@@ -53,6 +53,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private List<Certificate> _certificates = new List<Certificate>();
         private List<Action> _defaultActions = new List<Action>();
         private string _listenerArn;
+        private MutualAuthenticationAttributes _mutualAuthentication;
         private int? _port;
         private ProtocolEnum _protocol;
         private string _sslPolicy;
@@ -156,6 +157,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetListenerArn()
         {
             return this._listenerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutualAuthentication. 
+        /// <para>
+        /// The mutual authentication configuration information.
+        /// </para>
+        /// </summary>
+        public MutualAuthenticationAttributes MutualAuthentication
+        {
+            get { return this._mutualAuthentication; }
+            set { this._mutualAuthentication = value; }
+        }
+
+        // Check to see if MutualAuthentication property is set
+        internal bool IsSetMutualAuthentication()
+        {
+            return this._mutualAuthentication != null;
         }
 
         /// <summary>

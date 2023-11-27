@@ -126,8 +126,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
-        /// how the load balancer selects targets when routing requests. The value is <code>round_robin</code>
-        /// or <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+        /// how the load balancer selects targets when routing requests. The value is <code>round_robin</code>,
+        /// <code>least_outstanding_requests</code>, or <code>weighted_random</code>. The default
+        /// is <code>round_robin</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>load_balancing.algorithm.anomaly_mitigation</code> - Only available when <code>load_balancing.algorithm.type</code>
+        /// is <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+        /// The value is <code>on</code> or <code>off</code>. The default is <code>off</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

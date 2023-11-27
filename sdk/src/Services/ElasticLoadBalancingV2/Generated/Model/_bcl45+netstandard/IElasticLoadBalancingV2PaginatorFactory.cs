@@ -39,5 +39,20 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Paginator for DescribeTargetGroups operation
         ///</summary>
         IDescribeTargetGroupsPaginator DescribeTargetGroups(DescribeTargetGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTrustStoreAssociations operation
+        ///</summary>
+        IDescribeTrustStoreAssociationsPaginator DescribeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTrustStoreRevocations operation
+        ///</summary>
+        IDescribeTrustStoreRevocationsPaginator DescribeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTrustStores operation
+        ///</summary>
+        IDescribeTrustStoresPaginator DescribeTrustStores(DescribeTrustStoresRequest request);
     }
 }

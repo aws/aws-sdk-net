@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// You've reached the limit on the number of tags per load balancer.
+    /// You've reached the limit on the number of tags for this resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

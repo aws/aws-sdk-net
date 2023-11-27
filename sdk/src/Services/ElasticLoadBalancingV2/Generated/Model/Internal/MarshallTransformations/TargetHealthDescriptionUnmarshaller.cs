@@ -54,6 +54,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AnomalyDetection", targetDepth))
+                    {
+                        var unmarshaller = AnomalyDetectionUnmarshaller.Instance;
+                        unmarshalledObject.AnomalyDetection = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HealthCheckPort", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

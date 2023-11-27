@@ -295,6 +295,143 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void AddTags_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTags");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsRequest>(operation);
+            var marshaller = new AddTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void AddTrustStoreRevocationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<AddTrustStoreRevocationsRequest>(operation);
+            var marshaller = new AddTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AddTrustStoreRevocationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as AddTrustStoreRevocationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void AddTrustStoreRevocations_InvalidRevocationContentExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<AddTrustStoreRevocationsRequest>(operation);
+            var marshaller = new AddTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidRevocationContentException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void AddTrustStoreRevocations_RevocationContentNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<AddTrustStoreRevocationsRequest>(operation);
+            var marshaller = new AddTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RevocationContentNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void AddTrustStoreRevocations_TooManyTrustStoreRevocationEntriesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<AddTrustStoreRevocationsRequest>(operation);
+            var marshaller = new AddTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyTrustStoreRevocationEntriesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void AddTrustStoreRevocations_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<AddTrustStoreRevocationsRequest>(operation);
+            var marshaller = new AddTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void CreateListenerMarshallTest()
         {
             var operation = service_model.FindOperation("CreateListener");
@@ -697,6 +834,52 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyUniqueTargetGroupsPerLoadBalancerException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateListener_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateListener");
+
+            var request = InstantiateClassGenerator.Execute<CreateListenerRequest>(operation);
+            var marshaller = new CreateListenerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateListener_TrustStoreNotReadyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateListener");
+
+            var request = InstantiateClassGenerator.Execute<CreateListenerRequest>(operation);
+            var marshaller = new CreateListenerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotReadyException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -1533,6 +1716,166 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStoreMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTrustStoreResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStore_CaCertificatesBundleNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CaCertificatesBundleNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStore_DuplicateTagKeysExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DuplicateTagKeysException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStore_DuplicateTrustStoreNameExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DuplicateTrustStoreNameException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStore_InvalidCaCertificatesBundleExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidCaCertificatesBundleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStore_TooManyTagsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyTagsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateTrustStore_TooManyTrustStoresExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrustStoreRequest>(operation);
+            var marshaller = new CreateTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyTrustStoresException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void DeleteListenerMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteListener");
@@ -1797,6 +2140,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DeleteTargetGroupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DeleteTrustStoreMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrustStoreRequest>(operation);
+            var marshaller = new DeleteTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteTrustStoreResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTrustStoreResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DeleteTrustStore_TrustStoreInUseExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrustStoreRequest>(operation);
+            var marshaller = new DeleteTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreInUseException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DeleteTrustStore_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrustStoreRequest>(operation);
+            var marshaller = new DeleteTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2371,6 +2782,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTags_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTags");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>(operation);
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void DescribeTargetGroupAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTargetGroupAttributes");
@@ -2567,6 +3001,277 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribeTargetHealthResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStoreAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStoreAssociations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoreAssociationsRequest>(operation);
+            var marshaller = new DescribeTrustStoreAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTrustStoreAssociationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTrustStoreAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStoreAssociations_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStoreAssociations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoreAssociationsRequest>(operation);
+            var marshaller = new DescribeTrustStoreAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeTrustStoreAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStoreRevocationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoreRevocationsRequest>(operation);
+            var marshaller = new DescribeTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTrustStoreRevocationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStoreRevocations_RevocationIdNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoreRevocationsRequest>(operation);
+            var marshaller = new DescribeTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RevocationIdNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStoreRevocations_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoreRevocationsRequest>(operation);
+            var marshaller = new DescribeTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStoresMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStores");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoresRequest>(operation);
+            var marshaller = new DescribeTrustStoresRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTrustStoresResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTrustStoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeTrustStores_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrustStores");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrustStoresRequest>(operation);
+            var marshaller = new DescribeTrustStoresRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeTrustStoresResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void GetTrustStoreCaCertificatesBundleMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTrustStoreCaCertificatesBundle");
+
+            var request = InstantiateClassGenerator.Execute<GetTrustStoreCaCertificatesBundleRequest>(operation);
+            var marshaller = new GetTrustStoreCaCertificatesBundleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetTrustStoreCaCertificatesBundleResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetTrustStoreCaCertificatesBundleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void GetTrustStoreCaCertificatesBundle_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTrustStoreCaCertificatesBundle");
+
+            var request = InstantiateClassGenerator.Execute<GetTrustStoreCaCertificatesBundleRequest>(operation);
+            var marshaller = new GetTrustStoreCaCertificatesBundleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetTrustStoreCaCertificatesBundleResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void GetTrustStoreRevocationContentMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTrustStoreRevocationContent");
+
+            var request = InstantiateClassGenerator.Execute<GetTrustStoreRevocationContentRequest>(operation);
+            var marshaller = new GetTrustStoreRevocationContentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetTrustStoreRevocationContentResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetTrustStoreRevocationContentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void GetTrustStoreRevocationContent_RevocationIdNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTrustStoreRevocationContent");
+
+            var request = InstantiateClassGenerator.Execute<GetTrustStoreRevocationContentRequest>(operation);
+            var marshaller = new GetTrustStoreRevocationContentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RevocationIdNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetTrustStoreRevocationContentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void GetTrustStoreRevocationContent_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTrustStoreRevocationContent");
+
+            var request = InstantiateClassGenerator.Execute<GetTrustStoreRevocationContentRequest>(operation);
+            var marshaller = new GetTrustStoreRevocationContentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetTrustStoreRevocationContentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2954,6 +3659,52 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyUniqueTargetGroupsPerLoadBalancerException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyListener_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyListener");
+
+            var request = InstantiateClassGenerator.Execute<ModifyListenerRequest>(operation);
+            var marshaller = new ModifyListenerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyListener_TrustStoreNotReadyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyListener");
+
+            var request = InstantiateClassGenerator.Execute<ModifyListenerRequest>(operation);
+            var marshaller = new ModifyListenerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotReadyException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -3467,6 +4218,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyTrustStoreMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrustStoreRequest>(operation);
+            var marshaller = new ModifyTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyTrustStoreResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyTrustStoreResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyTrustStore_CaCertificatesBundleNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrustStoreRequest>(operation);
+            var marshaller = new ModifyTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CaCertificatesBundleNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyTrustStore_InvalidCaCertificatesBundleExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrustStoreRequest>(operation);
+            var marshaller = new ModifyTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidCaCertificatesBundleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyTrustStore_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrustStore");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrustStoreRequest>(operation);
+            var marshaller = new ModifyTrustStoreRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTrustStoreResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void RegisterTargetsMarshallTest()
         {
             var operation = service_model.FindOperation("RegisterTargets");
@@ -3778,6 +4620,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RemoveTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void RemoveTags_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTags");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsRequest>(operation);
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void RemoveTrustStoreRevocationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTrustStoreRevocationsRequest>(operation);
+            var marshaller = new RemoveTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as RemoveTrustStoreRevocationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void RemoveTrustStoreRevocations_RevocationIdNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTrustStoreRevocationsRequest>(operation);
+            var marshaller = new RemoveTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RevocationIdNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void RemoveTrustStoreRevocations_TrustStoreNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTrustStoreRevocations");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTrustStoreRevocationsRequest>(operation);
+            var marshaller = new RemoveTrustStoreRevocationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TrustStoreNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

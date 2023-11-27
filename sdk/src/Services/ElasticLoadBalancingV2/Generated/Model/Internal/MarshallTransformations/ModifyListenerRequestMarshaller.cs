@@ -287,6 +287,21 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ListenerArn", StringUtils.FromString(publicRequest.ListenerArn));
                 }
+                if(publicRequest.IsSetMutualAuthentication())
+                {
+                    if(publicRequest.MutualAuthentication.IsSetIgnoreClientCertificateExpiry())
+                    {
+                        request.Parameters.Add("MutualAuthentication" + "." + "IgnoreClientCertificateExpiry", StringUtils.FromBool(publicRequest.MutualAuthentication.IgnoreClientCertificateExpiry));
+                    }
+                    if(publicRequest.MutualAuthentication.IsSetMode())
+                    {
+                        request.Parameters.Add("MutualAuthentication" + "." + "Mode", StringUtils.FromString(publicRequest.MutualAuthentication.Mode));
+                    }
+                    if(publicRequest.MutualAuthentication.IsSetTrustStoreArn())
+                    {
+                        request.Parameters.Add("MutualAuthentication" + "." + "TrustStoreArn", StringUtils.FromString(publicRequest.MutualAuthentication.TrustStoreArn));
+                    }
+                }
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));

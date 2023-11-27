@@ -33,9 +33,36 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class TargetHealthDescription
     {
+        private AnomalyDetection _anomalyDetection;
         private string _healthCheckPort;
         private TargetDescription _target;
         private TargetHealth _targetHealth;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyDetection. 
+        /// <para>
+        /// The anomaly detection result for the target.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no anomalies were detected, the result is <code>normal</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If anomalies were detected, the result is <code>anomalous</code>.
+        /// </para>
+        /// </summary>
+        public AnomalyDetection AnomalyDetection
+        {
+            get { return this._anomalyDetection; }
+            set { this._anomalyDetection = value; }
+        }
+
+        // Check to see if AnomalyDetection property is set
+        internal bool IsSetAnomalyDetection()
+        {
+            return this._anomalyDetection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HealthCheckPort. 

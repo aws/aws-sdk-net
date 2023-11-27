@@ -379,7 +379,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Adds the specified tags to the specified Elastic Load Balancing resource. You can
         /// tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers,
-        /// target groups, listeners, and rules.
+        /// target groups, trust stores, listeners, and rules.
         /// 
         ///  
         /// <para>
@@ -409,7 +409,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified target group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -419,6 +422,52 @@ namespace Amazon.ElasticLoadBalancingV2
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AddTrustStoreRevocations
+
+        internal virtual AddTrustStoreRevocationsResponse AddTrustStoreRevocations(AddTrustStoreRevocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTrustStoreRevocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTrustStoreRevocationsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTrustStoreRevocationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds the specified revocation file to the specified trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTrustStoreRevocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddTrustStoreRevocations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidRevocationContentException">
+        /// The provided revocation file is an invalid format, or uses an incorrect algorithm.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationContentNotFoundException">
+        /// The specified revocation file does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTrustStoreRevocationEntriesException">
+        /// The specified trust store has too many revocation entries.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations">REST API Reference for AddTrustStoreRevocations Operation</seealso>
+        public virtual Task<AddTrustStoreRevocationsResponse> AddTrustStoreRevocationsAsync(AddTrustStoreRevocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTrustStoreRevocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTrustStoreRevocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTrustStoreRevocationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -515,7 +564,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
@@ -524,6 +573,12 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of unique target groups per load balancer across
         /// all listeners. If a target group is used by multiple actions for a load balancer,
         /// it is counted as only one use.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotReadyException">
+        /// The specified trust store is not active.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -625,7 +680,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -704,7 +759,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of rules per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your Amazon Web Services
@@ -787,7 +842,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The requested configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your Amazon Web Services
@@ -801,6 +856,59 @@ namespace Amazon.ElasticLoadBalancingV2
             options.ResponseUnmarshaller = CreateTargetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTargetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTrustStore
+
+        internal virtual CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustStoreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrustStore service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CaCertificatesBundleNotFoundException">
+        /// The specified ca certificate bundle does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DuplicateTrustStoreNameException">
+        /// A trust store with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidCaCertificatesBundleException">
+        /// The specified ca certificate bundle is in an invalid format, or corrupt.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
+        /// You've reached the limit on the number of tags for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTrustStoresException">
+        /// You've reached the limit on the number of trust stores for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        public virtual Task<CreateTrustStoreResponse> CreateTrustStoreAsync(CreateTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTrustStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -993,6 +1101,46 @@ namespace Amazon.ElasticLoadBalancingV2
             options.ResponseUnmarshaller = DeleteTargetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTargetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrustStore
+
+        internal virtual DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustStoreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrustStore service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreInUseException">
+        /// The specified trust store is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        public virtual Task<DeleteTrustStoreResponse> DeleteTrustStoreAsync(DeleteTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTrustStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1442,6 +1590,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1599,6 +1750,208 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeTrustStoreAssociations
+
+        internal virtual DescribeTrustStoreAssociationsResponse DescribeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustStoreAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustStoreAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustStoreAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes all resources associated with the specified trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStoreAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrustStoreAssociations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations">REST API Reference for DescribeTrustStoreAssociations Operation</seealso>
+        public virtual Task<DescribeTrustStoreAssociationsResponse> DescribeTrustStoreAssociationsAsync(DescribeTrustStoreAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustStoreAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustStoreAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrustStoreAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTrustStoreRevocations
+
+        internal virtual DescribeTrustStoreRevocationsResponse DescribeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustStoreRevocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustStoreRevocationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the revocation files in use by the specified trust store arn, or revocation
+        /// ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStoreRevocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrustStoreRevocations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationIdNotFoundException">
+        /// The specified revocation ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">REST API Reference for DescribeTrustStoreRevocations Operation</seealso>
+        public virtual Task<DescribeTrustStoreRevocationsResponse> DescribeTrustStoreRevocationsAsync(DescribeTrustStoreRevocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustStoreRevocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrustStoreRevocationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTrustStores
+
+        internal virtual DescribeTrustStoresResponse DescribeTrustStores(DescribeTrustStoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustStoresResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustStoresResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes all trust stores for a given account by trust store arn’s or name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrustStores service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">REST API Reference for DescribeTrustStores Operation</seealso>
+        public virtual Task<DescribeTrustStoresResponse> DescribeTrustStoresAsync(DescribeTrustStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustStoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrustStoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrustStoreCaCertificatesBundle
+
+        internal virtual GetTrustStoreCaCertificatesBundleResponse GetTrustStoreCaCertificatesBundle(GetTrustStoreCaCertificatesBundleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreCaCertificatesBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreCaCertificatesBundleResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustStoreCaCertificatesBundleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the ca certificate bundle.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a pre-signed S3 URI which is active for ten minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreCaCertificatesBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrustStoreCaCertificatesBundle service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle">REST API Reference for GetTrustStoreCaCertificatesBundle Operation</seealso>
+        public virtual Task<GetTrustStoreCaCertificatesBundleResponse> GetTrustStoreCaCertificatesBundleAsync(GetTrustStoreCaCertificatesBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreCaCertificatesBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreCaCertificatesBundleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTrustStoreCaCertificatesBundleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrustStoreRevocationContent
+
+        internal virtual GetTrustStoreRevocationContentResponse GetTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreRevocationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreRevocationContentResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustStoreRevocationContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the specified revocation file.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a pre-signed S3 URI which is active for ten minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreRevocationContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrustStoreRevocationContent service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationIdNotFoundException">
+        /// The specified revocation ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
+        public virtual Task<GetTrustStoreRevocationContentResponse> GetTrustStoreRevocationContentAsync(GetTrustStoreRevocationContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreRevocationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreRevocationContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTrustStoreRevocationContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyListener
 
         internal virtual ModifyListenerResponse ModifyListener(ModifyListenerRequest request)
@@ -1686,6 +2039,12 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of unique target groups per load balancer across
         /// all listeners. If a target group is used by multiple actions for a load balancer,
         /// it is counted as only one use.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotReadyException">
+        /// The specified trust store is not active.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -1908,6 +2267,49 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  ModifyTrustStore
+
+        internal virtual ModifyTrustStoreResponse ModifyTrustStore(ModifyTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTrustStoreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the ca certificate bundle for a given trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTrustStore service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CaCertificatesBundleNotFoundException">
+        /// The specified ca certificate bundle does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidCaCertificatesBundleException">
+        /// The specified ca certificate bundle is in an invalid format, or corrupt.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">REST API Reference for ModifyTrustStore Operation</seealso>
+        public virtual Task<ModifyTrustStoreResponse> ModifyTrustStoreAsync(ModifyTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrustStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterTargets
 
         internal virtual RegisterTargetsResponse RegisterTargets(RegisterTargetsRequest request)
@@ -2053,7 +2455,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified target group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2063,6 +2468,46 @@ namespace Amazon.ElasticLoadBalancingV2
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTrustStoreRevocations
+
+        internal virtual RemoveTrustStoreRevocationsResponse RemoveTrustStoreRevocations(RemoveTrustStoreRevocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTrustStoreRevocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTrustStoreRevocationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the specified revocation file from the specified trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTrustStoreRevocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveTrustStoreRevocations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationIdNotFoundException">
+        /// The specified revocation ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations">REST API Reference for RemoveTrustStoreRevocations Operation</seealso>
+        public virtual Task<RemoveTrustStoreRevocationsResponse> RemoveTrustStoreRevocationsAsync(RemoveTrustStoreRevocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTrustStoreRevocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTrustStoreRevocationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

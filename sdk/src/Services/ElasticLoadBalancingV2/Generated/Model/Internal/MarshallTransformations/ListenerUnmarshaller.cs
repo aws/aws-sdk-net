@@ -87,6 +87,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LoadBalancerArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MutualAuthentication", targetDepth))
+                    {
+                        var unmarshaller = MutualAuthenticationAttributesUnmarshaller.Instance;
+                        unmarshalledObject.MutualAuthentication = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

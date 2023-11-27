@@ -152,7 +152,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Adds the specified tags to the specified Elastic Load Balancing resource. You can
         /// tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers,
-        /// target groups, listeners, and rules.
+        /// target groups, trust stores, listeners, and rules.
         /// 
         ///  
         /// <para>
@@ -179,7 +179,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified target group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
@@ -209,6 +212,58 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  AddTagsResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse EndAddTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AddTrustStoreRevocations
+
+
+        /// <summary>
+        /// Adds the specified revocation file to the specified trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTrustStoreRevocations service method.</param>
+        /// 
+        /// <returns>The response from the AddTrustStoreRevocations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidRevocationContentException">
+        /// The provided revocation file is an invalid format, or uses an incorrect algorithm.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationContentNotFoundException">
+        /// The specified revocation file does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTrustStoreRevocationEntriesException">
+        /// The specified trust store has too many revocation entries.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations">REST API Reference for AddTrustStoreRevocations Operation</seealso>
+        AddTrustStoreRevocationsResponse AddTrustStoreRevocations(AddTrustStoreRevocationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTrustStoreRevocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTrustStoreRevocations operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTrustStoreRevocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations">REST API Reference for AddTrustStoreRevocations Operation</seealso>
+        IAsyncResult BeginAddTrustStoreRevocations(AddTrustStoreRevocationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddTrustStoreRevocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTrustStoreRevocations.</param>
+        /// 
+        /// <returns>Returns a  AddTrustStoreRevocationsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations">REST API Reference for AddTrustStoreRevocations Operation</seealso>
+        AddTrustStoreRevocationsResponse EndAddTrustStoreRevocations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -291,7 +346,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
@@ -300,6 +355,12 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of unique target groups per load balancer across
         /// all listeners. If a target group is used by multiple actions for a load balancer,
         /// it is counted as only one use.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotReadyException">
+        /// The specified trust store is not active.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -407,7 +468,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
@@ -492,7 +553,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of rules per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your Amazon Web Services
@@ -581,7 +642,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The requested configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your Amazon Web Services
@@ -615,6 +676,65 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  CreateTargetGroupResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         CreateTargetGroupResponse EndCreateTargetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTrustStore
+
+
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustStore service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CaCertificatesBundleNotFoundException">
+        /// The specified ca certificate bundle does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DuplicateTrustStoreNameException">
+        /// A trust store with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidCaCertificatesBundleException">
+        /// The specified ca certificate bundle is in an invalid format, or corrupt.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
+        /// You've reached the limit on the number of tags for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTrustStoresException">
+        /// You've reached the limit on the number of trust stores for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        IAsyncResult BeginCreateTrustStore(CreateTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  CreateTrustStoreResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        CreateTrustStoreResponse EndCreateTrustStore(IAsyncResult asyncResult);
 
         #endregion
         
@@ -831,6 +951,52 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  DeleteTargetGroupResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         DeleteTargetGroupResponse EndDeleteTargetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTrustStore
+
+
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustStore service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreInUseException">
+        /// The specified trust store is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        IAsyncResult BeginDeleteTrustStore(DeleteTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrustStore.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrustStoreResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        DeleteTrustStoreResponse EndDeleteTrustStore(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1314,6 +1480,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
@@ -1508,6 +1677,238 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeTrustStoreAssociations
+
+
+        /// <summary>
+        /// Describes all resources associated with the specified trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStoreAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrustStoreAssociations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations">REST API Reference for DescribeTrustStoreAssociations Operation</seealso>
+        DescribeTrustStoreAssociationsResponse DescribeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrustStoreAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStoreAssociations operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustStoreAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations">REST API Reference for DescribeTrustStoreAssociations Operation</seealso>
+        IAsyncResult BeginDescribeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrustStoreAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustStoreAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrustStoreAssociationsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations">REST API Reference for DescribeTrustStoreAssociations Operation</seealso>
+        DescribeTrustStoreAssociationsResponse EndDescribeTrustStoreAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTrustStoreRevocations
+
+
+        /// <summary>
+        /// Describes the revocation files in use by the specified trust store arn, or revocation
+        /// ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStoreRevocations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrustStoreRevocations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationIdNotFoundException">
+        /// The specified revocation ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">REST API Reference for DescribeTrustStoreRevocations Operation</seealso>
+        DescribeTrustStoreRevocationsResponse DescribeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrustStoreRevocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStoreRevocations operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustStoreRevocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">REST API Reference for DescribeTrustStoreRevocations Operation</seealso>
+        IAsyncResult BeginDescribeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrustStoreRevocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustStoreRevocations.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrustStoreRevocationsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">REST API Reference for DescribeTrustStoreRevocations Operation</seealso>
+        DescribeTrustStoreRevocationsResponse EndDescribeTrustStoreRevocations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTrustStores
+
+
+        /// <summary>
+        /// Describes all trust stores for a given account by trust store arn’s or name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStores service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrustStores service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">REST API Reference for DescribeTrustStores Operation</seealso>
+        DescribeTrustStoresResponse DescribeTrustStores(DescribeTrustStoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrustStores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustStores operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustStores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">REST API Reference for DescribeTrustStores Operation</seealso>
+        IAsyncResult BeginDescribeTrustStores(DescribeTrustStoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrustStores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustStores.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrustStoresResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">REST API Reference for DescribeTrustStores Operation</seealso>
+        DescribeTrustStoresResponse EndDescribeTrustStores(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTrustStoreCaCertificatesBundle
+
+
+        /// <summary>
+        /// Retrieves the ca certificate bundle.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a pre-signed S3 URI which is active for ten minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreCaCertificatesBundle service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustStoreCaCertificatesBundle service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle">REST API Reference for GetTrustStoreCaCertificatesBundle Operation</seealso>
+        GetTrustStoreCaCertificatesBundleResponse GetTrustStoreCaCertificatesBundle(GetTrustStoreCaCertificatesBundleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrustStoreCaCertificatesBundle operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreCaCertificatesBundle operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrustStoreCaCertificatesBundle
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle">REST API Reference for GetTrustStoreCaCertificatesBundle Operation</seealso>
+        IAsyncResult BeginGetTrustStoreCaCertificatesBundle(GetTrustStoreCaCertificatesBundleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrustStoreCaCertificatesBundle operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrustStoreCaCertificatesBundle.</param>
+        /// 
+        /// <returns>Returns a  GetTrustStoreCaCertificatesBundleResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle">REST API Reference for GetTrustStoreCaCertificatesBundle Operation</seealso>
+        GetTrustStoreCaCertificatesBundleResponse EndGetTrustStoreCaCertificatesBundle(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTrustStoreRevocationContent
+
+
+        /// <summary>
+        /// Retrieves the specified revocation file.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a pre-signed S3 URI which is active for ten minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreRevocationContent service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustStoreRevocationContent service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationIdNotFoundException">
+        /// The specified revocation ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
+        GetTrustStoreRevocationContentResponse GetTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrustStoreRevocationContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreRevocationContent operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrustStoreRevocationContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
+        IAsyncResult BeginGetTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrustStoreRevocationContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrustStoreRevocationContent.</param>
+        /// 
+        /// <returns>Returns a  GetTrustStoreRevocationContentResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
+        GetTrustStoreRevocationContentResponse EndGetTrustStoreRevocationContent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyListener
 
 
@@ -1582,6 +1983,12 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of unique target groups per load balancer across
         /// all listeners. If a target group is used by multiple actions for a load balancer,
         /// it is counted as only one use.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotReadyException">
+        /// The specified trust store is not active.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -1847,6 +2254,55 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  ModifyTrustStore
+
+
+        /// <summary>
+        /// Update the ca certificate bundle for a given trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTrustStore service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CaCertificatesBundleNotFoundException">
+        /// The specified ca certificate bundle does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidCaCertificatesBundleException">
+        /// The specified ca certificate bundle is in an invalid format, or corrupt.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">REST API Reference for ModifyTrustStore Operation</seealso>
+        ModifyTrustStoreResponse ModifyTrustStore(ModifyTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrustStore operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">REST API Reference for ModifyTrustStore Operation</seealso>
+        IAsyncResult BeginModifyTrustStore(ModifyTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTrustStore.</param>
+        /// 
+        /// <returns>Returns a  ModifyTrustStoreResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">REST API Reference for ModifyTrustStore Operation</seealso>
+        ModifyTrustStoreResponse EndModifyTrustStore(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterTargets
 
 
@@ -1991,7 +2447,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified target group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
-        /// You've reached the limit on the number of tags per load balancer.
+        /// You've reached the limit on the number of tags for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
@@ -2021,6 +2480,52 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  RemoveTagsResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveTrustStoreRevocations
+
+
+        /// <summary>
+        /// Removes the specified revocation file from the specified trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTrustStoreRevocations service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTrustStoreRevocations service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RevocationIdNotFoundException">
+        /// The specified revocation ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreNotFoundException">
+        /// The specified trust store does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations">REST API Reference for RemoveTrustStoreRevocations Operation</seealso>
+        RemoveTrustStoreRevocationsResponse RemoveTrustStoreRevocations(RemoveTrustStoreRevocationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTrustStoreRevocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTrustStoreRevocations operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTrustStoreRevocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations">REST API Reference for RemoveTrustStoreRevocations Operation</seealso>
+        IAsyncResult BeginRemoveTrustStoreRevocations(RemoveTrustStoreRevocationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveTrustStoreRevocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTrustStoreRevocations.</param>
+        /// 
+        /// <returns>Returns a  RemoveTrustStoreRevocationsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations">REST API Reference for RemoveTrustStoreRevocations Operation</seealso>
+        RemoveTrustStoreRevocationsResponse EndRemoveTrustStoreRevocations(IAsyncResult asyncResult);
 
         #endregion
         

@@ -34,8 +34,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeTargetHealthRequest : AmazonElasticLoadBalancingV2Request
     {
+        private List<string> _include = new List<string>();
         private string _targetGroupArn;
         private List<TargetDescription> _targets = new List<TargetDescription>();
+
+        /// <summary>
+        /// Gets and sets the property Include. 
+        /// <para>
+        /// Used to inclue anomaly detection information.
+        /// </para>
+        /// </summary>
+        public List<string> Include
+        {
+            get { return this._include; }
+            set { this._include = value; }
+        }
+
+        // Check to see if Include property is set
+        internal bool IsSetInclude()
+        {
+            return this._include != null && this._include.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property TargetGroupArn. 
