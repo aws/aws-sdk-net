@@ -2899,10 +2899,11 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  
         /// <para>
-        /// To redrive a workflow that includes a Distributed Map state with failed child workflow
-        /// executions, you must redrive the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/use-dist-map-orchestrate-large-scale-parallel-workloads.html#dist-map-orchestrate-parallel-workloads-key-terms">parent
+        /// To redrive a workflow that includes a Distributed Map state whose Map Run failed,
+        /// you must redrive the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/use-dist-map-orchestrate-large-scale-parallel-workloads.html#dist-map-orchestrate-parallel-workloads-key-terms">parent
         /// workflow</a>. The parent workflow redrives all the unsuccessful states, including
-        /// Distributed Map.
+        /// a failed Map Run. If a Map Run was not started in the original execution attempt,
+        /// the redriven parent workflow starts the Map Run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2992,10 +2993,11 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  
         /// <para>
-        /// To redrive a workflow that includes a Distributed Map state with failed child workflow
-        /// executions, you must redrive the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/use-dist-map-orchestrate-large-scale-parallel-workloads.html#dist-map-orchestrate-parallel-workloads-key-terms">parent
+        /// To redrive a workflow that includes a Distributed Map state whose Map Run failed,
+        /// you must redrive the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/use-dist-map-orchestrate-large-scale-parallel-workloads.html#dist-map-orchestrate-parallel-workloads-key-terms">parent
         /// workflow</a>. The parent workflow redrives all the unsuccessful states, including
-        /// Distributed Map.
+        /// a failed Map Run. If a Map Run was not started in the original execution attempt,
+        /// the redriven parent workflow starts the Map Run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3823,6 +3825,219 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  TestState
+
+
+        /// <summary>
+        /// Accepts the definition of a single state and executes it. You can test a state without
+        /// creating a state machine or updating an existing state machine. Using this API, you
+        /// can test the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A state's <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-input-output-dataflow">input
+        /// and output processing</a> data flow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-services.html">Amazon
+        /// Web Services service integration</a> request and response
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html">HTTP
+        /// Task</a> request and response
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can call this API on only one state at a time. The states that you can test include
+        /// the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html#task-types">All
+        /// Task types</a> except <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-pass-state.html">Pass</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-wait-state.html">Wait</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-choice-state.html">Choice</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-succeed-state.html">Succeed</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-fail-state.html">Fail</a>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>TestState</code> API assumes an IAM role which must contain the required
+        /// IAM permissions for the resources your state is accessing. For information about the
+        /// permissions a state might need, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
+        /// permissions to test a state</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>TestState</code> API can run for up to five minutes. If the execution of
+        /// a state exceeds this duration, it fails with the <code>States.Timeout</code> error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>TestState</code> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
+        /// tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
+        /// integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>,
+        /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a>
+        /// states.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestState service method.</param>
+        /// 
+        /// <returns>The response from the TestState service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
+        /// The provided Amazon States Language definition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
+        /// The provided JSON input data is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TestState">REST API Reference for TestState Operation</seealso>
+        public virtual TestStateResponse TestState(TestStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestStateResponseUnmarshaller.Instance;
+
+            return Invoke<TestStateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts the definition of a single state and executes it. You can test a state without
+        /// creating a state machine or updating an existing state machine. Using this API, you
+        /// can test the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A state's <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-input-output-dataflow">input
+        /// and output processing</a> data flow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-services.html">Amazon
+        /// Web Services service integration</a> request and response
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html">HTTP
+        /// Task</a> request and response
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can call this API on only one state at a time. The states that you can test include
+        /// the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html#task-types">All
+        /// Task types</a> except <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-pass-state.html">Pass</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-wait-state.html">Wait</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-choice-state.html">Choice</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-succeed-state.html">Succeed</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-fail-state.html">Fail</a>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>TestState</code> API assumes an IAM role which must contain the required
+        /// IAM permissions for the resources your state is accessing. For information about the
+        /// permissions a state might need, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
+        /// permissions to test a state</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>TestState</code> API can run for up to five minutes. If the execution of
+        /// a state exceeds this duration, it fails with the <code>States.Timeout</code> error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>TestState</code> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
+        /// tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
+        /// integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>,
+        /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a>
+        /// states.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestState service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
+        /// The provided Amazon States Language definition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
+        /// The provided JSON input data is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TestState">REST API Reference for TestState Operation</seealso>
+        public virtual Task<TestStateResponse> TestStateAsync(TestStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestStateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestStateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
 
@@ -4288,6 +4503,9 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
         /// Could not find the referenced resource.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
         /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
@@ -4367,6 +4585,9 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
         /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
         /// The input does not satisfy the constraints specified by an Amazon Web Services service.

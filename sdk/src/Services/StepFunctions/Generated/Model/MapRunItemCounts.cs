@@ -89,9 +89,9 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code>
         /// items in child workflow executions that cannot be redriven because the execution status
-        /// of those child workflows is terminal. For example, if your execution event history
-        /// contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code>
-        /// for the Distributed Map has exceeded.
+        /// of those child workflows is terminal. For example, child workflows with an execution
+        /// status of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> and
+        /// a <code>redriveStatus</code> of <code>NOT_REDRIVABLE</code>.
         /// </para>
         /// </summary>
         public long FailuresNotRedrivable

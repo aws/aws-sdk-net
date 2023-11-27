@@ -481,6 +481,60 @@ namespace Amazon.StepFunctions
 
 
     /// <summary>
+    /// Constants used for properties of type InspectionLevel.
+    /// </summary>
+    public class InspectionLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEBUG for InspectionLevel
+        /// </summary>
+        public static readonly InspectionLevel DEBUG = new InspectionLevel("DEBUG");
+        /// <summary>
+        /// Constant INFO for InspectionLevel
+        /// </summary>
+        public static readonly InspectionLevel INFO = new InspectionLevel("INFO");
+        /// <summary>
+        /// Constant TRACE for InspectionLevel
+        /// </summary>
+        public static readonly InspectionLevel TRACE = new InspectionLevel("TRACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InspectionLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InspectionLevel FindValue(string value)
+        {
+            return FindValue<InspectionLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InspectionLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogLevel.
     /// </summary>
     public class LogLevel : ConstantClass
@@ -744,6 +798,64 @@ namespace Amazon.StepFunctions
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SyncExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestExecutionStatus.
+    /// </summary>
+    public class TestExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAUGHT_ERROR for TestExecutionStatus
+        /// </summary>
+        public static readonly TestExecutionStatus CAUGHT_ERROR = new TestExecutionStatus("CAUGHT_ERROR");
+        /// <summary>
+        /// Constant FAILED for TestExecutionStatus
+        /// </summary>
+        public static readonly TestExecutionStatus FAILED = new TestExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant RETRIABLE for TestExecutionStatus
+        /// </summary>
+        public static readonly TestExecutionStatus RETRIABLE = new TestExecutionStatus("RETRIABLE");
+        /// <summary>
+        /// Constant SUCCEEDED for TestExecutionStatus
+        /// </summary>
+        public static readonly TestExecutionStatus SUCCEEDED = new TestExecutionStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestExecutionStatus FindValue(string value)
+        {
+            return FindValue<TestExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestExecutionStatus(string value)
         {
             return FindValue(value);
         }

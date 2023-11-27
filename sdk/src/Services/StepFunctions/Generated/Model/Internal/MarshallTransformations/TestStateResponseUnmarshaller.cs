@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateStateMachineAlias operation
+    /// Response Unmarshaller for TestState operation
     /// </summary>  
-    public class UpdateStateMachineAliasResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TestStateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,46 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateStateMachineAliasResponse response = new UpdateStateMachineAliasResponse();
+            TestStateResponse response = new TestStateResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("updateDate", targetDepth))
+                if (context.TestExpression("cause", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.UpdateDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("error", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("inspectionData", targetDepth))
+                {
+                    var unmarshaller = InspectionDataUnmarshaller.Instance;
+                    response.InspectionData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("output", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Output = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,21 +110,17 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArn"))
                 {
                     return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefinition"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidDefinitionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineDeleting"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidExecutionInput"))
                 {
-                    return StateMachineDeletingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidExecutionInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -104,9 +130,9 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             return new AmazonStepFunctionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateStateMachineAliasResponseUnmarshaller _instance = new UpdateStateMachineAliasResponseUnmarshaller();        
+        private static TestStateResponseUnmarshaller _instance = new TestStateResponseUnmarshaller();        
 
-        internal static UpdateStateMachineAliasResponseUnmarshaller GetInstance()
+        internal static TestStateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +140,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateStateMachineAliasResponseUnmarshaller Instance
+        public static TestStateResponseUnmarshaller Instance
         {
             get
             {

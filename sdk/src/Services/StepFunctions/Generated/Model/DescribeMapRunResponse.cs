@@ -150,8 +150,8 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RedriveCount. 
         /// <para>
         /// The number of times you've redriven a Map Run. If you have not yet redriven a Map
-        /// Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that
-        /// failed to start or are pending to be redriven.
+        /// Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully
+        /// redrive a Map Run.
         /// </para>
         /// </summary>
         public int RedriveCount
