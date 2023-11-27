@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.CreateCapability(Amazon.B2bi.Model.CreateCapabilityRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.CreateCapability(Amazon.B2bi.Model.CreateCapabilityRequest)" />
+            <member name="T:Amazon.B2bi.Model.CreateCapabilityRequest" />
+            <member name="T:Amazon.B2bi.Model.CreateCapabilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreateCapability call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.CreatePartnership(Amazon.B2bi.Model.CreatePartnershipRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.CreatePartnership(Amazon.B2bi.Model.CreatePartnershipRequest)" />
+            <member name="T:Amazon.B2bi.Model.CreatePartnershipRequest" />
+            <member name="T:Amazon.B2bi.Model.CreatePartnershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreatePartnership call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.CreateProfile(Amazon.B2bi.Model.CreateProfileRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.CreateProfile(Amazon.B2bi.Model.CreateProfileRequest)" />
+            <member name="T:Amazon.B2bi.Model.CreateProfileRequest" />
+            <member name="T:Amazon.B2bi.Model.CreateProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreateProfile call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.CreateTransformer(Amazon.B2bi.Model.CreateTransformerRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.CreateTransformer(Amazon.B2bi.Model.CreateTransformerRequest)" />
+            <member name="T:Amazon.B2bi.Model.CreateTransformerRequest" />
+            <member name="T:Amazon.B2bi.Model.CreateTransformerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreateTransformer call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.DeleteCapability(Amazon.B2bi.Model.DeleteCapabilityRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.DeleteCapability(Amazon.B2bi.Model.DeleteCapabilityRequest)" />
+            <member name="T:Amazon.B2bi.Model.DeleteCapabilityRequest" />
+            <member name="T:Amazon.B2bi.Model.DeleteCapabilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample DeleteCapabilty call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.DeletePartnership(Amazon.B2bi.Model.DeletePartnershipRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.DeletePartnership(Amazon.B2bi.Model.DeletePartnershipRequest)" />
+            <member name="T:Amazon.B2bi.Model.DeletePartnershipRequest" />
+            <member name="T:Amazon.B2bi.Model.DeletePartnershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample DeletePartnership call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.DeleteProfile(Amazon.B2bi.Model.DeleteProfileRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.DeleteProfile(Amazon.B2bi.Model.DeleteProfileRequest)" />
+            <member name="T:Amazon.B2bi.Model.DeleteProfileRequest" />
+            <member name="T:Amazon.B2bi.Model.DeleteProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample DeleteProfile call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.DeleteTransformer(Amazon.B2bi.Model.DeleteTransformerRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.DeleteTransformer(Amazon.B2bi.Model.DeleteTransformerRequest)" />
+            <member name="T:Amazon.B2bi.Model.DeleteTransformerRequest" />
+            <member name="T:Amazon.B2bi.Model.DeleteTransformerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample DeleteTransformer call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GetCapability(Amazon.B2bi.Model.GetCapabilityRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GetCapability(Amazon.B2bi.Model.GetCapabilityRequest)" />
+            <member name="T:Amazon.B2bi.Model.GetCapabilityRequest" />
+            <member name="T:Amazon.B2bi.Model.GetCapabilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetCapabilty call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GetPartnership(Amazon.B2bi.Model.GetPartnershipRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GetPartnership(Amazon.B2bi.Model.GetPartnershipRequest)" />
+            <member name="T:Amazon.B2bi.Model.GetPartnershipRequest" />
+            <member name="T:Amazon.B2bi.Model.GetPartnershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetPartnership call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GetProfile(Amazon.B2bi.Model.GetProfileRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GetProfile(Amazon.B2bi.Model.GetProfileRequest)" />
+            <member name="T:Amazon.B2bi.Model.GetProfileRequest" />
+            <member name="T:Amazon.B2bi.Model.GetProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetProfile call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GetTransformer(Amazon.B2bi.Model.GetTransformerRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GetTransformer(Amazon.B2bi.Model.GetTransformerRequest)" />
+            <member name="T:Amazon.B2bi.Model.GetTransformerRequest" />
+            <member name="T:Amazon.B2bi.Model.GetTransformerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetTransformer call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GetTransformerJob(Amazon.B2bi.Model.GetTransformerJobRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GetTransformerJob(Amazon.B2bi.Model.GetTransformerJobRequest)" />
+            <member name="T:Amazon.B2bi.Model.GetTransformerJobRequest" />
+            <member name="T:Amazon.B2bi.Model.GetTransformerJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetTransformerJob call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.ListCapabilities(Amazon.B2bi.Model.ListCapabilitiesRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.ListCapabilities(Amazon.B2bi.Model.ListCapabilitiesRequest)" />
+            <member name="T:Amazon.B2bi.Model.ListCapabilitiesRequest" />
+            <member name="T:Amazon.B2bi.Model.ListCapabilitiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListCapabilities call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.ListPartnerships(Amazon.B2bi.Model.ListPartnershipsRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.ListPartnerships(Amazon.B2bi.Model.ListPartnershipsRequest)" />
+            <member name="T:Amazon.B2bi.Model.ListPartnershipsRequest" />
+            <member name="T:Amazon.B2bi.Model.ListPartnershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListPartnerships call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.ListProfiles(Amazon.B2bi.Model.ListProfilesRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.ListProfiles(Amazon.B2bi.Model.ListProfilesRequest)" />
+            <member name="T:Amazon.B2bi.Model.ListProfilesRequest" />
+            <member name="T:Amazon.B2bi.Model.ListProfilesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListProfiles call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.ListTagsForResource(Amazon.B2bi.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.ListTagsForResource(Amazon.B2bi.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.B2bi.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.B2bi.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListTagsForResources call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.ListTransformers(Amazon.B2bi.Model.ListTransformersRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.ListTransformers(Amazon.B2bi.Model.ListTransformersRequest)" />
+            <member name="T:Amazon.B2bi.Model.ListTransformersRequest" />
+            <member name="T:Amazon.B2bi.Model.ListTransformersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListTransformers call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.StartTransformerJob(Amazon.B2bi.Model.StartTransformerJobRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.StartTransformerJob(Amazon.B2bi.Model.StartTransformerJobRequest)" />
+            <member name="T:Amazon.B2bi.Model.StartTransformerJobRequest" />
+            <member name="T:Amazon.B2bi.Model.StartTransformerJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartTransformerJob call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.TagResource(Amazon.B2bi.Model.TagResourceRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.TagResource(Amazon.B2bi.Model.TagResourceRequest)" />
+            <member name="T:Amazon.B2bi.Model.TagResourceRequest" />
+            <member name="T:Amazon.B2bi.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample TagResource call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.TestMapping(Amazon.B2bi.Model.TestMappingRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.TestMapping(Amazon.B2bi.Model.TestMappingRequest)" />
+            <member name="T:Amazon.B2bi.Model.TestMappingRequest" />
+            <member name="T:Amazon.B2bi.Model.TestMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample TestMapping call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.TestParsing(Amazon.B2bi.Model.TestParsingRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.TestParsing(Amazon.B2bi.Model.TestParsingRequest)" />
+            <member name="T:Amazon.B2bi.Model.TestParsingRequest" />
+            <member name="T:Amazon.B2bi.Model.TestParsingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample TestParsing call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.UntagResource(Amazon.B2bi.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.UntagResource(Amazon.B2bi.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.B2bi.Model.UntagResourceRequest" />
+            <member name="T:Amazon.B2bi.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UntagResource call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.UpdateCapability(Amazon.B2bi.Model.UpdateCapabilityRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.UpdateCapability(Amazon.B2bi.Model.UpdateCapabilityRequest)" />
+            <member name="T:Amazon.B2bi.Model.UpdateCapabilityRequest" />
+            <member name="T:Amazon.B2bi.Model.UpdateCapabilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdateCapability call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.UpdatePartnership(Amazon.B2bi.Model.UpdatePartnershipRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.UpdatePartnership(Amazon.B2bi.Model.UpdatePartnershipRequest)" />
+            <member name="T:Amazon.B2bi.Model.UpdatePartnershipRequest" />
+            <member name="T:Amazon.B2bi.Model.UpdatePartnershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdatePartnership call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.UpdateProfile(Amazon.B2bi.Model.UpdateProfileRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.UpdateProfile(Amazon.B2bi.Model.UpdateProfileRequest)" />
+            <member name="T:Amazon.B2bi.Model.UpdateProfileRequest" />
+            <member name="T:Amazon.B2bi.Model.UpdateProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdateProfile call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.UpdateTransformer(Amazon.B2bi.Model.UpdateTransformerRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.UpdateTransformer(Amazon.B2bi.Model.UpdateTransformerRequest)" />
+            <member name="T:Amazon.B2bi.Model.UpdateTransformerRequest" />
+            <member name="T:Amazon.B2bi.Model.UpdateTransformerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdateTransformer call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
