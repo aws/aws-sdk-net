@@ -12533,8 +12533,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only enable Object Lock for new buckets. If you want to turn on Object Lock
-        /// for an existing bucket, contact Amazon Web Services Support.
+        /// You can enable Object Lock for new or existing buckets. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html">Configuring
+        /// Object Lock</a>.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

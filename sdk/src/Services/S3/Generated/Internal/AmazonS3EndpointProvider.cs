@@ -64,6 +64,8 @@ namespace Amazon.S3.Internal
                 ["Accelerate"] = parameters["Accelerate"],
                 ["UseGlobalEndpoint"] = parameters["UseGlobalEndpoint"],
                 ["UseObjectLambdaEndpoint"] = parameters["UseObjectLambdaEndpoint"],
+                ["Key"] = parameters["Key"],
+                ["Prefix"] = parameters["Prefix"],
                 ["DisableAccessPoints"] = parameters["DisableAccessPoints"],
                 ["DisableMultiRegionAccessPoints"] = parameters["DisableMultiRegionAccessPoints"],
                 ["UseArnRegion"] = parameters["UseArnRegion"],

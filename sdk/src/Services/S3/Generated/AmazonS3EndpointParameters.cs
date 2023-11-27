@@ -125,6 +125,24 @@ namespace Amazon.S3.Endpoints
         }
 
         /// <summary>
+        /// Key parameter
+        /// </summary>
+        public string Key 
+        { 
+            get { return (string)this["Key"]; }
+            set { this["Key"] = value; } 
+        }
+
+        /// <summary>
+        /// Prefix parameter
+        /// </summary>
+        public string Prefix 
+        { 
+            get { return (string)this["Prefix"]; }
+            set { this["Prefix"] = value; } 
+        }
+
+        /// <summary>
         /// DisableAccessPoints parameter
         /// </summary>
         public bool? DisableAccessPoints 

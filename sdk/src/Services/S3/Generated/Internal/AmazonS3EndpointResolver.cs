@@ -112,11 +112,13 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "AbortMultipartUploadRequest") {
                 var request = (AbortMultipartUploadRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "CompleteMultipartUploadRequest") {
                 var request = (CompleteMultipartUploadRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "CopyObjectRequest") {
@@ -197,6 +199,7 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "DeleteObjectRequest") {
                 var request = (DeleteObjectRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "DeleteObjectsRequest") {
@@ -317,6 +320,7 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "GetObjectRequest") {
                 var request = (GetObjectRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "GetObjectAttributesRequest") {
@@ -337,6 +341,7 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "GetObjectMetadataRequest") {
                 var request = (GetObjectMetadataRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "GetObjectRetentionRequest") {
@@ -367,6 +372,7 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "InitiateMultipartUploadRequest") {
                 var request = (InitiateMultipartUploadRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "ListBucketAnalyticsConfigurationsRequest") {
@@ -392,26 +398,31 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "ListMultipartUploadsRequest") {
                 var request = (ListMultipartUploadsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Prefix = request.Prefix;
                 return result;
             }
             if (requestContext.RequestName == "ListObjectsRequest") {
                 var request = (ListObjectsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Prefix = request.Prefix;
                 return result;
             }
             if (requestContext.RequestName == "ListObjectsV2Request") {
                 var request = (ListObjectsV2Request)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Prefix = request.Prefix;
                 return result;
             }
             if (requestContext.RequestName == "ListPartsRequest") {
                 var request = (ListPartsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "ListVersionsRequest") {
                 var request = (ListVersionsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Prefix = request.Prefix;
                 return result;
             }
             if (requestContext.RequestName == "PutACLRequest") {
@@ -513,6 +524,7 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "PutObjectRequest") {
                 var request = (PutObjectRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "PutObjectLegalHoldRequest") {
@@ -553,6 +565,7 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "UploadPartRequest") {
                 var request = (UploadPartRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
+                result.Key = request.Key;
                 return result;
             }
             if (requestContext.RequestName == "WriteGetObjectResponseRequest") {
