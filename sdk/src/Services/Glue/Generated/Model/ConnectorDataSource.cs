@@ -46,7 +46,31 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>opensearch</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>azuresql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>azurecosmos</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>bigquery</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>saphana</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>teradata</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vertica</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

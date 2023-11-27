@@ -31,6 +31,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant ObservationsScope for AdditionalOptionKeys
+        /// </summary>
+        public static readonly AdditionalOptionKeys ObservationsScope = new AdditionalOptionKeys("observations.scope");
+        /// <summary>
         /// Constant PerformanceTuningCaching for AdditionalOptionKeys
         /// </summary>
         public static readonly AdditionalOptionKeys PerformanceTuningCaching = new AdditionalOptionKeys("performanceTuning.caching");
