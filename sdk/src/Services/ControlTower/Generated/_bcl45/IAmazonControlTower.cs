@@ -31,9 +31,9 @@ namespace Amazon.ControlTower
     /// <summary>
     /// Interface for accessing ControlTower
     ///
-    /// These interfaces allow you to apply the AWS library of pre-defined <i>controls</i>
-    /// to your organizational units, programmatically. In AWS Control Tower, the terms "control"
-    /// and "guardrail" are synonyms.
+    /// These interfaces allow you to apply the Amazon Web Services library of pre-defined
+    /// <i>controls</i> to your organizational units, programmatically. In Amazon Web Services
+    /// Control Tower, the terms "control" and "guardrail" are synonyms.
     /// 
     ///  
     /// <para>
@@ -64,18 +64,19 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    /// The <code>controlIdentifier</code> is unique in each AWS Region for each control.
-    /// You can find the <code>controlIdentifier</code> for each Region and control in the
-    /// <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
-    /// of control metadata</a> in the <i>AWS Control Tower User Guide.</i> 
+    /// The <code>controlIdentifier</code> is unique in each Amazon Web Services Region for
+    /// each control. You can find the <code>controlIdentifier</code> for each Region and
+    /// control in the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
+    /// of control metadata</a> in the <i>Amazon Web Services Control Tower User Guide.</i>
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// A quick-reference list of control identifers for the AWS Control Tower legacy <i>Strongly
-    /// recommended</i> and <i>Elective</i> controls is given in <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource
+    /// A quick-reference list of control identifers for the Amazon Web Services Control Tower
+    /// legacy <i>Strongly recommended</i> and <i>Elective</i> controls is given in <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource
     /// identifiers for APIs and controls</a> in the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls
-    /// reference guide section</a> of the <i>AWS Control Tower User Guide</i>. Remember that
-    /// <i>Mandatory</i> controls cannot be added or removed.
+    /// reference guide section</a> of the <i>Amazon Web Services Control Tower User Guide</i>.
+    /// Remember that <i>Mandatory</i> controls cannot be added or removed.
     /// </para>
     ///  <note> 
     /// <para>
@@ -101,8 +102,8 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    /// In the AWS Organizations console, you can find the ARN for the OU on the <b>Organizational
-    /// unit details</b> page associated with that OU.
+    /// In the Amazon Web Services Organizations console, you can find the ARN for the OU
+    /// on the <b>Organizational unit details</b> page associated with that OU.
     /// </para>
     ///  <note> 
     /// <para>
@@ -150,7 +151,8 @@ namespace Amazon.ControlTower
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/creating-resources-with-cloudformation.html">Creating
-    /// AWS Control Tower resources with AWS CloudFormation</a> 
+    /// Amazon Web Services Control Tower resources with Amazon Web Services CloudFormation</a>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -163,14 +165,16 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    /// AWS Control Tower supports AWS CloudTrail, a service that records AWS API calls for
-    /// your AWS account and delivers log files to an Amazon S3 bucket. By using information
-    /// collected by CloudTrail, you can determine which requests the AWS Control Tower service
-    /// received, who made the request and when, and so on. For more about AWS Control Tower
-    /// and its support for CloudTrail, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/logging-using-cloudtrail.html">Logging
-    /// AWS Control Tower Actions with AWS CloudTrail</a> in the AWS Control Tower User Guide.
-    /// To learn more about CloudTrail, including how to turn it on and find your log files,
-    /// see the AWS CloudTrail User Guide.
+    /// Amazon Web Services Control Tower supports Amazon Web Services CloudTrail, a service
+    /// that records Amazon Web Services API calls for your Amazon Web Services account and
+    /// delivers log files to an Amazon S3 bucket. By using information collected by CloudTrail,
+    /// you can determine which requests the Amazon Web Services Control Tower service received,
+    /// who made the request and when, and so on. For more about Amazon Web Services Control
+    /// Tower and its support for CloudTrail, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/logging-using-cloudtrail.html">Logging
+    /// Amazon Web Services Control Tower Actions with Amazon Web Services CloudTrail</a>
+    /// in the Amazon Web Services Control Tower User Guide. To learn more about CloudTrail,
+    /// including how to turn it on and find your log files, see the Amazon Web Services CloudTrail
+    /// User Guide.
     /// </para>
     /// </summary>
     public partial interface IAmazonControlTower : IAmazonService, IDisposable
@@ -182,21 +186,149 @@ namespace Amazon.ControlTower
         IControlTowerPaginatorFactory Paginators { get; }
 
         
+        #region  CreateLandingZone
+
+
+        /// <summary>
+        /// Creates a new landing zone. This starts an asynchronous operation that creates and
+        /// configures a landing zone based on the parameters specified in the manifest JSON file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLandingZone service method.</param>
+        /// 
+        /// <returns>The response from the CreateLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/CreateLandingZone">REST API Reference for CreateLandingZone Operation</seealso>
+        CreateLandingZoneResponse CreateLandingZone(CreateLandingZoneRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new landing zone. This starts an asynchronous operation that creates and
+        /// configures a landing zone based on the parameters specified in the manifest JSON file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLandingZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/CreateLandingZone">REST API Reference for CreateLandingZone Operation</seealso>
+        Task<CreateLandingZoneResponse> CreateLandingZoneAsync(CreateLandingZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLandingZone
+
+
+        /// <summary>
+        /// This decommissions a landing zone. This starts an asynchronous operation that deletes
+        /// Amazon Web Services Control Tower resources deployed in Amazon Web Services Control
+        /// Tower managed accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLandingZone service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">REST API Reference for DeleteLandingZone Operation</seealso>
+        DeleteLandingZoneResponse DeleteLandingZone(DeleteLandingZoneRequest request);
+
+
+
+        /// <summary>
+        /// This decommissions a landing zone. This starts an asynchronous operation that deletes
+        /// Amazon Web Services Control Tower resources deployed in Amazon Web Services Control
+        /// Tower managed accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLandingZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">REST API Reference for DeleteLandingZone Operation</seealso>
+        Task<DeleteLandingZoneResponse> DeleteLandingZoneAsync(DeleteLandingZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableControl
 
 
         /// <summary>
         /// This API call turns off a control. It starts an asynchronous operation that deletes
-        /// AWS resources on the specified organizational unit and the accounts it contains. The
-        /// resources will vary according to the control that you specify. For usage examples,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// Amazon Web Services resources on the specified organizational unit and the accounts
+        /// it contains. The resources will vary according to the control that you specify. For
+        /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableControl service method.</param>
         /// 
         /// <returns>The response from the DisableControl service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -214,7 +346,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">REST API Reference for DisableControl Operation</seealso>
         DisableControlResponse DisableControl(DisableControlRequest request);
@@ -223,10 +355,10 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// This API call turns off a control. It starts an asynchronous operation that deletes
-        /// AWS resources on the specified organizational unit and the accounts it contains. The
-        /// resources will vary according to the control that you specify. For usage examples,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// Amazon Web Services resources on the specified organizational unit and the accounts
+        /// it contains. The resources will vary according to the control that you specify. For
+        /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableControl service method.</param>
         /// <param name="cancellationToken">
@@ -235,7 +367,7 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the DisableControl service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -253,7 +385,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">REST API Reference for DisableControl Operation</seealso>
         Task<DisableControlResponse> DisableControlAsync(DisableControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -265,16 +397,16 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// This API call activates a control. It starts an asynchronous operation that creates
-        /// AWS resources on the specified organizational unit and the accounts it contains. The
-        /// resources created will vary according to the control that you specify. For usage examples,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// Amazon Web Services resources on the specified organizational unit and the accounts
+        /// it contains. The resources created will vary according to the control that you specify.
+        /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableControl service method.</param>
         /// 
         /// <returns>The response from the EnableControl service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -292,7 +424,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableControl">REST API Reference for EnableControl Operation</seealso>
         EnableControlResponse EnableControl(EnableControlRequest request);
@@ -301,10 +433,10 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// This API call activates a control. It starts an asynchronous operation that creates
-        /// AWS resources on the specified organizational unit and the accounts it contains. The
-        /// resources created will vary according to the control that you specify. For usage examples,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// Amazon Web Services resources on the specified organizational unit and the accounts
+        /// it contains. The resources created will vary according to the control that you specify.
+        /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableControl service method.</param>
         /// <param name="cancellationToken">
@@ -313,7 +445,7 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the EnableControl service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -331,7 +463,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableControl">REST API Reference for EnableControl Operation</seealso>
         Task<EnableControlResponse> EnableControlAsync(EnableControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -345,13 +477,13 @@ namespace Amazon.ControlTower
         /// Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
         /// operation. Displays a message in case of error. Details for an operation are available
         /// for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
         /// 
         /// <returns>The response from the GetControlOperation service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -363,7 +495,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">REST API Reference for GetControlOperation Operation</seealso>
         GetControlOperationResponse GetControlOperation(GetControlOperationRequest request);
@@ -374,7 +506,7 @@ namespace Amazon.ControlTower
         /// Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
         /// operation. Displays a message in case of error. Details for an operation are available
         /// for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
         /// <param name="cancellationToken">
@@ -383,7 +515,7 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the GetControlOperation service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -395,7 +527,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">REST API Reference for GetControlOperation Operation</seealso>
         Task<GetControlOperationResponse> GetControlOperationAsync(GetControlOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -407,13 +539,13 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Retrieves details about an enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnabledControl service method.</param>
         /// 
         /// <returns>The response from the GetEnabledControl service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -425,7 +557,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl">REST API Reference for GetEnabledControl Operation</seealso>
         GetEnabledControlResponse GetEnabledControl(GetEnabledControlRequest request);
@@ -434,7 +566,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Retrieves details about an enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnabledControl service method.</param>
         /// <param name="cancellationToken">
@@ -443,7 +575,7 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the GetEnabledControl service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -455,10 +587,128 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl">REST API Reference for GetEnabledControl Operation</seealso>
         Task<GetEnabledControlResponse> GetEnabledControlAsync(GetEnabledControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLandingZone
+
+
+        /// <summary>
+        /// Returns details about the landing zone. Displays a message in case of error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLandingZone service method.</param>
+        /// 
+        /// <returns>The response from the GetLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZone">REST API Reference for GetLandingZone Operation</seealso>
+        GetLandingZoneResponse GetLandingZone(GetLandingZoneRequest request);
+
+
+
+        /// <summary>
+        /// Returns details about the landing zone. Displays a message in case of error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLandingZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZone">REST API Reference for GetLandingZone Operation</seealso>
+        Task<GetLandingZoneResponse> GetLandingZoneAsync(GetLandingZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLandingZoneOperation
+
+
+        /// <summary>
+        /// Returns the status of the specified landing zone operation. Details for an operation
+        /// are available for X days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLandingZoneOperation service method.</param>
+        /// 
+        /// <returns>The response from the GetLandingZoneOperation service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZoneOperation">REST API Reference for GetLandingZoneOperation Operation</seealso>
+        GetLandingZoneOperationResponse GetLandingZoneOperation(GetLandingZoneOperationRequest request);
+
+
+
+        /// <summary>
+        /// Returns the status of the specified landing zone operation. Details for an operation
+        /// are available for X days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLandingZoneOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLandingZoneOperation service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZoneOperation">REST API Reference for GetLandingZoneOperation Operation</seealso>
+        Task<GetLandingZoneOperationResponse> GetLandingZoneOperationAsync(GetLandingZoneOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -466,15 +716,15 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
-        /// and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational
+        /// unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledControls service method.</param>
         /// 
         /// <returns>The response from the ListEnabledControls service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -486,7 +736,7 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">REST API Reference for ListEnabledControls Operation</seealso>
         ListEnabledControlsResponse ListEnabledControls(ListEnabledControlsRequest request);
@@ -494,9 +744,9 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
-        /// and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational
+        /// unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledControls service method.</param>
         /// <param name="cancellationToken">
@@ -505,7 +755,7 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the ListEnabledControls service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
-        /// User does not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -517,10 +767,76 @@ namespace Amazon.ControlTower
         /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">REST API Reference for ListEnabledControls Operation</seealso>
         Task<ListEnabledControlsResponse> ListEnabledControlsAsync(ListEnabledControlsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListLandingZones
+
+
+        /// <summary>
+        /// Returns the landing zone ARN for the landing zone deployed in your managed account.
+        /// This API also creates an ARN for existing accounts that do not yet have a landing
+        /// zone ARN. 
+        /// 
+        ///  
+        /// <para>
+        /// The return limit is one landing zone ARN. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLandingZones service method.</param>
+        /// 
+        /// <returns>The response from the ListLandingZones service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">REST API Reference for ListLandingZones Operation</seealso>
+        ListLandingZonesResponse ListLandingZones(ListLandingZonesRequest request);
+
+
+
+        /// <summary>
+        /// Returns the landing zone ARN for the landing zone deployed in your managed account.
+        /// This API also creates an ARN for existing accounts that do not yet have a landing
+        /// zone ARN. 
+        /// 
+        ///  
+        /// <para>
+        /// The return limit is one landing zone ARN. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLandingZones service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLandingZones service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">REST API Reference for ListLandingZones Operation</seealso>
+        Task<ListLandingZonesResponse> ListLandingZonesAsync(ListLandingZonesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -529,7 +845,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Returns a list of tags associated with the resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -541,7 +857,7 @@ namespace Amazon.ControlTower
         /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -550,7 +866,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Returns a list of tags associated with the resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -565,10 +881,76 @@ namespace Amazon.ControlTower
         /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResetLandingZone
+
+
+        /// <summary>
+        /// This API call resets a landing zone. It starts an asynchronous operation that resets
+        /// the landing zone to the parameters specified in its original configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetLandingZone service method.</param>
+        /// 
+        /// <returns>The response from the ResetLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetLandingZone">REST API Reference for ResetLandingZone Operation</seealso>
+        ResetLandingZoneResponse ResetLandingZone(ResetLandingZoneRequest request);
+
+
+
+        /// <summary>
+        /// This API call resets a landing zone. It starts an asynchronous operation that resets
+        /// the landing zone to the parameters specified in its original configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetLandingZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetLandingZone">REST API Reference for ResetLandingZone Operation</seealso>
+        Task<ResetLandingZoneResponse> ResetLandingZoneAsync(ResetLandingZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -577,7 +959,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Applies tags to a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -589,7 +971,7 @@ namespace Amazon.ControlTower
         /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -598,7 +980,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Applies tags to a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -613,7 +995,7 @@ namespace Amazon.ControlTower
         /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -625,7 +1007,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Removes tags from a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -637,7 +1019,7 @@ namespace Amazon.ControlTower
         /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -646,7 +1028,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Removes tags from a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -661,10 +1043,78 @@ namespace Amazon.ControlTower
         /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLandingZone
+
+
+        /// <summary>
+        /// This API call updates the landing zone. It starts an asynchronous operation that updates
+        /// the landing zone based on the new landing zone version or the updated parameters specified
+        /// in the updated manifest file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLandingZone service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateLandingZone">REST API Reference for UpdateLandingZone Operation</seealso>
+        UpdateLandingZoneResponse UpdateLandingZone(UpdateLandingZoneRequest request);
+
+
+
+        /// <summary>
+        /// This API call updates the landing zone. It starts an asynchronous operation that updates
+        /// the landing zone based on the new landing zone version or the updated parameters specified
+        /// in the updated manifest file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLandingZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLandingZone service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateLandingZone">REST API Reference for UpdateLandingZone Operation</seealso>
+        Task<UpdateLandingZoneResponse> UpdateLandingZoneAsync(UpdateLandingZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

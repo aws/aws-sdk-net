@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// An AWS Region in which AWS Control Tower expects to find the control deployed. 
+    /// An Amazon Web Services Region in which Amazon Web Services Control Tower expects to
+    /// find the control deployed. 
     /// 
     ///  
     /// <para>
@@ -46,7 +47,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The AWS Region name.
+        /// The Amazon Web Services Region name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

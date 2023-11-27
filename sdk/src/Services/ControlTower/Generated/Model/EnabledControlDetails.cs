@@ -140,7 +140,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetRegions. 
         /// <para>
-        /// Target AWS Regions for the enabled control.
+        /// Target Amazon Web Services Regions for the enabled control.
         /// </para>
         /// </summary>
         public List<Region> TargetRegions

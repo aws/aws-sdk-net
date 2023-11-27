@@ -33,10 +33,10 @@ namespace Amazon.ControlTower.Model
     /// 
     ///  
     /// <para>
-    /// AWS Control Tower expects the enabled control configuration to include all supported
-    /// and governed Regions. If the enabled control differs from the expected configuration,
-    /// it is defined to be in a state of drift. You can repair this drift by resetting the
-    /// enabled control.
+    /// Amazon Web Services Control Tower expects the enabled control configuration to include
+    /// all supported and governed Regions. If the enabled control differs from the expected
+    /// configuration, it is defined to be in a state of drift. You can repair this drift
+    /// by resetting the enabled control.
     /// </para>
     /// </summary>
     public partial class DriftStatusSummary
@@ -55,22 +55,22 @@ namespace Amazon.ControlTower.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration
-        /// doesn’t match the configuration that AWS Control Tower expected. 
+        /// doesn’t match the configuration that Amazon Web Services Control Tower expected. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration
-        /// matches the configuration that AWS Control Tower expected.
+        /// matches the configuration that Amazon Web Services Control Tower expected.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKING</code>: AWS Control Tower does not check drift for this enabled
-        /// control. Drift is not supported for the control type.
+        ///  <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift
+        /// for this enabled control. Drift is not supported for the control type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code>: AWS Control Tower is not able to check the drift status for
-        /// the enabled control. 
+        ///  <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the
+        /// drift status for the enabled control. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

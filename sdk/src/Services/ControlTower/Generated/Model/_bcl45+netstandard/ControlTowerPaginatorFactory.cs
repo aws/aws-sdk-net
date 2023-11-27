@@ -42,5 +42,13 @@ namespace Amazon.ControlTower.Model
         {
             return new ListEnabledControlsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListLandingZones operation
+        ///</summary>
+        public IListLandingZonesPaginator ListLandingZones(ListLandingZonesRequest request) 
+        {
+            return new ListLandingZonesPaginator(this.client, request);
+        }
     }
 }

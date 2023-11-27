@@ -39,8 +39,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property EnabledControls. 
         /// <para>
-        /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
-        /// and the accounts it contains.
+        /// Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational
+        /// unit and the accounts it contains.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

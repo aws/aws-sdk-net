@@ -239,4 +239,220 @@ namespace Amazon.ControlTower
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type LandingZoneDriftStatus.
+    /// </summary>
+    public class LandingZoneDriftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRIFTED for LandingZoneDriftStatus
+        /// </summary>
+        public static readonly LandingZoneDriftStatus DRIFTED = new LandingZoneDriftStatus("DRIFTED");
+        /// <summary>
+        /// Constant IN_SYNC for LandingZoneDriftStatus
+        /// </summary>
+        public static readonly LandingZoneDriftStatus IN_SYNC = new LandingZoneDriftStatus("IN_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LandingZoneDriftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LandingZoneDriftStatus FindValue(string value)
+        {
+            return FindValue<LandingZoneDriftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LandingZoneDriftStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LandingZoneOperationStatus.
+    /// </summary>
+    public class LandingZoneOperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LandingZoneOperationStatus
+        /// </summary>
+        public static readonly LandingZoneOperationStatus FAILED = new LandingZoneOperationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LandingZoneOperationStatus
+        /// </summary>
+        public static readonly LandingZoneOperationStatus IN_PROGRESS = new LandingZoneOperationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for LandingZoneOperationStatus
+        /// </summary>
+        public static readonly LandingZoneOperationStatus SUCCEEDED = new LandingZoneOperationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LandingZoneOperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LandingZoneOperationStatus FindValue(string value)
+        {
+            return FindValue<LandingZoneOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LandingZoneOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LandingZoneOperationType.
+    /// </summary>
+    public class LandingZoneOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for LandingZoneOperationType
+        /// </summary>
+        public static readonly LandingZoneOperationType CREATE = new LandingZoneOperationType("CREATE");
+        /// <summary>
+        /// Constant DELETE for LandingZoneOperationType
+        /// </summary>
+        public static readonly LandingZoneOperationType DELETE = new LandingZoneOperationType("DELETE");
+        /// <summary>
+        /// Constant RESET for LandingZoneOperationType
+        /// </summary>
+        public static readonly LandingZoneOperationType RESET = new LandingZoneOperationType("RESET");
+        /// <summary>
+        /// Constant UPDATE for LandingZoneOperationType
+        /// </summary>
+        public static readonly LandingZoneOperationType UPDATE = new LandingZoneOperationType("UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LandingZoneOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LandingZoneOperationType FindValue(string value)
+        {
+            return FindValue<LandingZoneOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LandingZoneOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LandingZoneStatus.
+    /// </summary>
+    public class LandingZoneStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for LandingZoneStatus
+        /// </summary>
+        public static readonly LandingZoneStatus ACTIVE = new LandingZoneStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for LandingZoneStatus
+        /// </summary>
+        public static readonly LandingZoneStatus FAILED = new LandingZoneStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for LandingZoneStatus
+        /// </summary>
+        public static readonly LandingZoneStatus PROCESSING = new LandingZoneStatus("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LandingZoneStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LandingZoneStatus FindValue(string value)
+        {
+            return FindValue<LandingZoneStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LandingZoneStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

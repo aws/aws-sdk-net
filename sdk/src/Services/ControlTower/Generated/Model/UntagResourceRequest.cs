@@ -31,7 +31,7 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes tags from a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the AWS Control Tower User Guide</i> </a>.
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonControlTowerRequest
     {
