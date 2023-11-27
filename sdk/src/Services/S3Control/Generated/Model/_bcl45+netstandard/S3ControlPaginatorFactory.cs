@@ -36,6 +36,30 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccessGrants operation
+        ///</summary>
+        public IListAccessGrantsPaginator ListAccessGrants(ListAccessGrantsRequest request) 
+        {
+            return new ListAccessGrantsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAccessGrantsInstances operation
+        ///</summary>
+        public IListAccessGrantsInstancesPaginator ListAccessGrantsInstances(ListAccessGrantsInstancesRequest request) 
+        {
+            return new ListAccessGrantsInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAccessGrantsLocations operation
+        ///</summary>
+        public IListAccessGrantsLocationsPaginator ListAccessGrantsLocations(ListAccessGrantsLocationsRequest request) 
+        {
+            return new ListAccessGrantsLocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccessPoints operation
         ///</summary>
         public IListAccessPointsPaginator ListAccessPoints(ListAccessPointsRequest request) 

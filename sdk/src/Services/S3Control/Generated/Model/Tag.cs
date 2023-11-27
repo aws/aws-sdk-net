@@ -35,8 +35,10 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This data type is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-    /// Storage Lens groups</a>.
+    /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+    /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+    /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+    /// Grants instance, registered location, or grant. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -48,9 +50,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  The tag key for your Amazon Web Services resource. A tag key can be up to 128 Unicode
-        /// characters in length and is case-sensitive. System created tags that begin with <code>aws:</code>
-        /// aren’t supported. 
+        /// The key of the key-value pair of a tag added to your Amazon Web Services resource.
+        /// A tag key can be up to 128 Unicode characters in length and is case-sensitive. System
+        /// created tags that begin with <code>aws:</code> aren’t supported. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -69,8 +71,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The tag value for your Amazon Web Services resource. A tag value can be up to 256
-        /// Unicode characters in length and is case-sensitive. 
+        ///  The value of the key-value pair of a tag added to your Amazon Web Services resource.
+        /// A tag value can be up to 256 Unicode characters in length and is case-sensitive. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

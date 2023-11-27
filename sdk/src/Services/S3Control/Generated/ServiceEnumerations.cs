@@ -519,6 +519,60 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type GranteeType.
+    /// </summary>
+    public class GranteeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECTORY_GROUP for GranteeType
+        /// </summary>
+        public static readonly GranteeType DIRECTORY_GROUP = new GranteeType("DIRECTORY_GROUP");
+        /// <summary>
+        /// Constant DIRECTORY_USER for GranteeType
+        /// </summary>
+        public static readonly GranteeType DIRECTORY_USER = new GranteeType("DIRECTORY_USER");
+        /// <summary>
+        /// Constant IAM for GranteeType
+        /// </summary>
+        public static readonly GranteeType IAM = new GranteeType("IAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GranteeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GranteeType FindValue(string value)
+        {
+            return FindValue<GranteeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GranteeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobManifestFieldName.
     /// </summary>
     public class JobManifestFieldName : ConstantClass
@@ -1419,6 +1473,110 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type Permission.
+    /// </summary>
+    public class Permission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ for Permission
+        /// </summary>
+        public static readonly Permission READ = new Permission("READ");
+        /// <summary>
+        /// Constant READWRITE for Permission
+        /// </summary>
+        public static readonly Permission READWRITE = new Permission("READWRITE");
+        /// <summary>
+        /// Constant WRITE for Permission
+        /// </summary>
+        public static readonly Permission WRITE = new Permission("WRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Permission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Permission FindValue(string value)
+        {
+            return FindValue<Permission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Permission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Privilege.
+    /// </summary>
+    public class Privilege : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for Privilege
+        /// </summary>
+        public static readonly Privilege Default = new Privilege("Default");
+        /// <summary>
+        /// Constant Minimal for Privilege
+        /// </summary>
+        public static readonly Privilege Minimal = new Privilege("Minimal");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Privilege(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Privilege FindValue(string value)
+        {
+            return FindValue<Privilege>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Privilege(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicaModificationsStatus.
     /// </summary>
     public class ReplicaModificationsStatus : ConstantClass
@@ -2242,6 +2400,52 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3Permission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3PrefixType.
+    /// </summary>
+    public class S3PrefixType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Object for S3PrefixType
+        /// </summary>
+        public static readonly S3PrefixType Object = new S3PrefixType("Object");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3PrefixType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3PrefixType FindValue(string value)
+        {
+            return FindValue<S3PrefixType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3PrefixType(string value)
         {
             return FindValue(value);
         }

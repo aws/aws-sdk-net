@@ -45,6 +45,112 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void AssociateAccessGrantsIdentityCenterMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateAccessGrantsIdentityCenter");
+
+            var request = InstantiateClassGenerator.Execute<AssociateAccessGrantsIdentityCenterRequest>(operation);
+            var marshaller = new AssociateAccessGrantsIdentityCenterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AssociateAccessGrantsIdentityCenter", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void CreateAccessGrantMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAccessGrant");
+
+            var request = InstantiateClassGenerator.Execute<CreateAccessGrantRequest>(operation);
+            var marshaller = new CreateAccessGrantRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAccessGrant", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateAccessGrantResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void CreateAccessGrantsInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAccessGrantsInstance");
+
+            var request = InstantiateClassGenerator.Execute<CreateAccessGrantsInstanceRequest>(operation);
+            var marshaller = new CreateAccessGrantsInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAccessGrantsInstance", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateAccessGrantsInstanceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void CreateAccessGrantsLocationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAccessGrantsLocation");
+
+            var request = InstantiateClassGenerator.Execute<CreateAccessGrantsLocationRequest>(operation);
+            var marshaller = new CreateAccessGrantsLocationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAccessGrantsLocation", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateAccessGrantsLocationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void CreateAccessPointMarshallTest()
         {
             var operation = service_model.FindOperation("CreateAccessPoint");
@@ -393,6 +499,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("CreateStorageLensGroup", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteAccessGrantMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAccessGrant");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccessGrantRequest>(operation);
+            var marshaller = new DeleteAccessGrantRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAccessGrant", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteAccessGrantsInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAccessGrantsInstance");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccessGrantsInstanceRequest>(operation);
+            var marshaller = new DeleteAccessGrantsInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAccessGrantsInstance", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteAccessGrantsInstanceResourcePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAccessGrantsInstanceResourcePolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccessGrantsInstanceResourcePolicyRequest>(operation);
+            var marshaller = new DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAccessGrantsInstanceResourcePolicy", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteAccessGrantsLocationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAccessGrantsLocation");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccessGrantsLocationRequest>(operation);
+            var marshaller = new DeleteAccessGrantsLocationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAccessGrantsLocation", request, internalRequest, service_model);
 
         }
 
@@ -959,6 +1129,172 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void DissociateAccessGrantsIdentityCenterMarshallTest()
+        {
+            var operation = service_model.FindOperation("DissociateAccessGrantsIdentityCenter");
+
+            var request = InstantiateClassGenerator.Execute<DissociateAccessGrantsIdentityCenterRequest>(operation);
+            var marshaller = new DissociateAccessGrantsIdentityCenterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DissociateAccessGrantsIdentityCenter", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessGrantMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessGrant");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessGrantRequest>(operation);
+            var marshaller = new GetAccessGrantRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessGrant", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetAccessGrantResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessGrantsInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessGrantsInstance");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessGrantsInstanceRequest>(operation);
+            var marshaller = new GetAccessGrantsInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessGrantsInstance", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetAccessGrantsInstanceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessGrantsInstanceForPrefixMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessGrantsInstanceForPrefix");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessGrantsInstanceForPrefixRequest>(operation);
+            var marshaller = new GetAccessGrantsInstanceForPrefixRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessGrantsInstanceForPrefix", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetAccessGrantsInstanceForPrefixResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessGrantsInstanceResourcePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessGrantsInstanceResourcePolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessGrantsInstanceResourcePolicyRequest>(operation);
+            var marshaller = new GetAccessGrantsInstanceResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessGrantsInstanceResourcePolicy", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetAccessGrantsInstanceResourcePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessGrantsLocationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessGrantsLocation");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessGrantsLocationRequest>(operation);
+            var marshaller = new GetAccessGrantsLocationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessGrantsLocation", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetAccessGrantsLocationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void GetAccessPointMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccessPoint");
@@ -1342,6 +1678,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as GetBucketVersioningResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetDataAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDataAccess");
+
+            var request = InstantiateClassGenerator.Execute<GetDataAccessRequest>(operation);
+            var marshaller = new GetDataAccessRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetDataAccess", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDataAccessResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetDataAccessResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1743,6 +2109,96 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void ListAccessGrantsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAccessGrants");
+
+            var request = InstantiateClassGenerator.Execute<ListAccessGrantsRequest>(operation);
+            var marshaller = new ListAccessGrantsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAccessGrants", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListAccessGrantsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void ListAccessGrantsInstancesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAccessGrantsInstances");
+
+            var request = InstantiateClassGenerator.Execute<ListAccessGrantsInstancesRequest>(operation);
+            var marshaller = new ListAccessGrantsInstancesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAccessGrantsInstances", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListAccessGrantsInstancesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void ListAccessGrantsLocationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAccessGrantsLocations");
+
+            var request = InstantiateClassGenerator.Execute<ListAccessGrantsLocationsRequest>(operation);
+            var marshaller = new ListAccessGrantsLocationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAccessGrantsLocations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListAccessGrantsLocationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void ListAccessPointsMarshallTest()
         {
             var operation = service_model.FindOperation("ListAccessPoints");
@@ -2069,6 +2525,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as ListTagsForResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutAccessGrantsInstanceResourcePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutAccessGrantsInstanceResourcePolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutAccessGrantsInstanceResourcePolicyRequest>(operation);
+            var marshaller = new PutAccessGrantsInstanceResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutAccessGrantsInstanceResourcePolicy", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as PutAccessGrantsInstanceResourcePolicyResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2533,6 +3019,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UntagResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as UntagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void UpdateAccessGrantsLocationMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAccessGrantsLocation");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAccessGrantsLocationRequest>(operation);
+            var marshaller = new UpdateAccessGrantsLocationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateAccessGrantsLocation", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateAccessGrantsLocationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

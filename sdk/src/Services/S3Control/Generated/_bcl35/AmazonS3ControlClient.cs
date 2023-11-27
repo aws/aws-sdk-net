@@ -265,6 +265,314 @@ namespace Amazon.S3Control
         #endregion
 
 
+        #region  AssociateAccessGrantsIdentityCenter
+
+        /// <summary>
+        /// Associate your S3 Access Grants instance with an Amazon Web Services IAM Identity
+        /// Center instance. Use this action if you want to create access grants for users or
+        /// groups from your corporate identity directory. First, you must add your corporate
+        /// identity directory to Amazon Web Services IAM Identity Center. Then, you can associate
+        /// this IAM Identity Center instance with your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:AssociateAccessGrantsIdentityCenter</code> permission to
+        /// use this operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must also have the following permissions: <code>sso:CreateApplication</code>,
+        /// <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAccessGrantsIdentityCenter service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAccessGrantsIdentityCenter service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
+        public virtual AssociateAccessGrantsIdentityCenterResponse AssociateAccessGrantsIdentityCenter(AssociateAccessGrantsIdentityCenterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateAccessGrantsIdentityCenterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateAccessGrantsIdentityCenter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAccessGrantsIdentityCenter operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAccessGrantsIdentityCenter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
+        public virtual IAsyncResult BeginAssociateAccessGrantsIdentityCenter(AssociateAccessGrantsIdentityCenterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateAccessGrantsIdentityCenter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAccessGrantsIdentityCenter.</param>
+        /// 
+        /// <returns>Returns a  AssociateAccessGrantsIdentityCenterResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
+        public virtual AssociateAccessGrantsIdentityCenterResponse EndAssociateAccessGrantsIdentityCenter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateAccessGrantsIdentityCenterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAccessGrant
+
+        /// <summary>
+        /// Creates an access grant that gives a grantee access to your S3 data. The grantee can
+        /// be an IAM user or role or a directory user, or group. Before you can create a grant,
+        /// you must have an S3 Access Grants instance in the same Region as the S3 data. You
+        /// can create an S3 Access Grants instance using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsInstance.html">CreateAccessGrantsInstance</a>.
+        /// You must also have registered at least one S3 data location in your S3 Access Grants
+        /// instance using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsLocation.html">CreateAccessGrantsLocation</a>.
+        /// 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:CreateAccessGrant</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// For any directory identity - <code>sso:DescribeInstance</code> and <code>sso:DescribeApplication</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For directory users - <code>identitystore:DescribeUser</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For directory groups - <code>identitystore:DescribeGroup</code> 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessGrant service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
+        public virtual CreateAccessGrantResponse CreateAccessGrant(CreateAccessGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrant operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
+        public virtual IAsyncResult BeginCreateAccessGrant(CreateAccessGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessGrant.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessGrantResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
+        public virtual CreateAccessGrantResponse EndCreateAccessGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccessGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAccessGrantsInstance
+
+        /// <summary>
+        /// Creates an S3 Access Grants instance, which serves as a logical grouping for access
+        /// grants. You can create one S3 Access Grants instance per Region per account. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:CreateAccessGrantsInstance</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// To associate an IAM Identity Center instance with your S3 Access Grants instance,
+        /// you must also have the <code>sso:DescribeInstance</code>, <code>sso:CreateApplication</code>,
+        /// <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>
+        /// permissions. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessGrantsInstance service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
+        public virtual CreateAccessGrantsInstanceResponse CreateAccessGrantsInstance(CreateAccessGrantsInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessGrantsInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessGrantsInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessGrantsInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsInstance operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessGrantsInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
+        public virtual IAsyncResult BeginCreateAccessGrantsInstance(CreateAccessGrantsInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessGrantsInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessGrantsInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessGrantsInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessGrantsInstanceResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
+        public virtual CreateAccessGrantsInstanceResponse EndCreateAccessGrantsInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccessGrantsInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAccessGrantsLocation
+
+        /// <summary>
+        /// The S3 data location that you would like to register in your S3 Access Grants instance.
+        /// Your S3 data must be in the same Region as your S3 Access Grants instance. The location
+        /// can be one of the following: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The default S3 location <code>s3://</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A bucket - <code>S3://&lt;bucket-name&gt;</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A bucket and prefix - <code>S3://&lt;bucket-name&gt;/&lt;prefix&gt;</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you register a location, you must include the IAM role that has permission to
+        /// manage the S3 location that you are registering. Give S3 Access Grants permission
+        /// to assume this role <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html">using
+        /// a policy</a>. S3 Access Grants assumes this role to manage access to the location
+        /// and to vend temporary credentials to grantees or client applications. 
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:CreateAccessGrantsLocation</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must also have the following permission for the specified IAM role: <code>iam:PassRole</code>
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsLocation service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
+        public virtual CreateAccessGrantsLocationResponse CreateAccessGrantsLocation(CreateAccessGrantsLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessGrantsLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsLocation operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessGrantsLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
+        public virtual IAsyncResult BeginCreateAccessGrantsLocation(CreateAccessGrantsLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessGrantsLocation.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessGrantsLocationResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
+        public virtual CreateAccessGrantsLocationResponse EndCreateAccessGrantsLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccessGrantsLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAccessPoint
 
         /// <summary>
@@ -840,6 +1148,265 @@ namespace Amazon.S3Control
         public virtual CreateStorageLensGroupResponse EndCreateStorageLensGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStorageLensGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessGrant
+
+        /// <summary>
+        /// Deletes the access grant from the S3 Access Grants instance. You cannot undo an access
+        /// grant deletion and the grantee will no longer have access to the S3 data.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrant</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrant service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
+        public virtual DeleteAccessGrantResponse DeleteAccessGrant(DeleteAccessGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrant operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessGrant(DeleteAccessGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessGrant.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessGrantResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
+        public virtual DeleteAccessGrantResponse EndDeleteAccessGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessGrantsInstance
+
+        /// <summary>
+        /// Deletes your S3 Access Grants instance. You must first delete the access grants and
+        /// locations before S3 Access Grants can delete the instance. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">DeleteAccessGrant</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsLocation.html">DeleteAccessGrantsLocation</a>.
+        /// If you have associated an IAM Identity Center instance with your S3 Access Grants
+        /// instance, you must first dissassociate the Identity Center instance from the S3 Access
+        /// Grants instance before you can delete the S3 Access Grants instance. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_AssociateAccessGrantsIdentityCenter.html">AssociateAccessGrantsIdentityCenter</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DissociateAccessGrantsIdentityCenter.html">DissociateAccessGrantsIdentityCenter</a>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrantsInstance</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrantsInstance service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
+        public virtual DeleteAccessGrantsInstanceResponse DeleteAccessGrantsInstance(DeleteAccessGrantsInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantsInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessGrantsInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessGrantsInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstance operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessGrantsInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessGrantsInstance(DeleteAccessGrantsInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantsInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessGrantsInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessGrantsInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessGrantsInstanceResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
+        public virtual DeleteAccessGrantsInstanceResponse EndDeleteAccessGrantsInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessGrantsInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessGrantsInstanceResourcePolicy
+
+        /// <summary>
+        /// Deletes the resource policy of the S3 Access Grants instance. The resource policy
+        /// is used to manage cross-account access to your S3 Access Grants instance. By deleting
+        /// the resource policy, you delete any cross-account permissions to your S3 Access Grants
+        /// instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrantsInstanceResourcePolicy</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstanceResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrantsInstanceResourcePolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual DeleteAccessGrantsInstanceResourcePolicyResponse DeleteAccessGrantsInstanceResourcePolicy(DeleteAccessGrantsInstanceResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessGrantsInstanceResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessGrantsInstanceResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstanceResourcePolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessGrantsInstanceResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessGrantsInstanceResourcePolicy(DeleteAccessGrantsInstanceResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessGrantsInstanceResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessGrantsInstanceResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessGrantsInstanceResourcePolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual DeleteAccessGrantsInstanceResourcePolicyResponse EndDeleteAccessGrantsInstanceResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessGrantsInstanceResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessGrantsLocation
+
+        /// <summary>
+        /// Deregisters a location from your S3 Access Grants instance. You can only delete a
+        /// location registration from an S3 Access Grants instance if there are no grants associated
+        /// with this location. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">Delete
+        /// a grant</a> for information on how to delete grants. You need to have at least one
+        /// registered location in your S3 Access Grants instance in order to create access grants.
+        /// 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrantsLocation</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsLocation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
+        public virtual DeleteAccessGrantsLocationResponse DeleteAccessGrantsLocation(DeleteAccessGrantsLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessGrantsLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsLocation operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessGrantsLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessGrantsLocation(DeleteAccessGrantsLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessGrantsLocation.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessGrantsLocationResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
+        public virtual DeleteAccessGrantsLocationResponse EndDeleteAccessGrantsLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessGrantsLocationResponse>(asyncResult);
         }
 
         #endregion
@@ -2297,6 +2864,384 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DissociateAccessGrantsIdentityCenter
+
+        /// <summary>
+        /// Dissociates the Amazon Web Services IAM Identity Center instance from the S3 Access
+        /// Grants instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DissociateAccessGrantsIdentityCenter</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>sso:DeleteApplication</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DissociateAccessGrantsIdentityCenter service method.</param>
+        /// 
+        /// <returns>The response from the DissociateAccessGrantsIdentityCenter service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
+        public virtual DissociateAccessGrantsIdentityCenterResponse DissociateAccessGrantsIdentityCenter(DissociateAccessGrantsIdentityCenterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DissociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DissociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
+
+            return Invoke<DissociateAccessGrantsIdentityCenterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DissociateAccessGrantsIdentityCenter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DissociateAccessGrantsIdentityCenter operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDissociateAccessGrantsIdentityCenter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
+        public virtual IAsyncResult BeginDissociateAccessGrantsIdentityCenter(DissociateAccessGrantsIdentityCenterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DissociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DissociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DissociateAccessGrantsIdentityCenter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDissociateAccessGrantsIdentityCenter.</param>
+        /// 
+        /// <returns>Returns a  DissociateAccessGrantsIdentityCenterResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
+        public virtual DissociateAccessGrantsIdentityCenterResponse EndDissociateAccessGrantsIdentityCenter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DissociateAccessGrantsIdentityCenterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessGrant
+
+        /// <summary>
+        /// Get the details of an access grant from your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrant</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessGrant service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
+        public virtual GetAccessGrantResponse GetAccessGrant(GetAccessGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrant operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessGrant(GetAccessGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessGrant.</param>
+        /// 
+        /// <returns>Returns a  GetAccessGrantResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
+        public virtual GetAccessGrantResponse EndGetAccessGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessGrantsInstance
+
+        /// <summary>
+        /// Retrieves the S3 Access Grants instance for a Region in your account. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsInstance service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
+        public virtual GetAccessGrantsInstanceResponse GetAccessGrantsInstance(GetAccessGrantsInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessGrantsInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessGrantsInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessGrantsInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessGrantsInstance(GetAccessGrantsInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessGrantsInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessGrantsInstance.</param>
+        /// 
+        /// <returns>Returns a  GetAccessGrantsInstanceResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
+        public virtual GetAccessGrantsInstanceResponse EndGetAccessGrantsInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessGrantsInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessGrantsInstanceForPrefix
+
+        /// <summary>
+        /// Retrieve the S3 Access Grants instance that contains a particular prefix. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsInstanceForPrefix</code> permission for
+        /// the caller account to use this operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// The prefix owner account must grant you the following permissions to their S3 Access
+        /// Grants instance: <code>s3:GetAccessGrantsInstanceForPrefix</code>. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceForPrefix service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsInstanceForPrefix service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
+        public virtual GetAccessGrantsInstanceForPrefixResponse GetAccessGrantsInstanceForPrefix(GetAccessGrantsInstanceForPrefixRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsInstanceForPrefixRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessGrantsInstanceForPrefixResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessGrantsInstanceForPrefix operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceForPrefix operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessGrantsInstanceForPrefix
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessGrantsInstanceForPrefix(GetAccessGrantsInstanceForPrefixRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsInstanceForPrefixRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessGrantsInstanceForPrefix operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessGrantsInstanceForPrefix.</param>
+        /// 
+        /// <returns>Returns a  GetAccessGrantsInstanceForPrefixResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
+        public virtual GetAccessGrantsInstanceForPrefixResponse EndGetAccessGrantsInstanceForPrefix(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessGrantsInstanceForPrefixResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessGrantsInstanceResourcePolicy
+
+        /// <summary>
+        /// Returns the resource policy of the S3 Access Grants instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsInstanceResourcePolicy</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsInstanceResourcePolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual GetAccessGrantsInstanceResourcePolicyResponse GetAccessGrantsInstanceResourcePolicy(GetAccessGrantsInstanceResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessGrantsInstanceResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessGrantsInstanceResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceResourcePolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessGrantsInstanceResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessGrantsInstanceResourcePolicy(GetAccessGrantsInstanceResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessGrantsInstanceResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessGrantsInstanceResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetAccessGrantsInstanceResourcePolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual GetAccessGrantsInstanceResourcePolicyResponse EndGetAccessGrantsInstanceResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessGrantsInstanceResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessGrantsLocation
+
+        /// <summary>
+        /// Retrieves the details of a particular location registered in your S3 Access Grants
+        /// instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsLocation</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsLocation service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
+        public virtual GetAccessGrantsLocationResponse GetAccessGrantsLocation(GetAccessGrantsLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessGrantsLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsLocation operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessGrantsLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessGrantsLocation(GetAccessGrantsLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessGrantsLocation.</param>
+        /// 
+        /// <returns>Returns a  GetAccessGrantsLocationResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
+        public virtual GetAccessGrantsLocationResponse EndGetAccessGrantsLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessGrantsLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAccessPoint
 
         /// <summary>
@@ -3448,6 +4393,77 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetDataAccess
+
+        /// <summary>
+        /// Returns a temporary access credential from S3 Access Grants to the grantee or client
+        /// application. The <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary
+        /// credential</a> is an Amazon Web Services STS token that grants them access to the
+        /// S3 data. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetDataAccess</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// The IAM role that S3 Access Grants assumes must have the following permissions specified
+        /// in the trust policy when registering the location: <code>sts:AssumeRole</code>, for
+        /// directory users or groups <code>sts:SetContext</code>, and for IAM users or roles
+        /// <code>sts:SourceIdentity</code>. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccess service method.</param>
+        /// 
+        /// <returns>The response from the GetDataAccess service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
+        public virtual GetDataAccessResponse GetDataAccess(GetDataAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataAccessResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccess operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
+        public virtual IAsyncResult BeginGetDataAccess(GetDataAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataAccess.</param>
+        /// 
+        /// <returns>Returns a  GetDataAccessResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
+        public virtual GetDataAccessResponse EndGetDataAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetJobTagging
 
         /// <summary>
@@ -4134,6 +5150,191 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  ListAccessGrants
+
+        /// <summary>
+        /// Returns the list of access grants in your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:ListAccessGrants</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessGrants service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
+        public virtual ListAccessGrantsResponse ListAccessGrants(ListAccessGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessGrantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrants operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
+        public virtual IAsyncResult BeginListAccessGrants(ListAccessGrantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessGrants.</param>
+        /// 
+        /// <returns>Returns a  ListAccessGrantsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
+        public virtual ListAccessGrantsResponse EndListAccessGrants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessGrantsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccessGrantsInstances
+
+        /// <summary>
+        /// Returns a list of S3 Access Grants instances. An S3 Access Grants instance serves
+        /// as a logical grouping for your individual access grants. You can only have one S3
+        /// Access Grants instance per Region per account.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:ListAccessGrantsInstances</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessGrantsInstances service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
+        public virtual ListAccessGrantsInstancesResponse ListAccessGrantsInstances(ListAccessGrantsInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessGrantsInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessGrantsInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessGrantsInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsInstances operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessGrantsInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
+        public virtual IAsyncResult BeginListAccessGrantsInstances(ListAccessGrantsInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessGrantsInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessGrantsInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessGrantsInstances.</param>
+        /// 
+        /// <returns>Returns a  ListAccessGrantsInstancesResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
+        public virtual ListAccessGrantsInstancesResponse EndListAccessGrantsInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessGrantsInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccessGrantsLocations
+
+        /// <summary>
+        /// Returns a list of the locations registered in your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:ListAccessGrantsLocations</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsLocations service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessGrantsLocations service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
+        public virtual ListAccessGrantsLocationsResponse ListAccessGrantsLocations(ListAccessGrantsLocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessGrantsLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessGrantsLocationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessGrantsLocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsLocations operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessGrantsLocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
+        public virtual IAsyncResult BeginListAccessGrantsLocations(ListAccessGrantsLocationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessGrantsLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessGrantsLocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessGrantsLocations.</param>
+        /// 
+        /// <returns>Returns a  ListAccessGrantsLocationsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
+        public virtual ListAccessGrantsLocationsResponse EndListAccessGrantsLocations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessGrantsLocationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAccessPoints
 
         /// <summary>
@@ -4681,14 +5882,25 @@ namespace Amazon.S3Control
         #region  ListTagsForResource
 
         /// <summary>
-        /// This operation allows you to list all the Amazon Web Services resource tags for the
-        /// specified resource. 
+        /// This operation allows you to list all the Amazon Web Services resource tags for a
+        /// specified resource. Each tag is a label consisting of a user-defined key and value.
+        /// Tags can help you manage, identify, organize, search for, and filter resources. 
         /// 
-        ///  
+        ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
-        /// action. For more information about the required Storage Lens Groups permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// You must have the <code>s3:ListTagsForResource</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+        /// Grants instance, registered location, or grant. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
         ///  
@@ -4696,12 +5908,6 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -4748,6 +5954,67 @@ namespace Amazon.S3Control
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAccessGrantsInstanceResourcePolicy
+
+        /// <summary>
+        /// Updates the resource policy of the S3 Access Grants instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:PutAccessGrantsInstanceResourcePolicy</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessGrantsInstanceResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessGrantsInstanceResourcePolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual PutAccessGrantsInstanceResourcePolicyResponse PutAccessGrantsInstanceResourcePolicy(PutAccessGrantsInstanceResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccessGrantsInstanceResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccessGrantsInstanceResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessGrantsInstanceResourcePolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessGrantsInstanceResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutAccessGrantsInstanceResourcePolicy(PutAccessGrantsInstanceResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccessGrantsInstanceResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessGrantsInstanceResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutAccessGrantsInstanceResourcePolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
+        public virtual PutAccessGrantsInstanceResourcePolicyResponse EndPutAccessGrantsInstanceResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccessGrantsInstanceResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -6170,13 +7437,24 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
-        /// You can add up to 50 Amazon Web Services resource tags for each S3 resource. 
+        /// Each tag is a label consisting of a user-defined key and value. Tags can help you
+        /// manage, identify, organize, search for, and filter resources. You can add up to 50
+        /// Amazon Web Services resource tags for each S3 resource. 
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// To use this operation, you must have the permission to perform the <code>s3:TagResource</code>
-        /// action. For more information about the required Storage Lens Groups permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+        /// Grants instance, registered location, or grant. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:TagResource</code> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
         ///  
@@ -6184,12 +7462,6 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6244,13 +7516,24 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// This operation removes the specified Amazon Web Services resource tags from an S3
-        /// resource. 
+        /// resource. Each tag is a label consisting of a user-defined key and value. Tags can
+        /// help you manage, identify, organize, search for, and filter resources. 
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// To use this operation, you must have the permission to perform the <code>s3:UntagResource</code>
-        /// action. For more information about the required Storage Lens Groups permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+        /// Grants instance, registered location, or grant. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:UntagResource</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
         ///  
@@ -6258,12 +7541,6 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -6310,6 +7587,71 @@ namespace Amazon.S3Control
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAccessGrantsLocation
+
+        /// <summary>
+        /// Updates the IAM role of a registered location in your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:UpdateAccessGrantsLocation</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must also have the following permission: <code>iam:PassRole</code> 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessGrantsLocation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
+        public virtual UpdateAccessGrantsLocationResponse UpdateAccessGrantsLocation(UpdateAccessGrantsLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccessGrantsLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessGrantsLocation operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccessGrantsLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAccessGrantsLocation(UpdateAccessGrantsLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccessGrantsLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccessGrantsLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccessGrantsLocation.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccessGrantsLocationResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
+        public virtual UpdateAccessGrantsLocationResponse EndUpdateAccessGrantsLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAccessGrantsLocationResponse>(asyncResult);
         }
 
         #endregion

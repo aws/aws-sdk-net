@@ -76,6 +76,30 @@ namespace Amazon.S3Control.Internal
 
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "AssociateAccessGrantsIdentityCenterRequest") {
+                result.RequiresAccountId = true;
+                var request = (AssociateAccessGrantsIdentityCenterRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAccessGrantRequest") {
+                result.RequiresAccountId = true;
+                var request = (CreateAccessGrantRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAccessGrantsInstanceRequest") {
+                result.RequiresAccountId = true;
+                var request = (CreateAccessGrantsInstanceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAccessGrantsLocationRequest") {
+                result.RequiresAccountId = true;
+                var request = (CreateAccessGrantsLocationRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "CreateAccessPointRequest") {
                 result.RequiresAccountId = true;
                 var request = (CreateAccessPointRequest)requestContext.OriginalRequest;
@@ -110,6 +134,30 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "CreateStorageLensGroupRequest") {
                 result.RequiresAccountId = true;
                 var request = (CreateStorageLensGroupRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAccessGrantRequest") {
+                result.RequiresAccountId = true;
+                var request = (DeleteAccessGrantRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAccessGrantsInstanceRequest") {
+                result.RequiresAccountId = true;
+                var request = (DeleteAccessGrantsInstanceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAccessGrantsInstanceResourcePolicyRequest") {
+                result.RequiresAccountId = true;
+                var request = (DeleteAccessGrantsInstanceResourcePolicyRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAccessGrantsLocationRequest") {
+                result.RequiresAccountId = true;
+                var request = (DeleteAccessGrantsLocationRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }
@@ -222,6 +270,42 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "DissociateAccessGrantsIdentityCenterRequest") {
+                result.RequiresAccountId = true;
+                var request = (DissociateAccessGrantsIdentityCenterRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "GetAccessGrantRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetAccessGrantRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "GetAccessGrantsInstanceRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetAccessGrantsInstanceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "GetAccessGrantsInstanceForPrefixRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetAccessGrantsInstanceForPrefixRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "GetAccessGrantsInstanceResourcePolicyRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetAccessGrantsInstanceResourcePolicyRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "GetAccessGrantsLocationRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetAccessGrantsLocationRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "GetAccessPointRequest") {
                 result.RequiresAccountId = true;
                 var request = (GetAccessPointRequest)requestContext.OriginalRequest;
@@ -309,6 +393,12 @@ namespace Amazon.S3Control.Internal
                 result.Bucket = request.Bucket;
                 return result;
             }
+            if (requestContext.RequestName == "GetDataAccessRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetDataAccessRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "GetJobTaggingRequest") {
                 result.RequiresAccountId = true;
                 var request = (GetJobTaggingRequest)requestContext.OriginalRequest;
@@ -363,6 +453,24 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "ListAccessGrantsRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListAccessGrantsRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListAccessGrantsInstancesRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListAccessGrantsInstancesRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListAccessGrantsLocationsRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListAccessGrantsLocationsRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "ListAccessPointsRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListAccessPointsRequest)requestContext.OriginalRequest;
@@ -410,6 +518,12 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "ListTagsForResourceRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListTagsForResourceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "PutAccessGrantsInstanceResourcePolicyRequest") {
+                result.RequiresAccountId = true;
+                var request = (PutAccessGrantsInstanceResourcePolicyRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }
@@ -512,6 +626,12 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "UntagResourceRequest") {
                 result.RequiresAccountId = true;
                 var request = (UntagResourceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAccessGrantsLocationRequest") {
+                result.RequiresAccountId = true;
+                var request = (UpdateAccessGrantsLocationRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }

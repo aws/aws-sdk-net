@@ -42,6 +42,170 @@ namespace Amazon.S3Control
         IS3ControlPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AssociateAccessGrantsIdentityCenter
+
+
+
+        /// <summary>
+        /// Associate your S3 Access Grants instance with an Amazon Web Services IAM Identity
+        /// Center instance. Use this action if you want to create access grants for users or
+        /// groups from your corporate identity directory. First, you must add your corporate
+        /// identity directory to Amazon Web Services IAM Identity Center. Then, you can associate
+        /// this IAM Identity Center instance with your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:AssociateAccessGrantsIdentityCenter</code> permission to
+        /// use this operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must also have the following permissions: <code>sso:CreateApplication</code>,
+        /// <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAccessGrantsIdentityCenter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateAccessGrantsIdentityCenter service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
+        Task<AssociateAccessGrantsIdentityCenterResponse> AssociateAccessGrantsIdentityCenterAsync(AssociateAccessGrantsIdentityCenterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAccessGrant
+
+
+
+        /// <summary>
+        /// Creates an access grant that gives a grantee access to your S3 data. The grantee can
+        /// be an IAM user or role or a directory user, or group. Before you can create a grant,
+        /// you must have an S3 Access Grants instance in the same Region as the S3 data. You
+        /// can create an S3 Access Grants instance using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsInstance.html">CreateAccessGrantsInstance</a>.
+        /// You must also have registered at least one S3 data location in your S3 Access Grants
+        /// instance using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsLocation.html">CreateAccessGrantsLocation</a>.
+        /// 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:CreateAccessGrant</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// For any directory identity - <code>sso:DescribeInstance</code> and <code>sso:DescribeApplication</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For directory users - <code>identitystore:DescribeUser</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For directory groups - <code>identitystore:DescribeGroup</code> 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessGrant service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
+        Task<CreateAccessGrantResponse> CreateAccessGrantAsync(CreateAccessGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAccessGrantsInstance
+
+
+
+        /// <summary>
+        /// Creates an S3 Access Grants instance, which serves as a logical grouping for access
+        /// grants. You can create one S3 Access Grants instance per Region per account. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:CreateAccessGrantsInstance</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// To associate an IAM Identity Center instance with your S3 Access Grants instance,
+        /// you must also have the <code>sso:DescribeInstance</code>, <code>sso:CreateApplication</code>,
+        /// <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>
+        /// permissions. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessGrantsInstance service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
+        Task<CreateAccessGrantsInstanceResponse> CreateAccessGrantsInstanceAsync(CreateAccessGrantsInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAccessGrantsLocation
+
+
+
+        /// <summary>
+        /// The S3 data location that you would like to register in your S3 Access Grants instance.
+        /// Your S3 data must be in the same Region as your S3 Access Grants instance. The location
+        /// can be one of the following: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The default S3 location <code>s3://</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A bucket - <code>S3://&lt;bucket-name&gt;</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A bucket and prefix - <code>S3://&lt;bucket-name&gt;/&lt;prefix&gt;</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you register a location, you must include the IAM role that has permission to
+        /// manage the S3 location that you are registering. Give S3 Access Grants permission
+        /// to assume this role <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html">using
+        /// a policy</a>. S3 Access Grants assumes this role to manage access to the location
+        /// and to vend temporary credentials to grantees or client applications. 
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:CreateAccessGrantsLocation</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must also have the following permission for the specified IAM role: <code>iam:PassRole</code>
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
+        Task<CreateAccessGrantsLocationResponse> CreateAccessGrantsLocationAsync(CreateAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateAccessPoint
 
 
@@ -402,6 +566,121 @@ namespace Amazon.S3Control
         /// <returns>The response from the CreateStorageLensGroup service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
         Task<CreateStorageLensGroupResponse> CreateStorageLensGroupAsync(CreateStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAccessGrant
+
+
+
+        /// <summary>
+        /// Deletes the access grant from the S3 Access Grants instance. You cannot undo an access
+        /// grant deletion and the grantee will no longer have access to the S3 data.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrant</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrant service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
+        Task<DeleteAccessGrantResponse> DeleteAccessGrantAsync(DeleteAccessGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAccessGrantsInstance
+
+
+
+        /// <summary>
+        /// Deletes your S3 Access Grants instance. You must first delete the access grants and
+        /// locations before S3 Access Grants can delete the instance. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">DeleteAccessGrant</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsLocation.html">DeleteAccessGrantsLocation</a>.
+        /// If you have associated an IAM Identity Center instance with your S3 Access Grants
+        /// instance, you must first dissassociate the Identity Center instance from the S3 Access
+        /// Grants instance before you can delete the S3 Access Grants instance. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_AssociateAccessGrantsIdentityCenter.html">AssociateAccessGrantsIdentityCenter</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DissociateAccessGrantsIdentityCenter.html">DissociateAccessGrantsIdentityCenter</a>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrantsInstance</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrantsInstance service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
+        Task<DeleteAccessGrantsInstanceResponse> DeleteAccessGrantsInstanceAsync(DeleteAccessGrantsInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAccessGrantsInstanceResourcePolicy
+
+
+
+        /// <summary>
+        /// Deletes the resource policy of the S3 Access Grants instance. The resource policy
+        /// is used to manage cross-account access to your S3 Access Grants instance. By deleting
+        /// the resource policy, you delete any cross-account permissions to your S3 Access Grants
+        /// instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrantsInstanceResourcePolicy</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstanceResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrantsInstanceResourcePolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
+        Task<DeleteAccessGrantsInstanceResourcePolicyResponse> DeleteAccessGrantsInstanceResourcePolicyAsync(DeleteAccessGrantsInstanceResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAccessGrantsLocation
+
+
+
+        /// <summary>
+        /// Deregisters a location from your S3 Access Grants instance. You can only delete a
+        /// location registration from an S3 Access Grants instance if there are no grants associated
+        /// with this location. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">Delete
+        /// a grant</a> for information on how to delete grants. You need to have at least one
+        /// registered location in your S3 Access Grants instance in order to create access grants.
+        /// 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DeleteAccessGrantsLocation</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
+        Task<DeleteAccessGrantsLocationResponse> DeleteAccessGrantsLocationAsync(DeleteAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1246,6 +1525,168 @@ namespace Amazon.S3Control
 
         #endregion
                 
+        #region  DissociateAccessGrantsIdentityCenter
+
+
+
+        /// <summary>
+        /// Dissociates the Amazon Web Services IAM Identity Center instance from the S3 Access
+        /// Grants instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:DissociateAccessGrantsIdentityCenter</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>sso:DeleteApplication</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DissociateAccessGrantsIdentityCenter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DissociateAccessGrantsIdentityCenter service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
+        Task<DissociateAccessGrantsIdentityCenterResponse> DissociateAccessGrantsIdentityCenterAsync(DissociateAccessGrantsIdentityCenterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccessGrant
+
+
+
+        /// <summary>
+        /// Get the details of an access grant from your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrant</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessGrant service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
+        Task<GetAccessGrantResponse> GetAccessGrantAsync(GetAccessGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccessGrantsInstance
+
+
+
+        /// <summary>
+        /// Retrieves the S3 Access Grants instance for a Region in your account. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsInstance service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
+        Task<GetAccessGrantsInstanceResponse> GetAccessGrantsInstanceAsync(GetAccessGrantsInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccessGrantsInstanceForPrefix
+
+
+
+        /// <summary>
+        /// Retrieve the S3 Access Grants instance that contains a particular prefix. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsInstanceForPrefix</code> permission for
+        /// the caller account to use this operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// The prefix owner account must grant you the following permissions to their S3 Access
+        /// Grants instance: <code>s3:GetAccessGrantsInstanceForPrefix</code>. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceForPrefix service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsInstanceForPrefix service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
+        Task<GetAccessGrantsInstanceForPrefixResponse> GetAccessGrantsInstanceForPrefixAsync(GetAccessGrantsInstanceForPrefixRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccessGrantsInstanceResourcePolicy
+
+
+
+        /// <summary>
+        /// Returns the resource policy of the S3 Access Grants instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsInstanceResourcePolicy</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsInstanceResourcePolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
+        Task<GetAccessGrantsInstanceResourcePolicyResponse> GetAccessGrantsInstanceResourcePolicyAsync(GetAccessGrantsInstanceResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccessGrantsLocation
+
+
+
+        /// <summary>
+        /// Retrieves the details of a particular location registered in your S3 Access Grants
+        /// instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetAccessGrantsLocation</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
+        Task<GetAccessGrantsLocationResponse> GetAccessGrantsLocationAsync(GetAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAccessPoint
 
 
@@ -1929,6 +2370,41 @@ namespace Amazon.S3Control
 
         #endregion
                 
+        #region  GetDataAccess
+
+
+
+        /// <summary>
+        /// Returns a temporary access credential from S3 Access Grants to the grantee or client
+        /// application. The <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary
+        /// credential</a> is an Amazon Web Services STS token that grants them access to the
+        /// S3 data. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:GetDataAccess</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// The IAM role that S3 Access Grants assumes must have the following permissions specified
+        /// in the trust policy when registering the location: <code>sts:AssumeRole</code>, for
+        /// directory users or groups <code>sts:SetContext</code>, and for IAM users or roles
+        /// <code>sts:SourceIdentity</code>. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataAccess service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
+        Task<GetDataAccessResponse> GetDataAccessAsync(GetDataAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetJobTagging
 
 
@@ -2291,6 +2767,83 @@ namespace Amazon.S3Control
 
         #endregion
                 
+        #region  ListAccessGrants
+
+
+
+        /// <summary>
+        /// Returns the list of access grants in your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:ListAccessGrants</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessGrants service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
+        Task<ListAccessGrantsResponse> ListAccessGrantsAsync(ListAccessGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAccessGrantsInstances
+
+
+
+        /// <summary>
+        /// Returns a list of S3 Access Grants instances. An S3 Access Grants instance serves
+        /// as a logical grouping for your individual access grants. You can only have one S3
+        /// Access Grants instance per Region per account.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:ListAccessGrantsInstances</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessGrantsInstances service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
+        Task<ListAccessGrantsInstancesResponse> ListAccessGrantsInstancesAsync(ListAccessGrantsInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAccessGrantsLocations
+
+
+
+        /// <summary>
+        /// Returns a list of the locations registered in your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:ListAccessGrantsLocations</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsLocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessGrantsLocations service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
+        Task<ListAccessGrantsLocationsResponse> ListAccessGrantsLocationsAsync(ListAccessGrantsLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListAccessPoints
 
 
@@ -2588,14 +3141,25 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// This operation allows you to list all the Amazon Web Services resource tags for the
-        /// specified resource. 
+        /// This operation allows you to list all the Amazon Web Services resource tags for a
+        /// specified resource. Each tag is a label consisting of a user-defined key and value.
+        /// Tags can help you manage, identify, organize, search for, and filter resources. 
         /// 
-        ///  
+        ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
-        /// action. For more information about the required Storage Lens Groups permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// You must have the <code>s3:ListTagsForResource</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+        /// Grants instance, registered location, or grant. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
         ///  
@@ -2603,12 +3167,6 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2618,6 +3176,31 @@ namespace Amazon.S3Control
         /// <returns>The response from the ListTagsForResource service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutAccessGrantsInstanceResourcePolicy
+
+
+
+        /// <summary>
+        /// Updates the resource policy of the S3 Access Grants instance. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:PutAccessGrantsInstanceResourcePolicy</code> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessGrantsInstanceResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccessGrantsInstanceResourcePolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
+        Task<PutAccessGrantsInstanceResourcePolicyResponse> PutAccessGrantsInstanceResourcePolicyAsync(PutAccessGrantsInstanceResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3537,13 +4120,24 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
-        /// You can add up to 50 Amazon Web Services resource tags for each S3 resource. 
+        /// Each tag is a label consisting of a user-defined key and value. Tags can help you
+        /// manage, identify, organize, search for, and filter resources. You can add up to 50
+        /// Amazon Web Services resource tags for each S3 resource. 
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// To use this operation, you must have the permission to perform the <code>s3:TagResource</code>
-        /// action. For more information about the required Storage Lens Groups permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+        /// Grants instance, registered location, or grant. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:TagResource</code> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
         ///  
@@ -3551,12 +4145,6 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3575,13 +4163,24 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// This operation removes the specified Amazon Web Services resource tags from an S3
-        /// resource. 
+        /// resource. Each tag is a label consisting of a user-defined key and value. Tags can
+        /// help you manage, identify, organize, search for, and filter resources. 
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// To use this operation, you must have the permission to perform the <code>s3:UntagResource</code>
-        /// action. For more information about the required Storage Lens Groups permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+        /// Grants instance, registered location, or grant. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:UntagResource</code> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
         ///  
@@ -3589,12 +4188,6 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3604,6 +4197,35 @@ namespace Amazon.S3Control
         /// <returns>The response from the UntagResource service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAccessGrantsLocation
+
+
+
+        /// <summary>
+        /// Updates the IAM role of a registered location in your S3 Access Grants instance.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <code>s3:UpdateAccessGrantsLocation</code> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> <dt>Additional Permissions</dt> <dd> 
+        /// <para>
+        /// You must also have the following permission: <code>iam:PassRole</code> 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessGrantsLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccessGrantsLocation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
+        Task<UpdateAccessGrantsLocationResponse> UpdateAccessGrantsLocationAsync(UpdateAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -30,14 +30,25 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// This operation allows you to list all the Amazon Web Services resource tags for the
-    /// specified resource. 
+    /// This operation allows you to list all the Amazon Web Services resource tags for a
+    /// specified resource. Each tag is a label consisting of a user-defined key and value.
+    /// Tags can help you manage, identify, organize, search for, and filter resources. 
     /// 
-    ///  
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
-    /// action. For more information about the required Storage Lens Groups permissions, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+    /// You must have the <code>s3:ListTagsForResource</code> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl> <note> 
+    /// <para>
+    /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+    /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+    /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
+    /// Grants instance, registered location, or grant. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
     /// account permissions to use S3 Storage Lens groups</a>.
     /// </para>
     ///  
@@ -45,12 +56,6 @@ namespace Amazon.S3Control.Model
     /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
     /// of Amazon S3 Tagging error codes</a>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-    /// Storage Lens groups</a>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonS3ControlRequest
     {
@@ -80,7 +85,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the S3 resource that you want to list the tags
-        /// for. 
+        /// for. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance,
+        /// registered location, or grant. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1011)]
