@@ -194,6 +194,17 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.GetDataSourceIntrospectionRequest.MaxResults</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.GetDataSourceIntrospectionRequest.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.GetDomainNameRequest.DomainName</property>
     <min>1</min>
     <max>253</max>
@@ -528,6 +539,12 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.DataSourceIntrospectionResult.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.DomainNameConfig.CertificateArn</property>
     <min>20</min>
     <max>2048</max>
@@ -589,6 +606,23 @@
     <property>Amazon.AppSync.Model.LambdaAuthorizerConfig.AuthorizerResultTtlInSeconds</property>
     <min>0</min>
     <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.RdsDataApiConfig.DatabaseName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.RdsDataApiConfig.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]*:rds:[a-z0-9-]*:\d{12}:cluster:[0-9A-Za-z_/-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.RdsDataApiConfig.SecretArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]*:secretsmanager:[a-z0-9-]*:\d{12}:secret:[0-9A-Za-z_/-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.Code</property>

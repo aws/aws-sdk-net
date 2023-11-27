@@ -1713,6 +1713,53 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  GetDataSourceIntrospection
+
+        internal virtual GetDataSourceIntrospectionResponse GetDataSourceIntrospection(GetDataSourceIntrospectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceIntrospectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceIntrospectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataSourceIntrospectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the record of an existing introspection. If the retrieval is successful,
+        /// the result of the instrospection will also be returned. If the retrieval fails the
+        /// operation, an error message will be returned instead.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataSourceIntrospection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataSourceIntrospection service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSourceIntrospection">REST API Reference for GetDataSourceIntrospection Operation</seealso>
+        public virtual Task<GetDataSourceIntrospectionResponse> GetDataSourceIntrospectionAsync(GetDataSourceIntrospectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceIntrospectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceIntrospectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataSourceIntrospectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDomainName
 
         internal virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
@@ -2636,6 +2683,55 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = ListTypesByAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTypesByAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDataSourceIntrospection
+
+        internal virtual StartDataSourceIntrospectionResponse StartDataSourceIntrospection(StartDataSourceIntrospectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataSourceIntrospectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataSourceIntrospectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartDataSourceIntrospectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection
+        /// after its creation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataSourceIntrospection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDataSourceIntrospection service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartDataSourceIntrospection">REST API Reference for StartDataSourceIntrospection Operation</seealso>
+        public virtual Task<StartDataSourceIntrospectionResponse> StartDataSourceIntrospectionAsync(StartDataSourceIntrospectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataSourceIntrospectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataSourceIntrospectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDataSourceIntrospectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

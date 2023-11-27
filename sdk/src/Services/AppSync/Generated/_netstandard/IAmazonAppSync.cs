@@ -1052,6 +1052,37 @@ namespace Amazon.AppSync
 
         #endregion
                 
+        #region  GetDataSourceIntrospection
+
+
+
+        /// <summary>
+        /// Retrieves the record of an existing introspection. If the retrieval is successful,
+        /// the result of the instrospection will also be returned. If the retrieval fails the
+        /// operation, an error message will be returned instead.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataSourceIntrospection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataSourceIntrospection service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSourceIntrospection">REST API Reference for GetDataSourceIntrospection Operation</seealso>
+        Task<GetDataSourceIntrospectionResponse> GetDataSourceIntrospectionAsync(GetDataSourceIntrospectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetDomainName
 
 
@@ -1672,6 +1703,39 @@ namespace Amazon.AppSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">REST API Reference for ListTypesByAssociation Operation</seealso>
         Task<ListTypesByAssociationResponse> ListTypesByAssociationAsync(ListTypesByAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartDataSourceIntrospection
+
+
+
+        /// <summary>
+        /// Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection
+        /// after its creation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataSourceIntrospection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDataSourceIntrospection service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartDataSourceIntrospection">REST API Reference for StartDataSourceIntrospection Operation</seealso>
+        Task<StartDataSourceIntrospectionResponse> StartDataSourceIntrospectionAsync(StartDataSourceIntrospectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
