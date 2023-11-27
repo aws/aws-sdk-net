@@ -35,6 +35,7 @@ namespace Amazon.WorkSpaces.Model
     {
         private string _bundleId;
         private string _computerName;
+        private DataReplicationSettings _dataReplicationSettings;
         private string _directoryId;
         private string _errorCode;
         private string _errorMessage;
@@ -42,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         private List<ModificationState> _modificationStates = new List<ModificationState>();
         private List<RelatedWorkspaceProperties> _relatedWorkspaces = new List<RelatedWorkspaceProperties>();
         private bool? _rootVolumeEncryptionEnabled;
+        private List<StandbyWorkspacesProperties> _standbyWorkspacesProperties = new List<StandbyWorkspacesProperties>();
         private WorkspaceState _state;
         private string _subnetId;
         private string _userName;
@@ -86,6 +88,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetComputerName()
         {
             return this._computerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationSettings. 
+        /// <para>
+        /// Indicates the settings of the data replication.
+        /// </para>
+        /// </summary>
+        public DataReplicationSettings DataReplicationSettings
+        {
+            get { return this._dataReplicationSettings; }
+            set { this._dataReplicationSettings = value; }
+        }
+
+        // Check to see if DataReplicationSettings property is set
+        internal bool IsSetDataReplicationSettings()
+        {
+            return this._dataReplicationSettings != null;
         }
 
         /// <summary>
@@ -213,6 +233,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetRootVolumeEncryptionEnabled()
         {
             return this._rootVolumeEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandbyWorkspacesProperties. 
+        /// <para>
+        /// The properties of the standby WorkSpace
+        /// </para>
+        /// </summary>
+        public List<StandbyWorkspacesProperties> StandbyWorkspacesProperties
+        {
+            get { return this._standbyWorkspacesProperties; }
+            set { this._standbyWorkspacesProperties = value; }
+        }
+
+        // Check to see if StandbyWorkspacesProperties property is set
+        internal bool IsSetStandbyWorkspacesProperties()
+        {
+            return this._standbyWorkspacesProperties != null && this._standbyWorkspacesProperties.Count > 0; 
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StandbyWorkspace Object
+    /// Response Unmarshaller for StandbyWorkspacesProperties Object
     /// </summary>  
-    public class StandbyWorkspaceUnmarshaller : IUnmarshaller<StandbyWorkspace, XmlUnmarshallerContext>, IUnmarshaller<StandbyWorkspace, JsonUnmarshallerContext>
+    public class StandbyWorkspacesPropertiesUnmarshaller : IUnmarshaller<StandbyWorkspacesProperties, XmlUnmarshallerContext>, IUnmarshaller<StandbyWorkspacesProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StandbyWorkspace IUnmarshaller<StandbyWorkspace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StandbyWorkspacesProperties IUnmarshaller<StandbyWorkspacesProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StandbyWorkspace Unmarshall(JsonUnmarshallerContext context)
+        public StandbyWorkspacesProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StandbyWorkspace unmarshalledObject = new StandbyWorkspace();
+            StandbyWorkspacesProperties unmarshalledObject = new StandbyWorkspacesProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,28 +70,16 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataReplication = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DirectoryId", targetDepth))
+                if (context.TestExpression("RecoverySnapshotTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RecoverySnapshotTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PrimaryWorkspaceId", targetDepth))
+                if (context.TestExpression("StandbyWorkspaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryWorkspaceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeEncryptionKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeEncryptionKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StandbyWorkspaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static StandbyWorkspaceUnmarshaller _instance = new StandbyWorkspaceUnmarshaller();        
+        private static StandbyWorkspacesPropertiesUnmarshaller _instance = new StandbyWorkspacesPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StandbyWorkspaceUnmarshaller Instance
+        public static StandbyWorkspacesPropertiesUnmarshaller Instance
         {
             get
             {

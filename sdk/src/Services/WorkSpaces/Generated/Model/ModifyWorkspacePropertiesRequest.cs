@@ -44,8 +44,27 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class ModifyWorkspacePropertiesRequest : AmazonWorkSpacesRequest
     {
+        private DataReplication _dataReplication;
         private string _workspaceId;
         private WorkspaceProperties _workspaceProperties;
+
+        /// <summary>
+        /// Gets and sets the property DataReplication. 
+        /// <para>
+        /// Indicates the data replication status.
+        /// </para>
+        /// </summary>
+        public DataReplication DataReplication
+        {
+            get { return this._dataReplication; }
+            set { this._dataReplication = value; }
+        }
+
+        // Check to see if DataReplication property is set
+        internal bool IsSetDataReplication()
+        {
+            return this._dataReplication != null;
+        }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
@@ -72,7 +91,6 @@ namespace Amazon.WorkSpaces.Model
         /// The properties of the WorkSpace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public WorkspaceProperties WorkspaceProperties
         {
             get { return this._workspaceProperties; }

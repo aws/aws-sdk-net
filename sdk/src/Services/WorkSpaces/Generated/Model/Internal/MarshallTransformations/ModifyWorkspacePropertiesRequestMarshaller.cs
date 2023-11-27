@@ -67,6 +67,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataReplication())
+                {
+                    context.Writer.WritePropertyName("DataReplication");
+                    context.Writer.Write(publicRequest.DataReplication);
+                }
+
                 if(publicRequest.IsSetWorkspaceId())
                 {
                     context.Writer.WritePropertyName("WorkspaceId");

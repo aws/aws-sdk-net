@@ -76,6 +76,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataReplicationSettings", targetDepth))
+                {
+                    var unmarshaller = DataReplicationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DataReplicationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DirectoryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.RootVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StandbyWorkspacesProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StandbyWorkspacesProperties, StandbyWorkspacesPropertiesUnmarshaller>(StandbyWorkspacesPropertiesUnmarshaller.Instance);
+                    unmarshalledObject.StandbyWorkspacesProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
