@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.EKSAuth.Model.AssumeRoleForPodIdentityRequest.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKSAuth.Model.AssumeRoleForPodIdentityRequest.Token</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+</pattern>
+  </property-value-rule>
+</property-value-rules>
