@@ -826,6 +826,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release allows customers to access email messages as they flow to and from Amazon WorkMail.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
+* [AWSSDK.WorkSpacesThinClient](https://www.nuget.org/packages/AWSSDK.WorkSpacesThinClient/)
+	* Initial release of Amazon WorkSpaces Thin Client
 * [AWSSDK.WorkSpacesWeb](https://www.nuget.org/packages/AWSSDK.WorkSpacesWeb/)
 	* This is the initial SDK release for Amazon WorkSpaces Web. Amazon WorkSpaces Web is a low-cost, fully managed WorkSpace built to deliver secure web-based workloads and software-as-a-service (SaaS) application access to users within existing web browsers.
 * [AWSSDK.XRay](https://www.nuget.org/packages/AWSSDK.XRay/)
