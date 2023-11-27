@@ -74,6 +74,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIdentityCenterConfiguration())
+            {
+                context.Writer.WritePropertyName("IdentityCenterConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdentityCenterConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RedshiftParameters Object
+    /// Response Unmarshaller for AuthorizedTargetsByService Object
     /// </summary>  
-    public class RedshiftParametersUnmarshaller : IUnmarshaller<RedshiftParameters, XmlUnmarshallerContext>, IUnmarshaller<RedshiftParameters, JsonUnmarshallerContext>
+    public class AuthorizedTargetsByServiceUnmarshaller : IUnmarshaller<AuthorizedTargetsByService, XmlUnmarshallerContext>, IUnmarshaller<AuthorizedTargetsByService, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RedshiftParameters IUnmarshaller<RedshiftParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuthorizedTargetsByService IUnmarshaller<AuthorizedTargetsByService, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RedshiftParameters Unmarshall(JsonUnmarshallerContext context)
+        public AuthorizedTargetsByService Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RedshiftParameters unmarshalledObject = new RedshiftParameters();
+            AuthorizedTargetsByService unmarshalledObject = new AuthorizedTargetsByService();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ClusterId", targetDepth))
+                if (context.TestExpression("AuthorizedTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AuthorizedTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Service", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Database", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Database = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Host", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IAMParameters", targetDepth))
-                {
-                    var unmarshaller = RedshiftIAMParametersUnmarshaller.Instance;
-                    unmarshalledObject.IAMParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
-                {
-                    var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Port", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static RedshiftParametersUnmarshaller _instance = new RedshiftParametersUnmarshaller();        
+        private static AuthorizedTargetsByServiceUnmarshaller _instance = new AuthorizedTargetsByServiceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RedshiftParametersUnmarshaller Instance
+        public static AuthorizedTargetsByServiceUnmarshaller Instance
         {
             get
             {

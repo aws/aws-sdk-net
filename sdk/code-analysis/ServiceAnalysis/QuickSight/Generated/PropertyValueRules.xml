@@ -628,6 +628,12 @@
     <pattern>(?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteIdentityPropagationConfigRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteNamespaceRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1834,6 +1840,17 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListIdentityPropagationConfigsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListIdentityPropagationConfigsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ListIngestionsRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2495,6 +2512,12 @@
     <property>Amazon.QuickSight.Model.UpdateIAMPolicyAssignmentResponse.AssignmentName</property>
     <min>1</min>
     <pattern>(?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateIdentityPropagationConfigRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateIpRestrictionRequest.AwsAccountId</property>
