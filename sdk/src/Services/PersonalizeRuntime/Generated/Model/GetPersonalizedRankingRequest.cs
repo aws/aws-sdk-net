@@ -46,6 +46,7 @@ namespace Amazon.PersonalizeRuntime.Model
         private string _filterArn;
         private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
         private List<string> _inputList = new List<string>();
+        private Dictionary<string, List<string>> _metadataColumns = new Dictionary<string, List<string>>();
         private string _userId;
 
         /// <summary>
@@ -149,8 +150,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// Gets and sets the property InputList. 
         /// <para>
         /// A list of items (by <code>itemId</code>) to rank. If an item was not included in the
-        /// training dataset, the item is appended to the end of the reranked list. The maximum
-        /// is 500.
+        /// training dataset, the item is appended to the end of the reranked list. If you are
+        /// including metadata in recommendations, the maximum is 50. Otherwise, the maximum is
+        /// 500.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,6 +166,33 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetInputList()
         {
             return this._inputList != null && this._inputList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataColumns. 
+        /// <para>
+        /// If you enabled metadata in recommendations when you created or updated the campaign,
+        /// specify metadata columns from your Items dataset to include in the personalized ranking.
+        /// The map key is <code>ITEMS</code> and the value is a list of column names from your
+        /// Items dataset. The maximum number of columns you can provide is 10.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+        /// metadata in recommendations for a campaign</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public Dictionary<string, List<string>> MetadataColumns
+        {
+            get { return this._metadataColumns; }
+            set { this._metadataColumns = value; }
+        }
+
+        // Check to see if MetadataColumns property is set
+        internal bool IsSetMetadataColumns()
+        {
+            return this._metadataColumns != null && this._metadataColumns.Count > 0; 
         }
 
         /// <summary>

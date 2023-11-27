@@ -62,6 +62,7 @@ namespace Amazon.PersonalizeRuntime.Model
         private string _filterArn;
         private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
         private string _itemId;
+        private Dictionary<string, List<string>> _metadataColumns = new Dictionary<string, List<string>>();
         private int? _numResults;
         private List<Promotion> _promotions = new List<Promotion>();
         private string _recommenderArn;
@@ -191,9 +192,40 @@ namespace Amazon.PersonalizeRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetadataColumns. 
+        /// <para>
+        /// If you enabled metadata in recommendations when you created or updated the campaign
+        /// or recommender, specify the metadata columns from your Items dataset to include in
+        /// item recommendations. The map key is <code>ITEMS</code> and the value is a list of
+        /// column names from your Items dataset. The maximum number of columns you can provide
+        /// is 10.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+        /// metadata in recommendations for a campaign</a>. For information about enabling metadata
+        /// for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+        /// metadata in recommendations for a recommender</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public Dictionary<string, List<string>> MetadataColumns
+        {
+            get { return this._metadataColumns; }
+            set { this._metadataColumns = value; }
+        }
+
+        // Check to see if MetadataColumns property is set
+        internal bool IsSetMetadataColumns()
+        {
+            return this._metadataColumns != null && this._metadataColumns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NumResults. 
         /// <para>
-        /// The number of results to return. The default is 25. The maximum is 500.
+        /// The number of results to return. The default is 25. If you are including metadata
+        /// in recommendations, the maximum is 50. Otherwise, the maximum is 500.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

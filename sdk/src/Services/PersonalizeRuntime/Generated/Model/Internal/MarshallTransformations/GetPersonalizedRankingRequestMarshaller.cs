@@ -116,6 +116,25 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMetadataColumns())
+                {
+                    context.Writer.WritePropertyName("metadataColumns");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestMetadataColumnsKvp in publicRequest.MetadataColumns)
+                    {
+                        context.Writer.WritePropertyName(publicRequestMetadataColumnsKvp.Key);
+                        var publicRequestMetadataColumnsValue = publicRequestMetadataColumnsKvp.Value;
+
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetadataColumnsValueListValue in publicRequestMetadataColumnsValue)
+                        {
+                                context.Writer.Write(publicRequestMetadataColumnsValueListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUserId())
                 {
                     context.Writer.WritePropertyName("userId");

@@ -39,6 +39,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class PredictedItem
     {
         private string _itemId;
+        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
         private string _promotionName;
         private double? _score;
 
@@ -59,6 +60,24 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetItemId()
         {
             return this._itemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata about the item from your Items dataset.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && this._metadata.Count > 0; 
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetRecommendations Request Marshaller
+    /// GetActionRecommendations Request Marshaller
     /// </summary>       
-    public class GetRecommendationsRequestMarshaller : IMarshaller<IRequest, GetRecommendationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetActionRecommendationsRequestMarshaller : IMarshaller<IRequest, GetActionRecommendationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetRecommendationsRequest)input);
+            return this.Marshall((GetActionRecommendationsRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetRecommendationsRequest publicRequest)
+        public IRequest Marshall(GetActionRecommendationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PersonalizeRuntime");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/recommendations";
+            request.ResourcePath = "/action-recommendations";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -69,20 +69,6 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("campaignArn");
                     context.Writer.Write(publicRequest.CampaignArn);
-                }
-
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("context");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestContextKvp in publicRequest.Context)
-                    {
-                        context.Writer.WritePropertyName(publicRequestContextKvp.Key);
-                        var publicRequestContextValue = publicRequestContextKvp.Value;
-
-                            context.Writer.Write(publicRequestContextValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetFilterArn())
@@ -105,57 +91,10 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetItemId())
-                {
-                    context.Writer.WritePropertyName("itemId");
-                    context.Writer.Write(publicRequest.ItemId);
-                }
-
-                if(publicRequest.IsSetMetadataColumns())
-                {
-                    context.Writer.WritePropertyName("metadataColumns");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMetadataColumnsKvp in publicRequest.MetadataColumns)
-                    {
-                        context.Writer.WritePropertyName(publicRequestMetadataColumnsKvp.Key);
-                        var publicRequestMetadataColumnsValue = publicRequestMetadataColumnsKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetadataColumnsValueListValue in publicRequestMetadataColumnsValue)
-                        {
-                                context.Writer.Write(publicRequestMetadataColumnsValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetNumResults())
                 {
                     context.Writer.WritePropertyName("numResults");
                     context.Writer.Write(publicRequest.NumResults);
-                }
-
-                if(publicRequest.IsSetPromotions())
-                {
-                    context.Writer.WritePropertyName("promotions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPromotionsListValue in publicRequest.Promotions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PromotionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPromotionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRecommenderArn())
-                {
-                    context.Writer.WritePropertyName("recommenderArn");
-                    context.Writer.Write(publicRequest.RecommenderArn);
                 }
 
                 if(publicRequest.IsSetUserId())
@@ -172,9 +111,9 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetRecommendationsRequestMarshaller _instance = new GetRecommendationsRequestMarshaller();        
+        private static GetActionRecommendationsRequestMarshaller _instance = new GetActionRecommendationsRequestMarshaller();        
 
-        internal static GetRecommendationsRequestMarshaller GetInstance()
+        internal static GetActionRecommendationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -182,7 +121,7 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRecommendationsRequestMarshaller Instance
+        public static GetActionRecommendationsRequestMarshaller Instance
         {
             get
             {

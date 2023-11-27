@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictedItem Object
+    /// Response Unmarshaller for PredictedAction Object
     /// </summary>  
-    public class PredictedItemUnmarshaller : IUnmarshaller<PredictedItem, XmlUnmarshallerContext>, IUnmarshaller<PredictedItem, JsonUnmarshallerContext>
+    public class PredictedActionUnmarshaller : IUnmarshaller<PredictedAction, XmlUnmarshallerContext>, IUnmarshaller<PredictedAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PredictedItem IUnmarshaller<PredictedItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PredictedAction IUnmarshaller<PredictedAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PredictedItem Unmarshall(JsonUnmarshallerContext context)
+        public PredictedAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictedItem unmarshalledObject = new PredictedItem();
+            PredictedAction unmarshalledObject = new PredictedAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("itemId", targetDepth))
+                if (context.TestExpression("actionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ItemId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metadata", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("promotionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromotionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("score", targetDepth))
@@ -94,12 +82,12 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictedItemUnmarshaller _instance = new PredictedItemUnmarshaller();        
+        private static PredictedActionUnmarshaller _instance = new PredictedActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictedItemUnmarshaller Instance
+        public static PredictedActionUnmarshaller Instance
         {
             get
             {

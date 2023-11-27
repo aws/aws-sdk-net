@@ -38,6 +38,61 @@ namespace Amazon.PersonalizeRuntime
 
 
         
+        #region  GetActionRecommendations
+
+
+        /// <summary>
+        /// Returns a list of recommended actions in sorted in descending order by prediction
+        /// score. Use the <code>GetActionRecommendations</code> API if you have a custom campaign
+        /// that deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about PERSONALIZED_ACTIONS recipes, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/nexts-best-action-recipes.html">PERSONALIZED_ACTIONS
+        /// recipes</a>. For more information about getting action recommendations, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/get-action-recommendations.html">Getting
+        /// action recommendations</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActionRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the GetActionRecommendations service method, as returned by PersonalizeRuntime.</returns>
+        /// <exception cref="Amazon.PersonalizeRuntime.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeRuntime.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetActionRecommendations">REST API Reference for GetActionRecommendations Operation</seealso>
+        GetActionRecommendationsResponse GetActionRecommendations(GetActionRecommendationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetActionRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetActionRecommendations operation on AmazonPersonalizeRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetActionRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetActionRecommendations">REST API Reference for GetActionRecommendations Operation</seealso>
+        IAsyncResult BeginGetActionRecommendations(GetActionRecommendationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetActionRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetActionRecommendations.</param>
+        /// 
+        /// <returns>Returns a  GetActionRecommendationsResult from PersonalizeRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetActionRecommendations">REST API Reference for GetActionRecommendations Operation</seealso>
+        GetActionRecommendationsResponse EndGetActionRecommendations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPersonalizedRanking
 
 
