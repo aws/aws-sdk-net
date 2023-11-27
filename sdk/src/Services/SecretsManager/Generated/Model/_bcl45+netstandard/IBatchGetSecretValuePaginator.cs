@@ -16,28 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the secretsmanager-2017-10-17.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// Paginators for the SecretsManager service
+    /// Paginator for the BatchGetSecretValue operation
     ///</summary>
-    public interface ISecretsManagerPaginatorFactory
+    public interface IBatchGetSecretValuePaginator
     {
-
         /// <summary>
-        /// Paginator for BatchGetSecretValue operation
-        ///</summary>
-        IBatchGetSecretValuePaginator BatchGetSecretValue(BatchGetSecretValueRequest request);
-
-        /// <summary>
-        /// Paginator for ListSecrets operation
-        ///</summary>
-        IListSecretsPaginator ListSecrets(ListSecretsRequest request);
-
-        /// <summary>
-        /// Paginator for ListSecretVersionIds operation
-        ///</summary>
-        IListSecretVersionIdsPaginator ListSecretVersionIds(ListSecretVersionIdsRequest request);
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<BatchGetSecretValueResponse> Responses { get; }
     }
 }

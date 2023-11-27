@@ -36,6 +36,14 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Paginator for BatchGetSecretValue operation
+        ///</summary>
+        public IBatchGetSecretValuePaginator BatchGetSecretValue(BatchGetSecretValueRequest request) 
+        {
+            return new BatchGetSecretValuePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecrets operation
         ///</summary>
         public IListSecretsPaginator ListSecrets(ListSecretsRequest request) 

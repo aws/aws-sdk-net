@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.BatchGetSecretValueRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.BatchGetSecretValueRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.BatchGetSecretValueResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.CancelRotateSecretRequest.SecretId</property>
     <min>1</min>
     <max>2048</max>
@@ -479,6 +494,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.APIErrorType.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.ReplicaRegionType.KmsKeyId</property>
     <min>0</min>
     <max>2048</max>
@@ -556,6 +576,31 @@
     <property>Amazon.SecretsManager.Model.SecretListEntry.RotationLambdaARN</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretValueEntry.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretValueEntry.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretValueEntry.SecretBinary</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretValueEntry.SecretString</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretValueEntry.VersionId</property>
+    <min>32</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.SecretVersionsListEntry.VersionId</property>

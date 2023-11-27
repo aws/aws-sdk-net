@@ -317,6 +317,126 @@ namespace Amazon.SecretsManager
         #endregion
 
 
+        #region  BatchGetSecretValue
+
+        /// <summary>
+        /// Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code>
+        /// for up to 20 secrets. To retrieve a single secret, call <a>GetSecretValue</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// To choose which secrets to retrieve, you can specify a list of secrets by name or
+        /// ARN, or you can use filters. If Secrets Manager encounters errors such as <code>AccessDeniedException</code>
+        /// while attempting to retrieve any of the secrets, you can see the errors in <code>Errors</code>
+        /// in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager generates CloudTrail <code>GetSecretValue</code> log entries for each
+        /// secret you request when you call this action. Do not include sensitive information
+        /// in request parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager events with CloudTrail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:BatchGetSecretValue</code>, and
+        /// you must have <code>secretsmanager:GetSecretValue</code> for each secret. If you use
+        /// filters, you must also have <code>secretsmanager:ListSecrets</code>. If the secrets
+        /// are encrypted using customer-managed keys instead of the Amazon Web Services managed
+        /// key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code> permissions
+        /// for the keys. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecretValue service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSecretValue service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// Secrets Manager can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">REST API Reference for BatchGetSecretValue Operation</seealso>
+        public virtual BatchGetSecretValueResponse BatchGetSecretValue(BatchGetSecretValueRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSecretValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSecretValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSecretValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetSecretValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecretValue operation on AmazonSecretsManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetSecretValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">REST API Reference for BatchGetSecretValue Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetSecretValue(BatchGetSecretValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSecretValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSecretValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetSecretValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetSecretValue.</param>
+        /// 
+        /// <returns>Returns a  BatchGetSecretValueResult from SecretsManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">REST API Reference for BatchGetSecretValue Operation</seealso>
+        public virtual BatchGetSecretValueResponse EndBatchGetSecretValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetSecretValueResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelRotateSecret
 
         /// <summary>
@@ -1149,6 +1269,10 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
+        /// To retrieve the values for a group of secrets, call <a>BatchGetSecretValue</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// We recommend that you cache your secret values by using client-side caching. Caching
         /// secrets improves speed and reduces your costs. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
         /// secrets for your applications</a>.
@@ -1278,8 +1402,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
-        /// call <a>GetSecretValue</a>.
+        /// To retrieve the values for the secrets, call <a>BatchGetSecretValue</a> or <a>GetSecretValue</a>.
         /// </para>
         ///  
         /// <para>

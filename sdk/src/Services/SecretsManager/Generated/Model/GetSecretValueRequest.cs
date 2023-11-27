@@ -35,6 +35,10 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  
     /// <para>
+    /// To retrieve the values for a group of secrets, call <a>BatchGetSecretValue</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// We recommend that you cache your secret values by using client-side caching. Caching
     /// secrets improves speed and reduces your costs. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
     /// secrets for your applications</a>.

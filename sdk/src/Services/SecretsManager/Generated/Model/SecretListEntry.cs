@@ -211,10 +211,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret. You can use forward slashes in the name to represent
-        /// a path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent
-        /// the secret for a server named <code>dbserver1</code> in the folder <code>databases</code>
-        /// in the folder <code>prod</code>. 
+        /// The friendly name of the secret. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
