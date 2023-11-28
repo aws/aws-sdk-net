@@ -1,0 +1,126 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the qbusiness-2023-11-27.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.QBusiness.Model
+{
+    /// <summary>
+    /// Container for the parameters to the BatchDeleteDocument operation.
+    /// Asynchronously deletes one or more documents added using the <code>BatchPutDocument</code>
+    /// API from an Amazon Q index.
+    /// 
+    ///  
+    /// <para>
+    /// You can see the progress of the deletion, and any error messages related to the process,
+    /// by using CloudWatch.
+    /// </para>
+    /// </summary>
+    public partial class BatchDeleteDocumentRequest : AmazonQBusinessRequest
+    {
+        private string _applicationId;
+        private string _dataSourceSyncId;
+        private List<DeleteDocument> _documents = new List<DeleteDocument>();
+        private string _indexId;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The identifier of the Amazon Q application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string ApplicationId
+        {
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
+        }
+
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
+        {
+            return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceSyncId. 
+        /// <para>
+        /// The identifier of the data source sync during which the documents were deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string DataSourceSyncId
+        {
+            get { return this._dataSourceSyncId; }
+            set { this._dataSourceSyncId = value; }
+        }
+
+        // Check to see if DataSourceSyncId property is set
+        internal bool IsSetDataSourceSyncId()
+        {
+            return this._dataSourceSyncId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Documents. 
+        /// <para>
+        /// Documents deleted from the Amazon Q index.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<DeleteDocument> Documents
+        {
+            get { return this._documents; }
+            set { this._documents = value; }
+        }
+
+        // Check to see if Documents property is set
+        internal bool IsSetDocuments()
+        {
+            return this._documents != null && this._documents.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexId. 
+        /// <para>
+        /// The identifier of the Amazon Q index that contains the documents to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string IndexId
+        {
+            get { return this._indexId; }
+            set { this._indexId = value; }
+        }
+
+        // Check to see if IndexId property is set
+        internal bool IsSetIndexId()
+        {
+            return this._indexId != null;
+        }
+
+    }
+}
