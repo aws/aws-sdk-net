@@ -129,7 +129,8 @@ namespace Amazon.Connect.Model
         /// Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code>
         /// | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code>
         /// | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> 
+        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,6 +145,12 @@ namespace Amazon.Connect.Model
         ///  <code>contact_lens_conversational_analytics</code> is a valid filterValue for the
         /// <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact
         /// Lens conversational analytics.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>,
+        /// and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive)
+        /// for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -176,7 +183,8 @@ namespace Amazon.Connect.Model
         /// Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code>
         /// | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code>
         /// | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> 
+        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]
@@ -296,7 +304,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AGENT_ADHERENT_TIME</dt> <dd> 
         /// <para>
@@ -311,6 +320,22 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// 
+        /// </para>
+        ///  </dd> <dt>AGENT_ANSWER_RATE</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AGENT_NON_ADHERENT_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
         ///  </dd> <dt>AGENT_NON_RESPONSE</dt> <dd> 
         /// <para>
@@ -373,7 +398,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> 
         /// <para>
@@ -381,8 +407,12 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid metric filter key: <code>INITIATION_METHOD</code> 
+        /// </para>
+        ///  
+        /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -413,7 +443,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -425,7 +455,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_GREETING_TIME_AGENT</dt> <dd> 
         /// <para>
@@ -438,7 +469,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_HANDLE_TIME</dt> <dd> 
         /// <para>
@@ -447,7 +479,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -460,7 +492,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -472,7 +504,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_HOLDS</dt> <dd> 
         /// <para>
@@ -481,7 +514,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -493,7 +526,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_INTERACTION_TIME</dt> <dd> 
         /// <para>
@@ -501,7 +535,11 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature
+        /// Valid metric filter key: <code>INITIATION_METHOD</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -518,7 +556,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_INTERRUPTION_TIME_AGENT</dt> <dd> 
         /// <para>
@@ -531,7 +570,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_NON_TALK_TIME</dt> <dd> 
         /// <para>
@@ -544,7 +584,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_QUEUE_ANSWER_TIME</dt> <dd> 
         /// <para>
@@ -552,7 +593,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -564,7 +605,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_TALK_TIME</dt> <dd> 
         /// <para>
@@ -577,7 +618,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_TALK_TIME_AGENT</dt> <dd> 
         /// <para>
@@ -590,7 +632,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>AVG_TALK_TIME_CUSTOMER</dt> <dd> 
         /// <para>
@@ -603,7 +646,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
         /// <para>
@@ -611,7 +655,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>CONTACTS_CREATED</dt> <dd> 
         /// <para>
@@ -623,7 +668,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -641,7 +686,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -653,6 +698,47 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
+        /// </para>
+        ///  </dd> <dt>CONTACTS_ON_HOLD_AGENT_DISCONNECT</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>CONTACTS_PUT_ON_HOLD</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_EXTERNAL</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_INTERNAL</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
         ///  </dd> <dt>CONTACTS_QUEUED</dt> <dd> 
@@ -661,7 +747,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> 
         /// <para>
@@ -669,7 +756,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  
         /// <para>
@@ -684,7 +771,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature
+        /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  <note> 
         /// <para>
@@ -696,7 +783,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> 
         /// <para>
@@ -704,7 +792,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>MAX_QUEUED_TIME</dt> <dd> 
         /// <para>
@@ -712,7 +801,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> 
         /// <para>
@@ -725,7 +815,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>PERCENT_TALK_TIME</dt> <dd> 
         /// <para>
@@ -738,7 +829,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> 
         /// <para>
@@ -751,7 +843,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> 
         /// <para>
@@ -764,7 +857,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>SERVICE_LEVEL</dt> <dd> 
         /// <para>
@@ -784,13 +878,55 @@ namespace Amazon.Connect.Model
         /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
         /// (for "Less than"). 
         /// </para>
+        ///  </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports
+        /// the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code>
+        /// | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.
+        /// </para>
+        ///  </note> </dd> <dt>SUM_CONTACT_FLOW_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_CONTACT_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
         ///  </dd> <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  
         /// <para>
@@ -804,7 +940,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  
         /// <para>
@@ -822,7 +958,72 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// contact/segmentAttributes/connect:Subtype
+        /// </para>
+        ///  </dd> <dt>SUM_ERROR_STATUS_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_HANDLE_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_HOLD_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_IDLE_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_INTERACTION_AND_HOLD_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_INTERACTION_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_NON_PRODUCTIVE_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>SUM_ONLINE_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy
         /// </para>
         ///  </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> 
         /// <para>
@@ -830,7 +1031,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> </dl>
         /// </summary>

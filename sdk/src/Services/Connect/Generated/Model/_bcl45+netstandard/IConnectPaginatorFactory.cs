@@ -96,6 +96,11 @@ namespace Amazon.Connect.Model
         IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListFlowAssociations operation
+        ///</summary>
+        IListFlowAssociationsPaginator ListFlowAssociations(ListFlowAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request);
@@ -159,6 +164,11 @@ namespace Amazon.Connect.Model
         /// Paginator for ListQuickConnects operation
         ///</summary>
         IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRealtimeContactAnalysisSegmentsV2 operation
+        ///</summary>
+        IListRealtimeContactAnalysisSegmentsV2Paginator ListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request);
 
         /// <summary>
         /// Paginator for ListRoutingProfileQueues operation

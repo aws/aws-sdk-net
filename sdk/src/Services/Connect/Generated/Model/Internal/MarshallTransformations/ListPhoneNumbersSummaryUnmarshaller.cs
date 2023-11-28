@@ -87,6 +87,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.PhoneNumberCountryCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PhoneNumberDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PhoneNumberDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PhoneNumberId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PhoneNumberType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourcePhoneNumberArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourcePhoneNumberArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetArn", targetDepth))

@@ -148,6 +148,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListFlowAssociations operation
+        ///</summary>
+        public IListFlowAssociationsPaginator ListFlowAssociations(ListFlowAssociationsRequest request) 
+        {
+            return new ListFlowAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         public IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request) 
@@ -249,6 +257,14 @@ namespace Amazon.Connect.Model
         public IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request) 
         {
             return new ListQuickConnectsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRealtimeContactAnalysisSegmentsV2 operation
+        ///</summary>
+        public IListRealtimeContactAnalysisSegmentsV2Paginator ListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request) 
+        {
+            return new ListRealtimeContactAnalysisSegmentsV2Paginator(this.client, request);
         }
 
         /// <summary>

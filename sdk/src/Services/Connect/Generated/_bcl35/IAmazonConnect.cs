@@ -121,6 +121,67 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates the specified dataset for a Amazon Connect instance with the target account.
+        /// You can associate only one dataset in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">REST API Reference for AssociateAnalyticsDataSet Operation</seealso>
+        AssociateAnalyticsDataSetResponse AssociateAnalyticsDataSet(AssociateAnalyticsDataSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAnalyticsDataSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">REST API Reference for AssociateAnalyticsDataSet Operation</seealso>
+        IAsyncResult BeginAssociateAnalyticsDataSet(AssociateAnalyticsDataSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAnalyticsDataSet.</param>
+        /// 
+        /// <returns>Returns a  AssociateAnalyticsDataSetResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">REST API Reference for AssociateAnalyticsDataSet Operation</seealso>
+        AssociateAnalyticsDataSetResponse EndAssociateAnalyticsDataSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateApprovedOrigin
 
 
@@ -307,6 +368,64 @@ namespace Amazon.Connect
         /// <returns>Returns a  AssociateDefaultVocabularyResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
         AssociateDefaultVocabularyResponse EndAssociateDefaultVocabulary(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateFlow
+
+
+        /// <summary>
+        /// Associates a connect resource to a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFlow service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">REST API Reference for AssociateFlow Operation</seealso>
+        AssociateFlowResponse AssociateFlow(AssociateFlowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFlow operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">REST API Reference for AssociateFlow Operation</seealso>
+        IAsyncResult BeginAssociateFlow(AssociateFlowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateFlow.</param>
+        /// 
+        /// <returns>Returns a  AssociateFlowResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">REST API Reference for AssociateFlow Operation</seealso>
+        AssociateFlowResponse EndAssociateFlow(IAsyncResult asyncResult);
 
         #endregion
         
@@ -821,6 +940,128 @@ namespace Amazon.Connect
         /// <returns>Returns a  AssociateTrafficDistributionGroupUserResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
         AssociateTrafficDistributionGroupUserResponse EndAssociateTrafficDistributionGroupUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchAssociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
+        /// account. You can associate multiple datasets in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">REST API Reference for BatchAssociateAnalyticsDataSet Operation</seealso>
+        BatchAssociateAnalyticsDataSetResponse BatchAssociateAnalyticsDataSet(BatchAssociateAnalyticsDataSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAssociateAnalyticsDataSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">REST API Reference for BatchAssociateAnalyticsDataSet Operation</seealso>
+        IAsyncResult BeginBatchAssociateAnalyticsDataSet(BatchAssociateAnalyticsDataSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAssociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAssociateAnalyticsDataSet.</param>
+        /// 
+        /// <returns>Returns a  BatchAssociateAnalyticsDataSetResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">REST API Reference for BatchAssociateAnalyticsDataSet Operation</seealso>
+        BatchAssociateAnalyticsDataSetResponse EndBatchAssociateAnalyticsDataSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchDisassociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
+        /// You can disassociate multiple datasets in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">REST API Reference for BatchDisassociateAnalyticsDataSet Operation</seealso>
+        BatchDisassociateAnalyticsDataSetResponse BatchDisassociateAnalyticsDataSet(BatchDisassociateAnalyticsDataSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisassociateAnalyticsDataSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">REST API Reference for BatchDisassociateAnalyticsDataSet Operation</seealso>
+        IAsyncResult BeginBatchDisassociateAnalyticsDataSet(BatchDisassociateAnalyticsDataSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisassociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisassociateAnalyticsDataSet.</param>
+        /// 
+        /// <returns>Returns a  BatchDisassociateAnalyticsDataSetResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">REST API Reference for BatchDisassociateAnalyticsDataSet Operation</seealso>
+        BatchDisassociateAnalyticsDataSetResponse EndBatchDisassociateAnalyticsDataSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2235,7 +2476,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </important> 
         /// <para>
-        /// For information about how to create user accounts using the Amazon Connect console,
+        /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
         /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
@@ -4919,7 +5160,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes the specified user account. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// Describes the specified user. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
         /// The console does not display the user IDs. Instead, list the users and note the IDs
         /// provided in the output.
@@ -5213,6 +5454,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Removes the dataset ID associated with a given Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">REST API Reference for DisassociateAnalyticsDataSet Operation</seealso>
+        DisassociateAnalyticsDataSetResponse DisassociateAnalyticsDataSet(DisassociateAnalyticsDataSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateAnalyticsDataSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">REST API Reference for DisassociateAnalyticsDataSet Operation</seealso>
+        IAsyncResult BeginDisassociateAnalyticsDataSet(DisassociateAnalyticsDataSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateAnalyticsDataSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateAnalyticsDataSet.</param>
+        /// 
+        /// <returns>Returns a  DisassociateAnalyticsDataSetResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">REST API Reference for DisassociateAnalyticsDataSet Operation</seealso>
+        DisassociateAnalyticsDataSetResponse EndDisassociateAnalyticsDataSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateApprovedOrigin
 
 
@@ -5328,6 +5629,64 @@ namespace Amazon.Connect
         /// <returns>Returns a  DisassociateBotResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot">REST API Reference for DisassociateBot Operation</seealso>
         DisassociateBotResponse EndDisassociateBot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateFlow
+
+
+        /// <summary>
+        /// Disassociates a connect resource from a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFlow service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">REST API Reference for DisassociateFlow Operation</seealso>
+        DisassociateFlowResponse DisassociateFlow(DisassociateFlowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFlow operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">REST API Reference for DisassociateFlow Operation</seealso>
+        IAsyncResult BeginDisassociateFlow(DisassociateFlowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFlow.</param>
+        /// 
+        /// <returns>Returns a  DisassociateFlowResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">REST API Reference for DisassociateFlow Operation</seealso>
+        DisassociateFlowResponse EndDisassociateFlow(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6120,6 +6479,64 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetFlowAssociation
+
+
+        /// <summary>
+        /// Retrieves the flow associated for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">REST API Reference for GetFlowAssociation Operation</seealso>
+        GetFlowAssociationResponse GetFlowAssociation(GetFlowAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowAssociation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">REST API Reference for GetFlowAssociation Operation</seealso>
+        IAsyncResult BeginGetFlowAssociation(GetFlowAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetFlowAssociationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">REST API Reference for GetFlowAssociation Operation</seealso>
+        GetFlowAssociationResponse EndGetFlowAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetMetricData
 
 
@@ -6427,6 +6844,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ImportPhoneNumber
+
+
+        /// <summary>
+        /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
+        /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
+        /// Services Region where the Amazon Connect instance was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportPhoneNumber service method.</param>
+        /// 
+        /// <returns>The response from the ImportPhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">REST API Reference for ImportPhoneNumber Operation</seealso>
+        ImportPhoneNumberResponse ImportPhoneNumber(ImportPhoneNumberRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportPhoneNumber operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportPhoneNumber
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">REST API Reference for ImportPhoneNumber Operation</seealso>
+        IAsyncResult BeginImportPhoneNumber(ImportPhoneNumberRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportPhoneNumber.</param>
+        /// 
+        /// <returns>Returns a  ImportPhoneNumberResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">REST API Reference for ImportPhoneNumber Operation</seealso>
+        ImportPhoneNumberResponse EndImportPhoneNumber(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAgentStatuses
 
 
@@ -6484,6 +6961,66 @@ namespace Amazon.Connect
         /// <returns>Returns a  ListAgentStatusesResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">REST API Reference for ListAgentStatuses Operation</seealso>
         ListAgentStatusesResponse EndListAgentStatuses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAnalyticsDataAssociations
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalyticsDataAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">REST API Reference for ListAnalyticsDataAssociations Operation</seealso>
+        ListAnalyticsDataAssociationsResponse ListAnalyticsDataAssociations(ListAnalyticsDataAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnalyticsDataAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnalyticsDataAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">REST API Reference for ListAnalyticsDataAssociations Operation</seealso>
+        IAsyncResult BeginListAnalyticsDataAssociations(ListAnalyticsDataAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnalyticsDataAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnalyticsDataAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListAnalyticsDataAssociationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">REST API Reference for ListAnalyticsDataAssociations Operation</seealso>
+        ListAnalyticsDataAssociationsResponse EndListAnalyticsDataAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6996,6 +7533,64 @@ namespace Amazon.Connect
         /// <returns>Returns a  ListEvaluationFormVersionsResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">REST API Reference for ListEvaluationFormVersions Operation</seealso>
         ListEvaluationFormVersionsResponse EndListEvaluationFormVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFlowAssociations
+
+
+        /// <summary>
+        /// List the flow association based on the filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
+        ListFlowAssociationsResponse ListFlowAssociations(ListFlowAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlowAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowAssociations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlowAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
+        IAsyncResult BeginListFlowAssociations(ListFlowAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlowAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlowAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListFlowAssociationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
+        ListFlowAssociationsResponse EndListFlowAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7801,6 +8396,66 @@ namespace Amazon.Connect
         /// <returns>Returns a  ListQuickConnectsResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">REST API Reference for ListQuickConnects Operation</seealso>
         ListQuickConnectsResponse EndListQuickConnects(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRealtimeContactAnalysisSegmentsV2
+
+
+        /// <summary>
+        /// Provides a list of analysis segments for a real-time analysis session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeContactAnalysisSegmentsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListRealtimeContactAnalysisSegmentsV2 service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
+        /// Thrown for analyzed content when requested OutputType was not enabled for a given
+        /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
+        /// Redaction policy set in Contact flow.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
+        ListRealtimeContactAnalysisSegmentsV2Response ListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRealtimeContactAnalysisSegmentsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeContactAnalysisSegmentsV2 operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRealtimeContactAnalysisSegmentsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
+        IAsyncResult BeginListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRealtimeContactAnalysisSegmentsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRealtimeContactAnalysisSegmentsV2.</param>
+        /// 
+        /// <returns>Returns a  ListRealtimeContactAnalysisSegmentsV2Result from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
+        ListRealtimeContactAnalysisSegmentsV2Response EndListRealtimeContactAnalysisSegmentsV2(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8868,7 +9523,7 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
-        /// API, not the Amazon Connect console.
+        /// API, not the Amazon Connect admin website.
         /// </para>
         ///  
         /// <para>
@@ -9642,6 +10297,84 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SendChatIntegrationEvent
+
+
+        /// <summary>
+        /// Processes chat integration events from Amazon Web Services or external integrations
+        /// to Amazon Connect. A chat integration event includes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// SourceId, DestinationId, and Subtype: a set of identifiers, uniquely representing
+        /// a chat
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  ChatEvent: details of the chat action to perform such as sending a message, event,
+        /// or disconnecting from a chat
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When a chat integration event is sent with chat identifiers that do not map to an
+        /// active chat contact, a new chat contact is also created before handling chat action.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent service method.</param>
+        /// 
+        /// <returns>The response from the SendChatIntegrationEvent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">REST API Reference for SendChatIntegrationEvent Operation</seealso>
+        SendChatIntegrationEventResponse SendChatIntegrationEvent(SendChatIntegrationEventRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendChatIntegrationEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendChatIntegrationEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">REST API Reference for SendChatIntegrationEvent Operation</seealso>
+        IAsyncResult BeginSendChatIntegrationEvent(SendChatIntegrationEventRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendChatIntegrationEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendChatIntegrationEvent.</param>
+        /// 
+        /// <returns>Returns a  SendChatIntegrationEventResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">REST API Reference for SendChatIntegrationEvent Operation</seealso>
+        SendChatIntegrationEventResponse EndSendChatIntegrationEvent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartChatContact
 
 
@@ -10142,6 +10875,63 @@ namespace Amazon.Connect
         /// <returns>Returns a  StartTaskContactResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">REST API Reference for StartTaskContact Operation</seealso>
         StartTaskContactResponse EndStartTaskContact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartWebRTCContact
+
+
+        /// <summary>
+        /// Places an inbound in-app, web, or video call to a contact, and then initiates the
+        /// flow. It performs the actions in the flow that are specified (in ContactFlowId) and
+        /// present in the Amazon Connect instance (specified as InstanceId).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact service method.</param>
+        /// 
+        /// <returns>The response from the StartWebRTCContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">REST API Reference for StartWebRTCContact Operation</seealso>
+        StartWebRTCContactResponse StartWebRTCContact(StartWebRTCContactRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWebRTCContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWebRTCContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">REST API Reference for StartWebRTCContact Operation</seealso>
+        IAsyncResult BeginStartWebRTCContact(StartWebRTCContactRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartWebRTCContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWebRTCContact.</param>
+        /// 
+        /// <returns>Returns a  StartWebRTCContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">REST API Reference for StartWebRTCContact Operation</seealso>
+        StartWebRTCContactResponse EndStartWebRTCContact(IAsyncResult asyncResult);
 
         #endregion
         

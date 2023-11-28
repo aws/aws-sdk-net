@@ -1,0 +1,60 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Connect.Model
+{
+    /// <summary>
+    /// Object describing redaction applied to the segment.
+    /// </summary>
+    public partial class RealTimeContactAnalysisTranscriptItemRedaction
+    {
+        private List<RealTimeContactAnalysisCharacterInterval> _characterOffsets = new List<RealTimeContactAnalysisCharacterInterval>();
+
+        /// <summary>
+        /// Gets and sets the property CharacterOffsets. 
+        /// <para>
+        /// List of character intervals each describing a part of the text that was redacted.
+        /// For <code>OutputType.Raw</code>, part of the original text that contains data that
+        /// can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction
+        /// tag.
+        /// </para>
+        /// </summary>
+        public List<RealTimeContactAnalysisCharacterInterval> CharacterOffsets
+        {
+            get { return this._characterOffsets; }
+            set { this._characterOffsets = value; }
+        }
+
+        // Check to see if CharacterOffsets property is set
+        internal bool IsSetCharacterOffsets()
+        {
+            return this._characterOffsets != null && this._characterOffsets.Count > 0; 
+        }
+
+    }
+}

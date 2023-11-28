@@ -38,8 +38,10 @@ namespace Amazon.Connect.Model
         private string _phoneNumber;
         private string _phoneNumberArn;
         private PhoneNumberCountryCode _phoneNumberCountryCode;
+        private string _phoneNumberDescription;
         private string _phoneNumberId;
         private PhoneNumberType _phoneNumberType;
+        private string _sourcePhoneNumberArn;
         private string _targetArn;
 
         /// <summary>
@@ -119,6 +121,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PhoneNumberDescription. 
+        /// <para>
+        /// The description of the phone number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string PhoneNumberDescription
+        {
+            get { return this._phoneNumberDescription; }
+            set { this._phoneNumberDescription = value; }
+        }
+
+        // Check to see if PhoneNumberDescription property is set
+        internal bool IsSetPhoneNumberDescription()
+        {
+            return this._phoneNumberDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PhoneNumberId. 
         /// <para>
         /// A unique identifier for the phone number.
@@ -152,6 +173,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetPhoneNumberType()
         {
             return this._phoneNumberType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourcePhoneNumberArn. 
+        /// <para>
+        /// The claimed phone number ARN that was previously imported from the external service,
+        /// such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the
+        /// phone number that was imported from Amazon Pinpoint.
+        /// </para>
+        /// </summary>
+        public string SourcePhoneNumberArn
+        {
+            get { return this._sourcePhoneNumberArn; }
+            set { this._sourcePhoneNumberArn = value; }
+        }
+
+        // Check to see if SourcePhoneNumberArn property is set
+        internal bool IsSetSourcePhoneNumberArn()
+        {
+            return this._sourcePhoneNumberArn != null;
         }
 
         /// <summary>

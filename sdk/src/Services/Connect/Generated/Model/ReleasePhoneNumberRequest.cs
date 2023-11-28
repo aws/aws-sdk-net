@@ -37,7 +37,7 @@ namespace Amazon.Connect.Model
     ///  <important> 
     /// <para>
     /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
-    /// API, not the Amazon Connect console.
+    /// API, not the Amazon Connect admin website.
     /// </para>
     ///  
     /// <para>

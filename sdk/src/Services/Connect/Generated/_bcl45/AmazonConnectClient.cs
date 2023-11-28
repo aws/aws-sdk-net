@@ -357,6 +357,89 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates the specified dataset for a Amazon Connect instance with the target account.
+        /// You can associate only one dataset in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">REST API Reference for AssociateAnalyticsDataSet Operation</seealso>
+        public virtual AssociateAnalyticsDataSetResponse AssociateAnalyticsDataSet(AssociateAnalyticsDataSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAnalyticsDataSetResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateAnalyticsDataSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates the specified dataset for a Amazon Connect instance with the target account.
+        /// You can associate only one dataset in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">REST API Reference for AssociateAnalyticsDataSet Operation</seealso>
+        public virtual Task<AssociateAnalyticsDataSetResponse> AssociateAnalyticsDataSetAsync(AssociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAnalyticsDataSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateAnalyticsDataSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateApprovedOrigin
 
 
@@ -614,6 +697,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateDefaultVocabularyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateFlow
+
+
+        /// <summary>
+        /// Associates a connect resource to a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFlow service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">REST API Reference for AssociateFlow Operation</seealso>
+        public virtual AssociateFlowResponse AssociateFlow(AssociateFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateFlowResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateFlowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a connect resource to a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">REST API Reference for AssociateFlow Operation</seealso>
+        public virtual Task<AssociateFlowResponse> AssociateFlowAsync(AssociateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateFlowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateFlowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1330,6 +1490,172 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = AssociateTrafficDistributionGroupUserResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateTrafficDistributionGroupUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchAssociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
+        /// account. You can associate multiple datasets in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">REST API Reference for BatchAssociateAnalyticsDataSet Operation</seealso>
+        public virtual BatchAssociateAnalyticsDataSetResponse BatchAssociateAnalyticsDataSet(BatchAssociateAnalyticsDataSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateAnalyticsDataSetResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateAnalyticsDataSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
+        /// account. You can associate multiple datasets in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAssociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">REST API Reference for BatchAssociateAnalyticsDataSet Operation</seealso>
+        public virtual Task<BatchAssociateAnalyticsDataSetResponse> BatchAssociateAnalyticsDataSetAsync(BatchAssociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateAnalyticsDataSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchAssociateAnalyticsDataSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
+        /// You can disassociate multiple datasets in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">REST API Reference for BatchDisassociateAnalyticsDataSet Operation</seealso>
+        public virtual BatchDisassociateAnalyticsDataSetResponse BatchDisassociateAnalyticsDataSet(BatchDisassociateAnalyticsDataSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateAnalyticsDataSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
+        /// You can disassociate multiple datasets in a single call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDisassociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">REST API Reference for BatchDisassociateAnalyticsDataSet Operation</seealso>
+        public virtual Task<BatchDisassociateAnalyticsDataSetResponse> BatchDisassociateAnalyticsDataSetAsync(BatchDisassociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDisassociateAnalyticsDataSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3322,7 +3648,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </important> 
         /// <para>
-        /// For information about how to create user accounts using the Amazon Connect console,
+        /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
         /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
@@ -3374,7 +3700,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </important> 
         /// <para>
-        /// For information about how to create user accounts using the Amazon Connect console,
+        /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
         /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
@@ -6946,7 +7272,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes the specified user account. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// Describes the specified user. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
         /// The console does not display the user IDs. Instead, list the users and note the IDs
         /// provided in the output.
@@ -6981,7 +7307,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes the specified user account. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// Describes the specified user. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
         /// The console does not display the user IDs. Instead, list the users and note the IDs
         /// provided in the output.
@@ -7343,6 +7669,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateAnalyticsDataSet
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Removes the dataset ID associated with a given Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">REST API Reference for DisassociateAnalyticsDataSet Operation</seealso>
+        public virtual DisassociateAnalyticsDataSetResponse DisassociateAnalyticsDataSet(DisassociateAnalyticsDataSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateAnalyticsDataSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Removes the dataset ID associated with a given Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateAnalyticsDataSet service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">REST API Reference for DisassociateAnalyticsDataSet Operation</seealso>
+        public virtual Task<DisassociateAnalyticsDataSetResponse> DisassociateAnalyticsDataSetAsync(DisassociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAnalyticsDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateAnalyticsDataSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateApprovedOrigin
 
 
@@ -7497,6 +7904,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DisassociateBotResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateFlow
+
+
+        /// <summary>
+        /// Disassociates a connect resource from a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFlow service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">REST API Reference for DisassociateFlow Operation</seealso>
+        public virtual DisassociateFlowResponse DisassociateFlow(DisassociateFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFlowResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateFlowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a connect resource from a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">REST API Reference for DisassociateFlow Operation</seealso>
+        public virtual Task<DisassociateFlowResponse> DisassociateFlowAsync(DisassociateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFlowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateFlowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8572,6 +9056,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetFlowAssociation
+
+
+        /// <summary>
+        /// Retrieves the flow associated for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">REST API Reference for GetFlowAssociation Operation</seealso>
+        public virtual GetFlowAssociationResponse GetFlowAssociation(GetFlowAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the flow associated for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFlowAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">REST API Reference for GetFlowAssociation Operation</seealso>
+        public virtual Task<GetFlowAssociationResponse> GetFlowAssociationAsync(GetFlowAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetFlowAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMetricData
 
 
@@ -8991,6 +9552,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ImportPhoneNumber
+
+
+        /// <summary>
+        /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
+        /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
+        /// Services Region where the Amazon Connect instance was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportPhoneNumber service method.</param>
+        /// 
+        /// <returns>The response from the ImportPhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">REST API Reference for ImportPhoneNumber Operation</seealso>
+        public virtual ImportPhoneNumberResponse ImportPhoneNumber(ImportPhoneNumberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportPhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<ImportPhoneNumberResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
+        /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
+        /// Services Region where the Amazon Connect instance was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportPhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportPhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">REST API Reference for ImportPhoneNumber Operation</seealso>
+        public virtual Task<ImportPhoneNumberResponse> ImportPhoneNumberAsync(ImportPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportPhoneNumberResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportPhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAgentStatuses
 
 
@@ -9068,6 +9710,87 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListAgentStatusesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAgentStatusesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAnalyticsDataAssociations
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalyticsDataAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">REST API Reference for ListAnalyticsDataAssociations Operation</seealso>
+        public virtual ListAnalyticsDataAssociationsResponse ListAnalyticsDataAssociations(ListAnalyticsDataAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalyticsDataAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalyticsDataAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalyticsDataAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnalyticsDataAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">REST API Reference for ListAnalyticsDataAssociations Operation</seealso>
+        public virtual Task<ListAnalyticsDataAssociationsResponse> ListAnalyticsDataAssociationsAsync(ListAnalyticsDataAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalyticsDataAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalyticsDataAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAnalyticsDataAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9741,6 +10464,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListEvaluationFormVersionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListEvaluationFormVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFlowAssociations
+
+
+        /// <summary>
+        /// List the flow association based on the filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
+        public virtual ListFlowAssociationsResponse ListFlowAssociations(ListFlowAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List the flow association based on the filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFlowAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
+        public virtual Task<ListFlowAssociationsResponse> ListFlowAssociationsAsync(ListFlowAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFlowAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10844,6 +11644,87 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListQuickConnectsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListQuickConnectsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRealtimeContactAnalysisSegmentsV2
+
+
+        /// <summary>
+        /// Provides a list of analysis segments for a real-time analysis session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeContactAnalysisSegmentsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListRealtimeContactAnalysisSegmentsV2 service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
+        /// Thrown for analyzed content when requested OutputType was not enabled for a given
+        /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
+        /// Redaction policy set in Contact flow.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
+        public virtual ListRealtimeContactAnalysisSegmentsV2Response ListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRealtimeContactAnalysisSegmentsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRealtimeContactAnalysisSegmentsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListRealtimeContactAnalysisSegmentsV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides a list of analysis segments for a real-time analysis session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeContactAnalysisSegmentsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRealtimeContactAnalysisSegmentsV2 service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
+        /// Thrown for analyzed content when requested OutputType was not enabled for a given
+        /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
+        /// Redaction policy set in Contact flow.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
+        public virtual Task<ListRealtimeContactAnalysisSegmentsV2Response> ListRealtimeContactAnalysisSegmentsV2Async(ListRealtimeContactAnalysisSegmentsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRealtimeContactAnalysisSegmentsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRealtimeContactAnalysisSegmentsV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRealtimeContactAnalysisSegmentsV2Response>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12263,7 +13144,7 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
-        /// API, not the Amazon Connect console.
+        /// API, not the Amazon Connect admin website.
         /// </para>
         ///  
         /// <para>
@@ -12337,7 +13218,7 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
-        /// API, not the Amazon Connect console.
+        /// API, not the Amazon Connect admin website.
         /// </para>
         ///  
         /// <para>
@@ -13315,6 +14196,123 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SendChatIntegrationEvent
+
+
+        /// <summary>
+        /// Processes chat integration events from Amazon Web Services or external integrations
+        /// to Amazon Connect. A chat integration event includes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// SourceId, DestinationId, and Subtype: a set of identifiers, uniquely representing
+        /// a chat
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  ChatEvent: details of the chat action to perform such as sending a message, event,
+        /// or disconnecting from a chat
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When a chat integration event is sent with chat identifiers that do not map to an
+        /// active chat contact, a new chat contact is also created before handling chat action.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent service method.</param>
+        /// 
+        /// <returns>The response from the SendChatIntegrationEvent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">REST API Reference for SendChatIntegrationEvent Operation</seealso>
+        public virtual SendChatIntegrationEventResponse SendChatIntegrationEvent(SendChatIntegrationEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendChatIntegrationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendChatIntegrationEventResponseUnmarshaller.Instance;
+
+            return Invoke<SendChatIntegrationEventResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Processes chat integration events from Amazon Web Services or external integrations
+        /// to Amazon Connect. A chat integration event includes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// SourceId, DestinationId, and Subtype: a set of identifiers, uniquely representing
+        /// a chat
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  ChatEvent: details of the chat action to perform such as sending a message, event,
+        /// or disconnecting from a chat
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When a chat integration event is sent with chat identifiers that do not map to an
+        /// active chat contact, a new chat contact is also created before handling chat action.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendChatIntegrationEvent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">REST API Reference for SendChatIntegrationEvent Operation</seealso>
+        public virtual Task<SendChatIntegrationEventResponse> SendChatIntegrationEventAsync(SendChatIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendChatIntegrationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendChatIntegrationEventResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendChatIntegrationEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartChatContact
 
 
@@ -14083,6 +15081,81 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartTaskContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartWebRTCContact
+
+
+        /// <summary>
+        /// Places an inbound in-app, web, or video call to a contact, and then initiates the
+        /// flow. It performs the actions in the flow that are specified (in ContactFlowId) and
+        /// present in the Amazon Connect instance (specified as InstanceId).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact service method.</param>
+        /// 
+        /// <returns>The response from the StartWebRTCContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">REST API Reference for StartWebRTCContact Operation</seealso>
+        public virtual StartWebRTCContactResponse StartWebRTCContact(StartWebRTCContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWebRTCContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWebRTCContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartWebRTCContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Places an inbound in-app, web, or video call to a contact, and then initiates the
+        /// flow. It performs the actions in the flow that are specified (in ContactFlowId) and
+        /// present in the Amazon Connect instance (specified as InstanceId).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartWebRTCContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">REST API Reference for StartWebRTCContact Operation</seealso>
+        public virtual Task<StartWebRTCContactResponse> StartWebRTCContactAsync(StartWebRTCContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWebRTCContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWebRTCContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartWebRTCContactResponse>(request, options, cancellationToken);
         }
 
         #endregion

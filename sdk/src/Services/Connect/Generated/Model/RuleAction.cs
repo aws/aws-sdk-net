@@ -66,9 +66,9 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>
-        /// | <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> |
-        /// <code>OnSalesforceCaseCreate</code> 
+        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code>
+        /// | <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+        /// <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> 
         /// </para>
         /// </summary>
         public AssignContactCategoryActionDefinition AssignContactCategoryAction
@@ -91,8 +91,9 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>
-        /// | <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> 
+        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code>
+        /// | <code>OnPostChatAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code>
+        /// | <code>OnMetricDataUpdate</code> 
         /// </para>
         /// </summary>
         public EventBridgeActionDefinition EventBridgeAction
@@ -115,8 +116,9 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>
-        /// | <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> 
+        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code>
+        /// | <code>OnPostChatAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code>
+        /// | <code>OnMetricDataUpdate</code> 
         /// </para>
         /// </summary>
         public SendNotificationActionDefinition SendNotificationAction

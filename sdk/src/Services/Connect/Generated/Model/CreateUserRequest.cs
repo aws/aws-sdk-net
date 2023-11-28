@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// For information about how to create user accounts using the Amazon Connect console,
+    /// For information about how to create users using the Amazon Connect admin website,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
     /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>

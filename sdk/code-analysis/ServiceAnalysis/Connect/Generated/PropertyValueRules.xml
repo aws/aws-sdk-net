@@ -24,6 +24,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateAnalyticsDataSetRequest.DataSetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateAnalyticsDataSetRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateAnalyticsDataSetResponse.DataSetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -46,6 +61,11 @@
     <property>Amazon.Connect.Model.AssociateDefaultVocabularyRequest.VocabularyId</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.InstanceId</property>
@@ -114,6 +134,16 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateTrafficDistributionGroupUserRequest.TrafficDistributionGroupId</property>
     <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.BatchAssociateAnalyticsDataSetRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.BatchDisassociateAnalyticsDataSetRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.BatchGetFlowAssociationRequest.InstanceId</property>
@@ -975,6 +1005,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateAnalyticsDataSetRequest.DataSetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateAnalyticsDataSetRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -985,6 +1025,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateBotRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateFlowRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -1106,6 +1151,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.GetFlowAssociationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.GetMetricDataRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1201,12 +1251,42 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ImportPhoneNumberRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ImportPhoneNumberRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ImportPhoneNumberRequest.PhoneNumberDescription</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListAgentStatusesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListAgentStatusesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAnalyticsDataAssociationsRequest.DataSetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAnalyticsDataAssociationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAnalyticsDataAssociationsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -1316,6 +1396,16 @@
     <property>Amazon.Connect.Model.ListEvaluationFormVersionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListFlowAssociationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListFlowAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationsRequest.InstanceId</property>
@@ -1459,6 +1549,31 @@
     <property>Amazon.Connect.Model.ListQuickConnectsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRealtimeContactAnalysisSegmentsV2Request.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRealtimeContactAnalysisSegmentsV2Request.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRealtimeContactAnalysisSegmentsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRealtimeContactAnalysisSegmentsV2Request.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRealtimeContactAnalysisSegmentsV2Response.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.InstanceId</property>
@@ -1950,6 +2065,26 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SendChatIntegrationEventRequest.DestinationId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SendChatIntegrationEventRequest.SourceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SendChatIntegrationEventRequest.Subtype</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SendChatIntegrationEventResponse.InitialContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ChatDurationInMinutes</property>
     <min>60</min>
     <max>10080</max>
@@ -2123,6 +2258,44 @@
     <property>Amazon.Connect.Model.StartTaskContactResponse.ContactId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactRequest.Description</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactRequest.RelatedContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactResponse.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactResponse.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartWebRTCContactResponse.ParticipantToken</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StopContactRequest.ContactId</property>
@@ -2788,6 +2961,11 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AnalyticsDataAssociationResult.DataSetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.Application.Namespace</property>
     <min>1</min>
     <max>128</max>
@@ -2813,6 +2991,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Campaign.CampaignId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ChatEvent.Content</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ChatEvent.ContentType</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -3296,9 +3484,40 @@
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListPhoneNumbersSummary.PhoneNumberDescription</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.MediaPlacement.AudioFallbackUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.MediaPlacement.AudioHostUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.MediaPlacement.EventIngestionUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.MediaPlacement.SignalingUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.MediaPlacement.TurnControlUrl</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.NumberReference.Name</property>
@@ -3449,6 +3668,104 @@
     <property>Amazon.Connect.Model.QuickConnectSummary.Name</property>
     <min>1</min>
     <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisAttachment.AttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisAttachment.AttachmentName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisAttachment.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisCharacterInterval.BeginOffsetChar</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisCharacterInterval.EndOffsetChar</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentAttachments.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentAttachments.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentAttachments.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentEvent.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentEvent.EventType</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentEvent.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentEvent.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentTranscript.Content</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentTranscript.ContentType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentTranscript.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentTranscript.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentTranscript.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisTranscriptItemWithCharacterOffsets.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisTranscriptItemWithContent.Content</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisTranscriptItemWithContent.Id</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Reference.Value</property>

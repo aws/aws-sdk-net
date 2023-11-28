@@ -42,6 +42,7 @@ namespace Amazon.Connect.Model
         private string _phoneNumberId;
         private PhoneNumberStatus _phoneNumberStatus;
         private PhoneNumberType _phoneNumberType;
+        private string _sourcePhoneNumberArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _targetArn;
 
@@ -223,6 +224,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetPhoneNumberType()
         {
             return this._phoneNumberType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourcePhoneNumberArn. 
+        /// <para>
+        /// The claimed phone number ARN that was previously imported from the external service,
+        /// such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the
+        /// phone number that was imported from Amazon Pinpoint.
+        /// </para>
+        /// </summary>
+        public string SourcePhoneNumberArn
+        {
+            get { return this._sourcePhoneNumberArn; }
+            set { this._sourcePhoneNumberArn = value; }
+        }
+
+        // Check to see if SourcePhoneNumberArn property is set
+        internal bool IsSetSourcePhoneNumberArn()
+        {
+            return this._sourcePhoneNumberArn != null;
         }
 
         /// <summary>
