@@ -180,6 +180,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Users can create, read, update, delete Exports of billing and cost management data.  Users can get details of Export Executions and details of Tables for exporting.  Tagging support is provided for Exports
 * [AWSSDK.Bedrock](https://www.nuget.org/packages/AWSSDK.Bedrock/)
 	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
+* [AWSSDK.BedrockAgent](https://www.nuget.org/packages/AWSSDK.BedrockAgent/)
+	* This release introduces Agents for Amazon Bedrock
 * [AWSSDK.BedrockAgentRuntime](https://www.nuget.org/packages/AWSSDK.BedrockAgentRuntime/)
 	* This release introduces Agents for Amazon Bedrock Runtime
 * [AWSSDK.BedrockRuntime](https://www.nuget.org/packages/AWSSDK.BedrockRuntime/)
