@@ -660,6 +660,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for AWS Proton
 * [AWSSDK.QBusiness](https://www.nuget.org/packages/AWSSDK.QBusiness/)
 	* Amazon Q - a generative AI powered application that your employees can use to ask questions and get answers from knowledge spread across disparate content repositories, summarize reports, write articles, take actions, and much more - all within their company's connected content repositories.
+* [AWSSDK.QConnect](https://www.nuget.org/packages/AWSSDK.QConnect/)
+	* Amazon Q in Connect, an LLM-enhanced evolution of Amazon Connect Wisdom. This release adds generative AI support to Amazon Q Connect QueryAssistant and GetRecommendations APIs.
 * [AWSSDK.QLDB](https://www.nuget.org/packages/AWSSDK.QLDB/)
 	* Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.
 * [AWSSDK.QLDBSession](https://www.nuget.org/packages/AWSSDK.QLDBSession/)
