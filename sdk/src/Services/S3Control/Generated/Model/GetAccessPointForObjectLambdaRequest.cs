@@ -30,8 +30,14 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccessPointForObjectLambda operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns configuration information about the specified Object Lambda Access Point
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The following actions are related to <code>GetAccessPointForObjectLambda</code>:

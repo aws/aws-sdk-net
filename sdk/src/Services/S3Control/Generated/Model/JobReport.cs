@@ -45,6 +45,12 @@ namespace Amazon.S3Control.Model
         /// The Amazon Resource Name (ARN) for the bucket where specified job-completion report
         /// will be stored.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch
+        /// Operations to store job completion reports.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string Bucket

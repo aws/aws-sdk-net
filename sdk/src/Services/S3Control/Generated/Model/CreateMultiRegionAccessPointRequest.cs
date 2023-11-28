@@ -30,10 +30,16 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMultiRegionAccessPoint operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Creates a Multi-Region Access Point and associates it with the specified buckets.
     /// For more information about creating Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
     /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This action will always be routed to the US West (Oregon) Region. For more information

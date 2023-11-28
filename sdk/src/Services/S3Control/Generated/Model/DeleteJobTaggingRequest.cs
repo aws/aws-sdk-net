@@ -30,12 +30,15 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteJobTagging operation.
-    /// Removes the entire tag set from the specified S3 Batch Operations job. To use the
-    /// <code>DeleteJobTagging</code> operation, you must have permission to perform the <code>s3:DeleteJobTagging</code>
-    /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-    /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+    /// Removes the entire tag set from the specified S3 Batch Operations job.
     /// 
-    ///   
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// To use the <code>DeleteJobTagging</code> operation, you must have permission to perform
+    /// the <code>s3:DeleteJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+    /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </dd> </dl> 
     /// <para>
     /// Related actions include:
     /// </para>

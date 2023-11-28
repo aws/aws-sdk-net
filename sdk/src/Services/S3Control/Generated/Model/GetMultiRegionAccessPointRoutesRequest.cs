@@ -30,9 +30,15 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMultiRegionAccessPointRoutes operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns the routing configuration for a Multi-Region Access Point, indicating which
     /// Regions are active or passive.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To obtain routing control changes and failover requests, use the Amazon S3 failover

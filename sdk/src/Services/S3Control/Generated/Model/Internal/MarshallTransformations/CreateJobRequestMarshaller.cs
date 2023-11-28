@@ -278,6 +278,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         if(publicRequest.Operation.LambdaInvoke.IsSetFunctionArn())
                             xmlWriter.WriteElementString("FunctionArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.FunctionArn));                 
 
+                        if(publicRequest.Operation.LambdaInvoke.IsSetInvocationSchemaVersion())
+                            xmlWriter.WriteElementString("InvocationSchemaVersion", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.InvocationSchemaVersion));                 
+
+                            xmlWriter.WriteStartElement("UserArguments", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            foreach (var kvp in publicRequest.Operation.LambdaInvoke.UserArguments) 
+                            {
+                                xmlWriter.WriteStartElement("entry", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteElementString("key", "http://awss3control.amazonaws.com/doc/2018-08-20/", kvp.Key);
+                                xmlWriter.WriteElementString("value", "http://awss3control.amazonaws.com/doc/2018-08-20/", kvp.Value);
+                                xmlWriter.WriteEndElement();
+                            }            
+                            xmlWriter.WriteEndElement();                
                         xmlWriter.WriteEndElement();
                     }
                 

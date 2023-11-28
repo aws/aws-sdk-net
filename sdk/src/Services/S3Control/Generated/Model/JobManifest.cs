@@ -39,7 +39,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// Contains the information required to locate the specified job's manifest.
+        /// Contains the information required to locate the specified job's manifest. Manifests
+        /// can't be imported from directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+        /// buckets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

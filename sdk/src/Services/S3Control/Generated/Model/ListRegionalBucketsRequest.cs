@@ -30,10 +30,16 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRegionalBuckets operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated
     /// sender of the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
     /// Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on

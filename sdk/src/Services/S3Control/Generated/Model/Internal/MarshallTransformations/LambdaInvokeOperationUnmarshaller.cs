@@ -61,6 +61,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("InvocationSchemaVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InvocationSchemaVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UserArguments", targetDepth))
+                    {
+                        var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        unmarshalledObject.UserArguments = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

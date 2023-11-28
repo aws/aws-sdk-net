@@ -34,7 +34,12 @@ namespace Amazon.S3Control.Model
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
-    ///   
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// To use the <code>UpdateJobPriority</code> operation, you must have permission to perform
+    /// the <code>s3:UpdateJobPriority</code> action.
+    /// </para>
+    ///  </dd> </dl> 
     /// <para>
     /// Related actions include:
     /// </para>

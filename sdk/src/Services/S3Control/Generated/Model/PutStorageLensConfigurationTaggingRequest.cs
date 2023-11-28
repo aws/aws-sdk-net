@@ -30,11 +30,17 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the PutStorageLensConfigurationTagging operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more
     /// information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
     /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
     /// S3 User Guide</i>.
-    /// 
+    /// </para>
     ///  <note> 
     /// <para>
     /// To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>

@@ -39,11 +39,11 @@ namespace Amazon.S3Control.Model
     /// job. To modify the existing tag set, you can either replace the existing tag set entirely,
     /// or make changes within the existing tag set by retrieving the existing tag set using
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>,
-    /// modify that tag set, and use this action to replace the tag set with the one you modified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+    /// modify that tag set, and use this operation to replace the tag set with the one you
+    /// modified. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
     /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>. 
     /// </para>
-    ///   <note> <ul> <li> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// If you send this request with an empty tag set, Amazon S3 deletes the existing tag
     /// set on the Batch Operations job. If you use this method, you are charged for a Tier
@@ -81,12 +81,12 @@ namespace Amazon.S3Control.Model
     /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
     /// Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
     /// </para>
-    ///  </li> </ul> </li> </ul> </note>  
+    ///  </li> </ul> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// To use the <code>PutJobTagging</code> operation, you must have permission to perform
     /// the <code>s3:PutJobTagging</code> action.
     /// </para>
-    ///  
+    ///  </dd> </dl> 
     /// <para>
     /// Related actions include:
     /// </para>

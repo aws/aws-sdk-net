@@ -30,8 +30,14 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMultiRegionAccessPointPolicy operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns the access control policy of the specified Multi-Region Access Point.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This action will always be routed to the US West (Oregon) Region. For more information

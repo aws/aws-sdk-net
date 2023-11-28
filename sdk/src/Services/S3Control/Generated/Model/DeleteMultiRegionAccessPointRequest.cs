@@ -30,9 +30,15 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMultiRegionAccessPoint operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes a Multi-Region Access Point. This action does not delete the buckets associated
     /// with the Multi-Region Access Point, only the Multi-Region Access Point itself.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This action will always be routed to the US West (Oregon) Region. For more information

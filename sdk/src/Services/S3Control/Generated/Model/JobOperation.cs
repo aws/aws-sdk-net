@@ -69,6 +69,11 @@ namespace Amazon.S3Control.Model
         /// Directs the specified job to execute a DELETE Object tagging call on every object
         /// in the manifest.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3DeleteObjectTaggingOperation S3DeleteObjectTagging
         {
@@ -88,6 +93,11 @@ namespace Amazon.S3Control.Model
         /// Directs the specified job to initiate restore requests for every archived object in
         /// the manifest.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3InitiateRestoreObjectOperation S3InitiateRestoreObject
         {
@@ -107,6 +117,11 @@ namespace Amazon.S3Control.Model
         /// Directs the specified job to run a <code>PutObjectAcl</code> call on every object
         /// in the manifest.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3SetObjectAclOperation S3PutObjectAcl
         {
@@ -174,6 +189,11 @@ namespace Amazon.S3Control.Model
         /// Directs the specified job to run a PUT Object tagging call on every object in the
         /// manifest.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3SetObjectTaggingOperation S3PutObjectTagging
         {
@@ -193,6 +213,11 @@ namespace Amazon.S3Control.Model
         /// Directs the specified job to invoke <code>ReplicateObject</code> on every object in
         /// the job's manifest.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3ReplicateObjectOperation S3ReplicateObject
         {

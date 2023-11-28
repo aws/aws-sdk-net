@@ -34,6 +34,8 @@ namespace Amazon.S3Control.Model
     public partial class LambdaInvokeOperation
     {
         private string _functionArn;
+        private string _invocationSchemaVersion;
+        private Dictionary<string, string> _userArguments = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property FunctionArn. 
@@ -53,6 +55,68 @@ namespace Amazon.S3Control.Model
         internal bool IsSetFunctionArn()
         {
             return this._functionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationSchemaVersion. 
+        /// <para>
+        /// Specifies the schema version for the payload that Batch Operations sends when invoking
+        /// an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code>
+        /// is required when you use Batch Operations to invoke Lambda functions that act on directory
+        /// buckets, or if you need to specify <code>UserArguments</code>. For more information,
+        /// see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
+        /// Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon
+        /// Web Services Storage Blog</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code>
+        /// <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code>
+        /// does not match what your Lambda function expects, your function might not work as
+        /// expected.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform
+        /// custom actions on objects in directory buckets, you must specify <code>2.0</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string InvocationSchemaVersion
+        {
+            get { return this._invocationSchemaVersion; }
+            set { this._invocationSchemaVersion = value; }
+        }
+
+        // Check to see if InvocationSchemaVersion property is set
+        internal bool IsSetInvocationSchemaVersion()
+        {
+            return this._invocationSchemaVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserArguments. 
+        /// <para>
+        /// Key-value pairs that are passed in the payload that Batch Operations sends when invoking
+        /// an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b>
+        /// for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>.
+        /// For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
+        /// Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon
+        /// Web Services Storage Blog</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, string> UserArguments
+        {
+            get { return this._userArguments; }
+            set { this._userArguments = value; }
+        }
+
+        // Check to see if UserArguments property is set
+        internal bool IsSetUserArguments()
+        {
+            return this._userArguments != null && this._userArguments.Count > 0; 
         }
 
     }

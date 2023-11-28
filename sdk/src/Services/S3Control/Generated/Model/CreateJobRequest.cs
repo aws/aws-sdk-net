@@ -30,16 +30,21 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
+    /// This operation creates an S3 Batch Operations job.
+    /// 
+    ///  
+    /// <para>
     /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
     /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
     /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
-    ///  
-    /// <para>
-    /// This action creates a S3 Batch Operations job.
     /// </para>
-    ///   
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting
+    /// permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </dd> </dl>  
     /// <para>
     /// Related actions include:
     /// </para>

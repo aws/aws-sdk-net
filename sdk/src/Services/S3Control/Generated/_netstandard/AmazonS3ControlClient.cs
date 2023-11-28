@@ -511,10 +511,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates an access point and associates it with the specified bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
         /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///   <note> 
         /// <para>
         /// S3 on Outposts only supports VPC-style access points. 
@@ -588,9 +594,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates an Object Lambda Access Point. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
         /// objects with Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
@@ -758,16 +770,21 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// This operation creates an S3 Batch Operations job.
+        /// 
+        ///  
+        /// <para>
         /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
         /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
         /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
-        ///  
-        /// <para>
-        /// This action creates a S3 Batch Operations job.
         /// </para>
-        ///   
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting
+        /// permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> </dl>  
         /// <para>
         /// Related actions include:
         /// </para>
@@ -842,10 +859,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates a Multi-Region Access Point and associates it with the specified buckets.
         /// For more information about creating Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
         /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -1149,8 +1172,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the specified access point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -1214,8 +1243,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the specified Object Lambda Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:
@@ -1269,8 +1304,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the access point policy for the specified access point.
-        /// 
+        /// </para>
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -1329,8 +1370,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Removes the resource policy for an Object Lambda Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>DeleteAccessPointPolicyForObjectLambda</code>:
@@ -1796,12 +1843,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Removes the entire tag set from the specified S3 Batch Operations job. To use the
-        /// <code>DeleteJobTagging</code> operation, you must have permission to perform the <code>s3:DeleteJobTagging</code>
-        /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-        /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+        /// Removes the entire tag set from the specified S3 Batch Operations job.
         /// 
-        ///   
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use the <code>DeleteJobTagging</code> operation, you must have permission to perform
+        /// the <code>s3:DeleteJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+        /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>
@@ -1863,9 +1913,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes a Multi-Region Access Point. This action does not delete the buckets associated
         /// with the Multi-Region Access Point, only the Multi-Region Access Point itself.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -1936,10 +1992,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Related actions include:
@@ -1988,11 +2050,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage
         /// Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
         /// S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
@@ -2033,11 +2101,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the Amazon S3 Storage Lens configuration tags. For more information about
         /// S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
         /// S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
@@ -2129,7 +2203,12 @@ namespace Amazon.S3Control
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
-        ///   
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use the <code>DescribeJob</code> operation, you must have permission to perform
+        /// the <code>s3:DescribeJob</code> action.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>
@@ -2199,11 +2278,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Retrieves the status of an asynchronous request to manage a Multi-Region Access Point.
         /// For more information about managing Multi-Region Access Points and how asynchronous
         /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
         /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>GetMultiRegionAccessPoint</code>:
@@ -2520,8 +2605,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns configuration information about the specified access point.
-        /// 
+        /// </para>
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -2585,8 +2676,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns configuration for an Object Lambda Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:
@@ -2630,8 +2727,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns configuration information about the specified Object Lambda Access Point
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>GetAccessPointForObjectLambda</code>:
@@ -2685,8 +2788,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the access point policy associated with the specified access point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>GetAccessPointPolicy</code>:
@@ -2735,8 +2844,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the resource policy for an Object Lambda Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:
@@ -2785,9 +2900,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Indicates whether the specified access point currently has a policy that allows public
         /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
         /// Data Access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2821,8 +2943,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the status of the resource policy associated with an Object Lambda Access
         /// Point.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatusForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -2856,10 +2985,12 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
         /// Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you are using an identity other than the root user of the Amazon Web Services account
         /// that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
@@ -3462,12 +3593,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Returns the tags on an S3 Batch Operations job. To use the <code>GetJobTagging</code>
-        /// operation, you must have permission to perform the <code>s3:GetJobTagging</code> action.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-        /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+        /// Returns the tags on an S3 Batch Operations job. 
         /// 
-        ///   
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use the <code>GetJobTagging</code> operation, you must have permission to perform
+        /// the <code>s3:GetJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+        /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>
@@ -3529,8 +3663,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns configuration information about the specified Multi-Region Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -3595,8 +3735,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the access control policy of the specified Multi-Region Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -3651,9 +3797,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Indicates whether the specified Multi-Region Access Point has an access control policy
         /// that allows public access.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -3708,9 +3860,15 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the routing configuration for a Multi-Region Access Point, indicating which
         /// Regions are active or passive.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To obtain routing control changes and failover requests, use the Amazon S3 failover
@@ -3774,10 +3932,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Related actions include:
@@ -3831,11 +3995,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets the Amazon S3 Storage Lens configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
         /// S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3
         /// Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code>
@@ -3876,11 +4046,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets the tags of Amazon S3 Storage Lens configuration. For more information about
         /// S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
         /// S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
@@ -4093,12 +4269,18 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns a list of the access points that are owned by the current account that's associated
         /// with the specified bucket. You can retrieve up to 1000 access points per call. If
         /// the specified bucket has more than 1,000 access points (or the number specified in
         /// <code>maxResults</code>, whichever is less), the response will include a continuation
         /// token that you can use to list the additional access points.
-        /// 
+        /// </para>
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -4162,11 +4344,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns some or all (up to 1,000) access points associated with the Object Lambda
         /// Access Point per call. If there are more access points than what can be returned in
         /// one call, the response will include a continuation token that you can use to list
         /// the additional access points.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>ListAccessPointsForObjectLambda</code>:
@@ -4220,12 +4408,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
-        /// days for the Amazon Web Services account making the request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
+        /// Lists current S3 Batch Operations jobs as well as the jobs that have ended within
+        /// the last 30 days for the Amazon Web Services account making the request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
-        ///  
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use the <code>ListJobs</code> operation, you must have permission to perform the
+        /// <code>s3:ListJobs</code> action.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>
@@ -4292,11 +4485,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns a list of the Multi-Region Access Points currently associated with the specified
         /// Amazon Web Services account. Each call can return up to 100 Multi-Region Access Points,
         /// the maximum number of Multi-Region Access Points that can be associated with a single
         /// account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -4361,10 +4560,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated
         /// sender of the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
@@ -4405,11 +4610,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets a list of Amazon S3 Storage Lens configurations. For more information about S3
         /// Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
         /// S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code>
@@ -4597,8 +4808,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Replaces configuration for an Object Lambda Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>PutAccessPointConfigurationForObjectLambda</code>:
@@ -4642,10 +4859,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Associates an access policy with the specified access point. Each access point can
         /// have only one policy, so a request made to this API replaces any existing policy associated
         /// with the specified access point.
-        /// 
+        /// </para>
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -4704,10 +4927,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or replaces resource policy for an Object Lambda Access Point. For an example
         /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating
         /// Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
@@ -5334,11 +5563,11 @@ namespace Amazon.S3Control
         /// job. To modify the existing tag set, you can either replace the existing tag set entirely,
         /// or make changes within the existing tag set by retrieving the existing tag set using
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>,
-        /// modify that tag set, and use this action to replace the tag set with the one you modified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+        /// modify that tag set, and use this operation to replace the tag set with the one you
+        /// modified. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
         /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
-        ///   <note> <ul> <li> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// If you send this request with an empty tag set, Amazon S3 deletes the existing tag
         /// set on the Batch Operations job. If you use this method, you are charged for a Tier
@@ -5376,12 +5605,12 @@ namespace Amazon.S3Control
         /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
         /// Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
-        ///  </li> </ul> </li> </ul> </note>  
+        ///  </li> </ul> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use the <code>PutJobTagging</code> operation, you must have permission to perform
         /// the <code>s3:PutJobTagging</code> action.
         /// </para>
-        ///  
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>
@@ -5446,11 +5675,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Associates an access control policy with the specified Multi-Region Access Point.
         /// Each Multi-Region Access Point can have only one policy, so a request made to this
         /// action replaces any existing policy that is associated with the specified Multi-Region
         /// Access Point.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
@@ -5505,11 +5740,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
         /// Web Services account. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code>
         /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Related actions include:
@@ -5558,12 +5799,18 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage
         /// Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
         /// with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete
         /// list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3
         /// Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code>
@@ -5604,11 +5851,17 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more
         /// information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
         /// S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
@@ -5649,13 +5902,19 @@ namespace Amazon.S3Control
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Submits an updated route configuration for a Multi-Region Access Point. This API operation
         /// updates the routing status for the specified Regions from active to passive, or from
         /// passive to active. A value of <code>0</code> indicates a passive status, which means
         /// that traffic won't be routed to the specified Region. A value of <code>100</code>
         /// indicates an active status, which means that traffic will be routed to the specified
         /// Region. At least one Region must be active at all times.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When the routing configuration is changed, any in-progress operations (uploads, copies,
@@ -5898,7 +6157,12 @@ namespace Amazon.S3Control
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
-        ///   
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use the <code>UpdateJobPriority</code> operation, you must have permission to perform
+        /// the <code>s3:UpdateJobPriority</code> action.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>
@@ -5968,11 +6232,16 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Updates the status for the specified job. Use this action to confirm that you want
+        /// Updates the status for the specified job. Use this operation to confirm that you want
         /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
-        ///   
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use the <code>UpdateJobStatus</code> operation, you must have permission to perform
+        /// the <code>s3:UpdateJobStatus</code> action.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// Related actions include:
         /// </para>

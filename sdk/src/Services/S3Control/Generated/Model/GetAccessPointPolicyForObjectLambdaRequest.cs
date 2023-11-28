@@ -30,8 +30,14 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccessPointPolicyForObjectLambda operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns the resource policy for an Object Lambda Access Point.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:

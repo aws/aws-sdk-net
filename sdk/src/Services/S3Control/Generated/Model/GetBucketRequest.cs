@@ -30,10 +30,12 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucket operation.
+    /// <note> 
+    /// <para>
     /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
     /// Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
-    ///  
+    /// </para>
+    ///  </note> 
     /// <para>
     /// If you are using an identity other than the root user of the Amazon Web Services account
     /// that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>

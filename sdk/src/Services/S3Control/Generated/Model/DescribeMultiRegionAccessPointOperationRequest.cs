@@ -30,11 +30,17 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMultiRegionAccessPointOperation operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Retrieves the status of an asynchronous request to manage a Multi-Region Access Point.
     /// For more information about managing Multi-Region Access Points and how asynchronous
     /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
     /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The following actions are related to <code>GetMultiRegionAccessPoint</code>:

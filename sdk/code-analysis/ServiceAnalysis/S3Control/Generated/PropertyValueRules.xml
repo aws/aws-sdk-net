@@ -1530,6 +1530,11 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.LambdaInvokeOperation.InvocationSchemaVersion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.ListAccessGrantEntry.AccessGrantArn</property>
     <min>1</min>
     <max>2048</max>
@@ -1769,7 +1774,7 @@
     <property>Amazon.S3Control.Model.S3CopyObjectOperation.TargetResource</property>
     <min>1</min>
     <max>128</max>
-    <pattern>arn:[^:]+:s3:.*</pattern>
+    <pattern>arn:[^:]+:(s3|s3express):.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.S3Grantee.DisplayName</property>

@@ -30,12 +30,18 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the PutStorageLensConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage
     /// Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
     /// with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete
     /// list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3
     /// Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
+    /// </para>
     ///  <note> 
     /// <para>
     /// To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code>

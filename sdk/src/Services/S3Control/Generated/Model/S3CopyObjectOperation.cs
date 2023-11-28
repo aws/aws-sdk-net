@@ -55,7 +55,11 @@ namespace Amazon.S3Control.Model
         private DateTime? _unModifiedSinceConstraint;
 
         /// <summary>
-        /// Gets and sets the property AccessControlGrants.
+        /// Gets and sets the property AccessControlGrants.  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<S3Grant> AccessControlGrants
         {
@@ -82,6 +86,11 @@ namespace Amazon.S3Control.Model
         /// Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i>
         /// settings for S3 Bucket Key.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool BucketKeyEnabled
         {
@@ -96,7 +105,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CannedAccessControlList.
+        /// Gets and sets the property CannedAccessControlList.  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3CannedAccessControlList CannedAccessControlList
         {
@@ -181,7 +194,20 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewObjectTagging.
+        /// Gets and sets the property NewObjectTagging. 
+        /// <para>
+        /// Specifies a list of tags to add to the destination objects after they are copied.
+        /// If <code>NewObjectTagging</code> is not specified, the tags of the source objects
+        /// are copied to destination objects by default.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - Tags aren't supported by directory buckets. If your source
+        /// objects have tags and your destination bucket is a directory bucket, specify an empty
+        /// tag set in the <code>NewObjectTagging</code> field to prevent copying the source object
+        /// tags to the directory bucket.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<S3Tag> NewObjectTagging
         {
@@ -200,6 +226,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The legal hold status to be applied to all objects in the Batch Operations job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
         {
@@ -218,6 +249,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The retention mode to be applied to all objects in the Batch Operations job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3ObjectLockMode ObjectLockMode
         {
@@ -237,6 +273,11 @@ namespace Amazon.S3Control.Model
         /// The date when the applied object retention configuration expires on all objects in
         /// the Batch Operations job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime ObjectLockRetainUntilDate
         {
@@ -253,9 +294,15 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property RedirectLocation. 
         /// <para>
-        /// Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
-        /// Allows webpage redirects if the object is accessed through a website endpoint.
+        /// If the destination bucket is configured as a website, specifies an optional metadata
+        /// property for website redirects, <code>x-amz-website-redirect-location</code>. Allows
+        /// webpage redirects if the object copy is accessed through a website endpoint.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string RedirectLocation
@@ -271,7 +318,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequesterPays.
+        /// Gets and sets the property RequesterPays.  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool RequesterPays
         {
@@ -286,7 +337,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SSEAwsKmsKeyId.
+        /// Gets and sets the property SSEAwsKmsKeyId.  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
         public string SSEAwsKmsKeyId
@@ -302,7 +357,16 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageClass.
+        /// Gets and sets the property StorageClass. 
+        /// <para>
+        /// Specify the storage class for the destination objects in a <code>Copy</code> operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - This functionality is not supported by directory buckets.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3StorageClass StorageClass
         {
@@ -341,9 +405,20 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property TargetResource. 
         /// <para>
         /// Specifies the destination bucket Amazon Resource Name (ARN) for the batch copy operation.
-        /// For example, to copy objects to a bucket named <code>destinationBucket</code>, set
-        /// the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>General purpose buckets</b> - For example, to copy objects to a general purpose
+        /// bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property
+        /// to <code>arn:aws:s3:::destinationBucket</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For example, to copy objects to a directory bucket named
+        /// <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>,
+        /// set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TargetResource

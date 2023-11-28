@@ -110,7 +110,10 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentLength.
+        /// Gets and sets the property ContentLength. 
+        /// <para>
+        ///  <i>This member has been deprecated.</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
         public long ContentLength
@@ -126,7 +129,10 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentMD5.
+        /// Gets and sets the property ContentMD5. 
+        /// <para>
+        ///  <i>This member has been deprecated.</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string ContentMD5
@@ -173,7 +179,10 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequesterCharged.
+        /// Gets and sets the property RequesterCharged. 
+        /// <para>
+        ///  <i>This member has been deprecated.</i> 
+        /// </para>
         /// </summary>
         public bool RequesterCharged
         {
@@ -188,7 +197,12 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SSEAlgorithm.
+        /// Gets and sets the property SSEAlgorithm.  <note> 
+        /// <para>
+        /// For directory buckets, only the server-side encryption with Amazon S3 managed keys
+        /// (SSE-S3) (<code>AES256</code>) is supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3SSEAlgorithm SSEAlgorithm
         {

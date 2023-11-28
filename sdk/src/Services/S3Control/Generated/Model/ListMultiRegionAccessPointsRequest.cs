@@ -30,11 +30,17 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMultiRegionAccessPoints operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns a list of the Multi-Region Access Points currently associated with the specified
     /// Amazon Web Services account. Each call can return up to 100 Multi-Region Access Points,
     /// the maximum number of Multi-Region Access Points that can be associated with a single
     /// account.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This action will always be routed to the US West (Oregon) Region. For more information

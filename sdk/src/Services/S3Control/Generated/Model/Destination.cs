@@ -185,7 +185,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.
+        /// Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.
         /// 
         /// </para>
         ///  </note>

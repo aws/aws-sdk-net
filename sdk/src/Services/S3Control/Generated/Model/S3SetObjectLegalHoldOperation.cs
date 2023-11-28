@@ -33,6 +33,12 @@ namespace Amazon.S3Control.Model
     /// Operations job passes to every object to the underlying <code>PutObjectLegalHold</code>
     /// API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using
     /// S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This functionality is not supported by directory buckets.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class S3SetObjectLegalHoldOperation
     {
