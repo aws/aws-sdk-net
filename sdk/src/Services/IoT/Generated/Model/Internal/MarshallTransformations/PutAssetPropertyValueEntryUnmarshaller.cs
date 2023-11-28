@@ -52,15 +52,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PutAssetPropertyValueEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            PutAssetPropertyValueEntry unmarshalledObject = new PutAssetPropertyValueEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PutAssetPropertyValueEntry unmarshalledObject = new PutAssetPropertyValueEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

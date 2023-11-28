@@ -52,15 +52,14 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ServiceConnectConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ServiceConnectConfiguration unmarshalledObject = new ServiceConnectConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceConnectConfiguration unmarshalledObject = new ServiceConnectConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

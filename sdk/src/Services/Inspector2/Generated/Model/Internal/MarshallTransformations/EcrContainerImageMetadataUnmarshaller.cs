@@ -52,15 +52,14 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EcrContainerImageMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            EcrContainerImageMetadata unmarshalledObject = new EcrContainerImageMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EcrContainerImageMetadata unmarshalledObject = new EcrContainerImageMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

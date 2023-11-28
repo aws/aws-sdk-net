@@ -52,15 +52,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EvaluationFormQuestionTypeProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            EvaluationFormQuestionTypeProperties unmarshalledObject = new EvaluationFormQuestionTypeProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EvaluationFormQuestionTypeProperties unmarshalledObject = new EvaluationFormQuestionTypeProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

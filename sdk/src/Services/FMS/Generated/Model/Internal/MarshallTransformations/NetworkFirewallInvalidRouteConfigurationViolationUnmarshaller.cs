@@ -52,15 +52,14 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public NetworkFirewallInvalidRouteConfigurationViolation Unmarshall(JsonUnmarshallerContext context)
         {
+            NetworkFirewallInvalidRouteConfigurationViolation unmarshalledObject = new NetworkFirewallInvalidRouteConfigurationViolation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NetworkFirewallInvalidRouteConfigurationViolation unmarshalledObject = new NetworkFirewallInvalidRouteConfigurationViolation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -161,7 +160,6 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

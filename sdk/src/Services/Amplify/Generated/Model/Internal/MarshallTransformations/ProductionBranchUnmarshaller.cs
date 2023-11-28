@@ -52,15 +52,14 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProductionBranch Unmarshall(JsonUnmarshallerContext context)
         {
+            ProductionBranch unmarshalledObject = new ProductionBranch();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProductionBranch unmarshalledObject = new ProductionBranch();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

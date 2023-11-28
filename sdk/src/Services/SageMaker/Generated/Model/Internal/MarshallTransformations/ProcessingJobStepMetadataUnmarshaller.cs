@@ -52,15 +52,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProcessingJobStepMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            ProcessingJobStepMetadata unmarshalledObject = new ProcessingJobStepMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProcessingJobStepMetadata unmarshalledObject = new ProcessingJobStepMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

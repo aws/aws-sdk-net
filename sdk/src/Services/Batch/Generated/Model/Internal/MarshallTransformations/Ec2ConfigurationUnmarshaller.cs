@@ -52,15 +52,14 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Ec2Configuration Unmarshall(JsonUnmarshallerContext context)
         {
+            Ec2Configuration unmarshalledObject = new Ec2Configuration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Ec2Configuration unmarshalledObject = new Ec2Configuration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

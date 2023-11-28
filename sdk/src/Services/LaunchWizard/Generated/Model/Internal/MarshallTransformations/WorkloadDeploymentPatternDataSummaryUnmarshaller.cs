@@ -52,15 +52,14 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkloadDeploymentPatternDataSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkloadDeploymentPatternDataSummary unmarshalledObject = new WorkloadDeploymentPatternDataSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkloadDeploymentPatternDataSummary unmarshalledObject = new WorkloadDeploymentPatternDataSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AppflowIntegrationWorkflowStep Unmarshall(JsonUnmarshallerContext context)
         {
+            AppflowIntegrationWorkflowStep unmarshalledObject = new AppflowIntegrationWorkflowStep();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AppflowIntegrationWorkflowStep unmarshalledObject = new AppflowIntegrationWorkflowStep();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

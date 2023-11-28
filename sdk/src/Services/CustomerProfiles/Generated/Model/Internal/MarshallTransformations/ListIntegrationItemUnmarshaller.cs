@@ -52,15 +52,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ListIntegrationItem Unmarshall(JsonUnmarshallerContext context)
         {
+            ListIntegrationItem unmarshalledObject = new ListIntegrationItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListIntegrationItem unmarshalledObject = new ListIntegrationItem();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public KxDatabaseCacheConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            KxDatabaseCacheConfiguration unmarshalledObject = new KxDatabaseCacheConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KxDatabaseCacheConfiguration unmarshalledObject = new KxDatabaseCacheConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

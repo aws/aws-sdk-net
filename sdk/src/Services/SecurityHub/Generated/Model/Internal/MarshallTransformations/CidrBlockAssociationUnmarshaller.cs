@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CidrBlockAssociation Unmarshall(JsonUnmarshallerContext context)
         {
+            CidrBlockAssociation unmarshalledObject = new CidrBlockAssociation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CidrBlockAssociation unmarshalledObject = new CidrBlockAssociation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

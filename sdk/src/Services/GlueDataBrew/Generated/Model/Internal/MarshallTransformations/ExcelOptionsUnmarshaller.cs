@@ -52,15 +52,14 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ExcelOptions Unmarshall(JsonUnmarshallerContext context)
         {
+            ExcelOptions unmarshalledObject = new ExcelOptions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExcelOptions unmarshalledObject = new ExcelOptions();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PropertyFilter Unmarshall(JsonUnmarshallerContext context)
         {
+            PropertyFilter unmarshalledObject = new PropertyFilter();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PropertyFilter unmarshalledObject = new PropertyFilter();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

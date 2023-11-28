@@ -52,15 +52,14 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MonthlyTransfer Unmarshall(JsonUnmarshallerContext context)
         {
+            MonthlyTransfer unmarshalledObject = new MonthlyTransfer();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MonthlyTransfer unmarshalledObject = new MonthlyTransfer();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

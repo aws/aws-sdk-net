@@ -52,15 +52,14 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TokenIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
+            TokenIdentifier unmarshalledObject = new TokenIdentifier();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TokenIdentifier unmarshalledObject = new TokenIdentifier();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

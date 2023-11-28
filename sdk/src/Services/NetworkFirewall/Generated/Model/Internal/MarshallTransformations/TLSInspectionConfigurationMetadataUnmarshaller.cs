@@ -52,15 +52,14 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TLSInspectionConfigurationMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            TLSInspectionConfigurationMetadata unmarshalledObject = new TLSInspectionConfigurationMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TLSInspectionConfigurationMetadata unmarshalledObject = new TLSInspectionConfigurationMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

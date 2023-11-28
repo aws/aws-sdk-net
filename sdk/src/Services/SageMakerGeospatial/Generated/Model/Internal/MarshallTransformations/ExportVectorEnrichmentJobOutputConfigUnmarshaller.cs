@@ -52,15 +52,14 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ExportVectorEnrichmentJobOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            ExportVectorEnrichmentJobOutputConfig unmarshalledObject = new ExportVectorEnrichmentJobOutputConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExportVectorEnrichmentJobOutputConfig unmarshalledObject = new ExportVectorEnrichmentJobOutputConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TerraformSource Unmarshall(JsonUnmarshallerContext context)
         {
+            TerraformSource unmarshalledObject = new TerraformSource();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TerraformSource unmarshalledObject = new TerraformSource();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

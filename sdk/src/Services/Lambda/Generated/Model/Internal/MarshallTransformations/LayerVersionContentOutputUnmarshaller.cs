@@ -52,15 +52,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LayerVersionContentOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            LayerVersionContentOutput unmarshalledObject = new LayerVersionContentOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LayerVersionContentOutput unmarshalledObject = new LayerVersionContentOutput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

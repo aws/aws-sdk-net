@@ -52,15 +52,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FailedRequest Unmarshall(JsonUnmarshallerContext context)
         {
+            FailedRequest unmarshalledObject = new FailedRequest();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FailedRequest unmarshalledObject = new FailedRequest();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

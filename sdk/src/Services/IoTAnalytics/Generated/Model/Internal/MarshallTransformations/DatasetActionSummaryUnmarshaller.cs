@@ -52,15 +52,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DatasetActionSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            DatasetActionSummary unmarshalledObject = new DatasetActionSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetActionSummary unmarshalledObject = new DatasetActionSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ObdInterface Unmarshall(JsonUnmarshallerContext context)
         {
+            ObdInterface unmarshalledObject = new ObdInterface();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ObdInterface unmarshalledObject = new ObdInterface();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

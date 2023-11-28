@@ -52,15 +52,14 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ObservabilityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ObservabilityConfiguration unmarshalledObject = new ObservabilityConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ObservabilityConfiguration unmarshalledObject = new ObservabilityConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

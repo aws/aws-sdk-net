@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsIamRolePolicy Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsIamRolePolicy unmarshalledObject = new AwsIamRolePolicy();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsIamRolePolicy unmarshalledObject = new AwsIamRolePolicy();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

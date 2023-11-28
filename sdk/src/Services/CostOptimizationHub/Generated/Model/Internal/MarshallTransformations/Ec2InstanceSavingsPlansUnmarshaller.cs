@@ -52,15 +52,14 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Ec2InstanceSavingsPlans Unmarshall(JsonUnmarshallerContext context)
         {
+            Ec2InstanceSavingsPlans unmarshalledObject = new Ec2InstanceSavingsPlans();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Ec2InstanceSavingsPlans unmarshalledObject = new Ec2InstanceSavingsPlans();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

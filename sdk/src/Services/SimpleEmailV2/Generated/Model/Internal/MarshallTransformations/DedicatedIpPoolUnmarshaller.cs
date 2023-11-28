@@ -52,15 +52,14 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DedicatedIpPool Unmarshall(JsonUnmarshallerContext context)
         {
+            DedicatedIpPool unmarshalledObject = new DedicatedIpPool();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DedicatedIpPool unmarshalledObject = new DedicatedIpPool();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

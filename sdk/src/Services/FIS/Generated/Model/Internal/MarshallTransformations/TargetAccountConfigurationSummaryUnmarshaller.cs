@@ -52,15 +52,14 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TargetAccountConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            TargetAccountConfigurationSummary unmarshalledObject = new TargetAccountConfigurationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TargetAccountConfigurationSummary unmarshalledObject = new TargetAccountConfigurationSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

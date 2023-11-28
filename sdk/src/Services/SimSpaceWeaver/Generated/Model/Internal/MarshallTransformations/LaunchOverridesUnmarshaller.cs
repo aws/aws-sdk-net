@@ -52,15 +52,14 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LaunchOverrides Unmarshall(JsonUnmarshallerContext context)
         {
+            LaunchOverrides unmarshalledObject = new LaunchOverrides();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LaunchOverrides unmarshalledObject = new LaunchOverrides();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IngestConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            IngestConfiguration unmarshalledObject = new IngestConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IngestConfiguration unmarshalledObject = new IngestConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DomainNameConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            DomainNameConfiguration unmarshalledObject = new DomainNameConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainNameConfiguration unmarshalledObject = new DomainNameConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

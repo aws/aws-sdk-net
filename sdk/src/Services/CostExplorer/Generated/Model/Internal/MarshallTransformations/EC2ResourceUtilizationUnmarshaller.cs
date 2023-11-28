@@ -52,15 +52,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EC2ResourceUtilization Unmarshall(JsonUnmarshallerContext context)
         {
+            EC2ResourceUtilization unmarshalledObject = new EC2ResourceUtilization();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EC2ResourceUtilization unmarshalledObject = new EC2ResourceUtilization();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

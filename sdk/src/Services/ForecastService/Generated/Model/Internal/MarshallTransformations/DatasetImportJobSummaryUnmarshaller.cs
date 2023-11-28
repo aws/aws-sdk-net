@@ -52,15 +52,14 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DatasetImportJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            DatasetImportJobSummary unmarshalledObject = new DatasetImportJobSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetImportJobSummary unmarshalledObject = new DatasetImportJobSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

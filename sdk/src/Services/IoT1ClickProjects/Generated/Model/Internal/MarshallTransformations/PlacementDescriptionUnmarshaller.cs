@@ -52,15 +52,14 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PlacementDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            PlacementDescription unmarshalledObject = new PlacementDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PlacementDescription unmarshalledObject = new PlacementDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

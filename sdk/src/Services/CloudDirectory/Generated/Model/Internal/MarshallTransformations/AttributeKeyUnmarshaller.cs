@@ -52,15 +52,14 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AttributeKey Unmarshall(JsonUnmarshallerContext context)
         {
+            AttributeKey unmarshalledObject = new AttributeKey();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AttributeKey unmarshalledObject = new AttributeKey();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public VcfOptions Unmarshall(JsonUnmarshallerContext context)
         {
+            VcfOptions unmarshalledObject = new VcfOptions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VcfOptions unmarshalledObject = new VcfOptions();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

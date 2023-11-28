@@ -52,15 +52,14 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CertificateDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            CertificateDetail unmarshalledObject = new CertificateDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CertificateDetail unmarshalledObject = new CertificateDetail();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -221,7 +220,6 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

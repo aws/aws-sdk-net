@@ -52,15 +52,14 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LifeCycleLastCutover Unmarshall(JsonUnmarshallerContext context)
         {
+            LifeCycleLastCutover unmarshalledObject = new LifeCycleLastCutover();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LifeCycleLastCutover unmarshalledObject = new LifeCycleLastCutover();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

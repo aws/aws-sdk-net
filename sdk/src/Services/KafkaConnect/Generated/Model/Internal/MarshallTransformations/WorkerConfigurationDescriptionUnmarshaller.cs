@@ -52,15 +52,14 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkerConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkerConfigurationDescription unmarshalledObject = new WorkerConfigurationDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkerConfigurationDescription unmarshalledObject = new WorkerConfigurationDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

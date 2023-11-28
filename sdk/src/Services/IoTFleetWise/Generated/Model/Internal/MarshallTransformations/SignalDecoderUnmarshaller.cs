@@ -52,15 +52,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SignalDecoder Unmarshall(JsonUnmarshallerContext context)
         {
+            SignalDecoder unmarshalledObject = new SignalDecoder();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SignalDecoder unmarshalledObject = new SignalDecoder();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

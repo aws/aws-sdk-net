@@ -52,15 +52,14 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Csv Unmarshall(JsonUnmarshallerContext context)
         {
+            Csv unmarshalledObject = new Csv();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Csv unmarshalledObject = new Csv();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

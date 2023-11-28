@@ -52,15 +52,14 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ResourceSetOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            ResourceSetOutput unmarshalledObject = new ResourceSetOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceSetOutput unmarshalledObject = new ResourceSetOutput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

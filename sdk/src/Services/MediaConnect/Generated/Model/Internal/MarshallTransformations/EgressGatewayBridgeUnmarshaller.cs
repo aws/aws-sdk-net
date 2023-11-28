@@ -52,15 +52,14 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EgressGatewayBridge Unmarshall(JsonUnmarshallerContext context)
         {
+            EgressGatewayBridge unmarshalledObject = new EgressGatewayBridge();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EgressGatewayBridge unmarshalledObject = new EgressGatewayBridge();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsRedshiftClusterElasticIpStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsRedshiftClusterElasticIpStatus unmarshalledObject = new AwsRedshiftClusterElasticIpStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsRedshiftClusterElasticIpStatus unmarshalledObject = new AwsRedshiftClusterElasticIpStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

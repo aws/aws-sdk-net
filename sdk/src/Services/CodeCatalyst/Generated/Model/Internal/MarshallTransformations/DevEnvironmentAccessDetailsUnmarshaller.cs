@@ -52,15 +52,14 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DevEnvironmentAccessDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            DevEnvironmentAccessDetails unmarshalledObject = new DevEnvironmentAccessDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DevEnvironmentAccessDetails unmarshalledObject = new DevEnvironmentAccessDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TestRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
+            TestRecommendation unmarshalledObject = new TestRecommendation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TestRecommendation unmarshalledObject = new TestRecommendation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -137,7 +136,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

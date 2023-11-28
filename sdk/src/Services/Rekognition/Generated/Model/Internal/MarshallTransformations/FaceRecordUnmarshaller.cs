@@ -52,15 +52,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FaceRecord Unmarshall(JsonUnmarshallerContext context)
         {
+            FaceRecord unmarshalledObject = new FaceRecord();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FaceRecord unmarshalledObject = new FaceRecord();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

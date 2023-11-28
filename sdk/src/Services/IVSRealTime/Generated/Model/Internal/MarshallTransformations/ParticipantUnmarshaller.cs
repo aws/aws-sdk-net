@@ -52,15 +52,14 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Participant Unmarshall(JsonUnmarshallerContext context)
         {
+            Participant unmarshalledObject = new Participant();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Participant unmarshalledObject = new Participant();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -137,7 +136,6 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

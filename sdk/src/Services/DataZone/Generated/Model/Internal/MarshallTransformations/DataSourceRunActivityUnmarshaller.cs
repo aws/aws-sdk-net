@@ -52,15 +52,14 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DataSourceRunActivity Unmarshall(JsonUnmarshallerContext context)
         {
+            DataSourceRunActivity unmarshalledObject = new DataSourceRunActivity();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataSourceRunActivity unmarshalledObject = new DataSourceRunActivity();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

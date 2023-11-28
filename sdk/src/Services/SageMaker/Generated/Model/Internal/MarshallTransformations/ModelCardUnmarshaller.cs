@@ -52,15 +52,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ModelCard Unmarshall(JsonUnmarshallerContext context)
         {
+            ModelCard unmarshalledObject = new ModelCard();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModelCard unmarshalledObject = new ModelCard();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -149,7 +148,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LFTag Unmarshall(JsonUnmarshallerContext context)
         {
+            LFTag unmarshalledObject = new LFTag();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LFTag unmarshalledObject = new LFTag();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

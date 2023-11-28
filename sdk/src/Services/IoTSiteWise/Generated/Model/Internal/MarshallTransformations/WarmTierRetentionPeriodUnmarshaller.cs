@@ -52,15 +52,14 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WarmTierRetentionPeriod Unmarshall(JsonUnmarshallerContext context)
         {
+            WarmTierRetentionPeriod unmarshalledObject = new WarmTierRetentionPeriod();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WarmTierRetentionPeriod unmarshalledObject = new WarmTierRetentionPeriod();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

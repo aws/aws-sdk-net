@@ -52,15 +52,14 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OpenSearchReservedInstances Unmarshall(JsonUnmarshallerContext context)
         {
+            OpenSearchReservedInstances unmarshalledObject = new OpenSearchReservedInstances();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OpenSearchReservedInstances unmarshalledObject = new OpenSearchReservedInstances();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

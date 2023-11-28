@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public H265ColorSpaceSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            H265ColorSpaceSettings unmarshalledObject = new H265ColorSpaceSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            H265ColorSpaceSettings unmarshalledObject = new H265ColorSpaceSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

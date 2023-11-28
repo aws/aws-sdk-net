@@ -52,15 +52,14 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FrameMetric Unmarshall(JsonUnmarshallerContext context)
         {
+            FrameMetric unmarshalledObject = new FrameMetric();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FrameMetric unmarshalledObject = new FrameMetric();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

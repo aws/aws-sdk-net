@@ -52,15 +52,14 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EcsEphemeralStorage Unmarshall(JsonUnmarshallerContext context)
         {
+            EcsEphemeralStorage unmarshalledObject = new EcsEphemeralStorage();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EcsEphemeralStorage unmarshalledObject = new EcsEphemeralStorage();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

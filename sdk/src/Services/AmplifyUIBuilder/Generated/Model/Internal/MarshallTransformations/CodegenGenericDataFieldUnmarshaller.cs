@@ -52,15 +52,14 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CodegenGenericDataField Unmarshall(JsonUnmarshallerContext context)
         {
+            CodegenGenericDataField unmarshalledObject = new CodegenGenericDataField();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CodegenGenericDataField unmarshalledObject = new CodegenGenericDataField();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

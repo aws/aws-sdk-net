@@ -52,15 +52,14 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EBSEstimatedMonthlySavings Unmarshall(JsonUnmarshallerContext context)
         {
+            EBSEstimatedMonthlySavings unmarshalledObject = new EBSEstimatedMonthlySavings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EBSEstimatedMonthlySavings unmarshalledObject = new EBSEstimatedMonthlySavings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

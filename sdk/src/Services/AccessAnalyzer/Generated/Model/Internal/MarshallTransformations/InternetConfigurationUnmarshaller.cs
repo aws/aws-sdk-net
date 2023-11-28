@@ -52,20 +52,18 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public InternetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            InternetConfiguration unmarshalledObject = new InternetConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InternetConfiguration unmarshalledObject = new InternetConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

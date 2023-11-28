@@ -52,15 +52,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GameServerInstance Unmarshall(JsonUnmarshallerContext context)
         {
+            GameServerInstance unmarshalledObject = new GameServerInstance();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GameServerInstance unmarshalledObject = new GameServerInstance();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

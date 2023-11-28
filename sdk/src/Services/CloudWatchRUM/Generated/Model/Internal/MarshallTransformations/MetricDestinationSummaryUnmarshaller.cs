@@ -52,15 +52,14 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MetricDestinationSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            MetricDestinationSummary unmarshalledObject = new MetricDestinationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MetricDestinationSummary unmarshalledObject = new MetricDestinationSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

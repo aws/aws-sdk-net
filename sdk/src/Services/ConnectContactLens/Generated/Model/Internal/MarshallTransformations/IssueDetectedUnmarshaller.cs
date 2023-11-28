@@ -52,15 +52,14 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IssueDetected Unmarshall(JsonUnmarshallerContext context)
         {
+            IssueDetected unmarshalledObject = new IssueDetected();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IssueDetected unmarshalledObject = new IssueDetected();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

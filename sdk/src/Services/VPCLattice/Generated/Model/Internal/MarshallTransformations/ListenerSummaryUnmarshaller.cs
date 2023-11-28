@@ -52,15 +52,14 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ListenerSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            ListenerSummary unmarshalledObject = new ListenerSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListenerSummary unmarshalledObject = new ListenerSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

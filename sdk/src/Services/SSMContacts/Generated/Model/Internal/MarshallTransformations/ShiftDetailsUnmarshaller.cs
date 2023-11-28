@@ -52,15 +52,14 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ShiftDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            ShiftDetails unmarshalledObject = new ShiftDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ShiftDetails unmarshalledObject = new ShiftDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

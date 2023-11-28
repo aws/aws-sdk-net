@@ -52,15 +52,14 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ExperimentTemplateStopCondition Unmarshall(JsonUnmarshallerContext context)
         {
+            ExperimentTemplateStopCondition unmarshalledObject = new ExperimentTemplateStopCondition();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExperimentTemplateStopCondition unmarshalledObject = new ExperimentTemplateStopCondition();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

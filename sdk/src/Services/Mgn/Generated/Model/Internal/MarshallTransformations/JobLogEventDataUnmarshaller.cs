@@ -52,15 +52,14 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JobLogEventData Unmarshall(JsonUnmarshallerContext context)
         {
+            JobLogEventData unmarshalledObject = new JobLogEventData();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobLogEventData unmarshalledObject = new JobLogEventData();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

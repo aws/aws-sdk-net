@@ -52,15 +52,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProfilerRuleEvaluationStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            ProfilerRuleEvaluationStatus unmarshalledObject = new ProfilerRuleEvaluationStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProfilerRuleEvaluationStatus unmarshalledObject = new ProfilerRuleEvaluationStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

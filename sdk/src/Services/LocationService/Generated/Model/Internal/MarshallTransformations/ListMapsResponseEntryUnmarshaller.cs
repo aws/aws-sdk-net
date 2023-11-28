@@ -52,15 +52,14 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ListMapsResponseEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            ListMapsResponseEntry unmarshalledObject = new ListMapsResponseEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListMapsResponseEntry unmarshalledObject = new ListMapsResponseEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

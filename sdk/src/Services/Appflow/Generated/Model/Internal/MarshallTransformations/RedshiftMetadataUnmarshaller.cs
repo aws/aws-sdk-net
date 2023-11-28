@@ -52,20 +52,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RedshiftMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            RedshiftMetadata unmarshalledObject = new RedshiftMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RedshiftMetadata unmarshalledObject = new RedshiftMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ModuleLoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ModuleLoggingConfiguration unmarshalledObject = new ModuleLoggingConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModuleLoggingConfiguration unmarshalledObject = new ModuleLoggingConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

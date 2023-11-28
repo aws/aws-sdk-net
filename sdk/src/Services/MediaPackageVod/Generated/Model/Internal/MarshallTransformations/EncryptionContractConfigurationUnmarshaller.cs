@@ -52,15 +52,14 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EncryptionContractConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            EncryptionContractConfiguration unmarshalledObject = new EncryptionContractConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EncryptionContractConfiguration unmarshalledObject = new EncryptionContractConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

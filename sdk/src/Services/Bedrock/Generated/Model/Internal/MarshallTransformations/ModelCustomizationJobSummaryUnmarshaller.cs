@@ -52,15 +52,14 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ModelCustomizationJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            ModelCustomizationJobSummary unmarshalledObject = new ModelCustomizationJobSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModelCustomizationJobSummary unmarshalledObject = new ModelCustomizationJobSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public M2tsScte35Esam Unmarshall(JsonUnmarshallerContext context)
         {
+            M2tsScte35Esam unmarshalledObject = new M2tsScte35Esam();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            M2tsScte35Esam unmarshalledObject = new M2tsScte35Esam();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public M3u8Settings Unmarshall(JsonUnmarshallerContext context)
         {
+            M3u8Settings unmarshalledObject = new M3u8Settings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            M3u8Settings unmarshalledObject = new M3u8Settings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -179,7 +178,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

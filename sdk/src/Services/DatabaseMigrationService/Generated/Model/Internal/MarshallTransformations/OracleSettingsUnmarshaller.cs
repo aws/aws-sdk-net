@@ -52,15 +52,14 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OracleSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            OracleSettings unmarshalledObject = new OracleSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OracleSettings unmarshalledObject = new OracleSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -323,7 +322,6 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

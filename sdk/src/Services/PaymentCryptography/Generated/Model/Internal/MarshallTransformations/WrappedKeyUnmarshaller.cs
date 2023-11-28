@@ -52,15 +52,14 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WrappedKey Unmarshall(JsonUnmarshallerContext context)
         {
+            WrappedKey unmarshalledObject = new WrappedKey();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WrappedKey unmarshalledObject = new WrappedKey();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

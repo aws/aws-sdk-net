@@ -52,15 +52,14 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PredictiveDialerConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            PredictiveDialerConfig unmarshalledObject = new PredictiveDialerConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictiveDialerConfig unmarshalledObject = new PredictiveDialerConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

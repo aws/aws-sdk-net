@@ -52,15 +52,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CloudwatchLogsAction Unmarshall(JsonUnmarshallerContext context)
         {
+            CloudwatchLogsAction unmarshalledObject = new CloudwatchLogsAction();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CloudwatchLogsAction unmarshalledObject = new CloudwatchLogsAction();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

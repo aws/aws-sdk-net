@@ -52,15 +52,14 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ReviewTemplate Unmarshall(JsonUnmarshallerContext context)
         {
+            ReviewTemplate unmarshalledObject = new ReviewTemplate();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReviewTemplate unmarshalledObject = new ReviewTemplate();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

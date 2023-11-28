@@ -52,15 +52,14 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LakeFormationDataPermissionDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            LakeFormationDataPermissionDetails unmarshalledObject = new LakeFormationDataPermissionDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LakeFormationDataPermissionDetails unmarshalledObject = new LakeFormationDataPermissionDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

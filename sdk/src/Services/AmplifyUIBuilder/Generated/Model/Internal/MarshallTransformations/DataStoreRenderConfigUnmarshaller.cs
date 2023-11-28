@@ -52,20 +52,18 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DataStoreRenderConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            DataStoreRenderConfig unmarshalledObject = new DataStoreRenderConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataStoreRenderConfig unmarshalledObject = new DataStoreRenderConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

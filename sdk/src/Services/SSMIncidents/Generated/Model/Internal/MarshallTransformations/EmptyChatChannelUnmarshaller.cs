@@ -52,20 +52,18 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EmptyChatChannel Unmarshall(JsonUnmarshallerContext context)
         {
+            EmptyChatChannel unmarshalledObject = new EmptyChatChannel();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EmptyChatChannel unmarshalledObject = new EmptyChatChannel();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

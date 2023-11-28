@@ -52,15 +52,14 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AmplitudeSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            AmplitudeSourceProperties unmarshalledObject = new AmplitudeSourceProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AmplitudeSourceProperties unmarshalledObject = new AmplitudeSourceProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

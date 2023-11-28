@@ -52,20 +52,18 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JsonConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            JsonConfiguration unmarshalledObject = new JsonConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JsonConfiguration unmarshalledObject = new JsonConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

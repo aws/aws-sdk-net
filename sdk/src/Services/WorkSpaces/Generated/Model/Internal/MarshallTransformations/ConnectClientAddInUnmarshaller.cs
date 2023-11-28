@@ -52,15 +52,14 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ConnectClientAddIn Unmarshall(JsonUnmarshallerContext context)
         {
+            ConnectClientAddIn unmarshalledObject = new ConnectClientAddIn();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConnectClientAddIn unmarshalledObject = new ConnectClientAddIn();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

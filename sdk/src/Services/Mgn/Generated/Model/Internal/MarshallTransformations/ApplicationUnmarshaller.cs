@@ -52,15 +52,14 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Application Unmarshall(JsonUnmarshallerContext context)
         {
+            Application unmarshalledObject = new Application();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Application unmarshalledObject = new Application();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

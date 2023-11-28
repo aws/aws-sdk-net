@@ -52,15 +52,14 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SystemTemplateDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            SystemTemplateDescription unmarshalledObject = new SystemTemplateDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SystemTemplateDescription unmarshalledObject = new SystemTemplateDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

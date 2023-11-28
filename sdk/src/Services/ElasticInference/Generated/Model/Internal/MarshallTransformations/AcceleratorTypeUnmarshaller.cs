@@ -52,15 +52,14 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AcceleratorType Unmarshall(JsonUnmarshallerContext context)
         {
+            AcceleratorType unmarshalledObject = new AcceleratorType();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AcceleratorType unmarshalledObject = new AcceleratorType();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

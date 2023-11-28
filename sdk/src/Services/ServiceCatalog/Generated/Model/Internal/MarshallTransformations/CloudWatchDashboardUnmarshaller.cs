@@ -52,15 +52,14 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CloudWatchDashboard Unmarshall(JsonUnmarshallerContext context)
         {
+            CloudWatchDashboard unmarshalledObject = new CloudWatchDashboard();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CloudWatchDashboard unmarshalledObject = new CloudWatchDashboard();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

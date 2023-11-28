@@ -52,15 +52,14 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RemediationExecutionStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            RemediationExecutionStatus unmarshalledObject = new RemediationExecutionStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RemediationExecutionStatus unmarshalledObject = new RemediationExecutionStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

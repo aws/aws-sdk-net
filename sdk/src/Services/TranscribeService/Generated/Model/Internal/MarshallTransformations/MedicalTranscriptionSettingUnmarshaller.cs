@@ -52,15 +52,14 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MedicalTranscriptionSetting Unmarshall(JsonUnmarshallerContext context)
         {
+            MedicalTranscriptionSetting unmarshalledObject = new MedicalTranscriptionSetting();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MedicalTranscriptionSetting unmarshalledObject = new MedicalTranscriptionSetting();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

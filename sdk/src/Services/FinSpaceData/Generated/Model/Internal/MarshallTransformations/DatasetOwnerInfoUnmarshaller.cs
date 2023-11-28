@@ -52,15 +52,14 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DatasetOwnerInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            DatasetOwnerInfo unmarshalledObject = new DatasetOwnerInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetOwnerInfo unmarshalledObject = new DatasetOwnerInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

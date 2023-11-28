@@ -52,15 +52,14 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ExperimentReport Unmarshall(JsonUnmarshallerContext context)
         {
+            ExperimentReport unmarshalledObject = new ExperimentReport();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExperimentReport unmarshalledObject = new ExperimentReport();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

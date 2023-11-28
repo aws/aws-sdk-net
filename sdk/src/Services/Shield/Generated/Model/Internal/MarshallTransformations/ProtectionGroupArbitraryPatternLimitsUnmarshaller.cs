@@ -52,15 +52,14 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProtectionGroupArbitraryPatternLimits Unmarshall(JsonUnmarshallerContext context)
         {
+            ProtectionGroupArbitraryPatternLimits unmarshalledObject = new ProtectionGroupArbitraryPatternLimits();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProtectionGroupArbitraryPatternLimits unmarshalledObject = new ProtectionGroupArbitraryPatternLimits();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MySqlDataProviderSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            MySqlDataProviderSettings unmarshalledObject = new MySqlDataProviderSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MySqlDataProviderSettings unmarshalledObject = new MySqlDataProviderSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

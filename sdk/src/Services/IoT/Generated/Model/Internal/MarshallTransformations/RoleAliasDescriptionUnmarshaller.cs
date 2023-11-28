@@ -52,15 +52,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RoleAliasDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            RoleAliasDescription unmarshalledObject = new RoleAliasDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RoleAliasDescription unmarshalledObject = new RoleAliasDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

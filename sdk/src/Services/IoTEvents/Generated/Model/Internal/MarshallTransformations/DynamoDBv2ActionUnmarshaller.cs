@@ -52,15 +52,14 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DynamoDBv2Action Unmarshall(JsonUnmarshallerContext context)
         {
+            DynamoDBv2Action unmarshalledObject = new DynamoDBv2Action();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DynamoDBv2Action unmarshalledObject = new DynamoDBv2Action();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

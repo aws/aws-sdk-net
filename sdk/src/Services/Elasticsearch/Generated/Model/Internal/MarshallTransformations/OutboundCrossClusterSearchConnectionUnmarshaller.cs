@@ -52,15 +52,14 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OutboundCrossClusterSearchConnection Unmarshall(JsonUnmarshallerContext context)
         {
+            OutboundCrossClusterSearchConnection unmarshalledObject = new OutboundCrossClusterSearchConnection();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutboundCrossClusterSearchConnection unmarshalledObject = new OutboundCrossClusterSearchConnection();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

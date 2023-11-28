@@ -52,15 +52,14 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public StaticPolicyDefinitionDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            StaticPolicyDefinitionDetail unmarshalledObject = new StaticPolicyDefinitionDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StaticPolicyDefinitionDetail unmarshalledObject = new StaticPolicyDefinitionDetail();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

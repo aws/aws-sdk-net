@@ -52,15 +52,14 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SetTimerAction Unmarshall(JsonUnmarshallerContext context)
         {
+            SetTimerAction unmarshalledObject = new SetTimerAction();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SetTimerAction unmarshalledObject = new SetTimerAction();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

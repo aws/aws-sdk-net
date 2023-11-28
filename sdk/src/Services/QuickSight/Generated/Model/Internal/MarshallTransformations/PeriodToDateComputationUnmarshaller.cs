@@ -52,15 +52,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PeriodToDateComputation Unmarshall(JsonUnmarshallerContext context)
         {
+            PeriodToDateComputation unmarshalledObject = new PeriodToDateComputation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PeriodToDateComputation unmarshalledObject = new PeriodToDateComputation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

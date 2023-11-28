@@ -52,15 +52,14 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ReputationOptions Unmarshall(JsonUnmarshallerContext context)
         {
+            ReputationOptions unmarshalledObject = new ReputationOptions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReputationOptions unmarshalledObject = new ReputationOptions();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

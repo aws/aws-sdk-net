@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsSageMakerNotebookInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsSageMakerNotebookInstanceDetails unmarshalledObject = new AwsSageMakerNotebookInstanceDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsSageMakerNotebookInstanceDetails unmarshalledObject = new AwsSageMakerNotebookInstanceDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -185,7 +184,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

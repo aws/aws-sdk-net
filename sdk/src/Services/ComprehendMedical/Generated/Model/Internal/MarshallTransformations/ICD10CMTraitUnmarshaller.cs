@@ -52,15 +52,14 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ICD10CMTrait Unmarshall(JsonUnmarshallerContext context)
         {
+            ICD10CMTrait unmarshalledObject = new ICD10CMTrait();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ICD10CMTrait unmarshalledObject = new ICD10CMTrait();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

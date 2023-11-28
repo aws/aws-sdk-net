@@ -52,15 +52,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MonitoringGroundTruthS3Input Unmarshall(JsonUnmarshallerContext context)
         {
+            MonitoringGroundTruthS3Input unmarshalledObject = new MonitoringGroundTruthS3Input();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MonitoringGroundTruthS3Input unmarshalledObject = new MonitoringGroundTruthS3Input();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

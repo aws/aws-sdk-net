@@ -52,15 +52,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ComparisonFormatConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ComparisonFormatConfiguration unmarshalledObject = new ComparisonFormatConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComparisonFormatConfiguration unmarshalledObject = new ComparisonFormatConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

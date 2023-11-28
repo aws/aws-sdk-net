@@ -52,15 +52,14 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PipeTargetBatchJobParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            PipeTargetBatchJobParameters unmarshalledObject = new PipeTargetBatchJobParameters();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipeTargetBatchJobParameters unmarshalledObject = new PipeTargetBatchJobParameters();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

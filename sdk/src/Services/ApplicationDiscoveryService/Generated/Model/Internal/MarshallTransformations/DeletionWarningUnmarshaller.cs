@@ -52,15 +52,14 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DeletionWarning Unmarshall(JsonUnmarshallerContext context)
         {
+            DeletionWarning unmarshalledObject = new DeletionWarning();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeletionWarning unmarshalledObject = new DeletionWarning();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

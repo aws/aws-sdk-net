@@ -52,15 +52,14 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DataRetrievalPolicy Unmarshall(JsonUnmarshallerContext context)
         {
+            DataRetrievalPolicy unmarshalledObject = new DataRetrievalPolicy();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataRetrievalPolicy unmarshalledObject = new DataRetrievalPolicy();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

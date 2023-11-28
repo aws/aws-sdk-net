@@ -52,15 +52,14 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SigningConfigurationOverrides Unmarshall(JsonUnmarshallerContext context)
         {
+            SigningConfigurationOverrides unmarshalledObject = new SigningConfigurationOverrides();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SigningConfigurationOverrides unmarshalledObject = new SigningConfigurationOverrides();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TrustStoreSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            TrustStoreSummary unmarshalledObject = new TrustStoreSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TrustStoreSummary unmarshalledObject = new TrustStoreSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

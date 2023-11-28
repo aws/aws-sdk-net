@@ -52,15 +52,14 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GeneralFlagsV2 Unmarshall(JsonUnmarshallerContext context)
         {
+            GeneralFlagsV2 unmarshalledObject = new GeneralFlagsV2();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GeneralFlagsV2 unmarshalledObject = new GeneralFlagsV2();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

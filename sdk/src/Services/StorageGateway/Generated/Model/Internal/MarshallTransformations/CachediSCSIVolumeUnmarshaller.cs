@@ -52,15 +52,14 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CachediSCSIVolume Unmarshall(JsonUnmarshallerContext context)
         {
+            CachediSCSIVolume unmarshalledObject = new CachediSCSIVolume();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CachediSCSIVolume unmarshalledObject = new CachediSCSIVolume();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -143,7 +142,6 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

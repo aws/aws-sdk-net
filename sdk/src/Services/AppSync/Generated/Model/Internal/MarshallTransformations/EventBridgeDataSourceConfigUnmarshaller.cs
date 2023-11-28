@@ -52,15 +52,14 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EventBridgeDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            EventBridgeDataSourceConfig unmarshalledObject = new EventBridgeDataSourceConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EventBridgeDataSourceConfig unmarshalledObject = new EventBridgeDataSourceConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

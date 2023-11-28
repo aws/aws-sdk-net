@@ -52,15 +52,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SavingsPlansPurchaseRecommendationSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            SavingsPlansPurchaseRecommendationSummary unmarshalledObject = new SavingsPlansPurchaseRecommendationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SavingsPlansPurchaseRecommendationSummary unmarshalledObject = new SavingsPlansPurchaseRecommendationSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

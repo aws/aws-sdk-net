@@ -52,15 +52,14 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UnlockDelay Unmarshall(JsonUnmarshallerContext context)
         {
+            UnlockDelay unmarshalledObject = new UnlockDelay();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UnlockDelay unmarshalledObject = new UnlockDelay();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

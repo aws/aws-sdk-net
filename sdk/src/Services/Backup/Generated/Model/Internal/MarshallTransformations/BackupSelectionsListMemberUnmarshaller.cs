@@ -52,15 +52,14 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BackupSelectionsListMember Unmarshall(JsonUnmarshallerContext context)
         {
+            BackupSelectionsListMember unmarshalledObject = new BackupSelectionsListMember();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BackupSelectionsListMember unmarshalledObject = new BackupSelectionsListMember();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

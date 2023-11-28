@@ -52,15 +52,14 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UtteranceSpecification Unmarshall(JsonUnmarshallerContext context)
         {
+            UtteranceSpecification unmarshalledObject = new UtteranceSpecification();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UtteranceSpecification unmarshalledObject = new UtteranceSpecification();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -197,7 +196,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

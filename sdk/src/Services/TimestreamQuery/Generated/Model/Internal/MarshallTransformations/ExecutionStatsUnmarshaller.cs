@@ -52,15 +52,14 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ExecutionStats Unmarshall(JsonUnmarshallerContext context)
         {
+            ExecutionStats unmarshalledObject = new ExecutionStats();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExecutionStats unmarshalledObject = new ExecutionStats();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

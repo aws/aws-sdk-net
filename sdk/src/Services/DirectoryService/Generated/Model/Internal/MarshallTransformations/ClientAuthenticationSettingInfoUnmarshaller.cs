@@ -52,15 +52,14 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ClientAuthenticationSettingInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            ClientAuthenticationSettingInfo unmarshalledObject = new ClientAuthenticationSettingInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ClientAuthenticationSettingInfo unmarshalledObject = new ClientAuthenticationSettingInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

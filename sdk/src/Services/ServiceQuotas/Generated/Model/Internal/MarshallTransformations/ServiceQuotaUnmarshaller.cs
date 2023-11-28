@@ -52,15 +52,14 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ServiceQuota Unmarshall(JsonUnmarshallerContext context)
         {
+            ServiceQuota unmarshalledObject = new ServiceQuota();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceQuota unmarshalledObject = new ServiceQuota();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -149,7 +148,6 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

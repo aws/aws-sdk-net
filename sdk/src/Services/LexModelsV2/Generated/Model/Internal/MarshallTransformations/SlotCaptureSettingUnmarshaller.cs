@@ -52,15 +52,14 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SlotCaptureSetting Unmarshall(JsonUnmarshallerContext context)
         {
+            SlotCaptureSetting unmarshalledObject = new SlotCaptureSetting();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SlotCaptureSetting unmarshalledObject = new SlotCaptureSetting();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

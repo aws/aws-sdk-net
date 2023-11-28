@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsRdsDbSecurityGroupEc2SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsRdsDbSecurityGroupEc2SecurityGroup unmarshalledObject = new AwsRdsDbSecurityGroupEc2SecurityGroup();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsRdsDbSecurityGroupEc2SecurityGroup unmarshalledObject = new AwsRdsDbSecurityGroupEc2SecurityGroup();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

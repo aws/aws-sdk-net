@@ -52,15 +52,14 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BusinessReportContentRange Unmarshall(JsonUnmarshallerContext context)
         {
+            BusinessReportContentRange unmarshalledObject = new BusinessReportContentRange();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BusinessReportContentRange unmarshalledObject = new BusinessReportContentRange();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AssetBundleImportJobOverrideTags Unmarshall(JsonUnmarshallerContext context)
         {
+            AssetBundleImportJobOverrideTags unmarshalledObject = new AssetBundleImportJobOverrideTags();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AssetBundleImportJobOverrideTags unmarshalledObject = new AssetBundleImportJobOverrideTags();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

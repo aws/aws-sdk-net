@@ -52,15 +52,14 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RecommendationSource Unmarshall(JsonUnmarshallerContext context)
         {
+            RecommendationSource unmarshalledObject = new RecommendationSource();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationSource unmarshalledObject = new RecommendationSource();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FindingAction Unmarshall(JsonUnmarshallerContext context)
         {
+            FindingAction unmarshalledObject = new FindingAction();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FindingAction unmarshalledObject = new FindingAction();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

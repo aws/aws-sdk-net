@@ -52,15 +52,14 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GreengrassOutputDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            GreengrassOutputDetails unmarshalledObject = new GreengrassOutputDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GreengrassOutputDetails unmarshalledObject = new GreengrassOutputDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

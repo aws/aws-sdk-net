@@ -52,15 +52,14 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OidcJwtConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            OidcJwtConfiguration unmarshalledObject = new OidcJwtConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OidcJwtConfiguration unmarshalledObject = new OidcJwtConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

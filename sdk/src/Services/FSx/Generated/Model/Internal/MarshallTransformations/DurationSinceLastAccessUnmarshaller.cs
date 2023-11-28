@@ -52,15 +52,14 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DurationSinceLastAccess Unmarshall(JsonUnmarshallerContext context)
         {
+            DurationSinceLastAccess unmarshalledObject = new DurationSinceLastAccess();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DurationSinceLastAccess unmarshalledObject = new DurationSinceLastAccess();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProgressUpdateStreamSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            ProgressUpdateStreamSummary unmarshalledObject = new ProgressUpdateStreamSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProgressUpdateStreamSummary unmarshalledObject = new ProgressUpdateStreamSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

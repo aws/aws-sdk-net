@@ -52,15 +52,14 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CmafEncryption Unmarshall(JsonUnmarshallerContext context)
         {
+            CmafEncryption unmarshalledObject = new CmafEncryption();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CmafEncryption unmarshalledObject = new CmafEncryption();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3DestinationAccessControl Unmarshall(JsonUnmarshallerContext context)
         {
+            S3DestinationAccessControl unmarshalledObject = new S3DestinationAccessControl();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3DestinationAccessControl unmarshalledObject = new S3DestinationAccessControl();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

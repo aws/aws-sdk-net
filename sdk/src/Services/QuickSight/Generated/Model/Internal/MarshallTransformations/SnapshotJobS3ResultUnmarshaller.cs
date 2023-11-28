@@ -52,15 +52,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SnapshotJobS3Result Unmarshall(JsonUnmarshallerContext context)
         {
+            SnapshotJobS3Result unmarshalledObject = new SnapshotJobS3Result();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SnapshotJobS3Result unmarshalledObject = new SnapshotJobS3Result();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

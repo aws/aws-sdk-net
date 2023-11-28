@@ -52,15 +52,14 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OwnerDirectoryDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            OwnerDirectoryDescription unmarshalledObject = new OwnerDirectoryDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OwnerDirectoryDescription unmarshalledObject = new OwnerDirectoryDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

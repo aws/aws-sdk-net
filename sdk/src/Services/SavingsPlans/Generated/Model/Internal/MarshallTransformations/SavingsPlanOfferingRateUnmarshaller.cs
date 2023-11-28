@@ -52,15 +52,14 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SavingsPlanOfferingRate Unmarshall(JsonUnmarshallerContext context)
         {
+            SavingsPlanOfferingRate unmarshalledObject = new SavingsPlanOfferingRate();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SavingsPlanOfferingRate unmarshalledObject = new SavingsPlanOfferingRate();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

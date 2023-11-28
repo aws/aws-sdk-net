@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ChimeSdkMeetingLiveConnectorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ChimeSdkMeetingLiveConnectorConfiguration unmarshalledObject = new ChimeSdkMeetingLiveConnectorConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ChimeSdkMeetingLiveConnectorConfiguration unmarshalledObject = new ChimeSdkMeetingLiveConnectorConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

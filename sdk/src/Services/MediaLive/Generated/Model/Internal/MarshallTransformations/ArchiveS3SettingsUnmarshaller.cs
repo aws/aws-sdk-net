@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ArchiveS3Settings Unmarshall(JsonUnmarshallerContext context)
         {
+            ArchiveS3Settings unmarshalledObject = new ArchiveS3Settings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ArchiveS3Settings unmarshalledObject = new ArchiveS3Settings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

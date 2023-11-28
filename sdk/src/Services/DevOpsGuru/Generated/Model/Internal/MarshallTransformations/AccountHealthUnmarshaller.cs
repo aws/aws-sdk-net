@@ -52,15 +52,14 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AccountHealth Unmarshall(JsonUnmarshallerContext context)
         {
+            AccountHealth unmarshalledObject = new AccountHealth();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccountHealth unmarshalledObject = new AccountHealth();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

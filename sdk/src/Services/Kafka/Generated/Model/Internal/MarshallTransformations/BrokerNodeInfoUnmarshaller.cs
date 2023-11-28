@@ -52,15 +52,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BrokerNodeInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            BrokerNodeInfo unmarshalledObject = new BrokerNodeInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BrokerNodeInfo unmarshalledObject = new BrokerNodeInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SearchedLogStream Unmarshall(JsonUnmarshallerContext context)
         {
+            SearchedLogStream unmarshalledObject = new SearchedLogStream();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SearchedLogStream unmarshalledObject = new SearchedLogStream();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

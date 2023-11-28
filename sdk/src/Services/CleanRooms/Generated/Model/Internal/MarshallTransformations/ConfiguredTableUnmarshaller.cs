@@ -52,15 +52,14 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ConfiguredTable Unmarshall(JsonUnmarshallerContext context)
         {
+            ConfiguredTable unmarshalledObject = new ConfiguredTable();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfiguredTable unmarshalledObject = new ConfiguredTable();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

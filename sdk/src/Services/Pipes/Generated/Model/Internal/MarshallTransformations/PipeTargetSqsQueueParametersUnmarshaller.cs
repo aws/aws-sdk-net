@@ -52,15 +52,14 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PipeTargetSqsQueueParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            PipeTargetSqsQueueParameters unmarshalledObject = new PipeTargetSqsQueueParameters();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipeTargetSqsQueueParameters unmarshalledObject = new PipeTargetSqsQueueParameters();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LoRaWANGateway Unmarshall(JsonUnmarshallerContext context)
         {
+            LoRaWANGateway unmarshalledObject = new LoRaWANGateway();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LoRaWANGateway unmarshalledObject = new LoRaWANGateway();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3SourceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            S3SourceConfiguration unmarshalledObject = new S3SourceConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3SourceConfiguration unmarshalledObject = new S3SourceConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

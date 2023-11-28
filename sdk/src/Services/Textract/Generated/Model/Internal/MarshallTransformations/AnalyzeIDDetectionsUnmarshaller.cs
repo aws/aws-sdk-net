@@ -52,15 +52,14 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AnalyzeIDDetections Unmarshall(JsonUnmarshallerContext context)
         {
+            AnalyzeIDDetections unmarshalledObject = new AnalyzeIDDetections();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AnalyzeIDDetections unmarshalledObject = new AnalyzeIDDetections();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CustomEvents Unmarshall(JsonUnmarshallerContext context)
         {
+            CustomEvents unmarshalledObject = new CustomEvents();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CustomEvents unmarshalledObject = new CustomEvents();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

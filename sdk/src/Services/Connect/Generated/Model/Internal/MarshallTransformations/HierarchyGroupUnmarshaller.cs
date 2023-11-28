@@ -52,15 +52,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public HierarchyGroup Unmarshall(JsonUnmarshallerContext context)
         {
+            HierarchyGroup unmarshalledObject = new HierarchyGroup();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HierarchyGroup unmarshalledObject = new HierarchyGroup();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

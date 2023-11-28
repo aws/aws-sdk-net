@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails unmarshalledObject = new AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails unmarshalledObject = new AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ComplianceViolator Unmarshall(JsonUnmarshallerContext context)
         {
+            ComplianceViolator unmarshalledObject = new ComplianceViolator();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComplianceViolator unmarshalledObject = new ComplianceViolator();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

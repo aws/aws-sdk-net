@@ -52,15 +52,14 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OnPremisesTagSet Unmarshall(JsonUnmarshallerContext context)
         {
+            OnPremisesTagSet unmarshalledObject = new OnPremisesTagSet();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnPremisesTagSet unmarshalledObject = new OnPremisesTagSet();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

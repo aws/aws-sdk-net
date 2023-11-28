@@ -52,15 +52,14 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Pipeline Unmarshall(JsonUnmarshallerContext context)
         {
+            Pipeline unmarshalledObject = new Pipeline();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Pipeline unmarshalledObject = new Pipeline();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -161,7 +160,6 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

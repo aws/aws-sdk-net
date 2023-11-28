@@ -52,15 +52,14 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ListSolFunctionPackageMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            ListSolFunctionPackageMetadata unmarshalledObject = new ListSolFunctionPackageMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListSolFunctionPackageMetadata unmarshalledObject = new ListSolFunctionPackageMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

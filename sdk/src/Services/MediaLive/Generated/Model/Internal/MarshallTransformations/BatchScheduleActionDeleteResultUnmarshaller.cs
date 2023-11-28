@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchScheduleActionDeleteResult Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchScheduleActionDeleteResult unmarshalledObject = new BatchScheduleActionDeleteResult();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchScheduleActionDeleteResult unmarshalledObject = new BatchScheduleActionDeleteResult();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PatchStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            PatchStatus unmarshalledObject = new PatchStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PatchStatus unmarshalledObject = new PatchStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

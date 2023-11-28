@@ -52,15 +52,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SessionKeysAbpV1_0_x Unmarshall(JsonUnmarshallerContext context)
         {
+            SessionKeysAbpV1_0_x unmarshalledObject = new SessionKeysAbpV1_0_x();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SessionKeysAbpV1_0_x unmarshalledObject = new SessionKeysAbpV1_0_x();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

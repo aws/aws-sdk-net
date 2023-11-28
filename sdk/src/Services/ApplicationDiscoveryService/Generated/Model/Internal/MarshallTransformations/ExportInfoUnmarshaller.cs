@@ -52,15 +52,14 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ExportInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            ExportInfo unmarshalledObject = new ExportInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExportInfo unmarshalledObject = new ExportInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

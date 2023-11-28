@@ -52,15 +52,14 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EgressAccessLogs Unmarshall(JsonUnmarshallerContext context)
         {
+            EgressAccessLogs unmarshalledObject = new EgressAccessLogs();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EgressAccessLogs unmarshalledObject = new EgressAccessLogs();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

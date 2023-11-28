@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BurnInDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            BurnInDestinationSettings unmarshalledObject = new BurnInDestinationSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BurnInDestinationSettings unmarshalledObject = new BurnInDestinationSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -167,7 +166,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

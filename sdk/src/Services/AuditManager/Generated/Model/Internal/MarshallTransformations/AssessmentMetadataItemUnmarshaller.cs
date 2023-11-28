@@ -52,15 +52,14 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AssessmentMetadataItem Unmarshall(JsonUnmarshallerContext context)
         {
+            AssessmentMetadataItem unmarshalledObject = new AssessmentMetadataItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AssessmentMetadataItem unmarshalledObject = new AssessmentMetadataItem();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

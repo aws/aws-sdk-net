@@ -52,15 +52,14 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LivePreRollConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            LivePreRollConfiguration unmarshalledObject = new LivePreRollConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LivePreRollConfiguration unmarshalledObject = new LivePreRollConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

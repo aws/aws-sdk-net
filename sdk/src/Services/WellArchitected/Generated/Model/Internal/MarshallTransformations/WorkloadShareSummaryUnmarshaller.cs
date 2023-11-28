@@ -52,15 +52,14 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkloadShareSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkloadShareSummary unmarshalledObject = new WorkloadShareSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkloadShareSummary unmarshalledObject = new WorkloadShareSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

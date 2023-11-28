@@ -52,15 +52,14 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JobTemplateData Unmarshall(JsonUnmarshallerContext context)
         {
+            JobTemplateData unmarshalledObject = new JobTemplateData();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobTemplateData unmarshalledObject = new JobTemplateData();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

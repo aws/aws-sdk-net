@@ -52,15 +52,14 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SalesforceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            SalesforceConfiguration unmarshalledObject = new SalesforceConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SalesforceConfiguration unmarshalledObject = new SalesforceConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

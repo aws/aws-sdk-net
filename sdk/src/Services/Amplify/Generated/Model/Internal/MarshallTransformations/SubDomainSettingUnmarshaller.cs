@@ -52,15 +52,14 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SubDomainSetting Unmarshall(JsonUnmarshallerContext context)
         {
+            SubDomainSetting unmarshalledObject = new SubDomainSetting();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SubDomainSetting unmarshalledObject = new SubDomainSetting();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

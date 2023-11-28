@@ -52,15 +52,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public NotebookExecutionSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            NotebookExecutionSummary unmarshalledObject = new NotebookExecutionSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NotebookExecutionSummary unmarshalledObject = new NotebookExecutionSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

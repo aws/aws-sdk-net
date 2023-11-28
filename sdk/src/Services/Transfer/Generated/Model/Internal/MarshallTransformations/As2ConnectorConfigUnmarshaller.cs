@@ -52,15 +52,14 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public As2ConnectorConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            As2ConnectorConfig unmarshalledObject = new As2ConnectorConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            As2ConnectorConfig unmarshalledObject = new As2ConnectorConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MeetingFeaturesConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            MeetingFeaturesConfiguration unmarshalledObject = new MeetingFeaturesConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MeetingFeaturesConfiguration unmarshalledObject = new MeetingFeaturesConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

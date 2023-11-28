@@ -52,15 +52,14 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkflowStepMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkflowStepMetadata unmarshalledObject = new WorkflowStepMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkflowStepMetadata unmarshalledObject = new WorkflowStepMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

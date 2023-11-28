@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public StartTimecode Unmarshall(JsonUnmarshallerContext context)
         {
+            StartTimecode unmarshalledObject = new StartTimecode();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StartTimecode unmarshalledObject = new StartTimecode();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

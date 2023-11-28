@@ -52,15 +52,14 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ClusterListEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            ClusterListEntry unmarshalledObject = new ClusterListEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ClusterListEntry unmarshalledObject = new ClusterListEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

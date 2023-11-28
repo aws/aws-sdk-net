@@ -52,15 +52,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CaptionDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            CaptionDestinationSettings unmarshalledObject = new CaptionDestinationSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CaptionDestinationSettings unmarshalledObject = new CaptionDestinationSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

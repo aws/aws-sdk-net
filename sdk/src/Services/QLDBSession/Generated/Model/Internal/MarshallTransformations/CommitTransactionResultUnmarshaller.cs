@@ -52,15 +52,14 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CommitTransactionResult Unmarshall(JsonUnmarshallerContext context)
         {
+            CommitTransactionResult unmarshalledObject = new CommitTransactionResult();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CommitTransactionResult unmarshalledObject = new CommitTransactionResult();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

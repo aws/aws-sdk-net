@@ -52,15 +52,14 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ScheduledSplitsLaunchDefinition Unmarshall(JsonUnmarshallerContext context)
         {
+            ScheduledSplitsLaunchDefinition unmarshalledObject = new ScheduledSplitsLaunchDefinition();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ScheduledSplitsLaunchDefinition unmarshalledObject = new ScheduledSplitsLaunchDefinition();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

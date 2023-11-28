@@ -52,15 +52,14 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImageReplicationStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            ImageReplicationStatus unmarshalledObject = new ImageReplicationStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImageReplicationStatus unmarshalledObject = new ImageReplicationStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

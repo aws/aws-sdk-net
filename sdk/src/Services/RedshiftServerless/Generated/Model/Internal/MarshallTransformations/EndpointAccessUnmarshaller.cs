@@ -52,15 +52,14 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EndpointAccess Unmarshall(JsonUnmarshallerContext context)
         {
+            EndpointAccess unmarshalledObject = new EndpointAccess();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EndpointAccess unmarshalledObject = new EndpointAccess();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

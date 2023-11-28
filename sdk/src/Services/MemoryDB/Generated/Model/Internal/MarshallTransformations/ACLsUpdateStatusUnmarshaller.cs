@@ -52,15 +52,14 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ACLsUpdateStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            ACLsUpdateStatus unmarshalledObject = new ACLsUpdateStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ACLsUpdateStatus unmarshalledObject = new ACLsUpdateStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

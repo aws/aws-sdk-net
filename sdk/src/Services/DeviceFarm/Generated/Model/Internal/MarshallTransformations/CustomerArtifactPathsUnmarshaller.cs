@@ -52,15 +52,14 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CustomerArtifactPaths Unmarshall(JsonUnmarshallerContext context)
         {
+            CustomerArtifactPaths unmarshalledObject = new CustomerArtifactPaths();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CustomerArtifactPaths unmarshalledObject = new CustomerArtifactPaths();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DatabaseConnection Unmarshall(JsonUnmarshallerContext context)
         {
+            DatabaseConnection unmarshalledObject = new DatabaseConnection();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatabaseConnection unmarshalledObject = new DatabaseConnection();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

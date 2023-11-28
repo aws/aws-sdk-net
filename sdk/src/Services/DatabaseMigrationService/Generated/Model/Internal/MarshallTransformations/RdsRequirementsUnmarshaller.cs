@@ -52,15 +52,14 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RdsRequirements Unmarshall(JsonUnmarshallerContext context)
         {
+            RdsRequirements unmarshalledObject = new RdsRequirements();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RdsRequirements unmarshalledObject = new RdsRequirements();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

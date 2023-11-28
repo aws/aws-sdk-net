@@ -52,15 +52,14 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public NamespaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            NamespaceSummary unmarshalledObject = new NamespaceSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NamespaceSummary unmarshalledObject = new NamespaceSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

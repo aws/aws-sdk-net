@@ -52,15 +52,14 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SigningJobRevocationRecord Unmarshall(JsonUnmarshallerContext context)
         {
+            SigningJobRevocationRecord unmarshalledObject = new SigningJobRevocationRecord();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SigningJobRevocationRecord unmarshalledObject = new SigningJobRevocationRecord();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

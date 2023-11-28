@@ -52,15 +52,14 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ApprovalRule Unmarshall(JsonUnmarshallerContext context)
         {
+            ApprovalRule unmarshalledObject = new ApprovalRule();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApprovalRule unmarshalledObject = new ApprovalRule();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ListMessageMoveTasksResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            ListMessageMoveTasksResultEntry unmarshalledObject = new ListMessageMoveTasksResultEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListMessageMoveTasksResultEntry unmarshalledObject = new ListMessageMoveTasksResultEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

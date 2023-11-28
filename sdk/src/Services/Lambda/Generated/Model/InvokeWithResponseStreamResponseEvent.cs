@@ -27,6 +27,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
+using Amazon.Lambda.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 namespace Amazon.Lambda.Model
 {
@@ -34,7 +36,7 @@ namespace Amazon.Lambda.Model
     /// An object that includes a chunk of the response payload. When the stream has ended,
     /// Lambda includes a <code>InvokeComplete</code> object.
     /// </summary>
-
+    
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeWithResponseStreamResponseEventCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class InvokeWithResponseStreamResponseEvent : EnumerableEventStream<IEventStreamEvent, LambdaEventStreamException>
@@ -45,14 +47,14 @@ namespace Amazon.Lambda.Model
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
-            {"InvokeComplete", payload => new InvokeWithResponseStreamCompleteEvent(payload)},
-            {"PayloadChunk", payload => new InvokeResponseStreamUpdate(payload)},
+            {"InvokeComplete", payload => new InvokeWithResponseStreamCompleteEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"PayloadChunk", payload => new InvokeResponseStreamUpdateUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
         /// </summary>
         protected override IDictionary<string,Func<IEventStreamMessage,LambdaEventStreamException>> ExceptionMapping {get;} =
-        new Dictionary<string,Func<IEventStreamMessage,LambdaEventStreamException>>
+        new Dictionary<string,Func<IEventStreamMessage,LambdaEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
@@ -99,7 +101,7 @@ namespace Amazon.Lambda.Model
                 }
                 EventReceived?.Invoke(this, new EventStreamEventReceivedArgs<IEventStreamEvent>(ev));
 
-                //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts is perfromed
+                //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts are perfromed
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
                     RaiseEvent(InvokeCompleteReceived,ev) ||
@@ -117,6 +119,7 @@ namespace Amazon.Lambda.Model
 
             return false;
         }
+
 
     }
 }

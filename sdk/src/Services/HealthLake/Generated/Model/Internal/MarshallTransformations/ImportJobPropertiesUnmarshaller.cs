@@ -52,15 +52,14 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImportJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            ImportJobProperties unmarshalledObject = new ImportJobProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImportJobProperties unmarshalledObject = new ImportJobProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

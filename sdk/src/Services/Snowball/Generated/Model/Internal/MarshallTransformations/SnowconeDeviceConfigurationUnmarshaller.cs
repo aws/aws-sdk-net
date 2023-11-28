@@ -52,15 +52,14 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SnowconeDeviceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            SnowconeDeviceConfiguration unmarshalledObject = new SnowconeDeviceConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SnowconeDeviceConfiguration unmarshalledObject = new SnowconeDeviceConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

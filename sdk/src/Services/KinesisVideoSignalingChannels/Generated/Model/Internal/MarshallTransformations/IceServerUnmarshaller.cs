@@ -52,15 +52,14 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IceServer Unmarshall(JsonUnmarshallerContext context)
         {
+            IceServer unmarshalledObject = new IceServer();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IceServer unmarshalledObject = new IceServer();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

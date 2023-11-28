@@ -27,6 +27,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
+using Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 namespace Amazon.SageMakerRuntime.Model
 {

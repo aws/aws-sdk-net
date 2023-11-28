@@ -52,15 +52,14 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SegmentResponse Unmarshall(JsonUnmarshallerContext context)
         {
+            SegmentResponse unmarshalledObject = new SegmentResponse();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SegmentResponse unmarshalledObject = new SegmentResponse();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -137,7 +136,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

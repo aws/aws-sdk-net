@@ -52,15 +52,14 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public KubernetesNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
+            KubernetesNetworkConfigResponse unmarshalledObject = new KubernetesNetworkConfigResponse();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KubernetesNetworkConfigResponse unmarshalledObject = new KubernetesNetworkConfigResponse();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

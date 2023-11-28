@@ -52,15 +52,14 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JwtBearerGrant Unmarshall(JsonUnmarshallerContext context)
         {
+            JwtBearerGrant unmarshalledObject = new JwtBearerGrant();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JwtBearerGrant unmarshalledObject = new JwtBearerGrant();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

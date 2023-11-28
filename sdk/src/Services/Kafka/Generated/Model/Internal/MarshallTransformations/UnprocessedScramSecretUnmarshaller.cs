@@ -52,15 +52,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UnprocessedScramSecret Unmarshall(JsonUnmarshallerContext context)
         {
+            UnprocessedScramSecret unmarshalledObject = new UnprocessedScramSecret();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UnprocessedScramSecret unmarshalledObject = new UnprocessedScramSecret();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

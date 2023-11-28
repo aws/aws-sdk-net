@@ -52,15 +52,14 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MicrosoftSQLServerSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            MicrosoftSQLServerSettings unmarshalledObject = new MicrosoftSQLServerSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MicrosoftSQLServerSettings unmarshalledObject = new MicrosoftSQLServerSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -167,7 +166,6 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

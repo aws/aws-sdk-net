@@ -52,15 +52,14 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ScheduledAction Unmarshall(JsonUnmarshallerContext context)
         {
+            ScheduledAction unmarshalledObject = new ScheduledAction();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ScheduledAction unmarshalledObject = new ScheduledAction();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

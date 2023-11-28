@@ -52,15 +52,14 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AnomalyUnusual Unmarshall(JsonUnmarshallerContext context)
         {
+            AnomalyUnusual unmarshalledObject = new AnomalyUnusual();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AnomalyUnusual unmarshalledObject = new AnomalyUnusual();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

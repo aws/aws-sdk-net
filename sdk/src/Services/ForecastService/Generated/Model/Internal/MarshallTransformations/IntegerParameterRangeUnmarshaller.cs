@@ -52,15 +52,14 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IntegerParameterRange Unmarshall(JsonUnmarshallerContext context)
         {
+            IntegerParameterRange unmarshalledObject = new IntegerParameterRange();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IntegerParameterRange unmarshalledObject = new IntegerParameterRange();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

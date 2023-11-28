@@ -52,15 +52,14 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PlaybackKeyPairSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            PlaybackKeyPairSummary unmarshalledObject = new PlaybackKeyPairSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PlaybackKeyPairSummary unmarshalledObject = new PlaybackKeyPairSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

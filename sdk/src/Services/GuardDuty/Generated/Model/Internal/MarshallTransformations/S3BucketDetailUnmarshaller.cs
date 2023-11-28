@@ -52,15 +52,14 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3BucketDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            S3BucketDetail unmarshalledObject = new S3BucketDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3BucketDetail unmarshalledObject = new S3BucketDetail();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

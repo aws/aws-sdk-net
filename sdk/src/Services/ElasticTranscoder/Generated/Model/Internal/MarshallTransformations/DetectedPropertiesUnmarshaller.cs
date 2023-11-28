@@ -52,15 +52,14 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DetectedProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            DetectedProperties unmarshalledObject = new DetectedProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DetectedProperties unmarshalledObject = new DetectedProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

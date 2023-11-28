@@ -52,15 +52,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SnapStartResponse Unmarshall(JsonUnmarshallerContext context)
         {
+            SnapStartResponse unmarshalledObject = new SnapStartResponse();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SnapStartResponse unmarshalledObject = new SnapStartResponse();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

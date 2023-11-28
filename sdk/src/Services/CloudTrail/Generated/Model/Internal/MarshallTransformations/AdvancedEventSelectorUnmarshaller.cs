@@ -52,15 +52,14 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AdvancedEventSelector Unmarshall(JsonUnmarshallerContext context)
         {
+            AdvancedEventSelector unmarshalledObject = new AdvancedEventSelector();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AdvancedEventSelector unmarshalledObject = new AdvancedEventSelector();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

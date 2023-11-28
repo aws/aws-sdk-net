@@ -52,15 +52,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LateDataRule Unmarshall(JsonUnmarshallerContext context)
         {
+            LateDataRule unmarshalledObject = new LateDataRule();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LateDataRule unmarshalledObject = new LateDataRule();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

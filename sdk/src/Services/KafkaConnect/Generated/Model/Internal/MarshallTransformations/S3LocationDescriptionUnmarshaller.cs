@@ -52,15 +52,14 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3LocationDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            S3LocationDescription unmarshalledObject = new S3LocationDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3LocationDescription unmarshalledObject = new S3LocationDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

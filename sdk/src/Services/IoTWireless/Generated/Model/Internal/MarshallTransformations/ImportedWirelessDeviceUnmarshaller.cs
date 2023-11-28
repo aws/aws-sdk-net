@@ -52,15 +52,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImportedWirelessDevice Unmarshall(JsonUnmarshallerContext context)
         {
+            ImportedWirelessDevice unmarshalledObject = new ImportedWirelessDevice();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImportedWirelessDevice unmarshalledObject = new ImportedWirelessDevice();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

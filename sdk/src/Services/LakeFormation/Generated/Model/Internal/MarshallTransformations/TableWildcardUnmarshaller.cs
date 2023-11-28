@@ -52,20 +52,18 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TableWildcard Unmarshall(JsonUnmarshallerContext context)
         {
+            TableWildcard unmarshalledObject = new TableWildcard();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TableWildcard unmarshalledObject = new TableWildcard();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

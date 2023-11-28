@@ -52,15 +52,14 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EnrollmentConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            EnrollmentConfig unmarshalledObject = new EnrollmentConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EnrollmentConfig unmarshalledObject = new EnrollmentConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

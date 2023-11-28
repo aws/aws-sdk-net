@@ -52,15 +52,14 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImageBuilder Unmarshall(JsonUnmarshallerContext context)
         {
+            ImageBuilder unmarshalledObject = new ImageBuilder();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImageBuilder unmarshalledObject = new ImageBuilder();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -173,7 +172,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

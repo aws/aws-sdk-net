@@ -52,15 +52,14 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JobDefinition Unmarshall(JsonUnmarshallerContext context)
         {
+            JobDefinition unmarshalledObject = new JobDefinition();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobDefinition unmarshalledObject = new JobDefinition();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -161,7 +160,6 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

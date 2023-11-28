@@ -52,15 +52,14 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GitPushFilter Unmarshall(JsonUnmarshallerContext context)
         {
+            GitPushFilter unmarshalledObject = new GitPushFilter();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GitPushFilter unmarshalledObject = new GitPushFilter();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

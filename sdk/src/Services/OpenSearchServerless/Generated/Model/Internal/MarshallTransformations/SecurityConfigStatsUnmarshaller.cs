@@ -52,15 +52,14 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SecurityConfigStats Unmarshall(JsonUnmarshallerContext context)
         {
+            SecurityConfigStats unmarshalledObject = new SecurityConfigStats();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SecurityConfigStats unmarshalledObject = new SecurityConfigStats();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FilterCriteria Unmarshall(JsonUnmarshallerContext context)
         {
+            FilterCriteria unmarshalledObject = new FilterCriteria();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FilterCriteria unmarshalledObject = new FilterCriteria();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -317,7 +316,6 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

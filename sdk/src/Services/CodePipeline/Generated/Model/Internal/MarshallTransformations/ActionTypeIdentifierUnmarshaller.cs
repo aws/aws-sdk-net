@@ -52,15 +52,14 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ActionTypeIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
+            ActionTypeIdentifier unmarshalledObject = new ActionTypeIdentifier();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ActionTypeIdentifier unmarshalledObject = new ActionTypeIdentifier();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

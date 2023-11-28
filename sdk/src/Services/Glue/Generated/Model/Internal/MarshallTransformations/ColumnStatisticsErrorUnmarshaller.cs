@@ -52,15 +52,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ColumnStatisticsError Unmarshall(JsonUnmarshallerContext context)
         {
+            ColumnStatisticsError unmarshalledObject = new ColumnStatisticsError();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ColumnStatisticsError unmarshalledObject = new ColumnStatisticsError();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkflowExecutionFailedEventAttributes unmarshalledObject = new WorkflowExecutionFailedEventAttributes();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkflowExecutionFailedEventAttributes unmarshalledObject = new WorkflowExecutionFailedEventAttributes();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

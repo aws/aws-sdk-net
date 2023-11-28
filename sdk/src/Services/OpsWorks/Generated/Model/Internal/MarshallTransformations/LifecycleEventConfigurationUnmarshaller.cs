@@ -52,15 +52,14 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LifecycleEventConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            LifecycleEventConfiguration unmarshalledObject = new LifecycleEventConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LifecycleEventConfiguration unmarshalledObject = new LifecycleEventConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

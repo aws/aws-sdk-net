@@ -52,15 +52,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TrafficDistributionGroup Unmarshall(JsonUnmarshallerContext context)
         {
+            TrafficDistributionGroup unmarshalledObject = new TrafficDistributionGroup();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TrafficDistributionGroup unmarshalledObject = new TrafficDistributionGroup();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

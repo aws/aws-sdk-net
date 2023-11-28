@@ -52,15 +52,14 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IpSet Unmarshall(JsonUnmarshallerContext context)
         {
+            IpSet unmarshalledObject = new IpSet();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IpSet unmarshalledObject = new IpSet();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

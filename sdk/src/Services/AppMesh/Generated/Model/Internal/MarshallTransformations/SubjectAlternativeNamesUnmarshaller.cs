@@ -52,15 +52,14 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SubjectAlternativeNames Unmarshall(JsonUnmarshallerContext context)
         {
+            SubjectAlternativeNames unmarshalledObject = new SubjectAlternativeNames();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SubjectAlternativeNames unmarshalledObject = new SubjectAlternativeNames();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

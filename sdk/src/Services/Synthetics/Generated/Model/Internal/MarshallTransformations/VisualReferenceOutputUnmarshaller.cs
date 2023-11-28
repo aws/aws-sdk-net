@@ -52,15 +52,14 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public VisualReferenceOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            VisualReferenceOutput unmarshalledObject = new VisualReferenceOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VisualReferenceOutput unmarshalledObject = new VisualReferenceOutput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

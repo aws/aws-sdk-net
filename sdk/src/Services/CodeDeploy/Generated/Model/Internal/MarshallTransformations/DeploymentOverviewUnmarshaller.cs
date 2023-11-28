@@ -52,15 +52,14 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DeploymentOverview Unmarshall(JsonUnmarshallerContext context)
         {
+            DeploymentOverview unmarshalledObject = new DeploymentOverview();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentOverview unmarshalledObject = new DeploymentOverview();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

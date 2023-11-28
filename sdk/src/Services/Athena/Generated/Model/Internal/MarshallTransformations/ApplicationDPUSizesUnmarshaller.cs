@@ -52,15 +52,14 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ApplicationDPUSizes Unmarshall(JsonUnmarshallerContext context)
         {
+            ApplicationDPUSizes unmarshalledObject = new ApplicationDPUSizes();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationDPUSizes unmarshalledObject = new ApplicationDPUSizes();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TrustedAdvisorCheckResult Unmarshall(JsonUnmarshallerContext context)
         {
+            TrustedAdvisorCheckResult unmarshalledObject = new TrustedAdvisorCheckResult();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TrustedAdvisorCheckResult unmarshalledObject = new TrustedAdvisorCheckResult();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

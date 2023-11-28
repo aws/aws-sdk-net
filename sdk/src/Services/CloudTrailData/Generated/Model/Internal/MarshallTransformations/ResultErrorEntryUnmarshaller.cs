@@ -52,15 +52,14 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ResultErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            ResultErrorEntry unmarshalledObject = new ResultErrorEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResultErrorEntry unmarshalledObject = new ResultErrorEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

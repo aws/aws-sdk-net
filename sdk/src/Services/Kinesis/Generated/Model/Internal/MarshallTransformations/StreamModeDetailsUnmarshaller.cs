@@ -52,15 +52,14 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public StreamModeDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            StreamModeDetails unmarshalledObject = new StreamModeDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StreamModeDetails unmarshalledObject = new StreamModeDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

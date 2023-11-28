@@ -52,15 +52,14 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RegistryCatalogData Unmarshall(JsonUnmarshallerContext context)
         {
+            RegistryCatalogData unmarshalledObject = new RegistryCatalogData();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RegistryCatalogData unmarshalledObject = new RegistryCatalogData();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

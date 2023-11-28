@@ -52,15 +52,14 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SuiteDefinitionInformation Unmarshall(JsonUnmarshallerContext context)
         {
+            SuiteDefinitionInformation unmarshalledObject = new SuiteDefinitionInformation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SuiteDefinitionInformation unmarshalledObject = new SuiteDefinitionInformation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

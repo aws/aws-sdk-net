@@ -52,15 +52,14 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ScanEc2InstanceWithFindingsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            ScanEc2InstanceWithFindingsResult unmarshalledObject = new ScanEc2InstanceWithFindingsResult();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ScanEc2InstanceWithFindingsResult unmarshalledObject = new ScanEc2InstanceWithFindingsResult();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

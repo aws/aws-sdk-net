@@ -52,15 +52,14 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public KMSKeyDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            KMSKeyDetails unmarshalledObject = new KMSKeyDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KMSKeyDetails unmarshalledObject = new KMSKeyDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

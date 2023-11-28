@@ -52,15 +52,14 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ApiGatewayProxyInput Unmarshall(JsonUnmarshallerContext context)
         {
+            ApiGatewayProxyInput unmarshalledObject = new ApiGatewayProxyInput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApiGatewayProxyInput unmarshalledObject = new ApiGatewayProxyInput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

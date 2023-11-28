@@ -52,15 +52,14 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RecoveryInstance Unmarshall(JsonUnmarshallerContext context)
         {
+            RecoveryInstance unmarshalledObject = new RecoveryInstance();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecoveryInstance unmarshalledObject = new RecoveryInstance();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -149,7 +148,6 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

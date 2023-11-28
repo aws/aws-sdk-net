@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ChannelModeratedByAppInstanceUserSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            ChannelModeratedByAppInstanceUserSummary unmarshalledObject = new ChannelModeratedByAppInstanceUserSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ChannelModeratedByAppInstanceUserSummary unmarshalledObject = new ChannelModeratedByAppInstanceUserSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

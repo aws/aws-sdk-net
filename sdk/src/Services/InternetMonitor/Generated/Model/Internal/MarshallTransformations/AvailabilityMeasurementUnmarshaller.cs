@@ -52,15 +52,14 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AvailabilityMeasurement Unmarshall(JsonUnmarshallerContext context)
         {
+            AvailabilityMeasurement unmarshalledObject = new AvailabilityMeasurement();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AvailabilityMeasurement unmarshalledObject = new AvailabilityMeasurement();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

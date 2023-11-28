@@ -52,15 +52,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public KafkaClusterSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            KafkaClusterSummary unmarshalledObject = new KafkaClusterSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KafkaClusterSummary unmarshalledObject = new KafkaClusterSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

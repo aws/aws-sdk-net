@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsAmazonMqBrokerLogsPendingDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsAmazonMqBrokerLogsPendingDetails unmarshalledObject = new AwsAmazonMqBrokerLogsPendingDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsAmazonMqBrokerLogsPendingDetails unmarshalledObject = new AwsAmazonMqBrokerLogsPendingDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

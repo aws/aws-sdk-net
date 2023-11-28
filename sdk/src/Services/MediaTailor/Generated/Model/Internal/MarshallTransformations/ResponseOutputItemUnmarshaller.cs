@@ -52,15 +52,14 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ResponseOutputItem Unmarshall(JsonUnmarshallerContext context)
         {
+            ResponseOutputItem unmarshalledObject = new ResponseOutputItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResponseOutputItem unmarshalledObject = new ResponseOutputItem();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

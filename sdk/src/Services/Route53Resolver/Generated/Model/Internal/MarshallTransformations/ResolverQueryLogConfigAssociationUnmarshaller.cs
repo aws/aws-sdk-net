@@ -52,15 +52,14 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ResolverQueryLogConfigAssociation Unmarshall(JsonUnmarshallerContext context)
         {
+            ResolverQueryLogConfigAssociation unmarshalledObject = new ResolverQueryLogConfigAssociation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResolverQueryLogConfigAssociation unmarshalledObject = new ResolverQueryLogConfigAssociation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

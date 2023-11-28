@@ -52,15 +52,14 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SqlApplicationConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            SqlApplicationConfigurationDescription unmarshalledObject = new SqlApplicationConfigurationDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SqlApplicationConfigurationDescription unmarshalledObject = new SqlApplicationConfigurationDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JournalS3ExportDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            JournalS3ExportDescription unmarshalledObject = new JournalS3ExportDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JournalS3ExportDescription unmarshalledObject = new JournalS3ExportDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

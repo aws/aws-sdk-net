@@ -52,15 +52,14 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EphemerisTypeDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            EphemerisTypeDescription unmarshalledObject = new EphemerisTypeDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EphemerisTypeDescription unmarshalledObject = new EphemerisTypeDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

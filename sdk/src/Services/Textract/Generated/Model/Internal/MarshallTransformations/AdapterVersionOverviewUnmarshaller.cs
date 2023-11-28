@@ -52,15 +52,14 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AdapterVersionOverview Unmarshall(JsonUnmarshallerContext context)
         {
+            AdapterVersionOverview unmarshalledObject = new AdapterVersionOverview();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AdapterVersionOverview unmarshalledObject = new AdapterVersionOverview();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

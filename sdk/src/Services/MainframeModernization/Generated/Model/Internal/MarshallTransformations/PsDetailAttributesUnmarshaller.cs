@@ -52,15 +52,14 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PsDetailAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            PsDetailAttributes unmarshalledObject = new PsDetailAttributes();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PsDetailAttributes unmarshalledObject = new PsDetailAttributes();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImageRecipe Unmarshall(JsonUnmarshallerContext context)
         {
+            ImageRecipe unmarshalledObject = new ImageRecipe();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImageRecipe unmarshalledObject = new ImageRecipe();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -149,7 +148,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

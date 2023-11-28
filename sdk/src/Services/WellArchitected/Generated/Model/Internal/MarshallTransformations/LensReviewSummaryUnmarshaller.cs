@@ -52,15 +52,14 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LensReviewSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            LensReviewSummary unmarshalledObject = new LensReviewSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LensReviewSummary unmarshalledObject = new LensReviewSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

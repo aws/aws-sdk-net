@@ -52,15 +52,14 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SyncBlockerContext Unmarshall(JsonUnmarshallerContext context)
         {
+            SyncBlockerContext unmarshalledObject = new SyncBlockerContext();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SyncBlockerContext unmarshalledObject = new SyncBlockerContext();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

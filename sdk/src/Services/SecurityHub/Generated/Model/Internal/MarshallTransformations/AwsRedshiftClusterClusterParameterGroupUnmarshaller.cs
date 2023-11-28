@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsRedshiftClusterClusterParameterGroup Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsRedshiftClusterClusterParameterGroup unmarshalledObject = new AwsRedshiftClusterClusterParameterGroup();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsRedshiftClusterClusterParameterGroup unmarshalledObject = new AwsRedshiftClusterClusterParameterGroup();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

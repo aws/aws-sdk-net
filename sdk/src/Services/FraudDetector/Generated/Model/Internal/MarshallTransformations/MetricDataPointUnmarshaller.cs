@@ -52,15 +52,14 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MetricDataPoint Unmarshall(JsonUnmarshallerContext context)
         {
+            MetricDataPoint unmarshalledObject = new MetricDataPoint();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MetricDataPoint unmarshalledObject = new MetricDataPoint();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

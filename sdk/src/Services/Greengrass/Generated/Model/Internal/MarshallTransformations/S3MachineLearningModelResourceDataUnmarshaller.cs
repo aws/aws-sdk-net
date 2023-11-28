@@ -52,15 +52,14 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3MachineLearningModelResourceData Unmarshall(JsonUnmarshallerContext context)
         {
+            S3MachineLearningModelResourceData unmarshalledObject = new S3MachineLearningModelResourceData();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3MachineLearningModelResourceData unmarshalledObject = new S3MachineLearningModelResourceData();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

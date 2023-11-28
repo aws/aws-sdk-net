@@ -52,15 +52,14 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RemoveTargetsResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            RemoveTargetsResultEntry unmarshalledObject = new RemoveTargetsResultEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RemoveTargetsResultEntry unmarshalledObject = new RemoveTargetsResultEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

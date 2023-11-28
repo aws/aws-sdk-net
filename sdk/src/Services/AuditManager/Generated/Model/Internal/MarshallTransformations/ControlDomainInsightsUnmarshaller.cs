@@ -52,15 +52,14 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ControlDomainInsights Unmarshall(JsonUnmarshallerContext context)
         {
+            ControlDomainInsights unmarshalledObject = new ControlDomainInsights();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ControlDomainInsights unmarshalledObject = new ControlDomainInsights();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

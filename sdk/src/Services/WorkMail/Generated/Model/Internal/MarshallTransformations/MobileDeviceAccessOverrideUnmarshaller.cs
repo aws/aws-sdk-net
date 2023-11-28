@@ -52,15 +52,14 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MobileDeviceAccessOverride Unmarshall(JsonUnmarshallerContext context)
         {
+            MobileDeviceAccessOverride unmarshalledObject = new MobileDeviceAccessOverride();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MobileDeviceAccessOverride unmarshalledObject = new MobileDeviceAccessOverride();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

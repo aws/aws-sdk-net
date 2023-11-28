@@ -52,15 +52,14 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public InvalidParameterDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            InvalidParameterDetail unmarshalledObject = new InvalidParameterDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InvalidParameterDetail unmarshalledObject = new InvalidParameterDetail();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

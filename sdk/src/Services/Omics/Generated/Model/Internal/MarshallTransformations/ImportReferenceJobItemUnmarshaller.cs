@@ -52,15 +52,14 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImportReferenceJobItem Unmarshall(JsonUnmarshallerContext context)
         {
+            ImportReferenceJobItem unmarshalledObject = new ImportReferenceJobItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImportReferenceJobItem unmarshalledObject = new ImportReferenceJobItem();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

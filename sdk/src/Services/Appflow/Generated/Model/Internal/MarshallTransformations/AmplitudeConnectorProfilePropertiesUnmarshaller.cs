@@ -52,20 +52,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AmplitudeConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            AmplitudeConnectorProfileProperties unmarshalledObject = new AmplitudeConnectorProfileProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AmplitudeConnectorProfileProperties unmarshalledObject = new AmplitudeConnectorProfileProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

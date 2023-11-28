@@ -52,15 +52,14 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FreeTierUsage Unmarshall(JsonUnmarshallerContext context)
         {
+            FreeTierUsage unmarshalledObject = new FreeTierUsage();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FreeTierUsage unmarshalledObject = new FreeTierUsage();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

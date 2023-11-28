@@ -52,15 +52,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public HlsTimedMetadataScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            HlsTimedMetadataScheduleActionSettings unmarshalledObject = new HlsTimedMetadataScheduleActionSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HlsTimedMetadataScheduleActionSettings unmarshalledObject = new HlsTimedMetadataScheduleActionSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

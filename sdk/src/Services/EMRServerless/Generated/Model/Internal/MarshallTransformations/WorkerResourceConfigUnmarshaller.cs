@@ -52,15 +52,14 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkerResourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkerResourceConfig unmarshalledObject = new WorkerResourceConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkerResourceConfig unmarshalledObject = new WorkerResourceConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

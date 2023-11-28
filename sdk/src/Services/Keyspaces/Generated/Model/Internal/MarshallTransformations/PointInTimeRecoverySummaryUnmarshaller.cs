@@ -52,15 +52,14 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PointInTimeRecoverySummary Unmarshall(JsonUnmarshallerContext context)
         {
+            PointInTimeRecoverySummary unmarshalledObject = new PointInTimeRecoverySummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PointInTimeRecoverySummary unmarshalledObject = new PointInTimeRecoverySummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

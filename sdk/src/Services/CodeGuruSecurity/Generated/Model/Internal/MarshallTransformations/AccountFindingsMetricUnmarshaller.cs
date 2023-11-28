@@ -52,15 +52,14 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AccountFindingsMetric Unmarshall(JsonUnmarshallerContext context)
         {
+            AccountFindingsMetric unmarshalledObject = new AccountFindingsMetric();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccountFindingsMetric unmarshalledObject = new AccountFindingsMetric();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

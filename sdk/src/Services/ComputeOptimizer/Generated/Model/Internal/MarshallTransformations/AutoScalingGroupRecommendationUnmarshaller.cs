@@ -52,15 +52,14 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AutoScalingGroupRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
+            AutoScalingGroupRecommendation unmarshalledObject = new AutoScalingGroupRecommendation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoScalingGroupRecommendation unmarshalledObject = new AutoScalingGroupRecommendation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -143,7 +142,6 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

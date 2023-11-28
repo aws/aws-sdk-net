@@ -52,15 +52,14 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SimulationApplicationSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            SimulationApplicationSummary unmarshalledObject = new SimulationApplicationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SimulationApplicationSummary unmarshalledObject = new SimulationApplicationSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

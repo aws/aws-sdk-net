@@ -52,15 +52,14 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EksSourceClusterNamespace Unmarshall(JsonUnmarshallerContext context)
         {
+            EksSourceClusterNamespace unmarshalledObject = new EksSourceClusterNamespace();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EksSourceClusterNamespace unmarshalledObject = new EksSourceClusterNamespace();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

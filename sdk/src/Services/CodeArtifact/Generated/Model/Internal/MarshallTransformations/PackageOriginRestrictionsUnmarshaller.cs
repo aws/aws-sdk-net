@@ -52,15 +52,14 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PackageOriginRestrictions Unmarshall(JsonUnmarshallerContext context)
         {
+            PackageOriginRestrictions unmarshalledObject = new PackageOriginRestrictions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackageOriginRestrictions unmarshalledObject = new PackageOriginRestrictions();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

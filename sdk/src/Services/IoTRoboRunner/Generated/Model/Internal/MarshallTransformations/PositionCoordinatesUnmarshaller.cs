@@ -52,15 +52,14 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PositionCoordinates Unmarshall(JsonUnmarshallerContext context)
         {
+            PositionCoordinates unmarshalledObject = new PositionCoordinates();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PositionCoordinates unmarshalledObject = new PositionCoordinates();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

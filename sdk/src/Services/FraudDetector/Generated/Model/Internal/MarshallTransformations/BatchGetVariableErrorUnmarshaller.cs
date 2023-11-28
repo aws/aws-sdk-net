@@ -52,15 +52,14 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchGetVariableError Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchGetVariableError unmarshalledObject = new BatchGetVariableError();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchGetVariableError unmarshalledObject = new BatchGetVariableError();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

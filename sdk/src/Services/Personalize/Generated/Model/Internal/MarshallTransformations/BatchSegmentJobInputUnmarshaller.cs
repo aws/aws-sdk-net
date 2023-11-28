@@ -52,15 +52,14 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchSegmentJobInput Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchSegmentJobInput unmarshalledObject = new BatchSegmentJobInput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchSegmentJobInput unmarshalledObject = new BatchSegmentJobInput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

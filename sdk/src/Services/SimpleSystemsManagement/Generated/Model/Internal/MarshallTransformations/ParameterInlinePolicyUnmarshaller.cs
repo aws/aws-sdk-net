@@ -52,15 +52,14 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ParameterInlinePolicy Unmarshall(JsonUnmarshallerContext context)
         {
+            ParameterInlinePolicy unmarshalledObject = new ParameterInlinePolicy();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ParameterInlinePolicy unmarshalledObject = new ParameterInlinePolicy();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

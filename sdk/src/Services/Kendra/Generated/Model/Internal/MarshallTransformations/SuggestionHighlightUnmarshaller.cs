@@ -52,15 +52,14 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SuggestionHighlight Unmarshall(JsonUnmarshallerContext context)
         {
+            SuggestionHighlight unmarshalledObject = new SuggestionHighlight();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SuggestionHighlight unmarshalledObject = new SuggestionHighlight();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

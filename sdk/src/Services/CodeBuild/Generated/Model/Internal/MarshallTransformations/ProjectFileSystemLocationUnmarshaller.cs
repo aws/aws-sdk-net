@@ -52,15 +52,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProjectFileSystemLocation Unmarshall(JsonUnmarshallerContext context)
         {
+            ProjectFileSystemLocation unmarshalledObject = new ProjectFileSystemLocation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProjectFileSystemLocation unmarshalledObject = new ProjectFileSystemLocation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

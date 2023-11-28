@@ -52,15 +52,14 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LastUploaderStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            LastUploaderStatus unmarshalledObject = new LastUploaderStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LastUploaderStatus unmarshalledObject = new LastUploaderStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

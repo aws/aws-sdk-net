@@ -52,15 +52,14 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

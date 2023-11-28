@@ -52,15 +52,14 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public StorageGatewayError Unmarshall(JsonUnmarshallerContext context)
         {
+            StorageGatewayError unmarshalledObject = new StorageGatewayError();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StorageGatewayError unmarshalledObject = new StorageGatewayError();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

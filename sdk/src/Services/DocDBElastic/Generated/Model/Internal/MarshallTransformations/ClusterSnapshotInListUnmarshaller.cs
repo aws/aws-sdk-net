@@ -52,15 +52,14 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ClusterSnapshotInList Unmarshall(JsonUnmarshallerContext context)
         {
+            ClusterSnapshotInList unmarshalledObject = new ClusterSnapshotInList();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ClusterSnapshotInList unmarshalledObject = new ClusterSnapshotInList();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

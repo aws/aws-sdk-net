@@ -52,15 +52,14 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3BucketRepository Unmarshall(JsonUnmarshallerContext context)
         {
+            S3BucketRepository unmarshalledObject = new S3BucketRepository();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3BucketRepository unmarshalledObject = new S3BucketRepository();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ATIModelPerformance Unmarshall(JsonUnmarshallerContext context)
         {
+            ATIModelPerformance unmarshalledObject = new ATIModelPerformance();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ATIModelPerformance unmarshalledObject = new ATIModelPerformance();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

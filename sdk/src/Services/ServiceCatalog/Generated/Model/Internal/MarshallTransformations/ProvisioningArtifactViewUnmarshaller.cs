@@ -52,15 +52,14 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProvisioningArtifactView Unmarshall(JsonUnmarshallerContext context)
         {
+            ProvisioningArtifactView unmarshalledObject = new ProvisioningArtifactView();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProvisioningArtifactView unmarshalledObject = new ProvisioningArtifactView();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

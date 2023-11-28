@@ -52,15 +52,14 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ApplicationResourceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
+            ApplicationResourceAssociation unmarshalledObject = new ApplicationResourceAssociation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationResourceAssociation unmarshalledObject = new ApplicationResourceAssociation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

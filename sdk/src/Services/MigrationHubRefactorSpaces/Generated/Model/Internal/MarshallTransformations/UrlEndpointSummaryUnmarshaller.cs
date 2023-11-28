@@ -52,15 +52,14 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UrlEndpointSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            UrlEndpointSummary unmarshalledObject = new UrlEndpointSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UrlEndpointSummary unmarshalledObject = new UrlEndpointSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

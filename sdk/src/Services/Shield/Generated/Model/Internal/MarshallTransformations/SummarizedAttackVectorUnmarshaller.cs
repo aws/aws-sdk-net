@@ -52,15 +52,14 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SummarizedAttackVector Unmarshall(JsonUnmarshallerContext context)
         {
+            SummarizedAttackVector unmarshalledObject = new SummarizedAttackVector();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SummarizedAttackVector unmarshalledObject = new SummarizedAttackVector();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ServiceNowConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            ServiceNowConnectorProfileProperties unmarshalledObject = new ServiceNowConnectorProfileProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceNowConnectorProfileProperties unmarshalledObject = new ServiceNowConnectorProfileProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

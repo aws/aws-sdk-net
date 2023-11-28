@@ -52,15 +52,14 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UnusedIamRoleDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            UnusedIamRoleDetails unmarshalledObject = new UnusedIamRoleDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UnusedIamRoleDetails unmarshalledObject = new UnusedIamRoleDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

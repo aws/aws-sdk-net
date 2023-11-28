@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AutomationRulesFindingFieldsUpdate Unmarshall(JsonUnmarshallerContext context)
         {
+            AutomationRulesFindingFieldsUpdate unmarshalledObject = new AutomationRulesFindingFieldsUpdate();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutomationRulesFindingFieldsUpdate unmarshalledObject = new AutomationRulesFindingFieldsUpdate();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

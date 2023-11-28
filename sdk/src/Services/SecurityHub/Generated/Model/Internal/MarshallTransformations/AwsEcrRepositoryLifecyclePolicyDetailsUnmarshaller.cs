@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsEcrRepositoryLifecyclePolicyDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsEcrRepositoryLifecyclePolicyDetails unmarshalledObject = new AwsEcrRepositoryLifecyclePolicyDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEcrRepositoryLifecyclePolicyDetails unmarshalledObject = new AwsEcrRepositoryLifecyclePolicyDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

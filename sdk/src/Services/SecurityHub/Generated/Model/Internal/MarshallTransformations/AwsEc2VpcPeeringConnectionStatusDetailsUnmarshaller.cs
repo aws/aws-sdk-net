@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsEc2VpcPeeringConnectionStatusDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsEc2VpcPeeringConnectionStatusDetails unmarshalledObject = new AwsEc2VpcPeeringConnectionStatusDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEc2VpcPeeringConnectionStatusDetails unmarshalledObject = new AwsEc2VpcPeeringConnectionStatusDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SecretListEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            SecretListEntry unmarshalledObject = new SecretListEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SecretListEntry unmarshalledObject = new SecretListEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -167,7 +166,6 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

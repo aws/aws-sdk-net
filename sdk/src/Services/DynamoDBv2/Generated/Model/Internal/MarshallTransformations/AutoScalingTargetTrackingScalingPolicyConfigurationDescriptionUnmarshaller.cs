@@ -52,15 +52,14 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AutoScalingTargetTrackingScalingPolicyConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            AutoScalingTargetTrackingScalingPolicyConfigurationDescription unmarshalledObject = new AutoScalingTargetTrackingScalingPolicyConfigurationDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoScalingTargetTrackingScalingPolicyConfigurationDescription unmarshalledObject = new AutoScalingTargetTrackingScalingPolicyConfigurationDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

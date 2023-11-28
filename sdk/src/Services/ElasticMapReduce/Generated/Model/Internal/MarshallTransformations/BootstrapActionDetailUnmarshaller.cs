@@ -52,15 +52,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BootstrapActionDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            BootstrapActionDetail unmarshalledObject = new BootstrapActionDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BootstrapActionDetail unmarshalledObject = new BootstrapActionDetail();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

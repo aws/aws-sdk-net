@@ -52,15 +52,14 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DomainTransferability Unmarshall(JsonUnmarshallerContext context)
         {
+            DomainTransferability unmarshalledObject = new DomainTransferability();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainTransferability unmarshalledObject = new DomainTransferability();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

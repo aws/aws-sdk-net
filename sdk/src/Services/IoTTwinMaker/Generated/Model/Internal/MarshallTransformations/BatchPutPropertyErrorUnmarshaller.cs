@@ -52,15 +52,14 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchPutPropertyError Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchPutPropertyError unmarshalledObject = new BatchPutPropertyError();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchPutPropertyError unmarshalledObject = new BatchPutPropertyError();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MaintenanceSchedule Unmarshall(JsonUnmarshallerContext context)
         {
+            MaintenanceSchedule unmarshalledObject = new MaintenanceSchedule();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MaintenanceSchedule unmarshalledObject = new MaintenanceSchedule();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

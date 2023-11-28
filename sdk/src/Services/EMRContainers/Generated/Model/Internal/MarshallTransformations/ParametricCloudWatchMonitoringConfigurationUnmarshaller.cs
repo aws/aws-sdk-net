@@ -52,15 +52,14 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ParametricCloudWatchMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ParametricCloudWatchMonitoringConfiguration unmarshalledObject = new ParametricCloudWatchMonitoringConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ParametricCloudWatchMonitoringConfiguration unmarshalledObject = new ParametricCloudWatchMonitoringConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

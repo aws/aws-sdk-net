@@ -52,15 +52,14 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SelfUserProfile Unmarshall(JsonUnmarshallerContext context)
         {
+            SelfUserProfile unmarshalledObject = new SelfUserProfile();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SelfUserProfile unmarshalledObject = new SelfUserProfile();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

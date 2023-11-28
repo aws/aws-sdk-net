@@ -52,15 +52,14 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RdsDbInstance Unmarshall(JsonUnmarshallerContext context)
         {
+            RdsDbInstance unmarshalledObject = new RdsDbInstance();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RdsDbInstance unmarshalledObject = new RdsDbInstance();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

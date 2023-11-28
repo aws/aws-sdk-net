@@ -52,15 +52,14 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Portal Unmarshall(JsonUnmarshallerContext context)
         {
+            Portal unmarshalledObject = new Portal();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Portal unmarshalledObject = new Portal();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -155,7 +154,6 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

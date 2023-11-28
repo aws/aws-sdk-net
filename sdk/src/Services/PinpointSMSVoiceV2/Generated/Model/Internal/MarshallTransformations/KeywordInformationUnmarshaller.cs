@@ -52,15 +52,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public KeywordInformation Unmarshall(JsonUnmarshallerContext context)
         {
+            KeywordInformation unmarshalledObject = new KeywordInformation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KeywordInformation unmarshalledObject = new KeywordInformation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

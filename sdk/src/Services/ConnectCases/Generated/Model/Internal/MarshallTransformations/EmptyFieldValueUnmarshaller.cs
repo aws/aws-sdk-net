@@ -52,20 +52,18 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EmptyFieldValue Unmarshall(JsonUnmarshallerContext context)
         {
+            EmptyFieldValue unmarshalledObject = new EmptyFieldValue();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EmptyFieldValue unmarshalledObject = new EmptyFieldValue();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

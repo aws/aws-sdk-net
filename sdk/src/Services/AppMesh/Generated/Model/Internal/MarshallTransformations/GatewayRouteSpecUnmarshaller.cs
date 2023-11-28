@@ -52,15 +52,14 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GatewayRouteSpec Unmarshall(JsonUnmarshallerContext context)
         {
+            GatewayRouteSpec unmarshalledObject = new GatewayRouteSpec();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GatewayRouteSpec unmarshalledObject = new GatewayRouteSpec();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

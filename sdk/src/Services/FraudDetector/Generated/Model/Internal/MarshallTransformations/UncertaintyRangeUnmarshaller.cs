@@ -52,15 +52,14 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UncertaintyRange Unmarshall(JsonUnmarshallerContext context)
         {
+            UncertaintyRange unmarshalledObject = new UncertaintyRange();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UncertaintyRange unmarshalledObject = new UncertaintyRange();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

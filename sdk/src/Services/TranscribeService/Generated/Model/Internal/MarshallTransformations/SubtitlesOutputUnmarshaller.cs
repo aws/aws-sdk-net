@@ -52,15 +52,14 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SubtitlesOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            SubtitlesOutput unmarshalledObject = new SubtitlesOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SubtitlesOutput unmarshalledObject = new SubtitlesOutput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WebhookFilter Unmarshall(JsonUnmarshallerContext context)
         {
+            WebhookFilter unmarshalledObject = new WebhookFilter();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WebhookFilter unmarshalledObject = new WebhookFilter();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ElasticChannelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ElasticChannelConfiguration unmarshalledObject = new ElasticChannelConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ElasticChannelConfiguration unmarshalledObject = new ElasticChannelConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

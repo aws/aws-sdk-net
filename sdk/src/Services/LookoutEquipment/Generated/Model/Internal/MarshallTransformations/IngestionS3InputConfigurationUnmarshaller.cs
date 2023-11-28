@@ -52,15 +52,14 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IngestionS3InputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            IngestionS3InputConfiguration unmarshalledObject = new IngestionS3InputConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IngestionS3InputConfiguration unmarshalledObject = new IngestionS3InputConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public XssMatchSet Unmarshall(JsonUnmarshallerContext context)
         {
+            XssMatchSet unmarshalledObject = new XssMatchSet();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            XssMatchSet unmarshalledObject = new XssMatchSet();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

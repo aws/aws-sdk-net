@@ -52,15 +52,14 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public VirtualGatewayListener Unmarshall(JsonUnmarshallerContext context)
         {
+            VirtualGatewayListener unmarshalledObject = new VirtualGatewayListener();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualGatewayListener unmarshalledObject = new VirtualGatewayListener();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

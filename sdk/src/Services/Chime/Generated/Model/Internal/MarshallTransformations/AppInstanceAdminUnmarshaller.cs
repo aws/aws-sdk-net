@@ -52,15 +52,14 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AppInstanceAdmin Unmarshall(JsonUnmarshallerContext context)
         {
+            AppInstanceAdmin unmarshalledObject = new AppInstanceAdmin();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AppInstanceAdmin unmarshalledObject = new AppInstanceAdmin();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

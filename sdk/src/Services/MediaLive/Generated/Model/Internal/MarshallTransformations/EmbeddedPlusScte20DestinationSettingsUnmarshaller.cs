@@ -52,20 +52,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EmbeddedPlusScte20DestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
+            EmbeddedPlusScte20DestinationSettings unmarshalledObject = new EmbeddedPlusScte20DestinationSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EmbeddedPlusScte20DestinationSettings unmarshalledObject = new EmbeddedPlusScte20DestinationSettings();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

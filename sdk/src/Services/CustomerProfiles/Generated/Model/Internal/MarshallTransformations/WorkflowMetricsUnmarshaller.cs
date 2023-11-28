@@ -52,15 +52,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public WorkflowMetrics Unmarshall(JsonUnmarshallerContext context)
         {
+            WorkflowMetrics unmarshalledObject = new WorkflowMetrics();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkflowMetrics unmarshalledObject = new WorkflowMetrics();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

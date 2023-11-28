@@ -52,15 +52,14 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EventIntegrationAssociation Unmarshall(JsonUnmarshallerContext context)
         {
+            EventIntegrationAssociation unmarshalledObject = new EventIntegrationAssociation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EventIntegrationAssociation unmarshalledObject = new EventIntegrationAssociation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

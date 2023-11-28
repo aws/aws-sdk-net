@@ -52,15 +52,14 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SageMakerPipelineParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            SageMakerPipelineParameters unmarshalledObject = new SageMakerPipelineParameters();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SageMakerPipelineParameters unmarshalledObject = new SageMakerPipelineParameters();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

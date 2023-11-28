@@ -52,15 +52,14 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AlertManagerDefinitionStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            AlertManagerDefinitionStatus unmarshalledObject = new AlertManagerDefinitionStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AlertManagerDefinitionStatus unmarshalledObject = new AlertManagerDefinitionStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

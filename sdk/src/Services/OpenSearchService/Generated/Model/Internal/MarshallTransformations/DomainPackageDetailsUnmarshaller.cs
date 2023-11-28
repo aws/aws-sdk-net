@@ -52,15 +52,14 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DomainPackageDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            DomainPackageDetails unmarshalledObject = new DomainPackageDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainPackageDetails unmarshalledObject = new DomainPackageDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -119,7 +118,6 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

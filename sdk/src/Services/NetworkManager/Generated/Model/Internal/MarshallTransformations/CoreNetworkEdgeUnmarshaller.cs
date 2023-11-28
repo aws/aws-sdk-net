@@ -52,15 +52,14 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CoreNetworkEdge Unmarshall(JsonUnmarshallerContext context)
         {
+            CoreNetworkEdge unmarshalledObject = new CoreNetworkEdge();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CoreNetworkEdge unmarshalledObject = new CoreNetworkEdge();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

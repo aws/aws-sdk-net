@@ -52,15 +52,14 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TranslatedDocument Unmarshall(JsonUnmarshallerContext context)
         {
+            TranslatedDocument unmarshalledObject = new TranslatedDocument();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TranslatedDocument unmarshalledObject = new TranslatedDocument();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

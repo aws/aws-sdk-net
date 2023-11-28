@@ -52,15 +52,14 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MagneticStoreRejectedDataLocation Unmarshall(JsonUnmarshallerContext context)
         {
+            MagneticStoreRejectedDataLocation unmarshalledObject = new MagneticStoreRejectedDataLocation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MagneticStoreRejectedDataLocation unmarshalledObject = new MagneticStoreRejectedDataLocation();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

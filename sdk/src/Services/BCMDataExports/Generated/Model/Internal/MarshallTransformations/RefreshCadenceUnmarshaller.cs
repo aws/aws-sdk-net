@@ -52,15 +52,14 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RefreshCadence Unmarshall(JsonUnmarshallerContext context)
         {
+            RefreshCadence unmarshalledObject = new RefreshCadence();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RefreshCadence unmarshalledObject = new RefreshCadence();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

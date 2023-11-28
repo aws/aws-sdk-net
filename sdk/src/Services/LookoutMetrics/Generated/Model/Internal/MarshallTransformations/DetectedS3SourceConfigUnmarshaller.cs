@@ -52,15 +52,14 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DetectedS3SourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            DetectedS3SourceConfig unmarshalledObject = new DetectedS3SourceConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DetectedS3SourceConfig unmarshalledObject = new DetectedS3SourceConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

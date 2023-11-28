@@ -52,15 +52,14 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DedicatedIp Unmarshall(JsonUnmarshallerContext context)
         {
+            DedicatedIp unmarshalledObject = new DedicatedIp();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DedicatedIp unmarshalledObject = new DedicatedIp();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

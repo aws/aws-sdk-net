@@ -52,15 +52,14 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OrganizationEventDetailsErrorItem Unmarshall(JsonUnmarshallerContext context)
         {
+            OrganizationEventDetailsErrorItem unmarshalledObject = new OrganizationEventDetailsErrorItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OrganizationEventDetailsErrorItem unmarshalledObject = new OrganizationEventDetailsErrorItem();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

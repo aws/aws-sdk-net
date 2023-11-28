@@ -52,15 +52,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public UnprocessedTraceSegment Unmarshall(JsonUnmarshallerContext context)
         {
+            UnprocessedTraceSegment unmarshalledObject = new UnprocessedTraceSegment();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UnprocessedTraceSegment unmarshalledObject = new UnprocessedTraceSegment();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

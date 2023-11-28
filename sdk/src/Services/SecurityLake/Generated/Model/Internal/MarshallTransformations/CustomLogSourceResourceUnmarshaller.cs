@@ -52,15 +52,14 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CustomLogSourceResource Unmarshall(JsonUnmarshallerContext context)
         {
+            CustomLogSourceResource unmarshalledObject = new CustomLogSourceResource();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CustomLogSourceResource unmarshalledObject = new CustomLogSourceResource();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

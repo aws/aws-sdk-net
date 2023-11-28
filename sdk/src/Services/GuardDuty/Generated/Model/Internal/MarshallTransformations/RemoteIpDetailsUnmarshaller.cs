@@ -52,15 +52,14 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RemoteIpDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            RemoteIpDetails unmarshalledObject = new RemoteIpDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RemoteIpDetails unmarshalledObject = new RemoteIpDetails();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

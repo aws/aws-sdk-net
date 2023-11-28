@@ -52,15 +52,14 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DeleteStatisticsValueMap Unmarshall(JsonUnmarshallerContext context)
         {
+            DeleteStatisticsValueMap unmarshalledObject = new DeleteStatisticsValueMap();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeleteStatisticsValueMap unmarshalledObject = new DeleteStatisticsValueMap();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

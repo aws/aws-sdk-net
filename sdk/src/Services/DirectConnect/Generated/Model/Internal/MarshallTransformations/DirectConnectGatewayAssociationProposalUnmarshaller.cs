@@ -52,15 +52,14 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DirectConnectGatewayAssociationProposal Unmarshall(JsonUnmarshallerContext context)
         {
+            DirectConnectGatewayAssociationProposal unmarshalledObject = new DirectConnectGatewayAssociationProposal();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DirectConnectGatewayAssociationProposal unmarshalledObject = new DirectConnectGatewayAssociationProposal();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

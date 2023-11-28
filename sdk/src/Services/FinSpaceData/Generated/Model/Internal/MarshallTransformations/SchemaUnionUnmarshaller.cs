@@ -52,15 +52,14 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SchemaUnion Unmarshall(JsonUnmarshallerContext context)
         {
+            SchemaUnion unmarshalledObject = new SchemaUnion();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SchemaUnion unmarshalledObject = new SchemaUnion();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

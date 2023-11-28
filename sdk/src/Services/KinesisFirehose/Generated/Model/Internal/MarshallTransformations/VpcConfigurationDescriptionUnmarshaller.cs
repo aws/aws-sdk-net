@@ -52,15 +52,14 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public VpcConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            VpcConfigurationDescription unmarshalledObject = new VpcConfigurationDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VpcConfigurationDescription unmarshalledObject = new VpcConfigurationDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

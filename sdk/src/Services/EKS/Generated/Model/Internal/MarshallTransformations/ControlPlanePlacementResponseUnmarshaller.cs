@@ -52,15 +52,14 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ControlPlanePlacementResponse Unmarshall(JsonUnmarshallerContext context)
         {
+            ControlPlanePlacementResponse unmarshalledObject = new ControlPlanePlacementResponse();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ControlPlanePlacementResponse unmarshalledObject = new ControlPlanePlacementResponse();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

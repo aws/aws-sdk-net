@@ -52,15 +52,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AliasRoutingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            AliasRoutingConfiguration unmarshalledObject = new AliasRoutingConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AliasRoutingConfiguration unmarshalledObject = new AliasRoutingConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

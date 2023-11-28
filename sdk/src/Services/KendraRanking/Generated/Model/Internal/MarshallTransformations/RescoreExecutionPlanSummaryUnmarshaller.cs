@@ -52,15 +52,14 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RescoreExecutionPlanSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            RescoreExecutionPlanSummary unmarshalledObject = new RescoreExecutionPlanSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RescoreExecutionPlanSummary unmarshalledObject = new RescoreExecutionPlanSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

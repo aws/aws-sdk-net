@@ -52,15 +52,14 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IPAddressBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            IPAddressBasedRemoteInfo unmarshalledObject = new IPAddressBasedRemoteInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IPAddressBasedRemoteInfo unmarshalledObject = new IPAddressBasedRemoteInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

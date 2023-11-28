@@ -52,20 +52,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AllSheetsFilterScopeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            AllSheetsFilterScopeConfiguration unmarshalledObject = new AllSheetsFilterScopeConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AllSheetsFilterScopeConfiguration unmarshalledObject = new AllSheetsFilterScopeConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

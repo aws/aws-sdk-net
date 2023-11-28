@@ -52,15 +52,14 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RuleGroupsNamespaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            RuleGroupsNamespaceSummary unmarshalledObject = new RuleGroupsNamespaceSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RuleGroupsNamespaceSummary unmarshalledObject = new RuleGroupsNamespaceSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

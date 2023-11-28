@@ -52,20 +52,18 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DailySchedule Unmarshall(JsonUnmarshallerContext context)
         {
+            DailySchedule unmarshalledObject = new DailySchedule();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DailySchedule unmarshalledObject = new DailySchedule();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

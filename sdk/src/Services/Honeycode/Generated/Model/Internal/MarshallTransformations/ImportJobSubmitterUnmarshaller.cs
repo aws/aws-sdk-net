@@ -52,15 +52,14 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImportJobSubmitter Unmarshall(JsonUnmarshallerContext context)
         {
+            ImportJobSubmitter unmarshalledObject = new ImportJobSubmitter();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImportJobSubmitter unmarshalledObject = new ImportJobSubmitter();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

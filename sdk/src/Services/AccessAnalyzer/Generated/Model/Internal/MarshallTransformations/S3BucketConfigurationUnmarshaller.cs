@@ -52,15 +52,14 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public S3BucketConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            S3BucketConfiguration unmarshalledObject = new S3BucketConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3BucketConfiguration unmarshalledObject = new S3BucketConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

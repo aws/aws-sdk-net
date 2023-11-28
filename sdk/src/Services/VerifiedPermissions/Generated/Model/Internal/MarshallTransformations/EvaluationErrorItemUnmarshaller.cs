@@ -52,15 +52,14 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EvaluationErrorItem Unmarshall(JsonUnmarshallerContext context)
         {
+            EvaluationErrorItem unmarshalledObject = new EvaluationErrorItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EvaluationErrorItem unmarshalledObject = new EvaluationErrorItem();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

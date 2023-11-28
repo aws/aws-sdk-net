@@ -52,15 +52,14 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public NetworkFirewallStatefulRuleGroupOverride Unmarshall(JsonUnmarshallerContext context)
         {
+            NetworkFirewallStatefulRuleGroupOverride unmarshalledObject = new NetworkFirewallStatefulRuleGroupOverride();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NetworkFirewallStatefulRuleGroupOverride unmarshalledObject = new NetworkFirewallStatefulRuleGroupOverride();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

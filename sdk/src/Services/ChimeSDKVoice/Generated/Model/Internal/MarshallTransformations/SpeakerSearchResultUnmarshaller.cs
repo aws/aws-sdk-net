@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SpeakerSearchResult Unmarshall(JsonUnmarshallerContext context)
         {
+            SpeakerSearchResult unmarshalledObject = new SpeakerSearchResult();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SpeakerSearchResult unmarshalledObject = new SpeakerSearchResult();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

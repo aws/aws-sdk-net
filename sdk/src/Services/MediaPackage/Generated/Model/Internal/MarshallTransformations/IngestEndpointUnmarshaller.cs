@@ -52,15 +52,14 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IngestEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
+            IngestEndpoint unmarshalledObject = new IngestEndpoint();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IngestEndpoint unmarshalledObject = new IngestEndpoint();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,20 +52,18 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LandCoverSegmentationConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
+            LandCoverSegmentationConfigInput unmarshalledObject = new LandCoverSegmentationConfigInput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LandCoverSegmentationConfigInput unmarshalledObject = new LandCoverSegmentationConfigInput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FirewallPolicyMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            FirewallPolicyMetadata unmarshalledObject = new FirewallPolicyMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FirewallPolicyMetadata unmarshalledObject = new FirewallPolicyMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

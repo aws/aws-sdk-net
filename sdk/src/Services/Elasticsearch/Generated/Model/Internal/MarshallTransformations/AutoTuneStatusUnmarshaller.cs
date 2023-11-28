@@ -52,15 +52,14 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AutoTuneStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            AutoTuneStatus unmarshalledObject = new AutoTuneStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoTuneStatus unmarshalledObject = new AutoTuneStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

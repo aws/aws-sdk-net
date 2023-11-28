@@ -52,15 +52,14 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MonitoredResourceInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            MonitoredResourceInfo unmarshalledObject = new MonitoredResourceInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MonitoredResourceInfo unmarshalledObject = new MonitoredResourceInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

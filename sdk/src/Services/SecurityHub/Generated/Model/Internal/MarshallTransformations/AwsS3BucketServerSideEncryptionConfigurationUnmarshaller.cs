@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsS3BucketServerSideEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsS3BucketServerSideEncryptionConfiguration unmarshalledObject = new AwsS3BucketServerSideEncryptionConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsS3BucketServerSideEncryptionConfiguration unmarshalledObject = new AwsS3BucketServerSideEncryptionConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

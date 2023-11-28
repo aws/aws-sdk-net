@@ -52,15 +52,14 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public VcenterBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            VcenterBasedRemoteInfo unmarshalledObject = new VcenterBasedRemoteInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VcenterBasedRemoteInfo unmarshalledObject = new VcenterBasedRemoteInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

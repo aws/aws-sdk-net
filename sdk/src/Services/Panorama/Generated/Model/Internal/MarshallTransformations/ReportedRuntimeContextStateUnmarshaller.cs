@@ -52,15 +52,14 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ReportedRuntimeContextState Unmarshall(JsonUnmarshallerContext context)
         {
+            ReportedRuntimeContextState unmarshalledObject = new ReportedRuntimeContextState();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReportedRuntimeContextState unmarshalledObject = new ReportedRuntimeContextState();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DICOMTags Unmarshall(JsonUnmarshallerContext context)
         {
+            DICOMTags unmarshalledObject = new DICOMTags();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DICOMTags unmarshalledObject = new DICOMTags();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -137,7 +136,6 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

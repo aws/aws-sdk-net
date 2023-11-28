@@ -52,15 +52,14 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PricingRuleListElement Unmarshall(JsonUnmarshallerContext context)
         {
+            PricingRuleListElement unmarshalledObject = new PricingRuleListElement();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PricingRuleListElement unmarshalledObject = new PricingRuleListElement();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -149,7 +148,6 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

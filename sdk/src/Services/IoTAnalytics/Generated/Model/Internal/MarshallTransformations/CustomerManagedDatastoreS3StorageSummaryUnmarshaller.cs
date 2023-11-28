@@ -52,15 +52,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CustomerManagedDatastoreS3StorageSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            CustomerManagedDatastoreS3StorageSummary unmarshalledObject = new CustomerManagedDatastoreS3StorageSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CustomerManagedDatastoreS3StorageSummary unmarshalledObject = new CustomerManagedDatastoreS3StorageSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

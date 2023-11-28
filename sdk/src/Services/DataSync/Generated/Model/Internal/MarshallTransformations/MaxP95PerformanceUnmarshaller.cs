@@ -52,15 +52,14 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MaxP95Performance Unmarshall(JsonUnmarshallerContext context)
         {
+            MaxP95Performance unmarshalledObject = new MaxP95Performance();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MaxP95Performance unmarshalledObject = new MaxP95Performance();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

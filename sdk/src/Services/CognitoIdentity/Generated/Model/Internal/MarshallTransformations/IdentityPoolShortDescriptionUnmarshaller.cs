@@ -52,15 +52,14 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public IdentityPoolShortDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            IdentityPoolShortDescription unmarshalledObject = new IdentityPoolShortDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IdentityPoolShortDescription unmarshalledObject = new IdentityPoolShortDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

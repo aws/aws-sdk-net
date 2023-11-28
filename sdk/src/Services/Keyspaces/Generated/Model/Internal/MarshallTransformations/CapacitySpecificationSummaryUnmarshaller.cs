@@ -52,15 +52,14 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CapacitySpecificationSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            CapacitySpecificationSummary unmarshalledObject = new CapacitySpecificationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CapacitySpecificationSummary unmarshalledObject = new CapacitySpecificationSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

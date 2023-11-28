@@ -52,15 +52,14 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TapeArchive Unmarshall(JsonUnmarshallerContext context)
         {
+            TapeArchive unmarshalledObject = new TapeArchive();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TapeArchive unmarshalledObject = new TapeArchive();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -143,7 +142,6 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

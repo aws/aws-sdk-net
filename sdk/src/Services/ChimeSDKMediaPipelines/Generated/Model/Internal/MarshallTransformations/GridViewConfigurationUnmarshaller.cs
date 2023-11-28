@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GridViewConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            GridViewConfiguration unmarshalledObject = new GridViewConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GridViewConfiguration unmarshalledObject = new GridViewConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

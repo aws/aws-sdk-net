@@ -52,15 +52,14 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ProfileConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            ProfileConfiguration unmarshalledObject = new ProfileConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProfileConfiguration unmarshalledObject = new ProfileConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

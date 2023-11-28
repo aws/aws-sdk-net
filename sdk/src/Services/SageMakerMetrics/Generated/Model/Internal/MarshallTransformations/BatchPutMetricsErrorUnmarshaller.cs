@@ -52,15 +52,14 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchPutMetricsError Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchPutMetricsError unmarshalledObject = new BatchPutMetricsError();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchPutMetricsError unmarshalledObject = new BatchPutMetricsError();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

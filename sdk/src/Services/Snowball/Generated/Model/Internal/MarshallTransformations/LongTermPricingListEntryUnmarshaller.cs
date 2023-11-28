@@ -52,15 +52,14 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LongTermPricingListEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            LongTermPricingListEntry unmarshalledObject = new LongTermPricingListEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LongTermPricingListEntry unmarshalledObject = new LongTermPricingListEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -125,7 +124,6 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

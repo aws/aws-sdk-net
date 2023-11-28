@@ -52,15 +52,14 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SoftwareUpdateOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            SoftwareUpdateOptionsStatus unmarshalledObject = new SoftwareUpdateOptionsStatus();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SoftwareUpdateOptionsStatus unmarshalledObject = new SoftwareUpdateOptionsStatus();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

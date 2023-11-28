@@ -52,15 +52,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FleetCapacity Unmarshall(JsonUnmarshallerContext context)
         {
+            FleetCapacity unmarshalledObject = new FleetCapacity();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FleetCapacity unmarshalledObject = new FleetCapacity();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

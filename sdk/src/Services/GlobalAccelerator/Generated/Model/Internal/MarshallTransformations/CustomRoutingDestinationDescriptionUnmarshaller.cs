@@ -52,15 +52,14 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CustomRoutingDestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            CustomRoutingDestinationDescription unmarshalledObject = new CustomRoutingDestinationDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CustomRoutingDestinationDescription unmarshalledObject = new CustomRoutingDestinationDescription();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

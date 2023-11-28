@@ -52,15 +52,14 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ContinuousHyperParameterRange Unmarshall(JsonUnmarshallerContext context)
         {
+            ContinuousHyperParameterRange unmarshalledObject = new ContinuousHyperParameterRange();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ContinuousHyperParameterRange unmarshalledObject = new ContinuousHyperParameterRange();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

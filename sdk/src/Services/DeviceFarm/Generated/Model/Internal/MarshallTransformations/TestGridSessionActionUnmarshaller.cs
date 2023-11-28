@@ -52,15 +52,14 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TestGridSessionAction Unmarshall(JsonUnmarshallerContext context)
         {
+            TestGridSessionAction unmarshalledObject = new TestGridSessionAction();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TestGridSessionAction unmarshalledObject = new TestGridSessionAction();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

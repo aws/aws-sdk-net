@@ -52,15 +52,14 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public StandbyWorkspacesProperties Unmarshall(JsonUnmarshallerContext context)
         {
+            StandbyWorkspacesProperties unmarshalledObject = new StandbyWorkspacesProperties();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StandbyWorkspacesProperties unmarshalledObject = new StandbyWorkspacesProperties();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

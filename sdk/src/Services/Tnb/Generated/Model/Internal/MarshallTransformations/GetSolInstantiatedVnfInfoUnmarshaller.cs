@@ -52,15 +52,14 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GetSolInstantiatedVnfInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            GetSolInstantiatedVnfInfo unmarshalledObject = new GetSolInstantiatedVnfInfo();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GetSolInstantiatedVnfInfo unmarshalledObject = new GetSolInstantiatedVnfInfo();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

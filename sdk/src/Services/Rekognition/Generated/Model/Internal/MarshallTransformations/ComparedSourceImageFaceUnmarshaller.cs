@@ -52,15 +52,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ComparedSourceImageFace Unmarshall(JsonUnmarshallerContext context)
         {
+            ComparedSourceImageFace unmarshalledObject = new ComparedSourceImageFace();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComparedSourceImageFace unmarshalledObject = new ComparedSourceImageFace();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public DatasetExportJobOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            DatasetExportJobOutput unmarshalledObject = new DatasetExportJobOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetExportJobOutput unmarshalledObject = new DatasetExportJobOutput();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

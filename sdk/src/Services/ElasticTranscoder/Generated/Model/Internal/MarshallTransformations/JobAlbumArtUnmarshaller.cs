@@ -52,15 +52,14 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public JobAlbumArt Unmarshall(JsonUnmarshallerContext context)
         {
+            JobAlbumArt unmarshalledObject = new JobAlbumArt();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobAlbumArt unmarshalledObject = new JobAlbumArt();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

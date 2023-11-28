@@ -52,15 +52,14 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TableCreationParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            TableCreationParameters unmarshalledObject = new TableCreationParameters();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TableCreationParameters unmarshalledObject = new TableCreationParameters();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

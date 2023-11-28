@@ -52,15 +52,14 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public PullRequestStatusChangedEventMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            PullRequestStatusChangedEventMetadata unmarshalledObject = new PullRequestStatusChangedEventMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PullRequestStatusChangedEventMetadata unmarshalledObject = new PullRequestStatusChangedEventMetadata();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

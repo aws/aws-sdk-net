@@ -52,15 +52,14 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ResourceIdPreference Unmarshall(JsonUnmarshallerContext context)
         {
+            ResourceIdPreference unmarshalledObject = new ResourceIdPreference();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceIdPreference unmarshalledObject = new ResourceIdPreference();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public KinesisVideoStreamPoolConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            KinesisVideoStreamPoolConfiguration unmarshalledObject = new KinesisVideoStreamPoolConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KinesisVideoStreamPoolConfiguration unmarshalledObject = new KinesisVideoStreamPoolConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -113,7 +112,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

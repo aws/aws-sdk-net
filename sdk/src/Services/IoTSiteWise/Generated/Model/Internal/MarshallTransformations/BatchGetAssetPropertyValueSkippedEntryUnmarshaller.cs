@@ -52,15 +52,14 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchGetAssetPropertyValueSkippedEntry Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchGetAssetPropertyValueSkippedEntry unmarshalledObject = new BatchGetAssetPropertyValueSkippedEntry();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchGetAssetPropertyValueSkippedEntry unmarshalledObject = new BatchGetAssetPropertyValueSkippedEntry();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AwsCloudFrontDistributionOriginS3OriginConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            AwsCloudFrontDistributionOriginS3OriginConfig unmarshalledObject = new AwsCloudFrontDistributionOriginS3OriginConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsCloudFrontDistributionOriginS3OriginConfig unmarshalledObject = new AwsCloudFrontDistributionOriginS3OriginConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

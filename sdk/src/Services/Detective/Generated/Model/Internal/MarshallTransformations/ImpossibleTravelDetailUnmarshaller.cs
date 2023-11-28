@@ -52,15 +52,14 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImpossibleTravelDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            ImpossibleTravelDetail unmarshalledObject = new ImpossibleTravelDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImpossibleTravelDetail unmarshalledObject = new ImpossibleTravelDetail();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SamplingStatisticSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            SamplingStatisticSummary unmarshalledObject = new SamplingStatisticSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SamplingStatisticSummary unmarshalledObject = new SamplingStatisticSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -95,7 +94,6 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

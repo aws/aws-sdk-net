@@ -52,15 +52,14 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EnvironmentTemplateVersion Unmarshall(JsonUnmarshallerContext context)
         {
+            EnvironmentTemplateVersion unmarshalledObject = new EnvironmentTemplateVersion();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EnvironmentTemplateVersion unmarshalledObject = new EnvironmentTemplateVersion();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

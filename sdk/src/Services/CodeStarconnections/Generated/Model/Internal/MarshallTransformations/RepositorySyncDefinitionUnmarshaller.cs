@@ -52,15 +52,14 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RepositorySyncDefinition Unmarshall(JsonUnmarshallerContext context)
         {
+            RepositorySyncDefinition unmarshalledObject = new RepositorySyncDefinition();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RepositorySyncDefinition unmarshalledObject = new RepositorySyncDefinition();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

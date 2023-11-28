@@ -52,15 +52,14 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public Tunnel Unmarshall(JsonUnmarshallerContext context)
         {
+            Tunnel unmarshalledObject = new Tunnel();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Tunnel unmarshalledObject = new Tunnel();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -131,7 +130,6 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

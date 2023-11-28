@@ -52,15 +52,14 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ContainerProvider Unmarshall(JsonUnmarshallerContext context)
         {
+            ContainerProvider unmarshalledObject = new ContainerProvider();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ContainerProvider unmarshalledObject = new ContainerProvider();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

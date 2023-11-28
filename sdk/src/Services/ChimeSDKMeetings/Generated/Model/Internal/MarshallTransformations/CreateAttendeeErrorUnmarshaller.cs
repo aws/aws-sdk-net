@@ -52,15 +52,14 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CreateAttendeeError Unmarshall(JsonUnmarshallerContext context)
         {
+            CreateAttendeeError unmarshalledObject = new CreateAttendeeError();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CreateAttendeeError unmarshalledObject = new CreateAttendeeError();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -83,7 +82,6 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

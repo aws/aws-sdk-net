@@ -52,15 +52,14 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BrokerInstanceOption Unmarshall(JsonUnmarshallerContext context)
         {
+            BrokerInstanceOption unmarshalledObject = new BrokerInstanceOption();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BrokerInstanceOption unmarshalledObject = new BrokerInstanceOption();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -101,7 +100,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GetBackendStorageResourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            GetBackendStorageResourceConfig unmarshalledObject = new GetBackendStorageResourceConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GetBackendStorageResourceConfig unmarshalledObject = new GetBackendStorageResourceConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -89,7 +88,6 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

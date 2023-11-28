@@ -52,15 +52,14 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public TypedLinkSchemaAndFacetName Unmarshall(JsonUnmarshallerContext context)
         {
+            TypedLinkSchemaAndFacetName unmarshalledObject = new TypedLinkSchemaAndFacetName();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TypedLinkSchemaAndFacetName unmarshalledObject = new TypedLinkSchemaAndFacetName();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

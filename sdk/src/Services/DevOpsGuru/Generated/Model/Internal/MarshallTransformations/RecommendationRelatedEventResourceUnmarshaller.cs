@@ -52,15 +52,14 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public RecommendationRelatedEventResource Unmarshall(JsonUnmarshallerContext context)
         {
+            RecommendationRelatedEventResource unmarshalledObject = new RecommendationRelatedEventResource();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationRelatedEventResource unmarshalledObject = new RecommendationRelatedEventResource();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

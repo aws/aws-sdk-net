@@ -52,15 +52,14 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LicenseConversionContext Unmarshall(JsonUnmarshallerContext context)
         {
+            LicenseConversionContext unmarshalledObject = new LicenseConversionContext();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LicenseConversionContext unmarshalledObject = new LicenseConversionContext();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

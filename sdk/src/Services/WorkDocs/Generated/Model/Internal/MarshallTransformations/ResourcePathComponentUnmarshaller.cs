@@ -52,15 +52,14 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ResourcePathComponent Unmarshall(JsonUnmarshallerContext context)
         {
+            ResourcePathComponent unmarshalledObject = new ResourcePathComponent();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourcePathComponent unmarshalledObject = new ResourcePathComponent();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

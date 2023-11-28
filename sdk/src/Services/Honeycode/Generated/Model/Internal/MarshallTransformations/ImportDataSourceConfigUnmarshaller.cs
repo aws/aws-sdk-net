@@ -52,15 +52,14 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ImportDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            ImportDataSourceConfig unmarshalledObject = new ImportDataSourceConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImportDataSourceConfig unmarshalledObject = new ImportDataSourceConfig();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

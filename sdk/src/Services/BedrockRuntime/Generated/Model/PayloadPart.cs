@@ -27,6 +27,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
+using Amazon.BedrockRuntime.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 namespace Amazon.BedrockRuntime.Model
 {
@@ -36,16 +38,6 @@ namespace Amazon.BedrockRuntime.Model
     public partial class PayloadPart
         : IEventStreamEvent
     {
-    public PayloadPart()
-    {
-    }
-
-    public PayloadPart(IEventStreamMessage message)
-    {
-        Deserialize(message);
-    }
-
-    partial void Deserialize(IEventStreamMessage message);
         private MemoryStream _bytes;
 
         /// <summary>

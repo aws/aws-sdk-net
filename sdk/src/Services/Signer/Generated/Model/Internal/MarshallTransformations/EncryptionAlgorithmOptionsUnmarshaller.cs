@@ -52,15 +52,14 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public EncryptionAlgorithmOptions Unmarshall(JsonUnmarshallerContext context)
         {
+            EncryptionAlgorithmOptions unmarshalledObject = new EncryptionAlgorithmOptions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EncryptionAlgorithmOptions unmarshalledObject = new EncryptionAlgorithmOptions();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

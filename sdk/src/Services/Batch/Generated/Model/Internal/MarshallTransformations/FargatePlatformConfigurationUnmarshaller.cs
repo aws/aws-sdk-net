@@ -52,15 +52,14 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public FargatePlatformConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            FargatePlatformConfiguration unmarshalledObject = new FargatePlatformConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FargatePlatformConfiguration unmarshalledObject = new FargatePlatformConfiguration();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -71,7 +70,6 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

@@ -52,15 +52,14 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public CommentsForComparedCommit Unmarshall(JsonUnmarshallerContext context)
         {
+            CommentsForComparedCommit unmarshalledObject = new CommentsForComparedCommit();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CommentsForComparedCommit unmarshalledObject = new CommentsForComparedCommit();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

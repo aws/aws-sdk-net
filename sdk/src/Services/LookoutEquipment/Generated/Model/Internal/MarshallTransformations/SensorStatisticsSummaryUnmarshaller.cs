@@ -52,15 +52,14 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SensorStatisticsSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            SensorStatisticsSummary unmarshalledObject = new SensorStatisticsSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SensorStatisticsSummary unmarshalledObject = new SensorStatisticsSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -143,7 +142,6 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

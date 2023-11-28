@@ -52,15 +52,14 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public OrderedPhoneNumber Unmarshall(JsonUnmarshallerContext context)
         {
+            OrderedPhoneNumber unmarshalledObject = new OrderedPhoneNumber();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OrderedPhoneNumber unmarshalledObject = new OrderedPhoneNumber();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

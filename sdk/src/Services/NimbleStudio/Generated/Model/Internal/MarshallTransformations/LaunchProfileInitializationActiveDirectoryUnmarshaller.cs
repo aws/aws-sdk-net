@@ -52,15 +52,14 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public LaunchProfileInitializationActiveDirectory Unmarshall(JsonUnmarshallerContext context)
         {
+            LaunchProfileInitializationActiveDirectory unmarshalledObject = new LaunchProfileInitializationActiveDirectory();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LaunchProfileInitializationActiveDirectory unmarshalledObject = new LaunchProfileInitializationActiveDirectory();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

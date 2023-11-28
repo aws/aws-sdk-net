@@ -52,15 +52,14 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AssessmentRunAgent Unmarshall(JsonUnmarshallerContext context)
         {
+            AssessmentRunAgent unmarshalledObject = new AssessmentRunAgent();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AssessmentRunAgent unmarshalledObject = new AssessmentRunAgent();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

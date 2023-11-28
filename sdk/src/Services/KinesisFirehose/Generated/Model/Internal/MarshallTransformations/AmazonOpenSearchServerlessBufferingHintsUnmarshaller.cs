@@ -52,15 +52,14 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AmazonOpenSearchServerlessBufferingHints Unmarshall(JsonUnmarshallerContext context)
         {
+            AmazonOpenSearchServerlessBufferingHints unmarshalledObject = new AmazonOpenSearchServerlessBufferingHints();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AmazonOpenSearchServerlessBufferingHints unmarshalledObject = new AmazonOpenSearchServerlessBufferingHints();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

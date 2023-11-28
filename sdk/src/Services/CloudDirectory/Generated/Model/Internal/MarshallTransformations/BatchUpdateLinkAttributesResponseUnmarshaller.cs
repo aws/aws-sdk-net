@@ -52,20 +52,18 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public BatchUpdateLinkAttributesResponse Unmarshall(JsonUnmarshallerContext context)
         {
+            BatchUpdateLinkAttributesResponse unmarshalledObject = new BatchUpdateLinkAttributesResponse();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchUpdateLinkAttributesResponse unmarshalledObject = new BatchUpdateLinkAttributesResponse();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
             }
-          
             return unmarshalledObject;
         }
 

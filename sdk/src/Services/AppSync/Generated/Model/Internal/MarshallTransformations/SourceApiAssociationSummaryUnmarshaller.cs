@@ -52,15 +52,14 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public SourceApiAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            SourceApiAssociationSummary unmarshalledObject = new SourceApiAssociationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SourceApiAssociationSummary unmarshalledObject = new SourceApiAssociationSummary();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -107,7 +106,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 

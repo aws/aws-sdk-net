@@ -52,15 +52,14 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public GrantConstraints Unmarshall(JsonUnmarshallerContext context)
         {
+            GrantConstraints unmarshalledObject = new GrantConstraints();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GrantConstraints unmarshalledObject = new GrantConstraints();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
@@ -77,7 +76,6 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 
