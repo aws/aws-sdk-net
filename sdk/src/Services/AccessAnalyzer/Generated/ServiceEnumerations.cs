@@ -1181,6 +1181,10 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
         /// <summary>
+        /// Constant AWSS3ExpressDirectoryBucket for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSS3ExpressDirectoryBucket = new ResourceType("AWS::S3Express::DirectoryBucket");
+        /// <summary>
         /// Constant AWSSecretsManagerSecret for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSecretsManagerSecret = new ResourceType("AWS::SecretsManager::Secret");

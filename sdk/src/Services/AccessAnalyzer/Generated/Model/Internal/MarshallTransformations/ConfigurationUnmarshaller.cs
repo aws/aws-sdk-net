@@ -111,6 +111,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3ExpressDirectoryBucket", targetDepth))
+                {
+                    var unmarshaller = S3ExpressDirectoryBucketConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3ExpressDirectoryBucket = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("secretsManagerSecret", targetDepth))
                 {
                     var unmarshaller = SecretsManagerSecretConfigurationUnmarshaller.Instance;

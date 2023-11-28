@@ -42,6 +42,7 @@ namespace Amazon.AccessAnalyzer.Model
         private RdsDbClusterSnapshotConfiguration _rdsDbClusterSnapshot;
         private RdsDbSnapshotConfiguration _rdsDbSnapshot;
         private S3BucketConfiguration _s3Bucket;
+        private S3ExpressDirectoryBucketConfiguration _s3ExpressDirectoryBucket;
         private SecretsManagerSecretConfiguration _secretsManagerSecret;
         private SnsTopicConfiguration _snsTopic;
         private SqsQueueConfiguration _sqsQueue;
@@ -175,7 +176,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The access control configuration is for an Amazon S3 Bucket. 
+        /// The access control configuration is for an Amazon S3 bucket. 
         /// </para>
         /// </summary>
         public S3BucketConfiguration S3Bucket
@@ -188,6 +189,24 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetS3Bucket()
         {
             return this._s3Bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ExpressDirectoryBucket. 
+        /// <para>
+        /// The access control configuration is for an Amazon S3 directory bucket.
+        /// </para>
+        /// </summary>
+        public S3ExpressDirectoryBucketConfiguration S3ExpressDirectoryBucket
+        {
+            get { return this._s3ExpressDirectoryBucket; }
+            set { this._s3ExpressDirectoryBucket = value; }
+        }
+
+        // Check to see if S3ExpressDirectoryBucket property is set
+        internal bool IsSetS3ExpressDirectoryBucket()
+        {
+            return this._s3ExpressDirectoryBucket != null;
         }
 
         /// <summary>

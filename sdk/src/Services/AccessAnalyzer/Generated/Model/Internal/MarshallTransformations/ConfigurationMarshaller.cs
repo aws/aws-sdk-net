@@ -133,6 +133,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3ExpressDirectoryBucket())
+            {
+                context.Writer.WritePropertyName("s3ExpressDirectoryBucket");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ExpressDirectoryBucketConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3ExpressDirectoryBucket, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSecretsManagerSecret())
             {
                 context.Writer.WritePropertyName("secretsManagerSecret");
