@@ -354,6 +354,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DetectProfileObjectTypeRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.GetAutoMergingPreviewRequest.DomainName</property>
     <min>1</min>
     <max>64</max>
@@ -1458,6 +1464,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.DestinationSummary.Uri</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DetectedProfileObjectType.SourceLastUpdatedTimestampFormat</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
