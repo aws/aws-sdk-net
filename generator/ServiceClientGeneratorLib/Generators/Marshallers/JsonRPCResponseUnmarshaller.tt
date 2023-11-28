@@ -38,7 +38,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
         }
         if (isEventStreamOutput)
-        {
+        {            
+            if(payload == null)
+            {
+               payload = this.Structure.Members.Where(m => m.ModelShape.IsEventStream).FirstOrDefault();
+               //if payload is still null after we search for a member that is of eventStream then the operation is not modeled correctly
+
+               if(payload == null)
+                    throw new InvalidOperationException("An eventstream operation's response must have at least one member that is marked with the eventStream trait");
+            }
 #>
             response.<#=payload.PropertyName#> = new <#=payload.Shape.Name#>(context.Stream);
 <#

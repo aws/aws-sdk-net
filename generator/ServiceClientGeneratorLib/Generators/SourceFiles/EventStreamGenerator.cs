@@ -65,7 +65,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line 17 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamGenerator.tt"
 
         string protocol = null;
-        if(string.Equals(this.Config.ServiceModel.Protocol,"rest-json", StringComparison.OrdinalIgnoreCase))
+        if (string.Equals(this.Config.ServiceModel.Protocol,"rest-json", StringComparison.OrdinalIgnoreCase) || string.Equals(this.Config.ServiceModel.Protocol,"json", StringComparison.OrdinalIgnoreCase))
             protocol = "Json";
         else if(string.Equals(this.Config.ServiceModel.Protocol,"rest-xml",StringComparison.OrdinalIgnoreCase))
             protocol = "Xml";
