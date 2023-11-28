@@ -82,6 +82,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCustomizationType())
+                {
+                    context.Writer.WritePropertyName("customizationType");
+                    context.Writer.Write(publicRequest.CustomizationType);
+                }
+
                 if(publicRequest.IsSetCustomModelKmsKeyId())
                 {
                     context.Writer.WritePropertyName("customModelKmsKeyId");

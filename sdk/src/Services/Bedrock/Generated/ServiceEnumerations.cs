@@ -75,6 +75,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type CustomizationType.
+    /// </summary>
+    public class CustomizationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUED_PRE_TRAINING for CustomizationType
+        /// </summary>
+        public static readonly CustomizationType CONTINUED_PRE_TRAINING = new CustomizationType("CONTINUED_PRE_TRAINING");
+        /// <summary>
+        /// Constant FINE_TUNING for CustomizationType
+        /// </summary>
+        public static readonly CustomizationType FINE_TUNING = new CustomizationType("FINE_TUNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomizationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomizationType FindValue(string value)
+        {
+            return FindValue<CustomizationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomizationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FineTuningJobStatus.
     /// </summary>
     public class FineTuningJobStatus : ConstantClass
@@ -137,6 +187,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type FoundationModelLifecycleStatus.
+    /// </summary>
+    public class FoundationModelLifecycleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FoundationModelLifecycleStatus
+        /// </summary>
+        public static readonly FoundationModelLifecycleStatus ACTIVE = new FoundationModelLifecycleStatus("ACTIVE");
+        /// <summary>
+        /// Constant LEGACY for FoundationModelLifecycleStatus
+        /// </summary>
+        public static readonly FoundationModelLifecycleStatus LEGACY = new FoundationModelLifecycleStatus("LEGACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FoundationModelLifecycleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FoundationModelLifecycleStatus FindValue(string value)
+        {
+            return FindValue<FoundationModelLifecycleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FoundationModelLifecycleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InferenceType.
     /// </summary>
     public class InferenceType : ConstantClass
@@ -192,6 +292,10 @@ namespace Amazon.Bedrock
     public class ModelCustomization : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONTINUED_PRE_TRAINING for ModelCustomization
+        /// </summary>
+        public static readonly ModelCustomization CONTINUED_PRE_TRAINING = new ModelCustomization("CONTINUED_PRE_TRAINING");
         /// <summary>
         /// Constant FINE_TUNING for ModelCustomization
         /// </summary>

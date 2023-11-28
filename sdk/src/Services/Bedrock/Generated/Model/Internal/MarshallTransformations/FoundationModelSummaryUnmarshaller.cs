@@ -93,6 +93,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("modelLifecycle", targetDepth))
+                {
+                    var unmarshaller = FoundationModelLifecycleUnmarshaller.Instance;
+                    unmarshalledObject.ModelLifecycle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

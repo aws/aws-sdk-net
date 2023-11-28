@@ -36,6 +36,7 @@ namespace Amazon.Bedrock.Model
         private string _baseModelArn;
         private string _clientRequestToken;
         private DateTime? _creationTime;
+        private CustomizationType _customizationType;
         private DateTime? _endTime;
         private string _failureMessage;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
@@ -112,6 +113,24 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomizationType. 
+        /// <para>
+        /// The type of model customization.
+        /// </para>
+        /// </summary>
+        public CustomizationType CustomizationType
+        {
+            get { return this._customizationType; }
+            set { this._customizationType = value; }
+        }
+
+        // Check to see if CustomizationType property is set
+        internal bool IsSetCustomizationType()
+        {
+            return this._customizationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
         /// Time that the resource transitioned to terminal state.
@@ -151,7 +170,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// The hyperparameter values for the job.
+        /// The hyperparameter values for the job. For information about hyperparameters for specific
+        /// models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+        /// for model customization</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

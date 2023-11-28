@@ -38,8 +38,8 @@ namespace Amazon.Bedrock.Model
     /// the model-customization job completes successfully, your custom model resource will
     /// be ready to use. Training data contains input and output text for each record in a
     /// JSONL format. Optionally, you can specify validation data in the same format as the
-    /// training data. Bedrock returns validation loss metrics and output generations after
-    /// the job completes. 
+    /// training data. Amazon Bedrock returns validation loss metrics and output generations
+    /// after the job completes. 
     /// </para>
     ///  
     /// <para>
@@ -57,6 +57,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _baseModelIdentifier;
         private string _clientRequestToken;
+        private CustomizationType _customizationType;
         private string _customModelKmsKeyId;
         private string _customModelName;
         private List<Tag> _customModelTags = new List<Tag>();
@@ -106,6 +107,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationType. 
+        /// <para>
+        /// The customization type.
+        /// </para>
+        /// </summary>
+        public CustomizationType CustomizationType
+        {
+            get { return this._customizationType; }
+            set { this._customizationType = value; }
+        }
+
+        // Check to see if CustomizationType property is set
+        internal bool IsSetCustomizationType()
+        {
+            return this._customizationType != null;
         }
 
         /// <summary>
@@ -244,10 +263,10 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks
-        /// on your behalf. For example, during model training, Bedrock needs your permission
-        /// to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass
-        /// this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code>
+        /// The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform
+        /// tasks on your behalf. For example, during model training, Amazon Bedrock needs your
+        /// permission to read input data from an S3 bucket, write model artifacts to an S3 bucket.
+        /// To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code>
         /// permission. 
         /// </para>
         /// </summary>

@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// This is the response object from the ListFoundationModels operation.
+    /// Details about whether a model version is available or deprecated.
     /// </summary>
-    public partial class ListFoundationModelsResponse : AmazonWebServiceResponse
+    public partial class FoundationModelLifecycle
     {
-        private List<FoundationModelSummary> _modelSummaries = new List<FoundationModelSummary>();
+        private FoundationModelLifecycleStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ModelSummaries. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// A list of Amazon Bedrock foundation models.
+        /// Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated
+        /// (<code>LEGACY</code>.
         /// </para>
         /// </summary>
-        public List<FoundationModelSummary> ModelSummaries
+        [AWSProperty(Required=true)]
+        public FoundationModelLifecycleStatus Status
         {
-            get { return this._modelSummaries; }
-            set { this._modelSummaries = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if ModelSummaries property is set
-        internal bool IsSetModelSummaries()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._modelSummaries != null && this._modelSummaries.Count > 0; 
+            return this._status != null;
         }
 
     }

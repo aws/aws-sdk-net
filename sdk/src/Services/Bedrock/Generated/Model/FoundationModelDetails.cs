@@ -38,6 +38,7 @@ namespace Amazon.Bedrock.Model
         private List<string> _inputModalities = new List<string>();
         private string _modelArn;
         private string _modelId;
+        private FoundationModelLifecycle _modelLifecycle;
         private string _modelName;
         private List<string> _outputModalities = new List<string>();
         private string _providerName;
@@ -133,6 +134,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelId()
         {
             return this._modelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelLifecycle. 
+        /// <para>
+        /// Contains details about whether a model version is available or deprecated
+        /// </para>
+        /// </summary>
+        public FoundationModelLifecycle ModelLifecycle
+        {
+            get { return this._modelLifecycle; }
+            set { this._modelLifecycle = value; }
+        }
+
+        // Check to see if ModelLifecycle property is set
+        internal bool IsSetModelLifecycle()
+        {
+            return this._modelLifecycle != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _baseModelArn;
         private DateTime? _creationTime;
+        private CustomizationType _customizationType;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private string _jobArn;
         private string _jobName;
@@ -83,6 +84,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationType. 
+        /// <para>
+        /// The type of model customization.
+        /// </para>
+        /// </summary>
+        public CustomizationType CustomizationType
+        {
+            get { return this._customizationType; }
+            set { this._customizationType = value; }
+        }
+
+        // Check to see if CustomizationType property is set
+        internal bool IsSetCustomizationType()
+        {
+            return this._customizationType != null;
         }
 
         /// <summary>

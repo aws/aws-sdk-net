@@ -52,7 +52,7 @@ namespace Amazon.Bedrock.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// Unique token value that you can provide. If this token matches a previous request,
-        /// Bedrock ignores the request, but does not return an error.
+        /// Amazon Bedrock ignores the request, but does not return an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

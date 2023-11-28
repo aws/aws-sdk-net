@@ -127,8 +127,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Continuation token from the previous response, for Bedrock to list the next set of
-        /// results.
+        /// Continuation token from the previous response, for Amazon Bedrock to list the next
+        /// set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

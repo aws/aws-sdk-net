@@ -30,7 +30,8 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFoundationModels operation.
-    /// List of Bedrock foundation models that you can use. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
+    /// List of Amazon Bedrock foundation models that you can use. For more information, see
+    /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
     /// models</a> in the Bedrock User Guide.
     /// </summary>
     public partial class ListFoundationModelsRequest : AmazonBedrockRequest
@@ -97,7 +98,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ByProvider. 
         /// <para>
-        /// A Bedrock model provider.
+        /// A Amazon Bedrock model provider.
         /// </para>
         /// </summary>
         public string ByProvider

@@ -36,6 +36,7 @@ namespace Amazon.Bedrock.Model
         private string _baseModelArn;
         private string _baseModelName;
         private DateTime? _creationTime;
+        private CustomizationType _customizationType;
         private string _modelArn;
         private string _modelName;
 
@@ -94,6 +95,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationType. 
+        /// <para>
+        /// Specifies whether to carry out continued pre-training of a model or whether to fine-tune
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+        /// models</a>.
+        /// </para>
+        /// </summary>
+        public CustomizationType CustomizationType
+        {
+            get { return this._customizationType; }
+            set { this._customizationType = value; }
+        }
+
+        // Check to see if CustomizationType property is set
+        internal bool IsSetCustomizationType()
+        {
+            return this._customizationType != null;
         }
 
         /// <summary>
