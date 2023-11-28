@@ -1,3 +1,31 @@
+### 3.7.696.0 (2023-11-28 19:14 UTC)
+* AccessAnalyzer (3.7.302.0)
+	* This release adds support for external access findings for S3 directory buckets to help you easily identify cross-account access. Updated service API, documentation, and paginators.
+* Bedrock (3.7.301.0)
+	* This release adds support for customization types, model life cycle status and minor versions/aliases for model identifiers.
+* BedrockAgent (3.7.300.0)
+	* This release introduces Agents for Amazon Bedrock
+* BedrockAgentRuntime (3.7.300.0)
+	* This release introduces Agents for Amazon Bedrock Runtime
+* BedrockRuntime (3.7.301.0)
+	* This release adds support for minor versions/aliases for invoke model identifier.
+* Connect (3.7.303.0)
+	* Added support for following capabilities: Amazon Connect's in-app, web, and video calling. Two-way SMS integrations. Contact Lens real-time chat analytics feature. Amazon Connect Analytics Datalake capability. Capability to configure real time chat rules.
+* CustomerProfiles (3.7.301.0)
+	* This release introduces DetectProfileObjectType API to auto generate object type mapping.
+* QBusiness (3.7.300.0)
+	* Amazon Q - a generative AI powered application that your employees can use to ask questions and get answers from knowledge spread across disparate content repositories, summarize reports, write articles, take actions, and much more - all within their company's connected content repositories.
+* QConnect (3.7.300.0)
+	* Amazon Q in Connect, an LLM-enhanced evolution of Amazon Connect Wisdom. This release adds generative AI support to Amazon Q Connect QueryAssistant and GetRecommendations APIs.
+* S3 (3.7.304.0)
+	* Adds support for S3 Express One Zone.
+	* Update DefaultS3ExpressCredentialProvider to gracefully handle deleted buckets
+* S3Control (3.7.304.0)
+	* Adds support for S3 Express One Zone, and InvocationSchemaVersion 2.0 for S3 Batch Operations.
+* Core 3.7.300.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.695.0 (2023-11-28 05:39 UTC)
 * BedrockRuntime (3.7.300.10)
 	* Remove custom code for PayloadPart and add integration tests for event stream apis.
