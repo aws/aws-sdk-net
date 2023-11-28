@@ -26,6 +26,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Util;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -35,6 +36,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Linq;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Endpoints;
 
 namespace Amazon.S3.Util
 {
@@ -358,6 +360,38 @@ namespace Amazon.S3.Util
                 }
             }
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Check if the backend is S3Express
+        /// </summary>
+        /// <param name="request">The S3 request object</param>
+        /// <returns>True if the backend returns S3Express, false otherwise</returns>
+        public static bool IsDirectoryBucket(this IRequest request)
+        {
+            var backend = request.EndpointAttributes["backend"];
+            if (backend == null)
+                return false;
+
+            return (string)backend == "S3Express";
+        }
+
+        /// <summary>
+        /// Check if the request should use S3Express session authentication
+        /// </summary>
+        /// <param name="request">The S3 request object</param>
+        /// <returns>True if the request should use S3Express session authentication, false otherwise</returns>
+        public static bool UseS3ExpressSessionAuth(this IRequest request)
+        {
+            var authSchemes = (IList)request.EndpointAttributes["authSchemes"];
+            if (authSchemes != null)
+                foreach (PropertyBag schema in authSchemes)
+                {
+                    var schemaName = (string)schema["name"];
+                    if (schemaName == "sigv4-s3express")
+                        return true;
+                }
+            return false;
         }
 
         internal static DateTime? ParseExpiresHeader(string rawValue, string requestId)

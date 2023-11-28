@@ -43,8 +43,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property CommonPrefixes. 
         /// <para>
-        /// All of the keys (up to 1,000) rolled up into a common prefix count as a single return
-        /// when calculating the number of returns.
+        /// All of the keys (up to 1,000) that share the same prefix are grouped together. When
+        /// counting the total numbers of returns by this API operation, this group of keys is
+        /// considered as one item.
         /// </para>
         ///  
         /// <para>
@@ -67,6 +68,20 @@ namespace Amazon.S3.Model
         /// All of the keys that roll up into a common prefix count as a single return when calculating
         /// the number of returns. 
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
+        /// (<code>/</code>) are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter
+        /// during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter
+        /// contains the prefixes that are associated with the in-progress multipart uploads.
+        /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+        /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public List<string> CommonPrefixes
         {
@@ -96,9 +111,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// ContinuationToken indicates Amazon S3 that the list is being continued
-        /// on this bucket with a token.
-        /// ContinuationToken is obfuscated and is not a real key
+        /// Gets and sets the property ContinuationToken. 
+        /// <para>
+        ///  If <code>ContinuationToken</code> was sent with the request, it is included in the
+        /// response. You can use the returned <code>ContinuationToken</code> for pagination of
+        /// the list response. You can use this <code>ContinuationToken</code> for pagination
+        /// of the list results. 
+        /// </para>
         /// </summary>
         public string ContinuationToken
         {
@@ -115,11 +134,17 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Delimiter. 
         /// <para>
-        /// Causes keys that contain the same string between the prefix and the first occurrence
-        /// of the delimiter to be rolled up into a single result element in the CommonPrefixes
+        /// Causes keys that contain the same string between the <code>prefix</code> and the first
+        /// occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code>
         /// collection. These rolled-up keys are not returned elsewhere in the response. Each
         /// rolled-up result counts as only one return against the <code>MaxKeys</code> value.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported
+        /// delimiter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Delimiter
         {
@@ -274,8 +299,14 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        ///  Keys that begin with the indicated prefix.
+        /// Keys that begin with the indicated prefix.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
+        /// (<code>/</code>) are supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Prefix
         {
@@ -303,11 +334,17 @@ namespace Amazon.S3.Model
         {
             return this._requestCharged != null;
         }
+
         /// <summary>
         /// Gets and sets the property StartAfter. 
         /// <para>
         /// If StartAfter was sent with the request, it is included in the response.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string StartAfter
         {

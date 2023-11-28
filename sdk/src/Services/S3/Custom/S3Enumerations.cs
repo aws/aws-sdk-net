@@ -113,6 +113,93 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+    /// Constants used for properties of type BucketType.
+    /// </summary>
+    public class BucketType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Directory for BucketType
+        /// </summary>
+        public static readonly BucketType Directory = new BucketType("Directory");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketType FindValue(string value)
+        {
+            return FindValue<BucketType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    /// <summary>
+    /// Constants used for properties of type DataRedundancy.
+    /// </summary>
+    public class DataRedundancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SingleAvailabilityZone for DataRedundancy
+        /// </summary>
+        public static readonly DataRedundancy SingleAvailabilityZone = new DataRedundancy("SingleAvailabilityZone");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRedundancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRedundancy FindValue(string value)
+        {
+            return FindValue<DataRedundancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRedundancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
 
     /// <summary>
     /// The status of the delete marker replication.
@@ -438,6 +525,50 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+    /// <summary>
+    /// Constants used for properties of type LocationType.
+    /// </summary>
+    public class LocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AvailabilityZone for LocationType
+        /// </summary>
+        public static readonly LocationType AvailabilityZone = new LocationType("AvailabilityZone");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationType FindValue(string value)
+        {
+            return FindValue<LocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
 
     /// <summary>
     /// A list of all ACL permissions. For more information, refer to
@@ -646,6 +777,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3StorageClass ReducedRedundancy = new S3StorageClass("REDUCED_REDUNDANCY");
 
+
         /// <summary>
         /// The STANDARD storage class, which is the default
         /// storage class for S3.
@@ -668,7 +800,10 @@ namespace Amazon.S3
         /// for Snow family devices.
         /// </summary>
         public static readonly S3StorageClass Snow = new S3StorageClass("SNOW");
-
+        /// <summary>
+        /// The EXPRESS_ONEZONE storage class for faster access to S3
+        /// </summary>
+        public static readonly S3StorageClass ExpressOnezone = new S3StorageClass("EXPRESS_ONEZONE");
         /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
@@ -1813,6 +1948,55 @@ namespace Amazon.S3
         ///  converts the string to OwnerOverride instance
         /// </summary>
         public static implicit operator OwnerOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SessionMode.
+    /// </summary>
+    public sealed class SessionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ReadOnly for SessionMode
+        /// </summary>
+        public static readonly SessionMode ReadOnly = new SessionMode("ReadOnly");
+        /// <summary>
+        /// Constant ReadWrite for SessionMode
+        /// </summary>
+        public static readonly SessionMode ReadWrite = new SessionMode("ReadWrite");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionMode FindValue(string value)
+        {
+            return FindValue<SessionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionMode(string value)
         {
             return FindValue(value);
         }

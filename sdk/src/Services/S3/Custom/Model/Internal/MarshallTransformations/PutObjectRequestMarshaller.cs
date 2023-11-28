@@ -31,11 +31,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// Put Object Request Marshaller
     /// </summary>       
     public class PutObjectRequestMarshaller : IMarshaller<IRequest, PutObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
-	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((PutObjectRequest)input);
-		}
+    {
+        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        {
+            return this.Marshall((PutObjectRequest)input);
+        }
 
         public IRequest Marshall(PutObjectRequest putObjectRequest)
         {
@@ -57,10 +57,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if(putObjectRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(putObjectRequest.ServerSideEncryptionMethod));
-            
+
             if(putObjectRequest.IsSetStorageClass())
                 request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(putObjectRequest.StorageClass));
-            
+
             if(putObjectRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(putObjectRequest.WebsiteRedirectLocation));
 
@@ -124,92 +124,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "PutObjectRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}", 
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue(putObjectRequest.Key));
 
-            if (putObjectRequest.InputStream != null)
-            {
-                // Wrap the stream in a stream that has a length
-                var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
-                if (streamWithLength.Length > 0 && !(putObjectRequest.DisablePayloadSigning ?? false))
-                    request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
-                var length = streamWithLength.Length - streamWithLength.Position;
-                if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
-                    request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));
 
-                request.DisablePayloadSigning = putObjectRequest.DisablePayloadSigning;
-
-                // Calculate Content-MD5 if not already set
-                if (!putObjectRequest.IsSetMD5Digest() && putObjectRequest.CalculateContentMD5Header)
-                {
-                    string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(putObjectRequest.InputStream);
-
-                    if (!string.IsNullOrEmpty(md5))
-                    {
-                        request.Headers[HeaderKeys.ContentMD5Header] = md5;
-                    }
-                }
-
-                if (!(putObjectRequest.DisableMD5Stream ?? AWSConfigsS3.DisableMD5Stream))
-                {
-                    // Wrap input stream in MD5Stream
-                    var hashStream = new MD5Stream(streamWithLength, null, length);
-                    putObjectRequest.InputStream = hashStream;
-                }
-                else
-                {
-                    putObjectRequest.InputStream = streamWithLength;
-                }
-            }
-        
-            request.ContentStream = putObjectRequest.InputStream;
-            ChecksumUtils.SetChecksumData(request, putObjectRequest.ChecksumAlgorithm, fallbackToMD5: false);
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
-                      
+
+            // Handling of checksums, chunked encoding, wrapper streams, and content length now occurs in AmazonS3PostMarshallHandler.
+            // Endpoint rules are required to execute first to determine if the request is using S3 Express, which influences which checksum to use.
+
             return request;
         }
 
-        // Returns a stream that has a length.
-        // If the stream supports seeking, returns stream.
-        // Otherwise, uses hintLength to create a read-only, non-seekable stream of given length
-        private static Stream GetStreamWithLength(Stream baseStream, long hintLength)
+        private static PutObjectRequestMarshaller _instance;
+
+        public static PutObjectRequestMarshaller Instance
         {
-            Stream result = baseStream;
-            bool shouldWrapStream = false;
-            long length = -1;
-            try
+            get
             {
-                length = baseStream.Length - baseStream.Position;
+                if (_instance == null)
+                {
+                    _instance = new PutObjectRequestMarshaller();
+                }
+                return _instance;
             }
-            catch (NotSupportedException)
-            {
-                shouldWrapStream = true;
-                length = hintLength;
-            }
-            if (length < 0)
-                throw new AmazonS3Exception("Could not determine content length");
-
-            // Wrap input stream if base stream doesn't have a length property
-            if (shouldWrapStream)
-                result = new PartialReadOnlyWrapperStream(baseStream, length);
-
-            return result;
         }
-
-	    private static PutObjectRequestMarshaller _instance;
-
-	    public static PutObjectRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new PutObjectRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
     }
 }
 

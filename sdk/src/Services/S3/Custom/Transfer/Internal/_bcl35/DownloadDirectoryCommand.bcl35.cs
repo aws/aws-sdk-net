@@ -36,12 +36,53 @@ namespace Amazon.S3.Transfer.Internal
             ValidateRequest();
             EnsureDirectoryExists(new DirectoryInfo(this._request.LocalDirectory));
 
-            ListObjectsRequest listRequest = ConstructListObjectRequest();
+            List<S3Object> objs;
+            string listRequestPrefix;
+            try
+            {
+                ListObjectsRequest listRequest = ConstructListObjectRequest();
+                listRequestPrefix = listRequest.Prefix;
+                objs = GetS3ObjectsToDownload(listRequest);
+            }
+            catch (AmazonS3Exception ex)
+            {
+                if (ex.StatusCode != System.Net.HttpStatusCode.NotImplemented)
+                    throw;
 
+                ListObjectsV2Request listRequestV2 = ConstructListObjectRequestV2();
+                listRequestPrefix = listRequestV2.Prefix;
+                objs = GetS3ObjectsToDownloadV2(listRequestV2);
+            }
+
+            this._totalNumberOfFilesToDownload = objs.Count;
+
+            foreach (S3Object s3o in objs)
+            {
+                if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
+                    continue;
+
+                int prefixLength = listRequestPrefix.Length;
+                // If DisableSlashCorrection is enabled (i.e. S3Directory is a key prefix) and it doesn't end with '/' then we need the parent directory to properly construct download path.
+                if (this._request.DisableSlashCorrection && !listRequestPrefix.EndsWith("/"))
+                {
+                    prefixLength = listRequestPrefix.LastIndexOf("/") + 1;
+                }
+
+                this._currentFile = s3o.Key.Substring(prefixLength);
+
+                var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
+                DownloadCommand command = new DownloadCommand(this._s3Client, downloadRequest);
+                command.Execute();
+            }
+        }
+
+        private List<S3Object> GetS3ObjectsToDownload(ListObjectsRequest listRequest)
+        {
             List<S3Object> objs = new List<S3Object>();
             do
             {
                 ListObjectsResponse listResponse = this._s3Client.ListObjects(listRequest);
+
                 foreach (S3Object s3o in listResponse.S3Objects)
                 {
                     if (ShouldDownload(s3o))
@@ -52,27 +93,27 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 listRequest.Marker = listResponse.NextMarker;
             } while (!string.IsNullOrEmpty(listRequest.Marker));
-			
-            this._totalNumberOfFilesToDownload = objs.Count;
+            return objs;
+        }
 
-            foreach (S3Object s3o in objs)
+        private List<S3Object> GetS3ObjectsToDownloadV2(ListObjectsV2Request listRequestV2)
+        {
+            List<S3Object> objs = new List<S3Object>();
+            do
             {
-                if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
-                    continue;
+                ListObjectsV2Response listResponse = this._s3Client.ListObjectsV2(listRequestV2);
 
-                int prefixLength = listRequest.Prefix.Length;
-                // If DisableSlashCorrection is enabled (i.e. S3Directory is a key prefix) and it doesn't end with '/' then we need the parent directory to properly construct download path.
-                if (this._request.DisableSlashCorrection && !listRequest.Prefix.EndsWith("/"))
+                foreach (S3Object s3o in listResponse.S3Objects)
                 {
-                    prefixLength = listRequest.Prefix.LastIndexOf("/") + 1;
+                    if (ShouldDownload(s3o))
+                    {
+                        this._totalBytes += s3o.Size;
+                        objs.Add(s3o);
+                    }
                 }
-
-                this._currentFile = s3o.Key.Substring(prefixLength);
-
-                var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
-                DownloadCommand command = new DownloadCommand(this._s3Client, downloadRequest);
-                command.Execute();
-            }
+                listRequestV2.ContinuationToken = listResponse.NextContinuationToken;
+            } while (!string.IsNullOrEmpty(listRequestV2.ContinuationToken));
+            return objs;
         }
     }
 }

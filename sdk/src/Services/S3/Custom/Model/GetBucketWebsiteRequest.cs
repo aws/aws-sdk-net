@@ -25,11 +25,17 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketWebsite operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns the website configuration for a bucket. To host website on Amazon S3, you
     /// can configure a bucket as website by adding a website configuration. For more information
     /// about hosting websites, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
     /// Websites on Amazon S3</a>. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This GET action requires the <code>S3:GetBucketWebsite</code> permission. By default,
@@ -39,7 +45,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>DeleteBucketWebsite</code>:
+    /// The following operations are related to <code>GetBucketWebsite</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -79,9 +85,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The account ID of the expected bucket owner. If the bucket is owned by a different
-        /// account, the request fails with the HTTP status code <code>403 Forbidden</code> (access
-        /// denied).
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

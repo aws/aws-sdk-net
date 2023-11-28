@@ -76,7 +76,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UploadIdMarker. 
+        /// <para>
         /// Upload ID after which listing began.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string UploadIdMarker
         {
@@ -107,9 +115,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// When a list is truncated, this element specifies the value that should be used for the upload-id-marker request parameter in a subsequent
-        /// request.
-        ///  
+        /// Gets and sets the property NextUploadIdMarker. 
+        /// <para>
+        /// When a list is truncated, this element specifies the value that should be used for
+        /// the <code>upload-id-marker</code> request parameter in a subsequent request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextUploadIdMarker
         {
@@ -176,7 +191,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Prefix property.
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// When a prefix is provided in the request, this field contains the specified prefix.
+        /// The result contains only keys starting with the specified prefix.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
+        /// (<code>/</code>) are supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Prefix
         {
@@ -200,7 +225,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Delimiter property.
+        /// Gets and sets the property Delimiter. 
+        /// <para>
+        /// Contains the delimiter you specified in the request. If you don't specify a delimiter
+        /// in your request, this element is absent from the response.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported
+        /// delimiter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Delimiter
         {
@@ -209,13 +244,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets the CommonPrefixes property. 
-        /// A response can contain CommonPrefixes only if you specify a delimiter. 
-        /// When you do, CommonPrefixes contains all (if there are any) keys between 
-        /// Prefix and the next occurrence of the string specified by delimiter. In effect, 
-        /// CommonPrefixes lists keys that act like subdirectories in the directory specified 
-        /// by Prefix. For example, if prefix is notes/ and delimiter is a slash (/), in 
-        /// notes/summer/july, the common prefix is notes/summer/.
+        /// Gets and sets the property CommonPrefixes. 
+        /// <para>
+        /// If you specify a delimiter in the request, then the result returns each distinct key
+        /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct
+        /// key prefixes are returned in the <code>Prefix</code> child element.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
+        /// (<code>/</code>) are supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> CommonPrefixes
         {

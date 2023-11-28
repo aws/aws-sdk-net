@@ -27,33 +27,37 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the SelectObjectContent operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// This action filters the contents of an Amazon S3 object based on a simple structured
     /// query language (SQL) statement. In the request, along with the SQL expression, you
     /// must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the
     /// object. Amazon S3 uses this format to parse object data into records, and returns
     /// only records that match the specified SQL expression. You must also specify the data
     /// serialization format for the response.
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// This action is not supported by Amazon S3 on Outposts.
+    /// This functionality is not supported for Amazon S3 on Outposts.
     /// </para>
     ///  
     /// <para>
     /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
-    /// Content from Objects</a> in the <i>Amazon S3 User Guide</i>.
+    /// Content from Objects</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT
+    /// Command</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///   <dl> <dt>Permissions</dt> <dd> 
-    ///  
     /// <para>
-    /// You must have <code>s3:GetObject</code> permission for this operation. Amazon S3 Select
-    /// does not support anonymous access. For more information about permissions, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+    /// You must have the <code>s3:GetObject</code> permission for this operation. Amazon
+    /// S3 Select does not support anonymous access. For more information about permissions,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
     /// Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///   
     ///  </dd> <dt>Object Data Formats</dt> <dd> 
-    ///  
     /// <para>
     /// You can use Amazon S3 Select to query objects that have the following format properties:
     /// </para>
@@ -88,14 +92,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-    /// Amazon Web Services KMS keys (SSE-KMS), server-side encryption is handled transparently,
-    /// so you don't need to specify anything. For more information about server-side encryption,
+    /// For objects that are encrypted with Amazon S3 managed keys (SSE-S3) and Amazon Web
+    /// Services KMS keys (SSE-KMS), server-side encryption is handled transparently, so you
+    /// don't need to specify anything. For more information about server-side encryption,
     /// including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
     /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Working with the Response Body</dt> <dd> 
-    ///  
     /// <para>
     /// Given the response size is unknown, Amazon S3 Select streams the response as a series
     /// of messages and includes a <code>Transfer-Encoding</code> header with <code>chunked</code>
@@ -116,10 +119,14 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// GLACIER, DEEP_ARCHIVE and REDUCED_REDUNDANCY storage classes: You cannot specify the
-    /// GLACIER, DEEP_ARCHIVE, or <code>REDUCED_REDUNDANCY</code> storage classes. For more
-    /// information, about storage classes see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#storage-class-intro">Storage
-    /// Classes</a> in the <i>Amazon S3 User Guide</i>.
+    /// The <code>GLACIER</code>, <code>DEEP_ARCHIVE</code>, and <code>REDUCED_REDUNDANCY</code>
+    /// storage classes, or the <code>ARCHIVE_ACCESS</code> and <code>DEEP_ARCHIVE_ACCESS</code>
+    /// access tiers of the <code>INTELLIGENT_TIERING</code> storage class: You cannot query
+    /// objects in the <code>GLACIER</code>, <code>DEEP_ARCHIVE</code>, or <code>REDUCED_REDUNDANCY</code>
+    /// storage classes, nor objects in the <code>ARCHIVE_ACCESS</code> or <code>DEEP_ARCHIVE_ACCESS</code>
+    /// access tiers of the <code>INTELLIGENT_TIERING</code> storage class. For more information
+    /// about storage classes, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">Using
+    /// Amazon S3 storage classes</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Special Errors</dt> <dd> 
     /// <para>
@@ -256,8 +263,12 @@ namespace Amazon.S3.Model
         internal bool IsSetScanRange() => ScanRange != null;
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

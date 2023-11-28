@@ -101,10 +101,12 @@ namespace Amazon.S3.Internal
                 // If ETag is present and is an MD5 hash (not a multi-part upload ETag), and no byte range is specified,
                 // wrap the response stream in an MD5Stream.
                 // If there is a customer encryption algorithm the etag is not an MD5.
+                // Exclude directory buckets as they don't support MD5
                 if (!string.IsNullOrEmpty(getObjectResponse.ETag)
                     && !getObjectResponse.ETag.Contains("-")
                     && !isSse
-                    && getObjectRequest.ByteRange == null)
+                    && getObjectRequest.ByteRange == null
+                    && !request.IsDirectoryBucket())
                 {
                     string etag = getObjectResponse.ETag.Trim(etagTrimChars);
                     byte[] expectedHash = AWSSDKUtils.HexStringToBytes(etag);

@@ -25,8 +25,14 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketTagging operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Sets the tags for a bucket.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
@@ -36,7 +42,7 @@ namespace Amazon.S3.Model
     /// resources with a specific application name, and then organize your billing information
     /// to see the total cost of that application across several services. For more information,
     /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-    /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
+    /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
     /// Cost Allocation in Amazon S3 Bucket Tags</a>.
     /// </para>
     ///  <note> 
@@ -55,45 +61,31 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>PutBucketTagging</code> has the following special errors:
+    ///  <code>PutBucketTagging</code> has the following special errors. For more Amazon S3
+    /// errors see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+    /// Responses</a>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Error code: <code>InvalidTagError</code> 
+    ///  <code>InvalidTag</code> - The tag provided was not a valid tag. This error can occur
+    /// if the tag did not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
+    /// Cost Allocation in Amazon S3 Bucket Tags</a>.
     /// </para>
-    ///  <ul> <li> 
+    ///  </li> <li> 
     /// <para>
-    /// Description: The tag provided was not a valid tag. This error can occur if the tag
-    /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-    /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
-    /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
+    ///  <code>MalformedXML</code> - The XML provided does not match the schema.
     /// </para>
-    ///  </li> </ul> </li> <li> 
+    ///  </li> <li> 
     /// <para>
-    /// Error code: <code>MalformedXMLError</code> 
+    ///  <code>OperationAborted</code> - A conflicting conditional action is currently in
+    /// progress against this resource. Please try again.
     /// </para>
-    ///  <ul> <li> 
+    ///  </li> <li> 
     /// <para>
-    /// Description: The XML provided does not match the schema.
+    ///  <code>InternalError</code> - The service was unable to apply the provided tag to
+    /// the bucket.
     /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Error code: <code>OperationAbortedError </code> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Description: A conflicting conditional action is currently in progress against this
-    /// resource. Please try again.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Error code: <code>InternalError</code> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Description: The service was unable to apply the provided tag to the bucket.
-    /// </para>
-    ///  </li> </ul> </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
     /// The following operations are related to <code>PutBucketTagging</code>:
     /// </para>
@@ -134,10 +126,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -168,8 +168,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

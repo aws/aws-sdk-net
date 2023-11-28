@@ -50,6 +50,7 @@ namespace AWSSDK.UnitTests
                 new Signer(),
                 new ChecksumHandler(),
                 new CompressionHandler(),
+                new AmazonS3PostMarshallHandler(),
                 new AmazonS3EndpointResolver(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler(),

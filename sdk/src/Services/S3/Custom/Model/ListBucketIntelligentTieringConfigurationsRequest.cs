@@ -19,11 +19,16 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
-	
     /// <summary>
     /// Container for the parameters to the ListBucketIntelligentTieringConfigurations operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Lists the S3 Intelligent-Tiering configuration from the specified bucket.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by

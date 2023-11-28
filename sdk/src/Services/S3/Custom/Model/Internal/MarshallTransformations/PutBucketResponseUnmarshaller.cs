@@ -19,6 +19,8 @@ using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using System.Net.Sockets;
+using System.IO;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -27,18 +29,46 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class PutBucketResponseUnmarshaller : S3ReponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             PutBucketResponse response = new PutBucketResponse();
-            
-            UnmarshallResult(context,response);
 
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,PutBucketResponse response)
+
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BucketAlreadyExists"))
+                {
+                    return BucketAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BucketAlreadyOwnedByYou"))
+                {
+                    return BucketAlreadyOwnedByYouExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+            }
+            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
         private static PutBucketResponseUnmarshaller _instance;

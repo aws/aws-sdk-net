@@ -25,34 +25,71 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListParts operation.
-    /// Lists the parts that have been uploaded for a specific multipart upload. This operation
-    /// must include the upload ID, which you obtain by sending the initiate multipart upload
-    /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>).
-    /// This request returns a maximum of 1,000 uploaded parts. The default number of parts
-    /// returned is 1,000 parts. You can restrict the number of parts returned by specifying
-    /// the <code>max-parts</code> request parameter. If your multipart upload consists of
-    /// more than 1,000 parts, the response returns an <code>IsTruncated</code> field with
-    /// the value of true, and a <code>NextPartNumberMarker</code> element. In subsequent
-    /// <code>ListParts</code> requests you can include the part-number-marker query string
-    /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
-    /// the previous response.
+    /// Lists the parts that have been uploaded for a specific multipart upload.
     /// 
-    /// 
+    ///  
     /// <para>
-    /// If the upload was created using a checksum algorithm, you will need to have permission
-    /// to the <code>kms:Decrypt</code> action for the request to succeed. 
+    /// To use this operation, you must provide the <code>upload ID</code> in the request.
+    /// You obtain this uploadID by sending the initiate multipart upload request through
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>ListParts</code> request returns a maximum of 1,000 uploaded parts. The
+    /// limit of 1,000 parts is also the default value. You can restrict the number of parts
+    /// in a response by specifying the <code>max-parts</code> request parameter. If your
+    /// multipart upload consists of more than 1,000 parts, the response returns an <code>IsTruncated</code>
+    /// field with the value of <code>true</code>, and a <code>NextPartNumberMarker</code>
+    /// element. To list remaining uploaded parts, in subsequent <code>ListParts</code> requests,
+    /// include the <code>part-number-marker</code> query string parameter and set its value
+    /// to the <code>NextPartNumberMarker</code> field value from the previous response.
     /// </para>
     ///  
     /// <para>
     /// For more information on multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
-    /// Objects Using Multipart Upload</a>.
+    /// Objects Using Multipart Upload</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+    /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+    /// <para>
+    ///  <b>General purpose bucket permissions</b> - For information about permissions required
+    /// to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-    /// Upload and Permissions</a>.
+    /// If the upload was created using server-side encryption with Key Management Service
+    /// (KMS) keys (SSE-KMS) or dual-layer server-side encryption with Amazon Web Services
+    /// KMS keys (DSSE-KMS), you must have permission to the <code>kms:Decrypt</code> action
+    /// for the <code>ListParts</code> request to succeed.
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+    /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
+    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// API call on the bucket to obtain a session token. With the session token in your request
+    /// header, you can make API requests to this operation. After the session token expires,
+    /// you make another <code>CreateSession</code> API call to generate a new session token
+    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// automatically to avoid service interruptions when a session expires. For more information
+    /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+    /// <code>CreateSession</code> </a>.
+    /// </para>
+    ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+    /// <para>
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    /// </para>
+    ///  </dd> </dl> 
     /// <para>
     /// The following operations are related to <code>ListParts</code>:
     /// </para>
@@ -109,17 +146,34 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
+        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// Path-style requests are not supported. Directory bucket names must be unique in the
+        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
+        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
         /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// Access points and Object Lambda access points are not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
+        /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
+        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -161,8 +215,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The account ID of the expected bucket owner. If the bucket is owned by a different
-        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -273,6 +328,11 @@ namespace Amazon.S3.Model
         /// was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
         /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string SSECustomerAlgorithm
         {
@@ -293,6 +353,11 @@ namespace Amazon.S3.Model
         /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
         /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string SSECustomerKey
         {
@@ -313,6 +378,11 @@ namespace Amazon.S3.Model
         /// checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
         /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string SSECustomerKeyMD5
         {

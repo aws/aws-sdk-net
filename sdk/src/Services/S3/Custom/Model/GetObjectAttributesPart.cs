@@ -115,9 +115,23 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Parts. 
         /// <para>
-        /// Container for elements related to a particular part. A response can contain zero or
-        /// more <code>Parts</code> elements.
+        /// A container for elements related to a particular part. A response can contain zero
+        /// or more <code>Parts</code> elements.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+        /// checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>,
+        /// <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied
+        /// to the object specified in the request, the response doesn't return <code>Part</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether
+        /// a additional checksum is applied to the object specified in the request, the response
+        /// returns <code>Part</code>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public List<ObjectPart> Parts
         {

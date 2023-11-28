@@ -25,7 +25,44 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketVersioning operation.
-    /// <para>Returns the versioning state of a bucket.</para>
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Returns the versioning state of a bucket.
+    /// </para>
+    ///  
+    /// <para>
+    /// To retrieve the versioning state of a bucket, you must be the bucket owner.
+    /// </para>
+    ///  
+    /// <para>
+    /// This implementation also returns the MFA Delete status of the versioning state. If
+    /// the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
+    /// device to change the versioning state of the bucket.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetBucketVersioning</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketVersioningRequest : AmazonWebServiceRequest
     {
@@ -48,8 +85,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

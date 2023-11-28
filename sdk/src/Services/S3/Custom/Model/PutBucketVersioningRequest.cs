@@ -25,21 +25,26 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketVersioning operation.
-    /// Sets the versioning state of an existing bucket. To set the versioning state, you
-    /// must be the bucket owner.
-    /// 
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Sets the versioning state of an existing bucket.
+    /// </para>
     ///  
     /// <para>
     /// You can set the versioning state with one of the following values:
     /// </para>
     ///  
     /// <para>
-    ///  <b>Enabled</b> Enables versioning for the objects in the bucket. All objects added
+    ///  <b>Enabled</b>�Enables versioning for the objects in the bucket. All objects added
     /// to the bucket receive a unique version ID.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Suspended</b> Disables versioning for the objects in the bucket. All objects added
+    ///  <b>Suspended</b>�Disables versioning for the objects in the bucket. All objects added
     /// to the bucket receive the version ID null.
     /// </para>
     ///  
@@ -50,16 +55,17 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// If the bucket owner enables MFA Delete in the bucket versioning configuration, the
-    /// bucket owner must include the <code>x-amz-mfa request</code> header and the <code>Status</code>
-    /// and the <code>MfaDelete</code> request elements in a request to set the versioning
-    /// state of the bucket.
+    /// In order to enable MFA Delete, you must be the bucket owner. If you are the bucket
+    /// owner and want to enable MFA Delete in the bucket versioning configuration, you must
+    /// include the <code>x-amz-mfa request</code> header and the <code>Status</code> and
+    /// the <code>MfaDelete</code> request elements in a request to set the versioning state
+    /// of the bucket.
     /// </para>
     ///  <important> 
     /// <para>
-    /// If you have an object expiration lifecycle policy in your non-versioned bucket and
-    /// you want to maintain the same permanent delete behavior when you enable versioning,
-    /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle policy
+    /// If you have an object expiration lifecycle configuration in your non-versioned bucket
+    /// and you want to maintain the same permanent delete behavior when you enable versioning,
+    /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle configuration
     /// will manage the deletes of the noncurrent object versions in the version-enabled bucket.
     /// (A version-enabled bucket maintains one current and zero or more noncurrent object
     /// versions.) For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-and-other-bucket-config">Lifecycle
@@ -112,10 +118,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -185,8 +199,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

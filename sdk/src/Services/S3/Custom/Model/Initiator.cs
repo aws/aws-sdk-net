@@ -30,8 +30,15 @@ namespace Amazon.S3.Model
         private string iD;
 
         /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
         /// Name of the Principal.
-        ///  
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DisplayName
         {
@@ -46,11 +53,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property ID. 
         /// <para>
         /// If the principal is an Amazon Web Services account, it provides the Canonical User
         /// ID. If the principal is an IAM User, it provides a user ARN value.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If the principal is an Amazon Web Services account, it
+        /// provides the Amazon Web Services account ID. If the principal is an IAM User, it provides
+        /// a user ARN value.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Id
         {

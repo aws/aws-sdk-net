@@ -25,7 +25,53 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketMetricsConfiguration operation.
-    /// <para>Gets a metrics configuration (specified by the metrics configuration ID) from the bucket.</para>
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Gets a metrics configuration (specified by the metrics configuration ID) from the
+    /// bucket. Note that this doesn't include the daily storage metrics.
+    /// </para>
+    ///  
+    /// <para>
+    ///  To use this operation, you must have permissions to perform the <code>s3:GetMetricsConfiguration</code>
+    /// action. The bucket owner has this permission by default. The bucket owner can grant
+    /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to Your Amazon S3 Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For information about CloudWatch request metrics for Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
+    /// Metrics with Amazon CloudWatch</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetBucketMetricsConfiguration</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
+    /// Metrics with Amazon CloudWatch</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketMetricsConfigurationRequest : AmazonWebServiceRequest
     {
@@ -67,8 +113,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

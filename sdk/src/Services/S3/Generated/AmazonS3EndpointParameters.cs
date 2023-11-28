@@ -168,5 +168,23 @@ namespace Amazon.S3.Endpoints
             get { return (bool?)this["UseArnRegion"]; }
             set { this["UseArnRegion"] = value; } 
         }
+
+        /// <summary>
+        /// UseS3ExpressControlEndpoint parameter
+        /// </summary>
+        public bool? UseS3ExpressControlEndpoint 
+        { 
+            get { return (bool?)this["UseS3ExpressControlEndpoint"]; }
+            set { this["UseS3ExpressControlEndpoint"] = value; } 
+        }
+
+        /// <summary>
+        /// DisableS3ExpressSessionAuth parameter
+        /// </summary>
+        public bool? DisableS3ExpressSessionAuth 
+        { 
+            get { return (bool?)this["DisableS3ExpressSessionAuth"]; }
+            set { this["DisableS3ExpressSessionAuth"] = value; } 
+        }
     }
 }

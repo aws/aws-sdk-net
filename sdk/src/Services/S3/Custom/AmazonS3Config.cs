@@ -28,6 +28,7 @@ namespace Amazon.S3
     public partial class AmazonS3Config : ClientConfig
     {
         private const string UseArnRegionEnvName = "AWS_S3_USE_ARN_REGION";
+        private const string DisableS3ExpressSessionAuthEnvName = "AWS_S3_DISABLE_EXPRESS_SESSION_AUTH";
         private const string AccelerateEndpointSuffix = "s3-accelerate.amazonaws.com";
         private const string AccelerateDualstackEndpointSuffix = "s3-accelerate.dualstack.amazonaws.com";
         private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
@@ -46,6 +47,19 @@ namespace Amazon.S3
         private static CredentialProfile _profile;
         private static object _triedToResolveProfileLock = new object();
         private static bool _triedToResolveProfile = false;
+        private IS3ExpressCredentialProvider s3ExpressCredentialProvider;
+
+        /// <summary>
+        /// Gets and sets S3Express credential provider property.
+        /// This property is used to provide credentials for requests that uses S3Express authentication.
+        /// During client initialization it is set to default S3Express credential provider,
+        /// but can be changed to use custom user supplied S3Express credential provider.
+        /// </summary>
+        public IS3ExpressCredentialProvider S3ExpressCredentialProvider
+        {
+            get { return s3ExpressCredentialProvider; }
+            set { s3ExpressCredentialProvider = value; }
+        }
 
         /// <summary>
         /// When true, requests will always use path style addressing.
@@ -91,18 +105,7 @@ namespace Amazon.S3
                     return _useArnRegion.GetValueOrDefault();
                 }
 
-                if (!_triedToResolveProfile)
-                {
-                    lock (_triedToResolveProfileLock)
-                    {
-                        if (!_triedToResolveProfile)
-                        {
-                            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-                            credentialProfileChain.TryGetProfile(profileName, out _profile);
-                            _triedToResolveProfile = true;
-                        }
-                    }
-                }
+                ResolveCredentialProfile();
 
                 lock (_useArnRegionLock)
                 {
@@ -136,6 +139,69 @@ namespace Amazon.S3
                 lock (_useArnRegionLock)
                 {
                     _useArnRegion = value;
+                }
+            }
+        }
+
+        bool? _disableS3ExpressSessionAuth;
+        private object _disableS3ExpressSessionAuthLock = new object();
+
+        /// <summary>
+        /// If set to true the use of S3Express auth disabled.
+        /// </summary>
+        public bool DisableS3ExpressSessionAuth
+        {
+            get
+            {
+                if (_disableS3ExpressSessionAuth.HasValue)
+                {
+                    return _disableS3ExpressSessionAuth.GetValueOrDefault();
+                }
+
+                ResolveCredentialProfile();
+
+                lock (_disableS3ExpressSessionAuthLock)
+                {
+                    if (_disableS3ExpressSessionAuth.HasValue)
+                    {
+                        return _disableS3ExpressSessionAuth.Value;
+                    }
+
+                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(DisableS3ExpressSessionAuthEnvName)))
+                    {
+                        if (bool.TryParse(Environment.GetEnvironmentVariable(DisableS3ExpressSessionAuthEnvName), out var value))
+                        {
+                            _disableS3ExpressSessionAuth = value;
+                            return _disableS3ExpressSessionAuth.Value;
+                        }
+                    }
+
+                    _disableS3ExpressSessionAuth = _profile?.S3DisableExpressSessionAuth;
+                    return _disableS3ExpressSessionAuth.GetValueOrDefault();
+                }
+            }
+
+            set
+            {
+                lock (_disableS3ExpressSessionAuthLock)
+                {
+                    _disableS3ExpressSessionAuth = value;
+                }
+            }
+        }
+
+        private static void ResolveCredentialProfile()
+        {
+            if (!_triedToResolveProfile)
+            {
+                lock (_triedToResolveProfileLock)
+                {
+                    if (!_triedToResolveProfile)
+                    {
+                        var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                        credentialProfileChain.TryGetProfile(profileName, out _profile);
+                        _triedToResolveProfile = true;
+                    }
                 }
             }
         }
@@ -323,19 +389,7 @@ namespace Amazon.S3
         /// <returns>A nullable of S3UsEast1RegionalEndpointValue</returns>
         private static S3UsEast1RegionalEndpointValue? CheckCredentialsFile()
         {
-            if (_triedToResolveProfile)
-            {
-                return _profile?.S3RegionalEndpoint;
-            }
-            lock (_triedToResolveProfileLock)
-            {
-                if (!_triedToResolveProfile)
-                {
-                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-                    credentialProfileChain.TryGetProfile(profileName, out _profile);
-                    _triedToResolveProfile = true;
-                }
-            }
+            ResolveCredentialProfile();
             return _profile?.S3RegionalEndpoint;
         }
 
@@ -366,19 +420,7 @@ namespace Amazon.S3
         /// <returns>Value of s3_disable_multiregion_access_points if it is set, else null</returns>
         private static bool? CheckDisableMRAPCredentialsFile()
         {
-            if (_triedToResolveProfile)
-            {
-                return _profile?.S3DisableMultiRegionAccessPoints;
-            }
-            lock (_triedToResolveProfileLock)
-            {
-                if (!_triedToResolveProfile)
-                {
-                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-                    credentialProfileChain.TryGetProfile(profileName, out _profile);
-                    _triedToResolveProfile = true;
-                }
-            }
+            ResolveCredentialProfile();
             return _profile?.S3DisableMultiRegionAccessPoints;
         }
 

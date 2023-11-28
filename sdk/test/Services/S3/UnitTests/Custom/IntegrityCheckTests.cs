@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
+using Amazon.S3.Internal;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -62,19 +63,19 @@ namespace AWSSDK.UnitTests
             {
                 Assert.AreEqual("When DisablePayloadSigning is true, the request must be sent over HTTPS.", e.Message);
                 throw;
-            }            
+            }
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_UploadPartRequestMarshaller_DisableMD5Stream_Is_False()
-        {            
+        public void TestS3_UploadPartRequestMarshaller_DisableDefaultChecksumValidation_Is_False()
+        {
             var request = new UploadPartRequest
             {
                 BucketName = "mybucketname",
                 Key = "foo.txt",
                 PartNumber = 1,
-                DisableMD5Stream = false,                
+                DisableDefaultChecksumValidation = false,
                 InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring"))
             };
 
@@ -92,6 +93,23 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt",
                 PartNumber = 1,
                 DisableMD5Stream = true,
+                InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring"))
+            };
+
+            var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
+            Assert.IsTrue(internalRequest.ContentStream is PartialWrapperStream);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestS3_UploadPartRequestMarshaller_DisableDefaultChecksumValidation_Is_True()
+        {
+            var request = new UploadPartRequest
+            {
+                BucketName = "mybucketname",
+                Key = "foo.txt",
+                PartNumber = 1,
+                DisableDefaultChecksumValidation = true,
                 InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring"))
             };
 
@@ -156,7 +174,10 @@ namespace AWSSDK.UnitTests
                 new S3ArnTestUtils.NoopPipelineHandler(),
                 new ChecksumHandler(),
                 new CompressionHandler(),
-                new Marshaller()
+                new AmazonS3PostMarshallHandler(),
+                new AmazonS3EndpointResolver(),
+                new Marshaller(),
+                new AmazonS3PreMarshallHandler(),
             });
 
             var requestContext = new RequestContext(config.LogMetrics, new AWS4Signer())
@@ -175,6 +196,6 @@ namespace AWSSDK.UnitTests
             pipeline.InvokeSync(executionContext);
 
             return requestContext.Request;
-        }                
+        }
     }
 }

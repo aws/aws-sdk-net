@@ -40,7 +40,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private string uploadId;
-        
+
         /// <summary>
         /// Gets and sets the property AbortDate. 
         /// <para>
@@ -48,13 +48,19 @@ namespace Amazon.S3.Model
         /// uploads and the prefix in the lifecycle rule matches the object name in the request,
         /// the response includes this header. The header indicates when the initiated multipart
         /// upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.
+        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in
+        /// the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The response also includes the <code>x-amz-abort-rule-id</code> header that provides
-        /// the ID of the lifecycle configuration rule that defines this action.
+        /// the ID of the lifecycle configuration rule that defines the abort action.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime AbortDate
         {
@@ -75,6 +81,11 @@ namespace Amazon.S3.Model
         /// the applicable lifecycle configuration rule that defines the action to abort incomplete
         /// multipart uploads.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AbortRuleId
         {
@@ -92,8 +103,13 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
         /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
-        /// with Amazon Web Services KMS (SSE-KMS).
+        /// with Key Management Service (KMS) keys (SSE-KMS).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool BucketKeyEnabled
         {
@@ -113,24 +129,11 @@ namespace Amazon.S3.Model
         /// The name of the bucket to which the multipart upload was initiated. Does not return
         /// the access point ARN or access point alias if used.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this action with an access point through the Amazon Web Services SDKs,
-        /// you provide the access point ARN in place of the bucket name. For more information
-        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// Access points are not supported by directory buckets.
         /// </para>
-        ///  
-        /// <para>
-        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts access point ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
+        ///  </note>
         /// </summary>
         public string BucketName
         {
@@ -199,10 +202,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
-        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
-        /// example, AES256, <code>aws:kms</code>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3
+        /// (for example, <code>AES256</code>, <code>aws:kms</code>).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<code>AES256</code>) is supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -212,6 +222,15 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
+        /// <para>
+        /// If server-side encryption with a customer-provided encryption key was requested, the
+        /// response will include this header to confirm the encryption algorithm that's used.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
@@ -222,6 +241,16 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
         /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// <para>
+        /// If server-side encryption with a customer-provided encryption key was requested, the
+        /// response will include this header to provide the round-trip message integrity verification
+        /// of the customer-provided encryption key.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ServerSideEncryptionCustomerProvidedKeyMD5
         {
@@ -236,6 +265,11 @@ namespace Amazon.S3.Model
         /// Web Services KMS) symmetric encryption customer managed key that was used for the
         /// object.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
@@ -261,6 +295,11 @@ namespace Amazon.S3.Model
         /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
         /// with the encryption context key-value pairs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext

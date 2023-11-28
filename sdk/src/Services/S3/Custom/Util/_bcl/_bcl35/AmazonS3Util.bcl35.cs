@@ -240,12 +240,18 @@ namespace Amazon.S3.Util
             {
                 BucketName = bucketName
             };
-
-            ListVersionsResponse listVersionsResponse;
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = bucketName
+            };
+            ListVersionsResponse listVersionsResponse = null;
+            ListObjectsV2Response listObjectsV2Response = null;
+            bool isTruncated = false;
 
             // Iterate through the objects in the bucket and delete them.
             do
             {
+                List<KeyVersion> keyVersionList;
                 // Check if the operation has been canceled.
                 if (asyncCancelableResult.IsCancelRequested)
                 {
@@ -255,22 +261,42 @@ namespace Amazon.S3.Util
                 }
 
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = s3Client.ListVersions(listVersionsRequest);
-
-                if (listVersionsResponse.Versions.Count == 0)
+                try
                 {
-                    // If the bucket has no objects break the loop.
-                    break;
-                }
-
-                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
-                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
-                {
-                    keyVersionList.Add(new KeyVersion
+                    listVersionsResponse = s3Client.ListVersions(listVersionsRequest);
+                    if (listVersionsResponse.Versions.Count == 0)
                     {
-                        Key = listVersionsResponse.Versions[index].Key,
-                        VersionId = listVersionsResponse.Versions[index].VersionId
-                    });
+                        // If the bucket has no objects break the loop.
+                        break;
+                    }
+
+                    keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
+                    for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
+                    {
+                        keyVersionList.Add(new KeyVersion
+                        {
+                            Key = listVersionsResponse.Versions[index].Key,
+                            VersionId = listVersionsResponse.Versions[index].VersionId
+                        });
+                    }
+                }
+                catch (AmazonS3Exception ex)
+                {
+                    if (ex.StatusCode != HttpStatusCode.NotImplemented)
+                        throw;
+                    listObjectsV2Response = s3Client.ListObjectsV2(listObjectsV2Request);
+                    if(listObjectsV2Response.S3Objects.Count == 0)
+                    {
+                        break; 
+                    }
+                    keyVersionList = new List<KeyVersion>(listObjectsV2Response.S3Objects.Count);
+                    for(int index = 0; index < listObjectsV2Response.S3Objects.Count; index++)
+                    {
+                        keyVersionList.Add(new KeyVersion
+                        {
+                            Key = listObjectsV2Response.S3Objects[index].Key,
+                        });
+                    }
                 }
 
                 try
@@ -317,14 +343,22 @@ namespace Amazon.S3.Util
                         throw;
                     }
                 }
-
                 // Set the markers to get next set of objects from the bucket.
-                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
-                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+                if(listVersionsResponse != null)
+                {
+                    listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
+                    listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+                    isTruncated = listVersionsResponse.IsTruncated;
+                }
+                if(listObjectsV2Response != null)
+                {
+                    listObjectsV2Request.ContinuationToken = listObjectsV2Response.NextContinuationToken;
+                    isTruncated = listObjectsV2Response.IsTruncated;
+                }
 
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (isTruncated);
 
             const int maxRetries = 10;
             for (int retries = 1; retries <= maxRetries; retries++)

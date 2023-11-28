@@ -30,11 +30,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// Upload Part Request Marshaller
     /// </summary>       
     public class UploadPartRequestMarshaller : IMarshaller<IRequest, UploadPartRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
-	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((UploadPartRequest)input);
-		}
+    {
+        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UploadPartRequest)input);
+        }
 
         public IRequest Marshall(UploadPartRequest uploadPartRequest)
         {
@@ -89,61 +89,29 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (uploadPartRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(uploadPartRequest.UploadId));
 
-            if (uploadPartRequest.InputStream != null)
-            {
-                // Wrap input stream in partial wrapper (to upload only part of the stream)
-                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
-                if (partialStream.Length > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
-                    request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
-                if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
-                    request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
-
-                request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
-
-                // Calculate Content-MD5 if not already set
-                if (!uploadPartRequest.IsSetMD5Digest() && uploadPartRequest.CalculateContentMD5Header)
-                {
-                    string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(partialStream);
-                    if (!string.IsNullOrEmpty(md5))
-                    {
-                        request.Headers[HeaderKeys.ContentMD5Header] = md5;
-                    }
-                }
-
-                if (!(uploadPartRequest.DisableMD5Stream ?? AWSConfigsS3.DisableMD5Stream))
-                {
-                    // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
-                    var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
-                    uploadPartRequest.InputStream = hashStream;
-                }
-                else
-                {
-                    uploadPartRequest.InputStream = partialStream;
-                }
-            }
-
-            request.ContentStream = uploadPartRequest.InputStream;
-            ChecksumUtils.SetChecksumData(request, uploadPartRequest.ChecksumAlgorithm, fallbackToMD5: false);
 
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
 
+            // Handling of checksums, chunked encoding, wrapper streams, and content length now occurs in AmazonS3PostMarshallHandler.
+            // Endpoint rules are required to execute first to determine if the request is using S3 Express, which influences which checksum to use.
+
             return request;
         }
 
-	    private static UploadPartRequestMarshaller _instance;
+        private static UploadPartRequestMarshaller _instance;
 
-	    public static UploadPartRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new UploadPartRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
+        public static UploadPartRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new UploadPartRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }
 

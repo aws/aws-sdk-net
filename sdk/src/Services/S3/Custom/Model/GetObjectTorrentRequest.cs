@@ -25,7 +25,38 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetObjectTorrent operation.
-    /// <para>Return torrent files from a bucket.</para>
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're
+    /// distributing large files.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can get torrent only for objects that are less than 5 GB in size, and that are
+    /// not encrypted using server-side encryption with a customer-provided encryption key.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// To use GET, you must have READ access to the object.
+    /// </para>
+    ///  
+    /// <para>
+    /// This functionality is not supported for Amazon S3 on Outposts.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following action is related to <code>GetObjectTorrent</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetObjectTorrentRequest : AmazonWebServiceRequest
     {
@@ -99,8 +130,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

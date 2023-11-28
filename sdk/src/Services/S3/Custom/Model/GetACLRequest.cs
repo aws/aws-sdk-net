@@ -25,19 +25,26 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetACL operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// This implementation of the <code>GET</code> action uses the <code>acl</code> subresource
     /// to return the access control list (ACL) of a bucket. To use <code>GET</code> to return
-    /// the ACL of the bucket, you must have <code>READ_ACP</code> access to the bucket. If
-    /// <code>READ_ACP</code> permission is granted to the anonymous user, you can return
+    /// the ACL of the bucket, you must have the <code>READ_ACP</code> access to the bucket.
+    /// If <code>READ_ACP</code> permission is granted to the anonymous user, you can return
     /// the ACL of the bucket without using an authorization header.
-    /// 
+    /// </para>
+    ///  
     /// <para>
-    /// To use this API operation against an access point, provide the alias of the access
+    /// When you use this API operation with an access point, provide the alias of the access
     /// point in place of the bucket name.
     /// </para>
     ///  
     /// <para>
-    /// To use this API operation against an Object Lambda access point, provide the alias
+    /// When you use this API operation with an Object Lambda access point, provide the alias
     /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
     /// access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code>
     /// is returned. For more information about <code>InvalidAccessPointAliasError</code>,
@@ -68,13 +75,24 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
 
         /// <summary>
-        /// <para>The bucket name that contains the object for which to get the ACL information.</para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// Specifies the S3 bucket whose ACL is being requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an access point, provide the alias of the access
+        /// point in place of the bucket name.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an Object Lambda access point, provide the alias
+        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
+        /// access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code>
+        /// is returned. For more information about <code>InvalidAccessPointAliasError</code>,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+        /// of Error Codes</a>.
+        /// </para>
         /// </summary>
         public string BucketName { get; set; }
 
@@ -85,8 +103,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

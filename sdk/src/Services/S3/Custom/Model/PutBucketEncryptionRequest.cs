@@ -23,18 +23,26 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketEncryption operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// This action uses the <code>encryption</code> subresource to configure default encryption
-    /// and Amazon S3 Bucket Key for an existing bucket.
-    /// 
+    /// and Amazon S3 Bucket Keys for an existing bucket.
+    /// </para>
     ///  
     /// <para>
-    /// Default encryption for a bucket can use server-side encryption with Amazon S3-managed
-    /// keys (SSE-S3) or customer managed keys (SSE-KMS). If you specify default encryption
-    /// using SSE-KMS, you can also configure Amazon S3 Bucket Key. For information about
-    /// default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-    /// S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
-    /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
-    /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
+    /// By default, all buckets have a default encryption configuration that uses server-side
+    /// encryption with Amazon S3 managed keys (SSE-S3). You can optionally configure default
+    /// encryption for a bucket by using server-side encryption with Key Management Service
+    /// (KMS) keys (SSE-KMS) or dual-layer server-side encryption with Amazon Web Services
+    /// KMS keys (DSSE-KMS). If you specify default encryption by using SSE-KMS, you can also
+    /// configure <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
+    /// S3 Bucket Keys</a>. If you use PutBucketEncryption to set your <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">default
+    /// bucket encryption</a> to SSE-KMS, you should verify that your KMS key ID is correct.
+    /// Amazon S3 does not validate the KMS key ID provided in PutBucketEncryption requests.
     /// </para>
     ///  <important> 
     /// <para>
@@ -44,11 +52,12 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// To use this operation, you must have permissions to perform the <code>s3:PutEncryptionConfiguration</code>
+    /// To use this operation, you must have permission to perform the <code>s3:PutEncryptionConfiguration</code>
     /// action. The bucket owner has this permission by default. The bucket owner can grant
     /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-    /// Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User Guide. 
+    /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -101,10 +110,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -158,8 +175,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

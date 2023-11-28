@@ -29,14 +29,20 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetObjectLegalHold operation.
-    /// Gets an object's current Legal Hold status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Gets an object's current legal hold status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
     /// Objects</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// This action is not supported by Amazon S3 on Outposts.
+    /// This functionality is not supported for Amazon S3 on Outposts.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// The following action is related to <code>GetObjectLegalHold</code>:
     /// </para>
@@ -58,13 +64,15 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The bucket name containing the object whose Legal Hold status you want to retrieve.
+        /// The bucket name containing the object whose legal hold status you want to retrieve.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
         /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
@@ -86,8 +94,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The account ID of the expected bucket owner. If the bucket is owned by a different
-        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

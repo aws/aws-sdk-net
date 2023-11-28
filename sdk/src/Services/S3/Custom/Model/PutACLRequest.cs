@@ -25,10 +25,16 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutACL operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Sets the permissions on an existing bucket using access control lists (ACL). For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-    /// ACLs</a>. To set the ACL of a bucket, you must have <code>WRITE_ACP</code> permission.
-    /// 
+    /// ACLs</a>. To set the ACL of a bucket, you must have the <code>WRITE_ACP</code> permission.
+    /// </para>
     ///  
     /// <para>
     /// You can use one of the following two ways to set a bucket's permissions:
@@ -62,9 +68,8 @@ namespace Amazon.S3.Model
     /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </important> <dl> <dt>Permissions</dt> <dd> 
-    ///  
     /// <para>
-    /// You can set access permissions using one of the following methods:
+    /// You can set access permissions by using one of the following methods:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -162,11 +167,7 @@ namespace Amazon.S3.Model
     /// You can use either a canned ACL or specify access permissions explicitly. You cannot
     /// do both.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Grantee Values</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Grantee Values</dt> <dd> 
     /// <para>
     /// You can specify the person (grantee) to whom you're assigning access rights (using
     /// request elements) in the following ways:
@@ -199,7 +200,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;lt;/Grantee&gt;</code>
+    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;&amp;&lt;/Grantee&gt;</code>
     /// 
     /// </para>
     ///  
@@ -249,7 +250,9 @@ namespace Amazon.S3.Model
     /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
     /// and Endpoints</a> in the Amazon Web Services General Reference.
     /// </para>
-    ///  </note> </li> </ul> <p class="title"> <b>Related Resources</b> 
+    ///  </note> </li> </ul> </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <code>PutBucketAcl</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -333,10 +336,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -352,8 +363,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

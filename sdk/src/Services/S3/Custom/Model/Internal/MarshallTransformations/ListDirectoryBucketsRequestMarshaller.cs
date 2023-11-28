@@ -1,0 +1,81 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.S3.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ListDirectoryBuckets Request Marshaller
+    /// </summary>       
+    public class ListDirectoryBucketsRequestMarshaller : IMarshaller<IRequest, ListDirectoryBucketsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListDirectoryBucketsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+        public IRequest Marshall(ListDirectoryBucketsRequest publicRequest)
+        {
+            var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            request.HttpMethod = "GET";
+
+            if (publicRequest.IsSetContinuationToken())
+                request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
+
+            if (publicRequest.IsSetMaxDirectoryBuckets())
+                request.Parameters.Add("max-directory-buckets", StringUtils.FromInt(publicRequest.MaxDirectoryBuckets));
+            request.ResourcePath = "/";
+
+
+            request.UseQueryString = true;
+            return request;
+        }
+        private static ListDirectoryBucketsRequestMarshaller _instance = new ListDirectoryBucketsRequestMarshaller();
+
+        internal static ListDirectoryBucketsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDirectoryBucketsRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ListDirectoryBucketsRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
+    }
+}

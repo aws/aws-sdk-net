@@ -26,10 +26,16 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVersions operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns metadata about all versions of the objects in a bucket. You can also use request
     /// parameters as selection criteria to return metadata about a subset of all the object
     /// versions.
-    /// 
+    /// </para>
     ///  <important> 
     /// <para>
     ///  To use this operation, you must have permission to perform the <code>s3:ListBucketVersions</code>
@@ -252,8 +258,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

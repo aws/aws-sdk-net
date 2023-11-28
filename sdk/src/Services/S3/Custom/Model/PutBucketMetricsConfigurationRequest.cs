@@ -23,12 +23,18 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketMetricsConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
     /// You can have up to 1,000 metrics configurations per bucket. If you're updating an
     /// existing metrics configuration, note that this is a full replacement of the existing
     /// metrics configuration. If you don't include the elements you want to keep, they are
     /// erased.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To use this operation, you must have permissions to perform the <code>s3:PutMetricsConfiguration</code>
@@ -63,7 +69,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <code>GetBucketLifecycle</code> has the following special error:
+    ///  <code>PutBucketMetricsConfiguration</code> has the following special error:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -136,8 +142,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

@@ -5,6 +5,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Net.Sockets;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -62,7 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UseDualstackEndpoint = true,
                     SignatureVersion = "4"
                 };
-
+                
                 executeSomeBucketOperations(config);
             }
         }
@@ -76,7 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var listBucketsResponse = s3Client.ListBuckets();
                 Assert.IsNotNull(listBucketsResponse);
                 Assert.IsFalse(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
-
+                
                 // Bonus call on ListObjects if we can find a bucket compatible with the test region (to avoid 301
                 // errors due to addressing bucket on wrong endpoint). This verifies that  
                 // AmazonS3PostMarshallHandler.ProcessRequestHandlers correctly computes the endpoint when 
@@ -84,6 +85,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 string bucketName = null;
                 foreach (var bucket in listBucketsResponse.Buckets)
                 {
+                    //S3 Express doesn't support dualstack endpoints so we skip these in the tests.
+                    if (bucket.BucketName.Contains("--x-s3") || bucket.BucketName.Contains("-d-s3"))
+                        continue;
                     try
                     {
                         var bucketLocationResponse = s3Client.GetBucketLocation(bucket.BucketName);
@@ -102,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                 }
 
-                if (!string.IsNullOrEmpty(bucketName))
+                if(!string.IsNullOrEmpty(bucketName))
                 {
                     var listObjectsResponse = s3Client.ListObjects(new ListObjectsRequest { BucketName = bucketName });
                     Assert.IsNotNull(listObjectsResponse);

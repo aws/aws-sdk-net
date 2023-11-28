@@ -26,7 +26,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.UI.WebControls;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -38,7 +37,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const string TestContent = "This is the content body!";
         private const string TestKey = "key";
-
+        private Dictionary<RegionEndpoint, string> RegionCodePairs = new Dictionary<RegionEndpoint, string>()
+        {
+            { RegionEndpoint.USEast1, "use1-az5" },
+            { RegionEndpoint.USWest2, "usw2-az1" },
+            { RegionEndpoint.EUNorth1, "eun1-az1" }
+        };
+        private class PresignedUrlTestParameters
+        {
+            public RegionEndpoint Region { get; set; }
+            public DateTime Expiration { get; set; }
+            public bool UseSigV4 { get; set; }
+            public bool ExpectSigV4Url { get; set; }
+            public bool IsS3Express { get; set; }
+            public string BucketName { get; set; }
+            public Dictionary<string,string> Metadata { get; set; }
+        }
         private const long MegSize = 1048576;
 
         [TestMethod]
@@ -46,8 +60,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("RequiresIAMUser")]
         public void USEastUnder7Days()
         {
-            TestPreSignedUrl(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
-            TestPreSignedUrlWithSessionToken(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
+            TestPreSignedUrl(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
+                UseSigV4 = true,
+                ExpectSigV4Url = true,
+                IsS3Express = false
+            });
+            TestPreSignedUrl(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
+                UseSigV4 = true,
+                ExpectSigV4Url = true,
+                IsS3Express = true
+            });
+            TestPreSignedUrlWithSessionToken(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
+                UseSigV4 = true,
+                ExpectSigV4Url = true,
+                IsS3Express = false
+            });
+            TestPreSignedUrlWithSessionToken(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
+                UseSigV4 = true,
+                ExpectSigV4Url = true,
+                IsS3Express = true
+            });
         }
 
         [TestMethod]
@@ -56,31 +100,52 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void USEastOver7Days()
         {
             // us-east-1 allows Sigv2 so it should fall back to it since the expiration is > 7 days
-            TestPreSignedUrl(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, false);
-            TestPreSignedUrlWithSessionToken(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, false);
+            TestPreSignedUrl(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2),
+                UseSigV4 = true,
+                ExpectSigV4Url = false,
+                IsS3Express = false
+            });
+            TestPreSignedUrlWithSessionToken(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2),
+                UseSigV4 = true,
+                ExpectSigV4Url = false,
+                IsS3Express = false
+            });
         }
 
         [TestMethod]
         [TestCategory("S3")]
         [TestCategory("RequiresIAMUser")]
-        public void EUCentral1Under7Days()
+        public void EUNorth1Under7Days()
         {
-            TestPreSignedUrl(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
-            TestPreSignedUrlWithSessionToken(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
+            TestPreSignedUrl(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.EUNorth1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
+                UseSigV4 = true,
+                ExpectSigV4Url = true,
+                IsS3Express = false
+            });
+            TestPreSignedUrlWithSessionToken(new PresignedUrlTestParameters { Region = RegionEndpoint.EUNorth1, Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), UseSigV4 = true, ExpectSigV4Url = true, IsS3Express = false });
         }
 
         [TestMethod]
         [TestCategory("S3")]
         [TestCategory("RequiresIAMUser")]
-        public void EUCentral1Over7Days()
+        public void EUNorth1Over7Days()
         {
-            // EUCentral1 doesn't allow SigV2 so we expect an error since the expiration > 7 days
+            // EUNorth1 doesn't allow SigV2 so we expect an error since the expiration > 7 days
             AssertExtensions.ExpectException(()=>{
-                TestPreSignedUrl(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, true);
+                TestPreSignedUrl(new PresignedUrlTestParameters { Region = RegionEndpoint.EUNorth1, Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), UseSigV4 = true, ExpectSigV4Url = true, IsS3Express = false });
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
 
             AssertExtensions.ExpectException(() => {
-                TestPreSignedUrlWithSessionToken(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, true);
+                TestPreSignedUrlWithSessionToken(new PresignedUrlTestParameters { Region = RegionEndpoint.EUNorth1, Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), UseSigV4 = true, ExpectSigV4Url = true, IsS3Express = false });
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
         }
 
@@ -92,53 +157,76 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void EUCentral1PutWithMetadata()
+        public void EUNorth1PutWithMetadata()
         {
             Dictionary<string, string> metadata = new Dictionary<string, string>()
             {
                 { "MyMetadata", "Metadata-Value" }
             };
-
-            TestPreSignedUrlPut(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, metadata);
+            TestPreSignedUrlPut(new PresignedUrlTestParameters
+            {
+                Region = RegionEndpoint.EUNorth1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
+                ExpectSigV4Url = true,
+                Metadata = new Dictionary<string, string>()
+                {
+                    { "MyMetadata", "Metadata-Value" }
+                },
+                IsS3Express = false
+            });
         }
 
-        private void TestPreSignedUrlPut(RegionEndpoint region, DateTime expires, bool expectSigV4Url, Dictionary<string, string> metadata = null)
+        private void TestPreSignedUrlPut(PresignedUrlTestParameters testParams)
         {
-            var client = new AmazonS3Client(region);
+            var client = new AmazonS3Client(testParams.Region);
             var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
-            string bucketName = null;
-
             try
             {
                 AWSConfigsS3.UseSignatureVersion4 = true;
-                bucketName = S3TestUtils.CreateBucketWithWait(client);
-
-                AssertPresignedUrlPut(client, bucketName, expires, expectSigV4Url, metadata);
+                if (testParams.IsS3Express)
+                {
+                    testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
+                    
+                    client.PutBucket(new PutBucketRequest 
+                    {
+                        
+                        BucketName = testParams.BucketName,
+                        PutBucketConfiguration = new PutBucketConfiguration
+                        {
+                            BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory},
+                            Location = new LocationInfo { Name = RegionCodePairs[testParams.Region], Type = LocationType.AvailabilityZone }
+                        }
+                    });
+                }
+                else
+                {
+                    testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                }
+                AssertPresignedUrlPut(client, testParams);
             }
             finally
             {
                 AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
-                if (bucketName != null)
-                    DeleteBucket(client, bucketName);
+                if (testParams.BucketName != null)
+                    DeleteBucket(client, testParams.BucketName);
             }
         }
-
-        private static void AssertPresignedUrlPut(AmazonS3Client client, string bucketName, DateTime expires, bool expectSigV4Url, Dictionary<string, string> metadata = null)
+        private static void AssertPresignedUrlPut(AmazonS3Client client, PresignedUrlTestParameters testParams)
         {
             string objectKey = TestKey + DateTime.Now.Ticks;
 
             var request = new GetPreSignedUrlRequest
             {
-                BucketName = bucketName,
+                BucketName = testParams.BucketName,
                 Key = objectKey,
                 Verb = HttpVerb.PUT,
-                Expires = expires,
+                Expires = testParams.Expiration,
                 Protocol = Protocol.HTTPS
             };
 
-            if (metadata != null && metadata.Count > 0)
+            if (testParams.Metadata != null && testParams.Metadata.Count > 0)
             {
-                foreach (KeyValuePair<string, string> kvp in metadata)
+                foreach (KeyValuePair<string, string> kvp in testParams.Metadata)
                 {
                     request.Metadata.Add(kvp.Key, kvp.Value);
                 }
@@ -148,26 +236,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             // make sure we used the correct signtaure version
             var urlIsSigV4 = putPresignedUrl.Contains("aws4_request");
-            Assert.AreEqual(expectSigV4Url, urlIsSigV4);
+            Assert.AreEqual(testParams.ExpectSigV4Url, urlIsSigV4);
             List<string> signedHeadersList = new List<string> { "host" };
 
-            if (metadata != null && metadata.Count > 0)
+            if (testParams.Metadata != null && testParams.Metadata.Count > 0)
             {
-                signedHeadersList.AddRange(metadata.Select(m => "x-amz-meta-" + m.Key.ToLowerInvariant()));
+                signedHeadersList.AddRange(testParams.Metadata.Select(m => "x-amz-meta-" + m.Key.ToLowerInvariant()));
             }
             
             string signedHeadersString = string.Join(";", signedHeadersList.OrderBy(k => k, StringComparer.Ordinal));
             Assert.IsFalse(putPresignedUrl.Contains(signedHeadersString));
             Assert.IsTrue(putPresignedUrl.Contains(AWSSDKUtils.UrlEncode(signedHeadersString, false)));
 
-            var response = PutObjectUsingPresignedUrl(putPresignedUrl, metadata);
+            var response = PutObjectUsingPresignedUrl(putPresignedUrl, testParams.Metadata);
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            if (metadata != null && metadata.Count > 0)
+            if (testParams.Metadata != null && testParams.Metadata.Count > 0)
             {
-                var getObjectMetadataResponse = client.GetObjectMetadata(bucketName, objectKey);
+                var getObjectMetadataResponse = client.GetObjectMetadata(testParams.BucketName, objectKey);
 
-                foreach (KeyValuePair<string, string> kvp in metadata)
+                foreach (KeyValuePair<string, string> kvp in testParams.Metadata)
                 {
                     Assert.IsTrue(getObjectMetadataResponse.Metadata.Keys.Contains("x-amz-meta-" + kvp.Key.ToLowerInvariant()));
                     Assert.AreEqual(kvp.Value, getObjectMetadataResponse.Metadata[kvp.Key.ToLowerInvariant()]);
@@ -201,45 +289,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return response;
         }
 
-        private void TestPreSignedUrl(RegionEndpoint region, DateTime expires, bool useSigV4, bool expectSigV4Url)
+        private void TestPreSignedUrl(PresignedUrlTestParameters testParams)
         {
-            var client = new AmazonS3Client(region);
+            var client = new AmazonS3Client(testParams.Region);
             var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
-            string bucketName = null;
             try
             {
                 AWSConfigsS3.UseSignatureVersion4 = true;
-                bucketName = CreateBucketAndObject(client);
-                AssertPreSignedUrl(client, bucketName, expires, expectSigV4Url);
+                if (testParams.IsS3Express)
+                {
+                    testParams.BucketName = CreateBucketAndObject(client, true, RegionCodePairs[testParams.Region]);
+                }
+                else
+                {
+                    testParams.BucketName = CreateBucketAndObject(client);
+                }
+                AssertPreSignedUrl(client, testParams);
             }
             finally
             {
                 AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
-                if (bucketName != null)
-                    DeleteBucket(client, bucketName);
+                if (testParams.BucketName != null)
+                    DeleteBucket(client, testParams.BucketName);
             }
         }
-
-        private void TestPreSignedUrlWithSessionToken(RegionEndpoint region, DateTime expires, bool useSigV4, bool expectSigV4Url)
+        private void TestPreSignedUrlWithSessionToken(PresignedUrlTestParameters testParams)
         {
             using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
             {
                 AWSCredentials credentials = sts.GetSessionToken().Credentials;
-                var client = new AmazonS3Client(credentials, region);
+                var client = new AmazonS3Client(credentials, testParams.Region);
                 var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
                 AWSConfigsS3.UseSignatureVersion4 = true;
-                string bucketName = null;
                 try
                 {
                     AWSConfigsS3.UseSignatureVersion4 = true;
-                    bucketName = CreateBucketAndObject(client);
-                    AssertPreSignedUrl(client, bucketName, expires, expectSigV4Url);
+                    if (testParams.IsS3Express)
+                    {
+                        testParams.BucketName = CreateBucketAndObject(client, true, RegionCodePairs[testParams.Region]);
+                    }
+                    else
+                    {
+                        testParams.BucketName = CreateBucketAndObject(client);
+                    }
+                    AssertPreSignedUrl(client, testParams);
                 }
                 finally
                 {
                     AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
-                    if (bucketName != null)
-                        DeleteBucket(client, bucketName);
+                    if (testParams.BucketName != null)
+                        DeleteBucket(client, testParams.BucketName);
                 }
             }
         }
@@ -260,9 +359,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private string CreateBucketAndObject(AmazonS3Client client)
+        private string CreateBucketAndObject(AmazonS3Client client, bool isS3Express = false, string regionCode = null)
         {
-            var bucketName = S3TestUtils.CreateBucketWithWait(client);
+            string bucketName;
+            if (isS3Express && regionCode != null)
+            {
+                bucketName = S3TestUtils.CreateS3ExpressBucketWithWait(client, regionCode);
+            }
+            else
+            {
+                bucketName = S3TestUtils.CreateBucketWithWait(client);
+            }
             client.PutObject(new PutObjectRequest
             {
                 BucketName = bucketName,
@@ -273,19 +380,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return bucketName;
         }
 
-        private void AssertPreSignedUrl(AmazonS3Client client, string bucketName, DateTime expires, bool expectSigV4Url)
+        private void AssertPreSignedUrl(AmazonS3Client client, PresignedUrlTestParameters testParams)
         {
             // generate url
             var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
             {
-                BucketName = bucketName,
+                BucketName = testParams.BucketName,
                 Key = TestKey,
-                Expires = expires
+                Expires = testParams.Expiration
             });
 
             // make sure we used the correct signtaure version
             var urlIsSigV4 = url.Contains("aws4_request");
-            Assert.AreEqual(expectSigV4Url, urlIsSigV4);
+            Assert.AreEqual(testParams.ExpectSigV4Url, urlIsSigV4);
 
             // use independent web client make sure the URL actually works
             var wc = new WebClient();

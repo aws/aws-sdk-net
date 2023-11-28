@@ -62,7 +62,11 @@ namespace Amazon.S3.Model
         /// <para>
         /// South America (São Paulo)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DisplayName { set; get; }
 

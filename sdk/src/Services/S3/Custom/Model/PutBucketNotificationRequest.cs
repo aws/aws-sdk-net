@@ -25,10 +25,16 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketNotification operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Enables notifications of specified events for a bucket. For more information about
     /// event notifications, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
     /// Event Notifications</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Using this API, you can replace an existing notification configuration. The configuration
@@ -70,9 +76,15 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
+    /// For more information about the number of event notification configurations that you
+    /// can create per bucket, see <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#limits_s3">Amazon
+    /// S3 service quotas</a> in <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// By default, only the bucket owner can configure notifications on a bucket. However,
     /// bucket owners can use a bucket policy to grant permission to other users to set this
-    /// configuration with <code>s3:PutBucketNotification</code> permission.
+    /// configuration with the required <code>s3:PutBucketNotification</code> permission.
     /// </para>
     ///  <note> 
     /// <para>
@@ -167,8 +179,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

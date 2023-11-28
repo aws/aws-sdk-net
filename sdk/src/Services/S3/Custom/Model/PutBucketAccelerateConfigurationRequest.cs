@@ -23,8 +23,74 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
-    /// <summary> 
-    /// Container for the parameters to the PutBucketAccelerateConfiguration request.
+    /// <summary>
+    /// Container for the parameters to the PutBucketAccelerateConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Sets the accelerate configuration of an existing bucket. Amazon S3 Transfer Acceleration
+    /// is a bucket-level feature that enables you to perform faster data transfers to Amazon
+    /// S3.
+    /// </para>
+    ///  
+    /// <para>
+    ///  To use this operation, you must have permission to perform the <code>s3:PutAccelerateConfiguration</code>
+    /// action. The bucket owner has this permission by default. The bucket owner can grant
+    /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to Your Amazon S3 Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  The Transfer Acceleration state of a bucket can be set to one of the following two
+    /// values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  Enabled � Enables accelerated data transfers to the bucket.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Suspended � Disables accelerated data transfers to the bucket.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
+    /// action returns the transfer acceleration state of a bucket.
+    /// </para>
+    ///  
+    /// <para>
+    /// After setting the Transfer Acceleration state of a bucket to Enabled, it might take
+    /// up to thirty minutes before the data transfer rates to the bucket increase.
+    /// </para>
+    ///  
+    /// <para>
+    ///  The name of the bucket used for Transfer Acceleration must be DNS-compliant and must
+    /// not contain periods (".").
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
+    /// Acceleration</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>PutBucketAccelerateConfiguration</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutBucketAccelerateConfigurationRequest : AmazonWebServiceRequest
     {
@@ -51,10 +117,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -85,8 +159,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

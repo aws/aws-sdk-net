@@ -21,9 +21,15 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketIntelligentTieringConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Puts a S3 Intelligent-Tiering configuration to the specified bucket. You can have
     /// up to 1,000 S3 Intelligent-Tiering configurations per bucket.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
@@ -80,6 +86,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>Code:</i> InvalidArgument
     /// </para>
+    ///  
     /// <para>
     ///  <i>Cause:</i> Invalid Argument
     /// </para>
@@ -87,6 +94,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>Code:</i> TooManyConfigurations
     /// </para>
+    ///  
     /// <para>
     ///  <i>Cause:</i> You are attempting to create a new configuration but have already reached
     /// the 1,000-configuration limit. 

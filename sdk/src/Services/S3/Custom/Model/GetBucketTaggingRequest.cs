@@ -25,7 +25,47 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketTagging operation.
-    /// <para>Returns the tag set associated with the bucket.</para>
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Returns the tag set associated with the bucket.
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this operation, you must have permission to perform the <code>s3:GetBucketTagging</code>
+    /// action. By default, the bucket owner has this permission and can grant this permission
+    /// to others.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>GetBucketTagging</code> has the following special error:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Error code: <code>NoSuchTagSet</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Description: There is no tag set associated with the bucket.
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// The following operations are related to <code>GetBucketTagging</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketTaggingRequest : AmazonWebServiceRequest
     {
@@ -48,8 +88,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

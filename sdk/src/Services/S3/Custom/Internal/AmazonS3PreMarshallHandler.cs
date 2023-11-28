@@ -139,7 +139,9 @@ namespace Amazon.S3.Internal
             if (putBucketRequest != null)
             {
                 // UseClientRegion only applies if neither BucketRegionName and BucketRegion are set.
-                if (putBucketRequest.UseClientRegion &&
+                // And is skipped if PutBucketConfiguration.Location is defined.
+                if (putBucketRequest.UseClientRegion && 
+                    !(putBucketRequest.IsSetPutBucketConfiguration() && putBucketRequest.PutBucketConfiguration.IsSetLocation()) &&
                     !(putBucketRequest.IsSetBucketRegionName() || putBucketRequest.IsSetBucketRegion()))
                 {
                     var regionCode = DetermineBucketRegionCode(config);

@@ -22,11 +22,17 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketOwnershipControls operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation,
     /// you must have the <code>s3:GetBucketOwnershipControls</code> permission. For more
     /// information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html">Specifying
     /// permissions in a policy</a>. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Using
@@ -67,8 +73,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, 
-        /// the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

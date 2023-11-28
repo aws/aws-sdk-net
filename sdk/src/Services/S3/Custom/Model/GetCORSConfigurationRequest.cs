@@ -24,8 +24,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetBucketCors operation.
-    /// <para>Returns the cors configuration for the bucket.</para>
+    /// Container for the parameters to the GetCORSConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Returns the Cross-Origin Resource Sharing (CORS) configuration information set for
+    /// the bucket.
+    /// </para>
+    ///  
+    /// <para>
+    ///  To use this operation, you must have permission to perform the <code>s3:GetBucketCORS</code>
+    /// action. By default, the bucket owner has this permission and can grant it to others.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you use this API operation with an access point, provide the alias of the access
+    /// point in place of the bucket name.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you use this API operation with an Object Lambda access point, provide the alias
+    /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
+    /// access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code>
+    /// is returned. For more information about <code>InvalidAccessPointAliasError</code>,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+    /// of Error Codes</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more information about CORS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
+    /// Enabling Cross-Origin Resource Sharing</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetBucketCors</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetCORSConfigurationRequest : AmazonWebServiceRequest
     {
@@ -48,8 +95,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

@@ -82,6 +82,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
                     xmlWriter.WriteElementString("LocationConstraint", regionCode);
+                }
+                if (putBucketRequest.IsSetPutBucketConfiguration())
+                {
+                    if(regionCode == null)
+                        xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
+                    if (putBucketRequest.PutBucketConfiguration.BucketInfo != null)
+                    {
+                        xmlWriter.WriteStartElement("Bucket", S3Constants.S3RequestXmlNamespace);
+                        if (putBucketRequest.PutBucketConfiguration.BucketInfo.IsSetDataRedundancy())
+                        {
+                            xmlWriter.WriteElementString("DataRedundancy", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.BucketInfo.DataRedundancy));
+                        }
+                        if (putBucketRequest.PutBucketConfiguration.BucketInfo.IsSetType())
+                        {
+                            xmlWriter.WriteElementString("Type", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.BucketInfo.Type));
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                    if(putBucketRequest.PutBucketConfiguration.Location != null)
+                    {
+                        xmlWriter.WriteStartElement("Location", S3Constants.S3RequestXmlNamespace);
+                        if(putBucketRequest.PutBucketConfiguration.Location.IsSetName())
+                        {
+                            xmlWriter.WriteElementString("Name", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.Location.Name));
+                        }
+                        if (putBucketRequest.PutBucketConfiguration.Location.IsSetType())
+                        {
+                            xmlWriter.WriteElementString("Type", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.Location.Type));
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                }
+                if(regionCode != null || putBucketRequest.IsSetPutBucketConfiguration())
+                {
                     xmlWriter.WriteEndElement();
                 }
             }

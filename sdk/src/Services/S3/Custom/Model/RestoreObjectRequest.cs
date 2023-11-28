@@ -24,11 +24,17 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreObject operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Restores an archived copy of an object back into Amazon S3
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// This action is not supported by Amazon S3 on Outposts.
+    /// This functionality is not supported for Amazon S3 on Outposts.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +68,7 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
     /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
     /// <para>
     /// Define the SQL expression for the <code>SELECT</code> type of restoration for your
     /// query in the request body's <code>SelectParameters</code> structure. You can use expressions
@@ -97,8 +103,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code> 
     /// </para>
-    ///  </li> </ul>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// When making a select request, you can also do the following:
     /// </para>
@@ -119,12 +124,12 @@ namespace Amazon.S3.Model
     ///  <ul> <li> 
     /// <para>
     /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-    /// stored until explicitly deleted-manually or through a lifecycle policy.
+    /// stored until explicitly deleted-manually or through a lifecycle configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-    /// doesn't deduplicate requests, so avoid issuing duplicate requests.
+    /// doesn't duplicate requests, so avoid issuing duplicate requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -141,16 +146,17 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </dd> <dt>Restoring objects</dt> <dd> 
     /// <para>
-    /// Objects that you archive to the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive
-    /// storage class, and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
-    /// tiers, are not accessible in real time. For objects in the S3 Glacier Flexible Retrieval
-    /// or S3 Glacier Deep Archive storage classes, you must first initiate a restore request,
-    /// and then wait until a temporary copy of the object is available. If you want a permanent
-    /// copy of the object, create a copy of it in the Amazon S3 Standard storage class in
-    /// your S3 bucket. To access an archived object, you must restore the object for the
-    /// duration (number of days) that you specify. For objects in the Archive Access or Deep
-    /// Archive Access tiers of S3 Intelligent-Tiering, you must first initiate a restore
-    /// request, and then wait until the object is moved into the Frequent Access tier.
+    /// Objects that you archive to the S3 Glacier Flexible Retrieval Flexible Retrieval or
+    /// S3 Glacier Deep Archive storage class, and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering
+    /// Deep Archive tiers, are not accessible in real time. For objects in the S3 Glacier
+    /// Flexible Retrieval Flexible Retrieval or S3 Glacier Deep Archive storage classes,
+    /// you must first initiate a restore request, and then wait until a temporary copy of
+    /// the object is available. If you want a permanent copy of the object, create a copy
+    /// of it in the Amazon S3 Standard storage class in your S3 bucket. To access an archived
+    /// object, you must restore the object for the duration (number of days) that you specify.
+    /// For objects in the Archive Access or Deep Archive Access tiers of S3 Intelligent-Tiering,
+    /// you must first initiate a restore request, and then wait until the object is moved
+    /// into the Frequent Access tier.
     /// </para>
     ///  
     /// <para>
@@ -165,34 +171,35 @@ namespace Amazon.S3.Model
     ///  <ul> <li> 
     /// <para>
     ///  <code>Expedited</code> - Expedited retrievals allow you to quickly access your data
-    /// stored in the S3 Glacier Flexible Retrieval storage class or S3 Intelligent-Tiering
-    /// Archive tier when occasional urgent requests for restoring archives are required.
-    /// For all but the largest archived objects (250 MB+), data accessed using Expedited
-    /// retrievals is typically made available within 1–5 minutes. Provisioned capacity ensures
-    /// that retrieval capacity for Expedited retrievals is available when you need it. Expedited
-    /// retrievals and provisioned capacity are not available for objects stored in the S3
-    /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
+    /// stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3
+    /// Intelligent-Tiering Archive tier when occasional urgent requests for restoring archives
+    /// are required. For all but the largest archived objects (250 MB+), data accessed using
+    /// Expedited retrievals is typically made available within 1–5 minutes. Provisioned capacity
+    /// ensures that retrieval capacity for Expedited retrievals is available when you need
+    /// it. Expedited retrievals and provisioned capacity are not available for objects stored
+    /// in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive
+    /// tier.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
-    /// archived objects within several hours. This is the default option for retrieval requests
-    /// that do not specify the retrieval option. Standard retrievals typically finish within
-    /// 3–5 hours for objects stored in the S3 Glacier storage class or S3 Intelligent-Tiering
-    /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
-    /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
-    /// are free for objects stored in S3 Intelligent-Tiering.
+    ///  <code>Standard</code> - Standard retrievals allow you to access any of your archived
+    /// objects within several hours. This is the default option for retrieval requests that
+    /// do not specify the retrieval option. Standard retrievals typically finish within 3–5
+    /// hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage
+    /// class or S3 Intelligent-Tiering Archive tier. They typically finish within 12 hours
+    /// for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
+    /// Deep Archive tier. Standard retrievals are free for objects stored in S3 Intelligent-Tiering.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>Bulk</code> - Bulk retrievals free for objects stored in the S3 Glacier Flexible
     /// Retrieval and S3 Intelligent-Tiering storage classes, enabling you to retrieve large
     /// amounts, even petabytes, of data at no cost. Bulk retrievals typically finish within
-    /// 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval storage class or
-    /// S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost retrieval
-    /// option when restoring objects from S3 Glacier Deep Archive. They typically finish
-    /// within 48 hours for objects stored in the S3 Glacier Deep Archive storage class or
-    /// S3 Intelligent-Tiering Deep Archive tier. 
+    /// 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval
+    /// storage class or S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the
+    /// lowest-cost retrieval option when restoring objects from S3 Glacier Deep Archive.
+    /// They typically finish within 48 hours for objects stored in the S3 Glacier Deep Archive
+    /// storage class or S3 Intelligent-Tiering Deep Archive tier. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -319,7 +326,6 @@ namespace Amazon.S3.Model
         private OutputLocation outputLocation;
         private RequestPayer requestPayer;
         private string versionId;
-
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
@@ -327,8 +333,10 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
         /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
@@ -336,8 +344,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
+        /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
+        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -359,10 +368,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -398,8 +415,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The account ID of the expected bucket owner. If the bucket is owned by a different
-        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

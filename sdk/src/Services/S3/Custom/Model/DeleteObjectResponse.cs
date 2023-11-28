@@ -31,8 +31,18 @@ namespace Amazon.S3.Model
         private RequestCharged requestCharged;
 
         /// <summary>
-        /// Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
-        ///  
+        /// Gets and sets the property DeleteMarker. 
+        /// <para>
+        /// Indicates whether the specified object version that was permanently deleted was (true)
+        /// or was not (false) a delete marker before deletion. In a simple DELETE, this header
+        /// indicates whether (true) or not (false) the current version of the object is a delete
+        /// marker.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DeleteMarker
         {
@@ -47,8 +57,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
         /// Returns the version ID of the delete marker created as a result of the DELETE operation.
-        ///  
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string VersionId
         {

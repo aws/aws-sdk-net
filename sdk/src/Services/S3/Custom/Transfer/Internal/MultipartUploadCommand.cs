@@ -238,8 +238,8 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
-#endif
-                DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
+#endif                
+                DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
                 CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header

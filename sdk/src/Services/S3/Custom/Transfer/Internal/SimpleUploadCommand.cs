@@ -71,7 +71,7 @@ namespace Amazon.S3.Transfer.Internal
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
 #endif
-                DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
+                DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
             };

@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 using System;
-
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 using Amazon.S3;
 using Amazon.S3.Model;
 
@@ -47,5 +49,33 @@ namespace Amazon.S3
         string GetPreSignedURL(GetPreSignedUrlRequest request);
 
         #endregion
+#if AWS_ASYNC_API
+        #region GetPresignedURLAsync
+
+        /// <summary>
+        /// Asynchronously create a signed URL allowing access to a resource that would 
+        /// usually require authentication.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// When using query string authentication you create a query,
+        /// specify an expiration time for the query, sign it with your
+        /// signature, place the data in an HTTP request, and distribute
+        /// the request to a user or embed the request in a web page.
+        /// </para>
+        /// <para>
+        /// A PreSigned URL can be generated for GET, PUT, DELETE and HEAD
+        /// operations on your bucketName, keys, and versions.
+        /// </para>
+        /// </remarks>
+        /// <param name="request">The GetPreSignedUrlRequest that defines the
+        /// parameters of the operation.</param>
+        /// <returns>A string that is the signed http request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        Task<string> GetPreSignedURLAsync(GetPreSignedUrlRequest request);
+
+        #endregion
+#endif
     }
 }

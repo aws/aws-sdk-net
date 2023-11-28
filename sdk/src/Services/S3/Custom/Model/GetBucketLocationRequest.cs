@@ -25,20 +25,37 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketLocation operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
     /// request parameter in a <code>CreateBucket</code> request. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
-    /// 
-    ///  
-    /// <para>
-    /// To use this implementation of the operation, you must be the bucket owner.
     /// </para>
     ///  
     /// <para>
-    /// To use this API against an access point, provide the alias of the access point in
-    /// place of the bucket name.
+    /// When you use this API operation with an access point, provide the alias of the access
+    /// point in place of the bucket name.
     /// </para>
     ///  
+    /// <para>
+    /// When you use this API operation with an Object Lambda access point, provide the alias
+    /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
+    /// access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code>
+    /// is returned. For more information about <code>InvalidAccessPointAliasError</code>,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+    /// of Error Codes</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+    /// to return the Region that a bucket resides in. For backward compatibility, Amazon
+    /// S3 continues to support GetBucketLocation.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The following operations are related to <code>GetBucketLocation</code>:
     /// </para>
@@ -58,7 +75,24 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
-        /// Gets and sets the BucketName.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket for which to get the location.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an access point, provide the alias of the access
+        /// point in place of the bucket name.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an Object Lambda access point, provide the alias
+        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
+        /// access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code>
+        /// is returned. For more information about <code>InvalidAccessPointAliasError</code>,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+        /// of Error Codes</a>.
+        /// </para>
         /// </summary>
         public string BucketName { get; set; }
         private string expectedBucketOwner;
@@ -70,8 +104,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

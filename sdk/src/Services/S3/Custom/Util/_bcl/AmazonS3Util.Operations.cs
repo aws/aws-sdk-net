@@ -57,6 +57,7 @@ namespace Amazon.S3.Util
                     // A redirect error or a forbidden error means the bucket exists.
                     case "AccessDenied":
                     case "PermanentRedirect":
+                    case "UnknownOperationException":
                         return true;
                     case "NoSuchBucket":
                         return false;

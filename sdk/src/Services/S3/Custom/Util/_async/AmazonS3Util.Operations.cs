@@ -195,9 +195,14 @@ namespace Amazon.S3.Util
             {
                 BucketName = bucketName
             };
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = bucketName
+            };
 
-            ListVersionsResponse listVersionsResponse;
-
+            ListVersionsResponse listVersionsResponse = null;
+            ListObjectsV2Response listObjectsV2Response = null;
+            bool isTruncated = false;
             // Iterate through the objects in the bucket and delete them.
             do
             {
@@ -208,25 +213,46 @@ namespace Amazon.S3.Util
                     return;
                 }
 
+                List<KeyVersion> keyVersionList;
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest,token).ConfigureAwait(false);
-
-                if (listVersionsResponse.Versions.Count == 0)
+                try
                 {
-                    // If the bucket has no objects break the loop.
-                    break;
-                }
-
-                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
-                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
-                {
-                    keyVersionList.Add(new KeyVersion
+                    listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest, token).ConfigureAwait(false);
+                    if (listVersionsResponse.Versions.Count == 0)
                     {
-                        Key = listVersionsResponse.Versions[index].Key,
-                        VersionId = listVersionsResponse.Versions[index].VersionId
-                    });
-                }
+                        // If the bucket has no objects break the loop.
+                        break;
+                    }
 
+                    keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
+                    for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
+                    {
+                        keyVersionList.Add(new KeyVersion
+                        {
+                            Key = listVersionsResponse.Versions[index].Key,
+                            VersionId = listVersionsResponse.Versions[index].VersionId
+                        });
+                    }
+                }
+                catch (AmazonS3Exception ex)
+                {
+                    if (ex.StatusCode != HttpStatusCode.NotImplemented)
+                        throw;
+                    listObjectsV2Response = await s3Client.ListObjectsV2Async(listObjectsV2Request).ConfigureAwait(false);
+                    if (listObjectsV2Response.S3Objects.Count == 0)
+                    {
+                        // If the bucket has no objects break the loop.
+                        break;
+                    }
+                    keyVersionList = new List<KeyVersion>(listObjectsV2Response.S3Objects.Count);
+                    for (int index = 0; index < listObjectsV2Response.S3Objects.Count; index++)
+                    {
+                        keyVersionList.Add(new KeyVersion
+                        {
+                            Key = listObjectsV2Response.S3Objects[index].Key,
+                        });
+                    }
+                }
                 try
                 {
                     // Delete the current set of objects.
@@ -235,7 +261,7 @@ namespace Amazon.S3.Util
                         BucketName = bucketName,
                         Objects = keyVersionList,
                         Quiet = deleteOptions.QuietMode
-                    },token).ConfigureAwait(false);
+                    }, token).ConfigureAwait(false);
 
                     if (!deleteOptions.QuietMode)
                     {
@@ -271,14 +297,22 @@ namespace Amazon.S3.Util
                         throw;
                     }
                 }
-
                 // Set the markers to get next set of objects from the bucket.
-                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
-                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+                if (listVersionsResponse != null)
+                {
+                    listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
+                    listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+                    isTruncated = listVersionsResponse.IsTruncated;
+                }
+                if(listObjectsV2Response != null)
+                {
+                    listObjectsV2Request.ContinuationToken = listObjectsV2Response.NextContinuationToken;
+                    isTruncated = listObjectsV2Response.IsTruncated;
+                }
 
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (isTruncated);
 
             const int maxRetries = 10;
             for (int retries = 1; retries <= maxRetries; retries++)
@@ -289,7 +323,7 @@ namespace Amazon.S3.Util
                     await s3Client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = bucketName
-                    },token).ConfigureAwait(false);
+                    }, token).ConfigureAwait(false);
                     break;
                 }
                 catch (AmazonS3Exception e)

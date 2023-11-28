@@ -110,6 +110,31 @@ namespace Amazon.S3.Transfer.Internal
             return downloadRequest;
         }
 
+        private ListObjectsV2Request ConstructListObjectRequestV2()
+        {
+            ListObjectsV2Request listRequestV2 = new ListObjectsV2Request();
+            listRequestV2.BucketName = this._request.BucketName;
+            listRequestV2.Prefix = this._request.S3Directory;
+
+            listRequestV2.Prefix = listRequestV2.Prefix.Replace('\\', '/');
+
+            if (!this._request.DisableSlashCorrection)
+            {
+                if (!listRequestV2.Prefix.EndsWith("/", StringComparison.Ordinal))
+                    listRequestV2.Prefix += "/";
+            }
+
+            if (listRequestV2.Prefix.StartsWith("/", StringComparison.Ordinal))
+            {
+                if (listRequestV2.Prefix.Length == 1)
+                    listRequestV2.Prefix = "";
+                else
+                    listRequestV2.Prefix = listRequestV2.Prefix.Substring(1);
+            }
+
+            return listRequestV2;
+        }
+
         private ListObjectsRequest ConstructListObjectRequest()
         {
             ListObjectsRequest listRequest = new ListObjectsRequest();

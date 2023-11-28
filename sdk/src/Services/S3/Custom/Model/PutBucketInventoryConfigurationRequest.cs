@@ -23,10 +23,16 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketInventoryConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// This implementation of the <code>PUT</code> action adds an inventory configuration
     /// (identified by the inventory ID) to the bucket. You can have up to 1,000 inventory
     /// configurations per bucket. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon S3 inventory generates inventories of the objects in the bucket on a daily
@@ -54,7 +60,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use this operation, you must have permissions to perform the <code>s3:PutInventoryConfiguration</code>
+    /// To use this operation, you must have permission to perform the <code>s3:PutInventoryConfiguration</code>
     /// action. The bucket owner has this permission by default and can grant this permission
     /// to others. 
     /// </para>
@@ -85,6 +91,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>Code:</i> InvalidArgument
     /// </para>
+    ///  
     /// <para>
     ///  <i>Cause:</i> Invalid Argument
     /// </para>
@@ -92,11 +99,12 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>Code:</i> TooManyConfigurations
     /// </para>
+    ///  
     /// <para>
     ///  <i>Cause:</i> You are attempting to create a new configuration but have already reached
     /// the 1,000-configuration limit. 
     /// </para>
-    ///  </dd> <dt>HTTP 400 Bad Request Error</dt> <dd> 
+    ///  </dd> <dt>HTTP 403 Forbidden Error</dt> <dd> 
     /// <para>
     ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
     /// <code>s3:PutInventoryConfiguration</code> bucket permission to set the configuration
@@ -176,8 +184,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

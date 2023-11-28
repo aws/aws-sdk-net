@@ -100,7 +100,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Owner property.
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// Specifies the owner of the object that is part of the multipart upload. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - The bucket owner is returned as the object owner for all
+        /// the objects.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Owner Owner
         {
@@ -115,8 +124,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageClass. 
+        /// <para>
         /// The class of storage used to store the object.
-        ///  
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported
+        /// by directory buckets to store objects.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3StorageClass StorageClass
         {

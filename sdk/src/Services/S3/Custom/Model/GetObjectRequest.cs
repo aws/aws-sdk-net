@@ -26,162 +26,139 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetObject operation.
-    /// Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code>
-    /// access to the object. If you grant <code>READ</code> access to the anonymous user,
-    /// you can return the object without using an authorization header.
+    /// Retrieves an object from Amazon S3.
     /// 
     ///  
     /// <para>
-    /// An Amazon S3 bucket has no directory hierarchy such as you would find in a typical
-    /// computer file system. You can, however, create a logical hierarchy by using object
-    /// key names that imply a folder structure. For example, instead of naming an object
-    /// <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.
+    /// In the <code>GetObject</code> request, specify the full key name for the object.
     /// </para>
     ///  
     /// <para>
-    /// To get an object from such a logical hierarchy, specify the full key name for the
-    /// object in the <code>GET</code> operation. For a virtual hosted-style request example,
-    /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
-    /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
-    /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-    /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+    ///  <b>General purpose buckets</b> - Both the virtual-hosted-style requests and the path-style
+    /// requests are supported. For a virtual hosted-style request example, if you have the
+    /// object <code>photos/2006/February/sample.jpg</code>, specify the object key name as
+    /// <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if
+    /// you have the object <code>photos/2006/February/sample.jpg</code> in the bucket named
+    /// <code>examplebucket</code>, specify the object key name as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
     /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
-    /// Host Header Bucket Specification</a>.
+    /// Host Header Bucket Specification</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about returning the ACL of an object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
+    ///  <b>Directory buckets</b> - Only virtual-hosted-style requests are supported. For
+    /// a virtual hosted-style request example, if you have the object <code>photos/2006/February/sample.jpg</code>
+    /// in the bucket named <code>examplebucket--use1-az5--x-s3</code>, specify the object
+    /// key name as <code>/photos/2006/February/sample.jpg</code>. Also, when you make requests
+    /// to this API operation, your requests are sent to the Zonal endpoint. These endpoints
+    /// support virtual-hosted-style requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+    /// <para>
+    ///  <b>General purpose bucket permissions</b> - You must have the required permissions
+    /// in a policy. To use <code>GetObject</code>, you must have the <code>READ</code> access
+    /// to the object (or version). If you grant <code>READ</code> access to the anonymous
+    /// user, the <code>GetObject</code> operation returns the object without using an authorization
+    /// header. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+    /// permissions in a policy</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval or
-    /// S3 Glacier Deep Archive storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering
-    /// Deep Archive tiers, before you can retrieve the object you must first restore a copy
-    /// using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
-    /// Otherwise, this action returns an <code>InvalidObjectState</code> error. For information
-    /// about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
-    /// Archived Objects</a>.
+    /// If you include a <code>versionId</code> in your request header, you must have the
+    /// <code>s3:GetObjectVersion</code> permission to access a specific version of an object.
+    /// The <code>s3:GetObject</code> permission is not required in this scenario.
     /// </para>
     ///  
     /// <para>
-    /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-    /// not be sent for GET requests if your object uses server-side encryption with Key Management
-    /// Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with Amazon Web Services
-    /// KMS keys (DSSE-KMS), or server-side encryption with Amazon S3 managed encryption keys
-    /// (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400 Bad
-    /// Request error.
+    /// If you request the current version of an object without a specific <code>versionId</code>
+    /// in the request header, only the <code>s3:GetObject</code> permission is required.
+    /// The <code>s3:GetObjectVersion</code> permission is not required in this scenario.
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// If you encrypt an object by using server-side encryption with customer-provided encryption
-    /// keys (SSE-C) when you store the object in Amazon S3, then when you GET the object,
-    /// you must use the following headers:
+    /// If the object that you request doesn’t exist, the error that Amazon S3 returns depends
+    /// on whether you also have the <code>s3:ListBucket</code> permission.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-algorithm</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-key</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-key-MD5</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-    /// Encryption (Using Customer-Provided Encryption Keys)</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Assuming you have the relevant permission to read object tags, the response also returns
-    /// the <code>x-amz-tagging-count</code> header that provides the count of number of tags
-    /// associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
-    /// to retrieve the tag set associated with an object.
-    /// </para>
-    ///  <dl> <dt>Permissions</dt> <dd> 
-    /// <para>
-    /// You need the relevant read object (or version) permission for this operation. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-    /// Permissions in a Policy</a>. If the object that you request doesn’t exist, the error
-    /// that Amazon S3 returns depends on whether you also have the <code>s3:ListBucket</code>
-    /// permission.
-    /// </para>
-    ///  
-    /// <para>
     /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
-    /// an HTTP status code 404 (Not Found) error.
+    /// an HTTP status code <code>404 Not Found</code> error.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
     /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
-    /// HTTP status code 403 ("access denied") error.
+    /// HTTP status code <code>403 Access Denied</code> error.
     /// </para>
-    ///  </dd> <dt>Versioning</dt> <dd> 
+    ///  </li> </ul> </li> <li> 
     /// <para>
-    /// By default, the <code>GET</code> action returns the current version of an object.
-    /// To return a different version, use the <code>versionId</code> subresource.
+    ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+    /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
+    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// API call on the bucket to obtain a session token. With the session token in your request
+    /// header, you can make API requests to this operation. After the session token expires,
+    /// you make another <code>CreateSession</code> API call to generate a new session token
+    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// automatically to avoid service interruptions when a session expires. For more information
+    /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+    /// <code>CreateSession</code> </a>.
     /// </para>
-    ///  <note> <ul> <li> 
+    ///  </li> </ul> </dd> <dt>Storage classes</dt> <dd> 
     /// <para>
-    /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
-    /// permission to access a specific version of an object. If you request a specific version,
-    /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
-    /// current version without a specific version ID, only <code>s3:GetObject</code> permission
-    /// is required. <code>s3:GetObjectVersion</code> permission won't be required.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
-    /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If the specified version is a delete marker, the response returns a 405 (Method Not
-    /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
-    /// </para>
-    ///  </li> </ul> </note> 
-    /// <para>
-    /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
-    /// 
-    /// </para>
-    ///  </dd> <dt>Overriding Response Header Values</dt> <dd> 
-    /// <para>
-    /// There are times when you want to override certain response header values in a <code>GET</code>
-    /// response. For example, you might override the <code>Content-Disposition</code> response
-    /// header value in your <code>GET</code> request.
+    /// If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage
+    /// class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive
+    /// Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can
+    /// retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+    /// Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information
+    /// about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
+    /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can override values for a set of response headers using the following query parameters.
-    /// These response header values are sent only on a successful request, that is, when
-    /// status code 200 OK is returned. The set of headers you can override using these parameters
-    /// is a subset of the headers that Amazon S3 accepts when you create an object. The response
-    /// headers that you can override for the <code>GET</code> response are <code>Content-Type</code>,
-    /// <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>, <code>Content-Disposition</code>,
-    /// and <code>Content-Encoding</code>. To override these header values in the <code>GET</code>
-    /// response, you use the following request parameters.
+    ///  <b>Directory buckets </b> - For directory buckets, only the S3 Express One Zone storage
+    /// class is supported to store newly created objects. Unsupported storage class values
+    /// won't write a destination object and will respond with the HTTP status code <code>400
+    /// Bad Request</code>.
     /// </para>
-    ///  <note> 
+    ///  </dd> <dt>Encryption</dt> <dd> 
     /// <para>
-    /// You must sign the request, either using an Authorization header or a presigned URL,
-    /// when using these parameters. They cannot be used with an unsigned (anonymous) request.
+    /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
+    /// not be sent for the <code>GetObject</code> requests, if your object uses server-side
+    /// encryption with Amazon S3 managed encryption keys (SSE-S3), server-side encryption
+    /// with Key Management Service (KMS) keys (SSE-KMS), or dual-layer server-side encryption
+    /// with Amazon Web Services KMS keys (DSSE-KMS). If you include the header in your <code>GetObject</code>
+    /// requests for the object that uses these types of keys, you’ll get an HTTP <code>400
+    /// Bad Request</code> error.
     /// </para>
-    ///  </note> <ul> <li> 
+    ///  </dd> <dt>Overriding response header values through the request</dt> <dd> 
     /// <para>
-    ///  <code>response-content-type</code> 
+    /// There are times when you want to override certain response header values of a <code>GetObject</code>
+    /// response. For example, you might override the <code>Content-Disposition</code> response
+    /// header value through your <code>GetObject</code> request.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <code>response-content-language</code> 
+    /// You can override values for a set of response headers. These modified response header
+    /// values are included only in a successful response, that is, when the HTTP status code
+    /// <code>200 OK</code> is returned. The headers you can override using the following
+    /// query parameters in the request are a subset of the headers that Amazon S3 accepts
+    /// when you create an object. 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <code>response-expires</code> 
+    /// The response headers that you can override for the <code>GetObject</code> response
+    /// are <code>Cache-Control</code>, <code>Content-Disposition</code>, <code>Content-Encoding</code>,
+    /// <code>Content-Language</code>, <code>Content-Type</code>, and <code>Expires</code>.
     /// </para>
-    ///  </li> <li> 
+    ///  
+    /// <para>
+    /// To override values for a set of response headers in the <code>GetObject</code> response,
+    /// you can use the following query parameters in the request.
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     ///  <code>response-cache-control</code> 
     /// </para>
@@ -193,24 +170,27 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <code>response-content-encoding</code> 
     /// </para>
-    ///  </li> </ul> </dd> <dt>Overriding Response Header Values</dt> <dd> 
+    ///  </li> <li> 
     /// <para>
-    /// If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers
-    /// are present in the request as follows: <code>If-Match</code> condition evaluates to
-    /// <code>true</code>, and; <code>If-Unmodified-Since</code> condition evaluates to <code>false</code>;
-    /// then, S3 returns 200 OK and the data requested. 
+    ///  <code>response-content-language</code> 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers
-    /// are present in the request as follows:<code> If-None-Match</code> condition evaluates
-    /// to <code>false</code>, and; <code>If-Modified-Since</code> condition evaluates to
-    /// <code>true</code>; then, S3 returns 304 Not Modified response code.
+    ///  <code>response-content-type</code> 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
-    /// 7232</a>.
+    ///  <code>response-expires</code> 
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// When you use these parameters, you must sign the request by using either an Authorization
+    /// header or a presigned URL. These parameters cannot be used with an unsigned (anonymous)
+    /// request.
+    /// </para>
+    ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+    /// <para>
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -258,8 +238,20 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
+        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// Path-style requests are not supported. Directory bucket names must be unique in the
+        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
+        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
         /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
@@ -267,12 +259,19 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.
+        ///  <b>Object Lambda access points</b> - When you use this action with an Object Lambda
+        /// access point, you must direct requests to the Object Lambda access point hostname.
+        /// The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// Access points and Object Lambda access points are not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
+        /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
+        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -294,8 +293,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The account ID of the expected bucket owner. If the bucket is owned by a different
-        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -534,6 +534,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
         ///  
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
@@ -561,6 +566,11 @@ namespace Amazon.S3.Model
         /// <para>
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
@@ -571,6 +581,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Checks if ServerSideEncryptionCustomerProvidedKey property is set.
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
         internal bool IsSetServerSideEncryptionCustomerProvidedKey()
@@ -581,6 +596,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
         /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ServerSideEncryptionCustomerProvidedKeyMD5
         {
@@ -590,6 +610,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Checks if ServerSideEncryptionCustomerProvidedKeyMD5 property is set.
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
@@ -599,6 +624,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// VersionId used to reference a specific version of the object.
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string VersionId
         {

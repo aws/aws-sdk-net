@@ -35,9 +35,18 @@ namespace Amazon.S3.Model
         private string versionId;
 
         /// <summary>
-        /// Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a 
-        /// delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete 
-        /// marker was created.
+        /// Gets and sets the property DeleteMarker. 
+        /// <para>
+        /// Indicates whether the specified object version that was permanently deleted was (true)
+        /// or was not (false) a delete marker before deletion. In a simple DELETE, this header
+        /// indicates whether (true) or not (false) the current version of the object is a delete
+        /// marker.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool DeleteMarker
         {
@@ -52,9 +61,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The version ID of the delete marker created as a result of the DELETE operation. If you delete a 
-        /// specific object version, the value returned by this header is the version ID of the object version 
-        /// deleted.
+        /// Gets and sets the property DeleteMarkerVersionId. 
+        /// <para>
+        /// The version ID of the delete marker created as a result of the DELETE operation. If
+        /// you delete a specific object version, the value returned by this header is the version
+        /// ID of the object version deleted.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DeleteMarkerVersionId
         {
@@ -69,7 +86,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The key of the deleted S3 object.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The name of the deleted object.
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -84,7 +104,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The version of the deleted S3 object.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The version ID of the deleted object.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string VersionId
         {

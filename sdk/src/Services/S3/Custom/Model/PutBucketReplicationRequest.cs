@@ -25,16 +25,24 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketReplication operation.
-    /// Creates a replication configuration or replaces an existing one. For more information,
+    /// <note> 
+    /// <para>
+    /// This operation is not supported by directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  Creates a replication configuration or replaces an existing one. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
     /// in the <i>Amazon S3 User Guide</i>. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Specify the replication configuration in the request body. In the replication configuration,
     /// you provide the name of the destination bucket or buckets where you want Amazon S3
     /// to replicate objects, the IAM role that Amazon S3 can assume to replicate objects
-    /// on your behalf, and other relevant information.
+    /// on your behalf, and other relevant information. You can invoke this request for a
+    /// specific Amazon Web Services Region by using the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requestedregion">
+    /// <code>aws:RequestedRegion</code> </a> condition key.
     /// </para>
     ///  
     /// <para>
@@ -65,11 +73,11 @@ namespace Amazon.S3.Model
     ///  <dl> <dt>Handling Replication of Encrypted Objects</dt> <dd> 
     /// <para>
     /// By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
-    /// encryption with CMKs stored in Amazon Web Services KMS. To replicate Amazon Web Services
-    /// KMS-encrypted objects, add the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
+    /// encryption with KMS keys. To replicate Amazon Web Services KMS-encrypted objects,
+    /// add the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
     /// <code>Status</code>, <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>.
     /// For information about replication configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
-    /// Objects Created with SSE Using CMKs stored in Amazon Web Services KMS</a>.
+    /// Objects Created with SSE Using KMS keys</a>.
     /// </para>
     ///  
     /// <para>
@@ -140,10 +148,18 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
+        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -161,8 +177,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The account ID of the expected bucket owner. If the bucket is owned by a different
-        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <code>403 Forbidden</code> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

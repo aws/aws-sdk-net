@@ -24,10 +24,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static string CreateBucket(IAmazonS3 s3Client)
         {
             string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+
             s3Client.PutBucket(new PutBucketRequest { BucketName = bucketName });
             return bucketName;
         }
-                
+
         public static string CreateBucket(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
             string bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
@@ -39,7 +40,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             s3Client.PutBucket(bucketRequest);
             return bucketName;
         }
+        public static string CreateS3ExpressBucketWithWait(IAmazonS3 s3Client, string regionCode, bool setPublicACLs = false)
+        {
+            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{DateTime.Now.Ticks}--{regionCode}--x-s3";
 
+            s3Client.PutBucket(new PutBucketRequest
+            {
+                BucketName = bucketName,
+                PutBucketConfiguration = new PutBucketConfiguration
+                {
+                    BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
+                    Location = new LocationInfo { Name = regionCode, Type = LocationType.AvailabilityZone }
+                }
+            });
+            WaitForBucket(s3Client, bucketName, true);
+
+
+            return bucketName;
+        }
         public static string CreateBucketWithWait(IAmazonS3 s3Client, bool setPublicACLs = false)
         {
             string bucketName = CreateBucket(s3Client);
@@ -86,12 +104,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-        public static void WaitForBucket(IAmazonS3 client, string bucketName)
-        {
-            WaitForBucket(client, bucketName, 30);
-        }
 
-        public static void WaitForBucket(IAmazonS3 client, string bucketName, int maxSeconds)
+        public static void WaitForBucket(IAmazonS3 client, string bucketName, bool skipDoubleCheck = false)
         {
             var sleeper = UtilityMethods.ListSleeper.Create();
             UtilityMethods.WaitUntilSuccess(() => {
@@ -116,6 +130,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 return true;
             });
+
+            if (skipDoubleCheck) return;
 
             //Double check the bucket still exists using the DoesBucketExistV2 method
             var exists = S3TestUtils.WaitForConsistency(() =>
@@ -283,18 +299,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         public static T WaitForConsistency<T>(Func<T> loadFunction)
-        {                        
+        {
             //First try waiting up to 60 seconds.    
             var firstWaitSeconds = 60;
             try
             {
-                return UtilityMethods.WaitUntilSuccess(loadFunction, 10, firstWaitSeconds);                
+                return UtilityMethods.WaitUntilSuccess(loadFunction, 10, firstWaitSeconds);
             }
             catch
             {
                 Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {firstWaitSeconds} seconds. Attempting to resolve...");
             }
-            
+
             //Spin through request to try to get the expected result. As soon as we get a non null result use it.
             for (var spinCounter = 0; spinCounter < MAX_SPIN_LOOPS; spinCounter++)
             {
@@ -322,7 +338,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             //If we don't have an ok result then spend the normal wait period to wait for eventual consistency.
             Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {MAX_SPIN_LOOPS}. Waiting normally...");
             var lastWaitSeconds = 240; //4 minute wait.
-            return UtilityMethods.WaitUntilSuccess(loadFunction, 5, lastWaitSeconds);                        
+            return UtilityMethods.WaitUntilSuccess(loadFunction, 5, lastWaitSeconds);
         }
 
         /// <summary>
@@ -382,7 +398,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         public static void TestWithVariableSigV4(Action action, bool useSigV4)
         {
-            using(var sigv4 = UseSignatureVersion4(useSigV4))
+            using (var sigv4 = UseSignatureVersion4(useSigV4))
             {
                 action();
             }

@@ -18,6 +18,7 @@ using System.Xml.Serialization;
 using System.Text;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
@@ -25,8 +26,110 @@ namespace Amazon.S3.Model
     /// Returns information about the HeadBucket response metadata.
     /// The HeadBucket operation has a void result type.
     /// </summary>
-    internal partial class HeadBucketResponse : AmazonWebServiceResponse
+    public partial class HeadBucketResponse : AmazonWebServiceResponse
     {
+        private bool? _accessPointAlias;
+        private string _bucketLocationName;
+        private LocationType _bucketLocationType;
+        private string _bucketRegion;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointAlias. 
+        /// <para>
+        /// Indicates whether the bucket name used in the request is an access point alias.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool AccessPointAlias
+        {
+            get { return this._accessPointAlias.GetValueOrDefault(); }
+            set { this._accessPointAlias = value; }
+        }
+
+        // Check to see if AccessPointAlias property is set
+        internal bool IsSetAccessPointAlias()
+        {
+            return this._accessPointAlias.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketLocationName. 
+        /// <para>
+        /// The name of the location where the bucket will be created.
+        /// </para>
+        ///  
+        /// <para>
+        /// For directory buckets, the AZ ID of the Availability Zone where the bucket is created.
+        /// An example AZ ID value is <code>usw2-az2</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is only supported by directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string BucketLocationName
+        {
+            get { return this._bucketLocationName; }
+            set { this._bucketLocationName = value; }
+        }
+
+        // Check to see if BucketLocationName property is set
+        internal bool IsSetBucketLocationName()
+        {
+            return this._bucketLocationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketLocationType. 
+        /// <para>
+        /// The type of location where the bucket is created.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is only supported by directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LocationType BucketLocationType
+        {
+            get { return this._bucketLocationType; }
+            set { this._bucketLocationType = value; }
+        }
+
+        // Check to see if BucketLocationType property is set
+        internal bool IsSetBucketLocationType()
+        {
+            return this._bucketLocationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketRegion. 
+        /// <para>
+        /// The Region that the bucket is located.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 20)]
+        public string BucketRegion
+        {
+            get { return this._bucketRegion; }
+            set { this._bucketRegion = value; }
+        }
+
+        // Check to see if BucketRegion property is set
+        internal bool IsSetBucketRegion()
+        {
+            return this._bucketRegion != null;
+        }
     }
 }
     

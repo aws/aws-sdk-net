@@ -6,6 +6,19 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
+    /// <summary>
+    /// Specifies the restoration status of an object. Objects in certain storage classes
+    /// must be restored before they can be retrieved. For more information about these storage
+    /// classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+    /// Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This functionality is not supported for directory buckets. Only the S3 Express One
+    /// Zone storage class is supported by directory buckets to store objects.
+    /// </para>
+    ///  </note>
+    /// </summary>
     public class RestoreStatus
     {
         private bool? _isRestoreInProgress;
