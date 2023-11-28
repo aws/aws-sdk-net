@@ -1,3 +1,17 @@
+### 3.7.695.0 (2023-11-28 05:39 UTC)
+* BedrockRuntime (3.7.300.10)
+	* Remove custom code for PayloadPart and add integration tests for event stream apis.
+* ElastiCache (3.7.301.0)
+	* Launching Amazon ElastiCache Serverless that enables you to create a cache in under a minute without any capacity management. ElastiCache Serverless monitors the cache's memory, CPU, and network usage and scales both vertically and horizontally to support your application's requirements.
+* Lambda (3.7.303.6)
+	* Deprecate constructors that take in IEventStreamMessage for InvokeWithResponseStreamCompleteEvent and InvokeWithResponseStreamUpdate. This was used internally in the SDK and there is no customer impact.
+* SageMakerRuntime (3.7.300.10)
+	* Deprecate constructor for PayloadPart that takes in IEventStreamMessage. This was used internally in the SDK and there is no customer impact.
+* Core 3.7.300.10
+	* Update code generation for event streams to work with non-blob/string payloads and add support for streaming exceptions from event stream responses
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.694.0 (2023-11-27 20:15 UTC)
 * AppSync (3.7.301.0)
 	* This update enables introspection of Aurora cluster databases using the RDS Data API
