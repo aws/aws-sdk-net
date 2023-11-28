@@ -789,14 +789,31 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         protected override void Dispose(bool disposing)
         {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
 ");
             
-            #line 319 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 314 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+
+        if(this.Config.ServiceId == "S3")
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write("            var clientConfig = this.Config as AmazonS3Config;\r\n            if (cl" +
+                    "ientConfig != null && clientConfig.S3ExpressCredentialProvider != null)\r\n       " +
+                    "     {\r\n                clientConfig.S3ExpressCredentialProvider.Dispose();\r\n   " +
+                    "         }\r\n");
+            
+            #line 323 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+
+        }
+
+            
+            #line default
+            #line hidden
+            this.Write("            base.Dispose(disposing);\r\n        }\r\n\r\n        #endregion\r\n\r\n");
+            
+            #line 331 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         var endpointOperation = this.Config.ServiceModel.FindEndpointOperation();
         if(endpointOperation != null)
@@ -813,14 +830,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             {
 				var request = new ");
             
-            #line 330 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 342 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpointOperation.Name));
             
             #line default
             #line hidden
             this.Write("Request\r\n\t\t\t\t{\r\n");
             
-            #line 332 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 344 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         if(endpointOperation.RequestHasOperationEndpointOperationMember)
         {
@@ -830,7 +847,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t\t\t    Operation = context.OperationName,\r\n");
             
-            #line 337 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 349 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         }
         if(endpointOperation.RequestHasIdentifiersEndpointOperationMember)
@@ -842,7 +859,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\t\t\t\t    Identifiers = new Dictionary<string, string>(context.EndpointDiscoveryDat" +
                     "a.Identifiers),\r\n");
             
-            #line 343 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 355 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         }
 
@@ -851,7 +868,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t\t\t};                \r\n\r\n\t\t\t\tvar response = ");
             
-            #line 348 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 360 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpointOperation.Name));
             
             #line default
@@ -875,7 +892,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         #endregion
 ");
             
-            #line 365 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 377 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         }
 
@@ -889,14 +906,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n        #region  ");
             
-            #line 374 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 386 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 375 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 387 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
@@ -909,14 +926,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 382 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 394 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 383 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 395 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
 		}
 
@@ -925,35 +942,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        public virtual ");
             
-            #line 386 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 398 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 386 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 398 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n            return ");
             
-            #line 388 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 400 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 388 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 400 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request());\r\n        }\r\n");
             
-            #line 390 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 402 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         }
         AddSimpleClientMethods(operation, true);
@@ -962,7 +979,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 394 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 406 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         this.FormatOperationDocumentationSync(operation, true);
 		if(operation.IsDeprecated)
@@ -973,14 +990,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 399 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 411 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 400 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 412 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 		
 		}
 
@@ -989,28 +1006,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        ");
             
-            #line 403 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 415 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" virtual ");
             
-            #line 403 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 415 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 403 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 415 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 403 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 415 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -1018,21 +1035,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Request request)\r\n        {\r\n            var options = new InvokeOptions();\r\n    " +
                     "        options.RequestMarshaller = ");
             
-            #line 406 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 418 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller.Instance;\r\n            options.ResponseUnmarshaller = ");
             
-            #line 407 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 419 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n");
             
-            #line 408 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 420 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
             if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
             {
@@ -1042,7 +1059,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            options.EndpointDiscoveryMarshaller = ");
             
-            #line 412 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 424 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -1050,7 +1067,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("EndpointDiscoveryMarshaller.Instance;\r\n            options.EndpointOperation = En" +
                     "dpointOperation;\r\n");
             
-            #line 414 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 426 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
             }
 
@@ -1059,14 +1076,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n            return Invoke<");
             
-            #line 418 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 430 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>(request, options);\r\n        }\r\n\r\n");
             
-            #line 421 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 433 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         AddBeginAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
@@ -1077,14 +1094,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 426 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 438 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 427 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 439 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 		
 		}
 
@@ -1093,21 +1110,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        ");
             
-            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 442 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" virtual IAsyncResult Begin");
             
-            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 442 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 442 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -1115,21 +1132,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Request request, AsyncCallback callback, object state)\r\n        {\r\n            va" +
                     "r options = new InvokeOptions();\r\n            options.RequestMarshaller = ");
             
-            #line 433 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 445 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller.Instance;\r\n            options.ResponseUnmarshaller = ");
             
-            #line 434 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 446 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n");
             
-            #line 435 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 447 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
             if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
             {
@@ -1139,7 +1156,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            options.EndpointDiscoveryMarshaller = ");
             
-            #line 439 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 451 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -1147,7 +1164,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("EndpointDiscoveryMarshaller.Instance;\r\n            options.EndpointOperation = En" +
                     "dpointOperation;\r\n");
             
-            #line 441 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 453 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
             }
 
@@ -1157,7 +1174,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n            return BeginInvoke(request, options, callback, state);\r\n        }\r\n" +
                     "\r\n");
             
-            #line 448 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 460 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         AddEndAsyncDocumentation(operation);		
 		if(operation.IsDeprecated)
@@ -1168,14 +1185,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 453 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 465 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 454 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 466 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 		
 		}
 
@@ -1184,35 +1201,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        ");
             
-            #line 457 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 469 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" virtual ");
             
-            #line 457 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 469 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response End");
             
-            #line 457 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 469 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(IAsyncResult asyncResult)\r\n        {\r\n            return EndInvoke<");
             
-            #line 459 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 471 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>(asyncResult);\r\n        }\r\n\r\n        #endregion\r\n        ");
             
-            #line 463 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 475 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
 
         }
         
@@ -1221,7 +1238,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n");
             
-            #line 467 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 479 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
  if (this.Config.EndpointsRuleSet != null) { 
             
             #line default
@@ -1245,7 +1262,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             var resolver = new Amazon");
             
-            #line 485 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 497 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -1253,7 +1270,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("EndpointResolver();\r\n            return resolver.GetEndpoint(executionContext);\r\n" +
                     "        }\r\n\r\n        #endregion\r\n\r\n");
             
-            #line 491 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
+            #line 503 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
  } 
             
             #line default

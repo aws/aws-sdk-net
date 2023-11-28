@@ -278,6 +278,11 @@ namespace Amazon.S3
         /// </summary>
         protected override void Dispose(bool disposing)
         {
+            var clientConfig = this.Config as AmazonS3Config;
+            if (clientConfig != null && clientConfig.S3ExpressCredentialProvider != null)
+            {
+                clientConfig.S3ExpressCredentialProvider.Dispose();
+            }
             base.Dispose(disposing);
         }
 

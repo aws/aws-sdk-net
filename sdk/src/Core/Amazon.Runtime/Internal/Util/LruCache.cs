@@ -309,7 +309,8 @@ namespace Amazon.Runtime.Internal.Util
     {
         public TValue Value { get; set; }
         public TKey Key { get; private set; }
-        internal DateTime LastTouchedTimestamp { get; set; }
+        public DateTime LastTouchedTimestamp { get; set; }
+
         public LruListItem<TKey, TValue> Next { get; set; }
         public LruListItem<TKey, TValue> Previous { get; set; }
 

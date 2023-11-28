@@ -310,6 +310,18 @@ namespace <#=this.Config.Namespace#>
         /// </summary>
         protected override void Dispose(bool disposing)
         {
+<#
+        if(this.Config.ServiceId == "S3")
+        {
+#>
+            var clientConfig = this.Config as AmazonS3Config;
+            if (clientConfig != null && clientConfig.S3ExpressCredentialProvider != null)
+            {
+                clientConfig.S3ExpressCredentialProvider.Dispose();
+            }
+<#
+        }
+#>
             base.Dispose(disposing);
         }
 

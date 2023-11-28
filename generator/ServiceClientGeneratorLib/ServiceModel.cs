@@ -549,6 +549,7 @@ namespace ServiceClientGenerator
                     if ((ServiceId == "S3" || ServiceId == "S3 Control") && (
                         param.Key == "UseArnRegion" ||
                         param.Key == "DisableMultiRegionAccessPoints" ||
+                        param.Key == "DisableS3ExpressSessionAuth" ||
                         param.Key == "Accelerate" ||
                         param.Key == "ForcePathStyle"))
                     {

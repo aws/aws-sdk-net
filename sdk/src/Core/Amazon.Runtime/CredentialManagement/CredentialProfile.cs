@@ -85,6 +85,11 @@ namespace Amazon.Runtime.CredentialManagement
         public bool? S3UseArnRegion { get; set; }
 
         /// <summary>
+        /// Disables this client's usage of Session Auth for S3Express buckets and reverts to using conventional SigV4.
+        /// </summary>
+        public bool? S3DisableExpressSessionAuth { get; set; }
+
+        /// <summary>
         /// If true, the use of multi-region access points is disabled.
         /// </summary>
         public bool? S3DisableMultiRegionAccessPoints { get; set; }

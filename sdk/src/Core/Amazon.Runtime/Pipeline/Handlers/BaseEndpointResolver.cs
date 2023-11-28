@@ -125,7 +125,7 @@ namespace Amazon.Runtime.Internal
         {
         }
 
-        private static readonly string[] SupportedAuthSchemas = { "sigv4", "sigv4a" };
+        private static readonly string[] SupportedAuthSchemas = { "sigv4-s3express", "sigv4", "sigv4a" };
         private static void SetAuthenticationAndHeaders(IRequest request, Endpoint endpoint)
         {
             if (endpoint.Attributes != null)
@@ -141,6 +141,7 @@ namespace Amazon.Runtime.Internal
                         {
                             switch (schemaName)
                             {
+                                case "sigv4-s3express":
                                 case "sigv4":
                                     {
                                         request.SignatureVersion = SignatureVersion.SigV4;

@@ -51,6 +51,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
         private const string S3UseArnRegionField = "S3UseArnRegion";
+        private const string S3DisableExpressSessionAuthField = "S3DisableExpressSessionAuth";
 
         private const string StsRegionalEndpointsField = "StsRegionalEndpoints";
 
@@ -78,6 +79,7 @@ namespace Amazon.Runtime.CredentialManagement
             RegionField,
             EndpointDiscoveryEnabledField,
             S3UseArnRegionField,
+            S3DisableExpressSessionAuthField,
             StsRegionalEndpointsField,
             S3RegionalEndpointField,
             S3DisableMultiRegionAccessPointsField,
@@ -245,6 +247,19 @@ namespace Amazon.Runtime.CredentialManagement
                         s3UseArnRegion = s3UseArnRegionOut;
                     }
 
+                    string s3DisableExpressSessionAuthString;
+                    bool? s3DisableExpressSessionAuth = null;
+                    if (reservedProperties.TryGetValue(S3DisableExpressSessionAuthField, out s3DisableExpressSessionAuthString))
+                    {
+                        bool s3DisableExpressSessionAuthOut;
+                        if (!bool.TryParse(s3DisableExpressSessionAuthString, out s3DisableExpressSessionAuthOut))
+                        {
+                            profile = null;
+                            return false;
+                        }
+                        s3DisableExpressSessionAuth = s3DisableExpressSessionAuthOut;
+                    }
+
                     string s3DisableMultiRegionAccessPointsString;
                     bool? s3DisableMultiRegionAccessPoints = null;
                     if (reservedProperties.TryGetValue(S3DisableMultiRegionAccessPointsField, out s3DisableMultiRegionAccessPointsString))
@@ -328,6 +343,7 @@ namespace Amazon.Runtime.CredentialManagement
                         EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                         StsRegionalEndpoints = stsRegionalEndpoints,
                         S3UseArnRegion = s3UseArnRegion,
+                        S3DisableExpressSessionAuth = s3DisableExpressSessionAuth,
                         S3RegionalEndpoint = s3RegionalEndpoint,
                         S3DisableMultiRegionAccessPoints = s3DisableMultiRegionAccessPoints,
                         RetryMode = requestRetryMode,
@@ -375,7 +391,10 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.S3UseArnRegion != null)
                     reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
-                    
+
+                if (profile.S3DisableExpressSessionAuth != null)
+                    reservedProperties[S3DisableExpressSessionAuthField] = profile.S3DisableExpressSessionAuth.Value.ToString().ToLowerInvariant();
+
                 if (profile.S3RegionalEndpoint != null)
                     reservedProperties[S3RegionalEndpointField] = profile.S3RegionalEndpoint.ToString().ToLowerInvariant();
 

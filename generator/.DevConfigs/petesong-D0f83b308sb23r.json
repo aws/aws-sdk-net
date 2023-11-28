@@ -1,0 +1,9 @@
+{
+    "services": [
+      {
+        "serviceName": "S3",
+        "type": "patch",
+        "description": "Add support for preSignedUrl for S3Express."
+      }
+    ]
+  }

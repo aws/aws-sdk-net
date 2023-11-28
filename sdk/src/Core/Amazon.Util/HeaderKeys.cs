@@ -110,5 +110,6 @@ namespace Amazon.Util
         public const string AmzSdkInvocationId = "amz-sdk-invocation-id";
         public const string AmzSdkRequest = "amz-sdk-request";
         public const string XAmzQueryError = "x-amzn-query-error";
+        public const string XAmzS3ExpressSessionTokenQueryParam = "X-Amz-S3session-Token";
     }
 }
