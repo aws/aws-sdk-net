@@ -112,6 +112,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         response.ReplicationGroups.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ServerlessCaches/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ServerlessCaches.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

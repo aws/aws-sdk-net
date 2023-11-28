@@ -137,6 +137,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     return InvalidReplicationGroupStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidServerlessCacheSnapshotStateFault"))
+                {
+                    return InvalidServerlessCacheSnapshotStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidServerlessCacheStateFault"))
+                {
+                    return InvalidServerlessCacheStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationGroupNotFoundFault"))
                 {
                     return ReplicationGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -144,6 +152,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedCacheNodeNotFound"))
                 {
                     return ReservedCacheNodeNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServerlessCacheNotFoundFault"))
+                {
+                    return ServerlessCacheNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServerlessCacheSnapshotNotFoundFault"))
+                {
+                    return ServerlessCacheSnapshotNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotNotFoundFault"))
                 {

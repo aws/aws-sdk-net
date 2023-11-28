@@ -86,6 +86,16 @@ namespace Amazon.ElastiCache.Model
         IDescribeReservedCacheNodesOfferingsPaginator DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeServerlessCaches operation
+        ///</summary>
+        IDescribeServerlessCachesPaginator DescribeServerlessCaches(DescribeServerlessCachesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeServerlessCacheSnapshots operation
+        ///</summary>
+        IDescribeServerlessCacheSnapshotsPaginator DescribeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeServiceUpdates operation
         ///</summary>
         IDescribeServiceUpdatesPaginator DescribeServiceUpdates(DescribeServiceUpdatesRequest request);

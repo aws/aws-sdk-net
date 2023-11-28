@@ -327,11 +327,24 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
+        /// The state of the serverless cache snapshot was not received. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
         /// The requested reserved cache node was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -656,6 +669,88 @@ namespace Amazon.ElastiCache
         public virtual CompleteMigrationResponse EndCompleteMigration(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteMigrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CopyServerlessCacheSnapshot
+
+        /// <summary>
+        /// Creates a copy of an existing serverless cache’s snapshot. Available for Redis only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyServerlessCacheSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CopyServerlessCacheSnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
+        /// The state of the serverless cache snapshot was not received. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
+        /// A serverless cache snapshot with this name already exists. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotQuotaExceededException">
+        /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
+        /// for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot">REST API Reference for CopyServerlessCacheSnapshot Operation</seealso>
+        public virtual CopyServerlessCacheSnapshotResponse CopyServerlessCacheSnapshot(CopyServerlessCacheSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CopyServerlessCacheSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyServerlessCacheSnapshot operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyServerlessCacheSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot">REST API Reference for CopyServerlessCacheSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginCopyServerlessCacheSnapshot(CopyServerlessCacheSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyServerlessCacheSnapshot.</param>
+        /// 
+        /// <returns>Returns a  CopyServerlessCacheSnapshotResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot">REST API Reference for CopyServerlessCacheSnapshot Operation</seealso>
+        public virtual CopyServerlessCacheSnapshotResponse EndCopyServerlessCacheSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyServerlessCacheSnapshotResponse>(asyncResult);
         }
 
         #endregion
@@ -1468,6 +1563,177 @@ namespace Amazon.ElastiCache
         public virtual CreateReplicationGroupResponse EndCreateReplicationGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReplicationGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateServerlessCache
+
+        /// <summary>
+        /// Creates a serverless cache.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServerlessCache service method.</param>
+        /// 
+        /// <returns>The response from the CreateServerlessCache service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCredentialsException">
+        /// You must enter valid credentials.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheAlreadyExistsException">
+        /// A serverless cache with this name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheQuotaForCustomerExceededException">
+        /// The number of serverless caches exceeds the customer quota.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache">REST API Reference for CreateServerlessCache Operation</seealso>
+        public virtual CreateServerlessCacheResponse CreateServerlessCache(CreateServerlessCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerlessCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerlessCacheResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServerlessCacheResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServerlessCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServerlessCache operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServerlessCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache">REST API Reference for CreateServerlessCache Operation</seealso>
+        public virtual IAsyncResult BeginCreateServerlessCache(CreateServerlessCacheRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerlessCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerlessCacheResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServerlessCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServerlessCache.</param>
+        /// 
+        /// <returns>Returns a  CreateServerlessCacheResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache">REST API Reference for CreateServerlessCache Operation</seealso>
+        public virtual CreateServerlessCacheResponse EndCreateServerlessCache(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServerlessCacheResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateServerlessCacheSnapshot
+
+        /// <summary>
+        /// This API creates a copy of an entire ServerlessCache at a specific moment in time.
+        /// Available for Redis only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServerlessCacheSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CreateServerlessCacheSnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
+        /// A serverless cache snapshot with this name already exists. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotQuotaExceededException">
+        /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
+        /// for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot">REST API Reference for CreateServerlessCacheSnapshot Operation</seealso>
+        public virtual CreateServerlessCacheSnapshotResponse CreateServerlessCacheSnapshot(CreateServerlessCacheSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServerlessCacheSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServerlessCacheSnapshot operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServerlessCacheSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot">REST API Reference for CreateServerlessCacheSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginCreateServerlessCacheSnapshot(CreateServerlessCacheSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServerlessCacheSnapshot.</param>
+        /// 
+        /// <returns>Returns a  CreateServerlessCacheSnapshotResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot">REST API Reference for CreateServerlessCacheSnapshot Operation</seealso>
+        public virtual CreateServerlessCacheSnapshotResponse EndCreateServerlessCacheSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServerlessCacheSnapshotResponse>(asyncResult);
         }
 
         #endregion
@@ -2424,6 +2690,148 @@ namespace Amazon.ElastiCache
         public virtual DeleteReplicationGroupResponse EndDeleteReplicationGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReplicationGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteServerlessCache
+
+        /// <summary>
+        /// Deletes a specified existing serverless cache.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCache service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServerlessCache service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCredentialsException">
+        /// You must enter valid credentials.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
+        /// A serverless cache snapshot with this name already exists. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache">REST API Reference for DeleteServerlessCache Operation</seealso>
+        public virtual DeleteServerlessCacheResponse DeleteServerlessCache(DeleteServerlessCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerlessCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerlessCacheResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServerlessCacheResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServerlessCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCache operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServerlessCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache">REST API Reference for DeleteServerlessCache Operation</seealso>
+        public virtual IAsyncResult BeginDeleteServerlessCache(DeleteServerlessCacheRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerlessCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerlessCacheResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServerlessCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServerlessCache.</param>
+        /// 
+        /// <returns>Returns a  DeleteServerlessCacheResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache">REST API Reference for DeleteServerlessCache Operation</seealso>
+        public virtual DeleteServerlessCacheResponse EndDeleteServerlessCache(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServerlessCacheResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteServerlessCacheSnapshot
+
+        /// <summary>
+        /// Deletes an existing serverless cache snapshot. Available for Redis only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCacheSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServerlessCacheSnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
+        /// The state of the serverless cache snapshot was not received. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot">REST API Reference for DeleteServerlessCacheSnapshot Operation</seealso>
+        public virtual DeleteServerlessCacheSnapshotResponse DeleteServerlessCacheSnapshot(DeleteServerlessCacheSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServerlessCacheSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCacheSnapshot operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServerlessCacheSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot">REST API Reference for DeleteServerlessCacheSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginDeleteServerlessCacheSnapshot(DeleteServerlessCacheSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServerlessCacheSnapshot.</param>
+        /// 
+        /// <returns>Returns a  DeleteServerlessCacheSnapshotResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot">REST API Reference for DeleteServerlessCacheSnapshot Operation</seealso>
+        public virtual DeleteServerlessCacheSnapshotResponse EndDeleteServerlessCacheSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServerlessCacheSnapshotResponse>(asyncResult);
         }
 
         #endregion
@@ -3651,6 +4059,141 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DescribeServerlessCaches
+
+        /// <summary>
+        /// Returns information about a specific serverless cache. If no identifier is specified,
+        /// then the API returns information on all the serverless caches belonging to this Amazon
+        /// Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessCaches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServerlessCaches service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches">REST API Reference for DescribeServerlessCaches Operation</seealso>
+        public virtual DescribeServerlessCachesResponse DescribeServerlessCaches(DescribeServerlessCachesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessCachesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServerlessCachesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServerlessCaches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessCaches operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServerlessCaches
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches">REST API Reference for DescribeServerlessCaches Operation</seealso>
+        public virtual IAsyncResult BeginDescribeServerlessCaches(DescribeServerlessCachesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessCachesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeServerlessCaches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServerlessCaches.</param>
+        /// 
+        /// <returns>Returns a  DescribeServerlessCachesResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches">REST API Reference for DescribeServerlessCaches Operation</seealso>
+        public virtual DescribeServerlessCachesResponse EndDescribeServerlessCaches(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeServerlessCachesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeServerlessCacheSnapshots
+
+        /// <summary>
+        /// Returns information about serverless cache snapshots. By default, this API lists all
+        /// of the customer’s serverless cache snapshots. It can also describe a single serverless
+        /// cache snapshot, or the snapshots associated with a particular serverless cache. Available
+        /// for Redis only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessCacheSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServerlessCacheSnapshots service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">REST API Reference for DescribeServerlessCacheSnapshots Operation</seealso>
+        public virtual DescribeServerlessCacheSnapshotsResponse DescribeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessCacheSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessCacheSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServerlessCacheSnapshotsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServerlessCacheSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessCacheSnapshots operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServerlessCacheSnapshots
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">REST API Reference for DescribeServerlessCacheSnapshots Operation</seealso>
+        public virtual IAsyncResult BeginDescribeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessCacheSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessCacheSnapshotsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeServerlessCacheSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServerlessCacheSnapshots.</param>
+        /// 
+        /// <returns>Returns a  DescribeServerlessCacheSnapshotsResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">REST API Reference for DescribeServerlessCacheSnapshots Operation</seealso>
+        public virtual DescribeServerlessCacheSnapshotsResponse EndDescribeServerlessCacheSnapshots(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeServerlessCacheSnapshotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeServiceUpdates
 
         /// <summary>
@@ -4073,6 +4616,74 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  ExportServerlessCacheSnapshot
+
+        /// <summary>
+        /// Provides the functionality to export the serverless cache snapshot data to Amazon
+        /// S3. Available for Redis only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportServerlessCacheSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the ExportServerlessCacheSnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
+        /// The state of the serverless cache snapshot was not received. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot">REST API Reference for ExportServerlessCacheSnapshot Operation</seealso>
+        public virtual ExportServerlessCacheSnapshotResponse ExportServerlessCacheSnapshot(ExportServerlessCacheSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<ExportServerlessCacheSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportServerlessCacheSnapshot operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportServerlessCacheSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot">REST API Reference for ExportServerlessCacheSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginExportServerlessCacheSnapshot(ExportServerlessCacheSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportServerlessCacheSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportServerlessCacheSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportServerlessCacheSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportServerlessCacheSnapshot.</param>
+        /// 
+        /// <returns>Returns a  ExportServerlessCacheSnapshotResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot">REST API Reference for ExportServerlessCacheSnapshot Operation</seealso>
+        public virtual ExportServerlessCacheSnapshotResponse EndExportServerlessCacheSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportServerlessCacheSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  FailoverGlobalReplicationGroup
 
         /// <summary>
@@ -4418,11 +5029,24 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
+        /// The state of the serverless cache snapshot was not received. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
         /// The requested reserved cache node was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -4784,7 +5408,7 @@ namespace Amazon.ElastiCache
         #region  ModifyReplicationGroup
 
         /// <summary>
-        /// Modifies the settings for a replication group.
+        /// Modifies the settings for a replication group. This is limited to Redis 7 and newer.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -4991,6 +5615,84 @@ namespace Amazon.ElastiCache
         public virtual ModifyReplicationGroupShardConfigurationResponse EndModifyReplicationGroupShardConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReplicationGroupShardConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyServerlessCache
+
+        /// <summary>
+        /// This API modifies the attributes of a serverless cache.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyServerlessCache service method.</param>
+        /// 
+        /// <returns>The response from the ModifyServerlessCache service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCredentialsException">
+        /// You must enter valid credentials.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache">REST API Reference for ModifyServerlessCache Operation</seealso>
+        public virtual ModifyServerlessCacheResponse ModifyServerlessCache(ModifyServerlessCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyServerlessCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyServerlessCacheResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyServerlessCacheResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyServerlessCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyServerlessCache operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyServerlessCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache">REST API Reference for ModifyServerlessCache Operation</seealso>
+        public virtual IAsyncResult BeginModifyServerlessCache(ModifyServerlessCacheRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyServerlessCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyServerlessCacheResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyServerlessCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyServerlessCache.</param>
+        /// 
+        /// <returns>Returns a  ModifyServerlessCacheResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache">REST API Reference for ModifyServerlessCache Operation</seealso>
+        public virtual ModifyServerlessCacheResponse EndModifyServerlessCache(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyServerlessCacheResponse>(asyncResult);
         }
 
         #endregion
@@ -5400,11 +6102,24 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
+        /// The state of the serverless cache snapshot was not received. Available for Redis only.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
         /// The requested reserved cache node was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
+        /// This serverless cache snapshot could not be found or does not exist. Available for
+        /// Redis only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.

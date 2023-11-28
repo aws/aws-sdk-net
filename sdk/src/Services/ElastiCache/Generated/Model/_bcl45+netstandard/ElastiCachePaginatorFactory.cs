@@ -132,6 +132,22 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeServerlessCaches operation
+        ///</summary>
+        public IDescribeServerlessCachesPaginator DescribeServerlessCaches(DescribeServerlessCachesRequest request) 
+        {
+            return new DescribeServerlessCachesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeServerlessCacheSnapshots operation
+        ///</summary>
+        public IDescribeServerlessCacheSnapshotsPaginator DescribeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest request) 
+        {
+            return new DescribeServerlessCacheSnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeServiceUpdates operation
         ///</summary>
         public IDescribeServiceUpdatesPaginator DescribeServiceUpdates(DescribeServiceUpdatesRequest request) 

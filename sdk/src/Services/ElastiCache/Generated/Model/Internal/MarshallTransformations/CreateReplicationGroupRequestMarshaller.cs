@@ -272,6 +272,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetServerlessCacheSnapshotName())
+                {
+                    request.Parameters.Add("ServerlessCacheSnapshotName", StringUtils.FromString(publicRequest.ServerlessCacheSnapshotName));
+                }
                 if(publicRequest.IsSetSnapshotArns())
                 {
                     int publicRequestlistValueIndex = 1;

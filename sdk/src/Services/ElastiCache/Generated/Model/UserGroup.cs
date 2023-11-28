@@ -38,6 +38,7 @@ namespace Amazon.ElastiCache.Model
         private string _minimumEngineVersion;
         private UserGroupPendingChanges _pendingChanges;
         private List<string> _replicationGroups = new List<string>();
+        private List<string> _serverlessCaches = new List<string>();
         private string _status;
         private string _userGroupId;
         private List<string> _userIds = new List<string>();
@@ -130,6 +131,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicationGroups()
         {
             return this._replicationGroups != null && this._replicationGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessCaches. 
+        /// <para>
+        /// Indicates which serverless caches the specified user group is associated with. Available
+        /// for Redis only.
+        /// </para>
+        /// </summary>
+        public List<string> ServerlessCaches
+        {
+            get { return this._serverlessCaches; }
+            set { this._serverlessCaches = value; }
+        }
+
+        // Check to see if ServerlessCaches property is set
+        internal bool IsSetServerlessCaches()
+        {
+            return this._serverlessCaches != null && this._serverlessCaches.Count > 0; 
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReplicationGroup operation.
-    /// Modifies the settings for a replication group.
+    /// Modifies the settings for a replication group. This is limited to Redis 7 and newer.
     /// 
     ///  <ul> <li> 
     /// <para>

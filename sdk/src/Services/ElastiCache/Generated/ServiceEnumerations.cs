@@ -395,6 +395,52 @@ namespace Amazon.ElastiCache
 
 
     /// <summary>
+    /// Constants used for properties of type DataStorageUnit.
+    /// </summary>
+    public class DataStorageUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GB for DataStorageUnit
+        /// </summary>
+        public static readonly DataStorageUnit GB = new DataStorageUnit("GB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataStorageUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataStorageUnit FindValue(string value)
+        {
+            return FindValue<DataStorageUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataStorageUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataTieringStatus.
     /// </summary>
     public class DataTieringStatus : ConstantClass
@@ -1318,6 +1364,14 @@ namespace Amazon.ElastiCache
         /// Constant ReplicationGroup for SourceType
         /// </summary>
         public static readonly SourceType ReplicationGroup = new SourceType("replication-group");
+        /// <summary>
+        /// Constant ServerlessCache for SourceType
+        /// </summary>
+        public static readonly SourceType ServerlessCache = new SourceType("serverless-cache");
+        /// <summary>
+        /// Constant ServerlessCacheSnapshot for SourceType
+        /// </summary>
+        public static readonly SourceType ServerlessCacheSnapshot = new SourceType("serverless-cache-snapshot");
         /// <summary>
         /// Constant User for SourceType
         /// </summary>
