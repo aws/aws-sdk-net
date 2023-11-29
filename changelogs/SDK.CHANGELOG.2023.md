@@ -1,3 +1,21 @@
+### 3.7.697.0 (2023-11-29 19:00 UTC)
+* ApplicationAutoScaling (3.7.301.0)
+	* Amazon SageMaker customers can now use Application Auto Scaling to automatically scale the number of Inference Component copies across an endpoint to meet the varying demand of their workloads.
+* CleanRooms (3.7.302.0)
+	* AWS Clean Rooms now provides differential privacy to protect against user-identification attempts and machine learning modeling to allow two parties to identify similar users in their data.
+* CleanRoomsML (3.7.300.0)
+	* Public Preview SDK release of AWS Clean Rooms ML APIs
+* OpenSearchServerless (3.7.301.0)
+	* Amazon OpenSearch Serverless collections support an additional attribute called standby-replicas. This allows to specify whether a collection should have redundancy enabled.
+* OpenSearchService (3.7.301.0)
+	* Launching Amazon OpenSearch Service support for new zero-ETL integration with Amazon S3. Customers can now manage their direct query data sources to Amazon S3 programatically
+* SageMaker (3.7.304.0)
+	* This release adds following support 1/ Improved SDK tooling for model deployment. 2/ New Inference Component based features to lower inference costs and latency 3/ SageMaker HyperPod management. 4/ Additional parameters for FM Fine Tuning in Autopilot
+* SageMakerRuntime (3.7.301.0)
+	* This release adds InferenceComponentName to InvokeEndpoint and InvokeEndpointWithResponseStream APIs to get inferences from the deployed InferenceComponents.
+* SecurityToken (3.7.300.12)
+	* Documentation updates for AWS Security Token Service.
+
 ### 3.7.696.0 (2023-11-28 19:14 UTC)
 * AccessAnalyzer (3.7.302.0)
 	* This release adds support for external access findings for S3 directory buckets to help you easily identify cross-account access. Updated service API, documentation, and paginators.
