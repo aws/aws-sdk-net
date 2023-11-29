@@ -90,6 +90,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStandbyReplicas())
+                {
+                    context.Writer.WritePropertyName("standbyReplicas");
+                    context.Writer.Write(publicRequest.StandbyReplicas);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

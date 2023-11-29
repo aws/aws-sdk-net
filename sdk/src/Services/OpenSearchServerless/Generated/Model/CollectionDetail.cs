@@ -43,6 +43,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _kmsKeyArn;
         private long? _lastModifiedDate;
         private string _name;
+        private StandbyReplicas _standbyReplicas;
         private CollectionStatus _status;
         private CollectionType _type;
 
@@ -209,6 +210,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandbyReplicas. 
+        /// <para>
+        /// Details about an OpenSearch Serverless collection.
+        /// </para>
+        /// </summary>
+        public StandbyReplicas StandbyReplicas
+        {
+            get { return this._standbyReplicas; }
+            set { this._standbyReplicas = value; }
+        }
+
+        // Check to see if StandbyReplicas property is set
+        internal bool IsSetStandbyReplicas()
+        {
+            return this._standbyReplicas != null;
         }
 
         /// <summary>

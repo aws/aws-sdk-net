@@ -38,6 +38,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _clientToken;
         private string _description;
         private string _name;
+        private StandbyReplicas _standbyReplicas;
         private List<Tag> _tags = new List<Tag>();
         private CollectionType _type;
 
@@ -96,6 +97,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandbyReplicas. 
+        /// <para>
+        /// Indicates whether standby replicas should be used for a collection.
+        /// </para>
+        /// </summary>
+        public StandbyReplicas StandbyReplicas
+        {
+            get { return this._standbyReplicas; }
+            set { this._standbyReplicas = value; }
+        }
+
+        // Check to see if StandbyReplicas property is set
+        internal bool IsSetStandbyReplicas()
+        {
+            return this._standbyReplicas != null;
         }
 
         /// <summary>
