@@ -325,6 +325,62 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  AddDataSource
+
+        internal virtual AddDataSourceResponse AddDataSource(AddDataSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddDataSourceResponseUnmarshaller.Instance;
+
+            return Invoke<AddDataSourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds the data source on the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDataSource">REST API Reference for AddDataSource Operation</seealso>
+        public virtual Task<AddDataSourceResponse> AddDataSourceAsync(AddDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddDataSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddDataSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTags
 
         internal virtual AddTagsResponse AddTags(AddTagsRequest request)
@@ -743,6 +799,59 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVpcEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataSource
+
+        internal virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataSourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
+        public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1804,6 +1913,59 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetDataSource
+
+        internal virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataSourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the data source details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
+        public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDomainMaintenanceStatus
 
         internal virtual GetDomainMaintenanceStatusResponse GetDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request)
@@ -2001,6 +2163,59 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUpgradeStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataSources
+
+        internal virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A list of the data source details of the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataSources service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
+        public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2813,6 +3028,59 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = StartServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartServiceSoftwareUpdateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataSource
+
+        internal virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataSourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the data source on the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
+        public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

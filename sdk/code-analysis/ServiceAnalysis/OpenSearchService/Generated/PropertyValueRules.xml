@@ -7,6 +7,23 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddDataSourceRequest.Description</property>
+    <max>1000</max>
+    <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddDataSourceRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddDataSourceRequest.Name</property>
+    <min>3</min>
+    <max>80</max>
+    <pattern>[a-z][a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AddTagsRequest.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -92,6 +109,18 @@
     <min>1</min>
     <max>512</max>
     <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteDataSourceRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteDataSourceRequest.Name</property>
+    <min>3</min>
+    <max>80</max>
+    <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeleteDomainRequest.DomainName</property>
@@ -268,6 +297,29 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDataSourceRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDataSourceRequest.Name</property>
+    <min>3</min>
+    <max>80</max>
+    <pattern>[a-z][a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDataSourceResponse.Description</property>
+    <max>1000</max>
+    <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDataSourceResponse.Name</property>
+    <min>3</min>
+    <max>80</max>
+    <pattern>[a-z][a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetDomainMaintenanceStatusRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -314,6 +366,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetUpgradeStatusRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListDataSourcesRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
@@ -470,6 +528,23 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateDataSourceRequest.Description</property>
+    <max>1000</max>
+    <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateDataSourceRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateDataSourceRequest.Name</property>
+    <min>3</min>
+    <max>80</max>
+    <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateDomainConfigRequest.AccessPolicies</property>
@@ -632,6 +707,17 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ConnectionProperties.Endpoint</property>
     <pattern>^[A-Za-z0-9\-\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSourceDetails.Description</property>
+    <max>1000</max>
+    <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSourceDetails.Name</property>
+    <min>3</min>
+    <max>80</max>
+    <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainEndpointOptions.CustomEndpoint</property>
@@ -868,6 +954,12 @@
     <property>Amazon.OpenSearchService.Model.ReservedInstanceOffering.ReservedInstanceOfferingId</property>
     <min>36</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.S3GlueDataCatalog.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.SAMLIdp.EntityId</property>
