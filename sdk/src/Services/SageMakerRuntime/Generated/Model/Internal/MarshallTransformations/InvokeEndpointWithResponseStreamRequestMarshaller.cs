@@ -91,6 +91,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-SageMaker-Custom-Attributes"] = publicRequest.CustomAttributes;
             }
         
+            if (publicRequest.IsSetInferenceComponentName()) 
+            {
+                request.Headers["X-Amzn-SageMaker-Inference-Component"] = publicRequest.InferenceComponentName;
+            }
+        
             if (publicRequest.IsSetInferenceId()) 
             {
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;

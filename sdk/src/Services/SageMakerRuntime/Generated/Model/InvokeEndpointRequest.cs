@@ -74,6 +74,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _customAttributes;
         private string _enableExplanations;
         private string _endpointName;
+        private string _inferenceComponentName;
         private string _inferenceId;
         private string _targetContainerHostname;
         private string _targetModel;
@@ -220,6 +221,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetEndpointName()
         {
             return this._endpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceComponentName. 
+        /// <para>
+        /// If the endpoint hosts one or more inference components, this parameter specifies the
+        /// name of inference component to invoke.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string InferenceComponentName
+        {
+            get { return this._inferenceComponentName; }
+            set { this._inferenceComponentName = value; }
+        }
+
+        // Check to see if InferenceComponentName property is set
+        internal bool IsSetInferenceComponentName()
+        {
+            return this._inferenceComponentName != null;
         }
 
         /// <summary>

@@ -53,6 +53,14 @@ namespace Amazon.SageMakerRuntime.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Before you can use this operation, your IAM permissions must allow the <code>sagemaker:InvokeEndpoint</code>
+    /// action. For more information about Amazon SageMaker actions for IAM policies, see
+    /// <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
+    /// resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service Authorization
+    /// Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
     /// SageMaker might add additional headers. You should not rely on the behavior of headers
     /// outside those enumerated in the request syntax. 
@@ -71,6 +79,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _contentType;
         private string _customAttributes;
         private string _endpointName;
+        private string _inferenceComponentName;
         private string _inferenceId;
         private string _targetContainerHostname;
         private string _targetVariant;
@@ -195,6 +204,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetEndpointName()
         {
             return this._endpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceComponentName. 
+        /// <para>
+        /// If the endpoint hosts one or more inference components, this parameter specifies the
+        /// name of inference component to invoke for a streaming response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string InferenceComponentName
+        {
+            get { return this._inferenceComponentName; }
+            set { this._inferenceComponentName = value; }
+        }
+
+        // Check to see if InferenceComponentName property is set
+        internal bool IsSetInferenceComponentName()
+        {
+            return this._inferenceComponentName != null;
         }
 
         /// <summary>
