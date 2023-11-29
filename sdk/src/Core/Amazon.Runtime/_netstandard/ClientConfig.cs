@@ -37,6 +37,25 @@ namespace Amazon.Runtime
             return FallbackRegionFactory.GetRegionEndpoint();
         }
 
+        private static Amazon.Runtime.Internal.Util.WebProxy? GetWebProxyWithCredentials(string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                var asUri = new Uri(value);
+                var proxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
+                if (!string.IsNullOrEmpty(asUri.UserInfo)) {
+                    var userAndPass = asUri.UserInfo.Split(':');
+                    proxy.Credentials = new NetworkCredential(
+                        userAndPass[0],
+                        userAndPass.Length > 1 ? userAndPass[1] : string.Empty
+                    );
+                }
+                return proxy;
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// Returns a WebProxy instance configured to match the proxy settings
         /// in the client configuration.
@@ -52,10 +71,10 @@ namespace Amazon.Runtime
         /// </summary>
         public IWebProxy GetHttpsProxy()
         {
-            var httpsProxy = Environment.GetEnvironmentVariable("https_proxy");
-            if (!string.IsNullOrEmpty(httpsProxy))
+            var httpsProxy = GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
+            if (httpsProxy != null)
             {
-                return new Amazon.Runtime.Internal.Util.WebProxy(httpsProxy);
+                return httpsProxy;
             }
             return proxy;
         }
@@ -66,10 +85,10 @@ namespace Amazon.Runtime
         /// </summary>
         public IWebProxy GetHttpProxy()
         {
-            var httpProxy = Environment.GetEnvironmentVariable("http_proxy");
-            if (!string.IsNullOrEmpty(httpProxy))
+            var httpProxy = GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
+            if (httpProxy != null)
             {
-                return new Amazon.Runtime.Internal.Util.WebProxy(httpProxy);
+                return httpProxy;
             }
             return proxy;
         }

@@ -38,6 +38,25 @@ namespace Amazon.Runtime
             return FallbackRegionFactory.GetRegionEndpoint();
         }
 
+        private static WebProxy GetWebProxyWithCredentials(string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                var asUri = new Uri(value);
+                var proxy = new WebProxy(asUri);
+                if (!string.IsNullOrEmpty(asUri.UserInfo)) {
+                    var userAndPass = asUri.UserInfo.Split(':');
+                    proxy.Credentials = new NetworkCredential(
+                        userAndPass[0],
+                        userAndPass.Length > 1 ? userAndPass[1] : string.Empty
+                    );
+                }
+                return proxy;
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// Gets and sets of the ProxyHost property.
         /// </summary>
@@ -139,12 +158,7 @@ namespace Amazon.Runtime
         /// </summary>
         public WebProxy GetHttpsProxy()
         {
-            var httpsProxy = Environment.GetEnvironmentVariable("https_proxy");
-            if (!string.IsNullOrEmpty(httpsProxy))
-            {
-                return new WebProxy(httpsProxy);
-            }
-            return null;
+            return ClientConfig.GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
         }
 
         /// <summary>
@@ -153,12 +167,7 @@ namespace Amazon.Runtime
         /// </summary>
         public WebProxy GetHttpProxy()
         {
-            var httpProxy = Environment.GetEnvironmentVariable("http_proxy");
-            if (!string.IsNullOrEmpty(httpProxy))
-            {
-                return new WebProxy(httpProxy);
-            }
-            return null;
+            return ClientConfig.GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
         }
 
         /// <summary>
