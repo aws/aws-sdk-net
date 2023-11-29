@@ -88,6 +88,10 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon SageMaker inference components
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Spot Fleets (Amazon EC2)
     /// </para>
     ///  </li> <li> 
@@ -153,8 +157,8 @@ namespace Amazon.ApplicationAutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-        /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy">Delete
+        /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy">Delete
         /// a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -195,8 +199,8 @@ namespace Amazon.ApplicationAutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-        /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy">Delete
+        /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy">Delete
         /// a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

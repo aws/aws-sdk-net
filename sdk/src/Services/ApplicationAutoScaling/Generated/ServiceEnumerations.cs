@@ -285,6 +285,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType RDSReaderAverageDatabaseConnections = new MetricType("RDSReaderAverageDatabaseConnections");
         /// <summary>
+        /// Constant SageMakerInferenceComponentInvocationsPerCopy for MetricType
+        /// </summary>
+        public static readonly MetricType SageMakerInferenceComponentInvocationsPerCopy = new MetricType("SageMakerInferenceComponentInvocationsPerCopy");
+        /// <summary>
         /// Constant SageMakerVariantInvocationsPerInstance for MetricType
         /// </summary>
         public static readonly MetricType SageMakerVariantInvocationsPerInstance = new MetricType("SageMakerVariantInvocationsPerInstance");
@@ -460,6 +464,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant RdsClusterReadReplicaCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension RdsClusterReadReplicaCount = new ScalableDimension("rds:cluster:ReadReplicaCount");
+        /// <summary>
+        /// Constant SagemakerInferenceComponentDesiredCopyCount for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension SagemakerInferenceComponentDesiredCopyCount = new ScalableDimension("sagemaker:inference-component:DesiredCopyCount");
         /// <summary>
         /// Constant SagemakerVariantDesiredInstanceCount for ScalableDimension
         /// </summary>

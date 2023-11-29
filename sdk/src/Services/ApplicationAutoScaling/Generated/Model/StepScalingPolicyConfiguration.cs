@@ -75,7 +75,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property Cooldown. 
         /// <para>
         /// The amount of time, in seconds, to wait for a previous scaling activity to take effect.
-        /// If not specified, the default value is 300. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown">Cooldown
+        /// If not specified, the default value is 300. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown">Cooldown
         /// period</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

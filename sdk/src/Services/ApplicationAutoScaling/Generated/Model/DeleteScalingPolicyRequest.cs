@@ -40,8 +40,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-    /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy">Delete
+    /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy">Delete
     /// a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
@@ -166,6 +166,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// SageMaker Serverless endpoint - The resource type is <code>variant</code> and the
         /// unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker inference component - The resource type is <code>inference-component</code>
+        /// and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -292,6 +297,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency
         /// for a SageMaker Serverless endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies
+        /// across an endpoint for a SageMaker inference component.
         /// </para>
         ///  </li> </ul>
         /// </summary>
