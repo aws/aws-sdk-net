@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ProtectedQuery
     {
         private DateTime? _createTime;
+        private DifferentialPrivacyParameters _differentialPrivacy;
         private ProtectedQueryError _error;
         private string _id;
         private string _membershipArn;
@@ -61,6 +62,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DifferentialPrivacy. 
+        /// <para>
+        /// The sensitivity parameters of the differential privacy results of the protected query.
+        /// </para>
+        /// </summary>
+        public DifferentialPrivacyParameters DifferentialPrivacy
+        {
+            get { return this._differentialPrivacy; }
+            set { this._differentialPrivacy = value; }
+        }
+
+        // Check to see if DifferentialPrivacy property is set
+        internal bool IsSetDifferentialPrivacy()
+        {
+            return this._differentialPrivacy != null;
         }
 
         /// <summary>

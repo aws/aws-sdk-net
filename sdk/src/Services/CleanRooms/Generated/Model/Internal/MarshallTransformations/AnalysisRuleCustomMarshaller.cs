@@ -67,6 +67,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDifferentialPrivacy())
+            {
+                context.Writer.WritePropertyName("differentialPrivacy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DifferentialPrivacyConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DifferentialPrivacy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

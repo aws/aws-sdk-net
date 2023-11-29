@@ -75,6 +75,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowedAnalysisProviders = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("differentialPrivacy", targetDepth))
+                {
+                    var unmarshaller = DifferentialPrivacyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DifferentialPrivacy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

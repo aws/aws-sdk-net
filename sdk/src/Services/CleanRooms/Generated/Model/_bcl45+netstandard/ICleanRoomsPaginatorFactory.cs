@@ -36,9 +36,29 @@ namespace Amazon.CleanRooms.Model
         IListCollaborationAnalysisTemplatesPaginator ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListCollaborationConfiguredAudienceModelAssociations operation
+        ///</summary>
+        IListCollaborationConfiguredAudienceModelAssociationsPaginator ListCollaborationConfiguredAudienceModelAssociations(ListCollaborationConfiguredAudienceModelAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationPrivacyBudgets operation
+        ///</summary>
+        IListCollaborationPrivacyBudgetsPaginator ListCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationPrivacyBudgetTemplates operation
+        ///</summary>
+        IListCollaborationPrivacyBudgetTemplatesPaginator ListCollaborationPrivacyBudgetTemplates(ListCollaborationPrivacyBudgetTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListCollaborations operation
         ///</summary>
         IListCollaborationsPaginator ListCollaborations(ListCollaborationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfiguredAudienceModelAssociations operation
+        ///</summary>
+        IListConfiguredAudienceModelAssociationsPaginator ListConfiguredAudienceModelAssociations(ListConfiguredAudienceModelAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListConfiguredTableAssociations operation
@@ -59,6 +79,16 @@ namespace Amazon.CleanRooms.Model
         /// Paginator for ListMemberships operation
         ///</summary>
         IListMembershipsPaginator ListMemberships(ListMembershipsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrivacyBudgets operation
+        ///</summary>
+        IListPrivacyBudgetsPaginator ListPrivacyBudgets(ListPrivacyBudgetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrivacyBudgetTemplates operation
+        ///</summary>
+        IListPrivacyBudgetTemplatesPaginator ListPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListProtectedQueries operation

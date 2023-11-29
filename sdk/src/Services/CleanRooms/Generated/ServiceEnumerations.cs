@@ -483,6 +483,68 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type DifferentialPrivacyAggregationType.
+    /// </summary>
+    public class DifferentialPrivacyAggregationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVG for DifferentialPrivacyAggregationType
+        /// </summary>
+        public static readonly DifferentialPrivacyAggregationType AVG = new DifferentialPrivacyAggregationType("AVG");
+        /// <summary>
+        /// Constant COUNT for DifferentialPrivacyAggregationType
+        /// </summary>
+        public static readonly DifferentialPrivacyAggregationType COUNT = new DifferentialPrivacyAggregationType("COUNT");
+        /// <summary>
+        /// Constant COUNT_DISTINCT for DifferentialPrivacyAggregationType
+        /// </summary>
+        public static readonly DifferentialPrivacyAggregationType COUNT_DISTINCT = new DifferentialPrivacyAggregationType("COUNT_DISTINCT");
+        /// <summary>
+        /// Constant STDDEV for DifferentialPrivacyAggregationType
+        /// </summary>
+        public static readonly DifferentialPrivacyAggregationType STDDEV = new DifferentialPrivacyAggregationType("STDDEV");
+        /// <summary>
+        /// Constant SUM for DifferentialPrivacyAggregationType
+        /// </summary>
+        public static readonly DifferentialPrivacyAggregationType SUM = new DifferentialPrivacyAggregationType("SUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DifferentialPrivacyAggregationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DifferentialPrivacyAggregationType FindValue(string value)
+        {
+            return FindValue<DifferentialPrivacyAggregationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DifferentialPrivacyAggregationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterableMemberStatus.
     /// </summary>
     public class FilterableMemberStatus : ConstantClass
@@ -936,6 +998,102 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PrivacyBudgetTemplateAutoRefresh.
+    /// </summary>
+    public class PrivacyBudgetTemplateAutoRefresh : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALENDAR_MONTH for PrivacyBudgetTemplateAutoRefresh
+        /// </summary>
+        public static readonly PrivacyBudgetTemplateAutoRefresh CALENDAR_MONTH = new PrivacyBudgetTemplateAutoRefresh("CALENDAR_MONTH");
+        /// <summary>
+        /// Constant NONE for PrivacyBudgetTemplateAutoRefresh
+        /// </summary>
+        public static readonly PrivacyBudgetTemplateAutoRefresh NONE = new PrivacyBudgetTemplateAutoRefresh("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrivacyBudgetTemplateAutoRefresh(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivacyBudgetTemplateAutoRefresh FindValue(string value)
+        {
+            return FindValue<PrivacyBudgetTemplateAutoRefresh>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivacyBudgetTemplateAutoRefresh(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PrivacyBudgetType.
+    /// </summary>
+    public class PrivacyBudgetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIFFERENTIAL_PRIVACY for PrivacyBudgetType
+        /// </summary>
+        public static readonly PrivacyBudgetType DIFFERENTIAL_PRIVACY = new PrivacyBudgetType("DIFFERENTIAL_PRIVACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrivacyBudgetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivacyBudgetType FindValue(string value)
+        {
+            return FindValue<PrivacyBudgetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivacyBudgetType(string value)
         {
             return FindValue(value);
         }

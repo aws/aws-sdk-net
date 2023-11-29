@@ -52,11 +52,43 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Paginator for ListCollaborationConfiguredAudienceModelAssociations operation
+        ///</summary>
+        public IListCollaborationConfiguredAudienceModelAssociationsPaginator ListCollaborationConfiguredAudienceModelAssociations(ListCollaborationConfiguredAudienceModelAssociationsRequest request) 
+        {
+            return new ListCollaborationConfiguredAudienceModelAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationPrivacyBudgets operation
+        ///</summary>
+        public IListCollaborationPrivacyBudgetsPaginator ListCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request) 
+        {
+            return new ListCollaborationPrivacyBudgetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationPrivacyBudgetTemplates operation
+        ///</summary>
+        public IListCollaborationPrivacyBudgetTemplatesPaginator ListCollaborationPrivacyBudgetTemplates(ListCollaborationPrivacyBudgetTemplatesRequest request) 
+        {
+            return new ListCollaborationPrivacyBudgetTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCollaborations operation
         ///</summary>
         public IListCollaborationsPaginator ListCollaborations(ListCollaborationsRequest request) 
         {
             return new ListCollaborationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfiguredAudienceModelAssociations operation
+        ///</summary>
+        public IListConfiguredAudienceModelAssociationsPaginator ListConfiguredAudienceModelAssociations(ListConfiguredAudienceModelAssociationsRequest request) 
+        {
+            return new ListConfiguredAudienceModelAssociationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -89,6 +121,22 @@ namespace Amazon.CleanRooms.Model
         public IListMembershipsPaginator ListMemberships(ListMembershipsRequest request) 
         {
             return new ListMembershipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPrivacyBudgets operation
+        ///</summary>
+        public IListPrivacyBudgetsPaginator ListPrivacyBudgets(ListPrivacyBudgetsRequest request) 
+        {
+            return new ListPrivacyBudgetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPrivacyBudgetTemplates operation
+        ///</summary>
+        public IListPrivacyBudgetTemplatesPaginator ListPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest request) 
+        {
+            return new ListPrivacyBudgetTemplatesPaginator(this.client, request);
         }
 
         /// <summary>

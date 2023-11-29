@@ -30,12 +30,13 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// A type of analysis rule that enables the table owner to approve custom SQL queries
-    /// on their configured tables.
+    /// on their configured tables. It supports differential privacy.
     /// </summary>
     public partial class AnalysisRuleCustom
     {
         private List<string> _allowedAnalyses = new List<string>();
         private List<string> _allowedAnalysisProviders = new List<string>();
+        private DifferentialPrivacyConfiguration _differentialPrivacy;
 
         /// <summary>
         /// Gets and sets the property AllowedAnalyses. 
@@ -74,6 +75,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAllowedAnalysisProviders()
         {
             return this._allowedAnalysisProviders != null && this._allowedAnalysisProviders.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DifferentialPrivacy. 
+        /// <para>
+        /// The differential privacy configuration.
+        /// </para>
+        /// </summary>
+        public DifferentialPrivacyConfiguration DifferentialPrivacy
+        {
+            get { return this._differentialPrivacy; }
+            set { this._differentialPrivacy = value; }
+        }
+
+        // Check to see if DifferentialPrivacy property is set
+        internal bool IsSetDifferentialPrivacy()
+        {
+            return this._differentialPrivacy != null;
         }
 
     }

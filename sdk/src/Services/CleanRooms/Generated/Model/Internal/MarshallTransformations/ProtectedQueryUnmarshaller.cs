@@ -69,6 +69,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("differentialPrivacy", targetDepth))
+                {
+                    var unmarshaller = DifferentialPrivacyParametersUnmarshaller.Instance;
+                    unmarshalledObject.DifferentialPrivacy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("error", targetDepth))
                 {
                     var unmarshaller = ProtectedQueryErrorUnmarshaller.Instance;
