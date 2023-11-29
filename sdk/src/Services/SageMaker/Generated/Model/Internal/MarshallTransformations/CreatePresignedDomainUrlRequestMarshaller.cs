@@ -79,6 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExpiresInSeconds);
                 }
 
+                if(publicRequest.IsSetLandingUri())
+                {
+                    context.Writer.WritePropertyName("LandingUri");
+                    context.Writer.Write(publicRequest.LandingUri);
+                }
+
                 if(publicRequest.IsSetSessionExpirationDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");

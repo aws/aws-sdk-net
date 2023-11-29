@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SageMakerImageArn);
             }
 
+            if(requestObject.IsSetSageMakerImageVersionAlias())
+            {
+                context.Writer.WritePropertyName("SageMakerImageVersionAlias");
+                context.Writer.Write(requestObject.SageMakerImageVersionAlias);
+            }
+
             if(requestObject.IsSetSageMakerImageVersionArn())
             {
                 context.Writer.WritePropertyName("SageMakerImageVersionArn");

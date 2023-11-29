@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private string _spaceName;
         private SpaceSettings _spaceSettings;
         private SpaceStatus _status;
+        private string _url;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -208,6 +209,41 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// Returns the URL of the space. If the space is created with Amazon Web Services IAM
+        /// Identity Center (Successor to Amazon Web Services Single Sign-On) authentication,
+        /// users can navigate to the URL after appending the respective redirect parameter for
+        /// the application type to be federated through Amazon Web Services IAM Identity Center.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following application types are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Studio Classic: <code>&amp;redirect=JupyterServer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// JupyterLab: <code>&amp;redirect=JupyterLab</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string Url
+        {
+            get { return this._url; }
+            set { this._url = value; }
+        }
+
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
+        {
+            return this._url != null;
         }
 
     }

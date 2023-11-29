@@ -105,6 +105,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedInstanceScaling", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;
+                    unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelDataDownloadTimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantRoutingConfigUnmarshaller.Instance;
+                    unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServerlessConfig", targetDepth))

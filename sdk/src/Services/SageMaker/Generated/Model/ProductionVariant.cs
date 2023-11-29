@@ -44,8 +44,10 @@ namespace Amazon.SageMaker.Model
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
+        private ProductionVariantManagedInstanceScaling _managedInstanceScaling;
         private int? _modelDataDownloadTimeoutInSeconds;
         private string _modelName;
+        private ProductionVariantRoutingConfig _routingConfig;
         private ProductionVariantServerlessConfig _serverlessConfig;
         private string _variantName;
         private int? _volumeSizeInGB;
@@ -193,6 +195,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedInstanceScaling. 
+        /// <para>
+        /// Settings that control the range in the number of instances that the endpoint provisions
+        /// as it scales up or down to accommodate traffic. 
+        /// </para>
+        /// </summary>
+        public ProductionVariantManagedInstanceScaling ManagedInstanceScaling
+        {
+            get { return this._managedInstanceScaling; }
+            set { this._managedInstanceScaling = value; }
+        }
+
+        // Check to see if ManagedInstanceScaling property is set
+        internal bool IsSetManagedInstanceScaling()
+        {
+            return this._managedInstanceScaling != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelDataDownloadTimeoutInSeconds. 
         /// <para>
         /// The timeout value, in seconds, to download and extract the model that you want to
@@ -220,7 +241,7 @@ namespace Amazon.SageMaker.Model
         /// creating the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -231,6 +252,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingConfig. 
+        /// <para>
+        /// Settings that control how the endpoint routes incoming traffic to the instances that
+        /// the endpoint hosts.
+        /// </para>
+        /// </summary>
+        public ProductionVariantRoutingConfig RoutingConfig
+        {
+            get { return this._routingConfig; }
+            set { this._routingConfig = value; }
+        }
+
+        // Check to see if RoutingConfig property is set
+        internal bool IsSetRoutingConfig()
+        {
+            return this._routingConfig != null;
         }
 
         /// <summary>

@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model
         private ProductionVariantServerlessConfig _desiredServerlessConfig;
         private float? _desiredWeight;
         private ProductionVariantInstanceType _instanceType;
+        private ProductionVariantManagedInstanceScaling _managedInstanceScaling;
+        private ProductionVariantRoutingConfig _routingConfig;
         private string _variantName;
         private List<ProductionVariantStatus> _variantStatus = new List<ProductionVariantStatus>();
 
@@ -222,6 +224,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedInstanceScaling. 
+        /// <para>
+        /// Settings that control the range in the number of instances that the endpoint provisions
+        /// as it scales up or down to accommodate traffic. 
+        /// </para>
+        /// </summary>
+        public ProductionVariantManagedInstanceScaling ManagedInstanceScaling
+        {
+            get { return this._managedInstanceScaling; }
+            set { this._managedInstanceScaling = value; }
+        }
+
+        // Check to see if ManagedInstanceScaling property is set
+        internal bool IsSetManagedInstanceScaling()
+        {
+            return this._managedInstanceScaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingConfig. 
+        /// <para>
+        /// Settings that control how the endpoint routes incoming traffic to the instances that
+        /// the endpoint hosts.
+        /// </para>
+        /// </summary>
+        public ProductionVariantRoutingConfig RoutingConfig
+        {
+            get { return this._routingConfig; }
+            set { this._routingConfig = value; }
+        }
+
+        // Check to see if RoutingConfig property is set
+        internal bool IsSetRoutingConfig()
+        {
+            return this._routingConfig != null;
         }
 
         /// <summary>

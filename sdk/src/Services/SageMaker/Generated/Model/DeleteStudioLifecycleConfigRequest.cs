@@ -30,9 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStudioLifecycleConfig operation.
-    /// Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
-    /// there must be no running apps using the Lifecycle Configuration. You must also remove
-    /// the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.
+    /// Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the
+    /// Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration.
+    /// You must also remove the Lifecycle Configuration from UserSettings in all Domains
+    /// and UserProfiles.
     /// </summary>
     public partial class DeleteStudioLifecycleConfigRequest : AmazonSageMakerRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StudioLifecycleConfigName. 
         /// <para>
-        /// The name of the Studio Lifecycle Configuration to delete.
+        /// The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

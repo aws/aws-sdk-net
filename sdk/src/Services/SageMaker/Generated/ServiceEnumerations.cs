@@ -3155,6 +3155,382 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterInstanceStatus.
+    /// </summary>
+    public class ClusterInstanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failure for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus Failure = new ClusterInstanceStatus("Failure");
+        /// <summary>
+        /// Constant Pending for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus Pending = new ClusterInstanceStatus("Pending");
+        /// <summary>
+        /// Constant Running for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus Running = new ClusterInstanceStatus("Running");
+        /// <summary>
+        /// Constant ShuttingDown for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus ShuttingDown = new ClusterInstanceStatus("ShuttingDown");
+        /// <summary>
+        /// Constant SystemUpdating for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus SystemUpdating = new ClusterInstanceStatus("SystemUpdating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterInstanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterInstanceStatus FindValue(string value)
+        {
+            return FindValue<ClusterInstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterInstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterInstanceType.
+    /// </summary>
+    public class ClusterInstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MlC512xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC512xlarge = new ClusterInstanceType("ml.c5.12xlarge");
+        /// <summary>
+        /// Constant MlC518xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC518xlarge = new ClusterInstanceType("ml.c5.18xlarge");
+        /// <summary>
+        /// Constant MlC524xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC524xlarge = new ClusterInstanceType("ml.c5.24xlarge");
+        /// <summary>
+        /// Constant MlC52xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC52xlarge = new ClusterInstanceType("ml.c5.2xlarge");
+        /// <summary>
+        /// Constant MlC54xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC54xlarge = new ClusterInstanceType("ml.c5.4xlarge");
+        /// <summary>
+        /// Constant MlC59xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC59xlarge = new ClusterInstanceType("ml.c5.9xlarge");
+        /// <summary>
+        /// Constant MlC5Large for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5Large = new ClusterInstanceType("ml.c5.large");
+        /// <summary>
+        /// Constant MlC5n18xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5n18xlarge = new ClusterInstanceType("ml.c5n.18xlarge");
+        /// <summary>
+        /// Constant MlC5n2xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5n2xlarge = new ClusterInstanceType("ml.c5n.2xlarge");
+        /// <summary>
+        /// Constant MlC5n4xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5n4xlarge = new ClusterInstanceType("ml.c5n.4xlarge");
+        /// <summary>
+        /// Constant MlC5n9xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5n9xlarge = new ClusterInstanceType("ml.c5n.9xlarge");
+        /// <summary>
+        /// Constant MlC5nLarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5nLarge = new ClusterInstanceType("ml.c5n.large");
+        /// <summary>
+        /// Constant MlC5Xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlC5Xlarge = new ClusterInstanceType("ml.c5.xlarge");
+        /// <summary>
+        /// Constant MlG512xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG512xlarge = new ClusterInstanceType("ml.g5.12xlarge");
+        /// <summary>
+        /// Constant MlG516xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG516xlarge = new ClusterInstanceType("ml.g5.16xlarge");
+        /// <summary>
+        /// Constant MlG524xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG524xlarge = new ClusterInstanceType("ml.g5.24xlarge");
+        /// <summary>
+        /// Constant MlG52xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG52xlarge = new ClusterInstanceType("ml.g5.2xlarge");
+        /// <summary>
+        /// Constant MlG548xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG548xlarge = new ClusterInstanceType("ml.g5.48xlarge");
+        /// <summary>
+        /// Constant MlG54xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG54xlarge = new ClusterInstanceType("ml.g5.4xlarge");
+        /// <summary>
+        /// Constant MlG58xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG58xlarge = new ClusterInstanceType("ml.g5.8xlarge");
+        /// <summary>
+        /// Constant MlG5Xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG5Xlarge = new ClusterInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlM512xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM512xlarge = new ClusterInstanceType("ml.m5.12xlarge");
+        /// <summary>
+        /// Constant MlM516xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM516xlarge = new ClusterInstanceType("ml.m5.16xlarge");
+        /// <summary>
+        /// Constant MlM524xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM524xlarge = new ClusterInstanceType("ml.m5.24xlarge");
+        /// <summary>
+        /// Constant MlM52xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM52xlarge = new ClusterInstanceType("ml.m5.2xlarge");
+        /// <summary>
+        /// Constant MlM54xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM54xlarge = new ClusterInstanceType("ml.m5.4xlarge");
+        /// <summary>
+        /// Constant MlM58xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM58xlarge = new ClusterInstanceType("ml.m5.8xlarge");
+        /// <summary>
+        /// Constant MlM5Large for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM5Large = new ClusterInstanceType("ml.m5.large");
+        /// <summary>
+        /// Constant MlM5Xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM5Xlarge = new ClusterInstanceType("ml.m5.xlarge");
+        /// <summary>
+        /// Constant MlP4d24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP4d24xlarge = new ClusterInstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlP4de24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP4de24xlarge = new ClusterInstanceType("ml.p4de.24xlarge");
+        /// <summary>
+        /// Constant MlP548xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP548xlarge = new ClusterInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlT32xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlT32xlarge = new ClusterInstanceType("ml.t3.2xlarge");
+        /// <summary>
+        /// Constant MlT3Large for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlT3Large = new ClusterInstanceType("ml.t3.large");
+        /// <summary>
+        /// Constant MlT3Medium for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlT3Medium = new ClusterInstanceType("ml.t3.medium");
+        /// <summary>
+        /// Constant MlT3Xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlT3Xlarge = new ClusterInstanceType("ml.t3.xlarge");
+        /// <summary>
+        /// Constant MlTrn132xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlTrn132xlarge = new ClusterInstanceType("ml.trn1.32xlarge");
+        /// <summary>
+        /// Constant MlTrn1n32xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlTrn1n32xlarge = new ClusterInstanceType("ml.trn1n.32xlarge");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterInstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterInstanceType FindValue(string value)
+        {
+            return FindValue<ClusterInstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterSortBy.
+    /// </summary>
+    public class ClusterSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATION_TIME for ClusterSortBy
+        /// </summary>
+        public static readonly ClusterSortBy CREATION_TIME = new ClusterSortBy("CREATION_TIME");
+        /// <summary>
+        /// Constant NAME for ClusterSortBy
+        /// </summary>
+        public static readonly ClusterSortBy NAME = new ClusterSortBy("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterSortBy FindValue(string value)
+        {
+            return FindValue<ClusterSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterStatus.
+    /// </summary>
+    public class ClusterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus Creating = new ClusterStatus("Creating");
+        /// <summary>
+        /// Constant Deleting for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus Deleting = new ClusterStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus Failed = new ClusterStatus("Failed");
+        /// <summary>
+        /// Constant InService for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus InService = new ClusterStatus("InService");
+        /// <summary>
+        /// Constant RollingBack for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus RollingBack = new ClusterStatus("RollingBack");
+        /// <summary>
+        /// Constant SystemUpdating for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus SystemUpdating = new ClusterStatus("SystemUpdating");
+        /// <summary>
+        /// Constant Updating for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus Updating = new ClusterStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterStatus FindValue(string value)
+        {
+            return FindValue<ClusterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CodeRepositorySortBy.
     /// </summary>
     public class CodeRepositorySortBy : ConstantClass
@@ -6399,6 +6775,122 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type InferenceComponentSortKey.
+    /// </summary>
+    public class InferenceComponentSortKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for InferenceComponentSortKey
+        /// </summary>
+        public static readonly InferenceComponentSortKey CreationTime = new InferenceComponentSortKey("CreationTime");
+        /// <summary>
+        /// Constant Name for InferenceComponentSortKey
+        /// </summary>
+        public static readonly InferenceComponentSortKey Name = new InferenceComponentSortKey("Name");
+        /// <summary>
+        /// Constant Status for InferenceComponentSortKey
+        /// </summary>
+        public static readonly InferenceComponentSortKey Status = new InferenceComponentSortKey("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferenceComponentSortKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceComponentSortKey FindValue(string value)
+        {
+            return FindValue<InferenceComponentSortKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceComponentSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InferenceComponentStatus.
+    /// </summary>
+    public class InferenceComponentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for InferenceComponentStatus
+        /// </summary>
+        public static readonly InferenceComponentStatus Creating = new InferenceComponentStatus("Creating");
+        /// <summary>
+        /// Constant Deleting for InferenceComponentStatus
+        /// </summary>
+        public static readonly InferenceComponentStatus Deleting = new InferenceComponentStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for InferenceComponentStatus
+        /// </summary>
+        public static readonly InferenceComponentStatus Failed = new InferenceComponentStatus("Failed");
+        /// <summary>
+        /// Constant InService for InferenceComponentStatus
+        /// </summary>
+        public static readonly InferenceComponentStatus InService = new InferenceComponentStatus("InService");
+        /// <summary>
+        /// Constant Updating for InferenceComponentStatus
+        /// </summary>
+        public static readonly InferenceComponentStatus Updating = new InferenceComponentStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferenceComponentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceComponentStatus FindValue(string value)
+        {
+            return FindValue<InferenceComponentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceComponentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InferenceExecutionMode.
     /// </summary>
     public class InferenceExecutionMode : ConstantClass
@@ -7714,6 +8206,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListWorkteamsSortByOptions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedInstanceScalingStatus.
+    /// </summary>
+    public class ManagedInstanceScalingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ManagedInstanceScalingStatus
+        /// </summary>
+        public static readonly ManagedInstanceScalingStatus DISABLED = new ManagedInstanceScalingStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ManagedInstanceScalingStatus
+        /// </summary>
+        public static readonly ManagedInstanceScalingStatus ENABLED = new ManagedInstanceScalingStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedInstanceScalingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedInstanceScalingStatus FindValue(string value)
+        {
+            return FindValue<ManagedInstanceScalingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedInstanceScalingStatus(string value)
         {
             return FindValue(value);
         }
@@ -12475,6 +13017,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type RoutingStrategy.
+    /// </summary>
+    public class RoutingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEAST_OUTSTANDING_REQUESTS for RoutingStrategy
+        /// </summary>
+        public static readonly RoutingStrategy LEAST_OUTSTANDING_REQUESTS = new RoutingStrategy("LEAST_OUTSTANDING_REQUESTS");
+        /// <summary>
+        /// Constant RANDOM for RoutingStrategy
+        /// </summary>
+        public static readonly RoutingStrategy RANDOM = new RoutingStrategy("RANDOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoutingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutingStrategy FindValue(string value)
+        {
+            return FindValue<RoutingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RStudioServerProAccessStatus.
     /// </summary>
     public class RStudioServerProAccessStatus : ConstantClass
@@ -14302,6 +14894,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StudioLifecycleConfigSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StudioWebPortal.
+    /// </summary>
+    public class StudioWebPortal : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for StudioWebPortal
+        /// </summary>
+        public static readonly StudioWebPortal DISABLED = new StudioWebPortal("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for StudioWebPortal
+        /// </summary>
+        public static readonly StudioWebPortal ENABLED = new StudioWebPortal("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StudioWebPortal(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StudioWebPortal FindValue(string value)
+        {
+            return FindValue<StudioWebPortal>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StudioWebPortal(string value)
         {
             return FindValue(value);
         }

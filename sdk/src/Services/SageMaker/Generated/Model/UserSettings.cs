@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings that apply to users of Amazon SageMaker Studio. These settings
-    /// are specified when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code>
+    /// A collection of settings that apply to users in a domain. These settings are specified
+    /// when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code>
     /// when the <code>CreateDomain</code> API is called.
     /// 
     ///  
@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
     public partial class UserSettings
     {
         private CanvasAppSettings _canvasAppSettings;
+        private string _defaultLandingUri;
         private string _executionRole;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
@@ -50,6 +51,7 @@ namespace Amazon.SageMaker.Model
         private RStudioServerProAppSettings _rStudioServerProAppSettings;
         private List<string> _securityGroups = new List<string>();
         private SharingSettings _sharingSettings;
+        private StudioWebPortal _studioWebPortal;
         private TensorBoardAppSettings _tensorBoardAppSettings;
 
         /// <summary>
@@ -68,6 +70,36 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCanvasAppSettings()
         {
             return this._canvasAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultLandingUri. 
+        /// <para>
+        /// The default experience that the user is directed to when accessing the domain. The
+        /// supported values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>studio::</code>: Indicates that Studio is the default experience. This value
+        /// can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=1023)]
+        public string DefaultLandingUri
+        {
+            get { return this._defaultLandingUri; }
+            set { this._defaultLandingUri = value; }
+        }
+
+        // Check to see if DefaultLandingUri property is set
+        internal bool IsSetDefaultLandingUri()
+        {
+            return this._defaultLandingUri != null;
         }
 
         /// <summary>
@@ -165,8 +197,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for
-        /// communication.
+        /// The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses
+        /// for communication.
         /// </para>
         ///  
         /// <para>
@@ -181,9 +213,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio.
-        /// Therefore, the number of security groups that you can specify is one less than the
-        /// maximum number shown.
+        /// Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker
+        /// Studio. Therefore, the number of security groups that you can specify is one less
+        /// than the maximum number shown.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -202,7 +234,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SharingSettings. 
         /// <para>
-        /// Specifies options for sharing SageMaker Studio notebooks.
+        /// Specifies options for sharing Amazon SageMaker Studio notebooks.
         /// </para>
         /// </summary>
         public SharingSettings SharingSettings
@@ -215,6 +247,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSharingSettings()
         {
             return this._sharingSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StudioWebPortal. 
+        /// <para>
+        /// Whether the user can access Studio. If this value is set to <code>DISABLED</code>,
+        /// the user cannot access Studio, even if that is the default experience for the domain.
+        /// </para>
+        /// </summary>
+        public StudioWebPortal StudioWebPortal
+        {
+            get { return this._studioWebPortal; }
+            set { this._studioWebPortal = value; }
+        }
+
+        // Check to see if StudioWebPortal property is set
+        internal bool IsSetStudioWebPortal()
+        {
+            return this._studioWebPortal != null;
         }
 
         /// <summary>

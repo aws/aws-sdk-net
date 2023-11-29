@@ -71,6 +71,16 @@ namespace Amazon.SageMaker.Model
         IListCandidatesForAutoMLJobPaginator ListCandidatesForAutoMLJob(ListCandidatesForAutoMLJobRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterNodes operation
+        ///</summary>
+        IListClusterNodesPaginator ListClusterNodes(ListClusterNodesRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusters operation
+        ///</summary>
+        IListClustersPaginator ListClusters(ListClustersRequest request);
+
+        /// <summary>
         /// Paginator for ListCodeRepositories operation
         ///</summary>
         IListCodeRepositoriesPaginator ListCodeRepositories(ListCodeRepositoriesRequest request);
@@ -159,6 +169,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListImageVersions operation
         ///</summary>
         IListImageVersionsPaginator ListImageVersions(ListImageVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInferenceComponents operation
+        ///</summary>
+        IListInferenceComponentsPaginator ListInferenceComponents(ListInferenceComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListInferenceExperiments operation

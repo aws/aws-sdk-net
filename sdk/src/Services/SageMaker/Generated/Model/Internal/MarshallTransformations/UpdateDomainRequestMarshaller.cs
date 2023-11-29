@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppNetworkAccessType())
+                {
+                    context.Writer.WritePropertyName("AppNetworkAccessType");
+                    context.Writer.Write(publicRequest.AppNetworkAccessType);
+                }
+
                 if(publicRequest.IsSetAppSecurityGroupManagement())
                 {
                     context.Writer.WritePropertyName("AppSecurityGroupManagement");
@@ -110,6 +116,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.DomainSettingsForUpdate, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSubnetIds())
+                {
+                    context.Writer.WritePropertyName("SubnetIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    {
+                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

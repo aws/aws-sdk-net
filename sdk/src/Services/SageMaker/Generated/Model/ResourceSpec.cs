@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private AppInstanceType _instanceType;
         private string _lifecycleConfigArn;
         private string _sageMakerImageArn;
+        private string _sageMakerImageVersionAlias;
         private string _sageMakerImageVersionArn;
 
         /// <summary>
@@ -103,6 +104,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSageMakerImageArn()
         {
             return this._sageMakerImageArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerImageVersionAlias. 
+        /// <para>
+        /// The SageMakerImageVersionAlias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SageMakerImageVersionAlias
+        {
+            get { return this._sageMakerImageVersionAlias; }
+            set { this._sageMakerImageVersionAlias = value; }
+        }
+
+        // Check to see if SageMakerImageVersionAlias property is set
+        internal bool IsSetSageMakerImageVersionAlias()
+        {
+            return this._sageMakerImageVersionAlias != null;
         }
 
         /// <summary>

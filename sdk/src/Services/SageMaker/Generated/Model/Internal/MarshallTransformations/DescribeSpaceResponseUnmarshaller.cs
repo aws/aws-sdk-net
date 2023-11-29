@@ -105,6 +105,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Url", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Url = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.SageMakerImageArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SageMakerImageVersionAlias", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerImageVersionAlias = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SageMakerImageVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

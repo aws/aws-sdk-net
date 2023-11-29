@@ -105,6 +105,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedInstanceScaling", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;
+                    unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantRoutingConfigUnmarshaller.Instance;
+                    unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

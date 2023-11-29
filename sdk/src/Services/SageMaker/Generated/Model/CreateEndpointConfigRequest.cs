@@ -76,12 +76,15 @@ namespace Amazon.SageMaker.Model
     {
         private AsyncInferenceConfig _asyncInferenceConfig;
         private DataCaptureConfig _dataCaptureConfig;
+        private bool? _enableNetworkIsolation;
         private string _endpointConfigName;
+        private string _executionRoleArn;
         private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
         private List<ProductionVariant> _shadowProductionVariants = new List<ProductionVariant>();
         private List<Tag> _tags = new List<Tag>();
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property AsyncInferenceConfig. 
@@ -118,6 +121,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableNetworkIsolation. 
+        /// <para>
+        /// Sets whether all model containers deployed to the endpoint are isolated. If they are,
+        /// no inbound or outbound network calls can be made to or from the model containers.
+        /// </para>
+        /// </summary>
+        public bool EnableNetworkIsolation
+        {
+            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            set { this._enableNetworkIsolation = value; }
+        }
+
+        // Check to see if EnableNetworkIsolation property is set
+        internal bool IsSetEnableNetworkIsolation()
+        {
+            return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
         /// The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
@@ -135,6 +157,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigName()
         {
             return this._endpointConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+        /// perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+        /// Roles</a>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to pass this role to Amazon SageMaker, the caller of this action must have
+        /// the <code>iam:PassRole</code> permission.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>
@@ -288,6 +337,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig.
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

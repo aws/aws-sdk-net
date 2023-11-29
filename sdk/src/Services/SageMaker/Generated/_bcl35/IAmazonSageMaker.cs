@@ -138,13 +138,13 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Tags that you add to a SageMaker Studio Domain or User Profile by calling this API
-        /// are also added to any Apps that the Domain or User Profile launches after you call
-        /// this API, but not to Apps that the Domain or User Profile launched before you called
-        /// this API. To make sure that the tags associated with a Domain or User Profile are
-        /// also added to all Apps that the Domain or User Profile launches, add the tags when
-        /// you first create the Domain or User Profile by specifying them in the <code>Tags</code>
-        /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+        /// Tags that you add to a SageMaker Domain or User Profile by calling this API are also
+        /// added to any Apps that the Domain or User Profile launches after you call this API,
+        /// but not to Apps that the Domain or User Profile launched before you called this API.
+        /// To make sure that the tags associated with a Domain or User Profile are also added
+        /// to all Apps that the Domain or User Profile launches, add the tags when you first
+        /// create the Domain or User Profile by specifying them in the <code>Tags</code> parameter
+        /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
         /// </para>
         ///  </note>
@@ -365,9 +365,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a running app for the specified UserProfile. This operation is automatically
-        /// invoked by Amazon SageMaker Studio upon access to the associated Domain, and when
-        /// new kernel configurations are selected by the user. A user may have multiple Apps
-        /// active simultaneously.
+        /// invoked by Amazon SageMaker upon access to the associated Domain, and when new kernel
+        /// configurations are selected by the user. A user may have multiple Apps active simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// 
@@ -650,6 +649,57 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  CreateAutoMLJobV2Result from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
         CreateAutoMLJobV2Response EndCreateAutoMLJobV2(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCluster
+
+
+        /// <summary>
+        /// Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker
+        /// for creating and managing persistent clusters for developing large machine learning
+        /// models, such as large language models (LLMs) and diffusion models. To learn more,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
+        /// SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        CreateClusterResponse CreateCluster(CreateClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
+        /// 
+        /// <returns>Returns a  CreateClusterResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult);
 
         #endregion
         
@@ -940,11 +990,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of
-        /// an associated Amazon Elastic File System (EFS) volume, a list of authorized users,
-        /// and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-        /// configurations. Users within a domain can share notebook files and other artifacts
-        /// with each other.
+        /// Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File
+        /// System (EFS) volume, a list of authorized users, and a variety of security, application,
+        /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
+        /// can share notebook files and other artifacts with each other.
         /// 
         ///  
         /// <para>
@@ -970,10 +1019,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// All SageMaker Studio traffic between the domain and the EFS volume is through the
-        /// specified VPC and subnets. For other Studio traffic, you can specify the <code>AppNetworkAccessType</code>
+        /// All traffic between the domain and the EFS volume is through the specified VPC and
+        /// subnets. For other traffic, you can specify the <code>AppNetworkAccessType</code>
         /// parameter. <code>AppNetworkAccessType</code> corresponds to the network access type
-        /// that you choose when you onboard to Studio. The following options are available:
+        /// that you choose when you onboard to the domain. The following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -982,25 +1031,25 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
-        /// Internet access is disabled by default. To allow internet access, you must specify
-        /// a NAT gateway.
+        ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet
+        /// access is disabled by default. To allow internet access, you must specify a NAT gateway.
         /// </para>
         ///  
         /// <para>
-        /// When internet access is disabled, you won't be able to run a Studio notebook or to
-        /// train or host models unless your VPC has an interface endpoint to the SageMaker API
-        /// and runtime or a NAT gateway and your security groups allow outbound connections.
+        /// When internet access is disabled, you won't be able to run a Amazon SageMaker Studio
+        /// notebook or to train or host models unless your VPC has an interface endpoint to the
+        /// SageMaker API and runtime or a NAT gateway and your security groups allow outbound
+        /// connections.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
         /// NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound
-        /// rules in order to launch a SageMaker Studio app successfully.
+        /// rules in order to launch a Amazon SageMaker Studio app successfully.
         /// </para>
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-        /// SageMaker Studio Notebooks to Resources in a VPC</a>.
+        /// Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
@@ -1882,6 +1931,57 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  CreateImageVersionResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
         CreateImageVersionResponse EndCreateImageVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateInferenceComponent
+
+
+        /// <summary>
+        /// Creates an inference component, which is a SageMaker hosting object that you can use
+        /// to deploy a model to an endpoint. In the inference component settings, you specify
+        /// the model, the endpoint, and how the model utilizes the resources that the endpoint
+        /// hosts. You can optimize resource utilization by tailoring how the required CPU cores,
+        /// accelerators, and memory are allocated. You can deploy multiple inference components
+        /// to an endpoint, where each inference component contains one model and the resource
+        /// utilization needs for that individual model. After you deploy an inference component,
+        /// you can directly invoke the associated model when you use the InvokeEndpoint API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceComponent service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent">REST API Reference for CreateInferenceComponent Operation</seealso>
+        CreateInferenceComponentResponse CreateInferenceComponent(CreateInferenceComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceComponent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInferenceComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent">REST API Reference for CreateInferenceComponent Operation</seealso>
+        IAsyncResult BeginCreateInferenceComponent(CreateInferenceComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInferenceComponent.</param>
+        /// 
+        /// <returns>Returns a  CreateInferenceComponentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent">REST API Reference for CreateInferenceComponent Operation</seealso>
+        CreateInferenceComponentResponse EndCreateInferenceComponent(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2815,10 +2915,10 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser,
-        /// the user will be automatically signed in to Amazon SageMaker Studio, and granted access
-        /// to all of the Apps and files associated with the Domain's Amazon Elastic File System
-        /// (EFS) volume. This operation can only be called when the authentication mode equals
-        /// IAM. 
+        /// the user will be automatically signed in to the domain, and granted access to all
+        /// of the Apps and files associated with the Domain's Amazon Elastic File System (EFS)
+        /// volume. This operation can only be called when the authentication mode equals IAM.
+        /// 
         /// 
         ///  
         /// <para>
@@ -2832,7 +2932,7 @@ namespace Amazon.SageMaker
         /// You can restrict access to this API and to the URL that it returns to a list of IP
         /// addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-        /// to SageMaker Studio Through an Interface VPC Endpoint</a> .
+        /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
         /// </para>
         ///  <note> 
         /// <para>
@@ -3094,7 +3194,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a new Studio Lifecycle Configuration.
+        /// Creates a new Amazon SageMaker Studio Lifecycle Configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudioLifecycleConfig service method.</param>
         /// 
@@ -3494,11 +3594,11 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates a user profile. A user profile represents a single user within a domain, and
         /// is the main way to reference a "person" for the purposes of sharing, reporting, and
-        /// other user-oriented features. This entity is created when a user onboards to Amazon
-        /// SageMaker Studio. If an administrator invites a person by email or imports them from
-        /// IAM Identity Center, a user profile is automatically created. A user profile is the
-        /// primary holder of settings for an individual user and has a reference to the user's
-        /// private Amazon Elastic File System (EFS) home directory.
+        /// other user-oriented features. This entity is created when a user onboards to a domain.
+        /// If an administrator invites a person by email or imports them from IAM Identity Center,
+        /// a user profile is automatically created. A user profile is the primary holder of settings
+        /// for an individual user and has a reference to the user's private Amazon Elastic File
+        /// System (EFS) home directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserProfile service method.</param>
         /// 
@@ -3917,6 +4017,53 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DeleteAssociationResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         DeleteAssociationResponse EndDeleteAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCluster
+
+
+        /// <summary>
+        /// Delete a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCluster operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCluster.</param>
+        /// 
+        /// <returns>Returns a  DeleteClusterResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4729,6 +4876,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteInferenceComponent
+
+
+        /// <summary>
+        /// Deletes an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceComponent service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent">REST API Reference for DeleteInferenceComponent Operation</seealso>
+        DeleteInferenceComponentResponse DeleteInferenceComponent(DeleteInferenceComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceComponent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInferenceComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent">REST API Reference for DeleteInferenceComponent Operation</seealso>
+        IAsyncResult BeginDeleteInferenceComponent(DeleteInferenceComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInferenceComponent.</param>
+        /// 
+        /// <returns>Returns a  DeleteInferenceComponentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent">REST API Reference for DeleteInferenceComponent Operation</seealso>
+        DeleteInferenceComponentResponse EndDeleteInferenceComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteInferenceExperiment
 
 
@@ -5409,9 +5596,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
-        /// there must be no running apps using the Lifecycle Configuration. You must also remove
-        /// the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.
+        /// Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the
+        /// Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration.
+        /// You must also remove the Lifecycle Configuration from UserSettings in all Domains
+        /// and UserProfiles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStudioLifecycleConfig service method.</param>
         /// 
@@ -5471,9 +5659,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// When you call this API to delete tags from a SageMaker Studio Domain or User Profile,
-        /// the deleted tags are not removed from Apps that the SageMaker Studio Domain or User
-        /// Profile launched before you called this API.
+        /// When you call this API to delete tags from a SageMaker Domain or User Profile, the
+        /// deleted tags are not removed from Apps that the SageMaker Domain or User Profile launched
+        /// before you called this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6093,6 +6281,93 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DescribeAutoMLJobV2Result from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
         DescribeAutoMLJobV2Response EndDescribeAutoMLJobV2(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCluster
+
+
+        /// <summary>
+        /// Retrieves information of a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
+        DescribeClusterResponse DescribeCluster(DescribeClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
+        IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
+        DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeClusterNode
+
+
+        /// <summary>
+        /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+        /// a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterNode service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode">REST API Reference for DescribeClusterNode Operation</seealso>
+        DescribeClusterNodeResponse DescribeClusterNode(DescribeClusterNodeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterNode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterNode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode">REST API Reference for DescribeClusterNode Operation</seealso>
+        IAsyncResult BeginDescribeClusterNode(DescribeClusterNodeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterNode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterNode.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterNodeResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode">REST API Reference for DescribeClusterNode Operation</seealso>
+        DescribeClusterNodeResponse EndDescribeClusterNode(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7013,6 +7288,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeInferenceComponent
+
+
+        /// <summary>
+        /// Returns information about an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceComponent service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent">REST API Reference for DescribeInferenceComponent Operation</seealso>
+        DescribeInferenceComponentResponse DescribeInferenceComponent(DescribeInferenceComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceComponent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInferenceComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent">REST API Reference for DescribeInferenceComponent Operation</seealso>
+        IAsyncResult BeginDescribeInferenceComponent(DescribeInferenceComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInferenceComponent.</param>
+        /// 
+        /// <returns>Returns a  DescribeInferenceComponentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent">REST API Reference for DescribeInferenceComponent Operation</seealso>
+        DescribeInferenceComponentResponse EndDescribeInferenceComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeInferenceExperiment
 
 
@@ -7919,7 +8234,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Describes the Studio Lifecycle Configuration.
+        /// Describes the Amazon SageMaker Studio Lifecycle Configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStudioLifecycleConfig service method.</param>
         /// 
@@ -9137,6 +9452,90 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListClusterNodes
+
+
+        /// <summary>
+        /// Retrieves the list of instances (also called <i>nodes</i> interchangeably) in a SageMaker
+        /// HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes">REST API Reference for ListClusterNodes Operation</seealso>
+        ListClusterNodesResponse ListClusterNodes(ListClusterNodesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterNodes operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes">REST API Reference for ListClusterNodes Operation</seealso>
+        IAsyncResult BeginListClusterNodes(ListClusterNodesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterNodes.</param>
+        /// 
+        /// <returns>Returns a  ListClusterNodesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes">REST API Reference for ListClusterNodes Operation</seealso>
+        ListClusterNodesResponse EndListClusterNodes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListClusters
+
+
+        /// <summary>
+        /// Retrieves the list of SageMaker HyperPod clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters">REST API Reference for ListClusters Operation</seealso>
+        ListClustersResponse ListClusters(ListClustersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters">REST API Reference for ListClusters Operation</seealso>
+        IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
+        /// 
+        /// <returns>Returns a  ListClustersResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters">REST API Reference for ListClusters Operation</seealso>
+        ListClustersResponse EndListClusters(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCodeRepositories
 
 
@@ -10016,6 +10415,46 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  ListImageVersionsResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
         ListImageVersionsResponse EndListImageVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListInferenceComponents
+
+
+        /// <summary>
+        /// Lists the inference components in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceComponents service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceComponents service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents">REST API Reference for ListInferenceComponents Operation</seealso>
+        ListInferenceComponentsResponse ListInferenceComponents(ListInferenceComponentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInferenceComponents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceComponents operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInferenceComponents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents">REST API Reference for ListInferenceComponents Operation</seealso>
+        IAsyncResult BeginListInferenceComponents(ListInferenceComponentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInferenceComponents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInferenceComponents.</param>
+        /// 
+        /// <returns>Returns a  ListInferenceComponentsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents">REST API Reference for ListInferenceComponents Operation</seealso>
+        ListInferenceComponentsResponse EndListInferenceComponents(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11300,7 +11739,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
+        /// Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services
+        /// Account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioLifecycleConfigs service method.</param>
         /// 
@@ -13237,6 +13677,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateCluster
+
+
+        /// <summary>
+        /// Update a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        UpdateClusterResponse UpdateCluster(UpdateClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateCodeRepository
 
 
@@ -13866,6 +14357,94 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  UpdateImageVersionResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion">REST API Reference for UpdateImageVersion Operation</seealso>
         UpdateImageVersionResponse EndUpdateImageVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateInferenceComponent
+
+
+        /// <summary>
+        /// Updates an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceComponent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent">REST API Reference for UpdateInferenceComponent Operation</seealso>
+        UpdateInferenceComponentResponse UpdateInferenceComponent(UpdateInferenceComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceComponent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInferenceComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent">REST API Reference for UpdateInferenceComponent Operation</seealso>
+        IAsyncResult BeginUpdateInferenceComponent(UpdateInferenceComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInferenceComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInferenceComponent.</param>
+        /// 
+        /// <returns>Returns a  UpdateInferenceComponentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent">REST API Reference for UpdateInferenceComponent Operation</seealso>
+        UpdateInferenceComponentResponse EndUpdateInferenceComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateInferenceComponentRuntimeConfig
+
+
+        /// <summary>
+        /// Runtime settings for a model that is deployed with an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceComponentRuntimeConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInferenceComponentRuntimeConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig">REST API Reference for UpdateInferenceComponentRuntimeConfig Operation</seealso>
+        UpdateInferenceComponentRuntimeConfigResponse UpdateInferenceComponentRuntimeConfig(UpdateInferenceComponentRuntimeConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInferenceComponentRuntimeConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceComponentRuntimeConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInferenceComponentRuntimeConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig">REST API Reference for UpdateInferenceComponentRuntimeConfig Operation</seealso>
+        IAsyncResult BeginUpdateInferenceComponentRuntimeConfig(UpdateInferenceComponentRuntimeConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInferenceComponentRuntimeConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInferenceComponentRuntimeConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateInferenceComponentRuntimeConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig">REST API Reference for UpdateInferenceComponentRuntimeConfig Operation</seealso>
+        UpdateInferenceComponentRuntimeConfigResponse EndUpdateInferenceComponentRuntimeConfig(IAsyncResult asyncResult);
 
         #endregion
         

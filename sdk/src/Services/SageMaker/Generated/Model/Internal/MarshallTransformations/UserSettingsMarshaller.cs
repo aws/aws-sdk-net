@@ -56,6 +56,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefaultLandingUri())
+            {
+                context.Writer.WritePropertyName("DefaultLandingUri");
+                context.Writer.Write(requestObject.DefaultLandingUri);
+            }
+
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
@@ -126,6 +132,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.SharingSettings, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetStudioWebPortal())
+            {
+                context.Writer.WritePropertyName("StudioWebPortal");
+                context.Writer.Write(requestObject.StudioWebPortal);
             }
 
             if(requestObject.IsSetTensorBoardAppSettings())

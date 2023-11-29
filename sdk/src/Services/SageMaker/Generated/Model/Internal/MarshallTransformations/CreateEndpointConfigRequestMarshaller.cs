@@ -89,10 +89,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEnableNetworkIsolation())
+                {
+                    context.Writer.WritePropertyName("EnableNetworkIsolation");
+                    context.Writer.Write(publicRequest.EnableNetworkIsolation);
+                }
+
                 if(publicRequest.IsSetEndpointConfigName())
                 {
                     context.Writer.WritePropertyName("EndpointConfigName");
                     context.Writer.Write(publicRequest.EndpointConfigName);
+                }
+
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("ExecutionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
                 }
 
                 if(publicRequest.IsSetExplainerConfig())
@@ -158,6 +170,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("VpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

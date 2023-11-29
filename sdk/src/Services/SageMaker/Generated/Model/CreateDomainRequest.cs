@@ -30,11 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of
-    /// an associated Amazon Elastic File System (EFS) volume, a list of authorized users,
-    /// and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-    /// configurations. Users within a domain can share notebook files and other artifacts
-    /// with each other.
+    /// Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File
+    /// System (EFS) volume, a list of authorized users, and a variety of security, application,
+    /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
+    /// can share notebook files and other artifacts with each other.
     /// 
     ///  
     /// <para>
@@ -60,10 +59,10 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// All SageMaker Studio traffic between the domain and the EFS volume is through the
-    /// specified VPC and subnets. For other Studio traffic, you can specify the <code>AppNetworkAccessType</code>
+    /// All traffic between the domain and the EFS volume is through the specified VPC and
+    /// subnets. For other traffic, you can specify the <code>AppNetworkAccessType</code>
     /// parameter. <code>AppNetworkAccessType</code> corresponds to the network access type
-    /// that you choose when you onboard to Studio. The following options are available:
+    /// that you choose when you onboard to the domain. The following options are available:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -72,25 +71,25 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
-    /// Internet access is disabled by default. To allow internet access, you must specify
-    /// a NAT gateway.
+    ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet
+    /// access is disabled by default. To allow internet access, you must specify a NAT gateway.
     /// </para>
     ///  
     /// <para>
-    /// When internet access is disabled, you won't be able to run a Studio notebook or to
-    /// train or host models unless your VPC has an interface endpoint to the SageMaker API
-    /// and runtime or a NAT gateway and your security groups allow outbound connections.
+    /// When internet access is disabled, you won't be able to run a Amazon SageMaker Studio
+    /// notebook or to train or host models unless your VPC has an interface endpoint to the
+    /// SageMaker API and runtime or a NAT gateway and your security groups allow outbound
+    /// connections.
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
     /// NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound
-    /// rules in order to launch a SageMaker Studio app successfully.
+    /// rules in order to launch a Amazon SageMaker Studio app successfully.
     /// </para>
     ///  </important> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-    /// SageMaker Studio Notebooks to Resources in a VPC</a>.
+    /// Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.
     /// </para>
     /// </summary>
     public partial class CreateDomainRequest : AmazonSageMakerRequest
@@ -120,7 +119,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+        ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -302,7 +301,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The VPC subnets that Studio uses for communication.
+        /// The VPC subnets that the domain uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]
@@ -346,7 +345,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+        /// The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=32)]

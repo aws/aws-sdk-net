@@ -34,11 +34,48 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateDomainRequest : AmazonSageMakerRequest
     {
+        private AppNetworkAccessType _appNetworkAccessType;
         private AppSecurityGroupManagement _appSecurityGroupManagement;
         private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainId;
         private DomainSettingsForUpdate _domainSettingsForUpdate;
+        private List<string> _subnetIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AppNetworkAccessType. 
+        /// <para>
+        /// Specifies the VPC used for non-EFS traffic.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon
+        /// SageMaker, which allows direct internet access.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This configuration can only be modified if there are no apps in the <code>InService</code>,
+        /// <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be
+        /// updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// is provided as part of the same request.
+        /// </para>
+        /// </summary>
+        public AppNetworkAccessType AppNetworkAccessType
+        {
+            get { return this._appNetworkAccessType; }
+            set { this._appNetworkAccessType = value; }
+        }
+
+        // Check to see if AppNetworkAccessType property is set
+        internal bool IsSetAppNetworkAccessType()
+        {
+            return this._appNetworkAccessType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AppSecurityGroupManagement. 
@@ -133,6 +170,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainSettingsForUpdate()
         {
             return this._domainSettingsForUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// The VPC subnets that Studio uses for communication.
+        /// </para>
+        ///  
+        /// <para>
+        /// If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>,
+        /// or <code>Deleting</code> state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=16)]
+        public List<string> SubnetIds
+        {
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
+        }
+
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
+        {
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
 
     }

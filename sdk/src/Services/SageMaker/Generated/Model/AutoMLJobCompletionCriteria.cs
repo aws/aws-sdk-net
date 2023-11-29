@@ -102,6 +102,11 @@ namespace Amazon.SageMaker.Model
         /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls
         /// the runtime of the job candidate.
         /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">TextGenerationJobConfig</a>
+        /// problem types, the maximum time defaults to 72 hours (259200 seconds).
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxRuntimePerTrainingJobInSeconds

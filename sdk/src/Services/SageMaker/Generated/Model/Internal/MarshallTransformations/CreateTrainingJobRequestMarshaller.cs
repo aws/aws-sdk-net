@@ -173,6 +173,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInfraCheckConfig())
+                {
+                    context.Writer.WritePropertyName("InfraCheckConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InfraCheckConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InfraCheckConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInputDataConfig())
                 {
                     context.Writer.WritePropertyName("InputDataConfig");

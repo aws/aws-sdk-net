@@ -29,11 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a VPC that your training jobs and hosted models have access to. Control
-    /// access to and from your training and model containers by configuring the VPC. For
-    /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
-    /// Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
-    /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
+    /// Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models,
+    /// and compute resources have access to. You can control access to and from your resources
+    /// by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give
+    /// SageMaker Access to Resources in your Amazon VPC</a>.
     /// </summary>
     public partial class VpcConfig
     {
@@ -43,8 +42,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for
-        /// the VPC that is specified in the <code>Subnets</code> field.
+        /// The VPC security group IDs, in the form <code>sg-xxxxxxxx</code>. Specify the security
+        /// groups for the VPC that is specified in the <code>Subnets</code> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

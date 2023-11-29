@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
+        private InfraCheckConfig _infraCheckConfig;
         private List<Channel> _inputDataConfig = new List<Channel>();
         private string _labelingJobArn;
         private DateTime? _lastModifiedTime;
@@ -386,6 +387,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHyperParameters()
         {
             return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfraCheckConfig. 
+        /// <para>
+        /// Contains information about the infrastructure health check configuration for the training
+        /// job.
+        /// </para>
+        /// </summary>
+        public InfraCheckConfig InfraCheckConfig
+        {
+            get { return this._infraCheckConfig; }
+            set { this._infraCheckConfig = value; }
+        }
+
+        // Check to see if InfraCheckConfig property is set
+        internal bool IsSetInfraCheckConfig()
+        {
+            return this._infraCheckConfig != null;
         }
 
         /// <summary>

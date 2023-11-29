@@ -62,6 +62,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTextGenerationHyperParameters())
+            {
+                context.Writer.WritePropertyName("TextGenerationHyperParameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectTextGenerationHyperParametersKvp in requestObject.TextGenerationHyperParameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectTextGenerationHyperParametersKvp.Key);
+                    var requestObjectTextGenerationHyperParametersValue = requestObjectTextGenerationHyperParametersKvp.Value;
+
+                        context.Writer.Write(requestObjectTextGenerationHyperParametersValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

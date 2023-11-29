@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the IAM role that you specified for the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }

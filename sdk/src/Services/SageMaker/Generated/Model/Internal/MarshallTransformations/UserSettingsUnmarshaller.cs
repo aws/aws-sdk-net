@@ -69,6 +69,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CanvasAppSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultLandingUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultLandingUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExecutionRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SharingSettingsUnmarshaller.Instance;
                     unmarshalledObject.SharingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StudioWebPortal", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StudioWebPortal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TensorBoardAppSettings", targetDepth))

@@ -147,6 +147,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.HyperParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InfraCheckConfig", targetDepth))
+                {
+                    var unmarshaller = InfraCheckConfigUnmarshaller.Instance;
+                    response.InfraCheckConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputDataConfig", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Channel, ChannelUnmarshaller>(ChannelUnmarshaller.Instance);

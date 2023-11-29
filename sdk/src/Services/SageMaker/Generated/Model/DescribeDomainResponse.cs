@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+        ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -428,7 +428,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The VPC subnets that Studio uses for communication.
+        /// The VPC subnets that the domain uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
@@ -466,7 +466,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+        /// The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

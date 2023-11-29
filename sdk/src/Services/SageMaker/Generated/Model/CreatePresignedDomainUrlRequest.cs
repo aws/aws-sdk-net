@@ -31,10 +31,10 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreatePresignedDomainUrl operation.
     /// Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser,
-    /// the user will be automatically signed in to Amazon SageMaker Studio, and granted access
-    /// to all of the Apps and files associated with the Domain's Amazon Elastic File System
-    /// (EFS) volume. This operation can only be called when the authentication mode equals
-    /// IAM. 
+    /// the user will be automatically signed in to the domain, and granted access to all
+    /// of the Apps and files associated with the Domain's Amazon Elastic File System (EFS)
+    /// volume. This operation can only be called when the authentication mode equals IAM.
+    /// 
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
     /// You can restrict access to this API and to the URL that it returns to a list of IP
     /// addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information,
     /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-    /// to SageMaker Studio Through an Interface VPC Endpoint</a> .
+    /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
     /// </para>
     ///  <note> 
     /// <para>
@@ -63,6 +63,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _domainId;
         private int? _expiresInSeconds;
+        private string _landingUri;
         private int? _sessionExpirationDurationInSeconds;
         private string _spaceName;
         private string _userProfileName;
@@ -103,6 +104,52 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExpiresInSeconds()
         {
             return this._expiresInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LandingUri. 
+        /// <para>
+        /// The landing page that the user is directed to when accessing the presigned URL. Using
+        /// this value, users can access Studio or Studio Classic, even if it is not the default
+        /// experience for the domain. The supported values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>app:JupyterServer:relative/path</code>: Directs users to the relative path
+        /// in the Studio Classic application.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in
+        /// the JupyterLab application.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path
+        /// in the RStudio application.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
+        /// Canvas application.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=1023)]
+        public string LandingUri
+        {
+            get { return this._landingUri; }
+            set { this._landingUri = value; }
+        }
+
+        // Check to see if LandingUri property is set
+        internal bool IsSetLandingUri()
+        {
+            return this._landingUri != null;
         }
 
         /// <summary>

@@ -92,6 +92,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetManagedInstanceScaling())
+            {
+                context.Writer.WritePropertyName("ManagedInstanceScaling");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProductionVariantManagedInstanceScalingMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedInstanceScaling, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetModelDataDownloadTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ModelDataDownloadTimeoutInSeconds");
@@ -102,6 +113,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ModelName");
                 context.Writer.Write(requestObject.ModelName);
+            }
+
+            if(requestObject.IsSetRoutingConfig())
+            {
+                context.Writer.WritePropertyName("RoutingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProductionVariantRoutingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.RoutingConfig, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetServerlessConfig())

@@ -365,13 +365,13 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Tags that you add to a SageMaker Studio Domain or User Profile by calling this API
-        /// are also added to any Apps that the Domain or User Profile launches after you call
-        /// this API, but not to Apps that the Domain or User Profile launched before you called
-        /// this API. To make sure that the tags associated with a Domain or User Profile are
-        /// also added to all Apps that the Domain or User Profile launches, add the tags when
-        /// you first create the Domain or User Profile by specifying them in the <code>Tags</code>
-        /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+        /// Tags that you add to a SageMaker Domain or User Profile by calling this API are also
+        /// added to any Apps that the Domain or User Profile launches after you call this API,
+        /// but not to Apps that the Domain or User Profile launched before you called this API.
+        /// To make sure that the tags associated with a Domain or User Profile are also added
+        /// to all Apps that the Domain or User Profile launches, add the tags when you first
+        /// create the Domain or User Profile by specifying them in the <code>Tags</code> parameter
+        /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
         /// </para>
         ///  </note>
@@ -562,9 +562,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a running app for the specified UserProfile. This operation is automatically
-        /// invoked by Amazon SageMaker Studio upon access to the associated Domain, and when
-        /// new kernel configurations are selected by the user. A user may have multiple Apps
-        /// active simultaneously.
+        /// invoked by Amazon SageMaker upon access to the associated Domain, and when new kernel
+        /// configurations are selected by the user. A user may have multiple Apps active simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// <param name="cancellationToken">
@@ -806,6 +805,51 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAutoMLJobV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCluster
+
+        internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker
+        /// for creating and managing persistent clusters for developing large machine learning
+        /// models, such as large language models (LLMs) and diffusion models. To learn more,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
+        /// SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1077,11 +1121,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of
-        /// an associated Amazon Elastic File System (EFS) volume, a list of authorized users,
-        /// and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-        /// configurations. Users within a domain can share notebook files and other artifacts
-        /// with each other.
+        /// Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File
+        /// System (EFS) volume, a list of authorized users, and a variety of security, application,
+        /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
+        /// can share notebook files and other artifacts with each other.
         /// 
         ///  
         /// <para>
@@ -1107,10 +1150,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// All SageMaker Studio traffic between the domain and the EFS volume is through the
-        /// specified VPC and subnets. For other Studio traffic, you can specify the <code>AppNetworkAccessType</code>
+        /// All traffic between the domain and the EFS volume is through the specified VPC and
+        /// subnets. For other traffic, you can specify the <code>AppNetworkAccessType</code>
         /// parameter. <code>AppNetworkAccessType</code> corresponds to the network access type
-        /// that you choose when you onboard to Studio. The following options are available:
+        /// that you choose when you onboard to the domain. The following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1119,25 +1162,25 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
-        /// Internet access is disabled by default. To allow internet access, you must specify
-        /// a NAT gateway.
+        ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet
+        /// access is disabled by default. To allow internet access, you must specify a NAT gateway.
         /// </para>
         ///  
         /// <para>
-        /// When internet access is disabled, you won't be able to run a Studio notebook or to
-        /// train or host models unless your VPC has an interface endpoint to the SageMaker API
-        /// and runtime or a NAT gateway and your security groups allow outbound connections.
+        /// When internet access is disabled, you won't be able to run a Amazon SageMaker Studio
+        /// notebook or to train or host models unless your VPC has an interface endpoint to the
+        /// SageMaker API and runtime or a NAT gateway and your security groups allow outbound
+        /// connections.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
         /// NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound
-        /// rules in order to launch a SageMaker Studio app successfully.
+        /// rules in order to launch a Amazon SageMaker Studio app successfully.
         /// </para>
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-        /// SageMaker Studio Notebooks to Resources in a VPC</a>.
+        /// Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
@@ -1924,6 +1967,51 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateImageVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateImageVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateInferenceComponent
+
+        internal virtual CreateInferenceComponentResponse CreateInferenceComponent(CreateInferenceComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInferenceComponentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInferenceComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an inference component, which is a SageMaker hosting object that you can use
+        /// to deploy a model to an endpoint. In the inference component settings, you specify
+        /// the model, the endpoint, and how the model utilizes the resources that the endpoint
+        /// hosts. You can optimize resource utilization by tailoring how the required CPU cores,
+        /// accelerators, and memory are allocated. You can deploy multiple inference components
+        /// to an endpoint, where each inference component contains one model and the resource
+        /// utilization needs for that individual model. After you deploy an inference component,
+        /// you can directly invoke the associated model when you use the InvokeEndpoint API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent">REST API Reference for CreateInferenceComponent Operation</seealso>
+        public virtual Task<CreateInferenceComponentResponse> CreateInferenceComponentAsync(CreateInferenceComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInferenceComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateInferenceComponentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2778,10 +2866,10 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser,
-        /// the user will be automatically signed in to Amazon SageMaker Studio, and granted access
-        /// to all of the Apps and files associated with the Domain's Amazon Elastic File System
-        /// (EFS) volume. This operation can only be called when the authentication mode equals
-        /// IAM. 
+        /// the user will be automatically signed in to the domain, and granted access to all
+        /// of the Apps and files associated with the Domain's Amazon Elastic File System (EFS)
+        /// volume. This operation can only be called when the authentication mode equals IAM.
+        /// 
         /// 
         ///  
         /// <para>
@@ -2795,7 +2883,7 @@ namespace Amazon.SageMaker
         /// You can restrict access to this API and to the URL that it returns to a list of IP
         /// addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-        /// to SageMaker Studio Through an Interface VPC Endpoint</a> .
+        /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
         /// </para>
         ///  <note> 
         /// <para>
@@ -3027,7 +3115,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a new Studio Lifecycle Configuration.
+        /// Creates a new Amazon SageMaker Studio Lifecycle Configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudioLifecycleConfig service method.</param>
         /// <param name="cancellationToken">
@@ -3397,11 +3485,11 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates a user profile. A user profile represents a single user within a domain, and
         /// is the main way to reference a "person" for the purposes of sharing, reporting, and
-        /// other user-oriented features. This entity is created when a user onboards to Amazon
-        /// SageMaker Studio. If an administrator invites a person by email or imports them from
-        /// IAM Identity Center, a user profile is automatically created. A user profile is the
-        /// primary holder of settings for an individual user and has a reference to the user's
-        /// private Amazon Elastic File System (EFS) home directory.
+        /// other user-oriented features. This entity is created when a user onboards to a domain.
+        /// If an administrator invites a person by email or imports them from IAM Identity Center,
+        /// a user profile is automatically created. A user profile is the primary holder of settings
+        /// for an individual user and has a reference to the user's private Amazon Elastic File
+        /// System (EFS) home directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserProfile service method.</param>
         /// <param name="cancellationToken">
@@ -3755,6 +3843,47 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCluster
+
+        internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4466,6 +4595,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteInferenceComponent
+
+        internal virtual DeleteInferenceComponentResponse DeleteInferenceComponent(DeleteInferenceComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInferenceComponentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInferenceComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent">REST API Reference for DeleteInferenceComponent Operation</seealso>
+        public virtual Task<DeleteInferenceComponentResponse> DeleteInferenceComponentAsync(DeleteInferenceComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInferenceComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInferenceComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteInferenceExperiment
 
         internal virtual DeleteInferenceExperimentResponse DeleteInferenceExperiment(DeleteInferenceExperimentRequest request)
@@ -5066,9 +5229,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
-        /// there must be no running apps using the Lifecycle Configuration. You must also remove
-        /// the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.
+        /// Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the
+        /// Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration.
+        /// You must also remove the Lifecycle Configuration from UserSettings in all Domains
+        /// and UserProfiles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStudioLifecycleConfig service method.</param>
         /// <param name="cancellationToken">
@@ -5122,9 +5286,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// When you call this API to delete tags from a SageMaker Studio Domain or User Profile,
-        /// the deleted tags are not removed from Apps that the SageMaker Studio Domain or User
-        /// Profile launched before you called this API.
+        /// When you call this API to delete tags from a SageMaker Domain or User Profile, the
+        /// deleted tags are not removed from Apps that the SageMaker Domain or User Profile launched
+        /// before you called this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5649,6 +5813,81 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAutoMLJobV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCluster
+
+        internal virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information of a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
+        public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeClusterNode
+
+        internal virtual DescribeClusterNodeResponse DescribeClusterNode(DescribeClusterNodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterNodeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterNodeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+        /// a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterNode service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode">REST API Reference for DescribeClusterNode Operation</seealso>
+        public virtual Task<DescribeClusterNodeResponse> DescribeClusterNodeAsync(DescribeClusterNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterNodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterNodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6444,6 +6683,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeInferenceComponent
+
+        internal virtual DescribeInferenceComponentResponse DescribeInferenceComponent(DescribeInferenceComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInferenceComponentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInferenceComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent">REST API Reference for DescribeInferenceComponent Operation</seealso>
+        public virtual Task<DescribeInferenceComponentResponse> DescribeInferenceComponentAsync(DescribeInferenceComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInferenceComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInferenceComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeInferenceExperiment
 
         internal virtual DescribeInferenceExperimentResponse DescribeInferenceExperiment(DescribeInferenceExperimentRequest request)
@@ -7234,7 +7507,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Describes the Studio Lifecycle Configuration.
+        /// Describes the Amazon SageMaker Studio Lifecycle Configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStudioLifecycleConfig service method.</param>
         /// <param name="cancellationToken">
@@ -8274,6 +8547,78 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListClusterNodes
+
+        internal virtual ListClusterNodesResponse ListClusterNodes(ListClusterNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterNodesResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterNodesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the list of instances (also called <i>nodes</i> interchangeably) in a SageMaker
+        /// HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes">REST API Reference for ListClusterNodes Operation</seealso>
+        public virtual Task<ListClusterNodesResponse> ListClusterNodesAsync(ListClusterNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterNodesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClusterNodesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClusters
+
+        internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListClustersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the list of SageMaker HyperPod clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters">REST API Reference for ListClusters Operation</seealso>
+        public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCodeRepositories
 
         internal virtual ListCodeRepositoriesResponse ListCodeRepositories(ListCodeRepositoriesRequest request)
@@ -9026,6 +9371,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListImageVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListImageVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInferenceComponents
+
+        internal virtual ListInferenceComponentsResponse ListInferenceComponents(ListInferenceComponentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceComponentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceComponentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the inference components in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceComponents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceComponents service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents">REST API Reference for ListInferenceComponents Operation</seealso>
+        public virtual Task<ListInferenceComponentsResponse> ListInferenceComponentsAsync(ListInferenceComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceComponentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInferenceComponentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10135,7 +10514,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
+        /// Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services
+        /// Account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioLifecycleConfigs service method.</param>
         /// <param name="cancellationToken">
@@ -11816,6 +12196,51 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateCluster
+
+        internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a SageMaker HyperPod cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateCodeRepository
 
         internal virtual UpdateCodeRepositoryResponse UpdateCodeRepository(UpdateCodeRepositoryRequest request)
@@ -12366,6 +12791,82 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateImageVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateImageVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInferenceComponent
+
+        internal virtual UpdateInferenceComponentResponse UpdateInferenceComponent(UpdateInferenceComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInferenceComponentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInferenceComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInferenceComponent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent">REST API Reference for UpdateInferenceComponent Operation</seealso>
+        public virtual Task<UpdateInferenceComponentResponse> UpdateInferenceComponentAsync(UpdateInferenceComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInferenceComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInferenceComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInferenceComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInferenceComponentRuntimeConfig
+
+        internal virtual UpdateInferenceComponentRuntimeConfigResponse UpdateInferenceComponentRuntimeConfig(UpdateInferenceComponentRuntimeConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInferenceComponentRuntimeConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInferenceComponentRuntimeConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInferenceComponentRuntimeConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Runtime settings for a model that is deployed with an inference component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceComponentRuntimeConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInferenceComponentRuntimeConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig">REST API Reference for UpdateInferenceComponentRuntimeConfig Operation</seealso>
+        public virtual Task<UpdateInferenceComponentRuntimeConfigResponse> UpdateInferenceComponentRuntimeConfigAsync(UpdateInferenceComponentRuntimeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInferenceComponentRuntimeConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInferenceComponentRuntimeConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInferenceComponentRuntimeConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion

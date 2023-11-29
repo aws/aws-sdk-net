@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStudioLifecycleConfig operation.
-    /// Describes the Studio Lifecycle Configuration.
+    /// Describes the Amazon SageMaker Studio Lifecycle Configuration.
     /// </summary>
     public partial class DescribeStudioLifecycleConfigRequest : AmazonSageMakerRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StudioLifecycleConfigName. 
         /// <para>
-        /// The name of the Studio Lifecycle Configuration to describe.
+        /// The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

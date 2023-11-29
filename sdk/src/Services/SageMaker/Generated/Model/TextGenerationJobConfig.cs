@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _baseModelName;
         private AutoMLJobCompletionCriteria _completionCriteria;
+        private Dictionary<string, string> _textGenerationHyperParameters = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property BaseModelName. 
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// of large language models. For information on the list of supported models, see <a
         /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
         /// generation models supporting fine-tuning in Autopilot</a>. If no <code>BaseModelName</code>
-        /// is provided, the default model used is Falcon-7B-Instruct. 
+        /// is provided, the default model used is <b>Falcon7BInstruct</b>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -70,7 +71,12 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CompletionCriteria.
+        /// Gets and sets the property CompletionCriteria. 
+        /// <para>
+        /// How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code>
+        /// problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code>
+        /// defaults to 72h (259200s).
+        /// </para>
         /// </summary>
         public AutoMLJobCompletionCriteria CompletionCriteria
         {
@@ -82,6 +88,62 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompletionCriteria()
         {
             return this._completionCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TextGenerationHyperParameters. 
+        /// <para>
+        /// The hyperparameters used to configure and optimize the learning process of the base
+        /// model. You can set any combination of the following hyperparameters for all base models.
+        /// For more information on each supported hyperparameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-set-hyperparameters.html">Optimize
+        /// the learning process of your text generation models with hyperparameters</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"epochCount"</code>: The number of times the model goes through the entire
+        /// training dataset. Its value should be a string containing an integer value within
+        /// the range of "1" to "10".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"batchSize"</code>: The number of data samples used in each iteration of training.
+        /// Its value should be a string containing an integer value within the range of "1" to
+        /// "64".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"learningRate"</code>: The step size at which a model's parameters are updated
+        /// during training. Its value should be a string containing a floating-point value within
+        /// the range of "0" to "1".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"learningRateWarmupSteps"</code>: The number of training steps during which
+        /// the learning rate gradually increases before reaching its target or maximum value.
+        /// Its value should be a string containing an integer value within the range of "0" to
+        /// "250".
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Here is an example where all four hyperparameters are configured.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps":
+        /// "10" }</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public Dictionary<string, string> TextGenerationHyperParameters
+        {
+            get { return this._textGenerationHyperParameters; }
+            set { this._textGenerationHyperParameters = value; }
+        }
+
+        // Check to see if TextGenerationHyperParameters property is set
+        internal bool IsSetTextGenerationHyperParameters()
+        {
+            return this._textGenerationHyperParameters != null && this._textGenerationHyperParameters.Count > 0; 
         }
 
     }
