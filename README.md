@@ -208,6 +208,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Chime Voice Connector, Voice Connector Group and PSTN Audio Service APIs are now available in the Amazon Chime SDK Voice namespace. See https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html for more details.
 * [AWSSDK.CleanRooms](https://www.nuget.org/packages/AWSSDK.CleanRooms/)
 	* Initial release of AWS Clean Rooms
+* [AWSSDK.CleanRoomsML](https://www.nuget.org/packages/AWSSDK.CleanRoomsML/)
+	* Public Preview SDK release of AWS Clean Rooms ML APIs
 * [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
 	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
 * [AWSSDK.CloudControlApi](https://www.nuget.org/packages/AWSSDK.CloudControlApi/)
