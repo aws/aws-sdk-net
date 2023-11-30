@@ -30,8 +30,15 @@ namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelZonalShift operation.
-    /// Cancel a zonal shift in Amazon Route 53 Application Recovery Controller that you've
-    /// started for a resource in your AWS account in an AWS Region.
+    /// Cancel a zonal shift in Amazon Route 53 Application Recovery Controller. To cancel
+    /// the zonal shift, specify the zonal shift ID.
+    /// 
+    ///  
+    /// <para>
+    /// A zonal shift can be one that you've started for a resource in your Amazon Web Services
+    /// account in an Amazon Web Services Region, or it can be a zonal shift started by a
+    /// practice run with zonal autoshift. 
+    /// </para>
     /// </summary>
     public partial class CancelZonalShiftRequest : AmazonARCZonalShiftRequest
     {

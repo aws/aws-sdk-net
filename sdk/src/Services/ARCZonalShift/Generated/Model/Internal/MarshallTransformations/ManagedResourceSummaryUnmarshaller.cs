@@ -63,10 +63,22 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appliedWeights", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, float, StringUnmarshaller, FloatUnmarshaller>(StringUnmarshaller.Instance, FloatUnmarshaller.Instance);
+                    unmarshalledObject.AppliedWeights = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("autoshifts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AutoshiftInResource, AutoshiftInResourceUnmarshaller>(AutoshiftInResourceUnmarshaller.Instance);
+                    unmarshalledObject.Autoshifts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("availabilityZones", targetDepth))
@@ -79,6 +91,24 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("practiceRunStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PracticeRunStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("zonalAutoshiftStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ZonalAutoshiftStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("zonalShifts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ZonalShiftInResource, ZonalShiftInResourceUnmarshaller>(ZonalShiftInResourceUnmarshaller.Instance);
+                    unmarshalledObject.ZonalShifts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

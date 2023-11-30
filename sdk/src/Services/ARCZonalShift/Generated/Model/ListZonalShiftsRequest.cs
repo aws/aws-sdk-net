@@ -30,13 +30,22 @@ namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListZonalShifts operation.
-    /// Lists all the active zonal shifts in Amazon Route 53 Application Recovery Controller
-    /// in your AWS account in this AWS Region.
+    /// Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery
+    /// Controller in your Amazon Web Services account in this Amazon Web Services Region.
+    /// <code>ListZonalShifts</code> returns customer-started zonal shifts, as well as practice
+    /// run zonal shifts that Route 53 ARC started on your behalf for zonal autoshift.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>ListZonalShifts</code> operation does not list autoshifts. For more information
+    /// about listing autoshifts, see <a href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.
+    /// </para>
     /// </summary>
     public partial class ListZonalShiftsRequest : AmazonARCZonalShiftRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _resourceIdentifier;
         private ZonalShiftStatus _status;
 
         /// <summary>
@@ -80,6 +89,26 @@ namespace Amazon.ARCZonalShift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceIdentifier. 
+        /// <para>
+        /// The identifier for the resource that you want to list zonal shifts for. The identifier
+        /// is the Amazon Resource Name (ARN) for the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=8, Max=1024)]
+        public string ResourceIdentifier
+        {
+            get { return this._resourceIdentifier; }
+            set { this._resourceIdentifier = value; }
+        }
+
+        // Check to see if ResourceIdentifier property is set
+        internal bool IsSetResourceIdentifier()
+        {
+            return this._resourceIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// A status for a zonal shift.
@@ -90,7 +119,7 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ACTIVE</b>: The zonal shift is started and active.
+        ///  <b>ACTIVE</b>: The zonal shift has been started and active.
         /// </para>
         ///  </li> <li> 
         /// <para>

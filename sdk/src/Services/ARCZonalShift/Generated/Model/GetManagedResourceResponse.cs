@@ -35,7 +35,10 @@ namespace Amazon.ARCZonalShift.Model
     {
         private Dictionary<string, float> _appliedWeights = new Dictionary<string, float>();
         private string _arn;
+        private List<AutoshiftInResource> _autoshifts = new List<AutoshiftInResource>();
         private string _name;
+        private PracticeRunConfiguration _practiceRunConfiguration;
+        private ZonalAutoshiftStatus _zonalAutoshiftStatus;
         private List<ZonalShiftInResource> _zonalShifts = new List<ZonalShiftInResource>();
 
         /// <summary>
@@ -79,6 +82,24 @@ namespace Amazon.ARCZonalShift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Autoshifts. 
+        /// <para>
+        /// An array of the autoshifts that are active for the resource.
+        /// </para>
+        /// </summary>
+        public List<AutoshiftInResource> Autoshifts
+        {
+            get { return this._autoshifts; }
+            set { this._autoshifts = value; }
+        }
+
+        // Check to see if Autoshifts property is set
+        internal bool IsSetAutoshifts()
+        {
+            return this._autoshifts != null && this._autoshifts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the resource.
@@ -95,6 +116,45 @@ namespace Amazon.ARCZonalShift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PracticeRunConfiguration. 
+        /// <para>
+        /// The practice run configuration for zonal autoshift that's associated with the resource.
+        /// </para>
+        /// </summary>
+        public PracticeRunConfiguration PracticeRunConfiguration
+        {
+            get { return this._practiceRunConfiguration; }
+            set { this._practiceRunConfiguration = value; }
+        }
+
+        // Check to see if PracticeRunConfiguration property is set
+        internal bool IsSetPracticeRunConfiguration()
+        {
+            return this._practiceRunConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZonalAutoshiftStatus. 
+        /// <para>
+        /// The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>,
+        /// Amazon Web Services shifts traffic for a resource away from an Availability Zone,
+        /// on your behalf, when Amazon Web Services determines that there's an issue in the Availability
+        /// Zone that could potentially affect customers.
+        /// </para>
+        /// </summary>
+        public ZonalAutoshiftStatus ZonalAutoshiftStatus
+        {
+            get { return this._zonalAutoshiftStatus; }
+            set { this._zonalAutoshiftStatus = value; }
+        }
+
+        // Check to see if ZonalAutoshiftStatus property is set
+        internal bool IsSetZonalAutoshiftStatus()
+        {
+            return this._zonalAutoshiftStatus != null;
         }
 
         /// <summary>

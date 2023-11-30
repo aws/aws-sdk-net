@@ -75,11 +75,123 @@ namespace Amazon.ARCZonalShift
 
 
     /// <summary>
+    /// Constants used for properties of type AutoshiftAppliedStatus.
+    /// </summary>
+    public class AutoshiftAppliedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLIED for AutoshiftAppliedStatus
+        /// </summary>
+        public static readonly AutoshiftAppliedStatus APPLIED = new AutoshiftAppliedStatus("APPLIED");
+        /// <summary>
+        /// Constant NOT_APPLIED for AutoshiftAppliedStatus
+        /// </summary>
+        public static readonly AutoshiftAppliedStatus NOT_APPLIED = new AutoshiftAppliedStatus("NOT_APPLIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoshiftAppliedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoshiftAppliedStatus FindValue(string value)
+        {
+            return FindValue<AutoshiftAppliedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoshiftAppliedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoshiftExecutionStatus.
+    /// </summary>
+    public class AutoshiftExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AutoshiftExecutionStatus
+        /// </summary>
+        public static readonly AutoshiftExecutionStatus ACTIVE = new AutoshiftExecutionStatus("ACTIVE");
+        /// <summary>
+        /// Constant COMPLETED for AutoshiftExecutionStatus
+        /// </summary>
+        public static readonly AutoshiftExecutionStatus COMPLETED = new AutoshiftExecutionStatus("COMPLETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoshiftExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoshiftExecutionStatus FindValue(string value)
+        {
+            return FindValue<AutoshiftExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoshiftExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictExceptionReason.
     /// </summary>
     public class ConflictExceptionReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AutoShiftEnabled for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason AutoShiftEnabled = new ConflictExceptionReason("AutoShiftEnabled");
+        /// <summary>
+        /// Constant PracticeConfigurationAlreadyExists for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeConfigurationAlreadyExists = new ConflictExceptionReason("PracticeConfigurationAlreadyExists");
+        /// <summary>
+        /// Constant PracticeConfigurationDoesNotExist for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeConfigurationDoesNotExist = new ConflictExceptionReason("PracticeConfigurationDoesNotExist");
         /// <summary>
         /// Constant SimultaneousZonalShiftsConflict for ConflictExceptionReason
         /// </summary>
@@ -129,19 +241,135 @@ namespace Amazon.ARCZonalShift
 
 
     /// <summary>
+    /// Constants used for properties of type ControlConditionType.
+    /// </summary>
+    public class ControlConditionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDWATCH for ControlConditionType
+        /// </summary>
+        public static readonly ControlConditionType CLOUDWATCH = new ControlConditionType("CLOUDWATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlConditionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlConditionType FindValue(string value)
+        {
+            return FindValue<ControlConditionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlConditionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PracticeRunOutcome.
+    /// </summary>
+    public class PracticeRunOutcome : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for PracticeRunOutcome
+        /// </summary>
+        public static readonly PracticeRunOutcome FAILED = new PracticeRunOutcome("FAILED");
+        /// <summary>
+        /// Constant INTERRUPTED for PracticeRunOutcome
+        /// </summary>
+        public static readonly PracticeRunOutcome INTERRUPTED = new PracticeRunOutcome("INTERRUPTED");
+        /// <summary>
+        /// Constant PENDING for PracticeRunOutcome
+        /// </summary>
+        public static readonly PracticeRunOutcome PENDING = new PracticeRunOutcome("PENDING");
+        /// <summary>
+        /// Constant SUCCEEDED for PracticeRunOutcome
+        /// </summary>
+        public static readonly PracticeRunOutcome SUCCEEDED = new PracticeRunOutcome("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PracticeRunOutcome(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PracticeRunOutcome FindValue(string value)
+        {
+            return FindValue<PracticeRunOutcome>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PracticeRunOutcome(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
     {
 
         /// <summary>
+        /// Constant InvalidAlarmCondition for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidAlarmCondition = new ValidationExceptionReason("InvalidAlarmCondition");
+        /// <summary>
         /// Constant InvalidAz for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason InvalidAz = new ValidationExceptionReason("InvalidAz");
         /// <summary>
+        /// Constant InvalidConditionType for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidConditionType = new ValidationExceptionReason("InvalidConditionType");
+        /// <summary>
         /// Constant InvalidExpiresIn for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason InvalidExpiresIn = new ValidationExceptionReason("InvalidExpiresIn");
+        /// <summary>
+        /// Constant InvalidPracticeBlocker for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidPracticeBlocker = new ValidationExceptionReason("InvalidPracticeBlocker");
         /// <summary>
         /// Constant InvalidResourceIdentifier for ValidationExceptionReason
         /// </summary>
@@ -192,6 +420,56 @@ namespace Amazon.ARCZonalShift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ZonalAutoshiftStatus.
+    /// </summary>
+    public class ZonalAutoshiftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ZonalAutoshiftStatus
+        /// </summary>
+        public static readonly ZonalAutoshiftStatus DISABLED = new ZonalAutoshiftStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ZonalAutoshiftStatus
+        /// </summary>
+        public static readonly ZonalAutoshiftStatus ENABLED = new ZonalAutoshiftStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ZonalAutoshiftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ZonalAutoshiftStatus FindValue(string value)
+        {
+            return FindValue<ZonalAutoshiftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ZonalAutoshiftStatus(string value)
         {
             return FindValue(value);
         }

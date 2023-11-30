@@ -26,6 +26,11 @@ namespace Amazon.ARCZonalShift.Model
     {
 
         /// <summary>
+        /// Paginator for ListAutoshifts operation
+        ///</summary>
+        IListAutoshiftsPaginator ListAutoshifts(ListAutoshiftsRequest request);
+
+        /// <summary>
         /// Paginator for ListManagedResources operation
         ///</summary>
         IListManagedResourcesPaginator ListManagedResources(ListManagedResourcesRequest request);

@@ -31,13 +31,15 @@ namespace Amazon.ARCZonalShift.Model
     /// <summary>
     /// Container for the parameters to the GetManagedResource operation.
     /// Get information about a resource that's been registered for zonal shifts with Amazon
-    /// Route 53 Application Recovery Controller in this AWS Region. Resources that are registered
-    /// for zonal shifts are managed resources in Route 53 ARC.
+    /// Route 53 Application Recovery Controller in this Amazon Web Services Region. Resources
+    /// that are registered for zonal shifts are managed resources in Route 53 ARC. You can
+    /// start zonal shifts and configure zonal autoshift for managed resources.
     /// 
     ///  
     /// <para>
-    /// At this time, you can only start a zonal shift for Network Load Balancers and Application
-    /// Load Balancers with cross-zone load balancing turned off.
+    /// At this time, you can only start a zonal shift or configure zonal autoshift for Network
+    /// Load Balancers and Application Load Balancers with cross-zone load balancing turned
+    /// off.
     /// </para>
     /// </summary>
     public partial class GetManagedResourceRequest : AmazonARCZonalShiftRequest
@@ -47,13 +49,13 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The identifier for the resource to include in a zonal shift. The identifier is the
-        /// Amazon Resource Name (ARN) for the resource.
+        /// The identifier for the resource to shift away traffic for. The identifier is the Amazon
+        /// Resource Name (ARN) for the resource.
         /// </para>
         ///  
         /// <para>
-        /// At this time, you can only start a zonal shift for Network Load Balancers and Application
-        /// Load Balancers with cross-zone load balancing turned off.
+        /// At this time, supported resources are Network Load Balancers and Application Load
+        /// Balancers with cross-zone load balancing turned off.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=1024)]

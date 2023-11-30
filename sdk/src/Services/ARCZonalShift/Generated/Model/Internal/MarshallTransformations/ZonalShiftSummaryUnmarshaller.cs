@@ -81,6 +81,12 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExpiryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("practiceRunOutcome", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PracticeRunOutcome = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
