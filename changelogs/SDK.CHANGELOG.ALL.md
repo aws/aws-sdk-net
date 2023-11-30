@@ -1,3 +1,11 @@
+### 3.7.699.0 (2023-11-30 19:05 UTC)
+* ARCZonalShift (3.7.301.0)
+	* This release adds a new capability, zonal autoshift. You can configure zonal autoshift so that AWS shifts traffic for a resource away from an Availability Zone, on your behalf, when AWS determines that there is an issue that could potentially affect customers in the Availability Zone.
+* Glue (3.7.304.0)
+	* Adds observation and analyzer support to the GetDataQualityResult and BatchGetDataQualityResult APIs.
+* SageMaker (3.7.305.0)
+	* This release adds support for 1/ Code Editor, based on Code-OSS, Visual Studio Code Open Source, a new fully managed IDE option in SageMaker Studio  2/ JupyterLab, a new fully managed JupyterLab IDE experience in SageMaker Studio
+
 ### 3.7.698.0 (2023-11-30 01:20 UTC)
 * MarketplaceAgreement (3.7.300.0)
 	* The AWS Marketplace Agreement Service provides an API interface that helps AWS Marketplace sellers manage their agreements, including listing, filtering, and viewing details about their agreements.
