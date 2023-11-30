@@ -40,28 +40,28 @@ namespace Amazon.S3.Util
         /// </summary>
         /// <param name="requestedBucketUri"></param>
         /// <param name="serviceException"></param>
-        /// <param name="credentials"></param>
+        /// <param name="requestContext"></param>
         /// <returns>the correct region if a mismatch was detected, null otherwise</returns>
-        internal static async Task<string> DetectMismatchWithHeadBucketFallbackAsync(AmazonS3Uri requestedBucketUri, AmazonServiceException serviceException, ImmutableCredentials credentials)
+        internal static async Task<string> DetectMismatchWithHeadBucketFallbackAsync(AmazonS3Uri requestedBucketUri, AmazonServiceException serviceException, IRequestContext requestContext)
         {
             return GetCorrectRegion(requestedBucketUri, serviceException) ??
-                CheckRegionAndUpdateCache(requestedBucketUri, await GetBucketRegionNoPipelineAsync(requestedBucketUri.Bucket, credentials).ConfigureAwait(false));
+                CheckRegionAndUpdateCache(requestedBucketUri, await GetBucketRegionNoPipelineAsync(requestedBucketUri.Bucket, requestContext).ConfigureAwait(false));
         }
 
         /// <summary>
         /// Use a HEAD bucket request to get the region for the given bucket.
         ///
-        /// This method creates an AmazonS3Client from the credentials passed in.
+        /// This method creates an AmazonS3Client from the credentials passed in requestContext.
         /// It's critical that the AmazonS3Client is not used to make any requests that will
         /// be routed through the pipeline.
         /// </summary>
         /// <param name="bucketName"></param>
-        /// <param name="credentials"></param>
+        /// <param name="requestContext"></param>
         /// <returns>the value of the x-amz-bucket-region header from the response</returns>
-        private static async Task<string> GetBucketRegionNoPipelineAsync(string bucketName, ImmutableCredentials credentials)
+        private static async Task<string> GetBucketRegionNoPipelineAsync(string bucketName, IRequestContext requestContext)
         {
-            var headBucketPreSignedUrl = GetHeadBucketPreSignedUrl(bucketName, credentials);
-            using (var s3Client = GetUsEast1ClientFromCredentials(credentials))
+            var headBucketPreSignedUrl = GetHeadBucketPreSignedUrl(bucketName, requestContext);
+            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ImmutableCredentials))
             {
                 return (await AmazonS3HttpUtil.GetHeadAsync(s3Client, s3Client.Config, headBucketPreSignedUrl,
                     HeaderKeys.XAmzBucketRegion).ConfigureAwait(false)).HeaderValue;
