@@ -35,12 +35,72 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class EntitySummary
     {
+        private AmiProductSummary _amiProductSummary;
+        private ContainerProductSummary _containerProductSummary;
+        private DataProductSummary _dataProductSummary;
         private string _entityArn;
         private string _entityId;
         private string _entityType;
         private string _lastModifiedDate;
         private string _name;
+        private OfferSummary _offerSummary;
+        private ResaleAuthorizationSummary _resaleAuthorizationSummary;
+        private SaaSProductSummary _saaSProductSummary;
         private string _visibility;
+
+        /// <summary>
+        /// Gets and sets the property AmiProductSummary. 
+        /// <para>
+        /// An object that contains summary information about the AMI product.
+        /// </para>
+        /// </summary>
+        public AmiProductSummary AmiProductSummary
+        {
+            get { return this._amiProductSummary; }
+            set { this._amiProductSummary = value; }
+        }
+
+        // Check to see if AmiProductSummary property is set
+        internal bool IsSetAmiProductSummary()
+        {
+            return this._amiProductSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerProductSummary. 
+        /// <para>
+        /// An object that contains summary information about the container product.
+        /// </para>
+        /// </summary>
+        public ContainerProductSummary ContainerProductSummary
+        {
+            get { return this._containerProductSummary; }
+            set { this._containerProductSummary = value; }
+        }
+
+        // Check to see if ContainerProductSummary property is set
+        internal bool IsSetContainerProductSummary()
+        {
+            return this._containerProductSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProductSummary. 
+        /// <para>
+        /// An object that contains summary information about the data product.
+        /// </para>
+        /// </summary>
+        public DataProductSummary DataProductSummary
+        {
+            get { return this._dataProductSummary; }
+            set { this._dataProductSummary = value; }
+        }
+
+        // Check to see if DataProductSummary property is set
+        internal bool IsSetDataProductSummary()
+        {
+            return this._dataProductSummary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EntityArn. 
@@ -135,6 +195,60 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSummary. 
+        /// <para>
+        /// An object that contains summary information about the offer.
+        /// </para>
+        /// </summary>
+        public OfferSummary OfferSummary
+        {
+            get { return this._offerSummary; }
+            set { this._offerSummary = value; }
+        }
+
+        // Check to see if OfferSummary property is set
+        internal bool IsSetOfferSummary()
+        {
+            return this._offerSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResaleAuthorizationSummary. 
+        /// <para>
+        /// An object that contains summary information about the Resale Authorization.
+        /// </para>
+        /// </summary>
+        public ResaleAuthorizationSummary ResaleAuthorizationSummary
+        {
+            get { return this._resaleAuthorizationSummary; }
+            set { this._resaleAuthorizationSummary = value; }
+        }
+
+        // Check to see if ResaleAuthorizationSummary property is set
+        internal bool IsSetResaleAuthorizationSummary()
+        {
+            return this._resaleAuthorizationSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaaSProductSummary. 
+        /// <para>
+        /// An object that contains summary information about the SaaS product.
+        /// </para>
+        /// </summary>
+        public SaaSProductSummary SaaSProductSummary
+        {
+            get { return this._saaSProductSummary; }
+            set { this._saaSProductSummary = value; }
+        }
+
+        // Check to see if SaaSProductSummary property is set
+        internal bool IsSetSaaSProductSummary()
+        {
+            return this._saaSProductSummary != null;
         }
 
         /// <summary>

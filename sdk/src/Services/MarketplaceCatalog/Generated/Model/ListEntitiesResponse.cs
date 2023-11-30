@@ -39,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntitySummaryList. 
         /// <para>
-        ///  Array of <code>EntitySummary</code> object.
+        /// Array of <code>EntitySummary</code> objects.
         /// </para>
         /// </summary>
         public List<EntitySummary> EntitySummaryList

@@ -77,6 +77,28 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EntityType);
                 }
 
+                if(publicRequest.IsSetEntityTypeFilters())
+                {
+                    context.Writer.WritePropertyName("EntityTypeFilters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EntityTypeFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EntityTypeFilters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEntityTypeSort())
+                {
+                    context.Writer.WritePropertyName("EntityTypeSort");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EntityTypeSortMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EntityTypeSort, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFilterList())
                 {
                     context.Writer.WritePropertyName("FilterList");

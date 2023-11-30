@@ -36,6 +36,8 @@ namespace Amazon.MarketplaceCatalog.Model
     {
         private string _catalog;
         private string _entityType;
+        private EntityTypeFilters _entityTypeFilters;
+        private EntityTypeSort _entityTypeSort;
         private List<Filter> _filterList = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
@@ -64,7 +66,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityType. 
         /// <para>
-        /// The type of entities to retrieve.
+        /// The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>,
+        /// <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>,
+        /// <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+        /// <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -78,6 +83,47 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetEntityType()
         {
             return this._entityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityTypeFilters. 
+        /// <para>
+        /// A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code>
+        /// shape will have filters applicable for that <code>EntityType</code> that can be used
+        /// to search or filter entities.
+        /// </para>
+        /// </summary>
+        public EntityTypeFilters EntityTypeFilters
+        {
+            get { return this._entityTypeFilters; }
+            set { this._entityTypeFilters = value; }
+        }
+
+        // Check to see if EntityTypeFilters property is set
+        internal bool IsSetEntityTypeFilters()
+        {
+            return this._entityTypeFilters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityTypeSort. 
+        /// <para>
+        /// A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s.
+        /// Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code>
+        /// applicable for fields on that <code>EntityType</code>. This can be used to sort the
+        /// results of the filter query.
+        /// </para>
+        /// </summary>
+        public EntityTypeSort EntityTypeSort
+        {
+            get { return this._entityTypeSort; }
+            set { this._entityTypeSort = value; }
+        }
+
+        // Check to see if EntityTypeSort property is set
+        internal bool IsSetEntityTypeSort()
+        {
+            return this._entityTypeSort != null;
         }
 
         /// <summary>
