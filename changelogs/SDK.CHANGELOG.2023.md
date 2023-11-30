@@ -1,3 +1,16 @@
+### 3.7.698.0 (2023-11-30 01:20 UTC)
+* MarketplaceAgreement (3.7.300.0)
+	* The AWS Marketplace Agreement Service provides an API interface that helps AWS Marketplace sellers manage their agreements, including listing, filtering, and viewing details about their agreements.
+* MarketplaceCatalog (3.7.301.0)
+	* This release enhances the ListEntities API to support new entity type-specific strongly typed filters in the request and entity type-specific strongly typed summaries in the response.
+* MarketplaceDeployment (3.7.300.0)
+	* AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.
+* RedshiftServerless (3.7.302.0)
+	* This release adds the following support for Amazon Redshift Serverless: 1) cross-account cross-VPCs, 2) copying snapshots across Regions, 3) scheduling snapshot creation, and 4) restoring tables from a recovery point.
+* Core 3.7.300.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.697.0 (2023-11-29 19:00 UTC)
 * ApplicationAutoScaling (3.7.301.0)
 	* Amazon SageMaker customers can now use Application Auto Scaling to automatically scale the number of Inference Component copies across an endpoint to meet the varying demand of their workloads.
