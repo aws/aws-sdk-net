@@ -63,6 +63,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AnalyzerResults", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataQualityAnalyzerResult, DataQualityAnalyzerResultUnmarshaller>(DataQualityAnalyzerResultUnmarshaller.Instance);
+                    unmarshalledObject.AnalyzerResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletedOn", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobRunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Observations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataQualityObservation, DataQualityObservationUnmarshaller>(DataQualityObservationUnmarshaller.Instance);
+                    unmarshalledObject.Observations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResultId", targetDepth))

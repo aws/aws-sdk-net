@@ -33,17 +33,39 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DataQualityResult
     {
+        private List<DataQualityAnalyzerResult> _analyzerResults = new List<DataQualityAnalyzerResult>();
         private DateTime? _completedOn;
         private DataSource _dataSource;
         private string _evaluationContext;
         private string _jobName;
         private string _jobRunId;
+        private List<DataQualityObservation> _observations = new List<DataQualityObservation>();
         private string _resultId;
         private List<DataQualityRuleResult> _ruleResults = new List<DataQualityRuleResult>();
         private string _rulesetEvaluationRunId;
         private string _rulesetName;
         private double? _score;
         private DateTime? _startedOn;
+
+        /// <summary>
+        /// Gets and sets the property AnalyzerResults. 
+        /// <para>
+        /// A list of <code>DataQualityAnalyzerResult</code> objects representing the results
+        /// for each analyzer. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public List<DataQualityAnalyzerResult> AnalyzerResults
+        {
+            get { return this._analyzerResults; }
+            set { this._analyzerResults = value; }
+        }
+
+        // Check to see if AnalyzerResults property is set
+        internal bool IsSetAnalyzerResults()
+        {
+            return this._analyzerResults != null && this._analyzerResults.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CompletedOn. 
@@ -140,6 +162,26 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Observations. 
+        /// <para>
+        /// A list of <code>DataQualityObservation</code> objects representing the observations
+        /// generated after evaluating the rules and analyzers. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<DataQualityObservation> Observations
+        {
+            get { return this._observations; }
+            set { this._observations = value; }
+        }
+
+        // Check to see if Observations property is set
+        internal bool IsSetObservations()
+        {
+            return this._observations != null && this._observations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResultId. 
         /// <para>
         /// A unique result ID for the data quality result.
@@ -165,7 +207,7 @@ namespace Amazon.Glue.Model
         /// each rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
+        [AWSProperty(Min=0, Max=2000)]
         public List<DataQualityRuleResult> RuleResults
         {
             get { return this._ruleResults; }
