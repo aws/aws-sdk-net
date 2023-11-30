@@ -1,0 +1,128 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the marketplace-agreement-2020-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.MarketplaceAgreement.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetAgreementTerms operation.
+    /// Obtains details about the terms in an agreement that you participated in as proposer
+    /// or acceptor.
+    /// 
+    ///  
+    /// <para>
+    /// The details include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>TermType</code> – The type of term, such as <code>LegalTerm</code>, <code>RenewalTerm</code>,
+    /// or <code>ConfigurableUpfrontPricingTerm</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TermID</code> – The ID of the particular term, which is common between offer
+    /// and agreement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TermPayload</code> – The key information contained in the term, such as the
+    /// EULA for <code>LegalTerm</code> or pricing and dimensions for various pricing terms,
+    /// such as <code>ConfigurableUpfrontPricingTerm</code> or <code>UsageBasedPricingTerm</code>.
+    /// </para>
+    ///  </li> </ul> <ul> <li> 
+    /// <para>
+    ///  <code>Configuration</code> – The buyer/acceptor's selection at the time of agreement
+    /// creation, such as the number of units purchased for a dimension or setting the <code>EnableAutoRenew</code>
+    /// flag.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+    public partial class GetAgreementTermsRequest : AmazonMarketplaceAgreementRequest
+    {
+        private string _agreementId;
+        private int? _maxResults;
+        private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AgreementId. 
+        /// <para>
+        /// The unique identifier of the agreement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string AgreementId
+        {
+            get { return this._agreementId; }
+            set { this._agreementId = value; }
+        }
+
+        // Check to see if AgreementId property is set
+        internal bool IsSetAgreementId()
+        {
+            return this._agreementId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of agreements to return in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token to specify where to start pagination
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+    }
+}

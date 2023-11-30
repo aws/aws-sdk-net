@@ -550,6 +550,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Managed Blockchain (AMB) Query provides serverless access to standardized, multi-blockchain datasets with developer-friendly APIs.
 * [AWSSDK.ManagedGrafana](https://www.nuget.org/packages/AWSSDK.ManagedGrafana/)
 	* Initial release of the SDK for Amazon Managed Grafana API.
+* [AWSSDK.MarketplaceAgreement](https://www.nuget.org/packages/AWSSDK.MarketplaceAgreement/)
+	* The AWS Marketplace Agreement Service provides an API interface that helps AWS Marketplace sellers manage their agreements, including listing, filtering, and viewing details about their agreements.
 * [AWSSDK.MarketplaceCatalog](https://www.nuget.org/packages/AWSSDK.MarketplaceCatalog/)
 	* This is the first release for the AWS Marketplace Catalog service which allows you to list, describe and manage change requests on your published entities on AWS Marketplace. 
 * [AWSSDK.MarketplaceDeployment](https://www.nuget.org/packages/AWSSDK.MarketplaceDeployment/)
