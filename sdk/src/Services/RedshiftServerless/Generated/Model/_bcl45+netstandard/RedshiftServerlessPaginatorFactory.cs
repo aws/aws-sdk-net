@@ -68,6 +68,22 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListScheduledActions operation
+        ///</summary>
+        public IListScheduledActionsPaginator ListScheduledActions(ListScheduledActionsRequest request) 
+        {
+            return new ListScheduledActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSnapshotCopyConfigurations operation
+        ///</summary>
+        public IListSnapshotCopyConfigurationsPaginator ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request) 
+        {
+            return new ListSnapshotCopyConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSnapshots operation
         ///</summary>
         public IListSnapshotsPaginator ListSnapshots(ListSnapshotsRequest request) 

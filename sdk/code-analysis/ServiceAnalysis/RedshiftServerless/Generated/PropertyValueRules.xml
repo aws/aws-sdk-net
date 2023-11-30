@@ -37,6 +37,12 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateEndpointAccessRequest.OwnerAccount</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>(\d{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateNamespaceRequest.NamespaceName</property>
     <min>3</min>
     <max>64</max>
@@ -46,6 +52,24 @@
     <property>Amazon.RedshiftServerless.Model.CreateNamespaceRequest.RedshiftIdcApplicationArn</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateScheduledActionRequest.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateScheduledActionRequest.ScheduledActionName</property>
+    <min>3</min>
+    <max>60</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateSnapshotCopyConfigurationRequest.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateWorkgroupRequest.NamespaceName</property>
@@ -75,6 +99,12 @@
     <property>Amazon.RedshiftServerless.Model.DeleteNamespaceRequest.NamespaceName</property>
     <min>3</min>
     <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
+    <min>3</min>
+    <max>60</max>
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -132,6 +162,12 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.GetScheduledActionRequest.ScheduledActionName</property>
+    <min>3</min>
+    <max>60</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.GetWorkgroupRequest.WorkgroupName</property>
     <min>3</min>
     <max>64</max>
@@ -170,6 +206,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListEndpointAccessRequest.OwnerAccount</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>(\d{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListNamespacesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -184,6 +226,48 @@
     <min>3</min>
     <max>64</max>
     <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListScheduledActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListScheduledActionsRequest.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListScheduledActionsRequest.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListScheduledActionsResponse.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListSnapshotCopyConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListSnapshotCopyConfigurationsRequest.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListSnapshotCopyConfigurationsRequest.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListSnapshotCopyConfigurationsResponse.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListSnapshotsRequest.MaxResults</property>
@@ -229,6 +313,12 @@
     <property>Amazon.RedshiftServerless.Model.ListWorkgroupsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListWorkgroupsRequest.OwnerAccount</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>(\d{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.RestoreFromRecoveryPointRequest.NamespaceName</property>
@@ -307,6 +397,12 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateScheduledActionRequest.ScheduledActionName</property>
+    <min>3</min>
+    <max>60</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.UpdateWorkgroupRequest.WorkgroupName</property>
     <min>3</min>
     <max>64</max>
@@ -331,6 +427,17 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateSnapshotScheduleActionParameters.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateSnapshotScheduleActionParameters.SnapshotNamePrefix</property>
+    <min>1</min>
+    <max>235</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Namespace.NamespaceName</property>
     <min>3</min>
     <max>64</max>
@@ -352,6 +459,24 @@
     <property>Amazon.RedshiftServerless.Model.ResourceNotFoundException.ResourceName</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ScheduledActionResponse.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ScheduledActionResponse.ScheduledActionName</property>
+    <min>3</min>
+    <max>60</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.SnapshotCopyConfiguration.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Tag.Key</property>

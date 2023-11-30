@@ -81,6 +81,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("crossAccountVpcs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CrossAccountVpcs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("customDomainCertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

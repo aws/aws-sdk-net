@@ -564,6 +564,74 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  CreateScheduledAction
+
+        /// <summary>
+        /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
+        /// API action. For example, you can create a schedule of when to run the <code>CreateSnapshot</code>
+        /// API operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateScheduledAction(CreateScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  CreateScheduledActionResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual CreateScheduledActionResponse EndCreateScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSnapshot
 
         /// <summary>
@@ -634,6 +702,79 @@ namespace Amazon.RedshiftServerless
         public virtual CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSnapshotCopyConfiguration
+
+        /// <summary>
+        /// Creates a snapshot copy configuration that lets you copy snapshots to another Amazon
+        /// Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateSnapshotCopyConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
+        public virtual CreateSnapshotCopyConfigurationResponse CreateSnapshotCopyConfiguration(CreateSnapshotCopyConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSnapshotCopyConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshotCopyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyConfiguration operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshotCopyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateSnapshotCopyConfiguration(CreateSnapshotCopyConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSnapshotCopyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshotCopyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateSnapshotCopyConfigurationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
+        public virtual CreateSnapshotCopyConfigurationResponse EndCreateSnapshotCopyConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSnapshotCopyConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1048,6 +1189,69 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  DeleteScheduledAction
+
+        /// <summary>
+        /// Deletes a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteScheduledActionResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual DeleteScheduledActionResponse EndDeleteScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteSnapshot
 
         /// <summary>
@@ -1110,6 +1314,75 @@ namespace Amazon.RedshiftServerless
         public virtual DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSnapshotCopyConfiguration
+
+        /// <summary>
+        /// Deletes a snapshot copy configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSnapshotCopyConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
+        public virtual DeleteSnapshotCopyConfigurationResponse DeleteSnapshotCopyConfiguration(DeleteSnapshotCopyConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSnapshotCopyConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSnapshotCopyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyConfiguration operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshotCopyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSnapshotCopyConfiguration(DeleteSnapshotCopyConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSnapshotCopyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSnapshotCopyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteSnapshotCopyConfigurationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
+        public virtual DeleteSnapshotCopyConfigurationResponse EndDeleteSnapshotCopyConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSnapshotCopyConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1651,6 +1924,69 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetScheduledAction
+
+        /// <summary>
+        /// Returns information about a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the GetScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
+        public virtual GetScheduledActionResponse GetScheduledAction(GetScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledAction operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginGetScheduledAction(GetScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  GetScheduledActionResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
+        public virtual GetScheduledActionResponse EndGetScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSnapshot
 
         /// <summary>
@@ -2154,6 +2490,142 @@ namespace Amazon.RedshiftServerless
         public virtual ListRecoveryPointsResponse EndListRecoveryPoints(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRecoveryPointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListScheduledActions
+
+        /// <summary>
+        /// Returns a list of scheduled actions. You can use the flags to filter the list of returned
+        /// scheduled actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledActions service method.</param>
+        /// 
+        /// <returns>The response from the ListScheduledActions service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduledActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledActions operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScheduledActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual IAsyncResult BeginListScheduledActions(ListScheduledActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScheduledActions.</param>
+        /// 
+        /// <returns>Returns a  ListScheduledActionsResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual ListScheduledActionsResponse EndListScheduledActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListScheduledActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSnapshotCopyConfigurations
+
+        /// <summary>
+        /// Returns a list of snapshot copy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotCopyConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListSnapshotCopyConfigurations service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
+        public virtual ListSnapshotCopyConfigurationsResponse ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotCopyConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotCopyConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSnapshotCopyConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSnapshotCopyConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotCopyConfigurations operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSnapshotCopyConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotCopyConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotCopyConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSnapshotCopyConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSnapshotCopyConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListSnapshotCopyConfigurationsResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
+        public virtual ListSnapshotCopyConfigurationsResponse EndListSnapshotCopyConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSnapshotCopyConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -2684,6 +3156,73 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  RestoreTableFromRecoveryPoint
+
+        /// <summary>
+        /// Restores a table from a recovery point to your Amazon Redshift Serverless instance.
+        /// You can't use this operation to restore tables with interleaved sort keys.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromRecoveryPoint service method.</param>
+        /// 
+        /// <returns>The response from the RestoreTableFromRecoveryPoint service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
+        public virtual RestoreTableFromRecoveryPointResponse RestoreTableFromRecoveryPoint(RestoreTableFromRecoveryPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromRecoveryPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromRecoveryPointResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromRecoveryPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromRecoveryPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromRecoveryPoint operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreTableFromRecoveryPoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
+        public virtual IAsyncResult BeginRestoreTableFromRecoveryPoint(RestoreTableFromRecoveryPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromRecoveryPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromRecoveryPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreTableFromRecoveryPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreTableFromRecoveryPoint.</param>
+        /// 
+        /// <returns>Returns a  RestoreTableFromRecoveryPointResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
+        public virtual RestoreTableFromRecoveryPointResponse EndRestoreTableFromRecoveryPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreTableFromRecoveryPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RestoreTableFromSnapshot
 
         /// <summary>
@@ -3097,6 +3636,72 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  UpdateScheduledAction
+
+        /// <summary>
+        /// Updates a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAction operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateScheduledAction(UpdateScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateScheduledActionResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual UpdateScheduledActionResponse EndUpdateScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateSnapshot
 
         /// <summary>
@@ -3159,6 +3764,75 @@ namespace Amazon.RedshiftServerless
         public virtual UpdateSnapshotResponse EndUpdateSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSnapshotCopyConfiguration
+
+        /// <summary>
+        /// Updates a snapshot copy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshotCopyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSnapshotCopyConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
+        public virtual UpdateSnapshotCopyConfigurationResponse UpdateSnapshotCopyConfiguration(UpdateSnapshotCopyConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSnapshotCopyConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSnapshotCopyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshotCopyConfiguration operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSnapshotCopyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSnapshotCopyConfiguration(UpdateSnapshotCopyConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSnapshotCopyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSnapshotCopyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateSnapshotCopyConfigurationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
+        public virtual UpdateSnapshotCopyConfigurationResponse EndUpdateSnapshotCopyConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSnapshotCopyConfigurationResponse>(asyncResult);
         }
 
         #endregion

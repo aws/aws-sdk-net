@@ -79,6 +79,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("ownerAccount");
+                    context.Writer.Write(publicRequest.OwnerAccount);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -46,6 +46,16 @@ namespace Amazon.RedshiftServerless.Model
         IListRecoveryPointsPaginator ListRecoveryPoints(ListRecoveryPointsRequest request);
 
         /// <summary>
+        /// Paginator for ListScheduledActions operation
+        ///</summary>
+        IListScheduledActionsPaginator ListScheduledActions(ListScheduledActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSnapshotCopyConfigurations operation
+        ///</summary>
+        IListSnapshotCopyConfigurationsPaginator ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListSnapshots operation
         ///</summary>
         IListSnapshotsPaginator ListSnapshots(ListSnapshotsRequest request);

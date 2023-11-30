@@ -488,6 +488,54 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  CreateScheduledAction
+
+        internal virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
+        /// API action. For example, you can create a schedule of when to run the <code>CreateSnapshot</code>
+        /// API operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual Task<CreateScheduledActionResponse> CreateScheduledActionAsync(CreateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateScheduledActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSnapshot
 
         internal virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -538,6 +586,59 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSnapshotCopyConfiguration
+
+        internal virtual CreateSnapshotCopyConfigurationResponse CreateSnapshotCopyConfiguration(CreateSnapshotCopyConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSnapshotCopyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a snapshot copy configuration that lets you copy snapshots to another Amazon
+        /// Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSnapshotCopyConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
+        public virtual Task<CreateSnapshotCopyConfigurationResponse> CreateSnapshotCopyConfigurationAsync(CreateSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSnapshotCopyConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -832,6 +933,49 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  DeleteScheduledAction
+
+        internal virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSnapshot
 
         internal virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
@@ -874,6 +1018,55 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSnapshotCopyConfiguration
+
+        internal virtual DeleteSnapshotCopyConfigurationResponse DeleteSnapshotCopyConfiguration(DeleteSnapshotCopyConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSnapshotCopyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a snapshot copy configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSnapshotCopyConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
+        public virtual Task<DeleteSnapshotCopyConfigurationResponse> DeleteSnapshotCopyConfigurationAsync(DeleteSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSnapshotCopyConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1255,6 +1448,49 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetScheduledAction
+
+        internal virtual GetScheduledActionResponse GetScheduledAction(GetScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
+        public virtual Task<GetScheduledActionResponse> GetScheduledActionAsync(GetScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetScheduledActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSnapshot
 
         internal virtual GetSnapshotResponse GetSnapshot(GetSnapshotRequest request)
@@ -1598,6 +1834,102 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = ListRecoveryPointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRecoveryPointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListScheduledActions
+
+        internal virtual ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduledActionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of scheduled actions. You can use the flags to filter the list of returned
+        /// scheduled actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScheduledActions service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual Task<ListScheduledActionsResponse> ListScheduledActionsAsync(ListScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScheduledActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSnapshotCopyConfigurations
+
+        internal virtual ListSnapshotCopyConfigurationsResponse ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotCopyConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotCopyConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSnapshotCopyConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of snapshot copy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotCopyConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSnapshotCopyConfigurations service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
+        public virtual Task<ListSnapshotCopyConfigurationsResponse> ListSnapshotCopyConfigurationsAsync(ListSnapshotCopyConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotCopyConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotCopyConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSnapshotCopyConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1968,6 +2300,53 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  RestoreTableFromRecoveryPoint
+
+        internal virtual RestoreTableFromRecoveryPointResponse RestoreTableFromRecoveryPoint(RestoreTableFromRecoveryPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromRecoveryPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromRecoveryPointResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromRecoveryPointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restores a table from a recovery point to your Amazon Redshift Serverless instance.
+        /// You can't use this operation to restore tables with interleaved sort keys.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromRecoveryPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreTableFromRecoveryPoint service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
+        public virtual Task<RestoreTableFromRecoveryPointResponse> RestoreTableFromRecoveryPointAsync(RestoreTableFromRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromRecoveryPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromRecoveryPointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreTableFromRecoveryPointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RestoreTableFromSnapshot
 
         internal virtual RestoreTableFromSnapshotResponse RestoreTableFromSnapshot(RestoreTableFromSnapshotRequest request)
@@ -2261,6 +2640,52 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  UpdateScheduledAction
+
+        internal virtual UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScheduledAction service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual Task<UpdateScheduledActionResponse> UpdateScheduledActionAsync(UpdateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateScheduledActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateSnapshot
 
         internal virtual UpdateSnapshotResponse UpdateSnapshot(UpdateSnapshotRequest request)
@@ -2303,6 +2728,55 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = UpdateSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSnapshotCopyConfiguration
+
+        internal virtual UpdateSnapshotCopyConfigurationResponse UpdateSnapshotCopyConfiguration(UpdateSnapshotCopyConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSnapshotCopyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a snapshot copy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshotCopyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSnapshotCopyConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
+        public virtual Task<UpdateSnapshotCopyConfigurationResponse> UpdateSnapshotCopyConfigurationAsync(UpdateSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSnapshotCopyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSnapshotCopyConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

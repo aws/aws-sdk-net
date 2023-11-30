@@ -87,6 +87,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recoveryPointId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecoveryPointId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

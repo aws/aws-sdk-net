@@ -73,6 +73,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndpointName);
                 }
 
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("ownerAccount");
+                    context.Writer.Write(publicRequest.OwnerAccount);
+                }
+
                 if(publicRequest.IsSetSubnetIds())
                 {
                     context.Writer.WritePropertyName("subnetIds");

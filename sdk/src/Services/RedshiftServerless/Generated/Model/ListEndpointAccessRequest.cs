@@ -36,6 +36,7 @@ namespace Amazon.RedshiftServerless.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _ownerAccount;
         private string _vpcId;
         private string _workgroupName;
 
@@ -77,6 +78,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
         }
 
         /// <summary>

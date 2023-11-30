@@ -35,6 +35,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class CreateEndpointAccessRequest : AmazonRedshiftServerlessRequest
     {
         private string _endpointName;
+        private string _ownerAccount;
         private List<string> _subnetIds = new List<string>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
         private string _workgroupName;
@@ -58,6 +59,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetEndpointName()
         {
             return this._endpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
         }
 
         /// <summary>

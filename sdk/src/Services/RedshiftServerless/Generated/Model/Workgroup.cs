@@ -36,6 +36,7 @@ namespace Amazon.RedshiftServerless.Model
         private int? _baseCapacity;
         private List<ConfigParameter> _configParameters = new List<ConfigParameter>();
         private DateTime? _creationDate;
+        private List<string> _crossAccountVpcs = new List<string>();
         private string _customDomainCertificateArn;
         private DateTime? _customDomainCertificateExpiryTime;
         private string _customDomainName;
@@ -76,8 +77,8 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property ConfigParameters. 
         /// <para>
         /// An array of parameters to set for advanced control over a database. The options are
-        /// <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>,
-        /// <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>,
+        /// <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>,
+        /// <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>,
         /// and query monitoring metrics that let you define performance boundaries. For more
         /// information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
         /// Query monitoring metrics for Amazon Redshift Serverless</a>.
@@ -111,6 +112,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountVpcs. 
+        /// <para>
+        /// A list of VPCs. Each entry is the unique identifier of a virtual private cloud with
+        /// access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed,
+        /// it shows an asterisk.
+        /// </para>
+        /// </summary>
+        public List<string> CrossAccountVpcs
+        {
+            get { return this._crossAccountVpcs; }
+            set { this._crossAccountVpcs = value; }
+        }
+
+        // Check to see if CrossAccountVpcs property is set
+        internal bool IsSetCrossAccountVpcs()
+        {
+            return this._crossAccountVpcs != null && this._crossAccountVpcs.Count > 0; 
         }
 
         /// <summary>
