@@ -1022,6 +1022,11 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateSpaceRequest.SpaceDisplayName</property>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateSpaceRequest.SpaceName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
@@ -3234,6 +3239,11 @@
     <property>Amazon.SageMaker.Model.DescribeSpaceResponse.SpaceArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:space/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeSpaceResponse.SpaceDisplayName</property>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeSpaceResponse.SpaceName</property>
@@ -6140,6 +6150,11 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateSpaceRequest.SpaceDisplayName</property>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateSpaceRequest.SpaceName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
@@ -7096,6 +7111,16 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CustomPosixUserConfig.Gid</property>
+    <min>1001</min>
+    <max>4000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CustomPosixUserConfig.Uid</property>
+    <min>10000</min>
+    <max>4000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DataCaptureConfig.DestinationS3Uri</property>
     <max>512</max>
     <pattern>^(https|s3)://([^/])/?(.*)$</pattern>
@@ -7226,6 +7251,16 @@
     <property>Amazon.SageMaker.Model.DebugRuleEvaluationStatus.StatusDetails</property>
     <max>1024</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DefaultEbsStorageSettings.DefaultEbsVolumeSizeInGb</property>
+    <min>5</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DefaultEbsStorageSettings.MaximumEbsVolumeSizeInGb</property>
+    <min>5</min>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DefaultSpaceSettings.ExecutionRole</property>
@@ -7412,6 +7447,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.EbsStorageSettings.EbsVolumeSizeInGb</property>
+    <min>5</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Edge.DestinationArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:(experiment|experiment-trial-component|artifact|action|context)/.*</pattern>
@@ -7527,6 +7567,22 @@
     <property>Amazon.SageMaker.Model.EdgePresetDeploymentOutput.Artifact</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EFSFileSystem.FileSystemId</property>
+    <min>11</min>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EFSFileSystemConfig.FileSystemId</property>
+    <min>11</min>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EFSFileSystemConfig.FileSystemPath</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\/\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.EMRStepMetadata.ClusterId</property>
@@ -7844,7 +7900,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.FileSystemDataSource.FileSystemId</property>
     <min>11</min>
-    <pattern>.*</pattern>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Filter.Name</property>
@@ -9504,6 +9560,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.OwnershipSettings.OwnerUserProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OwnershipSettingsSummary.OwnerUserProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ParallelismConfiguration.MaxParallelExecutionSteps</property>
     <min>1</min>
   </property-value-rule>
@@ -10431,6 +10497,11 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SpaceDetails.DomainId</property>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SpaceDetails.SpaceDisplayName</property>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SpaceDetails.SpaceName</property>

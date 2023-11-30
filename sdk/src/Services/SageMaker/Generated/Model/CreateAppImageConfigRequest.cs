@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateAppImageConfigRequest : AmazonSageMakerRequest
     {
         private string _appImageConfigName;
+        private JupyterLabAppImageConfig _jupyterLabAppImageConfig;
         private KernelGatewayImageConfig _kernelGatewayImageConfig;
         private List<Tag> _tags = new List<Tag>();
 
@@ -57,6 +58,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppImageConfigName()
         {
             return this._appImageConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JupyterLabAppImageConfig. 
+        /// <para>
+        /// The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in
+        /// the <code>AppImageConfig</code> API. This kernel is shown to users before the image
+        /// starts. After the image runs, all kernels are visible in JupyterLab.
+        /// </para>
+        /// </summary>
+        public JupyterLabAppImageConfig JupyterLabAppImageConfig
+        {
+            get { return this._jupyterLabAppImageConfig; }
+            set { this._jupyterLabAppImageConfig = value; }
+        }
+
+        // Check to see if JupyterLabAppImageConfig property is set
+        internal bool IsSetJupyterLabAppImageConfig()
+        {
+            return this._jupyterLabAppImageConfig != null;
         }
 
         /// <summary>

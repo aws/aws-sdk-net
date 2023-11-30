@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateSpaceRequest : AmazonSageMakerRequest
     {
         private string _domainId;
+        private string _spaceDisplayName;
         private string _spaceName;
         private SpaceSettings _spaceSettings;
 
@@ -55,6 +56,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceDisplayName. 
+        /// <para>
+        /// The name of the space that appears in the Amazon SageMaker Studio UI.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string SpaceDisplayName
+        {
+            get { return this._spaceDisplayName; }
+            set { this._spaceDisplayName = value; }
+        }
+
+        // Check to see if SpaceDisplayName property is set
+        internal bool IsSetSpaceDisplayName()
+        {
+            return this._spaceDisplayName != null;
         }
 
         /// <summary>

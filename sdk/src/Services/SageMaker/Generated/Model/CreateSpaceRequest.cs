@@ -35,8 +35,11 @@ namespace Amazon.SageMaker.Model
     public partial class CreateSpaceRequest : AmazonSageMakerRequest
     {
         private string _domainId;
+        private OwnershipSettings _ownershipSettings;
+        private string _spaceDisplayName;
         private string _spaceName;
         private SpaceSettings _spaceSettings;
+        private SpaceSharingSettings _spaceSharingSettings;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -56,6 +59,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnershipSettings. 
+        /// <para>
+        /// A collection of ownership settings.
+        /// </para>
+        /// </summary>
+        public OwnershipSettings OwnershipSettings
+        {
+            get { return this._ownershipSettings; }
+            set { this._ownershipSettings = value; }
+        }
+
+        // Check to see if OwnershipSettings property is set
+        internal bool IsSetOwnershipSettings()
+        {
+            return this._ownershipSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceDisplayName. 
+        /// <para>
+        /// The name of the space that appears in the SageMaker Studio UI.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string SpaceDisplayName
+        {
+            get { return this._spaceDisplayName; }
+            set { this._spaceDisplayName = value; }
+        }
+
+        // Check to see if SpaceDisplayName property is set
+        internal bool IsSetSpaceDisplayName()
+        {
+            return this._spaceDisplayName != null;
         }
 
         /// <summary>
@@ -93,6 +133,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSpaceSettings()
         {
             return this._spaceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceSharingSettings. 
+        /// <para>
+        /// A collection of space sharing settings.
+        /// </para>
+        /// </summary>
+        public SpaceSharingSettings SpaceSharingSettings
+        {
+            get { return this._spaceSharingSettings; }
+            set { this._spaceSharingSettings = value; }
+        }
+
+        // Check to see if SpaceSharingSettings property is set
+        internal bool IsSetSpaceSharingSettings()
+        {
+            return this._spaceSharingSettings != null;
         }
 
         /// <summary>

@@ -87,6 +87,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceSpec", targetDepth))
+                {
+                    var unmarshaller = ResourceSpecUnmarshaller.Instance;
+                    unmarshalledObject.ResourceSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SpaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

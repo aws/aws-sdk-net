@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _appImageConfigArn;
         private string _appImageConfigName;
         private DateTime? _creationTime;
+        private JupyterLabAppImageConfig _jupyterLabAppImageConfig;
         private KernelGatewayImageConfig _kernelGatewayImageConfig;
         private DateTime? _lastModifiedTime;
 
@@ -93,6 +94,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JupyterLabAppImageConfig. 
+        /// <para>
+        /// The configuration of the JupyterLab app.
+        /// </para>
+        /// </summary>
+        public JupyterLabAppImageConfig JupyterLabAppImageConfig
+        {
+            get { return this._jupyterLabAppImageConfig; }
+            set { this._jupyterLabAppImageConfig = value; }
+        }
+
+        // Check to see if JupyterLabAppImageConfig property is set
+        internal bool IsSetJupyterLabAppImageConfig()
+        {
+            return this._jupyterLabAppImageConfig != null;
         }
 
         /// <summary>

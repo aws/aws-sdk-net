@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JupyterLabAppImageConfig", targetDepth))
+                {
+                    var unmarshaller = JupyterLabAppImageConfigUnmarshaller.Instance;
+                    unmarshalledObject.JupyterLabAppImageConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KernelGatewayImageConfig", targetDepth))
                 {
                     var unmarshaller = KernelGatewayImageConfigUnmarshaller.Instance;

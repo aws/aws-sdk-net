@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateAppImageConfigRequest : AmazonSageMakerRequest
     {
         private string _appImageConfigName;
+        private JupyterLabAppImageConfig _jupyterLabAppImageConfig;
         private KernelGatewayImageConfig _kernelGatewayImageConfig;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppImageConfigName()
         {
             return this._appImageConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JupyterLabAppImageConfig. 
+        /// <para>
+        /// The JupyterLab app running on the image.
+        /// </para>
+        /// </summary>
+        public JupyterLabAppImageConfig JupyterLabAppImageConfig
+        {
+            get { return this._jupyterLabAppImageConfig; }
+            set { this._jupyterLabAppImageConfig = value; }
+        }
+
+        // Check to see if JupyterLabAppImageConfig property is set
+        internal bool IsSetJupyterLabAppImageConfig()
+        {
+            return this._jupyterLabAppImageConfig != null;
         }
 
         /// <summary>

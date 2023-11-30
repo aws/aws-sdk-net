@@ -56,6 +56,44 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCodeEditorAppSettings())
+            {
+                context.Writer.WritePropertyName("CodeEditorAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CodeEditorAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeEditorAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomFileSystemConfigs())
+            {
+                context.Writer.WritePropertyName("CustomFileSystemConfigs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomFileSystemConfigsListValue in requestObject.CustomFileSystemConfigs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomFileSystemConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomFileSystemConfigsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCustomPosixUserConfig())
+            {
+                context.Writer.WritePropertyName("CustomPosixUserConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomPosixUserConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomPosixUserConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDefaultLandingUri())
             {
                 context.Writer.WritePropertyName("DefaultLandingUri");
@@ -66,6 +104,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ExecutionRole");
                 context.Writer.Write(requestObject.ExecutionRole);
+            }
+
+            if(requestObject.IsSetJupyterLabAppSettings())
+            {
+                context.Writer.WritePropertyName("JupyterLabAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JupyterLabAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.JupyterLabAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetJupyterServerAppSettings())
@@ -130,6 +179,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = SharingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SharingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSpaceStorageSettings())
+            {
+                context.Writer.WritePropertyName("SpaceStorageSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DefaultSpaceStorageSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SpaceStorageSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

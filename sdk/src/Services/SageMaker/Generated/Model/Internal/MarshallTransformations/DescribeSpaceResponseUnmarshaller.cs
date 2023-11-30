@@ -81,10 +81,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OwnershipSettings", targetDepth))
+                {
+                    var unmarshaller = OwnershipSettingsUnmarshaller.Instance;
+                    response.OwnershipSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SpaceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SpaceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SpaceDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SpaceDisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SpaceName", targetDepth))
@@ -97,6 +109,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SpaceSettingsUnmarshaller.Instance;
                     response.SpaceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SpaceSharingSettings", targetDepth))
+                {
+                    var unmarshaller = SpaceSharingSettingsUnmarshaller.Instance;
+                    response.SpaceSharingSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

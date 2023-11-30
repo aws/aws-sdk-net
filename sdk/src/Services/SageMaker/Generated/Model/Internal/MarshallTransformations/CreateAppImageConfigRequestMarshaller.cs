@@ -73,6 +73,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppImageConfigName);
                 }
 
+                if(publicRequest.IsSetJupyterLabAppImageConfig())
+                {
+                    context.Writer.WritePropertyName("JupyterLabAppImageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JupyterLabAppImageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JupyterLabAppImageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKernelGatewayImageConfig())
                 {
                     context.Writer.WritePropertyName("KernelGatewayImageConfig");

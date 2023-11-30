@@ -43,14 +43,19 @@ namespace Amazon.SageMaker.Model
     public partial class UserSettings
     {
         private CanvasAppSettings _canvasAppSettings;
+        private CodeEditorAppSettings _codeEditorAppSettings;
+        private List<CustomFileSystemConfig> _customFileSystemConfigs = new List<CustomFileSystemConfig>();
+        private CustomPosixUserConfig _customPosixUserConfig;
         private string _defaultLandingUri;
         private string _executionRole;
+        private JupyterLabAppSettings _jupyterLabAppSettings;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
         private RSessionAppSettings _rSessionAppSettings;
         private RStudioServerProAppSettings _rStudioServerProAppSettings;
         private List<string> _securityGroups = new List<string>();
         private SharingSettings _sharingSettings;
+        private DefaultSpaceStorageSettings _spaceStorageSettings;
         private StudioWebPortal _studioWebPortal;
         private TensorBoardAppSettings _tensorBoardAppSettings;
 
@@ -70,6 +75,62 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCanvasAppSettings()
         {
             return this._canvasAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeEditorAppSettings. 
+        /// <para>
+        /// The Code Editor application settings.
+        /// </para>
+        /// </summary>
+        public CodeEditorAppSettings CodeEditorAppSettings
+        {
+            get { return this._codeEditorAppSettings; }
+            set { this._codeEditorAppSettings = value; }
+        }
+
+        // Check to see if CodeEditorAppSettings property is set
+        internal bool IsSetCodeEditorAppSettings()
+        {
+            return this._codeEditorAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomFileSystemConfigs. 
+        /// <para>
+        /// The settings for assigning a custom file system to a user profile. Permitted users
+        /// can access this file system in Amazon SageMaker Studio.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<CustomFileSystemConfig> CustomFileSystemConfigs
+        {
+            get { return this._customFileSystemConfigs; }
+            set { this._customFileSystemConfigs = value; }
+        }
+
+        // Check to see if CustomFileSystemConfigs property is set
+        internal bool IsSetCustomFileSystemConfigs()
+        {
+            return this._customFileSystemConfigs != null && this._customFileSystemConfigs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPosixUserConfig. 
+        /// <para>
+        /// Details about the POSIX identity that is used for file system operations.
+        /// </para>
+        /// </summary>
+        public CustomPosixUserConfig CustomPosixUserConfig
+        {
+            get { return this._customPosixUserConfig; }
+            set { this._customPosixUserConfig = value; }
+        }
+
+        // Check to see if CustomPosixUserConfig property is set
+        internal bool IsSetCustomPosixUserConfig()
+        {
+            return this._customPosixUserConfig != null;
         }
 
         /// <summary>
@@ -119,6 +180,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRole()
         {
             return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JupyterLabAppSettings. 
+        /// <para>
+        /// The settings for the JupyterLab application.
+        /// </para>
+        /// </summary>
+        public JupyterLabAppSettings JupyterLabAppSettings
+        {
+            get { return this._jupyterLabAppSettings; }
+            set { this._jupyterLabAppSettings = value; }
+        }
+
+        // Check to see if JupyterLabAppSettings property is set
+        internal bool IsSetJupyterLabAppSettings()
+        {
+            return this._jupyterLabAppSettings != null;
         }
 
         /// <summary>
@@ -247,6 +326,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSharingSettings()
         {
             return this._sharingSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceStorageSettings. 
+        /// <para>
+        /// The storage settings for a private space.
+        /// </para>
+        /// </summary>
+        public DefaultSpaceStorageSettings SpaceStorageSettings
+        {
+            get { return this._spaceStorageSettings; }
+            set { this._spaceStorageSettings = value; }
+        }
+
+        // Check to see if SpaceStorageSettings property is set
+        internal bool IsSetSpaceStorageSettings()
+        {
+            return this._spaceStorageSettings != null;
         }
 
         /// <summary>

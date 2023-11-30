@@ -73,6 +73,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainId);
                 }
 
+                if(publicRequest.IsSetOwnershipSettings())
+                {
+                    context.Writer.WritePropertyName("OwnershipSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OwnershipSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OwnershipSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSpaceDisplayName())
+                {
+                    context.Writer.WritePropertyName("SpaceDisplayName");
+                    context.Writer.Write(publicRequest.SpaceDisplayName);
+                }
+
                 if(publicRequest.IsSetSpaceName())
                 {
                     context.Writer.WritePropertyName("SpaceName");
@@ -86,6 +103,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                     var marshaller = SpaceSettingsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.SpaceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSpaceSharingSettings())
+                {
+                    context.Writer.WritePropertyName("SpaceSharingSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SpaceSharingSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SpaceSharingSettings, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -45,6 +45,50 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpaceSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppType())
+            {
+                context.Writer.WritePropertyName("AppType");
+                context.Writer.Write(requestObject.AppType);
+            }
+
+            if(requestObject.IsSetCodeEditorAppSettings())
+            {
+                context.Writer.WritePropertyName("CodeEditorAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SpaceCodeEditorAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeEditorAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomFileSystems())
+            {
+                context.Writer.WritePropertyName("CustomFileSystems");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomFileSystemsListValue in requestObject.CustomFileSystems)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomFileSystemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomFileSystemsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetJupyterLabAppSettings())
+            {
+                context.Writer.WritePropertyName("JupyterLabAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SpaceJupyterLabAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.JupyterLabAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetJupyterServerAppSettings())
             {
                 context.Writer.WritePropertyName("JupyterServerAppSettings");
@@ -63,6 +107,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = KernelGatewayAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.KernelGatewayAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSpaceStorageSettings())
+            {
+                context.Writer.WritePropertyName("SpaceStorageSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SpaceStorageSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SpaceStorageSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

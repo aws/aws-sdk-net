@@ -63,6 +63,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AppType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodeEditorAppSettings", targetDepth))
+                {
+                    var unmarshaller = SpaceCodeEditorAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.CodeEditorAppSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomFileSystems", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CustomFileSystem, CustomFileSystemUnmarshaller>(CustomFileSystemUnmarshaller.Instance);
+                    unmarshalledObject.CustomFileSystems = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JupyterLabAppSettings", targetDepth))
+                {
+                    var unmarshaller = SpaceJupyterLabAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JupyterServerAppSettings", targetDepth))
                 {
                     var unmarshaller = JupyterServerAppSettingsUnmarshaller.Instance;
@@ -73,6 +97,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = KernelGatewayAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SpaceStorageSettings", targetDepth))
+                {
+                    var unmarshaller = SpaceStorageSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

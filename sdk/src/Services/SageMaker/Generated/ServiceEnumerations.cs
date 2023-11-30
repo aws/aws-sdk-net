@@ -873,6 +873,14 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant CodeEditor for AppType
+        /// </summary>
+        public static readonly AppType CodeEditor = new AppType("CodeEditor");
+        /// <summary>
+        /// Constant JupyterLab for AppType
+        /// </summary>
+        public static readonly AppType JupyterLab = new AppType("JupyterLab");
+        /// <summary>
         /// Constant JupyterServer for AppType
         /// </summary>
         public static readonly AppType JupyterServer = new AppType("JupyterServer");
@@ -13651,6 +13659,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SharingType.
+    /// </summary>
+    public class SharingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Private for SharingType
+        /// </summary>
+        public static readonly SharingType Private = new SharingType("Private");
+        /// <summary>
+        /// Constant Shared for SharingType
+        /// </summary>
+        public static readonly SharingType Shared = new SharingType("Shared");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharingType FindValue(string value)
+        {
+            return FindValue<SharingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SkipModelValidation.
     /// </summary>
     public class SkipModelValidation : ConstantClass
@@ -14802,6 +14860,14 @@ namespace Amazon.SageMaker
     public class StudioLifecycleConfigAppType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CodeEditor for StudioLifecycleConfigAppType
+        /// </summary>
+        public static readonly StudioLifecycleConfigAppType CodeEditor = new StudioLifecycleConfigAppType("CodeEditor");
+        /// <summary>
+        /// Constant JupyterLab for StudioLifecycleConfigAppType
+        /// </summary>
+        public static readonly StudioLifecycleConfigAppType JupyterLab = new StudioLifecycleConfigAppType("JupyterLab");
         /// <summary>
         /// Constant JupyterServer for StudioLifecycleConfigAppType
         /// </summary>

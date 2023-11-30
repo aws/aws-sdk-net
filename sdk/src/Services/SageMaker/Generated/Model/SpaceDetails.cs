@@ -36,7 +36,11 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _domainId;
         private DateTime? _lastModifiedTime;
+        private OwnershipSettingsSummary _ownershipSettingsSummary;
+        private string _spaceDisplayName;
         private string _spaceName;
+        private SpaceSettingsSummary _spaceSettingsSummary;
+        private SpaceSharingSettingsSummary _spaceSharingSettingsSummary;
         private SpaceStatus _status;
 
         /// <summary>
@@ -95,6 +99,43 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnershipSettingsSummary. 
+        /// <para>
+        /// Specifies summary information about the ownership settings.
+        /// </para>
+        /// </summary>
+        public OwnershipSettingsSummary OwnershipSettingsSummary
+        {
+            get { return this._ownershipSettingsSummary; }
+            set { this._ownershipSettingsSummary = value; }
+        }
+
+        // Check to see if OwnershipSettingsSummary property is set
+        internal bool IsSetOwnershipSettingsSummary()
+        {
+            return this._ownershipSettingsSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceDisplayName. 
+        /// <para>
+        /// The name of the space that appears in the Studio UI.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string SpaceDisplayName
+        {
+            get { return this._spaceDisplayName; }
+            set { this._spaceDisplayName = value; }
+        }
+
+        // Check to see if SpaceDisplayName property is set
+        internal bool IsSetSpaceDisplayName()
+        {
+            return this._spaceDisplayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SpaceName. 
         /// <para>
         /// The name of the space.
@@ -111,6 +152,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSpaceName()
         {
             return this._spaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceSettingsSummary. 
+        /// <para>
+        /// Specifies summary information about the space settings.
+        /// </para>
+        /// </summary>
+        public SpaceSettingsSummary SpaceSettingsSummary
+        {
+            get { return this._spaceSettingsSummary; }
+            set { this._spaceSettingsSummary = value; }
+        }
+
+        // Check to see if SpaceSettingsSummary property is set
+        internal bool IsSetSpaceSettingsSummary()
+        {
+            return this._spaceSettingsSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceSharingSettingsSummary. 
+        /// <para>
+        /// Specifies summary information about the space sharing settings.
+        /// </para>
+        /// </summary>
+        public SpaceSharingSettingsSummary SpaceSharingSettingsSummary
+        {
+            get { return this._spaceSharingSettingsSummary; }
+            set { this._spaceSharingSettingsSummary = value; }
+        }
+
+        // Check to see if SpaceSharingSettingsSummary property is set
+        internal bool IsSetSpaceSharingSettingsSummary()
+        {
+            return this._spaceSharingSettingsSummary != null;
         }
 
         /// <summary>

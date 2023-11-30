@@ -73,6 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainId);
                 }
 
+                if(publicRequest.IsSetSpaceDisplayName())
+                {
+                    context.Writer.WritePropertyName("SpaceDisplayName");
+                    context.Writer.Write(publicRequest.SpaceDisplayName);
+                }
+
                 if(publicRequest.IsSetSpaceName())
                 {
                     context.Writer.WritePropertyName("SpaceName");

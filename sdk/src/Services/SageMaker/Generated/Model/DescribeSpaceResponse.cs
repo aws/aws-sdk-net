@@ -38,9 +38,12 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private string _homeEfsFileSystemUid;
         private DateTime? _lastModifiedTime;
+        private OwnershipSettings _ownershipSettings;
         private string _spaceArn;
+        private string _spaceDisplayName;
         private string _spaceName;
         private SpaceSettings _spaceSettings;
+        private SpaceSharingSettings _spaceSharingSettings;
         private SpaceStatus _status;
         private string _url;
 
@@ -138,6 +141,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnershipSettings. 
+        /// <para>
+        /// The collection of ownership settings for a space.
+        /// </para>
+        /// </summary>
+        public OwnershipSettings OwnershipSettings
+        {
+            get { return this._ownershipSettings; }
+            set { this._ownershipSettings = value; }
+        }
+
+        // Check to see if OwnershipSettings property is set
+        internal bool IsSetOwnershipSettings()
+        {
+            return this._ownershipSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SpaceArn. 
         /// <para>
         /// The space's Amazon Resource Name (ARN).
@@ -154,6 +175,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSpaceArn()
         {
             return this._spaceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceDisplayName. 
+        /// <para>
+        /// The name of the space that appears in the Amazon SageMaker Studio UI.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string SpaceDisplayName
+        {
+            get { return this._spaceDisplayName; }
+            set { this._spaceDisplayName = value; }
+        }
+
+        // Check to see if SpaceDisplayName property is set
+        internal bool IsSetSpaceDisplayName()
+        {
+            return this._spaceDisplayName != null;
         }
 
         /// <summary>
@@ -191,6 +231,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSpaceSettings()
         {
             return this._spaceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceSharingSettings. 
+        /// <para>
+        /// The collection of space sharing settings for a space.
+        /// </para>
+        /// </summary>
+        public SpaceSharingSettings SpaceSharingSettings
+        {
+            get { return this._spaceSharingSettings; }
+            set { this._spaceSharingSettings = value; }
+        }
+
+        // Check to see if SpaceSharingSettings property is set
+        internal bool IsSetSpaceSharingSettings()
+        {
+            return this._spaceSharingSettings != null;
         }
 
         /// <summary>
