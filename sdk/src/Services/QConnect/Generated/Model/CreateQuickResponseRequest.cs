@@ -30,7 +30,7 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateQuickResponse operation.
-    /// Creates a Amazon Q quick response.
+    /// Creates an Amazon Q quick response.
     /// </summary>
     public partial class CreateQuickResponseRequest : AmazonQConnectRequest
     {

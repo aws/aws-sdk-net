@@ -29,10 +29,19 @@ namespace Amazon.QConnect
     /// <summary>
     /// Interface for accessing QConnect
     ///
+    /// <note> 
+    /// <para>
+    ///  <b>Powered by Amazon Bedrock</b>: Amazon Web Services implements <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.html">automated
+    /// abuse detection</a>. Because Amazon Q in Connect is built on Amazon Bedrock, users
+    /// can take full advantage of the controls implemented in Amazon Bedrock to enforce safety,
+    /// security, and the responsible use of artificial intelligence (AI).
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Amazon Q in Connect is a generative AI customer service assistant. It is an LLM-enhanced
     /// evolution of Amazon Connect Wisdom that delivers real-time recommendations to help
     /// contact center agents resolve customer issues quickly and accurately.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon Q automatically detects customer intent during calls and chats using conversational
@@ -335,7 +344,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Creates a Amazon Q quick response.
+        /// Creates an Amazon Q quick response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
         /// 
@@ -1587,6 +1596,56 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  PutFeedback
+
+
+        /// <summary>
+        /// Provides feedback against the specified assistant for the specified target. This API
+        /// only supports generative targets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFeedback service method.</param>
+        /// 
+        /// <returns>The response from the PutFeedback service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
+        PutFeedbackResponse PutFeedback(PutFeedbackRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFeedback operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFeedback
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
+        IAsyncResult BeginPutFeedback(PutFeedbackRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFeedback.</param>
+        /// 
+        /// <returns>Returns a  PutFeedbackResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
+        PutFeedbackResponse EndPutFeedback(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  QueryAssistant
 
 
@@ -1745,7 +1804,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Searches existing Amazon Q quick responses in a Amazon Q knowledge base.
+        /// Searches existing Amazon Q quick responses in an Amazon Q knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
         /// 

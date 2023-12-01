@@ -31,10 +31,19 @@ namespace Amazon.QConnect
     /// <summary>
     /// Interface for accessing QConnect
     ///
+    /// <note> 
+    /// <para>
+    ///  <b>Powered by Amazon Bedrock</b>: Amazon Web Services implements <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.html">automated
+    /// abuse detection</a>. Because Amazon Q in Connect is built on Amazon Bedrock, users
+    /// can take full advantage of the controls implemented in Amazon Bedrock to enforce safety,
+    /// security, and the responsible use of artificial intelligence (AI).
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Amazon Q in Connect is a generative AI customer service assistant. It is an LLM-enhanced
     /// evolution of Amazon Connect Wisdom that delivers real-time recommendations to help
     /// contact center agents resolve customer issues quickly and accurately.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon Q automatically detects customer intent during calls and chats using conversational
@@ -390,7 +399,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Creates a Amazon Q quick response.
+        /// Creates an Amazon Q quick response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
         /// 
@@ -420,7 +429,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Creates a Amazon Q quick response.
+        /// Creates an Amazon Q quick response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
         /// <param name="cancellationToken">
@@ -1598,6 +1607,54 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  PutFeedback
+
+
+        /// <summary>
+        /// Provides feedback against the specified assistant for the specified target. This API
+        /// only supports generative targets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFeedback service method.</param>
+        /// 
+        /// <returns>The response from the PutFeedback service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
+        PutFeedbackResponse PutFeedback(PutFeedbackRequest request);
+
+
+
+        /// <summary>
+        /// Provides feedback against the specified assistant for the specified target. This API
+        /// only supports generative targets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFeedback service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
+        Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  QueryAssistant
 
 
@@ -1754,7 +1811,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Searches existing Amazon Q quick responses in a Amazon Q knowledge base.
+        /// Searches existing Amazon Q quick responses in an Amazon Q knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
         /// 
@@ -1779,7 +1836,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Searches existing Amazon Q quick responses in a Amazon Q knowledge base.
+        /// Searches existing Amazon Q quick responses in an Amazon Q knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
         /// <param name="cancellationToken">

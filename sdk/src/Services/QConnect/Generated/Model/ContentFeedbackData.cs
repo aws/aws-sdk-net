@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The capability configuration for an Amazon Q assistant.
+    /// Information about the feedback.
     /// </summary>
-    public partial class AssistantCapabilityConfiguration
+    public partial class ContentFeedbackData
     {
-        private AssistantCapabilityType _type;
+        private GenerativeContentFeedbackData _generativeContentFeedbackData;
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property GenerativeContentFeedbackData. 
         /// <para>
-        /// The type of Amazon Q assistant capability. 
+        /// Information about the feedback for a generative target type.
         /// </para>
         /// </summary>
-        public AssistantCapabilityType Type
+        public GenerativeContentFeedbackData GenerativeContentFeedbackData
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._generativeContentFeedbackData; }
+            set { this._generativeContentFeedbackData = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if GenerativeContentFeedbackData property is set
+        internal bool IsSetGenerativeContentFeedbackData()
         {
-            return this._type != null;
+            return this._generativeContentFeedbackData != null;
         }
 
     }
