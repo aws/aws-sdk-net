@@ -1,0 +1,12 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Add support for environment variables `http_proxy` and `https_proxy`; the .NET SDK now matches the behavior of the AWS CLI when using an [HTTP proxy](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-proxy.html). Note that [HTTPS proxies](https://github.com/dotnet/runtime/issues/31113) are only supported in .NET 8 (and later)."
+    ],
+    "backwardIncompatibilitiesToIgnore": [
+      "Amazon.Runtime.IClientConfig/MethodAbstractMethodAdded"
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}
