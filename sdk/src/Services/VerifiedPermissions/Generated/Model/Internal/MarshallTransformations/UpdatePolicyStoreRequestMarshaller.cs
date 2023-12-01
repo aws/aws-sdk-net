@@ -67,6 +67,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
                 if(publicRequest.IsSetPolicyStoreId())
                 {
                     context.Writer.WritePropertyName("policyStoreId");

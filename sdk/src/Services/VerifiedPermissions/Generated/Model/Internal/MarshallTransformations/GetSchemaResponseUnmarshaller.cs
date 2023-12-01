@@ -63,6 +63,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     response.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("namespaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Namespaces = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("policyStoreId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

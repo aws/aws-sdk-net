@@ -41,6 +41,8 @@ namespace Amazon.VerifiedPermissions.Model
     {
         private string _arn;
         private DateTime? _createdDate;
+        private string _description;
+        private DateTime? _lastUpdatedDate;
         private string _policyStoreId;
 
         /// <summary>
@@ -79,6 +81,44 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Descriptive text that you can provide to help with identification of the current policy
+        /// store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=150)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedDate. 
+        /// <para>
+        /// The date and time the policy store was most recently updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedDate
+        {
+            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            set { this._lastUpdatedDate = value; }
+        }
+
+        // Check to see if LastUpdatedDate property is set
+        internal bool IsSetLastUpdatedDate()
+        {
+            return this._lastUpdatedDate.HasValue; 
         }
 
         /// <summary>

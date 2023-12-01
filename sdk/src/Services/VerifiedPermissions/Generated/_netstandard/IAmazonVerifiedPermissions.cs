@@ -153,6 +153,13 @@ namespace Amazon.VerifiedPermissions
         /// up to 100 principals and up to 100 resources. The <code>requests</code> of a <code>BatchIsAuthorized</code>
         /// API request can contain up to 30 requests.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>BatchIsAuthorized</code> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <code>verifiedpermissions:IsAuthorized</code> in their IAM policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchIsAuthorized service method.</param>
         /// <param name="cancellationToken">

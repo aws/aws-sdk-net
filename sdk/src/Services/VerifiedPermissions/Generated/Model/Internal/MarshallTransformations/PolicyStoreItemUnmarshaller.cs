@@ -75,6 +75,18 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastUpdatedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("policyStoreId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.VerifiedPermissions.Model
     {
         private DateTime? _createdDate;
         private DateTime? _lastUpdatedDate;
+        private List<string> _namespaces = new List<string>();
         private string _policyStoreId;
         private string _schema;
 
@@ -74,6 +75,24 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetLastUpdatedDate()
         {
             return this._lastUpdatedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespaces. 
+        /// <para>
+        /// The namespaces of the entities referenced by this schema.
+        /// </para>
+        /// </summary>
+        public List<string> Namespaces
+        {
+            get { return this._namespaces; }
+            set { this._namespaces = value; }
+        }
+
+        // Check to see if Namespaces property is set
+        internal bool IsSetNamespaces()
+        {
+            return this._namespaces != null && this._namespaces.Count > 0; 
         }
 
         /// <summary>
