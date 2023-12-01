@@ -54,7 +54,7 @@ namespace Amazon.RecycleBin
     /// from the Recycle Bin, and you can then use it in the same way you use any other resource
     /// of that type in your account. If the retention period expires and the resource is
     /// not restored, the resource is permanently deleted from the Recycle Bin and is no longer
-    /// available for recovery. For more information about Recycle Bin, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html">
+    /// available for recovery. For more information about Recycle Bin, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">
     /// Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -867,6 +867,10 @@ namespace Amazon.RecycleBin
         /// <exception cref="Amazon.RecycleBin.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota for the number of tags per resource to be
+        /// exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.ValidationException">
         /// One or more of the parameters in the request is not valid.
         /// </exception>
@@ -903,6 +907,10 @@ namespace Amazon.RecycleBin
         /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota for the number of tags per resource to be
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.ValidationException">
         /// One or more of the parameters in the request is not valid.

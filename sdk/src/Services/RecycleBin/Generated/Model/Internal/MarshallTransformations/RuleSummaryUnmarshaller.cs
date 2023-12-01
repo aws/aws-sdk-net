@@ -87,6 +87,12 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

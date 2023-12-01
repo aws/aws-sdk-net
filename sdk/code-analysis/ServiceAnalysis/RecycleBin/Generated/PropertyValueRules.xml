@@ -13,6 +13,11 @@
     <pattern>[0-9a-zA-Z]{11}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RecycleBin.Model.CreateRuleResponse.RuleArn</property>
+    <min>0</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RecycleBin.Model.DeleteRuleRequest.Identifier</property>
     <pattern>[0-9a-zA-Z]{11}</pattern>
   </property-value-rule>
@@ -27,6 +32,11 @@
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.GetRuleResponse.Identifier</property>
     <pattern>[0-9a-zA-Z]{11}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RecycleBin.Model.GetRuleResponse.RuleArn</property>
+    <min>0</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.ListRulesRequest.MaxResults</property>
@@ -59,6 +69,11 @@
     <pattern>[0-9a-zA-Z]{11}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RecycleBin.Model.LockRuleResponse.RuleArn</property>
+    <min>0</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RecycleBin.Model.TagResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>1011</max>
@@ -74,6 +89,11 @@
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UnlockRuleResponse.Identifier</property>
     <pattern>[0-9a-zA-Z]{11}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RecycleBin.Model.UnlockRuleResponse.RuleArn</property>
+    <min>0</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UntagResourceRequest.ResourceArn</property>
@@ -97,6 +117,11 @@
     <pattern>[0-9a-zA-Z]{11}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RecycleBin.Model.UpdateRuleResponse.RuleArn</property>
+    <min>0</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RecycleBin.Model.ResourceTag.ResourceTagKey</property>
     <pattern>^[\S\s]{1,128}$</pattern>
   </property-value-rule>
@@ -116,6 +141,11 @@
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.RuleSummary.Identifier</property>
     <pattern>[0-9a-zA-Z]{11}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RecycleBin.Model.RuleSummary.RuleArn</property>
+    <min>0</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.Tag.Key</property>

@@ -41,6 +41,7 @@ namespace Amazon.RecycleBin.Model
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private ResourceType _resourceType;
         private RetentionPeriod _retentionPeriod;
+        private string _ruleArn;
         private RuleStatus _status;
 
         /// <summary>
@@ -210,6 +211,25 @@ namespace Amazon.RecycleBin.Model
         internal bool IsSetRetentionPeriod()
         {
             return this._retentionPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the retention rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1011)]
+        public string RuleArn
+        {
+            get { return this._ruleArn; }
+            set { this._ruleArn = value; }
+        }
+
+        // Check to see if RuleArn property is set
+        internal bool IsSetRuleArn()
+        {
+            return this._ruleArn != null;
         }
 
         /// <summary>
