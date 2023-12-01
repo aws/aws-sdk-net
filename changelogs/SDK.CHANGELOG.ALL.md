@@ -1,3 +1,11 @@
+### 3.7.700.0 (2023-12-01 19:15 UTC)
+* QConnect (3.7.301.0)
+	* This release adds the PutFeedback API and allows providing feedback against the specified assistant for the specified target.
+* RecycleBin (3.7.301.0)
+	* Added resource identifier in the output and updated error handling.
+* VerifiedPermissions (3.7.302.0)
+	* Adds description field to PolicyStore API's and namespaces field to GetSchema.
+
 ### 3.7.699.0 (2023-11-30 19:05 UTC)
 * ARCZonalShift (3.7.301.0)
 	* This release adds a new capability, zonal autoshift. You can configure zonal autoshift so that AWS shifts traffic for a resource away from an Availability Zone, on your behalf, when AWS determines that there is an issue that could potentially affect customers in the Availability Zone.
