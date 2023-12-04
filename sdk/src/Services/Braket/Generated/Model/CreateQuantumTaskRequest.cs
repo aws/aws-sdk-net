@@ -35,6 +35,7 @@ namespace Amazon.Braket.Model
     public partial class CreateQuantumTaskRequest : AmazonBraketRequest
     {
         private string _action;
+        private List<Association> _associations = new List<Association>();
         private string _clientToken;
         private string _deviceArn;
         private string _deviceParameters;
@@ -61,6 +62,25 @@ namespace Amazon.Braket.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Associations. 
+        /// <para>
+        /// The list of Amazon Braket resources associated with the quantum task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<Association> Associations
+        {
+            get { return this._associations; }
+            set { this._associations = value; }
+        }
+
+        // Check to see if Associations property is set
+        internal bool IsSetAssociations()
+        {
+            return this._associations != null && this._associations.Count > 0; 
         }
 
         /// <summary>

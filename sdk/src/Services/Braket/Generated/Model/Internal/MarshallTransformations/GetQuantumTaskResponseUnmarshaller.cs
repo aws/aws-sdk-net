@@ -51,6 +51,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("associations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Association, AssociationUnmarshaller>(AssociationUnmarshaller.Instance);
+                    response.Associations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

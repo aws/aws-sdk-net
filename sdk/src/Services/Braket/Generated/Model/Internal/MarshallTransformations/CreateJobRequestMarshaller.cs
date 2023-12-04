@@ -76,6 +76,22 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAssociations())
+                {
+                    context.Writer.WritePropertyName("associations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssociationsListValue in publicRequest.Associations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssociationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAssociationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCheckpointConfig())
                 {
                     context.Writer.WritePropertyName("checkpointConfig");

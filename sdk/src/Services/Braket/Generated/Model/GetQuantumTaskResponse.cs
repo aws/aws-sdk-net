@@ -33,6 +33,7 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class GetQuantumTaskResponse : AmazonWebServiceResponse
     {
+        private List<Association> _associations = new List<Association>();
         private DateTime? _createdAt;
         private string _deviceArn;
         private string _deviceParameters;
@@ -46,6 +47,24 @@ namespace Amazon.Braket.Model
         private long? _shots;
         private QuantumTaskStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Associations. 
+        /// <para>
+        /// The list of Amazon Braket resources associated with the quantum task.
+        /// </para>
+        /// </summary>
+        public List<Association> Associations
+        {
+            get { return this._associations; }
+            set { this._associations = value; }
+        }
+
+        // Check to see if Associations property is set
+        internal bool IsSetAssociations()
+        {
+            return this._associations != null && this._associations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

@@ -34,6 +34,7 @@ namespace Amazon.Braket.Model
     public partial class GetJobResponse : AmazonWebServiceResponse
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private List<Association> _associations = new List<Association>();
         private int? _billableDuration;
         private JobCheckpointConfig _checkpointConfig;
         private DateTime? _createdAt;
@@ -73,6 +74,24 @@ namespace Amazon.Braket.Model
         internal bool IsSetAlgorithmSpecification()
         {
             return this._algorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Associations. 
+        /// <para>
+        /// The list of Amazon Braket resources associated with the hybrid job.
+        /// </para>
+        /// </summary>
+        public List<Association> Associations
+        {
+            get { return this._associations; }
+            set { this._associations = value; }
+        }
+
+        // Check to see if Associations property is set
+        internal bool IsSetAssociations()
+        {
+            return this._associations != null && this._associations.Count > 0; 
         }
 
         /// <summary>

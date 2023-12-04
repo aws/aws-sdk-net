@@ -35,6 +35,7 @@ namespace Amazon.Braket.Model
     public partial class CreateJobRequest : AmazonBraketRequest
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private List<Association> _associations = new List<Association>();
         private JobCheckpointConfig _checkpointConfig;
         private string _clientToken;
         private DeviceConfig _deviceConfig;
@@ -65,6 +66,25 @@ namespace Amazon.Braket.Model
         internal bool IsSetAlgorithmSpecification()
         {
             return this._algorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Associations. 
+        /// <para>
+        /// The list of Amazon Braket resources associated with the hybrid job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<Association> Associations
+        {
+            get { return this._associations; }
+            set { this._associations = value; }
+        }
+
+        // Check to see if Associations property is set
+        internal bool IsSetAssociations()
+        {
+            return this._associations != null && this._associations.Count > 0; 
         }
 
         /// <summary>

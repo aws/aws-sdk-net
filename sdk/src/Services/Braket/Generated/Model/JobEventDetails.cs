@@ -77,7 +77,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property TimeOfEvent. 
         /// <para>
-        /// TThe type of event that occurred related to the Amazon Braket job.
+        /// The type of event that occurred related to the Amazon Braket job.
         /// </para>
         /// </summary>
         public DateTime TimeOfEvent
