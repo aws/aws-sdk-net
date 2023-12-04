@@ -50,6 +50,10 @@
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:billinggroup/)?[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CreateCustomLineItemRequest.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.CreateCustomLineItemRequest.BillingGroupArn</property>
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:billinggroup/)?[0-9]{12}</pattern>
   </property-value-rule>
@@ -568,6 +572,10 @@
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CustomLineItemListElement.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.CustomLineItemListElement.Arn</property>
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:customlineitem/)?[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
@@ -599,6 +607,10 @@
     <property>Amazon.BillingConductor.Model.CustomLineItemPercentageChargeDetails.PercentageValue</property>
     <min>0</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CustomLineItemVersionListElement.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.CustomLineItemVersionListElement.Arn</property>

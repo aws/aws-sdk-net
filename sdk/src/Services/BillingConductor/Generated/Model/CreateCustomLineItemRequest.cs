@@ -36,6 +36,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class CreateCustomLineItemRequest : AmazonBillingConductorRequest
     {
+        private string _accountId;
         private string _billingGroupArn;
         private CustomLineItemBillingPeriodRange _billingPeriodRange;
         private CustomLineItemChargeDetails _chargeDetails;
@@ -43,6 +44,24 @@ namespace Amazon.BillingConductor.Model
         private string _description;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The Amazon Web Services account in which this custom line item will be applied to.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BillingGroupArn. 

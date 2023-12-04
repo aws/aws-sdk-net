@@ -45,6 +45,17 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListCustomLineItemsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccountIds())
+            {
+                context.Writer.WritePropertyName("AccountIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
+                {
+                        context.Writer.Write(requestObjectAccountIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetArns())
             {
                 context.Writer.WritePropertyName("Arns");

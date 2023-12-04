@@ -65,6 +65,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountId())
+                {
+                    context.Writer.WritePropertyName("AccountId");
+                    context.Writer.Write(publicRequest.AccountId);
+                }
+
                 if(publicRequest.IsSetBillingGroupArn())
                 {
                     context.Writer.WritePropertyName("BillingGroupArn");

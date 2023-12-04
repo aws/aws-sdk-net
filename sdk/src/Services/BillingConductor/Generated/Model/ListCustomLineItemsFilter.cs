@@ -34,9 +34,29 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListCustomLineItemsFilter
     {
+        private List<string> _accountIds = new List<string>();
         private List<string> _arns = new List<string>();
         private List<string> _billingGroups = new List<string>();
         private List<string> _names = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AccountIds. 
+        /// <para>
+        /// The Amazon Web Services accounts in which this custom line item will be applied to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<string> AccountIds
+        {
+            get { return this._accountIds; }
+            set { this._accountIds = value; }
+        }
+
+        // Check to see if AccountIds property is set
+        internal bool IsSetAccountIds()
+        {
+            return this._accountIds != null && this._accountIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arns. 

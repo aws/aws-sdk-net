@@ -637,6 +637,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason FIELD_VALIDATION_FAILED = new ValidationExceptionReason("FIELD_VALIDATION_FAILED");
         /// <summary>
+        /// Constant ILLEGAL_ACCOUNT_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_ACCOUNT_ID = new ValidationExceptionReason("ILLEGAL_ACCOUNT_ID");
+        /// <summary>
         /// Constant ILLEGAL_ACCOUNTS for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_ACCOUNTS = new ValidationExceptionReason("ILLEGAL_ACCOUNTS");
