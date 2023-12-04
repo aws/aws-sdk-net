@@ -1,3 +1,22 @@
+### 3.7.701.0 (2023-12-04 19:22 UTC)
+* AppRegistry (3.7.301.12)
+	* Documentation-only updates for Dawn
+* BillingConductor (3.7.301.0)
+	* This release adds the ability to specify a linked account of the billing group for the custom line item resource.
+* Braket (3.7.301.0)
+	* This release enhances service support to create quantum tasks and hybrid jobs associated with Braket Direct Reservations.
+* Cloud9 (3.7.301.0)
+	* This release adds the requirement to include the imageId parameter in the CreateEnvironmentEC2 API call.
+* CloudFormation (3.7.302.0)
+	* Including UPDATE_* states as a success status for CreateStack waiter.
+* Finspace (3.7.302.0)
+	* Release General Purpose type clusters
+* MediaLive (3.7.302.0)
+	* Adds support for custom color correction on channels using 3D LUT files.
+* Core 3.7.300.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.700.0 (2023-12-01 19:15 UTC)
 * QConnect (3.7.301.0)
 	* This release adds the PutFeedback API and allows providing feedback against the specified assistant for the specified target.
