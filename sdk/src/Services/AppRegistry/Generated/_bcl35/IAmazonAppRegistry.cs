@@ -137,7 +137,7 @@ namespace Amazon.AppRegistry
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:DisassociateResource</code> 
+        ///  <code>resource-groups:AssociateResource</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
