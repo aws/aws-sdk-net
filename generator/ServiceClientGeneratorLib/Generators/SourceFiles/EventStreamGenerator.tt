@@ -3,7 +3,10 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-
+<#
+    bool isRequest = this.Operation.RequestStructure.Members.Any(x => x.ModelShape.MarshallName == this.Structure.Name);
+    bool isResponse = this.Operation.ResponseStructure.Members.Any(x => x.ModelShape.MarshallName == this.Structure.Name);
+#>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<#=this.Structure.Name#>Collection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class <#=this.Structure.Name#> : EnumerableEventStream<IEventStreamEvent, <#=this.Config.ClassName#>EventStreamException>
@@ -24,6 +27,24 @@
         {
             throw new NotSupportedException("The given protocol is not supported or has not been implemented yet");
         }
+#>
+<#
+        if(isResponse)
+        {
+#>
+            {"Initial-Response", payload => new InitialResponseEvent(payload)},
+<#
+        }
+#>
+<#
+        else if(isRequest)
+        {
+#>
+            {"Initial-Request", payload => new InitialRequestEvent(payload)},
+<#
+        }
+#>
+<#
         foreach(var member in this.Structure.Members)
         {
         if(member.ModelShape.IsEvent)
@@ -68,6 +89,20 @@
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
         public override event EventHandler<EventStreamExceptionReceivedArgs<<#=this.Config.ClassName#>EventStreamException>> ExceptionReceived;
 <#
+        if(isResponse)
+        {
+#>
+        public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
+<#
+        }
+        else if(isRequest)
+        {
+#>
+        public event EventHandler<EventStreamEventReceivedArgs<InitialRequestEvent>> InitialRequestReceived;
+<#
+        }
+#>
+<#
         foreach(var member in this.Structure.Members)
         {
             if(member.ModelShape.IsEvent)
@@ -109,6 +144,15 @@
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
 <#
+                if(isResponse)
+#>
+                    RaiseEvent(InitialResponseReceived, ev) ||
+<#
+                else if(isRequest)
+#>
+                    RaiseEvent(InitialRequestReceived,ev) ||
+<#
+
                 var eventMembers = this.Structure.Members.Where(m => m.ModelShape.IsEvent).ToArray();
                 if(eventMembers.Length == 1)
                 {

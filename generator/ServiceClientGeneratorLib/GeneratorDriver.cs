@@ -245,6 +245,7 @@ namespace ServiceClientGenerator
                 GenerateResponseUnmarshaller(operation);
                 GenerateEndpointDiscoveryMarshaller(operation);
                 GenerateExceptions(operation);
+                GenerateStructures(operation);
             }
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
@@ -253,7 +254,7 @@ namespace ServiceClientGenerator
             }
 
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
-            GenerateStructures();
+            GenerateStructures(null);
 
             var fileName = string.Format("{0}MarshallingTests.cs", Configuration.ClassName);
 
@@ -951,7 +952,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Generates all the POCOs that go in the Model namespace for the structures defined in the service model.
         /// </summary>
-        void GenerateStructures()
+        void GenerateStructures(Operation operation)
         {
             var excludedOperations = Configuration.ServiceModel.ExcludedOperations;
 
@@ -976,8 +977,17 @@ namespace ServiceClientGenerator
                     var generator = new StructureGenerator()
                     {
                         ClassName = definition.Name,
-                        Structure = definition
+                        Structure = definition,
+                        Config = this.Configuration,
+                        Operation = operation,
                     };
+                    //since eventstream operations can attach exceptions to the request or response objects instead of the "error"
+                    //list on the operation, we must account for the case where an exception is included as a member of the response
+                    //but not on the operation's error list. In that case we make sure the structure inherits the base exception
+                    if (definition.IsException)
+                    {
+                        generator.BaseClass = this.Configuration.BaseException;
+                    }
                     this.ExecuteGenerator(generator, definition.Name + ".cs", "Model");
                     this._processedStructures.Add(definition.Name);
                 }

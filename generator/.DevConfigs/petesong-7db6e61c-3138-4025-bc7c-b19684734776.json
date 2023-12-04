@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fix: Add intitial-response and initial-request event types and event handlers. Update generator so all exceptions inherit their base exceptions, even if not modeled as part of the operation's error list."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
