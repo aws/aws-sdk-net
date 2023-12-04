@@ -11,6 +11,8 @@
 	* Including UPDATE_* states as a success status for CreateStack waiter.
 * Finspace (3.7.302.0)
 	* Release General Purpose type clusters
+* Macie Classic (Removed)
+	* Amazon Macie Classic has been removed from the SDK because it has been discontinued. Use the new Amazon Macie instead.
 * MediaLive (3.7.302.0)
 	* Adds support for custom color correction on channels using 3D LUT files.
 * Core 3.7.300.13
