@@ -104,6 +104,10 @@ namespace Amazon.Finspace.Model
         /// <para>
         /// Specifies the key-value pairs to make them available inside the cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot update this parameter for a <code>NO_RESTART</code> deployment.
+        /// </para>
         /// </summary>
         public List<KxCommandLineArgument> CommandLineArguments
         {
@@ -161,6 +165,10 @@ namespace Amazon.Finspace.Model
         /// Specifies a Q program that will be run at launch of a cluster. It is a relative path
         /// within <i>.zip</i> file that contains the custom code, which will be loaded on the
         /// cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot update this parameter for a <code>NO_RESTART</code> deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

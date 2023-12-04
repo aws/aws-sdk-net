@@ -565,6 +565,10 @@ namespace Amazon.Finspace
         /// </summary>
         public static readonly KxClusterCodeDeploymentStrategy FORCE = new KxClusterCodeDeploymentStrategy("FORCE");
         /// <summary>
+        /// Constant NO_RESTART for KxClusterCodeDeploymentStrategy
+        /// </summary>
+        public static readonly KxClusterCodeDeploymentStrategy NO_RESTART = new KxClusterCodeDeploymentStrategy("NO_RESTART");
+        /// <summary>
         /// Constant ROLLING for KxClusterCodeDeploymentStrategy
         /// </summary>
         public static readonly KxClusterCodeDeploymentStrategy ROLLING = new KxClusterCodeDeploymentStrategy("ROLLING");
@@ -688,6 +692,10 @@ namespace Amazon.Finspace
         /// Constant GATEWAY for KxClusterType
         /// </summary>
         public static readonly KxClusterType GATEWAY = new KxClusterType("GATEWAY");
+        /// <summary>
+        /// Constant GP for KxClusterType
+        /// </summary>
+        public static readonly KxClusterType GP = new KxClusterType("GP");
         /// <summary>
         /// Constant HDB for KxClusterType
         /// </summary>

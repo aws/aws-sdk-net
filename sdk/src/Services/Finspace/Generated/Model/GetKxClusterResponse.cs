@@ -220,6 +220,14 @@ namespace Amazon.Finspace.Model
         /// It allows you to create your own routing logic using the initialization scripts and
         /// custom code. This type of cluster does not require a writable local storage.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GP – A general purpose cluster allows you to quickly iterate on code during development
+        /// by granting greater access to system commands and enabling a fast reload of custom
+        /// code. This cluster type can optionally mount databases including cache and savedown
+        /// storage. For this cluster type, the node count is fixed at 1. It does not support
+        /// autoscaling and supports only <code>SINGLE</code> AZ mode.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public KxClusterType ClusterType
