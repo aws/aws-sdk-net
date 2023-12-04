@@ -190,7 +190,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Linux (default): <code>amazonlinux-1-x86_64</code> 
+        /// Amazon Linux: <code>amazonlinux-1-x86_64</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -210,7 +210,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
+        /// Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -230,7 +230,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Required=true, Max=512)]
         public string ImageId
         {
             get { return this._imageId; }
