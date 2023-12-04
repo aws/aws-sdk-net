@@ -93,6 +93,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionDescriptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("colorCorrectionSettings", targetDepth))
+                {
+                    var unmarshaller = ColorCorrectionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ColorCorrectionSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("featureActivations", targetDepth))
                 {
                     var unmarshaller = FeatureActivationsUnmarshaller.Instance;

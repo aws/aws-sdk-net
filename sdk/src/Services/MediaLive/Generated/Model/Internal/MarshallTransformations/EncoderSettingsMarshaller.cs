@@ -110,6 +110,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetColorCorrectionSettings())
+            {
+                context.Writer.WritePropertyName("colorCorrectionSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ColorCorrectionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorCorrectionSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFeatureActivations())
             {
                 context.Writer.WritePropertyName("featureActivations");

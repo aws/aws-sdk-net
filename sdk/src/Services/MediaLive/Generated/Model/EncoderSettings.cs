@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private AvailConfiguration _availConfiguration;
         private BlackoutSlate _blackoutSlate;
         private List<CaptionDescription> _captionDescriptions = new List<CaptionDescription>();
+        private ColorCorrectionSettings _colorCorrectionSettings;
         private FeatureActivations _featureActivations;
         private GlobalConfiguration _globalConfiguration;
         private MotionGraphicsConfiguration _motionGraphicsConfiguration;
@@ -122,6 +123,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptionDescriptions()
         {
             return this._captionDescriptions != null && this._captionDescriptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColorCorrectionSettings. Color correction settings
+        /// </summary>
+        public ColorCorrectionSettings ColorCorrectionSettings
+        {
+            get { return this._colorCorrectionSettings; }
+            set { this._colorCorrectionSettings = value; }
+        }
+
+        // Check to see if ColorCorrectionSettings property is set
+        internal bool IsSetColorCorrectionSettings()
+        {
+            return this._colorCorrectionSettings != null;
         }
 
         /// <summary>
