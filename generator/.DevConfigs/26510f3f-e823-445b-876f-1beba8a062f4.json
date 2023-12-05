@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix AmazonS3Uri.EndpointRegexMatch to use non-capturing groups for S3 and S3Express values"
+      ]
+    }
+  ]
+}

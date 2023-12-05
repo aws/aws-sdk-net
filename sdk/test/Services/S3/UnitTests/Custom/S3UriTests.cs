@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -39,7 +40,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void S3EndpointAbsoluterRegionalS3UriTest()
+        public void S3EndpointAbsoluteRegionalS3UriTest()
         {
             bool isS3Uri = AmazonS3Uri.IsAmazonS3Endpoint("http://mybucket.s3.us-west-2.amazonaws.com/");
             Assert.IsTrue(isS3Uri);
@@ -47,7 +48,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void S3EndpointAbsoluterLegacyS3UriTest()
+        public void S3EndpointAbsoluteLegacyS3UriTest()
         {
             bool isS3Uri = AmazonS3Uri.IsAmazonS3Endpoint("https://s3.amazonaws.com/");
             Assert.IsTrue(isS3Uri);
@@ -140,6 +141,26 @@ namespace AWSSDK.UnitTests
 
             Assert.IsFalse(result);
             Assert.IsNull(s3Uri);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void S3EndpointAbsoluteRegionalS3UriWithKeyTest()
+        {
+            var parsed = new AmazonS3Uri("https://my-bucket-name.s3.us-west-2.amazonaws.com/file-name");
+            Assert.AreEqual("my-bucket-name", parsed.Bucket);
+            Assert.AreEqual("file-name", parsed.Key);
+            Assert.AreEqual(RegionEndpoint.USWest2, parsed.Region);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void s3expressEndpointAbsoluteRegionalS3ExpressUriWithKeyTest()
+        {
+            var parsed = new AmazonS3Uri("https://my-bucket-name.s3express.us-west-2.amazonaws.com/file-name");
+            Assert.AreEqual("my-bucket-name", parsed.Bucket);
+            Assert.AreEqual("file-name", parsed.Key);
+            Assert.AreEqual(RegionEndpoint.USWest2, parsed.Region);
         }
     }
 }
