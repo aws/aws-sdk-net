@@ -987,9 +987,19 @@ namespace ServiceClientGenerator
                     if (definition.IsException)
                     {
                         generator.BaseClass = this.Configuration.BaseException;
+                        var unmarshallerGenerator = GetExceptionUnmarshaller();
+                        unmarshallerGenerator.Structure = definition;
+
+                        this.ExecuteGenerator(unmarshallerGenerator, definition.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
+                        this._processedUnmarshallers.Add(definition.Name);
+
+                        DetermineStructuresToProcess(definition, false);
+                        GenerateUnmarshaller(definition);
                     }
+
                     this.ExecuteGenerator(generator, definition.Name + ".cs", "Model");
                     this._processedStructures.Add(definition.Name);
+
                 }
             }
         }

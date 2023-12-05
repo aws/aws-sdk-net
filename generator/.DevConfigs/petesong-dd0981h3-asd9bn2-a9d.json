@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fix: Generate correct unmarshallers for exceptions that are not attached to an operation. Currently this only applies to event stream operations."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
