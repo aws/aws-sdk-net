@@ -139,7 +139,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with NVIDIA devices, specify <code>nvidia</code>.
+        /// For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -147,7 +147,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+        /// For instance types with Habana devices, specify <code>habana</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with NVIDIA devices, specify <code>nvidia</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -177,19 +181,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+        /// For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -201,15 +213,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+        /// For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+        /// For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+        /// For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

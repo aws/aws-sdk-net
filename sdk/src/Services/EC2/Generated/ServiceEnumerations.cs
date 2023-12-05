@@ -39,6 +39,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AcceleratorManufacturer Amd = new AcceleratorManufacturer("amd");
         /// <summary>
+        /// Constant Habana for AcceleratorManufacturer
+        /// </summary>
+        public static readonly AcceleratorManufacturer Habana = new AcceleratorManufacturer("habana");
+        /// <summary>
         /// Constant Nvidia for AcceleratorManufacturer
         /// </summary>
         public static readonly AcceleratorManufacturer Nvidia = new AcceleratorManufacturer("nvidia");
@@ -93,6 +97,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AcceleratorName A100 = new AcceleratorName("a100");
         /// <summary>
+        /// Constant A10g for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName A10g = new AcceleratorName("a10g");
+        /// <summary>
+        /// Constant H100 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName H100 = new AcceleratorName("h100");
+        /// <summary>
         /// Constant Inferentia for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName Inferentia = new AcceleratorName("inferentia");
@@ -116,6 +128,10 @@ namespace Amazon.EC2
         /// Constant T4 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName T4 = new AcceleratorName("t4");
+        /// <summary>
+        /// Constant T4g for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName T4g = new AcceleratorName("t4g");
         /// <summary>
         /// Constant V100 for AcceleratorName
         /// </summary>
