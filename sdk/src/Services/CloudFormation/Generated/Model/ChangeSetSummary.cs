@@ -148,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ImportExistingResources. 
         /// <para>
-        /// Indicates if the stack set imports resources that already exist.
+        /// Indicates if the change set imports resources that already exist.
         /// </para>
         /// </summary>
         public bool ImportExistingResources
