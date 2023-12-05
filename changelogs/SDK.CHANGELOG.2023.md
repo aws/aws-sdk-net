@@ -1,3 +1,16 @@
+### 3.7.702.0 (2023-12-05 19:18 UTC)
+* Athena (3.7.302.0)
+	* Adding IdentityCenter enabled request for interactive query
+* CleanRoomsML (3.7.301.0)
+	* Updated service title from cleanroomsml to CleanRoomsML.
+* CloudFormation (3.7.302.1)
+	* Documentation update, December 2023
+* EC2 (3.7.307.0)
+	* Adds A10G, T4G, and H100 as accelerator name options and Habana as an accelerator manufacturer option for attribute based selection
+* Core 3.7.300.14
+	* Fix: Add intitial-response and initial-request event types and event handlers. Update generator so all exceptions inherit their base exceptions, even if not modeled as part of the operation's error list.
+	* All services packages updated to require new Core
+
 ### 3.7.701.0 (2023-12-04 19:22 UTC)
 * AppRegistry (3.7.301.12)
 	* Documentation-only updates for Dawn
