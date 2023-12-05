@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CleanRoomsML")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - cleanrooms-ml. Public Preview SDK release of AWS Clean Rooms ML APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Clean Rooms ML. Public Preview SDK release of AWS Clean Rooms ML APIs")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - cleanrooms-ml. Public Preview SDK release of AWS Clean Rooms ML APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Clean Rooms ML. Public Preview SDK release of AWS Clean Rooms ML APIs")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - cleanrooms-ml. Public Preview SDK release of AWS Clean Rooms ML APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Clean Rooms ML. Public Preview SDK release of AWS Clean Rooms ML APIs")]
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - cleanrooms-ml. Public Preview SDK release of AWS Clean Rooms ML APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Clean Rooms ML. Public Preview SDK release of AWS Clean Rooms ML APIs")]
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - cleanrooms-ml. Public Preview SDK release of AWS Clean Rooms ML APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Clean Rooms ML. Public Preview SDK release of AWS Clean Rooms ML APIs")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

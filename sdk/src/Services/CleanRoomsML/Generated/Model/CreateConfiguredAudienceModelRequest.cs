@@ -96,6 +96,11 @@ namespace Amazon.CleanRoomsML.Model
         /// the audience generation job inherits the tags from the configured audience model,
         /// by default. Tags in the <a>StartAudienceGenerationJob</a> will override the default.
         /// </para>
+        ///  
+        /// <para>
+        /// When the client is in a different account than the configured audience model, the
+        /// tags from the client are never applied to a resource in the caller's account.
+        /// </para>
         /// </summary>
         public TagOnCreatePolicy ChildResourceTagOnCreatePolicy
         {
