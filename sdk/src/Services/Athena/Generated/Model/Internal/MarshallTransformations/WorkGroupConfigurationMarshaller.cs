@@ -97,10 +97,32 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExecutionRole);
             }
 
+            if(requestObject.IsSetIdentityCenterConfiguration())
+            {
+                context.Writer.WritePropertyName("IdentityCenterConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdentityCenterConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPublishCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("PublishCloudWatchMetricsEnabled");
                 context.Writer.Write(requestObject.PublishCloudWatchMetricsEnabled);
+            }
+
+            if(requestObject.IsSetQueryResultsS3AccessGrantsConfiguration())
+            {
+                context.Writer.WritePropertyName("QueryResultsS3AccessGrantsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = QueryResultsS3AccessGrantsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.QueryResultsS3AccessGrantsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetRequesterPaysEnabled())

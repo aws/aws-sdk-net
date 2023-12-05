@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
     {
         private string _catalogName;
         private string _databaseName;
+        private string _workGroup;
 
         /// <summary>
         /// Gets and sets the property CatalogName. 
@@ -73,6 +74,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkGroup. 
+        /// <para>
+        /// The name of the workgroup for which the metadata is being fetched. Required if requesting
+        /// an IAM Identity Center enabled Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public string WorkGroup
+        {
+            get { return this._workGroup; }
+            set { this._workGroup = value; }
+        }
+
+        // Check to see if WorkGroup property is set
+        internal bool IsSetWorkGroup()
+        {
+            return this._workGroup != null;
         }
 
     }

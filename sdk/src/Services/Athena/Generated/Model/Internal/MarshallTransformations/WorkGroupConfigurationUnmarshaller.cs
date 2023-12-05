@@ -105,10 +105,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PublishCloudWatchMetricsEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.PublishCloudWatchMetricsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QueryResultsS3AccessGrantsConfiguration", targetDepth))
+                {
+                    var unmarshaller = QueryResultsS3AccessGrantsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.QueryResultsS3AccessGrantsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequesterPaysEnabled", targetDepth))

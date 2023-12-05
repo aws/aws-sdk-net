@@ -43,6 +43,7 @@ namespace Amazon.Athena.Model
         private WorkGroupConfiguration _configuration;
         private DateTime? _creationTime;
         private string _description;
+        private string _identityCenterApplicationArn;
         private string _name;
         private WorkGroupState _state;
 
@@ -105,6 +106,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterApplicationArn. 
+        /// <para>
+        /// The ARN of the IAM Identity Center enabled application associated with the workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string IdentityCenterApplicationArn
+        {
+            get { return this._identityCenterApplicationArn; }
+            set { this._identityCenterApplicationArn = value; }
+        }
+
+        // Check to see if IdentityCenterApplicationArn property is set
+        internal bool IsSetIdentityCenterApplicationArn()
+        {
+            return this._identityCenterApplicationArn != null;
         }
 
         /// <summary>

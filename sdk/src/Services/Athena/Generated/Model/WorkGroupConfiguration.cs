@@ -46,7 +46,9 @@ namespace Amazon.Athena.Model
         private bool? _enforceWorkGroupConfiguration;
         private EngineVersion _engineVersion;
         private string _executionRole;
+        private IdentityCenterConfiguration _identityCenterConfiguration;
         private bool? _publishCloudWatchMetricsEnabled;
+        private QueryResultsS3AccessGrantsConfiguration _queryResultsS3AccessGrantsConfiguration;
         private bool? _requesterPaysEnabled;
         private ResultConfiguration _resultConfiguration;
 
@@ -176,8 +178,9 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// Role used in a Spark session for accessing the user's resources. This property applies
-        /// only to Spark-enabled workgroups.
+        /// The ARN of the execution role used to access user resources for Spark sessions and
+        /// Identity Center enabled workgroups. This property applies only to Spark enabled workgroups
+        /// and Identity Center enabled workgroups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -191,6 +194,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetExecutionRole()
         {
             return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterConfiguration. 
+        /// <para>
+        /// Specifies whether the workgroup is IAM Identity Center supported.
+        /// </para>
+        /// </summary>
+        public IdentityCenterConfiguration IdentityCenterConfiguration
+        {
+            get { return this._identityCenterConfiguration; }
+            set { this._identityCenterConfiguration = value; }
+        }
+
+        // Check to see if IdentityCenterConfiguration property is set
+        internal bool IsSetIdentityCenterConfiguration()
+        {
+            return this._identityCenterConfiguration != null;
         }
 
         /// <summary>
@@ -209,6 +230,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetPublishCloudWatchMetricsEnabled()
         {
             return this._publishCloudWatchMetricsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryResultsS3AccessGrantsConfiguration. 
+        /// <para>
+        /// Specifies whether Amazon S3 access grants are enabled for query results.
+        /// </para>
+        /// </summary>
+        public QueryResultsS3AccessGrantsConfiguration QueryResultsS3AccessGrantsConfiguration
+        {
+            get { return this._queryResultsS3AccessGrantsConfiguration; }
+            set { this._queryResultsS3AccessGrantsConfiguration = value; }
+        }
+
+        // Check to see if QueryResultsS3AccessGrantsConfiguration property is set
+        internal bool IsSetQueryResultsS3AccessGrantsConfiguration()
+        {
+            return this._queryResultsS3AccessGrantsConfiguration != null;
         }
 
         /// <summary>

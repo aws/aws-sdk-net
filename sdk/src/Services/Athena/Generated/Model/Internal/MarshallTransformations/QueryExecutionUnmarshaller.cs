@@ -93,6 +93,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryResultsS3AccessGrantsConfiguration", targetDepth))
+                {
+                    var unmarshaller = QueryResultsS3AccessGrantsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.QueryResultsS3AccessGrantsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResultConfiguration", targetDepth))
                 {
                     var unmarshaller = ResultConfigurationUnmarshaller.Instance;

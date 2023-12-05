@@ -120,7 +120,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Nullable. 
         /// <para>
-        /// Indicates the column's nullable status.
+        /// Unsupported constraint. This value always shows as <code>UNKNOWN</code>.
         /// </para>
         /// </summary>
         public ColumnNullable Nullable

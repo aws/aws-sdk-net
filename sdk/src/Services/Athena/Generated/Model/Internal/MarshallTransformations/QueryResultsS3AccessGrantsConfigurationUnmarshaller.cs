@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkGroupSummary Object
+    /// Response Unmarshaller for QueryResultsS3AccessGrantsConfiguration Object
     /// </summary>  
-    public class WorkGroupSummaryUnmarshaller : IUnmarshaller<WorkGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<WorkGroupSummary, JsonUnmarshallerContext>
+    public class QueryResultsS3AccessGrantsConfigurationUnmarshaller : IUnmarshaller<QueryResultsS3AccessGrantsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<QueryResultsS3AccessGrantsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WorkGroupSummary IUnmarshaller<WorkGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        QueryResultsS3AccessGrantsConfiguration IUnmarshaller<QueryResultsS3AccessGrantsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkGroupSummary Unmarshall(JsonUnmarshallerContext context)
+        public QueryResultsS3AccessGrantsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            WorkGroupSummary unmarshalledObject = new WorkGroupSummary();
+            QueryResultsS3AccessGrantsConfiguration unmarshalledObject = new QueryResultsS3AccessGrantsConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EngineVersion", targetDepth))
+                if (context.TestExpression("CreateUserLevelPrefix", targetDepth))
                 {
-                    var unmarshaller = EngineVersionUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CreateUserLevelPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IdentityCenterApplicationArn", targetDepth))
+                if (context.TestExpression("EnableS3AccessGrants", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableS3AccessGrants = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +86,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkGroupSummaryUnmarshaller _instance = new WorkGroupSummaryUnmarshaller();        
+        private static QueryResultsS3AccessGrantsConfigurationUnmarshaller _instance = new QueryResultsS3AccessGrantsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkGroupSummaryUnmarshaller Instance
+        public static QueryResultsS3AccessGrantsConfigurationUnmarshaller Instance
         {
             get
             {

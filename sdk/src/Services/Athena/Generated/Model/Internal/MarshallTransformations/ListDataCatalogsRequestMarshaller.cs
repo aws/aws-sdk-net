@@ -79,6 +79,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetWorkGroup())
+                {
+                    context.Writer.WritePropertyName("WorkGroup");
+                    context.Writer.Write(publicRequest.WorkGroup);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkGroupSummary Object
+    /// Response Unmarshaller for IdentityCenterConfiguration Object
     /// </summary>  
-    public class WorkGroupSummaryUnmarshaller : IUnmarshaller<WorkGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<WorkGroupSummary, JsonUnmarshallerContext>
+    public class IdentityCenterConfigurationUnmarshaller : IUnmarshaller<IdentityCenterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<IdentityCenterConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WorkGroupSummary IUnmarshaller<WorkGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IdentityCenterConfiguration IUnmarshaller<IdentityCenterConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkGroupSummary Unmarshall(JsonUnmarshallerContext context)
+        public IdentityCenterConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            WorkGroupSummary unmarshalledObject = new WorkGroupSummary();
+            IdentityCenterConfiguration unmarshalledObject = new IdentityCenterConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,16 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("EnableIdentityCenter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableIdentityCenter = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("IdentityCenterInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EngineVersion", targetDepth))
-                {
-                    var unmarshaller = EngineVersionUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityCenterApplicationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +80,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkGroupSummaryUnmarshaller _instance = new WorkGroupSummaryUnmarshaller();        
+        private static IdentityCenterConfigurationUnmarshaller _instance = new IdentityCenterConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkGroupSummaryUnmarshaller Instance
+        public static IdentityCenterConfigurationUnmarshaller Instance
         {
             get
             {

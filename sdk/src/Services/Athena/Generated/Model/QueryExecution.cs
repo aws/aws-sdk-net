@@ -38,6 +38,7 @@ namespace Amazon.Athena.Model
         private string _query;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
+        private QueryResultsS3AccessGrantsConfiguration _queryResultsS3AccessGrantsConfiguration;
         private ResultConfiguration _resultConfiguration;
         private ResultReuseConfiguration _resultReuseConfiguration;
         private StatementType _statementType;
@@ -139,6 +140,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetQueryExecutionId()
         {
             return this._queryExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryResultsS3AccessGrantsConfiguration. 
+        /// <para>
+        /// Specifies whether Amazon S3 access grants are enabled for query results.
+        /// </para>
+        /// </summary>
+        public QueryResultsS3AccessGrantsConfiguration QueryResultsS3AccessGrantsConfiguration
+        {
+            get { return this._queryResultsS3AccessGrantsConfiguration; }
+            set { this._queryResultsS3AccessGrantsConfiguration = value; }
+        }
+
+        // Check to see if QueryResultsS3AccessGrantsConfiguration property is set
+        internal bool IsSetQueryResultsS3AccessGrantsConfiguration()
+        {
+            return this._queryResultsS3AccessGrantsConfiguration != null;
         }
 
         /// <summary>
