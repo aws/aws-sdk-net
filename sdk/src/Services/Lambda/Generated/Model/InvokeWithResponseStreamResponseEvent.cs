@@ -36,8 +36,7 @@ namespace Amazon.Lambda.Model
     /// An object that includes a chunk of the response payload. When the stream has ended,
     /// Lambda includes a <code>InvokeComplete</code> object.
     /// </summary>
-    
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeWithResponseStreamResponseEventCollection is not descriptive")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeWithResponseStreamResponseEventCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class InvokeWithResponseStreamResponseEvent : EnumerableEventStream<IEventStreamEvent, LambdaEventStreamException>
     {
@@ -47,6 +46,7 @@ namespace Amazon.Lambda.Model
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
+            {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"InvokeComplete", payload => new InvokeWithResponseStreamCompleteEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"PayloadChunk", payload => new InvokeResponseStreamUpdateUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
@@ -71,6 +71,7 @@ namespace Amazon.Lambda.Model
         }
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
         public override event EventHandler<EventStreamExceptionReceivedArgs<LambdaEventStreamException>> ExceptionReceived;
+        public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
         ///<summary>
         ///Raised when an InvokeComplete event is received
         ///</summary>
@@ -104,6 +105,7 @@ namespace Amazon.Lambda.Model
                 //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts are perfromed
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
+                    RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(InvokeCompleteReceived,ev) ||
                     RaiseEvent(PayloadChunkReceived,ev);
             };       

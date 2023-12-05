@@ -35,8 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     /// <summary>
     /// Definition of content in the response stream.
     /// </summary>
-    
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class ResponseStream : EnumerableEventStream<IEventStreamEvent, BedrockRuntimeEventStreamException>
     {
@@ -46,6 +45,7 @@ namespace Amazon.BedrockRuntime.Model
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
+            {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"Chunk", payload => new PayloadPartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
         /// <summary>
@@ -74,6 +74,7 @@ namespace Amazon.BedrockRuntime.Model
         }
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
         public override event EventHandler<EventStreamExceptionReceivedArgs<BedrockRuntimeEventStreamException>> ExceptionReceived;
+        public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
         ///<summary>
         ///Raised when an Chunk event is received
         ///</summary>
@@ -103,6 +104,7 @@ namespace Amazon.BedrockRuntime.Model
                 //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts are perfromed
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
+                    RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(ChunkReceived,ev);
             };       
         }

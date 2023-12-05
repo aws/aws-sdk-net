@@ -35,8 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Response body of is a stream
     /// </summary>
-    
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class ResponseStream : EnumerableEventStream<IEventStreamEvent, BedrockAgentRuntimeEventStreamException>
     {
@@ -46,6 +45,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
+            {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"Chunk", payload => new PayloadPartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"Trace", payload => new TracePartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
@@ -79,6 +79,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
         public override event EventHandler<EventStreamExceptionReceivedArgs<BedrockAgentRuntimeEventStreamException>> ExceptionReceived;
+        public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
         ///<summary>
         ///Raised when an Chunk event is received
         ///</summary>
@@ -112,6 +113,7 @@ namespace Amazon.BedrockAgentRuntime.Model
                 //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts are perfromed
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
+                    RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(ChunkReceived,ev) ||
                     RaiseEvent(TraceReceived,ev);
             };       
