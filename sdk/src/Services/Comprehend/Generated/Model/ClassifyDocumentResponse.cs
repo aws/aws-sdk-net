@@ -43,16 +43,16 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Classes. 
         /// <para>
-        /// The classes used by the document being analyzed. These are used for multi-class trained
-        /// models. Individual classes are mutually exclusive and each document is expected to
-        /// have only a single class assigned to it. For example, an animal can be a dog or a
-        /// cat, but not both at the same time. 
+        /// The classes used by the document being analyzed. These are used for models trained
+        /// in multi-class mode. Individual classes are mutually exclusive and each document is
+        /// expected to have only a single class assigned to it. For example, an animal can be
+        /// a dog or a cat, but not both at the same time. 
         /// </para>
         ///  
         /// <para>
-        /// For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>),
-        /// along with a confidence score. A higher confidence score indicates that the input
-        /// prompt is undesired in nature.
+        /// For prompt safety classification, the response includes only two classes (SAFE_PROMPT
+        /// and UNSAFE_PROMPT), along with a confidence score for each class. The value range
+        /// of the score is zero to one, where one is the highest confidence.
         /// </para>
         /// </summary>
         public List<DocumentClass> Classes
@@ -127,7 +127,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// The labels used the document being analyzed. These are used for multi-label trained
+        /// The labels used in the document being analyzed. These are used for multi-label trained
         /// models. Individual labels represent different categories that are related in some
         /// manner and are not mutually exclusive. For example, a movie can be just an action
         /// movie, or it can be an action movie, a science fiction movie, and a comedy, all at

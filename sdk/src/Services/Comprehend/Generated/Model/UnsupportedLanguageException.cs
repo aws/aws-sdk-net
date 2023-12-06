@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-    /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+    /// Amazon Comprehend can't process the language of the input text. For a list of supported
+    /// languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
     /// languages</a> in the Comprehend Developer Guide.
     /// </summary>
     #if !NETSTANDARD

@@ -31,7 +31,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Toxicity analysis result for one string. For more information about toxicity detection,
     /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity
-    /// detection</a> in the <i>Amazon Comprehend Developer Guide</i>
+    /// detection</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </summary>
     public partial class ToxicLabels
     {
@@ -59,7 +59,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Toxicity. 
         /// <para>
-        /// Overall toxicity score for the string.
+        /// Overall toxicity score for the string. Value range is zero to one, where one is the
+        /// highest confidence.
         /// </para>
         /// </summary>
         public float Toxicity

@@ -36,22 +36,22 @@ namespace Amazon.Comprehend.Model
     ///  <ul> <li> 
     /// <para>
     /// Custom classifier - a custom model that you have created and trained. For input, you
-    /// can provide plain text, a single-page document (PDF, Word, or image), or Textract
+    /// can provide plain text, a single-page document (PDF, Word, or image), or Amazon Textract
     /// API output. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Custom
     /// classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Prompt classifier - Amazon Comprehend provides a model for classifying prompts. For
-    /// input, you provide English plain text input. For prompt classification, the response
-    /// includes only the <code>Classes</code> field. For more information about prompt classifiers,
-    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prompt-classification.html">Prompt
-    /// classifiers</a> in the <i>Amazon Comprehend Developer Guide</i>.
+    /// Prompt safety classifier - Amazon Comprehend provides a pre-trained model for classifying
+    /// input prompts for generative AI applications. For input, you provide English plain
+    /// text input. For prompt safety classification, the response includes only the <code>Classes</code>
+    /// field. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+    /// safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If the system detects errors while processing a page in the input document, the API
-    /// response includes an entry in <code>Errors</code> that describes the errors.
+    /// response includes an <code>Errors</code> field that describes the errors.
     /// </para>
     ///  
     /// <para>
@@ -81,8 +81,8 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// To classify a document using the prompt classifier, use the <code>Text</code> parameter
-        /// for input.
+        /// To classify a document using the prompt safety classifier, use the <code>Text</code>
+        /// parameter for input.
         /// </para>
         ///  
         /// <para>
@@ -140,7 +140,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// For prompt classification, Amazon Comprehend provides the endpoint ARN: <code>zzz</code>.
+        /// For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For
+        /// more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+        /// safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> 
         /// </para>
         ///  
         /// <para>

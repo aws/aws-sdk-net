@@ -29,27 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Provides additional detail about why the request failed:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// Document size is too large - Check the size of your file and resubmit the request.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Document type is not supported - Check the file type and resubmit the request.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Too many pages in the document - Check the number of pages in your file and resubmit
-    /// the request.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Access denied to Amazon Textract - Verify that your account has permission to use
-    /// Amazon Textract API operations and resubmit the request.
-    /// </para>
-    ///  </li> </ul>
+    /// Provides additional detail about why the request failed.
     /// </summary>
     public partial class InvalidRequestDetail
     {
@@ -58,8 +38,43 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// Reason code is <code>INVALID_DOCUMENT</code>.
+        /// Reason codes include the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DOCUMENT_SIZE_EXCEEDED - Document size is too large. Check the size of your file and
+        /// resubmit the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_DOC_TYPE - Document type is not supported. Check the file type and resubmit
+        /// the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAGE_LIMIT_EXCEEDED - Too many pages in the document. Check the number of pages in
+        /// your file and resubmit the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TEXTRACT_ACCESS_DENIED - Access denied to Amazon Textract. Verify that your account
+        /// has permission to use Amazon Textract API operations and resubmit the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NOT_TEXTRACT_JSON - Document is not Amazon Textract JSON format. Verify the format
+        /// and resubmit the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MISMATCHED_TOTAL_PAGE_COUNT - Check the number of pages in your file and resubmit
+        /// the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_DOCUMENT - Invalid document. Check the file and resubmit the request.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InvalidRequestDetailReason Reason
         {

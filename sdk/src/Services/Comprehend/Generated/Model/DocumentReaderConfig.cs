@@ -135,12 +135,12 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABLES</code> - Returns information about any tables that are detected in the
-        /// input document. 
+        ///  <code>TABLES</code> - Returns additional information about any tables that are detected
+        /// in the input document. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FORMS</code> - Returns information and the data from any forms that are detected
+        ///  <code>FORMS</code> - Returns additional information about any forms that are detected
         /// in the input document. 
         /// </para>
         ///  </li> </ul>
