@@ -1,3 +1,21 @@
+### 3.7.703.0 (2023-12-06 19:17 UTC)
+* Backup (3.7.303.0)
+	* AWS Backup - Features: Add VaultType to the output of DescribeRecoveryPoint, ListRecoveryPointByBackupVault API and add ResourceType to the input of ListRestoreJobs API
+* Comprehend (3.7.300.15)
+	* Documentation updates for Trust and Safety features.
+* Connect (3.7.304.0)
+	* Releasing Tagging Support for Instance Management APIS
+* EC2 (3.7.308.0)
+	* Releasing the new cpuManufacturer attribute within the DescribeInstanceTypes API response which notifies our customers with information on who the Manufacturer is for the processor attached to the instance, for example: Intel.
+* PaymentCryptography (3.7.301.0)
+	* AWS Payment Cryptography IPEK feature release
+* S3 (3.7.304.4)
+	* Reuse S3ExpressCredentialProvider when checking if the request should be retried
+	* Fix AmazonS3Uri.EndpointRegexMatch to use non-capturing groups for S3 and S3Express values
+* Core 3.7.300.15
+	* Fix: Generate correct unmarshallers for exceptions that are not attached to an operation. Currently this only applies to event stream operations.
+	* All services packages updated to require new Core
+
 ### 3.7.702.0 (2023-12-05 19:18 UTC)
 * Athena (3.7.302.0)
 	* Adding IdentityCenter enabled request for interactive query
