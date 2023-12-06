@@ -56,6 +56,7 @@ namespace Amazon.Backup.Model
         private RecoveryPointStatus _status;
         private string _statusMessage;
         private StorageClass _storageClass;
+        private VaultType _vaultType;
 
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
@@ -548,6 +549,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetStorageClass()
         {
             return this._storageClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultType. 
+        /// <para>
+        /// This is the type of vault in which the described recovery point is stored.
+        /// </para>
+        /// </summary>
+        public VaultType VaultType
+        {
+            get { return this._vaultType; }
+            set { this._vaultType = value; }
+        }
+
+        // Check to see if VaultType property is set
+        internal bool IsSetVaultType()
+        {
+            return this._vaultType != null;
         }
 
     }

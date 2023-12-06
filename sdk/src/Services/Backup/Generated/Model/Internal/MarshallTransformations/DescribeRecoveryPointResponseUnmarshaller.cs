@@ -189,6 +189,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.StorageClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VaultType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

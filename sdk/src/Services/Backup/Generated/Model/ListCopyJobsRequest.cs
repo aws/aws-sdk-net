@@ -247,6 +247,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>CloudFormation</code> for CloudFormation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
         /// </para>
         ///  </li> <li> 
@@ -275,7 +279,15 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Redshift</code> for Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>RDS</code> for Amazon Relational Database Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -284,6 +296,10 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>S3</code> for Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Timestream</code> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -40,6 +40,7 @@ namespace Amazon.Backup.Model
         private DateTime? _byCompleteBefore;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
+        private string _byResourceType;
         private string _byRestoreTestingPlanArn;
         private RestoreJobStatus _byStatus;
         private int? _maxResults;
@@ -136,6 +137,89 @@ namespace Amazon.Backup.Model
         internal bool IsSetByCreatedBefore()
         {
             return this._byCreatedBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByResourceType. 
+        /// <para>
+        /// Include this parameter to return only restore jobs for the specified resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CloudFormation</code> for CloudFormation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DynamoDB</code> for Amazon DynamoDB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EBS</code> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EC2</code> for Amazon Elastic Compute Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EFS</code> for Amazon Elastic File System
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FSx</code> for Amazon FSx
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Neptune</code> for Amazon Neptune
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Redshift</code> for Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RDS</code> for Amazon Relational Database Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Storage Gateway</code> for Storage Gateway
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>S3</code> for Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Timestream</code> for Amazon Timestream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VirtualMachine</code> for virtual machines
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ByResourceType
+        {
+            get { return this._byResourceType; }
+            set { this._byResourceType = value; }
+        }
+
+        // Check to see if ByResourceType property is set
+        internal bool IsSetByResourceType()
+        {
+            return this._byResourceType != null;
         }
 
         /// <summary>

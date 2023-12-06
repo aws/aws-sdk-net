@@ -3049,11 +3049,13 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
-        /// for a service, Backup tries to protect that service's resources in this Region, when
-        /// the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
-        /// Backup does not try to protect that service's resources in this Region. Use the <code>DescribeRegionSettings</code>
-        /// API to determine the resource types that are supported.
+        /// Updates the current service opt-in settings for the Region.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <code>DescribeRegionSettings</code> API to determine the resource types that
+        /// are supported.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// <param name="cancellationToken">
