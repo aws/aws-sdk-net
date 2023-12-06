@@ -56,6 +56,7 @@ namespace Amazon.Connect.Model
         private bool? _inboundCallsEnabled;
         private string _instanceAlias;
         private bool? _outboundCallsEnabled;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -169,6 +170,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetOutboundCallsEnabled()
         {
             return this._outboundCallsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
