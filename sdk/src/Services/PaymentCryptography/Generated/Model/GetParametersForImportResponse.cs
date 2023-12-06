@@ -82,8 +82,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyAlgorithm. 
         /// <para>
-        /// The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code>
-        /// is the only wrapping key algorithm allowed.
+        /// The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,8 +101,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyCertificate. 
         /// <para>
-        /// The wrapping key certificate of the wrapping key for use within the TR-34 key block.
-        /// The certificate expires in 7 days.
+        /// The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for
+        /// use within the TR-34 key block. The certificate expires in 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
@@ -122,8 +121,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyCertificateChain. 
         /// <para>
-        /// The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping
-        /// key certificate. This is the root certificate authority (CA) within your service account.
+        /// The Amazon Web Services Payment Cryptography root certificate authority (CA) that
+        /// signed the wrapping key certificate in PEM format (base64 encoded).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]

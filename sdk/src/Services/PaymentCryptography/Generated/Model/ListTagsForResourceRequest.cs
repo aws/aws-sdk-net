@@ -72,6 +72,11 @@ namespace Amazon.PaymentCryptography.Model
         /// is present, Amazon Web Services Payment Cryptography does not return more than the
         /// specified number of items, but it might return fewer.
         /// </para>
+        ///  
+        /// <para>
+        /// This value is optional. If you include a value, it must be between 1 and 100, inclusive.
+        /// If you do not include a value, it defaults to 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults

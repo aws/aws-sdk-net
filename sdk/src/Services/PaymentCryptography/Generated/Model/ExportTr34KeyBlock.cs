@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Parameter information for key material export using TR-34 standard.
+    /// Parameter information for key material export using the asymmetric TR-34 key exchange
+    /// method.
     /// </summary>
     public partial class ExportTr34KeyBlock
     {

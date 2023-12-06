@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Parameter information for key material import using TR-34 standard.
+    /// Parameter information for key material import using the asymmetric TR-34 key exchange
+    /// method.
     /// </summary>
     public partial class ImportTr34KeyBlock
     {
@@ -63,9 +64,9 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property ImportToken. 
         /// <para>
-        /// The import token that initiates key import into Amazon Web Services Payment Cryptography.
-        /// It expires after 7 days. You can use the same import token to import multiple keys
-        /// to the same service account.
+        /// The import token that initiates key import using the asymmetric TR-34 key exchange
+        /// method into Amazon Web Services Payment Cryptography. It expires after 7 days. You
+        /// can use the same import token to import multiple keys to the same service account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,7 +126,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property SigningKeyCertificate. 
         /// <para>
         /// The public key component in PEM certificate format of the private key that signs the
-        /// KDH TR-34 wrapped key block.
+        /// KDH TR-34 WrappedKeyBlock.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]

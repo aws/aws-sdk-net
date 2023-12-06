@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Parameter information for key material import using TR-31 standard.
+    /// Parameter information for key material import using symmetric TR-31 key exchange method.
     /// </summary>
     public partial class ImportTr31KeyBlock
     {
@@ -39,7 +39,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappedKeyBlock. 
         /// <para>
-        /// The TR-34 wrapped key block to import.
+        /// The TR-31 wrapped key block to import.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=56, Max=9984)]

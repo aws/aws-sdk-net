@@ -29,18 +29,67 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Parameter information for generating a wrapped key using TR-31 or TR-34 standard.
+    /// Parameter information for generating a WrappedKeyBlock for key exchange.
     /// </summary>
     public partial class WrappedKey
     {
+        private string _keyCheckValue;
+        private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private string _keyMaterial;
         private WrappedKeyMaterialFormat _wrappedKeyMaterialFormat;
         private string _wrappingKeyArn;
 
         /// <summary>
+        /// Gets and sets the property KeyCheckValue. 
+        /// <para>
+        /// The key check value (KCV) is used to check if all parties holding a given key have
+        /// the same key or to detect that a key has changed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=16)]
+        public string KeyCheckValue
+        {
+            get { return this._keyCheckValue; }
+            set { this._keyCheckValue = value; }
+        }
+
+        // Check to see if KeyCheckValue property is set
+        internal bool IsSetKeyCheckValue()
+        {
+            return this._keyCheckValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyCheckValueAlgorithm. 
+        /// <para>
+        /// The algorithm that Amazon Web Services Payment Cryptography uses to calculate the
+        /// key check value (KCV). It is used to validate the key integrity.
+        /// </para>
+        ///  
+        /// <para>
+        /// For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+        /// with the key to be checked and retaining the 3 highest order bytes of the encrypted
+        /// result. For AES keys, the KCV is computed using a CMAC algorithm where the input data
+        /// is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
+        /// </para>
+        /// </summary>
+        public KeyCheckValueAlgorithm KeyCheckValueAlgorithm
+        {
+            get { return this._keyCheckValueAlgorithm; }
+            set { this._keyCheckValueAlgorithm = value; }
+        }
+
+        // Check to see if KeyCheckValueAlgorithm property is set
+        internal bool IsSetKeyCheckValueAlgorithm()
+        {
+            return this._keyCheckValueAlgorithm != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyMaterial. 
         /// <para>
-        /// Parameter information for generating a wrapped key using TR-31 or TR-34 standard.
+        /// Parameter information for generating a wrapped key using TR-31 or TR-34 skey exchange
+        /// method.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=48, Max=16384)]

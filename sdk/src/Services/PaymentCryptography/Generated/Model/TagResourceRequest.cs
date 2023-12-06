@@ -99,8 +99,8 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Don't include confidential or sensitive information in this field. This field may
-        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// Don't include personal, confidential or sensitive information in this field. This
+        /// field may be displayed in plaintext in CloudTrail logs and other output.
         /// </para>
         ///  </important> 
         /// <para>
@@ -108,8 +108,8 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Don't include confidential or sensitive information in this field. This field may
-        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// Don't include personal, confidential or sensitive information in this field. This
+        /// field may be displayed in plaintext in CloudTrail logs and other output.
         /// </para>
         ///  </important>
         /// </summary>

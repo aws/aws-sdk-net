@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptography.Model
     ///  
     /// <para>
     /// When you create a key, you specify both immutable and mutable data about the key.
-    /// The immutable data contains key attributes that defines the scope and cryptographic
+    /// The immutable data contains key attributes that define the scope and cryptographic
     /// operations that you can perform using the key, for example key class (example: <code>SYMMETRIC_KEY</code>),
     /// key algorithm (example: <code>TDES_2KEY</code>), key usage (example: <code>TR31_P0_PIN_ENCRYPTION_KEY</code>)
     /// and key modes of use (example: <code>Encrypt</code>). For information about valid
@@ -93,7 +93,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Specifies whether to enable the key. If the key is enabled, it is activated for use
-        /// within the service. If the key not enabled, then it is created but not activated.
+        /// within the service. If the key is not enabled, then it is created but not activated.
         /// The default value is enabled.
         /// </para>
         /// </summary>
@@ -152,14 +152,14 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property KeyCheckValueAlgorithm. 
         /// <para>
         /// The algorithm that Amazon Web Services Payment Cryptography uses to calculate the
-        /// key check value (KCV) for DES and AES keys.
+        /// key check value (KCV). It is used to validate the key integrity.
         /// </para>
         ///  
         /// <para>
-        /// For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with
-        /// the key to be checked and retaining the 3 highest order bytes of the encrypted result.
-        /// For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with
-        /// the key to be checked and retaining the 3 highest order bytes of the encrypted result.
+        /// For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+        /// with the key to be checked and retaining the 3 highest order bytes of the encrypted
+        /// result. For AES keys, the KCV is computed using a CMAC algorithm where the input data
+        /// is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
         /// </para>
         /// </summary>
         public KeyCheckValueAlgorithm KeyCheckValueAlgorithm
@@ -177,19 +177,21 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to attach to the key. Each tag consists of a tag key and a tag value. Both
-        /// the tag key and the tag value are required, but the tag value can be an empty (null)
-        /// string. You can't have more than one tag on an Amazon Web Services Payment Cryptography
-        /// key with the same tag key. 
+        /// Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use
+        /// this parameter to tag a key when it is created. To tag an existing Amazon Web Services
+        /// Payment Cryptography key, use the <a>TagResource</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// To use this parameter, you must have <code>TagResource</code> permission.
+        /// Each tag consists of a tag key and a tag value. Both the tag key and the tag value
+        /// are required, but the tag value can be an empty (null) string. You can't have more
+        /// than one tag on an Amazon Web Services Payment Cryptography key with the same tag
+        /// key. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// Don't include confidential or sensitive information in this field. This field may
-        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// Don't include personal, confidential or sensitive information in this field. This
+        /// field may be displayed in plaintext in CloudTrail logs and other output.
         /// </para>
         ///  </important> <note> 
         /// <para>

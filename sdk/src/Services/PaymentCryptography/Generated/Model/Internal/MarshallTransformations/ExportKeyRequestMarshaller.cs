@@ -67,6 +67,17 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExportAttributes())
+                {
+                    context.Writer.WritePropertyName("ExportAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExportAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExportAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExportKeyIdentifier())
                 {
                     context.Writer.WritePropertyName("ExportKeyIdentifier");

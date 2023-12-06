@@ -29,30 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Parameter information for key material export using symmetric TR-31 key exchange method.
+    /// Parameter information for IPEK generation during export.
     /// </summary>
-    public partial class ExportTr31KeyBlock
+    public partial class ExportDukptInitialKey
     {
-        private string _wrappingKeyIdentifier;
+        private string _keySerialNumber;
 
         /// <summary>
-        /// Gets and sets the property WrappingKeyIdentifier. 
+        /// Gets and sets the property KeySerialNumber. 
         /// <para>
-        /// The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key
-        /// under export for TR-31 key block generation.
+        /// The KSN for IPEK generation using DUKPT. 
+        /// </para>
+        ///  
+        /// <para>
+        /// KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN
+        /// hex length should be 20 for a TDES_2KEY key or 24 for an AES key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=322)]
-        public string WrappingKeyIdentifier
+        [AWSProperty(Required=true, Min=20, Max=24)]
+        public string KeySerialNumber
         {
-            get { return this._wrappingKeyIdentifier; }
-            set { this._wrappingKeyIdentifier = value; }
+            get { return this._keySerialNumber; }
+            set { this._keySerialNumber = value; }
         }
 
-        // Check to see if WrappingKeyIdentifier property is set
-        internal bool IsSetWrappingKeyIdentifier()
+        // Check to see if KeySerialNumber property is set
+        internal bool IsSetKeySerialNumber()
         {
-            return this._wrappingKeyIdentifier != null;
+            return this._keySerialNumber != null;
         }
 
     }
