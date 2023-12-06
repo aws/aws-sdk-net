@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("manufacturer", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Manufacturer = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("supportedArchitectures/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -33,9 +33,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ProcessorInfo
     {
+        private string _manufacturer;
         private List<string> _supportedArchitectures = new List<string>();
         private List<string> _supportedFeatures = new List<string>();
         private double? _sustainedClockSpeedInGhz;
+
+        /// <summary>
+        /// Gets and sets the property Manufacturer. 
+        /// <para>
+        /// The manufacturer of the processor.
+        /// </para>
+        /// </summary>
+        public string Manufacturer
+        {
+            get { return this._manufacturer; }
+            set { this._manufacturer = value; }
+        }
+
+        // Check to see if Manufacturer property is set
+        internal bool IsSetManufacturer()
+        {
+            return this._manufacturer != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SupportedArchitectures. 
