@@ -109,10 +109,10 @@ namespace Amazon.S3.Util
             return null;
         }
 
-        private static string GetHeadBucketPreSignedUrl(string bucketName, ImmutableCredentials credentials)
+        private static string GetHeadBucketPreSignedUrl(string bucketName, IRequestContext requestContext)
         {
             // all buckets accessible via USEast1
-            using (var s3Client = GetUsEast1ClientFromCredentials(credentials))
+            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ImmutableCredentials))
             {
                 // IMPORTANT:
                 // This method is called as part of the request pipeline.
@@ -121,6 +121,13 @@ namespace Amazon.S3.Util
                 // As such, the only reason it's OK to use an S3Client here
                 // is because this code is using a method that doesn't go
                 // through the request pipeline: GetPreSignedURLInternal
+
+                // Keep the S3ExpressCredentialProvider that was used in the 
+                // request pipeline, to reuse the cached credentials when needed.
+                var s3Config = (requestContext.ClientConfig as AmazonS3Config);
+                if(s3Config != null)
+                    (s3Client.Config as AmazonS3Config).S3ExpressCredentialProvider = s3Config.S3ExpressCredentialProvider;
+
                 var request = new GetPreSignedUrlRequest
                 {
                     BucketName = bucketName,
