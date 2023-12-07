@@ -1,3 +1,10 @@
+### 3.7.704.0 (2023-12-07 19:36 UTC)
+* CodeDeploy (3.7.301.0)
+	* This release adds support for two new CodeDeploy features: 1) zonal deployments for Amazon EC2 in-place deployments, 2) deployments triggered by Auto Scaling group termination lifecycle hook events.
+* Core 3.7.300.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.703.0 (2023-12-06 19:17 UTC)
 * Backup (3.7.303.0)
 	* AWS Backup - Features: Add VaultType to the output of DescribeRecoveryPoint, ListRecoveryPointByBackupVault API and add ResourceType to the input of ListRestoreJobs API
