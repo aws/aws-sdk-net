@@ -42,15 +42,15 @@ namespace Amazon.Runtime
             if (!string.IsNullOrEmpty(value))
             {
                 var asUri = new Uri(value);
-                var proxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
+                var parsedProxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
                 if (!string.IsNullOrEmpty(asUri.UserInfo)) {
                     var userAndPass = asUri.UserInfo.Split(':');
-                    proxy.Credentials = new NetworkCredential(
+                    parsedProxy.Credentials = new NetworkCredential(
                         userAndPass[0],
                         userAndPass.Length > 1 ? userAndPass[1] : string.Empty
                     );
                 }
-                return proxy;
+                return parsedProxy;
             }
 
             return null;
@@ -71,12 +71,11 @@ namespace Amazon.Runtime
         /// </summary>
         public IWebProxy GetHttpsProxy()
         {
-            var httpsProxy = GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
-            if (httpsProxy != null)
+            if (proxy != null)
             {
-                return httpsProxy;
+                return proxy;
             }
-            return proxy;
+            return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
         }
 
         /// <summary>
@@ -85,12 +84,11 @@ namespace Amazon.Runtime
         /// </summary>
         public IWebProxy GetHttpProxy()
         {
-            var httpProxy = GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
-            if (httpProxy != null)
+            if (proxy != null)
             {
-                return httpProxy;
+                return proxy;
             }
-            return proxy;
+            return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
         }
 
         /// <summary>

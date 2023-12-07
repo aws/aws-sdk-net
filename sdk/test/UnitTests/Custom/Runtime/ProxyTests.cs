@@ -23,6 +23,7 @@ namespace AWSSDK.UnitTests
     [TestClass()]
     public class ProxyTests
     {
+        readonly string EnvironmentVariableUrl = "http://user:pass@10.0.0.2:21/proxy";
         readonly string Host = "10.0.0.1";
         readonly int Port = 20;
         readonly List<string> BypassList = new List<string>
@@ -91,6 +92,65 @@ namespace AWSSDK.UnitTests
 
             WebProxy proxy = dummyConfig.GetWebProxy();
             Assert.IsTrue(proxy.Address.ToString().StartsWith(host, StringComparison.OrdinalIgnoreCase));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestParsingCredentialsOverEnvironmentVariable()
+        {
+            var cachedHttpProxy = Environment.GetEnvironmentVariable("http_proxy");
+
+            try
+            {
+                Environment.SetEnvironmentVariable("http_proxy", EnvironmentVariableUrl);
+
+                var dummyConfig = new AmazonEC2Config();
+                WebProxy proxy = dummyConfig.GetHttpProxy();
+
+                var address = proxy.Address;
+                Assert.AreEqual(address.Host, "10.0.0.2");
+                Assert.AreEqual(address.Port, 21);
+                Assert.IsNotNull(proxy.Credentials);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("http_proxy", cachedHttpProxy);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestProxyOverridingEnvironmentVariables()
+        {
+            var cachedHttpProxy = Environment.GetEnvironmentVariable("http_proxy");
+            var cachedHttpsProxy = Environment.GetEnvironmentVariable("https_proxy");
+
+            try
+            {
+                Environment.SetEnvironmentVariable("http_proxy", EnvironmentVariableUrl);
+                Environment.SetEnvironmentVariable("https_proxy", EnvironmentVariableUrl);
+
+                var dummyConfig = new AmazonEC2Config();
+                dummyConfig.ProxyHost = Host;
+                dummyConfig.ProxyPort = Port;
+
+                WebProxy httpProxy = dummyConfig.GetHttpProxy();
+                var httpAddress = httpProxy.Address;
+                Assert.AreEqual(httpAddress.Host, Host);
+                Assert.AreEqual(httpAddress.Port, Port);
+
+                WebProxy httpsProxy = dummyConfig.GetHttpsProxy();
+                var httpsAddress = httpsProxy.Address;
+                Assert.AreEqual(httpsAddress.Host, Host);
+                Assert.AreEqual(httpsAddress.Port, Port);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("http_proxy", cachedHttpProxy);
+                Environment.SetEnvironmentVariable("https_proxy", cachedHttpsProxy);
+            }
         }
 #endif
     }
