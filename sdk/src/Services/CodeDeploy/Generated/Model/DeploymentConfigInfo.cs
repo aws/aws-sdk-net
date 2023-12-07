@@ -39,6 +39,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentConfigName;
         private MinimumHealthyHosts _minimumHealthyHosts;
         private TrafficRoutingConfig _trafficRoutingConfig;
+        private ZonalConfig _zonalConfig;
 
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
@@ -117,7 +118,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property MinimumHealthyHosts. 
         /// <para>
-        /// Information about the number or percentage of minimum healthy instance.
+        /// Information about the number or percentage of minimum healthy instances.
         /// </para>
         /// </summary>
         public MinimumHealthyHosts MinimumHealthyHosts
@@ -149,6 +150,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetTrafficRoutingConfig()
         {
             return this._trafficRoutingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZonalConfig. 
+        /// <para>
+        /// Information about a zonal configuration.
+        /// </para>
+        /// </summary>
+        public ZonalConfig ZonalConfig
+        {
+            get { return this._zonalConfig; }
+            set { this._zonalConfig = value; }
+        }
+
+        // Check to see if ZonalConfig property is set
+        internal bool IsSetZonalConfig()
+        {
+            return this._zonalConfig != null;
         }
 
     }

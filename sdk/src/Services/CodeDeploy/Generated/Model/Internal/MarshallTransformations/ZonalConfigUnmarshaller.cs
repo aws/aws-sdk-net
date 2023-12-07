@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoScalingGroup Object
+    /// Response Unmarshaller for ZonalConfig Object
     /// </summary>  
-    public class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext>
+    public class ZonalConfigUnmarshaller : IUnmarshaller<ZonalConfig, XmlUnmarshallerContext>, IUnmarshaller<ZonalConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoScalingGroup IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ZonalConfig IUnmarshaller<ZonalConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
+        public ZonalConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            AutoScalingGroup unmarshalledObject = new AutoScalingGroup();
+            ZonalConfig unmarshalledObject = new ZonalConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,22 +63,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("hook", targetDepth))
+                if (context.TestExpression("firstZoneMonitorDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Hook = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.FirstZoneMonitorDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("minimumHealthyHostsPerZone", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MinimumHealthyHostsPerZoneUnmarshaller.Instance;
+                    unmarshalledObject.MinimumHealthyHostsPerZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("terminationHook", targetDepth))
+                if (context.TestExpression("monitorDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerminationHook = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.MonitorDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,12 +86,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoScalingGroupUnmarshaller _instance = new AutoScalingGroupUnmarshaller();        
+        private static ZonalConfigUnmarshaller _instance = new ZonalConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoScalingGroupUnmarshaller Instance
+        public static ZonalConfigUnmarshaller Instance
         {
             get
             {

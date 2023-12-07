@@ -101,6 +101,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetZonalConfig())
+                {
+                    context.Writer.WritePropertyName("zonalConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ZonalConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ZonalConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

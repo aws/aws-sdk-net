@@ -189,6 +189,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("terminationHookEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TerminationHookEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("triggerConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TriggerConfig, TriggerConfigUnmarshaller>(TriggerConfigUnmarshaller.Instance);

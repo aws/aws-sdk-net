@@ -978,6 +978,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTrafficRoutingConfigurationException">
         /// The configuration that specifies how traffic is routed during a deployment is invalid.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidZonalDeploymentConfigurationException">
+        /// The <code>ZonalConfig</code> object is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         CreateDeploymentConfigResponse CreateDeploymentConfig(CreateDeploymentConfigRequest request);
 
@@ -2381,6 +2384,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetFilterNameException">
+        /// The target filter name is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">REST API Reference for ListDeploymentTargets Operation</seealso>
         ListDeploymentTargetsResponse ListDeploymentTargets(ListDeploymentTargetsRequest request);

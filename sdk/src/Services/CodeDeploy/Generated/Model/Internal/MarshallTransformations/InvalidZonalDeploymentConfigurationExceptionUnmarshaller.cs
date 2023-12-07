@@ -34,64 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoScalingGroup Object
+    /// Response Unmarshaller for InvalidZonalDeploymentConfigurationException Object
     /// </summary>  
-    public class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext>
+    public class InvalidZonalDeploymentConfigurationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidZonalDeploymentConfigurationException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoScalingGroup IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public InvalidZonalDeploymentConfigurationException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public InvalidZonalDeploymentConfigurationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            AutoScalingGroup unmarshalledObject = new AutoScalingGroup();
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            InvalidZonalDeploymentConfigurationException unmarshalledObject = new InvalidZonalDeploymentConfigurationException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("hook", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Hook = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terminationHook", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerminationHook = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static AutoScalingGroupUnmarshaller _instance = new AutoScalingGroupUnmarshaller();        
+        private static InvalidZonalDeploymentConfigurationExceptionUnmarshaller _instance = new InvalidZonalDeploymentConfigurationExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoScalingGroupUnmarshaller Instance
+        public static InvalidZonalDeploymentConfigurationExceptionUnmarshaller Instance
         {
             get
             {

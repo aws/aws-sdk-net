@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about minimum healthy instance.
+    /// Information about the minimum number of healthy instances.
     /// </summary>
     public partial class MinimumHealthyHosts
     {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoScalingGroup Object
+    /// Response Unmarshaller for MinimumHealthyHostsPerZone Object
     /// </summary>  
-    public class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext>
+    public class MinimumHealthyHostsPerZoneUnmarshaller : IUnmarshaller<MinimumHealthyHostsPerZone, XmlUnmarshallerContext>, IUnmarshaller<MinimumHealthyHostsPerZone, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoScalingGroup IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MinimumHealthyHostsPerZone IUnmarshaller<MinimumHealthyHostsPerZone, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
+        public MinimumHealthyHostsPerZone Unmarshall(JsonUnmarshallerContext context)
         {
-            AutoScalingGroup unmarshalledObject = new AutoScalingGroup();
+            MinimumHealthyHostsPerZone unmarshalledObject = new MinimumHealthyHostsPerZone();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,22 +63,16 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("hook", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Hook = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terminationHook", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerminationHook = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,12 +80,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoScalingGroupUnmarshaller _instance = new AutoScalingGroupUnmarshaller();        
+        private static MinimumHealthyHostsPerZoneUnmarshaller _instance = new MinimumHealthyHostsPerZoneUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoScalingGroupUnmarshaller Instance
+        public static MinimumHealthyHostsPerZoneUnmarshaller Instance
         {
             get
             {

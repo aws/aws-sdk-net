@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDeploymentTarget operation.
-    /// Returns information about a deployment target.
+    /// Information about the minimum number of healthy instances per Availability Zone.
     /// </summary>
-    public partial class GetDeploymentTargetRequest : AmazonCodeDeployRequest
+    public partial class MinimumHealthyHostsPerZone
     {
-        private string _deploymentId;
-        private string _targetId;
+        private MinimumHealthyHostsPerZoneType _type;
+        private int? _value;
 
         /// <summary>
-        /// Gets and sets the property DeploymentId. 
+        /// Gets and sets the property Type. 
         /// <para>
-        ///  The unique ID of a deployment. 
+        /// The <code>type</code> associated with the <code>MinimumHealthyHostsPerZone</code>
+        /// option.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DeploymentId
+        public MinimumHealthyHostsPerZoneType Type
         {
-            get { return this._deploymentId; }
-            set { this._deploymentId = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if DeploymentId property is set
-        internal bool IsSetDeploymentId()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._deploymentId != null;
+            return this._type != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TargetId. 
+        /// Gets and sets the property Value. 
         /// <para>
-        ///  The unique ID of a deployment target. 
+        /// The <code>value</code> associated with the <code>MinimumHealthyHostsPerZone</code>
+        /// option.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string TargetId
+        public int Value
         {
-            get { return this._targetId; }
-            set { this._targetId = value; }
+            get { return this._value.GetValueOrDefault(); }
+            set { this._value = value; }
         }
 
-        // Check to see if TargetId property is set
-        internal bool IsSetTargetId()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._targetId != null;
+            return this._value.HasValue; 
         }
 
     }

@@ -35,11 +35,17 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _hook;
         private string _name;
+        private string _terminationHook;
 
         /// <summary>
         /// Gets and sets the property Hook. 
         /// <para>
-        /// An Auto Scaling lifecycle event hook name.
+        /// The name of the launch hook that CodeDeploy installed into the Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the launch hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How
+        /// Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         public string Hook
@@ -70,6 +76,30 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationHook. 
+        /// <para>
+        /// The name of the termination hook that CodeDeploy installed into the Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling
+        /// termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TerminationHook
+        {
+            get { return this._terminationHook; }
+            set { this._terminationHook = value; }
+        }
+
+        // Check to see if TerminationHook property is set
+        internal bool IsSetTerminationHook()
+        {
+            return this._terminationHook != null;
         }
 
     }

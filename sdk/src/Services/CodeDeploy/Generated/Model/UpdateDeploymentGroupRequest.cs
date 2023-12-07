@@ -51,6 +51,7 @@ namespace Amazon.CodeDeploy.Model
         private OnPremisesTagSet _onPremisesTagSet;
         private OutdatedInstancesStrategy _outdatedInstancesStrategy;
         private string _serviceRoleArn;
+        private bool? _terminationHookEnabled;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
         /// <summary>
@@ -423,6 +424,43 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetServiceRoleArn()
         {
             return this._serviceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationHookEnabled. 
+        /// <para>
+        /// This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+        /// CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install
+        /// a termination hook into your Auto Scaling group when you update a deployment group.
+        /// When this hook is installed, CodeDeploy will perform termination deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about termination deployments, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling
+        /// termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Auto Scaling scale-in events, see the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in">Scale
+        /// in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool TerminationHookEnabled
+        {
+            get { return this._terminationHookEnabled.GetValueOrDefault(); }
+            set { this._terminationHookEnabled = value; }
+        }
+
+        // Check to see if TerminationHookEnabled property is set
+        internal bool IsSetTerminationHookEnabled()
+        {
+            return this._terminationHookEnabled.HasValue; 
         }
 
         /// <summary>

@@ -99,6 +99,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrafficRoutingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("zonalConfig", targetDepth))
+                {
+                    var unmarshaller = ZonalConfigUnmarshaller.Instance;
+                    unmarshalledObject.ZonalConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

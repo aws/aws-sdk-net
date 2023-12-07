@@ -54,6 +54,7 @@ namespace Amazon.CodeDeploy.Model
         private OutdatedInstancesStrategy _outdatedInstancesStrategy;
         private string _serviceRoleArn;
         private RevisionLocation _targetRevision;
+        private bool? _terminationHookEnabled;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
         /// <summary>
@@ -463,6 +464,30 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetTargetRevision()
         {
             return this._targetRevision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationHookEnabled. 
+        /// <para>
+        /// Indicates whether the deployment group was configured to have CodeDeploy install a
+        /// termination hook into an Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How
+        /// Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool TerminationHookEnabled
+        {
+            get { return this._terminationHookEnabled.GetValueOrDefault(); }
+            set { this._terminationHookEnabled = value; }
+        }
+
+        // Check to see if TerminationHookEnabled property is set
+        internal bool IsSetTerminationHookEnabled()
+        {
+            return this._terminationHookEnabled.HasValue; 
         }
 
         /// <summary>
