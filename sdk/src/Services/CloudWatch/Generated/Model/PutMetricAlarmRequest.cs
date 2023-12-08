@@ -586,9 +586,9 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// If you are creating an alarm based on a math expression, you cannot specify this parameter,
-        /// or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-        /// <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you
-        /// specify all this information in the <code>Metrics</code> array.
+        /// or any of the <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>,
+        /// <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters.
+        /// Instead, you specify all this information in the <code>Metrics</code> array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -625,11 +625,11 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-        /// <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>,
-        /// or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-        /// same operation. Instead, you retrieve the metrics you are using in your math expression
-        /// as part of the <code>Metrics</code> array.
+        /// If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+        /// <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+        /// <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code>
+        /// in the same operation. Instead, you retrieve the metrics you are using in your math
+        /// expression as part of the <code>Metrics</code> array.
         /// </para>
         /// </summary>
         public List<MetricDataQuery> Metrics
@@ -946,7 +946,9 @@ namespace Amazon.CloudWatch.Model
         /// metric are Bytes because NetworkIn tracks the number of bytes that an instance receives
         /// on all network interfaces. You can also specify a unit when you create a custom metric.
         /// Units help provide conceptual meaning to your data. Metric data points that specify
-        /// a unit of measure, such as Percent, are aggregated separately.
+        /// a unit of measure, such as Percent, are aggregated separately. If you are creating
+        /// an alarm based on a metric math expression, you can specify the unit for each metric
+        /// (if needed) within the objects in the <code>Metrics</code> array.
         /// </para>
         ///  
         /// <para>

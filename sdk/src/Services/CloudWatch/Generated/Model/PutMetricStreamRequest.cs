@@ -217,8 +217,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
-        /// For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+        /// The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>,
+        /// and <code>opentelemetry0.7</code>. For more information about metric stream output
+        /// formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
         /// Metric streams output formats</a>.
         /// </para>
         /// </summary>
@@ -280,8 +281,9 @@ namespace Amazon.CloudWatch.Model
         /// depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code>
         /// is <code>json</code>, you can stream any additional statistic that is supported by
         /// CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
-        /// CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>,
-        /// you can stream percentile statistics such as p95, p99.9, and so on.
+        /// CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry1.0</code>
+        /// or <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+        /// p99.9, and so on.
         /// </para>
         /// </summary>
         public List<MetricStreamStatisticsConfiguration> StatisticsConfigurations

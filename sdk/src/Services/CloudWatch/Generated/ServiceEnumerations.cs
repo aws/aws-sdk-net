@@ -416,6 +416,10 @@ namespace Amazon.CloudWatch
         /// Constant Opentelemetry07 for MetricStreamOutputFormat
         /// </summary>
         public static readonly MetricStreamOutputFormat Opentelemetry07 = new MetricStreamOutputFormat("opentelemetry0.7");
+        /// <summary>
+        /// Constant Opentelemetry10 for MetricStreamOutputFormat
+        /// </summary>
+        public static readonly MetricStreamOutputFormat Opentelemetry10 = new MetricStreamOutputFormat("opentelemetry1.0");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

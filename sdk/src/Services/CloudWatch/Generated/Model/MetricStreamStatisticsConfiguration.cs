@@ -49,9 +49,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>,
-        /// the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-        /// <code>p99</code> and so on.
+        /// If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or
+        /// <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code>
+        /// percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
         /// </para>
         ///  
         /// <para>

@@ -137,7 +137,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+        /// The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>,
+        /// and <code>opentelemetry0.7</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
