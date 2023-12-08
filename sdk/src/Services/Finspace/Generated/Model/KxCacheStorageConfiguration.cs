@@ -42,7 +42,7 @@ namespace Amazon.Finspace.Model
         /// The size of cache in Gigabytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1200, Max=33600)]
+        [AWSProperty(Required=true)]
         public int Size
         {
             get { return this._size.GetValueOrDefault(); }

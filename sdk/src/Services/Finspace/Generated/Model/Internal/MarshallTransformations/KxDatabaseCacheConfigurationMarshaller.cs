@@ -51,6 +51,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CacheType);
             }
 
+            if(requestObject.IsSetDataviewName())
+            {
+                context.Writer.WritePropertyName("dataviewName");
+                context.Writer.Write(requestObject.DataviewName);
+            }
+
             if(requestObject.IsSetDbPaths())
             {
                 context.Writer.WritePropertyName("dbPaths");

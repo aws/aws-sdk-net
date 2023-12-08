@@ -34,8 +34,28 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class DeleteKxUserRequest : AmazonFinspaceRequest
     {
+        private string _clientToken;
         private string _environmentId;
         private string _userName;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A token that ensures idempotency. This token expires in 10 minutes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EnvironmentId. 

@@ -36,6 +36,8 @@ namespace Amazon.Finspace.Model
         private List<KxDatabaseCacheConfiguration> _cacheConfigurations = new List<KxDatabaseCacheConfiguration>();
         private string _changesetId;
         private string _databaseName;
+        private KxDataviewConfiguration _dataviewConfiguration;
+        private string _dataviewName;
 
         /// <summary>
         /// Gets and sets the property CacheConfigurations. 
@@ -93,6 +95,43 @@ namespace Amazon.Finspace.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataviewConfiguration. 
+        /// <para>
+        ///  The configuration of the dataview to be used with specified cluster. 
+        /// </para>
+        /// </summary>
+        public KxDataviewConfiguration DataviewConfiguration
+        {
+            get { return this._dataviewConfiguration; }
+            set { this._dataviewConfiguration = value; }
+        }
+
+        // Check to see if DataviewConfiguration property is set
+        internal bool IsSetDataviewConfiguration()
+        {
+            return this._dataviewConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataviewName. 
+        /// <para>
+        ///  The name of the dataview to be used for caching historical data on disk. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=63)]
+        public string DataviewName
+        {
+            get { return this._dataviewName; }
+            set { this._dataviewName = value; }
+        }
+
+        // Check to see if DataviewName property is set
+        internal bool IsSetDataviewName()
+        {
+            return this._dataviewName != null;
         }
 
     }

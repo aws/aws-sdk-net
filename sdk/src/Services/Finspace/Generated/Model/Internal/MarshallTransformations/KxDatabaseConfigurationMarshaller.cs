@@ -73,6 +73,23 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetDataviewConfiguration())
+            {
+                context.Writer.WritePropertyName("dataviewConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KxDataviewConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataviewConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDataviewName())
+            {
+                context.Writer.WritePropertyName("dataviewName");
+                context.Writer.Write(requestObject.DataviewName);
+            }
+
         }
 
         /// <summary>

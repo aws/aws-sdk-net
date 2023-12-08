@@ -135,6 +135,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("volumes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
+                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

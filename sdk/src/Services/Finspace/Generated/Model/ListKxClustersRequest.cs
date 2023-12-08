@@ -72,6 +72,13 @@ namespace Amazon.Finspace.Model
         /// storage. For this cluster type, the node count is fixed at 1. It does not support
         /// autoscaling and supports only <code>SINGLE</code> AZ mode.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based
+        /// on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers
+        /// (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment.
+        /// It supports only single-node that is only one kdb process.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public KxClusterType ClusterType

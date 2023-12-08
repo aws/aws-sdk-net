@@ -45,6 +45,7 @@ namespace Amazon.Finspace.Model
         private string _releaseLabel;
         private KxClusterStatus _status;
         private string _statusReason;
+        private List<Volume> _volumes = new List<Volume>();
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
@@ -161,6 +162,13 @@ namespace Amazon.Finspace.Model
         /// code. This cluster type can optionally mount databases including cache and savedown
         /// storage. For this cluster type, the node count is fixed at 1. It does not support
         /// autoscaling and supports only <code>SINGLE</code> AZ mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based
+        /// on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers
+        /// (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment.
+        /// It supports only single-node that is only one kdb process.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -344,6 +352,25 @@ namespace Amazon.Finspace.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Volumes. 
+        /// <para>
+        ///  A list of volumes attached to the cluster. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<Volume> Volumes
+        {
+            get { return this._volumes; }
+            set { this._volumes = value; }
+        }
+
+        // Check to see if Volumes property is set
+        internal bool IsSetVolumes()
+        {
+            return this._volumes != null && this._volumes.Count > 0; 
         }
 
     }

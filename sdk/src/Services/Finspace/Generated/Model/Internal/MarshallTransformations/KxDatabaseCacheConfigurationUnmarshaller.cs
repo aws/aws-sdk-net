@@ -69,6 +69,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.CacheType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataviewName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataviewName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dbPaths", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

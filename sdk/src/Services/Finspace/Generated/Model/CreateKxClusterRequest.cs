@@ -51,7 +51,9 @@ namespace Amazon.Finspace.Model
         private string _initializationScript;
         private string _releaseLabel;
         private KxSavedownStorageConfiguration _savedownStorageConfiguration;
+        private KxScalingGroupConfiguration _scalingGroupConfiguration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private TickerplantLogConfiguration _tickerplantLogConfiguration;
         private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -146,7 +148,6 @@ namespace Amazon.Finspace.Model
         /// memory of instances, and number of instances.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CapacityConfiguration CapacityConfiguration
         {
             get { return this._capacityConfiguration; }
@@ -248,6 +249,13 @@ namespace Amazon.Finspace.Model
         /// code. This cluster type can optionally mount databases including cache and savedown
         /// storage. For this cluster type, the node count is fixed at 1. It does not support
         /// autoscaling and supports only <code>SINGLE</code> AZ mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based
+        /// on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers
+        /// (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment.
+        /// It supports only single-node that is only one kdb process.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -420,6 +428,24 @@ namespace Amazon.Finspace.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScalingGroupConfiguration. 
+        /// <para>
+        /// The structure that stores the configuration details of a scaling group.
+        /// </para>
+        /// </summary>
+        public KxScalingGroupConfiguration ScalingGroupConfiguration
+        {
+            get { return this._scalingGroupConfiguration; }
+            set { this._scalingGroupConfiguration = value; }
+        }
+
+        // Check to see if ScalingGroupConfiguration property is set
+        internal bool IsSetScalingGroupConfiguration()
+        {
+            return this._scalingGroupConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.
@@ -439,12 +465,34 @@ namespace Amazon.Finspace.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TickerplantLogConfiguration. 
+        /// <para>
+        ///  A configuration to store Tickerplant logs. It consists of a list of volumes that
+        /// will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the
+        /// location of the TP volume on the cluster will be available by using the global variable
+        /// <code>.aws.tp_log_path</code>. 
+        /// </para>
+        /// </summary>
+        public TickerplantLogConfiguration TickerplantLogConfiguration
+        {
+            get { return this._tickerplantLogConfiguration; }
+            set { this._tickerplantLogConfiguration = value; }
+        }
+
+        // Check to see if TickerplantLogConfiguration property is set
+        internal bool IsSetTickerplantLogConfiguration()
+        {
+            return this._tickerplantLogConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
         /// Configuration details about the network where the Privatelink endpoint of the cluster
         /// resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VpcConfiguration VpcConfiguration
         {
             get { return this._vpcConfiguration; }

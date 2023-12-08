@@ -704,6 +704,10 @@ namespace Amazon.Finspace
         /// Constant RDB for KxClusterType
         /// </summary>
         public static readonly KxClusterType RDB = new KxClusterType("RDB");
+        /// <summary>
+        /// Constant TICKERPLANT for KxClusterType
+        /// </summary>
+        public static readonly KxClusterType TICKERPLANT = new KxClusterType("TICKERPLANT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -734,6 +738,68 @@ namespace Amazon.Finspace
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KxClusterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KxDataviewStatus.
+    /// </summary>
+    public class KxDataviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for KxDataviewStatus
+        /// </summary>
+        public static readonly KxDataviewStatus ACTIVE = new KxDataviewStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for KxDataviewStatus
+        /// </summary>
+        public static readonly KxDataviewStatus CREATING = new KxDataviewStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for KxDataviewStatus
+        /// </summary>
+        public static readonly KxDataviewStatus DELETING = new KxDataviewStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for KxDataviewStatus
+        /// </summary>
+        public static readonly KxDataviewStatus FAILED = new KxDataviewStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for KxDataviewStatus
+        /// </summary>
+        public static readonly KxDataviewStatus UPDATING = new KxDataviewStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxDataviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxDataviewStatus FindValue(string value)
+        {
+            return FindValue<KxDataviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxDataviewStatus(string value)
         {
             return FindValue(value);
         }
@@ -791,6 +857,60 @@ namespace Amazon.Finspace
 
 
     /// <summary>
+    /// Constants used for properties of type KxNAS1Type.
+    /// </summary>
+    public class KxNAS1Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HDD_12 for KxNAS1Type
+        /// </summary>
+        public static readonly KxNAS1Type HDD_12 = new KxNAS1Type("HDD_12");
+        /// <summary>
+        /// Constant SSD_1000 for KxNAS1Type
+        /// </summary>
+        public static readonly KxNAS1Type SSD_1000 = new KxNAS1Type("SSD_1000");
+        /// <summary>
+        /// Constant SSD_250 for KxNAS1Type
+        /// </summary>
+        public static readonly KxNAS1Type SSD_250 = new KxNAS1Type("SSD_250");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxNAS1Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxNAS1Type FindValue(string value)
+        {
+            return FindValue<KxNAS1Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxNAS1Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KxSavedownStorageType.
     /// </summary>
     public class KxSavedownStorageType : ConstantClass
@@ -830,6 +950,196 @@ namespace Amazon.Finspace
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KxSavedownStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KxScalingGroupStatus.
+    /// </summary>
+    public class KxScalingGroupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for KxScalingGroupStatus
+        /// </summary>
+        public static readonly KxScalingGroupStatus ACTIVE = new KxScalingGroupStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for KxScalingGroupStatus
+        /// </summary>
+        public static readonly KxScalingGroupStatus CREATE_FAILED = new KxScalingGroupStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for KxScalingGroupStatus
+        /// </summary>
+        public static readonly KxScalingGroupStatus CREATING = new KxScalingGroupStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for KxScalingGroupStatus
+        /// </summary>
+        public static readonly KxScalingGroupStatus DELETE_FAILED = new KxScalingGroupStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETED for KxScalingGroupStatus
+        /// </summary>
+        public static readonly KxScalingGroupStatus DELETED = new KxScalingGroupStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for KxScalingGroupStatus
+        /// </summary>
+        public static readonly KxScalingGroupStatus DELETING = new KxScalingGroupStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxScalingGroupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxScalingGroupStatus FindValue(string value)
+        {
+            return FindValue<KxScalingGroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxScalingGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KxVolumeStatus.
+    /// </summary>
+    public class KxVolumeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus ACTIVE = new KxVolumeStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus CREATE_FAILED = new KxVolumeStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus CREATING = new KxVolumeStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus DELETE_FAILED = new KxVolumeStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETED for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus DELETED = new KxVolumeStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus DELETING = new KxVolumeStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus UPDATE_FAILED = new KxVolumeStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATED for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus UPDATED = new KxVolumeStatus("UPDATED");
+        /// <summary>
+        /// Constant UPDATING for KxVolumeStatus
+        /// </summary>
+        public static readonly KxVolumeStatus UPDATING = new KxVolumeStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxVolumeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxVolumeStatus FindValue(string value)
+        {
+            return FindValue<KxVolumeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxVolumeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KxVolumeType.
+    /// </summary>
+    public class KxVolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAS_1 for KxVolumeType
+        /// </summary>
+        public static readonly KxVolumeType NAS_1 = new KxVolumeType("NAS_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxVolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxVolumeType FindValue(string value)
+        {
+            return FindValue<KxVolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxVolumeType(string value)
         {
             return FindValue(value);
         }
@@ -942,6 +1252,52 @@ namespace Amazon.Finspace
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TgwStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeType.
+    /// </summary>
+    public class VolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAS_1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType NAS_1 = new VolumeType("NAS_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeType FindValue(string value)
+        {
+            return FindValue<VolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeType(string value)
         {
             return FindValue(value);
         }

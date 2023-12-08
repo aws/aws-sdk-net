@@ -81,6 +81,18 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataviewConfiguration", targetDepth))
+                {
+                    var unmarshaller = KxDataviewConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataviewConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dataviewName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataviewName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

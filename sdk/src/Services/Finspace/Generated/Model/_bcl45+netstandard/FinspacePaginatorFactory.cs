@@ -60,11 +60,27 @@ namespace Amazon.Finspace.Model
         }
 
         /// <summary>
+        /// Paginator for ListKxDataviews operation
+        ///</summary>
+        public IListKxDataviewsPaginator ListKxDataviews(ListKxDataviewsRequest request) 
+        {
+            return new ListKxDataviewsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKxEnvironments operation
         ///</summary>
         public IListKxEnvironmentsPaginator ListKxEnvironments(ListKxEnvironmentsRequest request) 
         {
             return new ListKxEnvironmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListKxScalingGroups operation
+        ///</summary>
+        public IListKxScalingGroupsPaginator ListKxScalingGroups(ListKxScalingGroupsRequest request) 
+        {
+            return new ListKxScalingGroupsPaginator(this.client, request);
         }
     }
 }

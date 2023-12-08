@@ -37,6 +37,7 @@ namespace Amazon.Finspace.Model
     {
         private int? _size;
         private KxSavedownStorageType _type;
+        private string _volumeName;
 
         /// <summary>
         /// Gets and sets the property Size. 
@@ -44,7 +45,7 @@ namespace Amazon.Finspace.Model
         /// The size of temporary storage in gibibytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=16000)]
+        [AWSProperty(Min=10, Max=16000)]
         public int Size
         {
             get { return this._size.GetValueOrDefault(); }
@@ -69,7 +70,6 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public KxSavedownStorageType Type
         {
             get { return this._type; }
@@ -80,6 +80,26 @@ namespace Amazon.Finspace.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeName. 
+        /// <para>
+        ///  The name of the kdb volume that you want to use as writeable save-down storage for
+        /// clusters. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=63)]
+        public string VolumeName
+        {
+            get { return this._volumeName; }
+            set { this._volumeName = value; }
+        }
+
+        // Check to see if VolumeName property is set
+        internal bool IsSetVolumeName()
+        {
+            return this._volumeName != null;
         }
 
     }

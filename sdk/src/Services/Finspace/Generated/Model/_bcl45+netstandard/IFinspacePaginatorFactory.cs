@@ -41,8 +41,18 @@ namespace Amazon.Finspace.Model
         IListKxDatabasesPaginator ListKxDatabases(ListKxDatabasesRequest request);
 
         /// <summary>
+        /// Paginator for ListKxDataviews operation
+        ///</summary>
+        IListKxDataviewsPaginator ListKxDataviews(ListKxDataviewsRequest request);
+
+        /// <summary>
         /// Paginator for ListKxEnvironments operation
         ///</summary>
         IListKxEnvironmentsPaginator ListKxEnvironments(ListKxEnvironmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListKxScalingGroups operation
+        ///</summary>
+        IListKxScalingGroupsPaginator ListKxScalingGroups(ListKxScalingGroupsRequest request);
     }
 }

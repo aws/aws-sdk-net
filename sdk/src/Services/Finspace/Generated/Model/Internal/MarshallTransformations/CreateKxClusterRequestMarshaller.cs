@@ -219,6 +219,17 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetScalingGroupConfiguration())
+                {
+                    context.Writer.WritePropertyName("scalingGroupConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KxScalingGroupConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingGroupConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -230,6 +241,17 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
                             context.Writer.Write(publicRequestTagsValue);
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTickerplantLogConfiguration())
+                {
+                    context.Writer.WritePropertyName("tickerplantLogConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TickerplantLogConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TickerplantLogConfiguration, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 

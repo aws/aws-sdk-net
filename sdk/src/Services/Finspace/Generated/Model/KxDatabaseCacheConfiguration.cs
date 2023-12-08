@@ -35,6 +35,7 @@ namespace Amazon.Finspace.Model
     public partial class KxDatabaseCacheConfiguration
     {
         private string _cacheType;
+        private string _dataviewName;
         private List<string> _dbPaths = new List<string>();
 
         /// <summary>
@@ -60,6 +61,25 @@ namespace Amazon.Finspace.Model
         internal bool IsSetCacheType()
         {
             return this._cacheType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataviewName. 
+        /// <para>
+        ///  The name of the dataview to be used for caching historical data on disk. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=63)]
+        public string DataviewName
+        {
+            get { return this._dataviewName; }
+            set { this._dataviewName = value; }
+        }
+
+        // Check to see if DataviewName property is set
+        internal bool IsSetDataviewName()
+        {
+            return this._dataviewName != null;
         }
 
         /// <summary>
