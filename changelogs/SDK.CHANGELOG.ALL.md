@@ -1,3 +1,11 @@
+### 3.7.705.0 (2023-12-08 19:17 UTC)
+* CloudWatch (3.7.301.0)
+	* Adds support for the OpenTelemetry 1.0 output format in CloudWatch Metric Streams.
+* EC2 (3.7.309.0)
+	* M2 Mac instances are built on Apple M2 Mac mini computers. I4i instances are powered by 3rd generation Intel Xeon Scalable processors. C7i compute optimized, M7i general purpose and R7i memory optimized instances are powered by custom 4th Generation Intel Xeon Scalable processors.
+* Finspace (3.7.303.0)
+	* Releasing Scaling Group, Dataview, and Volume APIs
+
 ### 3.7.704.0 (2023-12-07 19:36 UTC)
 * CodeDeploy (3.7.301.0)
 	* This release adds support for two new CodeDeploy features: 1) zonal deployments for Amazon EC2 in-place deployments, 2) deployments triggered by Auto Scaling group termination lifecycle hook events.
