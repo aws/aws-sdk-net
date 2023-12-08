@@ -8425,6 +8425,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7iLarge = new InstanceType("c7i.large");
         /// <summary>
+        /// Constant C7iMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iMetal24xl = new InstanceType("c7i.metal-24xl");
+        /// <summary>
+        /// Constant C7iMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iMetal48xl = new InstanceType("c7i.metal-48xl");
+        /// <summary>
         /// Constant C7iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7iXlarge = new InstanceType("c7i.xlarge");
@@ -8809,9 +8817,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I4gXlarge = new InstanceType("i4g.xlarge");
         /// <summary>
+        /// Constant I4i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i12xlarge = new InstanceType("i4i.12xlarge");
+        /// <summary>
         /// Constant I4i16xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType I4i16xlarge = new InstanceType("i4i.16xlarge");
+        /// <summary>
+        /// Constant I4i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i24xlarge = new InstanceType("i4i.24xlarge");
         /// <summary>
         /// Constant I4i2xlarge for InstanceType
         /// </summary>
@@ -9669,6 +9685,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M7iLarge = new InstanceType("m7i.large");
         /// <summary>
+        /// Constant M7iMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iMetal24xl = new InstanceType("m7i.metal-24xl");
+        /// <summary>
+        /// Constant M7iMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iMetal48xl = new InstanceType("m7i.metal-48xl");
+        /// <summary>
         /// Constant M7iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M7iXlarge = new InstanceType("m7i.xlarge");
@@ -9676,6 +9700,10 @@ namespace Amazon.EC2
         /// Constant Mac1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType Mac1Metal = new InstanceType("mac1.metal");
+        /// <summary>
+        /// Constant Mac2M2Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType Mac2M2Metal = new InstanceType("mac2-m2.metal");
         /// <summary>
         /// Constant Mac2M2proMetal for InstanceType
         /// </summary>
@@ -10436,6 +10464,14 @@ namespace Amazon.EC2
         /// Constant R7iLarge for InstanceType
         /// </summary>
         public static readonly InstanceType R7iLarge = new InstanceType("r7i.large");
+        /// <summary>
+        /// Constant R7iMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iMetal24xl = new InstanceType("r7i.metal-24xl");
+        /// <summary>
+        /// Constant R7iMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iMetal48xl = new InstanceType("r7i.metal-48xl");
         /// <summary>
         /// Constant R7iXlarge for InstanceType
         /// </summary>
