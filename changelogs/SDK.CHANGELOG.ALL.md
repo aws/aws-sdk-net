@@ -1,3 +1,11 @@
+### 3.7.706.0 (2023-12-11 19:24 UTC)
+* Neptune (3.7.301.0)
+	* This release adds a new parameter configuration setting to the Neptune cluster related APIs that can be leveraged to switch between the underlying supported storage modes.
+* Pinpoint (3.7.300.17)
+	* This release includes Amazon Pinpoint API documentation updates pertaining to campaign message sending rate limits.
+* SecurityHub (3.7.303.0)
+	* Added new resource detail objects to ASFF, including resources for AwsDynamoDbTable, AwsEc2ClientVpnEndpoint, AwsMskCluster, AwsS3AccessPoint, AwsS3Bucket
+
 ### 3.7.705.0 (2023-12-08 19:17 UTC)
 * CloudWatch (3.7.301.0)
 	* Adds support for the OpenTelemetry 1.0 output format in CloudWatch Metric Streams.
