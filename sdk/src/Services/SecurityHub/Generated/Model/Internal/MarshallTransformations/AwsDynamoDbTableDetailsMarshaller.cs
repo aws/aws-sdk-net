@@ -78,6 +78,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreationDateTime);
             }
 
+            if(requestObject.IsSetDeletionProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                context.Writer.Write(requestObject.DeletionProtectionEnabled);
+            }
+
             if(requestObject.IsSetGlobalSecondaryIndexes())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexes");

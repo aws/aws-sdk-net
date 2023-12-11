@@ -79,6 +79,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEnhancedMonitoring())
+            {
+                context.Writer.WritePropertyName("EnhancedMonitoring");
+                context.Writer.Write(requestObject.EnhancedMonitoring);
+            }
+
             if(requestObject.IsSetNumberOfBrokerNodes())
             {
                 context.Writer.WritePropertyName("NumberOfBrokerNodes");

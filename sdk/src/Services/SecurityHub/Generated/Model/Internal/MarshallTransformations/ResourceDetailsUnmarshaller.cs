@@ -195,6 +195,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsDynamoDbTable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEc2ClientVpnEndpoint", targetDepth))
+                {
+                    var unmarshaller = AwsEc2ClientVpnEndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2ClientVpnEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2Eip", targetDepth))
                 {
                     var unmarshaller = AwsEc2EipDetailsUnmarshaller.Instance;
@@ -511,6 +517,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsRoute53HostedZoneDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsRoute53HostedZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsS3AccessPoint", targetDepth))
+                {
+                    var unmarshaller = AwsS3AccessPointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsS3AccessPoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsS3AccountPublicAccessBlock", targetDepth))

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsMskClusterClusterInfoDetails Object
+    /// Response Unmarshaller for AwsEc2ClientVpnEndpointAuthenticationOptionsDetails Object
     /// </summary>  
-    public class AwsMskClusterClusterInfoDetailsUnmarshaller : IUnmarshaller<AwsMskClusterClusterInfoDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsMskClusterClusterInfoDetails, JsonUnmarshallerContext>
+    public class AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller : IUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsMskClusterClusterInfoDetails IUnmarshaller<AwsMskClusterClusterInfoDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsEc2ClientVpnEndpointAuthenticationOptionsDetails IUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsMskClusterClusterInfoDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2ClientVpnEndpointAuthenticationOptionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            AwsMskClusterClusterInfoDetails unmarshalledObject = new AwsMskClusterClusterInfoDetails();
+            AwsEc2ClientVpnEndpointAuthenticationOptionsDetails unmarshalledObject = new AwsEc2ClientVpnEndpointAuthenticationOptionsDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ClientAuthentication", targetDepth))
+                if (context.TestExpression("ActiveDirectory", targetDepth))
                 {
-                    var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ActiveDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ClusterName", targetDepth))
+                if (context.TestExpression("FederatedAuthentication", targetDepth))
+                {
+                    var unmarshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.FederatedAuthentication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MutualAuthentication", targetDepth))
+                {
+                    var unmarshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MutualAuthentication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CurrentVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EncryptionInfo", targetDepth))
-                {
-                    var unmarshaller = AwsMskClusterClusterInfoEncryptionInfoDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EnhancedMonitoring", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NumberOfBrokerNodes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +92,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsMskClusterClusterInfoDetailsUnmarshaller _instance = new AwsMskClusterClusterInfoDetailsUnmarshaller();        
+        private static AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller _instance = new AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsMskClusterClusterInfoDetailsUnmarshaller Instance
+        public static AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller Instance
         {
             get
             {

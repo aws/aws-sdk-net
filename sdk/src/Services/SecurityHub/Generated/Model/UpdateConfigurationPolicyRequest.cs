@@ -113,7 +113,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the configuration policy. 
+        ///  The name of the configuration policy. Alphanumeric characters and the following ASCII
+        /// characters are permitted: <code>-, ., !, *, /</code>. 
         /// </para>
         /// </summary>
         public string Name

@@ -287,6 +287,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEc2ClientVpnEndpoint())
+            {
+                context.Writer.WritePropertyName("AwsEc2ClientVpnEndpoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2ClientVpnEndpointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2ClientVpnEndpoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2Eip())
             {
                 context.Writer.WritePropertyName("AwsEc2Eip");
@@ -866,6 +877,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsRoute53HostedZoneDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsRoute53HostedZone, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsS3AccessPoint())
+            {
+                context.Writer.WritePropertyName("AwsS3AccessPoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3AccessPointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsS3AccessPoint, context);
 
                 context.Writer.WriteObjectEnd();
             }

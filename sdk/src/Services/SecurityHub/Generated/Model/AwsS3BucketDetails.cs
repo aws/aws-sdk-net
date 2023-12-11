@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an Amazon S3 bucket.
+    /// The details of an Amazon Simple Storage Service (Amazon S3) bucket.
     /// </summary>
     public partial class AwsS3BucketDetails
     {
@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketBucketVersioningConfiguration _bucketVersioningConfiguration;
         private AwsS3BucketWebsiteConfiguration _bucketWebsiteConfiguration;
         private string _createdAt;
+        private string _name;
         private AwsS3BucketObjectLockConfiguration _objectLockConfiguration;
         private string _ownerAccountId;
         private string _ownerId;
@@ -68,7 +69,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property BucketLifecycleConfiguration. 
         /// <para>
-        /// The lifecycle configuration for objects in the S3 bucket.
+        /// The lifecycle configuration for objects in the specified bucket.
         /// </para>
         /// </summary>
         public AwsS3BucketBucketLifecycleConfigurationDetails BucketLifecycleConfiguration
@@ -180,10 +181,28 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the bucket. 
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ObjectLockConfiguration. 
         /// <para>
         ///  Specifies which rule Amazon S3 applies by default to every new object placed in the
-        /// specified bucket. 
+        /// bucket. 
         /// </para>
         /// </summary>
         public AwsS3BucketObjectLockConfiguration ObjectLockConfiguration

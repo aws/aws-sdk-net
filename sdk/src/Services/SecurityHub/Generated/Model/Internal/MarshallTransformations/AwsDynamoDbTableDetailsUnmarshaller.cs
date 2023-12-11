@@ -81,6 +81,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AwsDynamoDbTableGlobalSecondaryIndex, AwsDynamoDbTableGlobalSecondaryIndexUnmarshaller>(AwsDynamoDbTableGlobalSecondaryIndexUnmarshaller.Instance);

@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
         private List<AwsDynamoDbTableAttributeDefinition> _attributeDefinitions = new List<AwsDynamoDbTableAttributeDefinition>();
         private AwsDynamoDbTableBillingModeSummary _billingModeSummary;
         private string _creationDateTime;
+        private bool? _deletionProtectionEnabled;
         private List<AwsDynamoDbTableGlobalSecondaryIndex> _globalSecondaryIndexes = new List<AwsDynamoDbTableGlobalSecondaryIndex>();
         private string _globalTableVersion;
         private int? _itemCount;
@@ -111,6 +112,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreationDateTime()
         {
             return this._creationDateTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        ///  Indicates whether deletion protection is to be enabled (true) or disabled (false)
+        /// on the table. 
+        /// </para>
+        /// </summary>
+        public bool DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>

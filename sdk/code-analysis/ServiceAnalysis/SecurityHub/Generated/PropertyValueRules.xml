@@ -447,7 +447,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UpdateSecurityControlRequest.LastUpdateReason</property>
-    <pattern>^[-_ a-zA-Z0-9]+$</pattern>
+    <pattern>^([^\u0000-\u007F]|[-_ a-zA-Z0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UpdateSecurityControlRequest.SecurityControlId</property>
@@ -1967,6 +1967,78 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsDynamoDbTableStreamSpecification.StreamViewType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails.DirectoryId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointAuthenticationOptionsDetails.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails.SamlProviderArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails.SelfServiceSamlProviderArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails.ClientRootCertificateChain</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointClientConnectOptionsDetails.LambdaFunctionArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails.Code</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails.Message</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails.BannerText</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointConnectionLogOptionsDetails.CloudwatchLogGroup</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointConnectionLogOptionsDetails.CloudwatchLogStream</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.ClientCidrBlock</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.ClientVpnEndpointId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.SelfServicePortalUrl</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.ServerCertificateArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.TransportProtocol</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2ClientVpnEndpointDetails.VpcId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3966,6 +4038,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsMskClusterClusterInfoDetails.EnhancedMonitoring</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails.DataVolumeKMSKeyId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -4938,6 +5014,34 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointDetails.AccessPointArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointDetails.Alias</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointDetails.Bucket</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointDetails.BucketAccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointDetails.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointDetails.NetworkOrigin</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3AccessPointVpcConfigurationDetails.VpcId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsS3BucketBucketLifecycleConfigurationRulesDetails.ExpirationDate</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -5007,6 +5111,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsS3BucketDetails.CreatedAt</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketDetails.Name</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -6365,7 +6473,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SecurityControl.LastUpdateReason</property>
-    <pattern>^[-_ a-zA-Z0-9]+$</pattern>
+    <pattern>^([^\u0000-\u007F]|[-_ a-zA-Z0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SecurityControl.RemediationUrl</property>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsMskClusterClusterInfoDetails Object
+    /// Response Unmarshaller for AwsS3AccessPointDetails Object
     /// </summary>  
-    public class AwsMskClusterClusterInfoDetailsUnmarshaller : IUnmarshaller<AwsMskClusterClusterInfoDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsMskClusterClusterInfoDetails, JsonUnmarshallerContext>
+    public class AwsS3AccessPointDetailsUnmarshaller : IUnmarshaller<AwsS3AccessPointDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsS3AccessPointDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsMskClusterClusterInfoDetails IUnmarshaller<AwsMskClusterClusterInfoDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsS3AccessPointDetails IUnmarshaller<AwsS3AccessPointDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsMskClusterClusterInfoDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3AccessPointDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            AwsMskClusterClusterInfoDetails unmarshalledObject = new AwsMskClusterClusterInfoDetails();
+            AwsS3AccessPointDetails unmarshalledObject = new AwsS3AccessPointDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,52 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ClientAuthentication", targetDepth))
-                {
-                    var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ClusterName", targetDepth))
+                if (context.TestExpression("AccessPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CurrentVersion", targetDepth))
+                if (context.TestExpression("Alias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EncryptionInfo", targetDepth))
-                {
-                    var unmarshaller = AwsMskClusterClusterInfoEncryptionInfoDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EnhancedMonitoring", targetDepth))
+                if (context.TestExpression("Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NumberOfBrokerNodes", targetDepth))
+                if (context.TestExpression("BucketAccountId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkOrigin", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkOrigin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PublicAccessBlockConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3AccountPublicAccessBlockDetailsUnmarshaller.Instance;
+                    unmarshalledObject.PublicAccessBlockConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3AccessPointVpcConfigurationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +116,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsMskClusterClusterInfoDetailsUnmarshaller _instance = new AwsMskClusterClusterInfoDetailsUnmarshaller();        
+        private static AwsS3AccessPointDetailsUnmarshaller _instance = new AwsS3AccessPointDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsMskClusterClusterInfoDetailsUnmarshaller Instance
+        public static AwsS3AccessPointDetailsUnmarshaller Instance
         {
             get
             {

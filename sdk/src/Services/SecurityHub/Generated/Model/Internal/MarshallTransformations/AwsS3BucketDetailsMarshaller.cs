@@ -112,6 +112,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreatedAt);
             }
 
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
+            }
+
             if(requestObject.IsSetObjectLockConfiguration())
             {
                 context.Writer.WritePropertyName("ObjectLockConfiguration");
