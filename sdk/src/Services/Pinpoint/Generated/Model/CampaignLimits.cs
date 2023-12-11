@@ -86,7 +86,7 @@ namespace Amazon.Pinpoint.Model
         /// <para>
         /// The maximum number of messages that a campaign can send each second. For an application,
         /// this value specifies the default limit for the number of messages that campaigns can
-        /// send each second. The minimum value is 50. The maximum value is 20,000.
+        /// send each second. The minimum value is 1. The maximum value is 20,000.
         /// </para>
         /// </summary>
         public int MessagesPerSecond
