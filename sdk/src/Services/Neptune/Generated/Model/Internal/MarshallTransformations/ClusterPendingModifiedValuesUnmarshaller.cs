@@ -96,6 +96,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.PendingCloudwatchLogsExports = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

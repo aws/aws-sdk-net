@@ -58,6 +58,7 @@ namespace Amazon.Neptune.Model
         private string _sourceDBClusterSnapshotArn;
         private string _status;
         private bool? _storageEncrypted;
+        private string _storageType;
         private string _vpcId;
 
         /// <summary>
@@ -422,6 +423,24 @@ namespace Amazon.Neptune.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type associated with the DB cluster snapshot.
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

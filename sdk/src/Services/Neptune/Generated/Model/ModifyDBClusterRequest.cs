@@ -53,6 +53,7 @@ namespace Amazon.Neptune.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
+        private string _storageType;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -147,7 +148,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property CloudwatchLogsExportConfiguration. 
         /// <para>
         /// The configuration setting for the log types to be enabled for export to CloudWatch
-        /// Logs for a specific DB cluster.
+        /// Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+        /// the CLI to publish Neptune audit logs to CloudWatch Logs</a>.
         /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
@@ -541,6 +543,41 @@ namespace Amazon.Neptune.Model
         internal bool IsSetServerlessV2ScalingConfiguration()
         {
             return this._serverlessV2ScalingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type to associate with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>standard | iopt1</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>standard</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

@@ -221,6 +221,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IOOptimizedNextAllowedModificationTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.IOOptimizedNextAllowedModificationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -310,6 +316,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))

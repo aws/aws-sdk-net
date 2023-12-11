@@ -41,6 +41,7 @@ namespace Amazon.Neptune.Model
         private bool? _iamDatabaseAuthenticationEnabled;
         private int? _iops;
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
+        private string _storageType;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -171,6 +172,24 @@ namespace Amazon.Neptune.Model
         internal bool IsSetPendingCloudwatchLogsExports()
         {
             return this._pendingCloudwatchLogsExports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type for the DB cluster.
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
     }

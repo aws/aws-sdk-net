@@ -169,6 +169,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

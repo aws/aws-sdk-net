@@ -62,6 +62,7 @@ namespace Amazon.Neptune.Model
         private int? _port;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _snapshotIdentifier;
+        private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -461,6 +462,32 @@ namespace Amazon.Neptune.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this._snapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Specifies the storage type to be associated with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>standard</code>, <code>iopt1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>standard</code> 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

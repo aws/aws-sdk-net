@@ -72,6 +72,7 @@ namespace Amazon.Neptune.Model
         private string _replicationSourceIdentifier;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private bool? _storageEncrypted;
+        private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -297,7 +298,10 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
-        /// The list of log types that need to be enabled for exporting to CloudWatch Logs.
+        /// A list of the log types that this DB cluster should export to CloudWatch Logs. Valid
+        /// log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code>
+        /// (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+        /// Neptune logs to Amazon CloudWatch logs</a>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -686,6 +690,47 @@ namespace Amazon.Neptune.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type to associate with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>standard | iopt1</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>standard</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When you create a Neptune cluster with the storage type set to <code>iopt1</code>,
+        /// the storage type is returned in the response. The storage type isn't returned when
+        /// you set it to <code>standard</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

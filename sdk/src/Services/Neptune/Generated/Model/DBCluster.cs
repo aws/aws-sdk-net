@@ -65,6 +65,7 @@ namespace Amazon.Neptune.Model
         private string _globalClusterIdentifier;
         private string _hostedZoneId;
         private bool? _iamDatabaseAuthenticationEnabled;
+        private DateTime? _ioOptimizedNextAllowedModificationTime;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
@@ -80,6 +81,7 @@ namespace Amazon.Neptune.Model
         private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private bool? _storageEncrypted;
+        private string _storageType;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -459,7 +461,10 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnabledCloudwatchLogsExports. 
         /// <para>
-        /// A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+        /// A list of the log types that this DB cluster is configured to export to CloudWatch
+        /// Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch)
+        /// and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+        /// Neptune logs to Amazon CloudWatch logs</a>.
         /// </para>
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
@@ -583,6 +588,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetIAMDatabaseAuthenticationEnabled()
         {
             return this._iamDatabaseAuthenticationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
+        /// <para>
+        /// The next time you can modify the DB cluster to use the <code>iopt1</code> storage
+        /// type.
+        /// </para>
+        /// </summary>
+        public DateTime IOOptimizedNextAllowedModificationTime
+        {
+            get { return this._ioOptimizedNextAllowedModificationTime.GetValueOrDefault(); }
+            set { this._ioOptimizedNextAllowedModificationTime = value; }
+        }
+
+        // Check to see if IOOptimizedNextAllowedModificationTime property is set
+        internal bool IsSetIOOptimizedNextAllowedModificationTime()
+        {
+            return this._ioOptimizedNextAllowedModificationTime.HasValue; 
         }
 
         /// <summary>
@@ -873,6 +897,24 @@ namespace Amazon.Neptune.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type associated with the DB cluster.
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

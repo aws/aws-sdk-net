@@ -3696,6 +3696,9 @@ namespace Amazon.Neptune
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
@@ -3753,6 +3756,9 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
