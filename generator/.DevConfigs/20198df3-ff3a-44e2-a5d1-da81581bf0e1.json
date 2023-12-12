@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Addressed performance degradation in Amazon.Runtime.ClientConfig ServiceURL"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
