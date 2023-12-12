@@ -138,7 +138,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// If you omit this parameter, the default of <code>STANDARD</code> is used.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// After a log group is created, its class can't be changed.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
         /// classes</a> 

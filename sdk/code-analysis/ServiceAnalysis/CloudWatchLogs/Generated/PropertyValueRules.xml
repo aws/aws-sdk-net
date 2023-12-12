@@ -856,6 +856,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartLiveTailRequest.LogEventFilterPattern</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.EndTime</property>
     <min>0</min>
   </property-value-rule>
@@ -1164,6 +1169,45 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException.ExpectedSequenceToken</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionLogEvent.IngestionTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionLogEvent.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionLogEvent.LogStreamName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[^:*]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionLogEvent.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionLogEvent.Timestamp</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionStart.LogEventFilterPattern</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionStart.RequestId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LiveTailSessionStart.SessionId</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.LogGroup.CreationTime</property>

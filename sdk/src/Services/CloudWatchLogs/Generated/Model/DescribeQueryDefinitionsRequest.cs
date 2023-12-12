@@ -31,7 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the DescribeQueryDefinitions operation.
     /// This operation returns a paginated list of your saved CloudWatch Logs Insights query
-    /// definitions.
+    /// definitions. You can retrieve query definitions from the current account or from a
+    /// source account that is linked to the current account.
     /// 
     ///  
     /// <para>

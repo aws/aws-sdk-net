@@ -294,7 +294,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+        /// If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
         /// in the destination account to assign an IAM policy to the destination. This policy
         /// allows delivery to that destination. 
         /// </para>
@@ -2157,7 +2157,8 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// This operation returns a paginated list of your saved CloudWatch Logs Insights query
-        /// definitions.
+        /// definitions. You can retrieve query definitions from the current account or from a
+        /// source account that is linked to the current account.
         /// 
         ///  
         /// <para>
@@ -3513,7 +3514,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+        /// If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
         /// in the destination account to assign an IAM policy to the destination. This policy
         /// allows delivery to that destination. 
         /// </para>
@@ -3710,7 +3711,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+        /// If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
         /// in the destination account to assign an IAM policy to the destination. This policy
         /// allows delivery to that destination. 
         /// </para>
@@ -4426,6 +4427,120 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  PutSubscriptionFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
         PutSubscriptionFilterResponse EndPutSubscriptionFilter(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartLiveTail
+
+
+        /// <summary>
+        /// Starts a Live Tail streaming session for one or more log groups. A Live Tail session
+        /// returns a stream of log events that have been recently ingested in the log groups.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html">Use
+        /// Live Tail to view logs in near real time</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// The response to this operation is a response stream, over which the server sends live
+        /// log events and the client receives them.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following objects are sent over the stream:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A single <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionStart.html">LiveTailSessionStart</a>
+        /// object is sent at the start of the session.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Every second, a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionUpdate.html">LiveTailSessionUpdate</a>
+        /// object is sent. Each of these objects contains an array of the actual log events.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no new log events were ingested in the past second, the <code>LiveTailSessionUpdate</code>
+        /// object will contain an empty array.
+        /// </para>
+        ///  
+        /// <para>
+        /// The array of log events contained in a <code>LiveTailSessionUpdate</code> can include
+        /// as many as 500 log events. If the number of log events matching the request exceeds
+        /// 500 per second, the log events are sampled down to 500 log events to be included in
+        /// each <code>LiveTailSessionUpdate</code> object.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your client consumes the log events slower than the server produces them, CloudWatch
+        /// Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or 5000 log events,
+        /// after which it starts dropping the oldest events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+        /// object is returned if an unknown error occurs on the server side.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+        /// object is returned when the session times out, after it has been kept open for three
+        /// hours.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You can end a session before it times out by closing the session stream or by closing
+        /// the client that is receiving the stream. The session also ends if the established
+        /// connection between the client and the server breaks.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartLiveTail service method.</param>
+        /// 
+        /// <returns>The response from the StartLiveTail service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartLiveTail">REST API Reference for StartLiveTail Operation</seealso>
+        StartLiveTailResponse StartLiveTail(StartLiveTailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartLiveTail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartLiveTail operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartLiveTail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartLiveTail">REST API Reference for StartLiveTail Operation</seealso>
+        IAsyncResult BeginStartLiveTail(StartLiveTailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartLiveTail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartLiveTail.</param>
+        /// 
+        /// <returns>Returns a  StartLiveTailResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartLiveTail">REST API Reference for StartLiveTail Operation</seealso>
+        StartLiveTailResponse EndStartLiveTail(IAsyncResult asyncResult);
 
         #endregion
         

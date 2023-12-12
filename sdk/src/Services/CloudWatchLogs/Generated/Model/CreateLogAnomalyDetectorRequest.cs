@@ -202,8 +202,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupArnList. 
         /// <para>
-        /// An array containing the ARNs of the log groups that this anomaly detector will watch.
-        /// You must specify at least one ARN.
+        /// An array containing the ARN of the log group that this anomaly detector will watch.
+        /// You can specify only one log group ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
