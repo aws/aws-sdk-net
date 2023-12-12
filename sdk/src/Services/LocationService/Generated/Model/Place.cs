@@ -50,6 +50,7 @@ namespace Amazon.LocationService.Model
         private string _postalCode;
         private string _region;
         private string _street;
+        private string _subMunicipality;
         private string _subRegion;
         private List<string> _supplementalCategories = new List<string>();
         private TimeZone _timeZone;
@@ -276,6 +277,31 @@ namespace Amazon.LocationService.Model
         internal bool IsSetStreet()
         {
             return this._street != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubMunicipality. 
+        /// <para>
+        /// An area that's part of a larger municipality. For example, <code>Blissville </code>
+        /// is a submunicipality in the Queen County in New York.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property supported by Esri and OpenData. The Esri property is <code>district</code>,
+        /// and the OpenData property is <code>borough</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SubMunicipality
+        {
+            get { return this._subMunicipality; }
+            set { this._subMunicipality = value; }
+        }
+
+        // Check to see if SubMunicipality property is set
+        internal bool IsSetSubMunicipality()
+        {
+            return this._subMunicipality != null;
         }
 
         /// <summary>

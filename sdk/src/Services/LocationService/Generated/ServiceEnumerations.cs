@@ -241,6 +241,56 @@ namespace Amazon.LocationService
 
 
     /// <summary>
+    /// Constants used for properties of type OptimizationMode.
+    /// </summary>
+    public class OptimizationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FastestRoute for OptimizationMode
+        /// </summary>
+        public static readonly OptimizationMode FastestRoute = new OptimizationMode("FastestRoute");
+        /// <summary>
+        /// Constant ShortestRoute for OptimizationMode
+        /// </summary>
+        public static readonly OptimizationMode ShortestRoute = new OptimizationMode("ShortestRoute");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptimizationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptimizationMode FindValue(string value)
+        {
+            return FindValue<OptimizationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptimizationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PositionFiltering.
     /// </summary>
     public class PositionFiltering : ConstantClass

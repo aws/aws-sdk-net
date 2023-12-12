@@ -129,6 +129,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Street = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SubMunicipality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubMunicipality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

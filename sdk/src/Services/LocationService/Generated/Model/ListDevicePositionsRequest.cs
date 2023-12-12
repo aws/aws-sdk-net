@@ -42,7 +42,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property FilterGeometry. 
         /// <para>
-        /// The geomerty used to filter device positions.
+        /// The geometry used to filter device positions.
         /// </para>
         /// </summary>
         public TrackingFilterGeometry FilterGeometry

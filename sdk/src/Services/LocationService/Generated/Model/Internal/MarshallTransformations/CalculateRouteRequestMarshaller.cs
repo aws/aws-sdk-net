@@ -71,6 +71,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArrivalTime())
+                {
+                    context.Writer.WritePropertyName("ArrivalTime");
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ArrivalTime));
+                }
+
                 if(publicRequest.IsSetCarModeOptions())
                 {
                     context.Writer.WritePropertyName("CarModeOptions");
@@ -126,6 +132,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("IncludeLegGeometry");
                     context.Writer.Write(publicRequest.IncludeLegGeometry);
+                }
+
+                if(publicRequest.IsSetOptimizeFor())
+                {
+                    context.Writer.WritePropertyName("OptimizeFor");
+                    context.Writer.Write(publicRequest.OptimizeFor);
                 }
 
                 if(publicRequest.IsSetTravelMode())

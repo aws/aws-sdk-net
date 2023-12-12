@@ -72,6 +72,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class CalculateRouteRequest : AmazonLocationServiceRequest
     {
+        private DateTime? _arrivalTime;
         private string _calculatorName;
         private CalculateRouteCarModeOptions _carModeOptions;
         private bool? _departNow;
@@ -81,9 +82,35 @@ namespace Amazon.LocationService.Model
         private DistanceUnit _distanceUnit;
         private bool? _includeLegGeometry;
         private string _key;
+        private OptimizationMode _optimizeFor;
         private TravelMode _travelMode;
         private CalculateRouteTruckModeOptions _truckModeOptions;
         private List<List<double>> _waypointPositions = new List<List<double>>();
+
+        /// <summary>
+        /// Gets and sets the property ArrivalTime. 
+        /// <para>
+        /// Specifies the desired time of arrival. Uses the given time to calculate the route.
+        /// Otherwise, the best time of day to travel with the best traffic conditions is used
+        /// to calculate the route.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// ArrivalTime is not supported Esri.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DateTime ArrivalTime
+        {
+            get { return this._arrivalTime.GetValueOrDefault(); }
+            set { this._arrivalTime = value; }
+        }
+
+        // Check to see if ArrivalTime property is set
+        internal bool IsSetArrivalTime()
+        {
+            return this._arrivalTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CalculatorName. 
@@ -198,12 +225,7 @@ namespace Amazon.LocationService.Model
         /// Otherwise, the best time of day to travel with the best traffic conditions is used
         /// to calculate the route.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Setting a departure time in the past returns a <code>400 ValidationException</code>
-        /// error.
-        /// </para>
-        ///  </note> <ul> <li> 
+        ///  <ul> <li> 
         /// <para>
         /// In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
@@ -323,6 +345,24 @@ namespace Amazon.LocationService.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizeFor. 
+        /// <para>
+        /// Specifies the distance to optimize for when calculating a route.
+        /// </para>
+        /// </summary>
+        public OptimizationMode OptimizeFor
+        {
+            get { return this._optimizeFor; }
+            set { this._optimizeFor = value; }
+        }
+
+        // Check to see if OptimizeFor property is set
+        internal bool IsSetOptimizeFor()
+        {
+            return this._optimizeFor != null;
         }
 
         /// <summary>
