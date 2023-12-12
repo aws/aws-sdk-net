@@ -113,7 +113,7 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Using S3 Control with Snowball Edge requires setting both a custom serviceURL and
         /// region to "snow" to invoke the correct endpoint rule. Since we don't allow both, this verifies
-        /// that substituting AuthenticanRegion with "snow" results in the correct endpoint.
+        /// that substituting AuthenticationRegion with "snow" results in the correct endpoint.
         /// https://docs.aws.amazon.com/snowball/latest/developer-guide/working-s3-snow-buckets.html
         /// </summary>
         [TestMethod]
