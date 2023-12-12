@@ -1,3 +1,14 @@
+### 3.7.707.0 (2023-12-12 19:17 UTC)
+* CloudWatchLogs (3.7.302.0)
+	* This release introduces the StartLiveTail API to tail ingested logs in near real time.
+* Imagebuilder (3.7.302.0)
+	* This release adds the Image Workflows feature to give more flexibility and control over the image building and testing process.
+* LocationService (3.7.302.0)
+	* This release 1)  adds sub-municipality field in Places API for searching and getting places information, and 2) allows optimizing route calculation based on expected arrival time.
+* Core 3.7.300.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.706.0 (2023-12-11 19:24 UTC)
 * Neptune (3.7.301.0)
 	* This release adds a new parameter configuration setting to the Neptune cluster related APIs that can be leveraged to switch between the underlying supported storage modes.

@@ -32,7 +32,7 @@ namespace Amazon.LocationService
     public partial class AmazonLocationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.301.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.302.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
