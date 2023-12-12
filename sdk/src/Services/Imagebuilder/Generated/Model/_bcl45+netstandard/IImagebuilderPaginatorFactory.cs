@@ -106,9 +106,24 @@ namespace Amazon.Imagebuilder.Model
         IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListWaitingWorkflowSteps operation
+        ///</summary>
+        IListWaitingWorkflowStepsPaginator ListWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflowBuildVersions operation
+        ///</summary>
+        IListWorkflowBuildVersionsPaginator ListWorkflowBuildVersions(ListWorkflowBuildVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkflowExecutions operation
         ///</summary>
         IListWorkflowExecutionsPaginator ListWorkflowExecutions(ListWorkflowExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflows operation
+        ///</summary>
+        IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkflowStepExecutions operation

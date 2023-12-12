@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Component. 
         /// <para>
-        /// The component object associated with the specified ARN.
+        /// The component object specified in the request.
         /// </para>
         /// </summary>
         public Component Component

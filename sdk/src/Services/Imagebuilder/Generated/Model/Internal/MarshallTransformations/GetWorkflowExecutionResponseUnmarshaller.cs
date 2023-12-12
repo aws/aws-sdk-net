@@ -69,6 +69,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parallelGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParallelGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

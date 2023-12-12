@@ -164,11 +164,35 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Paginator for ListWaitingWorkflowSteps operation
+        ///</summary>
+        public IListWaitingWorkflowStepsPaginator ListWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest request) 
+        {
+            return new ListWaitingWorkflowStepsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkflowBuildVersions operation
+        ///</summary>
+        public IListWorkflowBuildVersionsPaginator ListWorkflowBuildVersions(ListWorkflowBuildVersionsRequest request) 
+        {
+            return new ListWorkflowBuildVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkflowExecutions operation
         ///</summary>
         public IListWorkflowExecutionsPaginator ListWorkflowExecutions(ListWorkflowExecutionsRequest request) 
         {
             return new ListWorkflowExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkflows operation
+        ///</summary>
+        public IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request) 
+        {
+            return new ListWorkflowsPaginator(this.client, request);
         }
 
         /// <summary>

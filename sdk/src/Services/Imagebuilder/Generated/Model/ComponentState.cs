@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A group of fields that describe the current status of components that are no longer
-    /// active.
+    /// A group of fields that describe the current status of components.
     /// </summary>
     public partial class ComponentState
     {

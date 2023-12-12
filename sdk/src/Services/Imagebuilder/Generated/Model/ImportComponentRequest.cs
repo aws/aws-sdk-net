@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The change description of the component. This description indicates the change that
         /// has been made in this version, or what makes this version different from other versions
-        /// of this component.
+        /// of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

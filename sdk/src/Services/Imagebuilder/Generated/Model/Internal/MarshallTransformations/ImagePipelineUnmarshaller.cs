@@ -117,6 +117,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnhancedImageMetadataEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageRecipeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -169,6 +175,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflows", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<WorkflowConfiguration, WorkflowConfigurationUnmarshaller>(WorkflowConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Workflows = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

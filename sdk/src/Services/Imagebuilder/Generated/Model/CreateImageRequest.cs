@@ -40,11 +40,13 @@ namespace Amazon.Imagebuilder.Model
         private string _containerRecipeArn;
         private string _distributionConfigurationArn;
         private bool? _enhancedImageMetadataEnabled;
+        private string _executionRole;
         private string _imageRecipeArn;
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<WorkflowConfiguration> _workflows = new List<WorkflowConfiguration>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -123,6 +125,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetEnhancedImageMetadataEnabled()
         {
             return this._enhancedImageMetadataEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRole. 
+        /// <para>
+        /// The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image
+        /// Builder access to perform workflow actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ExecutionRole
+        {
+            get { return this._executionRole; }
+            set { this._executionRole = value; }
+        }
+
+        // Check to see if ExecutionRole property is set
+        internal bool IsSetExecutionRole()
+        {
+            return this._executionRole != null;
         }
 
         /// <summary>
@@ -217,6 +239,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Workflows. 
+        /// <para>
+        /// Contains an array of workflow configuration objects.
+        /// </para>
+        /// </summary>
+        public List<WorkflowConfiguration> Workflows
+        {
+            get { return this._workflows; }
+            set { this._workflows = value; }
+        }
+
+        // Check to see if Workflows property is set
+        internal bool IsSetWorkflows()
+        {
+            return this._workflows != null && this._workflows.Count > 0; 
         }
 
     }

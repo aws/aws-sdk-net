@@ -100,6 +100,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnhancedImageMetadataEnabled);
                 }
 
+                if(publicRequest.IsSetExecutionRole())
+                {
+                    context.Writer.WritePropertyName("executionRole");
+                    context.Writer.Write(publicRequest.ExecutionRole);
+                }
+
                 if(publicRequest.IsSetImagePipelineArn())
                 {
                     context.Writer.WritePropertyName("imagePipelineArn");
@@ -155,6 +161,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("status");
                     context.Writer.Write(publicRequest.Status);
+                }
+
+                if(publicRequest.IsSetWorkflows())
+                {
+                    context.Writer.WritePropertyName("workflows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestWorkflowsListValue in publicRequest.Workflows)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkflowConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestWorkflowsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

@@ -60,7 +60,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LastLaunched. 
         /// <para>
-        /// Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+        /// Specifies configuration details for Image Builder to exclude the most recent resources
+        /// from lifecycle actions.
         /// </para>
         /// </summary>
         public LifecyclePolicyDetailExclusionRulesAmisLastLaunched LastLaunched
@@ -78,8 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle
-        /// action.
+        /// Configures Amazon Web Services Regions that are excluded from the lifecycle action.
         /// </para>
         /// </summary>
         public List<string> Regions
@@ -97,8 +97,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SharedAccounts. 
         /// <para>
-        /// Specifies configuration details for Image Builder to exclude the most recent resources
-        /// from lifecycle actions.
+        /// Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle
+        /// action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1536)]

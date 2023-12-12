@@ -30,8 +30,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkflowStepExecutions operation.
-    /// Shows runtime data for each step in a runtime instance of the workflow that you specify
-    /// in the request.
+    /// Returns runtime data for each step in a runtime instance of the workflow that you
+    /// specify in the request.
     /// </summary>
     public partial class ListWorkflowStepExecutionsRequest : AmazonImagebuilderRequest
     {

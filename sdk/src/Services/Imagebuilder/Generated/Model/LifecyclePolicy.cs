@@ -141,8 +141,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// The name of the IAM role that Image Builder uses to run the lifecycle policy. This
-        /// is a custom role that you create.
+        /// The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to
+        /// run the lifecycle policy. This is a custom role that you create.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
