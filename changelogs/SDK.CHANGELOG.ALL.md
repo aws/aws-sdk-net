@@ -1,3 +1,11 @@
+### 3.7.708.0 (2023-12-13 19:47 UTC)
+* Drs (3.7.301.0)
+	* Adding AgentVersion to SourceServer and RecoveryInstance structures
+* Core 3.7.300.18
+	* Addressed performance degradation in Amazon.Runtime.ClientConfig (Configuration files were being read unnecessarily)
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.707.0 (2023-12-12 19:17 UTC)
 * CloudWatchLogs (3.7.302.0)
 	* This release introduces the StartLiveTail API to tail ingested logs in near real time.
