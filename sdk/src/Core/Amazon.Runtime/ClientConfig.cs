@@ -264,13 +264,11 @@ namespace Amazon.Runtime
 
                     if (Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable) != null)
                     {
-                        didProcessServiceURL = true;
                         Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific environment variable: {serviceSpecificTransformedEnvironmentVariable}.");
                         this.ServiceURL = Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable);                    
                     }
                     else if (Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE) != null)
                     {
-                        didProcessServiceURL = true;
                         this.ServiceURL = Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE);
                         Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from global environment variable: {EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE}.");
                     }
@@ -295,7 +293,6 @@ namespace Amazon.Runtime
                                 {
                                     Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific endpoint url in " +
                                     $"profile {profile.Name} from key {transformedConfigServiceId}.");
-                                    didProcessServiceURL = true;
                                     this.ServiceURL = endpointUrlValue;
                                 }
 
@@ -304,12 +301,12 @@ namespace Amazon.Runtime
                             {
                                 Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from global endpoint url" +
                                     $"in profile {profile.Name} from key {SettingsConstants.EndpointUrl}.");
-                                didProcessServiceURL = true;
                                 this.ServiceURL = profile.EndpointUrl;
                             }
                         }
 
                     }
+                    didProcessServiceURL = true;
                 }
                 return this.serviceURL;
 
