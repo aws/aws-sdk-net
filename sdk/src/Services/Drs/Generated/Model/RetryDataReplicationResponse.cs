@@ -33,6 +33,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class RetryDataReplicationResponse : AmazonWebServiceResponse
     {
+        private string _agentVersion;
         private string _arn;
         private DataReplicationInfo _dataReplicationInfo;
         private LastLaunchResult _lastLaunchResult;
@@ -46,6 +47,24 @@ namespace Amazon.Drs.Model
         private string _sourceServerID;
         private StagingArea _stagingArea;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the DRS agent installed on the source server
+        /// </para>
+        /// </summary>
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

@@ -286,6 +286,10 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.DisconnectSourceServerResponse.AgentVersion</property>
+    <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -551,6 +555,10 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RetryDataReplicationResponse.AgentVersion</property>
+    <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.Arn</property>
@@ -1205,6 +1213,10 @@
   <property-value-rule>
     <property>Amazon.Drs.Model.PITPolicyRule.RuleID</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryInstance.AgentVersion</property>
+    <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.Arn</property>
