@@ -1,7 +1,7 @@
 {
     "core": {
       "changeLogMessages": [
-        "Addressed performance degradation in Amazon.Runtime.ClientConfig ServiceURL"
+        "Addressed performance degradation in Amazon.Runtime.ClientConfig (Configuration files were being read unnecessarily)"
       ],
       "type": "patch",
       "updateMinimum": true
