@@ -38,7 +38,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  Then ARN of the deleted custom line item. 
+        /// The ARN of the deleted custom line item. 
         /// </para>
         /// </summary>
         public string Arn

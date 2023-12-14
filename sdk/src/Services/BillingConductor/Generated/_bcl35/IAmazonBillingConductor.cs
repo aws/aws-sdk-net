@@ -30,17 +30,17 @@ namespace Amazon.BillingConductor
     /// Interface for accessing BillingConductor
     ///
     /// Amazon Web Services Billing Conductor is a fully managed service that you can use
-    /// to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
-    /// forma</a> version of your billing data each month, to accurately show or chargeback
-    /// your end customers. Amazon Web Services Billing Conductor doesn't change the way you're
-    /// billed by Amazon Web Services each month by design. Instead, it provides you with
-    /// a mechanism to configure, generate, and display rates to certain customers over a
-    /// given billing period. You can also analyze the difference between the rates you apply
-    /// to your accounting groupings relative to your actual rates from Amazon Web Services.
-    /// As a result of your Amazon Web Services Billing Conductor configuration, the payer
-    /// account can also see the custom rate applied on the billing details page of the <a
-    /// href="https://console.aws.amazon.com/billing">Amazon Web Services Billing console</a>,
-    /// or configure a cost and usage report per billing group.
+    /// to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">proforma</a>
+    /// version of your billing data each month, to accurately show or chargeback your end
+    /// customers. Amazon Web Services Billing Conductor doesn't change the way you're billed
+    /// by Amazon Web Services each month by design. Instead, it provides you with a mechanism
+    /// to configure, generate, and display rates to certain customers over a given billing
+    /// period. You can also analyze the difference between the rates you apply to your accounting
+    /// groupings relative to your actual rates from Amazon Web Services. As a result of your
+    /// Amazon Web Services Billing Conductor configuration, the payer account can also see
+    /// the custom rate applied on the billing details page of the <a href="https://console.aws.amazon.com/billing">Amazon
+    /// Web Services Billing console</a>, or configure a cost and usage report per billing
+    /// group.
     /// 
     ///  
     /// <para>
@@ -880,6 +880,62 @@ namespace Amazon.BillingConductor
         /// <returns>Returns a  DisassociatePricingRulesResult from BillingConductor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociatePricingRules">REST API Reference for DisassociatePricingRules Operation</seealso>
         DisassociatePricingRulesResponse EndDisassociatePricingRules(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBillingGroupCostReport
+
+
+        /// <summary>
+        /// Retrieves the margin summary report, which includes the Amazon Web Services cost and
+        /// charged amount (pro forma cost) by Amazon Web Service for a specific billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingGroupCostReport service method.</param>
+        /// 
+        /// <returns>The response from the GetBillingGroupCostReport service method, as returned by BillingConductor.</returns>
+        /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ResourceNotFoundException">
+        /// The request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
+        GetBillingGroupCostReportResponse GetBillingGroupCostReport(GetBillingGroupCostReportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBillingGroupCostReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingGroupCostReport operation on AmazonBillingConductorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBillingGroupCostReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
+        IAsyncResult BeginGetBillingGroupCostReport(GetBillingGroupCostReportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBillingGroupCostReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBillingGroupCostReport.</param>
+        /// 
+        /// <returns>Returns a  GetBillingGroupCostReportResult from BillingConductor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
+        GetBillingGroupCostReportResponse EndGetBillingGroupCostReport(IAsyncResult asyncResult);
 
         #endregion
         
