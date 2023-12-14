@@ -42,6 +42,7 @@ namespace AWSSDK.UnitTests
         private const string AWS_USE_DUALSTACK_ENDPOINT_ENVIRONMENT_VARIABLE = "AWS_USE_DUALSTACK_ENDPOINT";
         private const string AWS_DISABLE_REQUEST_COMPRESSION = "AWS_DISABLE_REQUEST_COMPRESSION";
         private const string AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
+        private const string AWS_SDK_UA_APP_ID = "AWS_SDK_UA_APP_ID";
         private const string AWS_USE_FIPS_ENDPOINT_ENVIRONMENT_VARIABLE = EnvironmentVariableInternalConfiguration.ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT;
         private const long DefaultMinCompressionSizeBytes = 10240;
 
@@ -84,6 +85,8 @@ namespace AWSSDK.UnitTests
             .AppendLine("disable_request_compression=true")
             .AppendLine("[min_compression_size_bytes]")
             .AppendLine("request_min_compression_size_bytes=128")
+            .AppendLine("[set_sdk_ua_app_id]")
+            .AppendLine("sdk_ua_app_id=myAppId")
             .ToString();
 
         [DataTestMethod]
@@ -330,6 +333,31 @@ namespace AWSSDK.UnitTests
             using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
             {
                 Assert.AreEqual(expectedMinCompressionSizeValue, config.RequestMinCompressionSizeBytes);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow("test123", "test12345", "set_sdk_ua_app_id", "test123")]  // service client should supersede conflicting env var and profile values
+        [DataRow(null, "test12345", "set_sdk_ua_app_id", "test12345")]   // env var should supersede conflicting profile value
+        [DataRow(null, null, "set_sdk_ua_app_id", "myAppId")]  // Use app id configured for the profile
+        [DataRow(null, null, null, null)]  // should default to DefaultMinCompressionSizeBytes when no config values specified
+        public void TestClientAppIdConfigurationHierarchy(string clientConfigValue, string envVarValue, string profileName, string expectedValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue != null)
+            {
+                config.ClientAppId = clientConfigValue;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue != null)
+            {
+                envVariables.Add(AWS_SDK_UA_APP_ID, envVarValue);
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedValue, config.ClientAppId);
             }
         }
 

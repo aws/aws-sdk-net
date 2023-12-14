@@ -161,6 +161,12 @@ namespace Amazon.Runtime.CredentialManagement
         public long? RequestMinCompressionSizeBytes { get; set; }
 
         /// <summary>
+        /// Customers can opt-in to provide an app id that is intended to identify their applications
+        /// in the user agent header string. The value should have a maximum length of 50.
+        /// </summary>
+        public string ClientAppId { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

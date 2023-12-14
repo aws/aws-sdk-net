@@ -65,6 +65,7 @@ namespace Amazon.Runtime
         private string authRegion = null;
         private string authServiceName = null;
         private string signatureVersion = "4";
+        private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool readEntireResponse = false;
         private bool logResponse = false;
@@ -858,6 +859,36 @@ namespace Amazon.Runtime
             {
                 ValidateMinCompression(value);
                 requestMinCompressionSizeBytes = value; 
+            }
+        }
+
+        /// <summary>
+        /// Customers can opt-in to provide an app id that is intended to identify their applications
+        /// in the user agent header string. The value must not exceed <see cref="EnvironmentVariableInternalConfiguration.AWS_SDK_UA_APP_ID_MAX_LENGTH"/> characters.
+        /// </summary>
+        public string ClientAppId
+        {
+            get
+            {
+                if (this.clientAppId == null)
+                {
+                    return FallbackInternalConfigurationFactory.ClientAppId;
+                }
+
+                return this.clientAppId;
+            }
+            set 
+            {
+                ValidateClientAppId(value);
+                this.clientAppId = value;
+            }
+        }
+
+        private static void ValidateClientAppId(string clientAppId)
+        {
+            if (clientAppId != null && clientAppId.Length > EnvironmentVariableInternalConfiguration.AWS_SDK_UA_APP_ID_MAX_LENGTH)
+            {
+                Logger.GetLogger(typeof(InternalConfiguration)).InfoFormat("Warning: Client app id exceeds recommended maximum length of {0} characters: \"{1}\"", EnvironmentVariableInternalConfiguration.AWS_SDK_UA_APP_ID_MAX_LENGTH, clientAppId);
             }
         }
 

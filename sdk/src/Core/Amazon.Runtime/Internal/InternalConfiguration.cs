@@ -89,6 +89,12 @@ namespace Amazon.Runtime.Internal
         /// Minimum size in bytes that a request body should be to trigger compression.
         /// </summary>
         public long? RequestMinCompressionSizeBytes { get; set; }
+
+        /// <summary>
+        /// Customers can opt-in to provide an app id that is intended to identify their applications
+        /// in the user agent header string. The value should have a maximum length of 50.
+        /// </summary>
+        public string ClientAppId { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -111,6 +117,8 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS = "AWS_IGNORE_CONFIGURED_ENDPOINT_URLS";
         public const string ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION = "AWS_DISABLE_REQUEST_COMPRESSION";
         public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
+        public const string ENVIRONMENT_VARIABLE_AWS_SDK_UA_APP_ID = "AWS_SDK_UA_APP_ID";
+        public const int AWS_SDK_UA_APP_ID_MAX_LENGTH = 50;
 
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
@@ -131,6 +139,7 @@ namespace Amazon.Runtime.Internal
             IgnoreConfiguredEndpointUrls = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS, false);
             DisableRequestCompression = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION);
             RequestMinCompressionSizeBytes = GetEnvironmentVariable<long>(ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES);
+            ClientAppId = GetClientAppIdEnvironmentVariable();
         }
 
         private bool GetEnvironmentVariable(string name, bool defaultValue)
@@ -230,6 +239,26 @@ namespace Amazon.Runtime.Internal
             }
 
             return rawValue;
+        }       
+
+        /// <summary>
+        /// Loads client app id from the environment variable.
+        /// Throws an exception if the length of client app id is longer than 50.
+        /// </summary>
+        /// <returns>Client app id string</returns>
+        private string GetClientAppIdEnvironmentVariable()
+        {
+            if (!TryGetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_SDK_UA_APP_ID, out var rawValue))
+            {
+                return null;
+            }
+
+            if (rawValue?.Length > AWS_SDK_UA_APP_ID_MAX_LENGTH)
+            {
+                Logger.GetLogger(typeof(InternalConfiguration)).InfoFormat("Warning: Client app id exceeds recommended maximum length of {0} characters: \"{1}\"", AWS_SDK_UA_APP_ID_MAX_LENGTH, rawValue);
+            }
+
+            return rawValue;
         }
     }
 
@@ -282,6 +311,7 @@ namespace Amazon.Runtime.Internal
                 IgnoreConfiguredEndpointUrls = profile.IgnoreConfiguredEndpointUrls;
                 DisableRequestCompression = profile.DisableRequestCompression;
                 RequestMinCompressionSizeBytes = profile.RequestMinCompressionSizeBytes;
+                ClientAppId = profile.ClientAppId;
             }
             else
             {
@@ -302,7 +332,8 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string,object>( "ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
                 new KeyValuePair<string, object>("endpoint_url", profile.EndpointUrl),
                 new KeyValuePair<string, object>("disable_request_compression", profile.DisableRequestCompression),
-                new KeyValuePair<string, object>("request_min_compression_size_bytes", profile.RequestMinCompressionSizeBytes)
+                new KeyValuePair<string, object>("request_min_compression_size_bytes", profile.RequestMinCompressionSizeBytes),
+                new KeyValuePair<string, object>("sdk_ua_app_id", profile.ClientAppId)
             };
 
             foreach(var item in items)
@@ -370,6 +401,7 @@ namespace Amazon.Runtime.Internal
 
             _cachedConfiguration.DisableRequestCompression = SeekValue(standardGenerators, (c) => c.DisableRequestCompression);
             _cachedConfiguration.RequestMinCompressionSizeBytes = SeekValue(standardGenerators, (c) => c.RequestMinCompressionSizeBytes);
+            _cachedConfiguration.ClientAppId = SeekString(standardGenerators, (c) => c.ClientAppId, defaultValue: null);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -525,6 +557,18 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.RequestMinCompressionSizeBytes;
+            }
+        }
+
+        /// <summary>
+        /// Customers can opt-in to provide an app id that is intended to identify their applications
+        /// in the user agent header string. The value should have a maximum length of 50.
+        /// </summary>
+        public static string ClientAppId
+        {
+            get
+            {
+                return _cachedConfiguration.ClientAppId;
             }
         }
     }

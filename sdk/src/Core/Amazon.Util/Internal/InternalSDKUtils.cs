@@ -19,8 +19,10 @@ using System.Globalization;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Net;
+using System.Text.RegularExpressions;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
+using System.Text;
 
 namespace Amazon.Util.Internal
 {
@@ -30,7 +32,12 @@ namespace Amazon.Util.Internal
         static string _versionNumber;
         static string _customSdkUserAgent;
         static string _customData;
- 
+        static string _customString;
+        const string USER_AGENT_VERSION = "ua/2.0";
+
+        // Define a regular expression to match disallowed characters
+        private static readonly Regex DisallowedCharactersRegex = new Regex("[^ /!#$%&'*+-.^_`|~\\w\\d]", RegexOptions.Compiled);
+
         public static void SetUserAgent(string productName, string versionNumber)
         {
             SetUserAgent(productName, versionNumber, null);
@@ -44,7 +51,20 @@ namespace Amazon.Util.Internal
 
             BuildCustomUserAgentString();
         }
-        
+
+        /// <summary>
+        /// Replace disallowed characters by a hyphen in <paramref name="userAgent"/>
+        /// </summary>
+        /// <param name="userAgent"> Unsanitized user agent string</param>
+        /// <returns> Sanitized user agent string </returns>
+        internal static string ReplaceInvalidUserAgentCharacters(string userAgent)
+        {
+            // Use the regular expression to replace disallowed characters by a hyphen
+            var validUserAgent = DisallowedCharactersRegex.Replace(userAgent, "-");
+
+            return validUserAgent;
+        }
+
         static void BuildCustomUserAgentString()
         {
             if (_versionNumber == null)
@@ -53,23 +73,24 @@ namespace Amazon.Util.Internal
             }
 
             var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
-            string executionEnvironmentString = "";
-            executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
+            var executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
 
             if (string.IsNullOrEmpty(executionEnvironmentString))
             {
-                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4}",
+                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} {3} OS/{4} {5}",
                     _userAgentBaseName,
                     _versionNumber,
+                    USER_AGENT_VERSION,
                     environmentInfo.FrameworkUserAgent,
                     environmentInfo.PlatformUserAgent,
                     _customData).Trim();
             }
             else
             {
-                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4} {5}",
+                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4} {5} {6}",
                     _userAgentBaseName,
                     _versionNumber,
+                    USER_AGENT_VERSION,
                     environmentInfo.FrameworkUserAgent,
                     environmentInfo.PlatformUserAgent,
                     executionEnvironmentString,
@@ -77,41 +98,79 @@ namespace Amazon.Util.Internal
             }
         }
 
-
+        /// <summary>
+        /// Build user agent string statically. This method is currently used by PowerShell and high level libraries.
+        /// </summary>
+        /// <param name="serviceSdkVersion"> Version of the service </param>
+        /// <returns> User agent header string </returns>
         public static string BuildUserAgentString(string serviceSdkVersion)
+        {
+            return BuildUserAgentString(string.Empty, serviceSdkVersion);
+        }
+
+        /// <summary>
+        /// Build user agent string statically. This method is currently used by the .NET SDK.
+        /// <summary>
+        /// <param name="serviceId"> Service id of the service being called </param>
+        /// <param name="serviceSdkVersion"> Version of the service </param>
+        /// <returns> User agent header string </returns>
+        public static string BuildUserAgentString(string serviceId, string serviceSdkVersion)
         {
             if (!string.IsNullOrEmpty(_customSdkUserAgent))
             {
                 return _customSdkUserAgent;
             }
 
+            var sb = new StringBuilder();
+            sb.Append(_userAgentBaseName);
+            if(!string.IsNullOrEmpty(serviceSdkVersion))
+            {
+                sb.AppendFormat("/{0}", serviceSdkVersion);
+            }
+
+
+            sb.AppendFormat(" {0}", USER_AGENT_VERSION);
+
             var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
+            sb.AppendFormat(" os/{0}", environmentInfo.PlatformUserAgent);
+            sb.AppendFormat(" lang/{0}", environmentInfo.FrameworkUserAgent);
 
-#if BCL
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
-                _userAgentBaseName,
-                serviceSdkVersion,
-                CoreVersionNumber,
-                environmentInfo.FrameworkUserAgent,
-                environmentInfo.PlatformUserAgent,
-                GetExecutionEnvironmentUserAgentString(),
-                _customData).Trim();
-#elif NETSTANDARD
+            var execEnv = GetExecutionEnvironmentUserAgentString();
+            if (!string.IsNullOrEmpty(execEnv))
+            {
+                sb.AppendFormat(" {0}", execEnv);
+            }
 
-            var ftAot = InternalSDKUtils.IsRunningNativeAot() ? "ft/aot" : "";
+            sb.AppendFormat(" md/aws-sdk-dotnet-core#{0}", CoreVersionNumber);
 
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6} {7}",
-                _userAgentBaseName,
-                serviceSdkVersion,
-                CoreVersionNumber,
-                environmentInfo.FrameworkUserAgent,
-                environmentInfo.PlatformUserAgent,
-                GetExecutionEnvironmentUserAgentString(),
-                _customData,
-                ftAot).Trim();
-#endif
+            var internalUA = GetInternalUserAgentString();
+            if(!string.IsNullOrEmpty(internalUA))
+            {
+                sb.AppendFormat(" {0}", internalUA);
+            }
+
+            if(!string.IsNullOrEmpty(serviceId))
+            {
+                sb.AppendFormat(" api/{0}", serviceId);
+                if(!string.IsNullOrEmpty(serviceSdkVersion))
+                {
+                    sb.Append("#");
+                    sb.Append(serviceSdkVersion);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(_customData))
+            {
+                sb.AppendFormat(" {0}", _customData);
+            }
+
+            if (IsRunningNativeAot())
+            {
+                sb.Append(" ft/aot");
+            }
+
+            return sb.ToString();
         }
-
 
         #endregion
 
@@ -224,6 +283,12 @@ namespace Amazon.Util.Internal
             return Environment.GetEnvironmentVariable(EXECUTION_ENVIRONMENT_ENVVAR);
         }
 
+        internal static string INTERNAL_ENVIRONMENT_ENVVAR = "AWS_INTERNAL_ENV";
+        internal static string GetInternalEnvironment()
+        {
+            return Environment.GetEnvironmentVariable(INTERNAL_ENVIRONMENT_ENVVAR);
+        }
+
         private static string GetExecutionEnvironmentUserAgentString()
         {
             string userAgentString = "";
@@ -232,6 +297,19 @@ namespace Amazon.Util.Internal
             if (!string.IsNullOrEmpty(executionEnvValue))
             {
                 userAgentString = string.Format(CultureInfo.InvariantCulture, "exec-env/{0}", executionEnvValue);
+            }
+
+            return userAgentString;
+        }
+
+        private static string GetInternalUserAgentString()
+        {
+            string userAgentString = "";
+
+            string executionEnvValue = GetInternalEnvironment();
+            if (!string.IsNullOrEmpty(executionEnvValue))
+            {
+                userAgentString = string.Format(CultureInfo.InvariantCulture, "{0}", executionEnvValue);
             }
 
             return userAgentString;

@@ -14,10 +14,12 @@ namespace Amazon.Util.Internal.PlatformServices
         public EnvironmentInfo()
         {
             this.Platform = Environment.OSVersion.Platform.ToString();
-            this.PlatformUserAgent = Environment.OSVersion.VersionString.Replace(" ", "_");
+
+            this.PlatformUserAgent = Environment.OSVersion.Platform == PlatformID.Win32NT ? "windows" : "other";
+
             this.FrameworkUserAgent =
                 string.Format(CultureInfo.InvariantCulture,
-                ".NET_Runtime/{0}.{1} .NET_Framework/{2}",
+                ".NET_Runtime#{0}.{1} md/.NET_Framework#{2}",
                  Environment.Version.Major,
                  Environment.Version.MajorRevision,
                  InternalSDKUtils.DetermineFramework());

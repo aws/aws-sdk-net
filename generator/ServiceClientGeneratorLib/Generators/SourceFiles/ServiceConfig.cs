@@ -76,6 +76,13 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ing =\r\n            InternalSDKUtils.BuildUserAgentString(\"");
             
             #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceId));
+            
+            #line default
+            #line hidden
+            this.Write("\", \"");
+            
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceFileVersion));
             
             #line default

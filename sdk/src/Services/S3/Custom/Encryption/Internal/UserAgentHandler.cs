@@ -65,7 +65,7 @@ namespace Amazon.S3.Encryption.Internal
         {
             var request = executionContext.RequestContext.Request;
             string currentUserAgent = request.Headers[AWSSDKUtils.UserAgentHeader];
-            request.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " S3Crypto";
+            request.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " ft/S3CryptoV1";
         }
     }
 }

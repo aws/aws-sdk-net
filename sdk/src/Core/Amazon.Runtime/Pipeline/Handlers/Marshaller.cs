@@ -16,7 +16,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using Amazon.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal
 {
@@ -79,18 +81,6 @@ namespace Amazon.Runtime.Internal
             requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
             requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 
-            var userAgent = $"{requestContext.ClientConfig.UserAgent} " +
-                $"{(executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")}{requestContext.OriginalRequest.UserAgentAddition}";
-
-            if(requestContext.ClientConfig.UseAlternateUserAgentHeader)
-            {
-                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = userAgent;
-            }
-            else
-            {
-                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = userAgent;
-            }
-
 #if NETSTANDARD
             var method = requestContext.Request.HttpMethod.ToUpperInvariant();
 #else
@@ -108,6 +98,7 @@ namespace Amazon.Runtime.Internal
             }
 
             SetRecursionDetectionHeader(requestContext.Request.Headers);
+            SetUserAgentHeader(requestContext);
         }
 
         /// <summary>
@@ -125,6 +116,36 @@ namespace Amazon.Runtime.Internal
                 {
                     headers[HeaderKeys.XAmznTraceIdHeader] = AWSSDKUtils.EncodeTraceIdHeaderValue(amznTraceId);
                 }
+            }
+        }
+
+        private static void SetUserAgentHeader(IRequestContext requestContext)
+        {
+            var sb = new StringBuilder(requestContext.ClientConfig.UserAgent);
+
+            var clientAppId = requestContext.ClientConfig.ClientAppId;
+            if (!string.IsNullOrEmpty(clientAppId))
+                sb.AppendFormat(" app/{0}", clientAppId);
+
+            var retryMode = requestContext.ClientConfig.RetryMode.ToString().ToLower();
+            sb.AppendFormat(" cfg/retry-mode#{0}", retryMode);
+
+            sb.AppendFormat(" md/{0}", requestContext.IsAsync ? "ClientAsync" : "ClientSync");
+
+            var userAgentAddition = requestContext.OriginalRequest.UserAgentAddition;
+            sb.AppendFormat(" {0}", userAgentAddition);
+
+            var userAgent = sb.ToString();
+
+            userAgent = InternalSDKUtils.ReplaceInvalidUserAgentCharacters(userAgent);
+
+            if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
+            {
+                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = userAgent;
+            }
+            else
+            {
+                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = userAgent;
             }
         }
     }

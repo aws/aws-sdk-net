@@ -273,6 +273,16 @@ namespace AWSSDK.UnitTests
            .Append("request_min_compression_size_bytes=128")
            .ToString();
 
+        private static readonly string UaClientAppId = new StringBuilder()
+           .AppendLine("[valid_sdk_ua_app_id]")
+           .AppendLine("sdk_ua_app_id=Test123")
+           .ToString();
+
+        private static readonly string UaClientAppId_Invalid = new StringBuilder()
+           .AppendLine("[invalid_sdk_ua_app_id]")
+           .AppendLine("sdk_ua_app_id=This is a 51-character string. string is invalid...")
+           .ToString();
+
         private static readonly string ZeroCompressionSizeBytesOnlyProfileText_Invalid = new StringBuilder()
             .AppendLine("[invalid_zero_compression_size_bytes]")
             .AppendLine("request_min_compression_size_bytes=zero")
@@ -764,6 +774,15 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.AssertWriteProfile("endpoint_discovery_enabled_only_profile", EndpointDiscoveryEnabledOnlyProfileOptions, true, EndpointDiscoveryEnabledOnlyProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadValidUaClientAppIdOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(UaClientAppId))
+            {
+                tester.TestTryGetProfile("valid_sdk_ua_app_id", true, false);
             }
         }
 

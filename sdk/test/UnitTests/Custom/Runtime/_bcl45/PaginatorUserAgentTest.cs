@@ -33,8 +33,8 @@ namespace AWSSDK.UnitTests.Runtime
             var internalRequest = RunMockRequest(request, ListObjectsV2RequestMarshaller.Instance);
             var propertyInfo = typeof(AmazonWebServiceRequest).GetProperty("UserAgentAddition",
             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            Assert.AreEqual(" Paginator", propertyInfo.GetValue(request, null));
-            Assert.IsTrue(internalRequest.Headers[HeaderKeys.UserAgentHeader].EndsWith(" Paginator"));
+            Assert.AreEqual(" ft/paginator", propertyInfo.GetValue(request, null));
+            Assert.IsTrue(internalRequest.Headers[HeaderKeys.UserAgentHeader].Contains(" ft/paginator"));
         }
 
         private IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller)

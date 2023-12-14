@@ -14,20 +14,11 @@
  */
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Amazon.Runtime;
 using System.IO;
-using Amazon.Runtime.Internal.Util;
-using System.Threading;
-using System.Net;
-using System.Globalization;
 using Amazon.Util;
 using System.Reflection;
 using Moq;
+using Amazon.Util.Internal;
 
 namespace AWSSDK.UnitTests
 {
@@ -45,12 +36,29 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(userAgentValue);
 
             //The user-agent will have a format similar to one of the following depending on OS and version of .NET:
-            //aws-sdk-dotnet-45/ aws-sdk-dotnet-core/3.3.31.7 .NET_Runtime/4.0 .NET_Framework/4.0 OS/Microsoft_Windows_NT_10.0.17134.0
             //aws-sdk-dotnet-coreclr/ aws-sdk-dotnet-core/3.3.31.8 .NET_Core/4.6.27129.04 OS/Microsoft_Windows_10.0.17134
-            var regex = new System.Text.RegularExpressions.Regex("aws-sdk-dotnet-.+aws-sdk-dotnet-core/");
+            var regex = new System.Text.RegularExpressions.Regex("aws-sdk-dotnet-.+md/aws-sdk-dotnet-core#");
             Assert.IsTrue(regex.IsMatch(userAgentValue));
         }
-        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void TestNewUserAgentValue()
+        {
+            var metadataType = typeof(AWSSDKUtils);
+            var fi = metadataType.GetField("_userAgent", BindingFlags.NonPublic | BindingFlags.Static);
+            var userAgentValue = fi.GetValue(null) as string;
+            Assert.IsNotNull(userAgentValue);
+
+            //The user-agent will have a format similar to one of the following depending on OS and version of .NET:
+            //"aws-sdk-dotnet-45/3.7.300.16 md/aws-sdk-dotnet-core#3.7.300.16 ua/2.0 os/windows#6.2.9200.0 lang/.NET_Runtime#4.0 md/.NET_Framework#4.8.09037"
+            var regexStr = @"aws-sdk-dotnet-([^ ]+) +ua/([\d.]+) +os/([^ ]+) +lang/.+#([\d.]+) +md/.NET_Framework#([\d.]+) .+";
+            var regex = new System.Text.RegularExpressions.Regex(regexStr);
+            Assert.IsTrue(regex.IsMatch(userAgentValue), $"User agent \"{userAgentValue}\" fails regex \"{regexStr}\"");
+            Assert.IsTrue(userAgentValue.Contains("md/aws-sdk-dotnet-core#"));
+        }
+
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]

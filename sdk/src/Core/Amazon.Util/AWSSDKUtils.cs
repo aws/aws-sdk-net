@@ -86,7 +86,7 @@ namespace Amazon.Util
 
         private const int DefaultMarshallerVersion = 2;
 
-        private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty);
+        private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty, string.Empty);
 
 #endregion
 
@@ -1540,7 +1540,16 @@ namespace Amazon.Util
             {
                 foreach (var header in headers)
                 {
-                    request.Headers.Add(header.Key, header.Value);
+                    // HttpWebRequest requires that UserAgent be set via the explicit property instead of using the headers collection.
+                    // If you use the Headers collection an exception will be thrown.
+                    if(string.Equals(header.Key, HeaderKeys.UserAgentHeader, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        request.UserAgent = header.Value;
+                    }
+                    else
+                    {
+                        request.Headers.Add(header.Key, header.Value);
+                    }
                 }
             }
 

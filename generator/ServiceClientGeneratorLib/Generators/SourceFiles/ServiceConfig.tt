@@ -22,7 +22,7 @@ namespace <#=this.Config.Namespace#>
     public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("<#=this.Config.ServiceFileVersion #>");
+            InternalSDKUtils.BuildUserAgentString("<#=this.Config.ServiceId #>", "<#=this.Config.ServiceFileVersion #>");
 
         private string _userAgent = UserAgentString;
         ///<summary>

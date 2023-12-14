@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Custom.Net45", "test\UnitTests\AWSSDK.UnitTests.Custom.Net45.csproj", "{1D7483FA-07C1-49C8-8716-1C100748D382}"
 EndProject
@@ -45,6 +45,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BearerTokenAuthTest.Net45", "test\Services\BearerTokenAuthTest\AWSSDK.BearerTokenAuthTest.Net45.csproj", "{033B52EA-A8ED-4FFD-9F27-027DA720EC2A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.Net45", "src\Services\CloudWatch\AWSSDK.CloudWatch.Net45.csproj", "{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSO.Net45", "src\Services\SSO\AWSSDK.SSO.Net45.csproj", "{685155AC-D4AE-41ED-A76E-388D0F66D6F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,6 +130,10 @@ Global
 		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685155AC-D4AE-41ED-A76E-388D0F66D6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685155AC-D4AE-41ED-A76E-388D0F66D6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685155AC-D4AE-41ED-A76E-388D0F66D6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685155AC-D4AE-41ED-A76E-388D0F66D6F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{AD3F4E3E-C215-47DA-B14D-01DEB04A8F27} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 		{033B52EA-A8ED-4FFD-9F27-027DA720EC2A} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
+		{685155AC-D4AE-41ED-A76E-388D0F66D6F8} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBAD3467-3B24-41C1-898E-1B34BB9931DE}

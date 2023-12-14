@@ -171,7 +171,7 @@ namespace Amazon.Glacier.Transfer
                 if (wsArgs != null)
                 {
                     string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                    wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " ArchiveTransferManager/" + this.operation;
+                    wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " ft/ArchiveTransferManager md/" + this.operation;
                 }
             }
         }

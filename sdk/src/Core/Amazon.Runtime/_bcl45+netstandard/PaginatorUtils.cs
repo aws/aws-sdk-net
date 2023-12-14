@@ -8,7 +8,7 @@ namespace Amazon.Runtime
     {
         public static void SetUserAgentAdditionOnRequest(AmazonWebServiceRequest request)
         {
-            request.UserAgentAddition = $" Paginator";
+            request.UserAgentAddition = $" ft/paginator";
         }
     }
 }

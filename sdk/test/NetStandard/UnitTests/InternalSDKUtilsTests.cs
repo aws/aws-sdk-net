@@ -21,7 +21,7 @@ namespace AWSSDK_NetStandard.UnitTests
 
             var platform = InternalSDKUtils.PlatformUserAgent();
             Assert.NotEqual("Unknown", platform);
-            Assert.False(platform.Contains(" "));
+            Assert.True(platform.Contains("md/ARCH"));
         }
                 
         [Theory]

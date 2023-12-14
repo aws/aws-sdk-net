@@ -21,6 +21,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Runtime.CredentialManagement
 {
@@ -67,6 +68,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string IgnoreConfiguredEndpointUrlsField = "ignore_configured_endpoint_urls";
         private const string DisableRequestCompressionField = "disable_request_compression";
         private const string RequestMinCompressionSizeBytesField = "request_min_compression_size_bytes";
+        private const string ClientAppIdField = "sdk_ua_app_id";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -98,6 +100,7 @@ namespace Amazon.Runtime.CredentialManagement
             IgnoreConfiguredEndpointUrlsField,
             DisableRequestCompressionField,
             RequestMinCompressionSizeBytesField,
+            ClientAppIdField,
         };
 
         /// <summary>
@@ -430,6 +433,9 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.RequestMinCompressionSizeBytes != null)
                 reservedProperties[RequestMinCompressionSizeBytesField] = profile.RequestMinCompressionSizeBytes.ToString().ToLowerInvariant();
+
+            if (profile.ClientAppId != null)
+                reservedProperties[ClientAppIdField] = profile.ClientAppId;
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -902,6 +908,16 @@ namespace Amazon.Runtime.CredentialManagement
                     requestMinCompressionSizeBytes = requestMinCompressionSizeBytesOut;
                 }
 
+                string clientAppId = null;
+                if (reservedProperties.TryGetValue(ClientAppIdField, out clientAppId))
+                {
+                    if (clientAppId != null && clientAppId.Length > EnvironmentVariableInternalConfiguration.AWS_SDK_UA_APP_ID_MAX_LENGTH)
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Warning: Client app id in profile {0} exceeds recommended maximum length of {1} characters: \"{2}\"",
+                            profileName, EnvironmentVariableInternalConfiguration.AWS_SDK_UA_APP_ID_MAX_LENGTH, clientAppId);
+                    }
+                }
+
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -925,7 +941,8 @@ namespace Amazon.Runtime.CredentialManagement
                     IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls,
                     EndpointUrl = endpointUrlString,
                     DisableRequestCompression = disableRequestCompression,
-                    RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes
+                    RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes,
+                    ClientAppId = clientAppId
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

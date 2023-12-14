@@ -74,7 +74,7 @@ namespace Amazon.S3.Transfer.Internal
             {
                 string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
                 wsArgs.Headers[AWSSDKUtils.UserAgentHeader] =
-                    currentUserAgent + " TransferManager/" + this.GetType().Name;
+                    currentUserAgent + " ft/s3-transfer md/" + this.GetType().Name;
             }
         }
     }

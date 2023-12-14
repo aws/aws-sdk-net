@@ -274,6 +274,12 @@ namespace Amazon.Runtime
         long RequestMinCompressionSizeBytes { get; }
 
         /// <summary>
+        /// Customers can opt-in to provide an app id that is intended to identify their applications
+        /// in the user agent header string. The value should have a maximum length of 50.
+        /// </summary>
+        string ClientAppId { get; }
+
+        /// <summary>
         /// Configures a flag enabling to either opt in or opt out of the retry throttling service.
         /// Note: set value to true to enable retry throttling feature. The Default value for this flag is false.
         /// </summary>

@@ -46,7 +46,7 @@ namespace Amazon.S3.IO
             if (wsArgs != null)
             {
                 string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " FileIO";
+                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " ft/FileIO";
             }
         }
 

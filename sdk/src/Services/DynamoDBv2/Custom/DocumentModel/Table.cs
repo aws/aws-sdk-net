@@ -309,17 +309,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
             if (wsArgs != null)
             {
+                var feature = string.Format(" ft/ddb-hll md/{0} md/{1}", this.TableConsumer, (isAsync ? "TableAsync" : "TableSync"));
                 if (wsArgs.Headers.Keys.Contains(HeaderKeys.UserAgentHeader))
                 {
                     string currentUserAgent = wsArgs.Headers[HeaderKeys.UserAgentHeader];
-                    wsArgs.Headers[HeaderKeys.UserAgentHeader] =
-                    currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
+                    wsArgs.Headers[HeaderKeys.UserAgentHeader] = currentUserAgent + feature;
                 }
                 else if (wsArgs.Headers.Keys.Contains(HeaderKeys.XAmzUserAgentHeader))
                 {
                     string currentUserAgent = wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader];
-                    wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] =
-                        currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
+                    wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] = currentUserAgent + feature;
                 }
             }
         }

@@ -82,6 +82,7 @@ namespace Amazon.Util
 
         private static ReaderWriterLockSlim metadataLock = new ReaderWriterLockSlim(); // Lock to control getting metadata across multiple threads.
         private static readonly TimeSpan metadataLockTimeout = TimeSpan.FromMilliseconds(5000);
+        private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty, string.Empty);
 
         /// <summary>
         /// Base endpoint of the instance metadata service. Returns the endpoint configured first 
@@ -653,6 +654,7 @@ namespace Amazon.Util
                     var uriForToken = new Uri(EC2ApiTokenUrl);
 
                     var headers = new Dictionary<string, string>();
+                    headers.Add(HeaderKeys.UserAgentHeader, _userAgent);
                     headers.Add(HeaderKeys.XAwsEc2MetadataTokenTtlSeconds, DEFAULT_APITOKEN_TTL.ToString(CultureInfo.InvariantCulture));
                     var content = AWSSDKUtils.ExecuteHttpRequest(uriForToken, "PUT", null, TimeSpan.FromSeconds(5), Proxy, headers);
                     return content.Trim();
@@ -715,15 +717,16 @@ namespace Amazon.Util
             var items = new List<string>();
             //For all meta-data queries we need to fetch an api token to use. In the event a 
             //token cannot be obtained we will fallback to not using a token.
-            Dictionary<string, string> headers = null;
-            if(token == null)
+            if (token == null)
             {
                 token = FetchApiToken(DEFAULT_RETRIES);    
             }
 
+            var headers = new Dictionary<string, string>();
+            headers.Add(HeaderKeys.UserAgentHeader, _userAgent);
+
             if (!string.IsNullOrEmpty(token))
             {
-                headers = new Dictionary<string, string>();
                 headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
             }
 
