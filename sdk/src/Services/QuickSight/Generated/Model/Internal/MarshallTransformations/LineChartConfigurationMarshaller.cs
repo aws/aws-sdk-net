@@ -197,6 +197,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSingleAxisOptions())
+            {
+                context.Writer.WritePropertyName("SingleAxisOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SingleAxisOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SingleAxisOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSmallMultiplesOptions())
             {
                 context.Writer.WritePropertyName("SmallMultiplesOptions");

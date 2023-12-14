@@ -29,31 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A structure that describes the Amazon S3 settings to use to save the generated dashboard
-    /// snapshot.
+    /// The sort configuration of a scatter plot.
     /// </summary>
-    public partial class SnapshotS3DestinationConfiguration
+    public partial class ScatterPlotSortConfiguration
     {
-        private S3BucketConfiguration _bucketConfiguration;
+        private ItemsLimitConfiguration _scatterPlotLimitConfiguration;
 
         /// <summary>
-        /// Gets and sets the property BucketConfiguration. 
-        /// <para>
-        /// A structure that contains details about the Amazon S3 bucket that the generated dashboard
-        /// snapshot is saved in.
-        /// </para>
+        /// Gets and sets the property ScatterPlotLimitConfiguration.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public S3BucketConfiguration BucketConfiguration
+        public ItemsLimitConfiguration ScatterPlotLimitConfiguration
         {
-            get { return this._bucketConfiguration; }
-            set { this._bucketConfiguration = value; }
+            get { return this._scatterPlotLimitConfiguration; }
+            set { this._scatterPlotLimitConfiguration = value; }
         }
 
-        // Check to see if BucketConfiguration property is set
-        internal bool IsSetBucketConfiguration()
+        // Check to see if ScatterPlotLimitConfiguration property is set
+        internal bool IsSetScatterPlotLimitConfiguration()
         {
-            return this._bucketConfiguration != null;
+            return this._scatterPlotLimitConfiguration != null;
         }
 
     }

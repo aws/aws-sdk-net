@@ -506,8 +506,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// The Amazon Web Services Region for the account is derived from what is configured
-        /// in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South
-        /// America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. 
+        /// in the CLI or SDK.
         /// </para>
         ///  
         /// <para>
@@ -591,8 +590,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// The Amazon Web Services Region for the account is derived from what is configured
-        /// in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South
-        /// America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. 
+        /// in the CLI or SDK.
         /// </para>
         ///  
         /// <para>
@@ -14393,6 +14391,89 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateDashboardResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDashboardLinks
+
+
+        /// <summary>
+        /// Updates the linked analyses on a dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDashboardLinks service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDashboardLinks service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">REST API Reference for UpdateDashboardLinks Operation</seealso>
+        public virtual UpdateDashboardLinksResponse UpdateDashboardLinks(UpdateDashboardLinksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDashboardLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDashboardLinksResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDashboardLinksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the linked analyses on a dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDashboardLinks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDashboardLinks service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">REST API Reference for UpdateDashboardLinks Operation</seealso>
+        public virtual Task<UpdateDashboardLinksResponse> UpdateDashboardLinksAsync(UpdateDashboardLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDashboardLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDashboardLinksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDashboardLinksResponse>(request, options, cancellationToken);
         }
 
         #endregion

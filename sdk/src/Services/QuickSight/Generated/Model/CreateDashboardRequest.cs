@@ -50,6 +50,7 @@ namespace Amazon.QuickSight.Model
         private DashboardPublishOptions _dashboardPublishOptions;
         private DashboardVersionDefinition _definition;
         private List<string> _folderArns = new List<string>();
+        private List<string> _linkEntities = new List<string>();
         private LinkSharingConfiguration _linkSharingConfiguration;
         private string _name;
         private Parameters _parameters;
@@ -182,6 +183,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFolderArns()
         {
             return this._folderArns != null && this._folderArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkEntities. 
+        /// <para>
+        /// A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<string> LinkEntities
+        {
+            get { return this._linkEntities; }
+            set { this._linkEntities = value; }
+        }
+
+        // Check to see if LinkEntities property is set
+        internal bool IsSetLinkEntities()
+        {
+            return this._linkEntities != null && this._linkEntities.Count > 0; 
         }
 
         /// <summary>

@@ -212,8 +212,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// The Amazon Web Services Region for the account is derived from what is configured
-        /// in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South
-        /// America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. 
+        /// in the CLI or SDK.
         /// </para>
         ///  
         /// <para>
@@ -9919,6 +9918,67 @@ namespace Amazon.QuickSight
         /// <returns>Returns a  UpdateDashboardResult from QuickSight.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         UpdateDashboardResponse EndUpdateDashboard(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDashboardLinks
+
+
+        /// <summary>
+        /// Updates the linked analyses on a dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDashboardLinks service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDashboardLinks service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">REST API Reference for UpdateDashboardLinks Operation</seealso>
+        UpdateDashboardLinksResponse UpdateDashboardLinks(UpdateDashboardLinksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDashboardLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDashboardLinks operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDashboardLinks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">REST API Reference for UpdateDashboardLinks Operation</seealso>
+        IAsyncResult BeginUpdateDashboardLinks(UpdateDashboardLinksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDashboardLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDashboardLinks.</param>
+        /// 
+        /// <returns>Returns a  UpdateDashboardLinksResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">REST API Reference for UpdateDashboardLinks Operation</seealso>
+        UpdateDashboardLinksResponse EndUpdateDashboardLinks(IAsyncResult asyncResult);
 
         #endregion
         

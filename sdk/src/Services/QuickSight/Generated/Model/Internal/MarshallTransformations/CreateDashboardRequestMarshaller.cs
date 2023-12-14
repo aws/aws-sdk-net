@@ -104,6 +104,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLinkEntities())
+                {
+                    context.Writer.WritePropertyName("LinkEntities");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLinkEntitiesListValue in publicRequest.LinkEntities)
+                    {
+                            context.Writer.Write(publicRequestLinkEntitiesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLinkSharingConfiguration())
                 {
                     context.Writer.WritePropertyName("LinkSharingConfiguration");

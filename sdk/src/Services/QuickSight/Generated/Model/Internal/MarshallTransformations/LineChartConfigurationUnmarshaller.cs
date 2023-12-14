@@ -135,6 +135,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Series = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SingleAxisOptions", targetDepth))
+                {
+                    var unmarshaller = SingleAxisOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SingleAxisOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SmallMultiplesOptions", targetDepth))
                 {
                     var unmarshaller = SmallMultiplesOptionsUnmarshaller.Instance;

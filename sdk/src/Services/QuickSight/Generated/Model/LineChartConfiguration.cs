@@ -45,6 +45,7 @@ namespace Amazon.QuickSight.Model
         private LineSeriesAxisDisplayOptions _secondaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _secondaryYAxisLabelOptions;
         private List<SeriesItem> _series = new List<SeriesItem>();
+        private SingleAxisOptions _singleAxisOptions;
         private SmallMultiplesOptions _smallMultiplesOptions;
         private LineChartSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
@@ -271,6 +272,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSeries()
         {
             return this._series != null && this._series.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleAxisOptions.
+        /// </summary>
+        public SingleAxisOptions SingleAxisOptions
+        {
+            get { return this._singleAxisOptions; }
+            set { this._singleAxisOptions = value; }
+        }
+
+        // Check to see if SingleAxisOptions property is set
+        internal bool IsSetSingleAxisOptions()
+        {
+            return this._singleAxisOptions != null;
         }
 
         /// <summary>

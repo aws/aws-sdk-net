@@ -29,31 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A structure that describes the Amazon S3 settings to use to save the generated dashboard
-    /// snapshot.
+    /// The settings of a chart's single axis configuration.
     /// </summary>
-    public partial class SnapshotS3DestinationConfiguration
+    public partial class SingleAxisOptions
     {
-        private S3BucketConfiguration _bucketConfiguration;
+        private YAxisOptions _yAxisOptions;
 
         /// <summary>
-        /// Gets and sets the property BucketConfiguration. 
+        /// Gets and sets the property YAxisOptions. 
         /// <para>
-        /// A structure that contains details about the Amazon S3 bucket that the generated dashboard
-        /// snapshot is saved in.
+        /// The Y axis options of a single axis configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public S3BucketConfiguration BucketConfiguration
+        public YAxisOptions YAxisOptions
         {
-            get { return this._bucketConfiguration; }
-            set { this._bucketConfiguration = value; }
+            get { return this._yAxisOptions; }
+            set { this._yAxisOptions = value; }
         }
 
-        // Check to see if BucketConfiguration property is set
-        internal bool IsSetBucketConfiguration()
+        // Check to see if YAxisOptions property is set
+        internal bool IsSetYAxisOptions()
         {
-            return this._bucketConfiguration != null;
+            return this._yAxisOptions != null;
         }
 
     }

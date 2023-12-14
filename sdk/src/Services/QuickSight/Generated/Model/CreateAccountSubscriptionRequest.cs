@@ -35,8 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// The Amazon Web Services Region for the account is derived from what is configured
-    /// in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South
-    /// America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. 
+    /// in the CLI or SDK.
     /// </para>
     ///  
     /// <para>

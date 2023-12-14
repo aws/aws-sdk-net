@@ -141,6 +141,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecondaryYAxisLabelOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SingleAxisOptions", targetDepth))
+                {
+                    var unmarshaller = SingleAxisOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SingleAxisOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SortConfiguration", targetDepth))
                 {
                     var unmarshaller = ComboChartSortConfigurationUnmarshaller.Instance;

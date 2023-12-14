@@ -78,6 +78,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSortConfiguration())
+            {
+                context.Writer.WritePropertyName("SortConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ScatterPlotSortConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SortConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTooltip())
             {
                 context.Writer.WritePropertyName("Tooltip");

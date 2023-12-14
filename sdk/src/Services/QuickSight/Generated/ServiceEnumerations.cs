@@ -9399,6 +9399,52 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type SingleYAxisOption.
+    /// </summary>
+    public class SingleYAxisOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIMARY_Y_AXIS for SingleYAxisOption
+        /// </summary>
+        public static readonly SingleYAxisOption PRIMARY_Y_AXIS = new SingleYAxisOption("PRIMARY_Y_AXIS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SingleYAxisOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SingleYAxisOption FindValue(string value)
+        {
+            return FindValue<SingleYAxisOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SingleYAxisOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SmallMultiplesAxisPlacement.
     /// </summary>
     public class SmallMultiplesAxisPlacement : ConstantClass

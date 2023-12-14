@@ -81,6 +81,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Legend = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SortConfiguration", targetDepth))
+                {
+                    var unmarshaller = ScatterPlotSortConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tooltip", targetDepth))
                 {
                     var unmarshaller = TooltipOptionsUnmarshaller.Instance;

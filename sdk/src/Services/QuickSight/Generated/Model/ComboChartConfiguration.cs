@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         private List<ReferenceLine> _referenceLines = new List<ReferenceLine>();
         private AxisDisplayOptions _secondaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _secondaryYAxisLabelOptions;
+        private SingleAxisOptions _singleAxisOptions;
         private ComboChartSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
         private VisualPalette _visualPalette;
@@ -312,6 +313,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSecondaryYAxisLabelOptions()
         {
             return this._secondaryYAxisLabelOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleAxisOptions.
+        /// </summary>
+        public SingleAxisOptions SingleAxisOptions
+        {
+            get { return this._singleAxisOptions; }
+            set { this._singleAxisOptions = value; }
+        }
+
+        // Check to see if SingleAxisOptions property is set
+        internal bool IsSetSingleAxisOptions()
+        {
+            return this._singleAxisOptions != null;
         }
 
         /// <summary>
