@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Information about the AWS S3 Glue Data Catalog.
+    /// Information about the Amazon S3 Glue Data Catalog.
     /// </summary>
     public partial class S3GlueDataCatalog
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role ARN for the AWS S3 Glue Data Catalog.
+        /// &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

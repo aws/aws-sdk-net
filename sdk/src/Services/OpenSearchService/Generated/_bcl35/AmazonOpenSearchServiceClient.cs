@@ -344,7 +344,9 @@ namespace Amazon.OpenSearchService
         #region  AddDataSource
 
         /// <summary>
-        /// Adds the data source on the domain.
+        /// Creates a new direct-query data source to the specified domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Creating
+        /// Amazon OpenSearch Service data source integrations with Amazon S3</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDataSource service method.</param>
         /// 
@@ -1002,7 +1004,8 @@ namespace Amazon.OpenSearchService
         #region  DeleteDataSource
 
         /// <summary>
-        /// Deletes the data source.
+        /// Deletes a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html">Deleting
+        /// an Amazon OpenSearch Service data source with Amazon S3</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// 
@@ -2572,7 +2575,7 @@ namespace Amazon.OpenSearchService
         #region  GetDataSource
 
         /// <summary>
-        /// Describes the data source details.
+        /// Retrieves information about a direct query data source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
         /// 
@@ -2926,7 +2929,9 @@ namespace Amazon.OpenSearchService
         #region  ListDataSources
 
         /// <summary>
-        /// A list of the data source details of the domain.
+        /// Lists direct-query data sources for a specific domain. For more information, see For
+        /// more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html">Working
+        /// with Amazon OpenSearch Service direct queries with Amazon S3</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// 
@@ -4151,7 +4156,8 @@ namespace Amazon.OpenSearchService
         #region  UpdateDataSource
 
         /// <summary>
-        /// Updates the data source on the domain.
+        /// Updates a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working
+        /// with Amazon OpenSearch Service data source integrations with Amazon S3</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// 

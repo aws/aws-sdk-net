@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message associated with the initiated request.
+        /// A message associated with deletion of the data source.
         /// </para>
         /// </summary>
         public string Message

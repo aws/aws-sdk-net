@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSources operation.
-    /// A list of the data source details of the domain.
+    /// Lists direct-query data sources for a specific domain. For more information, see For
+    /// more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html">Working
+    /// with Amazon OpenSearch Service direct queries with Amazon S3</a>.
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonOpenSearchServiceRequest
     {

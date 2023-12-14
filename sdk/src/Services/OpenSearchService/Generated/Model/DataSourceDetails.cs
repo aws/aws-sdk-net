@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Details about the data sources.
+    /// Details about a direct-query data source.
     /// </summary>
     public partial class DataSourceDetails
     {

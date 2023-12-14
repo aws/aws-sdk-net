@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataSource operation.
-    /// Describes the data source details.
+    /// Retrieves information about a direct query data source.
     /// </summary>
     public partial class GetDataSourceRequest : AmazonOpenSearchServiceRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data source.
+        /// The name of the data source to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=80)]

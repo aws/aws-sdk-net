@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataSource operation.
-    /// Deletes the data source.
+    /// Deletes a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html">Deleting
+    /// an Amazon OpenSearch Service data source with Amazon S3</a>.
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonOpenSearchServiceRequest
     {
@@ -59,7 +60,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data source.
+        /// The name of the data source to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=80)]

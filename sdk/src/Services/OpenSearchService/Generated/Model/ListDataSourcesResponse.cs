@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// A list of the data sources.
+        /// A list of data sources associated with specified domain.
         /// </para>
         /// </summary>
         public List<DataSourceDetails> DataSources

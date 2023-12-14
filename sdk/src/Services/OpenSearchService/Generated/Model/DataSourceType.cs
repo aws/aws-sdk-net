@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Information about the data source.
+    /// The type of data source.
     /// </summary>
     public partial class DataSourceType
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property S3GlueDataCatalog. 
         /// <para>
-        /// The data source for the AWS S3 Glue Data Catalog.
+        /// An Amazon S3 data source.
         /// </para>
         /// </summary>
         public S3GlueDataCatalog S3GlueDataCatalog

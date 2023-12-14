@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates the data source on the domain.
+    /// Updates a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working
+    /// with Amazon OpenSearch Service data source integrations with Amazon S3</a>.
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonOpenSearchServiceRequest
     {
@@ -61,7 +62,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the data source.
+        /// A new description of the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -99,7 +100,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data source.
+        /// The name of the data source to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=80)]

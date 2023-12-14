@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the AddDataSource operation.
-    /// Adds the data source on the domain.
+    /// Creates a new direct-query data source to the specified domain. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Creating
+    /// Amazon OpenSearch Service data source integrations with Amazon S3</a>.
     /// </summary>
     public partial class AddDataSourceRequest : AmazonOpenSearchServiceRequest
     {
@@ -80,7 +82,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain.
+        /// The name of the domain to add the data source to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
@@ -99,7 +101,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data source.
+        /// A name for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=80)]
