@@ -206,20 +206,20 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK()
-        /// within the time expected. Check your game session log to see why InitSDK() was not
-        /// called in time.
+        /// SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code>
+        /// within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code>
+        /// was not called in time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady()
-        /// within the time expected after calling InitSDK(). Check your game session log to see
-        /// why ProcessReady() was not called in time.
+        /// SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code>
+        /// within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your
+        /// game session log to see why <code>ProcessReady()</code> was not called in time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding().
-        /// Check your game session log to see why ProcessEnding() was not called.
+        /// SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>.
+        /// Check your game session log to see why <code>ProcessEnding()</code> was not called.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -229,15 +229,15 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate()
-        /// was sent within the time expected. Check your game session log to see why termination
-        /// took longer than expected.
+        /// SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within
+        /// the time expected after <code>OnProcessTerminate()</code> was sent. Check your game
+        /// session log to see why termination took longer than expected.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within
-        /// the time expected after calling ProcessEnding(). Check your game session log to see
-        /// why termination took longer than expected.
+        /// the time expected (30 seconds) after calling <code>ProcessEnding()</code>. Check your
+        /// game session log to see why termination took longer than expected.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -246,8 +246,8 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         /// GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected
-        /// time. Check your game session log to see why ActivateGameSession() took longer to
-        /// complete than expected.
+        /// time. Check your game session log to see why <code>ActivateGameSession()</code> took
+        /// longer to complete than expected.
         /// </para>
         ///  </li> </ul> 
         /// <para>

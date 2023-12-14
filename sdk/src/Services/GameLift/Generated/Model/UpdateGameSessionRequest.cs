@@ -49,11 +49,36 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class UpdateGameSessionRequest : AmazonGameLiftRequest
     {
+        private List<GameProperty> _gameProperties = new List<GameProperty>();
         private string _gameSessionId;
         private int? _maximumPlayerSessionCount;
         private string _name;
         private PlayerSessionCreationPolicy _playerSessionCreationPolicy;
         private ProtectionPolicy _protectionPolicy;
+
+        /// <summary>
+        /// Gets and sets the property GameProperties. 
+        /// <para>
+        /// A set of key-value pairs that can store custom data in a game session. For example:
+        /// <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter
+        /// to modify game properties in an active game session. This action adds new properties
+        /// and modifies existing properties. There is no way to delete properties. For an example,
+        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+        /// the value of a game property</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=16)]
+        public List<GameProperty> GameProperties
+        {
+            get { return this._gameProperties; }
+            set { this._gameProperties = value; }
+        }
+
+        // Check to see if GameProperties property is set
+        internal bool IsSetGameProperties()
+        {
+            return this._gameProperties != null && this._gameProperties.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property GameSessionId. 

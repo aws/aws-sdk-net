@@ -9127,12 +9127,10 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// This operation is not designed to be continually called to track game session status.
-        /// This practice can cause you to exceed your API limit, which results in errors. Instead,
-        /// you must configure configure an Amazon Simple Notification Service (SNS) topic to
-        /// receive notifications from FlexMatch or queues. Continuously polling game session
-        /// status with <code>DescribeGameSessions</code> should only be used for games in development
-        /// with low game session usage. 
+        /// This operation is not designed to continually track game session status because that
+        /// practice can cause you to exceed your API limit and generate errors. Instead, configure
+        /// an Amazon Simple Notification Service (Amazon SNS) topic to receive notifications
+        /// from a matchmaker or game session placement queue.
         /// </para>
         ///  
         /// <para>
@@ -9169,7 +9167,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// You can search or sort by the following game session attributes:
+        /// To set search and sort criteria, create a filter expression using the following game
+        /// session attributes. For game session search examples, see the Examples section of
+        /// this topic.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -9183,12 +9183,21 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>gameSessionProperties</b> -- Custom data defined in a game session's <code>GameProperty</code>
-        /// parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter
-        /// expression must indicate the key and a string to search the data values for. For example,
-        /// to search for game sessions with custom data containing the key:value pair "gameMode:brawl",
-        /// specify the following: <code>gameSessionProperties.gameMode = "brawl"</code>. All
-        /// custom data values are searched as strings.
+        ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
+        /// in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.
+        /// The filter expression must specify the <a>GameProperty</a> -- a <code>Key</code> and
+        /// a string <code>Value</code> to search for the game sessions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, to search for the above key-value pair, specify the following search
+        /// filter: <code>gameSessionProperties.difficulty = "novice"</code>. All game property
+        /// values are searched as strings.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For examples of searching game sessions, see the ones below, and also see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
+        /// game sessions by game property</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

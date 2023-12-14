@@ -67,6 +67,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGameProperties())
+                {
+                    context.Writer.WritePropertyName("GameProperties");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GamePropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGamePropertiesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetGameSessionId())
                 {
                     context.Writer.WritePropertyName("GameSessionId");

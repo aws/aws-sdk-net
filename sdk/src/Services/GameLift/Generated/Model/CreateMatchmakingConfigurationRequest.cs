@@ -246,12 +246,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameProperties. 
         /// <para>
-        /// A set of custom properties for a game session, formatted as key:value pairs. These
-        /// properties are passed to a game server process with a request to start a new game
-        /// session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>). This information is added to the new <code>GameSession</code>
-        /// object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code>
-        /// is set to <code>STANDALONE</code>.
+        /// A set of key-value pairs that can store custom data in a game session. For example:
+        /// <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to
+        /// the new <code>GameSession</code> object that is created for a successful match. This
+        /// parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
