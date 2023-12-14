@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 #if !BCL35
 using Amazon.Runtime.Credentials.Internal;
 #endif
@@ -328,7 +329,8 @@ namespace Amazon.Runtime.CredentialManagement
                     {
                         var ssoCredentialsOptions = new SSOAWSCredentialsOptions 
                         { 
-                            SessionName = options.SsoSession 
+                            SessionName = options.SsoSession,
+                            Scopes = options.SsoRegistrationScopes?.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToList()
                         };
 
                         return new SSOAWSCredentials(
