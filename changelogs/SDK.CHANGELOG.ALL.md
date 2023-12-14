@@ -1,3 +1,34 @@
+### 3.7.709.0 (2023-12-14 19:31 UTC)
+* AppStream (3.7.301.0)
+	* This release includes support for images of Windows Server 2022 platform.
+* B2bi (3.7.300.10)
+	* Documentation updates for AWS B2B Data Interchange
+* BillingConductor (3.7.302.0)
+	* Billing Conductor is releasing a new API, GetBillingGroupCostReport, which provides the ability to retrieve/view the Billing Group Cost Report broken down by attributes for a specific billing group.
+* Connect (3.7.305.0)
+	* This release adds support for more granular billing using tags (key:value pairs)
+* ControlTower (3.7.303.10)
+	* Documentation updates for AWS Control Tower.
+* GameLift (3.7.301.0)
+	* Amazon GameLift adds the ability to add and update the game properties of active game sessions.
+* IoT (3.7.303.0)
+	* This release adds the ability to self-manage certificate signing in AWS IoT Core fleet provisioning using the new certificate provider resource.
+* KinesisFirehose (3.7.301.0)
+	* This release, 1) adds configurable buffering hints for the Splunk destination, and 2) reduces the minimum configurable buffering interval for supported destinations
+* NeptuneGraph (3.7.300.0)
+	* This is the initial SDK release for Amazon Neptune Analytics
+* OpenSearchService (3.7.302.0)
+	* Updating documentation for Amazon OpenSearch Service support for new zero-ETL integration with Amazon S3.
+* QuickSight (3.7.303.0)
+	* Update Dashboard Links support; SingleAxisOptions support; Scatterplot Query limit support.
+* WorkSpaces (3.7.301.11)
+	* Updated note to ensure customers understand running modes.
+* Core 3.7.300.19
+	* Update endpoint resolution logic in all services to allow the combination of the ServiceURL and AuthenticationRegion on the client config to drive the SDK's internal endpoint selection logic. This is necessary when working with Amazon S3 buckets on Snowball Edge devices.
+	* Update format of user agent string to be consistent with other AWS SDKs
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.708.0 (2023-12-13 19:47 UTC)
 * Drs (3.7.301.0)
 	* Adding AgentVersion to SourceServer and RecoveryInstance structures

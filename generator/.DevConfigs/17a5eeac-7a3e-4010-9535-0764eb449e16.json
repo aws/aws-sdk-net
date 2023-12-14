@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Update endpoint resolution logic in all services to allow the combination of the ServiceURL and AuthenticationRegion on the client config to drive the SDK's internal endpoint selection logic. This is necessary when working with Amazon S3 buckets on Snowball Edge devices."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-}
