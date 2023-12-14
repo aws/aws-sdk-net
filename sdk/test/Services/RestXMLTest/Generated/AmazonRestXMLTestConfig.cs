@@ -32,7 +32,7 @@ namespace Amazon.RestXMLTest
     public partial class AmazonRestXMLTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("Rest-XML-Test", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

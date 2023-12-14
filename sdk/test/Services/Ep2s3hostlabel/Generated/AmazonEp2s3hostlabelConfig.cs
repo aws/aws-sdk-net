@@ -32,7 +32,7 @@ namespace Amazon.Ep2s3hostlabel
     public partial class AmazonEp2s3hostlabelConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("Ep2-s3-host-label", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

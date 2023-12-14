@@ -32,7 +32,7 @@ namespace Amazon.DocumentTypesTest
     public partial class AmazonDocumentTypesTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("Document-Types-Test", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

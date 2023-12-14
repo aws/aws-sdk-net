@@ -32,7 +32,7 @@ namespace Amazon.UseServiceIdTestserviceId
     public partial class AmazonUseServiceIdTestserviceIdConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("Use Service Id Test - service Id", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

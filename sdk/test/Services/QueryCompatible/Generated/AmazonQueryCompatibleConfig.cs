@@ -32,7 +32,7 @@ namespace Amazon.QueryCompatible
     public partial class AmazonQueryCompatibleConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("AWSQueryCompatible", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

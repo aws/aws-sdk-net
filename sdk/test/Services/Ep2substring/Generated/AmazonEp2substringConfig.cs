@@ -32,7 +32,7 @@ namespace Amazon.Ep2substring
     public partial class AmazonEp2substringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("Ep2-substring", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

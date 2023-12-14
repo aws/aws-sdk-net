@@ -32,7 +32,7 @@ namespace Amazon.Ep2parsearn
     public partial class AmazonEp2parsearnConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3");
+            InternalSDKUtils.BuildUserAgentString("Ep2-parse-arn", "3.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>
