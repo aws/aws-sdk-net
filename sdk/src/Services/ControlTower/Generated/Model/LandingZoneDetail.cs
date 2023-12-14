@@ -99,8 +99,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The landing zone <code>manifest.yaml</code> text file that specifies the landing zone
-        /// configurations. 
+        /// The landing zone manifest JSON text file that specifies the landing zone configurations.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
