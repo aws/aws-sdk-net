@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the initial SDK release for Amazon Neptune Analytics",
+  "generate-client-constructors": true
+}
