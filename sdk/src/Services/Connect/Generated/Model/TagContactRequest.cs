@@ -29,15 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateUseCase operation.
-    /// Creates a use case for an integration association.
+    /// Container for the parameters to the TagContact operation.
+    /// Adds the specified tags to the contact resource. For more information about this API
+    /// is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
+    /// up granular billing for a detailed view of your Amazon Connect usage</a>.
     /// </summary>
-    public partial class CreateUseCaseRequest : AmazonConnectRequest
+    public partial class TagContactRequest : AmazonConnectRequest
     {
+        private string _contactId;
         private string _instanceId;
-        private string _integrationAssociationId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private UseCaseType _useCaseType;
+
+        /// <summary>
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string ContactId
+        {
+            get { return this._contactId; }
+            set { this._contactId = value; }
+        }
+
+        // Check to see if ContactId property is set
+        internal bool IsSetContactId()
+        {
+            return this._contactId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -60,32 +80,18 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntegrationAssociationId. 
-        /// <para>
-        /// The identifier for the integration association.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
-        public string IntegrationAssociationId
-        {
-            get { return this._integrationAssociationId; }
-            set { this._integrationAssociationId = value; }
-        }
-
-        // Check to see if IntegrationAssociationId property is set
-        internal bool IsSetIntegrationAssociationId()
-        {
-            return this._integrationAssociationId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource. For example,
-        /// { "Tags": {"key1":"value1", "key2":"value2"} }.
+        /// The tags to be assigned to the contact resource. For example, { "Tags": {"key1":"value1",
+        /// "key2":"value2"} }.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Authorization is not supported by this tag.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=6)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -96,26 +102,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property UseCaseType. 
-        /// <para>
-        /// The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public UseCaseType UseCaseType
-        {
-            get { return this._useCaseType; }
-            set { this._useCaseType = value; }
-        }
-
-        // Check to see if UseCaseType property is set
-        internal bool IsSetUseCaseType()
-        {
-            return this._useCaseType != null;
         }
 
     }

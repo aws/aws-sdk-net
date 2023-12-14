@@ -48,6 +48,7 @@ namespace Amazon.Connect.Model
         private QueueInfo _queueInfo;
         private string _relatedContactId;
         private DateTime? _scheduledTimestamp;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private WisdomInfo _wisdomInfo;
 
         /// <summary>
@@ -332,6 +333,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTimestamp()
         {
             return this._scheduledTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags associated with the contact. This contains both Amazon Web Services generated
+        /// and user-defined tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

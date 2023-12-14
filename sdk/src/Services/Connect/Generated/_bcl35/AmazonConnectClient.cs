@@ -14004,6 +14004,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  TagContact
+
+        /// <summary>
+        /// Adds the specified tags to the contact resource. For more information about this API
+        /// is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
+        /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagContact service method.</param>
+        /// 
+        /// <returns>The response from the TagContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact">REST API Reference for TagContact Operation</seealso>
+        public virtual TagContactResponse TagContact(TagContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagContactResponseUnmarshaller.Instance;
+
+            return Invoke<TagContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact">REST API Reference for TagContact Operation</seealso>
+        public virtual IAsyncResult BeginTagContact(TagContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagContact.</param>
+        /// 
+        /// <returns>Returns a  TagContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact">REST API Reference for TagContact Operation</seealso>
+        public virtual TagContactResponse EndTagContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -14189,6 +14260,77 @@ namespace Amazon.Connect
         public virtual TransferContactResponse EndTransferContact(IAsyncResult asyncResult)
         {
             return EndInvoke<TransferContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagContact
+
+        /// <summary>
+        /// Removes the specified tags from the contact resource. For more information about this
+        /// API is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
+        /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagContact service method.</param>
+        /// 
+        /// <returns>The response from the UntagContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact">REST API Reference for UntagContact Operation</seealso>
+        public virtual UntagContactResponse UntagContact(UntagContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagContactResponseUnmarshaller.Instance;
+
+            return Invoke<UntagContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact">REST API Reference for UntagContact Operation</seealso>
+        public virtual IAsyncResult BeginUntagContact(UntagContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagContact.</param>
+        /// 
+        /// <returns>Returns a  UntagContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact">REST API Reference for UntagContact Operation</seealso>
+        public virtual UntagContactResponse EndUntagContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagContactResponse>(asyncResult);
         }
 
         #endregion

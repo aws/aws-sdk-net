@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property UserTags. 
         /// <para>
         /// The tags used to organize, track, or control access for this resource. For example,
-        /// { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified
+        /// { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified
         /// tags will be notified.
         /// </para>
         /// </summary>
