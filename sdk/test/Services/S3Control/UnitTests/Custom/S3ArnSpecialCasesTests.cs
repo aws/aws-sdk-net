@@ -109,5 +109,33 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("op-01234567890123456", marshalledRequest.Headers["x-amz-outpost-id"]);
             Assert.AreEqual("123456789012", marshalledRequest.Headers["x-amz-account-id"]);
         }
+
+        /// <summary>
+        /// Using S3 Control with Snowball Edge requires setting both a custom serviceURL and
+        /// region to "snow" to invoke the correct endpoint rule. Since we don't allow both, this verifies
+        /// that substituting AuthenticationRegion with "snow" results in the correct endpoint.
+        /// https://docs.aws.amazon.com/snowball/latest/developer-guide/working-s3-snow-buckets.html
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3Control")]
+        [TestCategory("UnitTest")]
+        public void SnowballEdgeTest()
+        {
+            var s3ControlConfig = new AmazonS3ControlConfig
+            {
+                AuthenticationRegion ="snow",
+                ServiceURL = "https://192.168.1.1"
+            };
+
+            var listRegionalBucketsRequest = new ListRegionalBucketsRequest()
+            {
+                AccountId = "012345678910"
+            };
+
+            var marshalledRequest = S3ControlArnTestUtils.RunMockRequest(listRegionalBucketsRequest, ListRegionalBucketsRequestMarshaller.Instance, s3ControlConfig);
+            Assert.AreEqual(new Uri("https://192.168.1.1"), marshalledRequest.Endpoint);
+            Assert.AreEqual("012345678910", marshalledRequest.Headers["x-amz-account-id"]);
+            Assert.IsTrue(marshalledRequest.Headers["Authorization"].Contains("snow")); // signing region should be "snow"
+        }
     }
 }

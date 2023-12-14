@@ -16,14 +16,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 using Amazon.S3Control;
 using Amazon.S3Control.Internal;
-using System;
+using AWSSDK.UnitTests.Mocking;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static AWSSDK.UnitTests.Mocking.TestUtils;
 
 namespace AWSSDK.UnitTests
 {
@@ -31,56 +28,16 @@ namespace AWSSDK.UnitTests
     {
         public static IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, AmazonS3ControlConfig config)
         {
-            var pipeline = new RuntimePipeline(new List<IPipelineHandler>
+            var pipelineHandlers = new List<IPipelineHandler>
             {
                 new NoopPipelineHandler(),
+                new Signer(),
                 new AmazonS3ControlEndpointResolver(),
                 new Marshaller()
-            });
-
-            var requestContext = new RequestContext(config.LogMetrics, new AWS4Signer())
-            {
-                ClientConfig = config,
-                Marshaller = marshaller,
-                OriginalRequest = request,
-                Unmarshaller = null,
-                IsAsync = false
             };
-            var executionContext = new ExecutionContext(
-                requestContext,
-                new ResponseContext()
-            );
-
-            pipeline.InvokeSync(executionContext);
-
-            return requestContext.Request;
-        }
-
-        public class NoopPipelineHandler : IPipelineHandler
-        {
-            public ILogger Logger { get; set; }
-            public IPipelineHandler InnerHandler { get; set; }
-            public IPipelineHandler OuterHandler { get; set; }
-
-            public void AsyncCallback(IAsyncExecutionContext executionContext)
-            {
-            }
-
-            public IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-            {
-                return null;
-            }
 
 
-            public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
-                where T : AmazonWebServiceResponse, new()
-            {
-                return null;
-            }
-
-            public void InvokeSync(IExecutionContext executionContext)
-            {
-            }
+            return TestUtils.RunMockRequest(pipelineHandlers, request, marshaller, null, config, new AWS4Signer());
         }
     }
 }
