@@ -33,6 +33,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class SplunkDestinationUpdate
     {
+        private SplunkBufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private int? _hecAcknowledgmentTimeoutInSeconds;
         private string _hecEndpoint;
@@ -42,6 +43,25 @@ namespace Amazon.KinesisFirehose.Model
         private SplunkRetryOptions _retryOptions;
         private SplunkS3BackupMode _s3BackupMode;
         private S3DestinationUpdate _s3Update;
+
+        /// <summary>
+        /// Gets and sets the property BufferingHints. 
+        /// <para>
+        /// The buffering options. If no value is specified, the default values for Splunk are
+        /// used.
+        /// </para>
+        /// </summary>
+        public SplunkBufferingHints BufferingHints
+        {
+            get { return this._bufferingHints; }
+            set { this._bufferingHints = value; }
+        }
+
+        // Check to see if BufferingHints property is set
+        internal bool IsSetBufferingHints()
+        {
+            return this._bufferingHints != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 

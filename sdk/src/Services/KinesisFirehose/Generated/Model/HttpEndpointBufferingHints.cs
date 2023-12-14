@@ -47,7 +47,7 @@ namespace Amazon.KinesisFirehose.Model
         /// it to the destination. The default value is 300 (5 minutes). 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=900)]
+        [AWSProperty(Min=0, Max=900)]
         public int IntervalInSeconds
         {
             get { return this._intervalInSeconds.GetValueOrDefault(); }

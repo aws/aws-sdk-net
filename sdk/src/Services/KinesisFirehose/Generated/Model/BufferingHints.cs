@@ -49,7 +49,7 @@ namespace Amazon.KinesisFirehose.Model
         /// and vice versa.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=900)]
+        [AWSProperty(Min=0, Max=900)]
         public int IntervalInSeconds
         {
             get { return this._intervalInSeconds.GetValueOrDefault(); }

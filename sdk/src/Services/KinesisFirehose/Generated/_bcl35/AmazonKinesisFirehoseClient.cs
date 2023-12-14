@@ -827,6 +827,10 @@ namespace Amazon.KinesisFirehose
         /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
         /// <code>DisabledException</code>, or <code>NotFoundException</code>.
         /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidSourceException">
+        /// Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression
+        /// is enabled.
+        /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
@@ -925,6 +929,10 @@ namespace Amazon.KinesisFirehose
         /// or stop delivery stream encryption fails. This happens when the KMS service throws
         /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
         /// <code>DisabledException</code>, or <code>NotFoundException</code>.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidSourceException">
+        /// Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression
+        /// is enabled.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1092,6 +1100,10 @@ namespace Amazon.KinesisFirehose
         /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
         /// <code>DisabledException</code>, or <code>NotFoundException</code>.
         /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidSourceException">
+        /// Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression
+        /// is enabled.
+        /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
@@ -1218,6 +1230,10 @@ namespace Amazon.KinesisFirehose
         /// or stop delivery stream encryption fails. This happens when the KMS service throws
         /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
         /// <code>DisabledException</code>, or <code>NotFoundException</code>.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidSourceException">
+        /// Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression
+        /// is enabled.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.

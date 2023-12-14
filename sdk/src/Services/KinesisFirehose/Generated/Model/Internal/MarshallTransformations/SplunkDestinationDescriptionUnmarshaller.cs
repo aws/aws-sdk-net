@@ -63,6 +63,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BufferingHints", targetDepth))
+                {
+                    var unmarshaller = SplunkBufferingHintsUnmarshaller.Instance;
+                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
