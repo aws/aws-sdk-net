@@ -31,9 +31,8 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the CreatePartnership operation.
     /// Creates a partnership between a customer and a trading partner, based on the supplied
-    /// parameters. Partnerships link trading partners with your profile and a specific transformer,
-    /// so that the EDI (electronic data interchange) documents that they upload to Amazon
-    /// S3 can be processed according to their specifications.
+    /// parameters. A partnership represents the connection between you and your trading partner.
+    /// It ties together a profile and one or more trading capabilities.
     /// </summary>
     public partial class CreatePartnershipRequest : AmazonB2biRequest
     {

@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.B2bi.Model
 {
     /// <summary>
-    /// A structure that contains the details for a partnership. Partnerships link trading
-    /// partners with your profile and a specific transformer, so that the EDI (electronic
-    /// data interchange) documents that they upload to Amazon S3 can be processed according
-    /// to their specifications.
+    /// A structure that contains the details for a partnership. A partnership represents
+    /// the connection between you and your trading partner. It ties together a profile and
+    /// one or more trading capabilities.
     /// </summary>
     public partial class PartnershipSummary
     {

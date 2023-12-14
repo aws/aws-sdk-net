@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.B2bi.Model
 {
     /// <summary>
-    /// Returns the capability summary details. Capabilities contain the information necessary
-    /// to process incoming EDI (electronic data interchange) documents.
+    /// Returns the capability summary details. A trading capability contains the information
+    /// required to transform incoming EDI documents into JSON or XML outputs.
     /// </summary>
     public partial class CapabilitySummary
     {

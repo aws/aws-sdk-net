@@ -30,8 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTransformers operation.
-    /// Lists the available transformers. Transformers describe how to process the incoming
-    /// EDI (electronic data interchange) documents, and extract the necessary information.
+    /// Lists the available transformers. A transformer describes how to process the incoming
+    /// EDI documents and extract the necessary information to the output file.
     /// </summary>
     public partial class ListTransformersRequest : AmazonB2biRequest
     {

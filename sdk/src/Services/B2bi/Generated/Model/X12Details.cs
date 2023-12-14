@@ -31,6 +31,14 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// A structure that contains the X12 transaction set and version. The X12 structure is
     /// used when the system transforms an EDI (electronic data interchange) file.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If an EDI input file contains more than one transaction, each transaction must have
+    /// the same transaction set and version, for example 214/4010. If not, the transformer
+    /// cannot parse the file.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class X12Details
     {

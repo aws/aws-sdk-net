@@ -31,8 +31,8 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the ListCapabilities operation.
     /// Lists the capabilities associated with your Amazon Web Services account for your current
-    /// or specified region. Capabilities contain the information necessary to process incoming
-    /// EDI (electronic data interchange) documents.
+    /// or specified region. A trading capability contains the information required to transform
+    /// incoming EDI documents into JSON or XML outputs.
     /// </summary>
     public partial class ListCapabilitiesRequest : AmazonB2biRequest
     {

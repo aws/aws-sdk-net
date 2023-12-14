@@ -31,7 +31,8 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the ListProfiles operation.
     /// Lists the profiles associated with your Amazon Web Services account for your current
-    /// or specified region. Profiles contain basic information about you and your business.
+    /// or specified region. A profile is the mechanism used to create the concept of a private
+    /// network.
     /// </summary>
     public partial class ListProfilesRequest : AmazonB2biRequest
     {

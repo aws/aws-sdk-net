@@ -31,8 +31,8 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the UpdateCapability operation.
     /// Updates some of the parameters for a capability, based on the specified parameters.
-    /// Capabilities contain the information necessary to process incoming EDI (electronic
-    /// data interchange) documents.
+    /// A trading capability contains the information required to transform incoming EDI documents
+    /// into JSON or XML outputs.
     /// </summary>
     public partial class UpdateCapabilityRequest : AmazonB2biRequest
     {

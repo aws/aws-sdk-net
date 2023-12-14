@@ -285,8 +285,9 @@ namespace Amazon.B2bi
         #region  CreateCapability
 
         /// <summary>
-        /// Instantiates a capability based on the specified parameters. Capabilities contain
-        /// the information necessary to process incoming EDI (electronic data interchange) documents.
+        /// Instantiates a capability based on the specified parameters. A trading capability
+        /// contains the information required to transform incoming EDI documents into JSON or
+        /// XML outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapability service method.</param>
         /// 
@@ -368,9 +369,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Creates a partnership between a customer and a trading partner, based on the supplied
-        /// parameters. Partnerships link trading partners with your profile and a specific transformer,
-        /// so that the EDI (electronic data interchange) documents that they upload to Amazon
-        /// S3 can be processed according to their specifications.
+        /// parameters. A partnership represents the connection between you and your trading partner.
+        /// It ties together a profile and one or more trading capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePartnership service method.</param>
         /// 
@@ -452,8 +452,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Creates a customer profile. You can have up to five customer profiles, each representing
-        /// a distinct private network. Profiles contain basic information about you and your
-        /// business.
+        /// a distinct private network. A profile is the mechanism used to create the concept
+        /// of a private network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
         /// 
@@ -534,8 +534,8 @@ namespace Amazon.B2bi
         #region  CreateTransformer
 
         /// <summary>
-        /// Creates a transformer. Transformers describe how to process the incoming EDI (electronic
-        /// data interchange) documents, and extract the necessary information.
+        /// Creates a transformer. A transformer describes how to process the incoming EDI documents
+        /// and extract the necessary information to the output file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransformer service method.</param>
         /// 
@@ -616,8 +616,8 @@ namespace Amazon.B2bi
         #region  DeleteCapability
 
         /// <summary>
-        /// Deletes the specified capability. Capabilities contain the information necessary to
-        /// process incoming EDI (electronic data interchange) documents.
+        /// Deletes the specified capability. A trading capability contains the information required
+        /// to transform incoming EDI documents into JSON or XML outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCapability service method.</param>
         /// 
@@ -693,9 +693,8 @@ namespace Amazon.B2bi
         #region  DeletePartnership
 
         /// <summary>
-        /// Deletes the specified partnership. Partnerships link trading partners with your profile
-        /// and a specific transformer, so that the EDI (electronic data interchange) documents
-        /// that they upload to Amazon S3 can be processed according to their specifications.
+        /// Deletes the specified partnership. A partnership represents the connection between
+        /// you and your trading partner. It ties together a profile and one or more trading capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePartnership service method.</param>
         /// 
@@ -771,8 +770,8 @@ namespace Amazon.B2bi
         #region  DeleteProfile
 
         /// <summary>
-        /// Deletes the specified profile. Profiles contain basic information about you and your
-        /// business.
+        /// Deletes the specified profile. A profile is the mechanism used to create the concept
+        /// of a private network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
         /// 
@@ -848,8 +847,8 @@ namespace Amazon.B2bi
         #region  DeleteTransformer
 
         /// <summary>
-        /// Deletes the specified transformer. Transformers describe how to process the incoming
-        /// EDI (electronic data interchange) documents, and extract the necessary information.
+        /// Deletes the specified transformer. A transformer describes how to process the incoming
+        /// EDI documents and extract the necessary information to the output file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTransformer service method.</param>
         /// 
@@ -925,8 +924,8 @@ namespace Amazon.B2bi
         #region  GetCapability
 
         /// <summary>
-        /// Retrieves the details for the specified capability. Capabilities contain the information
-        /// necessary to process incoming EDI (electronic data interchange) documents.
+        /// Retrieves the details for the specified capability. A trading capability contains
+        /// the information required to transform incoming EDI documents into JSON or XML outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCapability service method.</param>
         /// 
@@ -999,9 +998,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Retrieves the details for a partnership, based on the partner and profile IDs specified.
-        /// Partnerships link trading partners with your profile and a specific transformer, so
-        /// that the EDI (electronic data interchange) documents that they upload to Amazon S3
-        /// can be processed according to their specifications.
+        /// A partnership represents the connection between you and your trading partner. It ties
+        /// together a profile and one or more trading capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPartnership service method.</param>
         /// 
@@ -1073,8 +1071,8 @@ namespace Amazon.B2bi
         #region  GetProfile
 
         /// <summary>
-        /// Retrieves the details for the profile specified by the profile ID. Profiles contain
-        /// basic information about you and your business.
+        /// Retrieves the details for the profile specified by the profile ID. A profile is the
+        /// mechanism used to create the concept of a private network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfile service method.</param>
         /// 
@@ -1146,9 +1144,9 @@ namespace Amazon.B2bi
         #region  GetTransformer
 
         /// <summary>
-        /// Retrieves the details for the transformer specified by the transformer ID. Transformers
-        /// describe how to process the incoming EDI (electronic data interchange) documents,
-        /// and extract the necessary information.
+        /// Retrieves the details for the transformer specified by the transformer ID. A transformer
+        /// describes how to process the incoming EDI documents and extract the necessary information
+        /// to the output file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTransformer service method.</param>
         /// 
@@ -1293,8 +1291,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Lists the capabilities associated with your Amazon Web Services account for your current
-        /// or specified region. Capabilities contain the information necessary to process incoming
-        /// EDI (electronic data interchange) documents.
+        /// or specified region. A trading capability contains the information required to transform
+        /// incoming EDI documents into JSON or XML outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCapabilities service method.</param>
         /// 
@@ -1349,9 +1347,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Lists the partnerships associated with your Amazon Web Services account for your current
-        /// or specified region. Partnerships link trading partners with your profile and a specific
-        /// transformer, so that the EDI (electronic data interchange) documents that they upload
-        /// to Amazon S3 can be processed according to their specifications.
+        /// or specified region. A partnership represents the connection between you and your
+        /// trading partner. It ties together a profile and one or more trading capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPartnerships service method.</param>
         /// 
@@ -1424,7 +1421,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Lists the profiles associated with your Amazon Web Services account for your current
-        /// or specified region. Profiles contain basic information about you and your business.
+        /// or specified region. A profile is the mechanism used to create the concept of a private
+        /// network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
         /// 
@@ -1540,8 +1538,8 @@ namespace Amazon.B2bi
         #region  ListTransformers
 
         /// <summary>
-        /// Lists the available transformers. Transformers describe how to process the incoming
-        /// EDI (electronic data interchange) documents, and extract the necessary information.
+        /// Lists the available transformers. A transformer describes how to process the incoming
+        /// EDI documents and extract the necessary information to the output file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransformers service method.</param>
         /// 
@@ -1597,6 +1595,14 @@ namespace Amazon.B2bi
         /// <summary>
         /// Runs a job, using a transformer, to parse input EDI (electronic data interchange)
         /// file into the output structures used by Amazon Web Services B2BI Data Interchange.
+        /// 
+        ///  
+        /// <para>
+        /// If you only want to transform EDI (electronic data interchange) documents, you don't
+        /// need to create profiles, partnerships or capabilities. Just create and configure a
+        /// transformer, and then run the <code>StartTransformerJob</code> API to process your
+        /// files.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTransformerJob service method.</param>
         /// 
@@ -1739,7 +1745,9 @@ namespace Amazon.B2bi
         #region  TestMapping
 
         /// <summary>
-        /// Maps the input file according to the provided template file.
+        /// Maps the input file according to the provided template file. The API call downloads
+        /// the file contents from the Amazon S3 location, and passes the contents in as a string,
+        /// to the <code>inputFileContent</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestMapping service method.</param>
         /// 
@@ -1947,8 +1955,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Updates some of the parameters for a capability, based on the specified parameters.
-        /// Capabilities contain the information necessary to process incoming EDI (electronic
-        /// data interchange) documents.
+        /// A trading capability contains the information required to transform incoming EDI documents
+        /// into JSON or XML outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapability service method.</param>
         /// 
@@ -2030,9 +2038,8 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Updates some of the parameters for a partnership between a customer and trading partner.
-        /// Partnerships link trading partners with your profile and a specific transformer, so
-        /// that the EDI (electronic data interchange) documents that they upload to Amazon S3
-        /// can be processed according to their specifications.
+        /// A partnership represents the connection between you and your trading partner. It ties
+        /// together a profile and one or more trading capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePartnership service method.</param>
         /// 
@@ -2113,8 +2120,8 @@ namespace Amazon.B2bi
         #region  UpdateProfile
 
         /// <summary>
-        /// Updates the specified parameters for a profile. Profiles contain basic information
-        /// about you and your business.
+        /// Updates the specified parameters for a profile. A profile is the mechanism used to
+        /// create the concept of a private network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
         /// 
@@ -2195,9 +2202,9 @@ namespace Amazon.B2bi
         #region  UpdateTransformer
 
         /// <summary>
-        /// Updates the specified parameters for a transformer. Transformers describe how to process
-        /// the incoming EDI (electronic data interchange) documents, and extract the necessary
-        /// information.
+        /// Updates the specified parameters for a transformer. A transformer describes how to
+        /// process the incoming EDI documents and extract the necessary information to the output
+        /// file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTransformer service method.</param>
         /// 

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.B2bi.Model
 {
     /// <summary>
-    /// Contains the details for a profile. Profiles contain basic information about you and
-    /// your business.
+    /// Contains the details for a profile. A profile is the mechanism used to create the
+    /// concept of a private network.
     /// </summary>
     public partial class ProfileSummary
     {

@@ -30,9 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePartnership operation.
-    /// Deletes the specified partnership. Partnerships link trading partners with your profile
-    /// and a specific transformer, so that the EDI (electronic data interchange) documents
-    /// that they upload to Amazon S3 can be processed according to their specifications.
+    /// Deletes the specified partnership. A partnership represents the connection between
+    /// you and your trading partner. It ties together a profile and one or more trading capabilities.
     /// </summary>
     public partial class DeletePartnershipRequest : AmazonB2biRequest
     {

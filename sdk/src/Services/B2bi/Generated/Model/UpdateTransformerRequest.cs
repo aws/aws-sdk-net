@@ -30,9 +30,9 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTransformer operation.
-    /// Updates the specified parameters for a transformer. Transformers describe how to process
-    /// the incoming EDI (electronic data interchange) documents, and extract the necessary
-    /// information.
+    /// Updates the specified parameters for a transformer. A transformer describes how to
+    /// process the incoming EDI documents and extract the necessary information to the output
+    /// file.
     /// </summary>
     public partial class UpdateTransformerRequest : AmazonB2biRequest
     {

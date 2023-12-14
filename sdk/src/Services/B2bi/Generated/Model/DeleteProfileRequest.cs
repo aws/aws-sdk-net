@@ -30,8 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProfile operation.
-    /// Deletes the specified profile. Profiles contain basic information about you and your
-    /// business.
+    /// Deletes the specified profile. A profile is the mechanism used to create the concept
+    /// of a private network.
     /// </summary>
     public partial class DeleteProfileRequest : AmazonB2biRequest
     {

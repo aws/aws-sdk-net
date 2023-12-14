@@ -30,8 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCapability operation.
-    /// Deletes the specified capability. Capabilities contain the information necessary to
-    /// process incoming EDI (electronic data interchange) documents.
+    /// Deletes the specified capability. A trading capability contains the information required
+    /// to transform incoming EDI documents into JSON or XML outputs.
     /// </summary>
     public partial class DeleteCapabilityRequest : AmazonB2biRequest
     {

@@ -30,7 +30,9 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the TestMapping operation.
-    /// Maps the input file according to the provided template file.
+    /// Maps the input file according to the provided template file. The API call downloads
+    /// the file contents from the Amazon S3 location, and passes the contents in as a string,
+    /// to the <code>inputFileContent</code> parameter.
     /// </summary>
     public partial class TestMappingRequest : AmazonB2biRequest
     {
@@ -61,7 +63,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property InputFileContent. 
         /// <para>
-        /// Specify the EDI (electronic data interchange) file that is used as input for the transform.
+        /// Specify the contents of the EDI (electronic data interchange) XML or JSON file that
+        /// is used as input for the transform.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200000)]

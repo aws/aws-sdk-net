@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.B2bi.Model
 {
     /// <summary>
-    /// Contains the details for a transformer object. Transformers describe how to process
-    /// the incoming EDI (electronic data interchange) documents, and extract the necessary
-    /// information.
+    /// Contains the details for a transformer object. A transformer describes how to process
+    /// the incoming EDI documents and extract the necessary information to the output file.
     /// </summary>
     public partial class TransformerSummary
     {

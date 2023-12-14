@@ -31,8 +31,8 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the CreateProfile operation.
     /// Creates a customer profile. You can have up to five customer profiles, each representing
-    /// a distinct private network. Profiles contain basic information about you and your
-    /// business.
+    /// a distinct private network. A profile is the mechanism used to create the concept
+    /// of a private network.
     /// </summary>
     public partial class CreateProfileRequest : AmazonB2biRequest
     {

@@ -30,8 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// A capability object. Currently, only EDI (electronic data interchange) capabilities
-    /// are supported. Capabilities contain the information necessary to process incoming
-    /// EDI (electronic data interchange) documents.
+    /// are supported. A trading capability contains the information required to transform
+    /// incoming EDI documents into JSON or XML outputs.
     /// </summary>
     public partial class CapabilityConfiguration
     {

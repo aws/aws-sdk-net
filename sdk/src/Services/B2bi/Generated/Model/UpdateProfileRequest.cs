@@ -30,8 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProfile operation.
-    /// Updates the specified parameters for a profile. Profiles contain basic information
-    /// about you and your business.
+    /// Updates the specified parameters for a profile. A profile is the mechanism used to
+    /// create the concept of a private network.
     /// </summary>
     public partial class UpdateProfileRequest : AmazonB2biRequest
     {
