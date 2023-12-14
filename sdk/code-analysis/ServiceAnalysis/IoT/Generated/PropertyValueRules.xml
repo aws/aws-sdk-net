@@ -221,6 +221,33 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCertificateProviderRequest.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCertificateProviderRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+    <pattern>\S{36,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCertificateProviderRequest.LambdaFunctionArn</property>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCertificateProviderResponse.CertificateProviderArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCertificateProviderResponse.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateCustomMetricRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -843,6 +870,12 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteCertificateProviderRequest.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteCustomMetricRequest.MetricName</property>
     <min>1</min>
     <max>128</max>
@@ -1095,6 +1128,27 @@
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeCertificateProviderRequest.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeCertificateProviderResponse.CertificateProviderArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeCertificateProviderResponse.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeCertificateProviderResponse.LambdaFunctionArn</property>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeCustomMetricRequest.MetricName</property>
@@ -1867,6 +1921,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCACertificatesResponse.NextMarker</property>
+    <max>1024</max>
+    <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCertificateProvidersRequest.NextToken</property>
+    <max>1024</max>
+    <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCertificateProvidersResponse.NextToken</property>
     <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
@@ -2720,6 +2784,27 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCertificateProviderRequest.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCertificateProviderRequest.LambdaFunctionArn</property>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCertificateProviderResponse.CertificateProviderArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCertificateProviderResponse.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateCustomMetricRequest.DisplayName</property>
     <max>128</max>
   </property-value-rule>
@@ -3291,6 +3376,16 @@
     <min>12</min>
     <max>12</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CertificateProviderSummary.CertificateProviderArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CertificateProviderSummary.CertificateProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DetectMitigationActionExecution.ActionName</property>

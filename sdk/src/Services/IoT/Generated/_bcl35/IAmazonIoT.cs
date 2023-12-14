@@ -1746,6 +1746,86 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateCertificateProvider
+
+
+        /// <summary>
+        /// Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web
+        /// Services IoT Core certificate provider to customize how to sign a certificate signing
+        /// request (CSR) in IoT fleet provisioning. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+        /// certificate signing using Amazon Web Services IoT Core certificate provider</a> from
+        /// <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateProvider</a>
+        /// action.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// After you create a certificate provider, the behavior of <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+        /// <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and
+        /// all API calls to <code>CreateCertificateFromCsr</code> will invoke the certificate
+        /// provider to create the certificates. It can take up to a few minutes for this behavior
+        /// to change after a certificate provider is created.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCertificateProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateProvider">REST API Reference for CreateCertificateProvider Operation</seealso>
+        CreateCertificateProviderResponse CreateCertificateProvider(CreateCertificateProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCertificateProvider operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCertificateProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateProvider">REST API Reference for CreateCertificateProvider Operation</seealso>
+        IAsyncResult BeginCreateCertificateProvider(CreateCertificateProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCertificateProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateCertificateProviderResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateProvider">REST API Reference for CreateCertificateProvider Operation</seealso>
+        CreateCertificateProviderResponse EndCreateCertificateProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCustomMetric
 
 
@@ -4130,6 +4210,79 @@ namespace Amazon.IoT
         /// <returns>Returns a  DeleteCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCertificateProvider
+
+
+        /// <summary>
+        /// Deletes a certificate provider.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificateProvider</a>
+        /// action. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code>
+        /// will resume, and IoT will create certificates signed by IoT from a certificate signing
+        /// request (CSR).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificateProvider">REST API Reference for DeleteCertificateProvider Operation</seealso>
+        DeleteCertificateProviderResponse DeleteCertificateProvider(DeleteCertificateProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateProvider operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCertificateProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificateProvider">REST API Reference for DeleteCertificateProvider Operation</seealso>
+        IAsyncResult BeginDeleteCertificateProvider(DeleteCertificateProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCertificateProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteCertificateProviderResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificateProvider">REST API Reference for DeleteCertificateProvider Operation</seealso>
+        DeleteCertificateProviderResponse EndDeleteCertificateProvider(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6635,6 +6788,70 @@ namespace Amazon.IoT
         /// <returns>Returns a  DescribeCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         DescribeCertificateResponse EndDescribeCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCertificateProvider
+
+
+        /// <summary>
+        /// Describes a certificate provider.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificateProvider</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificateProvider service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificateProvider">REST API Reference for DescribeCertificateProvider Operation</seealso>
+        DescribeCertificateProviderResponse DescribeCertificateProvider(DescribeCertificateProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificateProvider operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificateProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificateProvider">REST API Reference for DescribeCertificateProvider Operation</seealso>
+        IAsyncResult BeginDescribeCertificateProvider(DescribeCertificateProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCertificateProvider.</param>
+        /// 
+        /// <returns>Returns a  DescribeCertificateProviderResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificateProvider">REST API Reference for DescribeCertificateProvider Operation</seealso>
+        DescribeCertificateProviderResponse EndDescribeCertificateProvider(IAsyncResult asyncResult);
 
         #endregion
         
@@ -10483,6 +10700,67 @@ namespace Amazon.IoT
         /// <returns>Returns a  ListCACertificatesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         ListCACertificatesResponse EndListCACertificates(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCertificateProviders
+
+
+        /// <summary>
+        /// Lists all your certificate providers in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificateProviders</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificateProviders service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificateProviders">REST API Reference for ListCertificateProviders Operation</seealso>
+        ListCertificateProvidersResponse ListCertificateProviders(ListCertificateProvidersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCertificateProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateProviders operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificateProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificateProviders">REST API Reference for ListCertificateProviders Operation</seealso>
+        IAsyncResult BeginListCertificateProviders(ListCertificateProvidersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCertificateProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCertificateProviders.</param>
+        /// 
+        /// <returns>Returns a  ListCertificateProvidersResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificateProviders">REST API Reference for ListCertificateProviders Operation</seealso>
+        ListCertificateProvidersResponse EndListCertificateProviders(IAsyncResult asyncResult);
 
         #endregion
         
@@ -15933,6 +16211,70 @@ namespace Amazon.IoT
         /// <returns>Returns a  UpdateCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         UpdateCertificateResponse EndUpdateCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateCertificateProvider
+
+
+        /// <summary>
+        /// Updates a certificate provider.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificateProvider</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificateProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificateProvider">REST API Reference for UpdateCertificateProvider Operation</seealso>
+        UpdateCertificateProviderResponse UpdateCertificateProvider(UpdateCertificateProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificateProvider operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCertificateProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificateProvider">REST API Reference for UpdateCertificateProvider Operation</seealso>
+        IAsyncResult BeginUpdateCertificateProvider(UpdateCertificateProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCertificateProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCertificateProvider.</param>
+        /// 
+        /// <returns>Returns a  UpdateCertificateProviderResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificateProvider">REST API Reference for UpdateCertificateProvider Operation</seealso>
+        UpdateCertificateProviderResponse EndUpdateCertificateProvider(IAsyncResult asyncResult);
 
         #endregion
         

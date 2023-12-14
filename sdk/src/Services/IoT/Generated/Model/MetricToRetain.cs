@@ -40,8 +40,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ExportMetric. 
         /// <para>
-        /// Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device
-        /// Defender Detect should export the corresponding metrics.
+        /// The value indicates exporting metrics related to the <code>MetricToRetain </code>
+        /// when it's true.
         /// </para>
         /// </summary>
         public bool ExportMetric

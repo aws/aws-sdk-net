@@ -1896,6 +1896,80 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateCertificateProvider
+
+        internal virtual CreateCertificateProviderResponse CreateCertificateProvider(CreateCertificateProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCertificateProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web
+        /// Services IoT Core certificate provider to customize how to sign a certificate signing
+        /// request (CSR) in IoT fleet provisioning. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+        /// certificate signing using Amazon Web Services IoT Core certificate provider</a> from
+        /// <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateProvider</a>
+        /// action.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// After you create a certificate provider, the behavior of <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+        /// <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and
+        /// all API calls to <code>CreateCertificateFromCsr</code> will invoke the certificate
+        /// provider to create the certificates. It can take up to a few minutes for this behavior
+        /// to change after a certificate provider is created.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCertificateProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateProvider">REST API Reference for CreateCertificateProvider Operation</seealso>
+        public virtual Task<CreateCertificateProviderResponse> CreateCertificateProviderAsync(CreateCertificateProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCertificateProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCustomMetric
 
         internal virtual CreateCustomMetricResponse CreateCustomMetric(CreateCustomMetricRequest request)
@@ -4144,6 +4218,73 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCertificateProvider
+
+        internal virtual DeleteCertificateProviderResponse DeleteCertificateProvider(DeleteCertificateProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCertificateProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a certificate provider.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificateProvider</a>
+        /// action. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code>
+        /// will resume, and IoT will create certificates signed by IoT from a certificate signing
+        /// request (CSR).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificateProvider">REST API Reference for DeleteCertificateProvider Operation</seealso>
+        public virtual Task<DeleteCertificateProviderResponse> DeleteCertificateProviderAsync(DeleteCertificateProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCertificateProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6473,6 +6614,64 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCertificateProvider
+
+        internal virtual DescribeCertificateProviderResponse DescribeCertificateProvider(DescribeCertificateProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificateProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a certificate provider.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificateProvider</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificateProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificateProvider">REST API Reference for DescribeCertificateProvider Operation</seealso>
+        public virtual Task<DescribeCertificateProviderResponse> DescribeCertificateProviderAsync(DescribeCertificateProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCertificateProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10031,6 +10230,61 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCACertificatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCertificateProviders
+
+        internal virtual ListCertificateProvidersResponse ListCertificateProviders(ListCertificateProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificateProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificateProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListCertificateProvidersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all your certificate providers in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificateProviders</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCertificateProviders service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificateProviders">REST API Reference for ListCertificateProviders Operation</seealso>
+        public virtual Task<ListCertificateProvidersResponse> ListCertificateProvidersAsync(ListCertificateProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificateProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificateProvidersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCertificateProvidersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -15107,6 +15361,64 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCertificateProvider
+
+        internal virtual UpdateCertificateProviderResponse UpdateCertificateProvider(UpdateCertificateProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCertificateProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a certificate provider.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificateProvider</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificateProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCertificateProvider service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificateProvider">REST API Reference for UpdateCertificateProvider Operation</seealso>
+        public virtual Task<UpdateCertificateProviderResponse> UpdateCertificateProviderAsync(UpdateCertificateProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCertificateProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion
