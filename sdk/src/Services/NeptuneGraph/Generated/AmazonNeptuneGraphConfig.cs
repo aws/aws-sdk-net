@@ -32,7 +32,7 @@ namespace Amazon.NeptuneGraph
     public partial class AmazonNeptuneGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Neptune Graph", "3.7.300.0");
+            InternalSDKUtils.BuildUserAgentString("Neptune Graph", "3.7.300.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>

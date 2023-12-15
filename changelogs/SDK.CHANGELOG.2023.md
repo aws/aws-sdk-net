@@ -1,3 +1,20 @@
+### 3.7.710.0 (2023-12-15 19:37 UTC)
+* Cloud9 (3.7.301.7)
+	* Updated Cloud9 API documentation for AL2023 release
+* Connect (3.7.306.0)
+	* Adds relatedContactId field to StartOutboundVoiceContact API input. Introduces PauseContact API and ResumeContact API for Task contacts. Adds pause duration, number of pauses, timestamps for last paused and resumed events to DescribeContact API response. Adds new Rule type and new Rule action.
+* ConnectCases (3.7.301.0)
+	* Increase number of fields that can be included in CaseEventIncludedData from 50 to 200
+* KeyManagementService (3.7.300.20)
+	* Documentation updates for AWS Key Management Service
+* RDS (3.7.301.15)
+	* Updates Amazon RDS documentation by adding code examples
+* SageMaker (3.7.306.0)
+	* This release 1) introduces a new API: DeleteCompilationJob , and 2) adds InfraCheckConfig for Create/Describe training job API
+* Core 3.7.300.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.709.0 (2023-12-14 19:31 UTC)
 * AppStream (3.7.301.0)
 	* This release includes support for images of Windows Server 2022 platform.
