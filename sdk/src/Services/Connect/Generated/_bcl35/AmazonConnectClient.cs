@@ -11821,6 +11821,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  PauseContact
+
+        /// <summary>
+        /// Allows pausing an ongoing task contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseContact service method.</param>
+        /// 
+        /// <returns>The response from the PauseContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">REST API Reference for PauseContact Operation</seealso>
+        public virtual PauseContactResponse PauseContact(PauseContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseContactResponseUnmarshaller.Instance;
+
+            return Invoke<PauseContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PauseContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PauseContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPauseContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">REST API Reference for PauseContact Operation</seealso>
+        public virtual IAsyncResult BeginPauseContact(PauseContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PauseContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPauseContact.</param>
+        /// 
+        /// <returns>Returns a  PauseContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">REST API Reference for PauseContact Operation</seealso>
+        public virtual PauseContactResponse EndPauseContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PauseContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutUserStatus
 
         /// <summary>
@@ -12095,6 +12174,82 @@ namespace Amazon.Connect
         public virtual ReplicateInstanceResponse EndReplicateInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplicateInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResumeContact
+
+        /// <summary>
+        /// Allows resuming a task contact in a paused state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContact service method.</param>
+        /// 
+        /// <returns>The response from the ResumeContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">REST API Reference for ResumeContact Operation</seealso>
+        public virtual ResumeContactResponse ResumeContact(ResumeContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeContactResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">REST API Reference for ResumeContact Operation</seealso>
+        public virtual IAsyncResult BeginResumeContact(ResumeContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeContact.</param>
+        /// 
+        /// <returns>Returns a  ResumeContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">REST API Reference for ResumeContact Operation</seealso>
+        public virtual ResumeContactResponse EndResumeContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResumeContactResponse>(asyncResult);
         }
 
         #endregion

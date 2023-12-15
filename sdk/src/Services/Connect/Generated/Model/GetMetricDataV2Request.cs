@@ -401,6 +401,14 @@ namespace Amazon.Connect.Model
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
         /// Feature, contact/segmentAttributes/connect:Subtype
         /// </para>
+        ///  </dd> <dt>AVG_ACTIVE_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
         ///  </dd> <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
@@ -436,7 +444,15 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.
         /// </para>
-        ///  </note> </dd> <dt>AVG_CONTACT_DURATION</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_AGENT_PAUSE_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_CONTACT_DURATION</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>

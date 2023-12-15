@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentInfo Object
+    /// Response Unmarshaller for FieldValue Object
     /// </summary>  
-    public class AgentInfoUnmarshaller : IUnmarshaller<AgentInfo, XmlUnmarshallerContext>, IUnmarshaller<AgentInfo, JsonUnmarshallerContext>
+    public class FieldValueUnmarshaller : IUnmarshaller<FieldValue, XmlUnmarshallerContext>, IUnmarshaller<FieldValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentInfo IUnmarshaller<AgentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FieldValue IUnmarshaller<FieldValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentInfo Unmarshall(JsonUnmarshallerContext context)
+        public FieldValue Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentInfo unmarshalledObject = new AgentInfo();
+            FieldValue unmarshalledObject = new FieldValue();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,22 +63,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.AgentPauseDurationInSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedToAgentTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = FieldValueUnionUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,12 +80,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentInfoUnmarshaller _instance = new AgentInfoUnmarshaller();        
+        private static FieldValueUnmarshaller _instance = new FieldValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentInfoUnmarshaller Instance
+        public static FieldValueUnmarshaller Instance
         {
             get
             {

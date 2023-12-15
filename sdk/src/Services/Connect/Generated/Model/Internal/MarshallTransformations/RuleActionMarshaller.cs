@@ -62,6 +62,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCreateCaseAction())
+            {
+                context.Writer.WritePropertyName("CreateCaseAction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateCaseActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateCaseAction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEndAssociatedTasksAction())
+            {
+                context.Writer.WritePropertyName("EndAssociatedTasksAction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EndAssociatedTasksActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.EndAssociatedTasksAction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEventBridgeAction())
             {
                 context.Writer.WritePropertyName("EventBridgeAction");
@@ -91,6 +113,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
                 var marshaller = TaskActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TaskAction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetUpdateCaseAction())
+            {
+                context.Writer.WritePropertyName("UpdateCaseAction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateCaseActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.UpdateCaseAction, context);
 
                 context.Writer.WriteObjectEnd();
             }

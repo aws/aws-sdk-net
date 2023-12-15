@@ -75,6 +75,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssignContactCategoryAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreateCaseAction", targetDepth))
+                {
+                    var unmarshaller = CreateCaseActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.CreateCaseAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndAssociatedTasksAction", targetDepth))
+                {
+                    var unmarshaller = EndAssociatedTasksActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.EndAssociatedTasksAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EventBridgeAction", targetDepth))
                 {
                     var unmarshaller = EventBridgeActionDefinitionUnmarshaller.Instance;
@@ -91,6 +103,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TaskActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.TaskAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateCaseAction", targetDepth))
+                {
+                    var unmarshaller = UpdateCaseActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.UpdateCaseAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

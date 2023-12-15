@@ -67,9 +67,13 @@ namespace Amazon.Connect.Model
         private string _campaignId;
         private string _clientToken;
         private string _contactFlowId;
+        private string _description;
         private string _destinationPhoneNumber;
         private string _instanceId;
+        private string _name;
         private string _queueId;
+        private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private string _relatedContactId;
         private string _sourcePhoneNumber;
         private TrafficType _trafficType;
 
@@ -186,6 +190,26 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the voice contact that is shown to an agent in the Contact Control
+        /// Panel (CCP).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DestinationPhoneNumber. 
         /// <para>
         /// The phone number of the customer, in E.164 format.
@@ -225,6 +249,26 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of a voice contact that is shown to an agent in the Contact Control Panel
+        /// (CCP).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=512)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueId. 
         /// <para>
         /// The queue for the call. If you specify a queue, the phone displayed for caller ID
@@ -243,6 +287,50 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueId()
         {
             return this._queueId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property References. 
+        /// <para>
+        /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Contacts
+        /// can have the following reference types at the time of creation: <code>URL</code> |
+        /// <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>.
+        /// <code>ATTACHMENT</code> is not a supported reference type during voice contact creation.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Reference> References
+        {
+            get { return this._references; }
+            set { this._references = value; }
+        }
+
+        // Check to see if References property is set
+        internal bool IsSetReferences()
+        {
+            return this._references != null && this._references.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The <code>contactId</code> that is related to this contact. Linking voice, task, or
+        /// chat by using <code>RelatedContactID</code> copies over contact attributes from the
+        /// related contact to the new contact. All updates to user-defined attributes in the
+        /// new contact are limited to the individual contact ID. There are no limits to the number
+        /// of contacts that can be linked by using <code>RelatedContactId</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RelatedContactId
+        {
+            get { return this._relatedContactId; }
+            set { this._relatedContactId = value; }
+        }
+
+        // Check to see if RelatedContactId property is set
+        internal bool IsSetRelatedContactId()
+        {
+            return this._relatedContactId != null;
         }
 
         /// <summary>

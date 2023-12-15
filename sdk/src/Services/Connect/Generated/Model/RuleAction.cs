@@ -35,9 +35,12 @@ namespace Amazon.Connect.Model
     {
         private ActionType _actionType;
         private AssignContactCategoryActionDefinition _assignContactCategoryAction;
+        private CreateCaseActionDefinition _createCaseAction;
+        private EndAssociatedTasksActionDefinition _endAssociatedTasksAction;
         private EventBridgeActionDefinition _eventBridgeAction;
         private SendNotificationActionDefinition _sendNotificationAction;
         private TaskActionDefinition _taskAction;
+        private UpdateCaseActionDefinition _updateCaseAction;
 
         /// <summary>
         /// Gets and sets the property ActionType. 
@@ -81,6 +84,51 @@ namespace Amazon.Connect.Model
         internal bool IsSetAssignContactCategoryAction()
         {
             return this._assignContactCategoryAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateCaseAction. 
+        /// <para>
+        /// Information about the create case action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+        /// | <code>OnPostChatAnalysisAvailable</code>.
+        /// </para>
+        /// </summary>
+        public CreateCaseActionDefinition CreateCaseAction
+        {
+            get { return this._createCaseAction; }
+            set { this._createCaseAction = value; }
+        }
+
+        // Check to see if CreateCaseAction property is set
+        internal bool IsSetCreateCaseAction()
+        {
+            return this._createCaseAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndAssociatedTasksAction. 
+        /// <para>
+        /// Information about the end associated tasks action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+        /// </para>
+        /// </summary>
+        public EndAssociatedTasksActionDefinition EndAssociatedTasksAction
+        {
+            get { return this._endAssociatedTasksAction; }
+            set { this._endAssociatedTasksAction = value; }
+        }
+
+        // Check to see if EndAssociatedTasksAction property is set
+        internal bool IsSetEndAssociatedTasksAction()
+        {
+            return this._endAssociatedTasksAction != null;
         }
 
         /// <summary>
@@ -151,6 +199,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetTaskAction()
         {
             return this._taskAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateCaseAction. 
+        /// <para>
+        /// Information about the update case action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code>
+        /// | <code>OnCaseUpdate</code>.
+        /// </para>
+        /// </summary>
+        public UpdateCaseActionDefinition UpdateCaseAction
+        {
+            get { return this._updateCaseAction; }
+            set { this._updateCaseAction = value; }
+        }
+
+        // Check to see if UpdateCaseAction property is set
+        internal bool IsSetUpdateCaseAction()
+        {
+            return this._updateCaseAction != null;
         }
 
     }

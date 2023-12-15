@@ -35,9 +35,17 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ActionType ASSIGN_CONTACT_CATEGORY = new ActionType("ASSIGN_CONTACT_CATEGORY");
         /// <summary>
+        /// Constant CREATE_CASE for ActionType
+        /// </summary>
+        public static readonly ActionType CREATE_CASE = new ActionType("CREATE_CASE");
+        /// <summary>
         /// Constant CREATE_TASK for ActionType
         /// </summary>
         public static readonly ActionType CREATE_TASK = new ActionType("CREATE_TASK");
+        /// <summary>
+        /// Constant END_ASSOCIATED_TASKS for ActionType
+        /// </summary>
+        public static readonly ActionType END_ASSOCIATED_TASKS = new ActionType("END_ASSOCIATED_TASKS");
         /// <summary>
         /// Constant GENERATE_EVENTBRIDGE_EVENT for ActionType
         /// </summary>
@@ -46,6 +54,10 @@ namespace Amazon.Connect
         /// Constant SEND_NOTIFICATION for ActionType
         /// </summary>
         public static readonly ActionType SEND_NOTIFICATION = new ActionType("SEND_NOTIFICATION");
+        /// <summary>
+        /// Constant UPDATE_CASE for ActionType
+        /// </summary>
+        public static readonly ActionType UPDATE_CASE = new ActionType("UPDATE_CASE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1436,6 +1448,14 @@ namespace Amazon.Connect
     public class EventSourceName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant OnCaseCreate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnCaseCreate = new EventSourceName("OnCaseCreate");
+        /// <summary>
+        /// Constant OnCaseUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnCaseUpdate = new EventSourceName("OnCaseUpdate");
         /// <summary>
         /// Constant OnContactEvaluationSubmit for EventSourceName
         /// </summary>
@@ -4926,6 +4946,10 @@ namespace Amazon.Connect
     public class SourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CASES for SourceType
+        /// </summary>
+        public static readonly SourceType CASES = new SourceType("CASES");
         /// <summary>
         /// Constant SALESFORCE for SourceType
         /// </summary>

@@ -8745,6 +8745,65 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  PauseContact
+
+        internal virtual PauseContactResponse PauseContact(PauseContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseContactResponseUnmarshaller.Instance;
+
+            return Invoke<PauseContactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows pausing an ongoing task contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PauseContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">REST API Reference for PauseContact Operation</seealso>
+        public virtual Task<PauseContactResponse> PauseContactAsync(PauseContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PauseContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutUserStatus
 
         internal virtual PutUserStatusResponse PutUserStatus(PutUserStatusRequest request)
@@ -8959,6 +9018,62 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ReplicateInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReplicateInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResumeContact
+
+        internal virtual ResumeContactResponse ResumeContact(ResumeContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeContactResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeContactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows resuming a task contact in a paused state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">REST API Reference for ResumeContact Operation</seealso>
+        public virtual Task<ResumeContactResponse> ResumeContactAsync(ResumeContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeContactResponse>(request, options, cancellationToken);
         }
 
         #endregion

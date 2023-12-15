@@ -33,8 +33,28 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class AgentInfo
     {
+        private int? _agentPauseDurationInSeconds;
         private DateTime? _connectedToAgentTimestamp;
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property AgentPauseDurationInSeconds. 
+        /// <para>
+        /// Agent pause duration for a contact in seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int AgentPauseDurationInSeconds
+        {
+            get { return this._agentPauseDurationInSeconds.GetValueOrDefault(); }
+            set { this._agentPauseDurationInSeconds = value; }
+        }
+
+        // Check to see if AgentPauseDurationInSeconds property is set
+        internal bool IsSetAgentPauseDurationInSeconds()
+        {
+            return this._agentPauseDurationInSeconds.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectedToAgentTimestamp. 

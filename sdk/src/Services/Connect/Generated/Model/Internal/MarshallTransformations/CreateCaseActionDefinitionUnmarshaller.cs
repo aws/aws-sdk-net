@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentInfo Object
+    /// Response Unmarshaller for CreateCaseActionDefinition Object
     /// </summary>  
-    public class AgentInfoUnmarshaller : IUnmarshaller<AgentInfo, XmlUnmarshallerContext>, IUnmarshaller<AgentInfo, JsonUnmarshallerContext>
+    public class CreateCaseActionDefinitionUnmarshaller : IUnmarshaller<CreateCaseActionDefinition, XmlUnmarshallerContext>, IUnmarshaller<CreateCaseActionDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentInfo IUnmarshaller<AgentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CreateCaseActionDefinition IUnmarshaller<CreateCaseActionDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentInfo Unmarshall(JsonUnmarshallerContext context)
+        public CreateCaseActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentInfo unmarshalledObject = new AgentInfo();
+            CreateCaseActionDefinition unmarshalledObject = new CreateCaseActionDefinition();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,22 +63,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth))
+                if (context.TestExpression("Fields", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.AgentPauseDurationInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<FieldValue, FieldValueUnmarshaller>(FieldValueUnmarshaller.Instance);
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedToAgentTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("TemplateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,12 +80,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentInfoUnmarshaller _instance = new AgentInfoUnmarshaller();        
+        private static CreateCaseActionDefinitionUnmarshaller _instance = new CreateCaseActionDefinitionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentInfoUnmarshaller Instance
+        public static CreateCaseActionDefinitionUnmarshaller Instance
         {
             get
             {

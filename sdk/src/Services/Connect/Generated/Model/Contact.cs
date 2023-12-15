@@ -42,6 +42,8 @@ namespace Amazon.Connect.Model
         private string _initialContactId;
         private ContactInitiationMethod _initiationMethod;
         private DateTime? _initiationTimestamp;
+        private DateTime? _lastPausedTimestamp;
+        private DateTime? _lastResumedTimestamp;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
         private string _previousContactId;
@@ -49,6 +51,8 @@ namespace Amazon.Connect.Model
         private string _relatedContactId;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _totalPauseCount;
+        private int? _totalPauseDurationInSeconds;
         private WisdomInfo _wisdomInfo;
 
         /// <summary>
@@ -223,6 +227,42 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastPausedTimestamp. 
+        /// <para>
+        /// The timestamp when the contact was last paused.
+        /// </para>
+        /// </summary>
+        public DateTime LastPausedTimestamp
+        {
+            get { return this._lastPausedTimestamp.GetValueOrDefault(); }
+            set { this._lastPausedTimestamp = value; }
+        }
+
+        // Check to see if LastPausedTimestamp property is set
+        internal bool IsSetLastPausedTimestamp()
+        {
+            return this._lastPausedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastResumedTimestamp. 
+        /// <para>
+        /// The timestamp when the contact was last resumed.
+        /// </para>
+        /// </summary>
+        public DateTime LastResumedTimestamp
+        {
+            get { return this._lastResumedTimestamp.GetValueOrDefault(); }
+            set { this._lastResumedTimestamp = value; }
+        }
+
+        // Check to see if LastResumedTimestamp property is set
+        internal bool IsSetLastResumedTimestamp()
+        {
+            return this._lastResumedTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdateTimestamp. 
         /// <para>
         /// The timestamp when contact was last updated.
@@ -353,6 +393,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalPauseCount. 
+        /// <para>
+        /// Total pause count for a contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public int TotalPauseCount
+        {
+            get { return this._totalPauseCount.GetValueOrDefault(); }
+            set { this._totalPauseCount = value; }
+        }
+
+        // Check to see if TotalPauseCount property is set
+        internal bool IsSetTotalPauseCount()
+        {
+            return this._totalPauseCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalPauseDurationInSeconds. 
+        /// <para>
+        /// Total pause duration for a contact in seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int TotalPauseDurationInSeconds
+        {
+            get { return this._totalPauseDurationInSeconds.GetValueOrDefault(); }
+            set { this._totalPauseDurationInSeconds = value; }
+        }
+
+        // Check to see if TotalPauseDurationInSeconds property is set
+        internal bool IsSetTotalPauseDurationInSeconds()
+        {
+            return this._totalPauseDurationInSeconds.HasValue; 
         }
 
         /// <summary>

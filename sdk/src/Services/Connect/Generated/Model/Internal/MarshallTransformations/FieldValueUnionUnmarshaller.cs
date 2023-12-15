@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentInfo Object
+    /// Response Unmarshaller for FieldValueUnion Object
     /// </summary>  
-    public class AgentInfoUnmarshaller : IUnmarshaller<AgentInfo, XmlUnmarshallerContext>, IUnmarshaller<AgentInfo, JsonUnmarshallerContext>
+    public class FieldValueUnionUnmarshaller : IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>, IUnmarshaller<FieldValueUnion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentInfo IUnmarshaller<AgentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FieldValueUnion IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentInfo Unmarshall(JsonUnmarshallerContext context)
+        public FieldValueUnion Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentInfo unmarshalledObject = new AgentInfo();
+            FieldValueUnion unmarshalledObject = new FieldValueUnion();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,22 +63,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth))
+                if (context.TestExpression("BooleanValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.AgentPauseDurationInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth))
+                if (context.TestExpression("DoubleValue", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedToAgentTimestamp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("EmptyValue", targetDepth))
+                {
+                    var unmarshaller = EmptyFieldValueUnmarshaller.Instance;
+                    unmarshalledObject.EmptyValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StringValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,12 +92,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentInfoUnmarshaller _instance = new AgentInfoUnmarshaller();        
+        private static FieldValueUnionUnmarshaller _instance = new FieldValueUnionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentInfoUnmarshaller Instance
+        public static FieldValueUnionUnmarshaller Instance
         {
             get
             {
