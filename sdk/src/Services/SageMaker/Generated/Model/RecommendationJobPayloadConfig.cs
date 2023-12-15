@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string SamplePayloadUrl
         {
             get { return this._samplePayloadUrl; }

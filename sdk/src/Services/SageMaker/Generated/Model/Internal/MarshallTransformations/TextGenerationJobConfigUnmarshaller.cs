@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelAccessConfig", targetDepth))
+                {
+                    var unmarshaller = ModelAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TextGenerationHyperParameters", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

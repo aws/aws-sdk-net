@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the action to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=120)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActionName
         {
             get { return this._actionName; }

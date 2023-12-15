@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// Contains a list of pipeline parameters. This list can be empty. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=200)]
         public List<Parameter> PipelineParameters
         {
             get { return this._pipelineParameters; }

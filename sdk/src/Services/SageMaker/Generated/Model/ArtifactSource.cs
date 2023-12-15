@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// The URI of the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string SourceUri
         {
             get { return this._sourceUri; }

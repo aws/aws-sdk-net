@@ -289,6 +289,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// JupyterLab: <code>&amp;redirect=JupyterLab</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=1024)]

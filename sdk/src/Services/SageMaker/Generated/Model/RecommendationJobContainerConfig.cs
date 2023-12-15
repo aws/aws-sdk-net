@@ -122,6 +122,7 @@ namespace Amazon.SageMaker.Model
         /// The framework version of the container image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=10)]
         public string FrameworkVersion
         {
             get { return this._frameworkVersion; }

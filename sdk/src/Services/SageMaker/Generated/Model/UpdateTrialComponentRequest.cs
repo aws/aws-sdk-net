@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// is updated with an identical input artifact key.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Max=60)]
         public Dictionary<string, TrialComponentArtifact> InputArtifacts
         {
             get { return this._inputArtifacts; }
@@ -131,7 +131,7 @@ namespace Amazon.SageMaker.Model
         /// is updated with an identical output artifact key.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Max=60)]
         public Dictionary<string, TrialComponentArtifact> OutputArtifacts
         {
             get { return this._outputArtifacts; }
@@ -170,7 +170,7 @@ namespace Amazon.SageMaker.Model
         /// is updated with an identical hyperparameter key.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=150)]
+        [AWSProperty(Max=300)]
         public Dictionary<string, TrialComponentParameterValue> Parameters
         {
             get { return this._parameters; }

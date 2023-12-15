@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// a batch transform job that SageMaker runs to validate your model package.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<ModelPackageValidationProfile> ValidationProfiles
         {
             get { return this._validationProfiles; }

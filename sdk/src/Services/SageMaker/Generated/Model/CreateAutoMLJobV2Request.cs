@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
-    /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+    /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
     /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
     /// </para>
     ///  </note> 

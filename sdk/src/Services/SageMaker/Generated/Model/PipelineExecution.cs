@@ -157,7 +157,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the pipeline that was executed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=2048)]
         public string PipelineArn
         {
             get { return this._pipelineArn; }
@@ -176,7 +176,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the pipeline execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=2048)]
         public string PipelineExecutionArn
         {
             get { return this._pipelineExecutionArn; }
@@ -266,7 +266,7 @@ namespace Amazon.SageMaker.Model
         /// Contains a list of pipeline parameters. This list can be empty. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=200)]
         public List<Parameter> PipelineParameters
         {
             get { return this._pipelineParameters; }

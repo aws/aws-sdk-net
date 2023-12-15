@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string FeatureName
         {
             get { return this._featureName; }
@@ -118,6 +118,7 @@ namespace Amazon.SageMaker.Model
         /// The value type of a feature. Valid values are Integral, Fractional, or String.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FeatureType FeatureType
         {
             get { return this._featureType; }

@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFileSystemConfig())
+            {
+                context.Writer.WritePropertyName("FileSystemConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FileSystemConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.FileSystemConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

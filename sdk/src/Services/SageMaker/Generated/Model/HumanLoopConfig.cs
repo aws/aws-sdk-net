@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// The length of time that a task remains available for review by human workers.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=864000)]
+        [AWSProperty(Min=1)]
         public int TaskAvailabilityLifetimeInSeconds
         {
             get { return this._taskAvailabilityLifetimeInSeconds.GetValueOrDefault(); }
@@ -179,7 +179,7 @@ namespace Amazon.SageMaker.Model
         /// seconds (1 hour).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=30, Max=28800)]
+        [AWSProperty(Min=30)]
         public int TaskTimeLimitInSeconds
         {
             get { return this._taskTimeLimitInSeconds.GetValueOrDefault(); }

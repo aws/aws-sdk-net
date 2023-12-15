@@ -132,7 +132,7 @@ namespace Amazon.SageMaker.Model
         /// The input artifacts of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Max=60)]
         public Dictionary<string, TrialComponentArtifact> InputArtifacts
         {
             get { return this._inputArtifacts; }
@@ -239,7 +239,7 @@ namespace Amazon.SageMaker.Model
         /// The output artifacts of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Max=60)]
         public Dictionary<string, TrialComponentArtifact> OutputArtifacts
         {
             get { return this._outputArtifacts; }
@@ -258,7 +258,7 @@ namespace Amazon.SageMaker.Model
         /// The hyperparameters of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=150)]
+        [AWSProperty(Max=300)]
         public Dictionary<string, TrialComponentParameterValue> Parameters
         {
             get { return this._parameters; }

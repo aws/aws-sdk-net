@@ -155,7 +155,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=2048)]
         public string PipelineArn
         {
             get { return this._pipelineArn; }

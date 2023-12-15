@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// configuration when you create a compilation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=16384)]
         public string DerivedDataInputConfig
         {
             get { return this._derivedDataInputConfig; }

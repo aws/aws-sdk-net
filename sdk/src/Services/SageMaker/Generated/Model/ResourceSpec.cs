@@ -109,7 +109,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SageMakerImageVersionAlias. 
         /// <para>
-        /// The SageMakerImageVersionAlias.
+        /// The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer
+        /// 2.0.0 versioning format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

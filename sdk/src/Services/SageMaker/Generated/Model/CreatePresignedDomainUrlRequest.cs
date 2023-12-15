@@ -134,6 +134,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+        /// the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
         /// Canvas application.
         /// </para>

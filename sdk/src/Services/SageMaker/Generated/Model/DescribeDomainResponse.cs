@@ -373,7 +373,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SingleSignOnApplicationArn. 
         /// <para>
         /// The ARN of the application managed by SageMaker in IAM Identity Center. This value
-        /// is only returned for domains created after September 19, 2023.
+        /// is only returned for domains created after October 1, 2023.
         /// </para>
         /// </summary>
         public string SingleSignOnApplicationArn

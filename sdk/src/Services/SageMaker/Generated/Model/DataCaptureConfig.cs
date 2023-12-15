@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// input, only output, or both
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public List<CaptureOption> CaptureOptions
         {
             get { return this._captureOptions; }

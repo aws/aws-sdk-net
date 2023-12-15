@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of your Amazon EFS file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11)]
+        [AWSProperty(Required=true, Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

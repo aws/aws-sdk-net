@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _baseModelName;
         private AutoMLJobCompletionCriteria _completionCriteria;
+        private ModelAccessConfig _modelAccessConfig;
         private Dictionary<string, string> _textGenerationHyperParameters = new Dictionary<string, string>();
 
         /// <summary>
@@ -88,6 +89,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompletionCriteria()
         {
             return this._completionCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelAccessConfig.
+        /// </summary>
+        public ModelAccessConfig ModelAccessConfig
+        {
+            get { return this._modelAccessConfig; }
+            set { this._modelAccessConfig = value; }
+        }
+
+        // Check to see if ModelAccessConfig property is set
+        internal bool IsSetModelAccessConfig()
+        {
+            return this._modelAccessConfig != null;
         }
 
         /// <summary>

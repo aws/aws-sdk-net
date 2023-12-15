@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateFeatureGroup operation
+    /// Response Unmarshaller for DeleteCompilationJob operation
     /// </summary>  
-    public class UpdateFeatureGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteCompilationJobResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateFeatureGroupResponse response = new UpdateFeatureGroupResponse();
+            DeleteCompilationJobResponse response = new DeleteCompilationJobResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("FeatureGroupArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FeatureGroupArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -80,10 +69,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceeded"))
-                {
-                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -92,9 +77,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateFeatureGroupResponseUnmarshaller _instance = new UpdateFeatureGroupResponseUnmarshaller();        
+        private static DeleteCompilationJobResponseUnmarshaller _instance = new DeleteCompilationJobResponseUnmarshaller();        
 
-        internal static UpdateFeatureGroupResponseUnmarshaller GetInstance()
+        internal static DeleteCompilationJobResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +87,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateFeatureGroupResponseUnmarshaller Instance
+        public static DeleteCompilationJobResponseUnmarshaller Instance
         {
             get
             {

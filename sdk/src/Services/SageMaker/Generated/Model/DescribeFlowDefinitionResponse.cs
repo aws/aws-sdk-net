@@ -164,7 +164,6 @@ namespace Amazon.SageMaker.Model
         /// and other task details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public HumanLoopConfig HumanLoopConfig
         {
             get { return this._humanLoopConfig; }

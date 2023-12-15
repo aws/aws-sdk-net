@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Web Services account ID of the account used to start the labeling job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string WorkRequesterAccountId
         {
             get { return this._workRequesterAccountId; }

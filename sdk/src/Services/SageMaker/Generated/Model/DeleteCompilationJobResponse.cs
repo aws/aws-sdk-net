@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePipelineDefinitionForExecution operation.
-    /// Describes the details of an execution's pipeline definition.
+    /// This is the response object from the DeleteCompilationJob operation.
     /// </summary>
-    public partial class DescribePipelineDefinitionForExecutionRequest : AmazonSageMakerRequest
+    public partial class DeleteCompilationJobResponse : AmazonWebServiceResponse
     {
-        private string _pipelineExecutionArn;
-
-        /// <summary>
-        /// Gets and sets the property PipelineExecutionArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the pipeline execution.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
-        public string PipelineExecutionArn
-        {
-            get { return this._pipelineExecutionArn; }
-            set { this._pipelineExecutionArn = value; }
-        }
-
-        // Check to see if PipelineExecutionArn property is set
-        internal bool IsSetPipelineExecutionArn()
-        {
-            return this._pipelineExecutionArn != null;
-        }
 
     }
 }

@@ -115,7 +115,6 @@ namespace Amazon.SageMaker.Model
         /// The data source for an AutoML channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AutoMLDataSource DataSource
         {
             get { return this._dataSource; }

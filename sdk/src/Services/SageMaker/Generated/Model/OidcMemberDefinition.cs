@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// user group is made up of a group of private workers.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=10)]
         public List<string> Groups
         {
             get { return this._groups; }

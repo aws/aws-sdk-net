@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// List the job's candidates up to a specified limit.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=300)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The specification of the Jupyter kernels in the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<KernelSpec> KernelSpecs
         {
             get { return this._kernelSpecs; }

@@ -85,7 +85,6 @@ namespace Amazon.SageMaker.Model
         /// An object containing information about the tasks the human reviewers will perform.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public HumanLoopConfig HumanLoopConfig
         {
             get { return this._humanLoopConfig; }

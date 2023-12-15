@@ -494,7 +494,7 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
-        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
         /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
         /// </para>
         ///  </note> 
@@ -537,7 +537,7 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
-        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
         /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
         /// </para>
         ///  </note> 
@@ -588,7 +588,7 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
-        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
         /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
         /// </para>
         ///  </note> 
@@ -638,7 +638,7 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
-        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
         /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
         /// </para>
         ///  </note> 
@@ -3281,6 +3281,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -3302,6 +3306,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -4383,6 +4391,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlgorithm service method.</param>
         /// 
         /// <returns>The response from the DeleteAlgorithm service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAlgorithm">REST API Reference for DeleteAlgorithm Operation</seealso>
         DeleteAlgorithmResponse DeleteAlgorithm(DeleteAlgorithmRequest request);
 
@@ -4397,6 +4409,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the DeleteAlgorithm service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAlgorithm">REST API Reference for DeleteAlgorithm Operation</seealso>
         Task<DeleteAlgorithmResponse> DeleteAlgorithmAsync(DeleteAlgorithmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4613,6 +4629,62 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DeleteCodeRepository service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">REST API Reference for DeleteCodeRepository Operation</seealso>
         Task<DeleteCodeRepositoryResponse> DeleteCodeRepositoryAsync(DeleteCodeRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCompilationJob
+
+
+        /// <summary>
+        /// Deletes the specified compilation job. This action deletes only the compilation job
+        /// resource in Amazon SageMaker. It doesn't delete other resources that are related to
+        /// that job, such as the model artifacts that the job creates, the compilation logs in
+        /// CloudWatch, the compiled model, or the IAM role.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete a compilation job only if its current status is <code>COMPLETED</code>,
+        /// <code>FAILED</code>, or <code>STOPPED</code>. If the job status is <code>STARTING</code>
+        /// or <code>INPROGRESS</code>, stop the job, and then delete it after its status becomes
+        /// <code>STOPPED</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCompilationJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCompilationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCompilationJob">REST API Reference for DeleteCompilationJob Operation</seealso>
+        DeleteCompilationJobResponse DeleteCompilationJob(DeleteCompilationJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified compilation job. This action deletes only the compilation job
+        /// resource in Amazon SageMaker. It doesn't delete other resources that are related to
+        /// that job, such as the model artifacts that the job creates, the compilation logs in
+        /// CloudWatch, the compiled model, or the IAM role.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete a compilation job only if its current status is <code>COMPLETED</code>,
+        /// <code>FAILED</code>, or <code>STOPPED</code>. If the job status is <code>STARTING</code>
+        /// or <code>INPROGRESS</code>, stop the job, and then delete it after its status becomes
+        /// <code>STOPPED</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCompilationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCompilationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCompilationJob">REST API Reference for DeleteCompilationJob Operation</seealso>
+        Task<DeleteCompilationJobResponse> DeleteCompilationJobAsync(DeleteCompilationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5819,6 +5891,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -5838,6 +5914,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -8305,6 +8385,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserProfile service method.</param>
         /// 
         /// <returns>The response from the DescribeUserProfile service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -8322,6 +8406,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the DescribeUserProfile service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -11236,6 +11324,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the PutModelPackageGroupPolicy service method.</param>
         /// 
         /// <returns>The response from the PutModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">REST API Reference for PutModelPackageGroupPolicy Operation</seealso>
         PutModelPackageGroupPolicyResponse PutModelPackageGroupPolicy(PutModelPackageGroupPolicyRequest request);
 
@@ -11253,6 +11345,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the PutModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">REST API Reference for PutModelPackageGroupPolicy Operation</seealso>
         Task<PutModelPackageGroupPolicyResponse> PutModelPackageGroupPolicyAsync(PutModelPackageGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -11483,6 +11579,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepFailure service method.</param>
         /// 
         /// <returns>The response from the SendPipelineExecutionStepFailure service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -11506,6 +11606,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the SendPipelineExecutionStepFailure service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -11530,6 +11634,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepSuccess service method.</param>
         /// 
         /// <returns>The response from the SendPipelineExecutionStepSuccess service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -11554,6 +11662,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the SendPipelineExecutionStepSuccess service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -11735,6 +11847,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the StartPipelineExecution service method.</param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -11756,6 +11872,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an SageMaker resource limit. For example, you might have too many
         /// training jobs created.
@@ -12209,6 +12329,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
         /// 
         /// <returns>The response from the StopPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -12262,6 +12386,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the StopPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -12583,6 +12711,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdateCodeRepository service method.</param>
         /// 
         /// <returns>The response from the UpdateCodeRepository service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">REST API Reference for UpdateCodeRepository Operation</seealso>
         UpdateCodeRepositoryResponse UpdateCodeRepository(UpdateCodeRepositoryRequest request);
 
@@ -12597,6 +12729,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdateCodeRepository service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">REST API Reference for UpdateCodeRepository Operation</seealso>
         Task<UpdateCodeRepositoryResponse> UpdateCodeRepositoryAsync(UpdateCodeRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -12954,6 +13090,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -12988,6 +13128,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -13351,6 +13495,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdateModelPackage service method.</param>
         /// 
         /// <returns>The response from the UpdateModelPackage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage">REST API Reference for UpdateModelPackage Operation</seealso>
         UpdateModelPackageResponse UpdateModelPackage(UpdateModelPackageRequest request);
 
@@ -13365,6 +13513,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdateModelPackage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage">REST API Reference for UpdateModelPackage Operation</seealso>
         Task<UpdateModelPackageResponse> UpdateModelPackageAsync(UpdateModelPackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -13541,6 +13693,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -13558,6 +13714,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -13575,6 +13735,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineExecution service method.</param>
         /// 
         /// <returns>The response from the UpdatePipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -13592,6 +13756,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdatePipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -13618,6 +13786,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// 
         /// <returns>The response from the UpdateProject service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         UpdateProjectResponse UpdateProject(UpdateProjectRequest request);
 
@@ -13641,6 +13813,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdateProject service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -13704,6 +13880,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrainingJob service method.</param>
         /// 
         /// <returns>The response from the UpdateTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -13722,6 +13902,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdateTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>

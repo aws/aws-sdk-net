@@ -69,6 +69,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FileSystemConfig", targetDepth))
+                {
+                    var unmarshaller = FileSystemConfigUnmarshaller.Instance;
+                    unmarshalledObject.FileSystemConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

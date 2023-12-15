@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class JupyterLabAppImageConfig
     {
         private ContainerConfig _containerConfig;
+        private FileSystemConfig _fileSystemConfig;
 
         /// <summary>
         /// Gets and sets the property ContainerConfig.
@@ -49,6 +50,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetContainerConfig()
         {
             return this._containerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemConfig.
+        /// </summary>
+        public FileSystemConfig FileSystemConfig
+        {
+            get { return this._fileSystemConfig; }
+            set { this._fileSystemConfig = value; }
+        }
+
+        // Check to see if FileSystemConfig property is set
+        internal bool IsSetFileSystemConfig()
+        {
+            return this._fileSystemConfig != null;
         }
 
     }

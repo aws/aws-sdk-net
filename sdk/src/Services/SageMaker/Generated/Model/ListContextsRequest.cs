@@ -179,7 +179,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only contexts with the specified source URI.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string SourceUri
         {
             get { return this._sourceUri; }

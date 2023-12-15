@@ -101,11 +101,11 @@ namespace Amazon.SageMaker.Model
         /// If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role
         /// must include permissions to call <code>kms:Encrypt</code>. If you don't provide a
         /// KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account.
-        /// SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>.
-        /// If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-        /// allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-        /// to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
-        /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+        /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If
+        /// the output data is stored in Amazon S3 Express One Zone, it is encrypted with server-side
+        /// encryption with Amazon S3 managed keys (SSE-S3). KMS key is not supported for Amazon
+        /// S3 Express One Zone
         /// </para>
         ///  
         /// <para>

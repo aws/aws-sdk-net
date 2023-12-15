@@ -62,6 +62,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetModelAccessConfig())
+            {
+                context.Writer.WritePropertyName("ModelAccessConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelAccessConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelAccessConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTextGenerationHyperParameters())
             {
                 context.Writer.WritePropertyName("TextGenerationHyperParameters");
