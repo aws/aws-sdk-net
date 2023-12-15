@@ -203,6 +203,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>ScheduleKeyDeletion</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Identifies the KMS key whose deletion is being canceled. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -280,6 +286,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>ScheduleKeyDeletion</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelKeyDeletion service method.</param>
@@ -359,6 +371,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>ScheduleKeyDeletion</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Identifies the KMS key whose deletion is being canceled. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -441,6 +459,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>ScheduleKeyDeletion</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelKeyDeletion service method.</param>
@@ -627,7 +651,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectCustomKeyStore service method.</param>
         /// 
@@ -868,7 +897,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectCustomKeyStore service method.</param>
         /// <param name="cancellationToken">
@@ -1068,7 +1102,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
         /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -1207,7 +1246,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// 
@@ -1346,7 +1390,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
         /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -1489,7 +1538,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1666,7 +1720,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomKeyStore service method.</param>
         /// 
@@ -1811,7 +1870,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
         /// The request was rejected because the Amazon VPC endpoint service configuration does
         /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
         /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
         /// key store.
         /// </exception>
@@ -1941,7 +2000,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomKeyStore service method.</param>
         /// <param name="cancellationToken">
@@ -2089,7 +2153,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
         /// The request was rejected because the Amazon VPC endpoint service configuration does
         /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
         /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
         /// key store.
         /// </exception>
@@ -2189,7 +2253,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// 
@@ -2334,7 +2403,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// <param name="cancellationToken">
@@ -2645,7 +2719,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ScheduleKeyDeletion</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
         /// 
@@ -3043,7 +3122,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ScheduleKeyDeletion</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
         /// <param name="cancellationToken">
@@ -3277,10 +3361,10 @@ namespace Amazon.KeyManagementService
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
         /// parameter to provide the attestation document for the enclave. Instead of the plaintext
         /// data, the response includes the plaintext data encrypted with the public key from
-        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the attestation document (<code>CiphertextForRecipient</code>). For information about
         /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
         /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3319,7 +3403,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ReEncrypt</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Decrypt service method.</param>
         /// 
@@ -3492,10 +3581,10 @@ namespace Amazon.KeyManagementService
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
         /// parameter to provide the attestation document for the enclave. Instead of the plaintext
         /// data, the response includes the plaintext data encrypted with the public key from
-        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the attestation document (<code>CiphertextForRecipient</code>). For information about
         /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
         /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3534,7 +3623,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ReEncrypt</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Decrypt service method.</param>
         /// <param name="cancellationToken">
@@ -3704,7 +3798,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</param>
         /// 
@@ -3810,7 +3909,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
@@ -3917,7 +4021,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</param>
         /// <param name="cancellationToken">
@@ -4027,7 +4136,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// <param name="cancellationToken">
@@ -4158,7 +4272,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomKeyStore service method.</param>
         /// 
@@ -4303,7 +4422,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomKeyStore service method.</param>
         /// <param name="cancellationToken">
@@ -4416,7 +4540,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ImportKeyMaterial</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImportedKeyMaterial service method.</param>
         /// 
@@ -4511,7 +4640,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ImportKeyMaterial</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImportedKeyMaterial service method.</param>
         /// <param name="cancellationToken">
@@ -4650,7 +4784,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomKeyStores service method.</param>
         /// 
@@ -4751,7 +4890,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomKeyStores service method.</param>
         /// <param name="cancellationToken">
@@ -4795,11 +4939,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// For <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
-        /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// keys. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
         /// key stores</a>, it includes information about the key store, such as the key store
-        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
         /// key stores</a>, it includes the custom key store ID and the ID of the external key.
         /// </para>
         ///  
@@ -4877,7 +5021,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListRetirableGrants</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// 
@@ -4915,11 +5064,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// For <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
-        /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// keys. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
         /// key stores</a>, it includes information about the key store, such as the key store
-        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
         /// key stores</a>, it includes the custom key store ID and the ID of the external key.
         /// </para>
         ///  
@@ -4997,7 +5146,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListRetirableGrants</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
         /// 
@@ -5036,11 +5190,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// For <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
-        /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// keys. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
         /// key stores</a>, it includes information about the key store, such as the key store
-        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
         /// key stores</a>, it includes the custom key store ID and the ID of the external key.
         /// </para>
         ///  
@@ -5118,7 +5272,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListRetirableGrants</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
@@ -5160,11 +5319,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// For <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
-        /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// keys. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
         /// key stores</a>, it includes information about the key store, such as the key store
-        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
         /// key stores</a>, it includes the custom key store ID and the ID of the external key.
         /// </para>
         ///  
@@ -5242,7 +5401,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListRetirableGrants</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
         /// <param name="cancellationToken">
@@ -5301,6 +5465,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>EnableKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Identifies the KMS key to disable. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -5379,6 +5549,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>EnableKey</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKey service method.</param>
         /// 
@@ -5456,6 +5632,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>EnableKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Identifies the KMS key to disable. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -5537,6 +5719,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>EnableKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKey service method.</param>
@@ -5649,7 +5837,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -5760,7 +5953,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKeyRotation service method.</param>
         /// 
@@ -5872,7 +6070,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -5987,7 +6190,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKeyRotation service method.</param>
         /// <param name="cancellationToken">
@@ -6120,7 +6328,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectCustomKeyStore service method.</param>
         /// 
@@ -6251,7 +6464,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectCustomKeyStore service method.</param>
         /// <param name="cancellationToken">
@@ -6343,6 +6561,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>DisableKey</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Identifies the KMS key to enable. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -6419,6 +6643,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>DisableKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKey service method.</param>
@@ -6497,6 +6727,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>DisableKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Identifies the KMS key to enable. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -6579,6 +6815,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>DisableKey</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKey service method.</param>
         /// <param name="cancellationToken">
@@ -6645,7 +6887,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can monitor rotation
         /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
@@ -6713,7 +6955,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -6774,7 +7021,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can monitor rotation
         /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
@@ -6842,7 +7089,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKeyRotation service method.</param>
         /// 
@@ -6904,7 +7156,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can monitor rotation
         /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
@@ -6972,7 +7224,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -7037,7 +7294,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can monitor rotation
         /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
@@ -7105,7 +7362,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKeyRotation service method.</param>
         /// <param name="cancellationToken">
@@ -7295,7 +7557,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyPair</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Encrypt service method.</param>
         /// 
@@ -7507,7 +7774,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyPair</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Encrypt service method.</param>
         /// <param name="cancellationToken">
@@ -7741,7 +8013,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey service method.</param>
         /// 
@@ -7969,7 +8246,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey service method.</param>
         /// <param name="cancellationToken">
@@ -8065,8 +8347,8 @@ namespace Amazon.KeyManagementService
         /// a plaintext public key, a plaintext private key, and a copy of the private key that
         /// is encrypted under the symmetric encryption KMS key you specify. You can use the data
         /// key pair to perform asymmetric cryptography and implement digital signatures outside
-        /// of KMS. The bytes in the keys are random; they not related to the caller or to the
-        /// KMS key that is used to encrypt the private key. 
+        /// of KMS. The bytes in the keys are random; they are not related to the caller or to
+        /// the KMS key that is used to encrypt the private key. 
         /// 
         ///  
         /// <para>
@@ -8176,7 +8458,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyPair service method.</param>
         /// 
@@ -8270,8 +8557,8 @@ namespace Amazon.KeyManagementService
         /// a plaintext public key, a plaintext private key, and a copy of the private key that
         /// is encrypted under the symmetric encryption KMS key you specify. You can use the data
         /// key pair to perform asymmetric cryptography and implement digital signatures outside
-        /// of KMS. The bytes in the keys are random; they not related to the caller or to the
-        /// KMS key that is used to encrypt the private key. 
+        /// of KMS. The bytes in the keys are random; they are not related to the caller or to
+        /// the KMS key that is used to encrypt the private key. 
         /// 
         ///  
         /// <para>
@@ -8381,7 +8668,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyPair service method.</param>
         /// <param name="cancellationToken">
@@ -8563,7 +8855,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyPairWithoutPlaintext service method.</param>
         /// 
@@ -8739,7 +9036,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyPairWithoutPlaintext service method.</param>
         /// <param name="cancellationToken">
@@ -8941,7 +9243,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyPairWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext service method.</param>
         /// 
@@ -9133,7 +9440,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyPairWithoutPlaintext</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext service method.</param>
         /// <param name="cancellationToken">
@@ -9269,6 +9581,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>VerifyMac</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateMac service method.</param>
         /// 
@@ -9394,6 +9712,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>VerifyMac</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateMac service method.</param>
@@ -9524,6 +9848,12 @@ namespace Amazon.KeyManagementService
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="numberOfBytes">The length of the random byte string. This parameter is required.</param>
         /// 
@@ -9630,6 +9960,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateRandom service method.</param>
@@ -9738,6 +10074,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="numberOfBytes">The length of the random byte string. This parameter is required.</param>
@@ -9850,6 +10192,12 @@ namespace Amazon.KeyManagementService
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateRandom service method.</param>
         /// <param name="cancellationToken">
@@ -9938,7 +10286,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related operations</b>: <a>PutKeyPolicy</a> 
+        ///  <b>Related operations</b>: <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Gets the key policy for the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -10003,7 +10358,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related operations</b>: <a>PutKeyPolicy</a> 
+        ///  <b>Related operations</b>: <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyPolicy service method.</param>
@@ -10068,7 +10430,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related operations</b>: <a>PutKeyPolicy</a> 
+        ///  <b>Related operations</b>: <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Gets the key policy for the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -10137,7 +10506,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related operations</b>: <a>PutKeyPolicy</a> 
+        ///  <b>Related operations</b>: <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyPolicy service method.</param>
@@ -10272,7 +10648,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>EnableKeyRotation</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Gets the rotation status for the specified KMS key. Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -10402,7 +10783,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>EnableKeyRotation</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyRotationStatus service method.</param>
         /// 
@@ -10533,7 +10919,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>EnableKeyRotation</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Gets the rotation status for the specified KMS key. Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -10667,7 +11058,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>EnableKeyRotation</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyRotationStatus service method.</param>
         /// <param name="cancellationToken">
@@ -10746,11 +11142,11 @@ namespace Amazon.KeyManagementService
         /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
         /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
         /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
-        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// import key material into a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// key</a> of any supported type. However, you can't import key material into a KMS key
-        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
-        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
-        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. You can also use <code>GetParametersForImport</code> to get a public
+        /// key and import token to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the original key material</a> into a KMS key whose key material expired or was deleted.
         /// </para>
         ///  
@@ -10831,7 +11227,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DeleteImportedKeyMaterial</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersForImport service method.</param>
         /// 
@@ -10904,11 +11305,11 @@ namespace Amazon.KeyManagementService
         /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
         /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
         /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
-        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// import key material into a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// key</a> of any supported type. However, you can't import key material into a KMS key
-        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
-        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
-        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. You can also use <code>GetParametersForImport</code> to get a public
+        /// key and import token to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the original key material</a> into a KMS key whose key material expired or was deleted.
         /// </para>
         ///  
@@ -10989,7 +11390,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DeleteImportedKeyMaterial</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersForImport service method.</param>
         /// <param name="cancellationToken">
@@ -11123,6 +11529,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>CreateKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
@@ -11287,6 +11699,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>CreateKey</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
@@ -11535,7 +11953,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetParametersForImport</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyMaterial service method.</param>
         /// 
@@ -11765,7 +12188,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetParametersForImport</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyMaterial service method.</param>
         /// <param name="cancellationToken">
@@ -11906,7 +12334,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
         /// 
@@ -11991,7 +12424,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdateAlias</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
         /// <param name="cancellationToken">
@@ -12079,7 +12517,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGrants service method.</param>
         /// 
@@ -12190,7 +12633,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGrants service method.</param>
         /// <param name="cancellationToken">
@@ -12278,9 +12726,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutKeyPolicy</a> 
+        ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyPolicies service method.</param>
         /// 
@@ -12355,9 +12809,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutKeyPolicy</a> 
+        ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -12446,7 +12906,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListResourceTags</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// 
@@ -12500,7 +12965,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListResourceTags</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// <param name="cancellationToken">
@@ -12567,7 +13037,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UntagResource</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceTags service method.</param>
         /// 
@@ -12632,7 +13107,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UntagResource</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceTags service method.</param>
         /// <param name="cancellationToken">
@@ -12684,16 +13164,27 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
-        /// account. However, this operation can return grants in any Amazon Web Services account.
-        /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
-        /// permission) in any Amazon Web Services account other than your own.
+        /// account. This operation returns a list of grants where the retiring principal specified
+        /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
+        /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
+        /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
+        /// any other additional permission) in any Amazon Web Services account other than your
+        /// own.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
         /// (IAM policy) in your Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
+        /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+        /// calls is the retiring principal specified in the request. KMS does not evaluate the
+        /// caller's permissions to verify their access to any KMS keys or grants that might be
+        /// returned by the <code>ListRetirableGrants</code> call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Related operations:</b> 
         /// </para>
@@ -12713,7 +13204,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// 
@@ -12760,16 +13256,27 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
-        /// account. However, this operation can return grants in any Amazon Web Services account.
-        /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
-        /// permission) in any Amazon Web Services account other than your own.
+        /// account. This operation returns a list of grants where the retiring principal specified
+        /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
+        /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
+        /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
+        /// any other additional permission) in any Amazon Web Services account other than your
+        /// own.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
         /// (IAM policy) in your Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
+        /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+        /// calls is the retiring principal specified in the request. KMS does not evaluate the
+        /// caller's permissions to verify their access to any KMS keys or grants that might be
+        /// returned by the <code>ListRetirableGrants</code> call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Related operations:</b> 
         /// </para>
@@ -12789,7 +13296,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
@@ -12835,16 +13347,27 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
-        /// account. However, this operation can return grants in any Amazon Web Services account.
-        /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
-        /// permission) in any Amazon Web Services account other than your own.
+        /// account. This operation returns a list of grants where the retiring principal specified
+        /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
+        /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
+        /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
+        /// any other additional permission) in any Amazon Web Services account other than your
+        /// own.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
         /// (IAM policy) in your Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
+        /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+        /// calls is the retiring principal specified in the request. KMS does not evaluate the
+        /// caller's permissions to verify their access to any KMS keys or grants that might be
+        /// returned by the <code>ListRetirableGrants</code> call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Related operations:</b> 
         /// </para>
@@ -12864,7 +13387,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetirableGrants service method.</param>
         /// 
@@ -12912,16 +13440,27 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
-        /// account. However, this operation can return grants in any Amazon Web Services account.
-        /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
-        /// permission) in any Amazon Web Services account other than your own.
+        /// account. This operation returns a list of grants where the retiring principal specified
+        /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
+        /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
+        /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
+        /// any other additional permission) in any Amazon Web Services account other than your
+        /// own.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
         /// (IAM policy) in your Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
+        /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+        /// calls is the retiring principal specified in the request. KMS does not evaluate the
+        /// caller's permissions to verify their access to any KMS keys or grants that might be
+        /// returned by the <code>ListRetirableGrants</code> call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Related operations:</b> 
         /// </para>
@@ -12941,7 +13480,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="cancellationToken">
@@ -12991,16 +13535,27 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
-        /// account. However, this operation can return grants in any Amazon Web Services account.
-        /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
-        /// permission) in any Amazon Web Services account other than your own.
+        /// account. This operation returns a list of grants where the retiring principal specified
+        /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
+        /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
+        /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
+        /// any other additional permission) in any Amazon Web Services account other than your
+        /// own.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
         /// (IAM policy) in your Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
+        /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+        /// calls is the retiring principal specified in the request. KMS does not evaluate the
+        /// caller's permissions to verify their access to any KMS keys or grants that might be
+        /// returned by the <code>ListRetirableGrants</code> call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Related operations:</b> 
         /// </para>
@@ -13020,7 +13575,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13070,16 +13630,27 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
-        /// account. However, this operation can return grants in any Amazon Web Services account.
-        /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
-        /// permission) in any Amazon Web Services account other than your own.
+        /// account. This operation returns a list of grants where the retiring principal specified
+        /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
+        /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
+        /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
+        /// any other additional permission) in any Amazon Web Services account other than your
+        /// own.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
         /// (IAM policy) in your Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
+        /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+        /// calls is the retiring principal specified in the request. KMS does not evaluate the
+        /// caller's permissions to verify their access to any KMS keys or grants that might be
+        /// returned by the <code>ListRetirableGrants</code> call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Related operations:</b> 
         /// </para>
@@ -13099,7 +13670,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetirableGrants service method.</param>
         /// <param name="cancellationToken">
@@ -13159,6 +13735,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>GetKeyPolicy</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -13249,6 +13831,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>GetKeyPolicy</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutKeyPolicy service method.</param>
         /// 
@@ -13336,6 +13924,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>GetKeyPolicy</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -13429,6 +14023,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>GetKeyPolicy</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutKeyPolicy service method.</param>
@@ -13619,7 +14219,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyPair</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReEncrypt service method.</param>
         /// 
@@ -13842,7 +14447,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GenerateDataKeyPair</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReEncrypt service method.</param>
         /// <param name="cancellationToken">
@@ -14017,7 +14627,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// If you replicate a multi-Region primary key with imported key material, the replica
         /// key is created with no key material. You must import the same key material that you
-        /// imported into the primary key. For details, see <a href="kms/latest/developerguide/multi-region-keys-import.html">Importing
+        /// imported into the primary key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html">Importing
         /// key material into multi-Region keys</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
@@ -14066,7 +14676,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdatePrimaryRegion</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateKey service method.</param>
         /// 
@@ -14202,7 +14817,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// If you replicate a multi-Region primary key with imported key material, the replica
         /// key is created with no key material. You must import the same key material that you
-        /// imported into the primary key. For details, see <a href="kms/latest/developerguide/multi-region-keys-import.html">Importing
+        /// imported into the primary key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html">Importing
         /// key material into multi-Region keys</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
@@ -14251,7 +14866,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UpdatePrimaryRegion</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateKey service method.</param>
         /// <param name="cancellationToken">
@@ -14355,7 +14975,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions:</b>:Permission to retire a grant is determined primarily
+        ///  <b>Required permissions</b>: Permission to retire a grant is determined primarily
         /// by the grant. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
@@ -14379,7 +14999,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="grantToken">Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency. Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</param>
         /// 
@@ -14465,7 +15090,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions:</b>:Permission to retire a grant is determined primarily
+        ///  <b>Required permissions</b>: Permission to retire a grant is determined primarily
         /// by the grant. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
@@ -14489,7 +15114,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetireGrant service method.</param>
         /// 
@@ -14576,7 +15206,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions:</b>:Permission to retire a grant is determined primarily
+        ///  <b>Required permissions</b>: Permission to retire a grant is determined primarily
         /// by the grant. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
@@ -14600,7 +15230,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="grantToken">Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency. Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
@@ -14690,7 +15325,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions:</b>:Permission to retire a grant is determined primarily
+        ///  <b>Required permissions</b>: Permission to retire a grant is determined primarily
         /// by the grant. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
@@ -14714,7 +15349,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RevokeGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetireGrant service method.</param>
         /// <param name="cancellationToken">
@@ -14829,7 +15469,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RetireGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="grantId">Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</param>
         /// <param name="keyId">A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -14934,7 +15579,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RetireGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeGrant service method.</param>
         /// 
@@ -15039,7 +15689,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RetireGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="grantId">Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</param>
         /// <param name="keyId">A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -15148,7 +15803,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>RetireGrant</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeGrant service method.</param>
         /// <param name="cancellationToken">
@@ -15224,7 +15884,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
         /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
         /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
         /// deleting it, use <a>DisableKey</a>. 
@@ -15286,7 +15946,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisableKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -15348,7 +16013,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
         /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
         /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
         /// deleting it, use <a>DisableKey</a>. 
@@ -15410,7 +16075,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisableKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
@@ -15473,7 +16143,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
         /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
         /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
         /// deleting it, use <a>DisableKey</a>. 
@@ -15535,7 +16205,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisableKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScheduleKeyDeletion service method.</param>
         /// 
@@ -15598,7 +16273,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
         /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
         /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
         /// deleting it, use <a>DisableKey</a>. 
@@ -15660,7 +16335,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisableKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -15725,7 +16405,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
         /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
         /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
         /// deleting it, use <a>DisableKey</a>. 
@@ -15787,7 +16467,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisableKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
@@ -15854,7 +16539,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
         /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
         /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
         /// deleting it, use <a>DisableKey</a>. 
@@ -15916,7 +16601,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisableKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScheduleKeyDeletion service method.</param>
         /// <param name="cancellationToken">
@@ -16050,6 +16740,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>Verify</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Sign service method.</param>
@@ -16214,6 +16910,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>Verify</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Sign service method.</param>
         /// <param name="cancellationToken">
@@ -16376,7 +17078,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UntagResource</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -16503,7 +17210,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>UntagResource</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -16624,7 +17336,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>TagResource</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -16734,7 +17451,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>TagResource</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -16873,7 +17595,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListAliases</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
@@ -17006,7 +17733,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListAliases</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// 
@@ -17139,7 +17871,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListAliases</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
@@ -17276,7 +18013,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ListAliases</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -17458,7 +18200,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisconnectCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCustomKeyStore service method.</param>
         /// 
@@ -17638,7 +18385,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
         /// The request was rejected because the Amazon VPC endpoint service configuration does
         /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
         /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
         /// key store.
         /// </exception>
@@ -17779,7 +18526,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DisconnectCustomKeyStore</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCustomKeyStore service method.</param>
         /// <param name="cancellationToken">
@@ -17962,7 +18714,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
         /// The request was rejected because the Amazon VPC endpoint service configuration does
         /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
         /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
         /// key store.
         /// </exception>
@@ -18013,7 +18765,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DescribeKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Updates the description of the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="description">New description for the KMS key. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
@@ -18094,7 +18851,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DescribeKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyDescription service method.</param>
         /// 
@@ -18175,7 +18937,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DescribeKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">Updates the description of the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="description">New description for the KMS key. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
@@ -18260,7 +19027,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>DescribeKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyDescription service method.</param>
         /// <param name="cancellationToken">
@@ -18412,7 +19184,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ReplicateKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrimaryRegion service method.</param>
         /// 
@@ -18562,7 +19339,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>ReplicateKey</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrimaryRegion service method.</param>
         /// <param name="cancellationToken">
@@ -18685,6 +19467,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>Sign</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Verify service method.</param>
@@ -18839,6 +19627,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>Sign</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Verify service method.</param>
         /// <param name="cancellationToken">
@@ -18974,6 +19768,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Related operations</b>: <a>GenerateMac</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyMac service method.</param>
         /// 
@@ -19099,6 +19899,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <b>Related operations</b>: <a>GenerateMac</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyMac service method.</param>

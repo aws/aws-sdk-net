@@ -58,7 +58,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Required permissions:</b>:Permission to retire a grant is determined primarily
+    ///  <b>Required permissions</b>: Permission to retire a grant is determined primarily
     /// by the grant. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
     /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
@@ -82,7 +82,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>RevokeGrant</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class RetireGrantRequest : AmazonKeyManagementServiceRequest
     {

@@ -100,10 +100,10 @@ namespace Amazon.KeyManagementService.Model
     /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
     /// parameter to provide the attestation document for the enclave. Instead of the plaintext
     /// data, the response includes the plaintext data encrypted with the public key from
-    /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+    /// the attestation document (<code>CiphertextForRecipient</code>). For information about
     /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
     /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-    /// Guide</i>..
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -142,7 +142,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>ReEncrypt</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class DecryptRequest : AmazonKeyManagementServiceRequest
     {
@@ -351,7 +356,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Recipient. 
         /// <para>
-        /// A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+        /// A signed <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc">attestation
         /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
         /// to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
         /// 

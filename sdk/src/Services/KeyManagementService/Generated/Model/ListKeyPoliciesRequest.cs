@@ -54,9 +54,15 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutKeyPolicy</a> 
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+    /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class ListKeyPoliciesRequest : AmazonKeyManagementServiceRequest
     {

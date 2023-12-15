@@ -35,7 +35,7 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+    /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
     /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
     /// 365 days) from the enable date and every year thereafter. You can monitor rotation
     /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
@@ -103,7 +103,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>GetKeyRotationStatus</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class EnableKeyRotationRequest : AmazonKeyManagementServiceRequest
     {

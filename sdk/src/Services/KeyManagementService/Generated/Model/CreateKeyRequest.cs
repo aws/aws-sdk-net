@@ -270,7 +270,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>ScheduleKeyDeletion</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class CreateKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -304,7 +309,8 @@ namespace Amazon.KeyManagementService.Model
         ///  </important> 
         /// <para>
         /// Use this parameter only when you intend to prevent the principal that is making the
-        /// request from making a subsequent <a>PutKeyPolicy</a> request on the KMS key.
+        /// request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+        /// request on the KMS key.
         /// </para>
         /// </summary>
         public bool BypassPolicyLockoutSafetyCheck

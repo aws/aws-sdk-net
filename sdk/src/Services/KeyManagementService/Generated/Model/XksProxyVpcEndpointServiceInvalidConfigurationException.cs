@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// The request was rejected because the Amazon VPC endpoint service configuration does
     /// not fulfill the requirements for an external key store proxy. For details, see the
-    /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+    /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
     /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
     /// key store.
     /// </summary>

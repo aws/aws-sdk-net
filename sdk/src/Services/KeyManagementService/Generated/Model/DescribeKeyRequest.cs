@@ -45,11 +45,11 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+    /// For <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
     /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
-    /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+    /// keys. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
     /// key stores</a>, it includes information about the key store, such as the key store
-    /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+    /// ID and the CloudHSM cluster ID. For KMS keys in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
     /// key stores</a>, it includes the custom key store ID and the ID of the external key.
     /// </para>
     ///  
@@ -127,7 +127,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>ListRetirableGrants</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeKeyRequest : AmazonKeyManagementServiceRequest
     {

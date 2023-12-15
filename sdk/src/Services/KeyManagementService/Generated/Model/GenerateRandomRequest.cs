@@ -71,6 +71,12 @@ namespace Amazon.KeyManagementService.Model
     ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
     /// (IAM policy)
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class GenerateRandomRequest : AmazonKeyManagementServiceRequest
     {

@@ -34,8 +34,8 @@ namespace Amazon.KeyManagementService.Model
     /// a plaintext public key, a plaintext private key, and a copy of the private key that
     /// is encrypted under the symmetric encryption KMS key you specify. You can use the data
     /// key pair to perform asymmetric cryptography and implement digital signatures outside
-    /// of KMS. The bytes in the keys are random; they not related to the caller or to the
-    /// KMS key that is used to encrypt the private key. 
+    /// of KMS. The bytes in the keys are random; they are not related to the caller or to
+    /// the KMS key that is used to encrypt the private key. 
     /// 
     ///  
     /// <para>
@@ -145,7 +145,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>GenerateDataKeyWithoutPlaintext</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class GenerateDataKeyPairRequest : AmazonKeyManagementServiceRequest
     {

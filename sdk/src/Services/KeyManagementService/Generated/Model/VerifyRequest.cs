@@ -93,6 +93,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Related operations</b>: <a>Sign</a> 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// eventual consistency</a>.
+    /// </para>
     /// </summary>
     public partial class VerifyRequest : AmazonKeyManagementServiceRequest
     {
