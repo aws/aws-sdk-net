@@ -1,3 +1,16 @@
+### 3.7.711.0 (2023-12-18 19:20 UTC)
+* CognitoIdentityProvider (3.7.301.0)
+	* Amazon Cognito now supports trigger versions that define the fields in the request sent to pre token generation Lambda triggers.
+* EKS (3.7.302.0)
+	* Add support for EKS Cluster Access Management.
+* QuickSight (3.7.303.2)
+	* A docs-only release to add missing entities to the API reference.
+* Route53Resolver (3.7.301.0)
+	* Add DOH protocols in resolver endpoints.
+* Core 3.7.300.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.710.0 (2023-12-15 19:37 UTC)
 * Cloud9 (3.7.301.7)
 	* Updated Cloud9 API documentation for AL2023 release
