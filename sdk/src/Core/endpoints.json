@@ -3624,6 +3624,7 @@
             "ap-northeast-2": {},
             "ap-northeast-3": {},
             "ap-south-1": {},
+            "ap-south-2": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "ap-southeast-3": {},
@@ -6068,6 +6069,7 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "il-central-1": {},
             "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
@@ -10382,6 +10384,7 @@
             "eu-west-2": {},
             "eu-west-3": {},
             "il-central-1": {},
+            "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -32570,6 +32573,20 @@
             ]
           },
           "endpoints": {
+            "fips-us-iso-east-1": {
+              "credentialScope": {
+                "region": "us-iso-east-1"
+              },
+              "deprecated": true,
+              "hostname": "s3-fips.us-iso-east-1.c2s.ic.gov"
+            },
+            "fips-us-iso-west-1": {
+              "credentialScope": {
+                "region": "us-iso-west-1"
+              },
+              "deprecated": true,
+              "hostname": "s3-fips.us-iso-west-1.c2s.ic.gov"
+            },
             "us-iso-east-1": {
               "protocols": [
                 "http",
@@ -32577,9 +32594,40 @@
               ],
               "signatureVersions": [
                 "s3v4"
+              ],
+              "variants": [
+                {
+                  "hostname": "s3-fips.dualstack.us-iso-east-1.c2s.ic.gov",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "s3-fips.us-iso-east-1.c2s.ic.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
               ]
             },
-            "us-iso-west-1": {}
+            "us-iso-west-1": {
+              "variants": [
+                {
+                  "hostname": "s3-fips.dualstack.us-iso-west-1.c2s.ic.gov",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "s3-fips.us-iso-west-1.c2s.ic.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            }
           }
         },
         "secretsmanager": {
@@ -33221,7 +33269,30 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "fips-us-isob-east-1": {
+              "credentialScope": {
+                "region": "us-isob-east-1"
+              },
+              "deprecated": true,
+              "hostname": "s3-fips.us-isob-east-1.sc2s.sgov.gov"
+            },
+            "us-isob-east-1": {
+              "variants": [
+                {
+                  "hostname": "s3-fips.dualstack.us-isob-east-1.sc2s.sgov.gov",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "s3-fips.us-isob-east-1.sc2s.sgov.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            }
           }
         },
         "secretsmanager": {
