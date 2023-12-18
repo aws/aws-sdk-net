@@ -73,6 +73,17 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProtocols())
+                {
+                    context.Writer.WritePropertyName("Protocols");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                    {
+                            context.Writer.Write(publicRequestProtocolsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetResolverEndpointId())
                 {
                     context.Writer.WritePropertyName("ResolverEndpointId");

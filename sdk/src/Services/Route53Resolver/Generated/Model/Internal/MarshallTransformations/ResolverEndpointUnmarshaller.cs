@@ -129,6 +129,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreferredInstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Protocols", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Protocols = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResolverEndpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

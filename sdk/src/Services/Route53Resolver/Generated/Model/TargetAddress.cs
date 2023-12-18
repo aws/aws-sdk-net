@@ -37,6 +37,7 @@ namespace Amazon.Route53Resolver.Model
         private string _ip;
         private string _ipv6;
         private int? _port;
+        private Protocol _protocol;
 
         /// <summary>
         /// Gets and sets the property Ip. 
@@ -93,6 +94,74 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        ///  The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints
+        /// only. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an inbound endpoint you can apply the protocols as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Do53 and DoH in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 and DoH-FIPS in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH-FIPS alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None, which is treated as Do53.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For an outbound endpoint you can apply the protocols as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Do53 and DoH in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None, which is treated as Do53.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Protocol Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
     }

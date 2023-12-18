@@ -74,7 +74,7 @@ namespace Amazon.Route53Resolver.Model
         /// contains the most specific domain name (www.example.com).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string DomainName
         {
             get { return this._domainName; }

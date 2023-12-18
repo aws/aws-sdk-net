@@ -68,7 +68,8 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
         /// element for each configuration for DNSSEC validation that is associated with the current
-        /// Amazon Web Services account.
+        /// Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for
+        /// the resource.
         /// </para>
         /// </summary>
         public List<ResolverDnssecConfig> ResolverDnssecConfigs

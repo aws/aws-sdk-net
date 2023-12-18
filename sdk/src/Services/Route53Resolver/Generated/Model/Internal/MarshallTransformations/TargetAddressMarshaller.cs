@@ -63,6 +63,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("Protocol");
+                context.Writer.Write(requestObject.Protocol);
+            }
+
         }
 
         /// <summary>

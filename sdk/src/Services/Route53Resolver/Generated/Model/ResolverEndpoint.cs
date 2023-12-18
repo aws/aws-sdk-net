@@ -49,6 +49,7 @@ namespace Amazon.Route53Resolver.Model
         private string _name;
         private string _outpostArn;
         private string _preferredInstanceType;
+        private List<string> _protocols = new List<string>();
         private ResolverEndpointType _resolverEndpointType;
         private List<string> _securityGroupIds = new List<string>();
         private ResolverEndpointStatus _status;
@@ -273,6 +274,75 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetPreferredInstanceType()
         {
             return this._preferredInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocols. 
+        /// <para>
+        ///  Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an inbound endpoint you can apply the protocols as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Do53 and DoH in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 and DoH-FIPS in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH-FIPS alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None, which is treated as Do53.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For an outbound endpoint you can apply the protocols as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Do53 and DoH in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None, which is treated as Do53.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Protocols
+        {
+            get { return this._protocols; }
+            set { this._protocols = value; }
+        }
+
+        // Check to see if Protocols property is set
+        internal bool IsSetProtocols()
+        {
+            return this._protocols != null && this._protocols.Count > 0; 
         }
 
         /// <summary>

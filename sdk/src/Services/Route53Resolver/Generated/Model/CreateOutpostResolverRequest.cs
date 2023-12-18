@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOutpostResolver operation.
-    /// Creates an Route 53 Resolver on an Outpost.
+    /// Creates a Route 53 Resolver on an Outpost.
     /// </summary>
     public partial class CreateOutpostResolverRequest : AmazonRoute53ResolverRequest
     {
