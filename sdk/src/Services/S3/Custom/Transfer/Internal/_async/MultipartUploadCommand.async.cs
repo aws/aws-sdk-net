@@ -37,7 +37,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             if ( (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.InputStream.CanSeek) || this._fileTransporterRequest.ContentLength == -1)
             {
-                await UploadNonSeekableStreamAsync(this._fileTransporterRequest, cancellationToken).ConfigureAwait(false);
+                await UploadUnseekableStreamAsync(this._fileTransporterRequest, cancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -191,7 +191,7 @@ namespace Amazon.S3.Transfer.Internal
                 Logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
             }
         }
-        private async Task UploadNonSeekableStreamAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        private async Task UploadUnseekableStreamAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
 
             int READ_BUFFER_SIZE = this._s3Client.Config.BufferSize;
@@ -212,14 +212,15 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
+                // if partSize is not specified on the request, the default value is 0
+                long minPartSize = request?.PartSize != 0 ? request.PartSize : S3Constants.MinPartSize;
                 var uploadPartResponses = new List<UploadPartResponse>();
-
 #if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
                 var readBuffer = ArrayPool<byte>.Shared.Rent(READ_BUFFER_SIZE);
-                var partBuffer = ArrayPool<byte>.Shared.Rent((int)S3Constants.MinPartSize + (READ_BUFFER_SIZE));
+                var partBuffer = ArrayPool<byte>.Shared.Rent((int)minPartSize + (READ_BUFFER_SIZE));
 #else
                 var readBuffer = new byte[READ_BUFFER_SIZE];
-                var partBuffer = new byte[(int)S3Constants.MinPartSize + (READ_BUFFER_SIZE)];
+                var partBuffer = new byte[(int)minPartSize + (READ_BUFFER_SIZE)];
 #endif
                 MemoryStream nextUploadBuffer = new MemoryStream(partBuffer);
                 using (var stream = request.InputStream)
@@ -233,7 +234,7 @@ namespace Amazon.S3.Transfer.Internal
                         {
                             readBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length).ConfigureAwait(false);
                             await nextUploadBuffer.WriteAsync(readBuffer, 0, readBytesCount).ConfigureAwait(false);
-                            if (nextUploadBuffer.Position > S3Constants.MinPartSize || readBytesCount == 0)
+                            if (nextUploadBuffer.Position > minPartSize || readBytesCount == 0)
                             {
                                 bool isLastPart = readBytesCount == 0;
                                 var partSize = nextUploadBuffer.Position;

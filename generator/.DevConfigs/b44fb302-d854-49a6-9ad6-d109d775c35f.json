@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixed a bug where the part size specified on the request was being ignored for uploading non seekable streams via the transfer utility"
+            ]
+        }
+    ]
+}

@@ -125,9 +125,11 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
+                //if partSize is not specified on the request, the default value is 0
+                long minPartSize = request?.PartSize != 0 ? request.PartSize : S3Constants.MinPartSize;
                 var uploadPartResponses = new List<UploadPartResponse>();
                 var readBuffer = new byte[READ_BUFFER_SIZE];
-                var partBuffer = new byte[(int)S3Constants.MinPartSize + READ_BUFFER_SIZE];
+                var partBuffer = new byte[(int)minPartSize + READ_BUFFER_SIZE];
                 MemoryStream nextUploadBuffer = new MemoryStream(partBuffer);
 
                 using (var stream = request.InputStream)
@@ -140,7 +142,7 @@ namespace Amazon.S3.Transfer.Internal
                         {
                             readBytesCount = stream.Read(readBuffer, 0, readBuffer.Length);
                             nextUploadBuffer.Write(readBuffer, 0, readBytesCount);
-                            if (nextUploadBuffer.Position > S3Constants.MinPartSize || readBytesCount == 0)
+                            if (nextUploadBuffer.Position > minPartSize || readBytesCount == 0)
                             {
                                 bool isLastPart = readBytesCount == 0;
                                 var partSize = nextUploadBuffer.Position;
