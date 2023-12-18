@@ -631,7 +631,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a user pool.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [Obsolete("This property is no longer available.")]

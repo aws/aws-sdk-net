@@ -285,10 +285,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Define auth challenge
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Verify auth challenge
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">

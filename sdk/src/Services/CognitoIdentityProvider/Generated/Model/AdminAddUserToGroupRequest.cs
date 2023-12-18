@@ -30,7 +30,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminAddUserToGroup operation.
-    /// Adds the specified user to the specified group.
+    /// Adds a user to a group. A user who is in a group can present a preferred-role claim
+    /// to an identity pool, and populates a <code>cognito:groups</code> claim to their access
+    /// and identity tokens.
     /// 
     ///  <note> 
     /// <para>
@@ -63,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The group name.
+        /// The name of the group that you want to add your user to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -82,7 +84,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username for the user.
+        /// The username of the user that you want to query or modify. The value of this parameter
+        /// is typically your user's username, but it can be any of their alias attributes. If
+        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
+        /// their <code>sub</code> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

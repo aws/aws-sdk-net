@@ -121,6 +121,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PreTokenGeneration);
             }
 
+            if(requestObject.IsSetPreTokenGenerationConfig())
+            {
+                context.Writer.WritePropertyName("PreTokenGenerationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PreTokenGenerationVersionConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.PreTokenGenerationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUserMigration())
             {
                 context.Writer.WritePropertyName("UserMigration");

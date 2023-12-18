@@ -83,7 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The limit of the request to list users.
+        /// The maximum number of users that you want to retrieve before pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

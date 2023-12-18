@@ -29,18 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The properties of a custom email sender Lambda trigger.
+    /// The properties of a pre token generation Lambda trigger.
     /// </summary>
-    public partial class CustomEmailLambdaVersionConfigType
+    public partial class PreTokenGenerationVersionConfigType
     {
         private string _lambdaArn;
-        private CustomEmailSenderLambdaVersionType _lambdaVersion;
+        private PreTokenGenerationLambdaVersionType _lambdaVersion;
 
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda
         /// trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter and the <code>PreTokenGeneration</code> property of <code>LambdaConfig</code>
+        /// have the same value. For new instances of pre token generation triggers, set <code>LambdaArn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -62,14 +67,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool trigger version of the request that Amazon Cognito sends to your Lambda
         /// function. Higher-numbered versions add fields that support new features.
         /// </para>
-        ///  
-        /// <para>
-        /// You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender
-        /// function.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public CustomEmailSenderLambdaVersionType LambdaVersion
+        public PreTokenGenerationLambdaVersionType LambdaVersion
         {
             get { return this._lambdaVersion; }
             set { this._lambdaVersion = value; }

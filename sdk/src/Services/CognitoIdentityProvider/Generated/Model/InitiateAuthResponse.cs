@@ -63,7 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ChallengeName. 
         /// <para>
         /// The name of the challenge that you're responding to with this call. This name is returned
-        /// in the <code>AdminInitiateAuth</code> response if you must pass another challenge.
+        /// in the <code>InitiateAuth</code> response if you must pass another challenge.
         /// </para>
         ///  
         /// <para>
@@ -125,7 +125,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
         /// they can sign in. The MFA types activated for the user pool will be listed in the
-        /// challenge parameters <code>MFA_CAN_SETUP</code> value. 
+        /// challenge parameters <code>MFAS_CAN_SETUP</code> value. 
         /// </para>
         ///  
         /// <para>

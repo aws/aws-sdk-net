@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A custom SMS sender Lambda configuration type.
+    /// The properties of a custom SMS sender Lambda trigger.
     /// </summary>
     public partial class CustomSMSLambdaVersionConfigType
     {
@@ -39,8 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates
-        /// to send SMS notifications to users.
+        /// The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda
+        /// trigger.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -59,8 +59,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaVersion. 
         /// <para>
-        /// Signature of the "request" attribute in the "event" information that Amazon Cognito
-        /// passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+        /// The user pool trigger version of the request that Amazon Cognito sends to your Lambda
+        /// function. Higher-numbered versions add fields that support new features.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender
+        /// function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

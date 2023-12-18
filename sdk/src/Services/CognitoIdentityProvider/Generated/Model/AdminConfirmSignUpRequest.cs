@@ -30,9 +30,19 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminConfirmSignUp operation.
-    /// Confirms user registration as an admin without using a confirmation code. Works on
-    /// any user.
+    /// This IAM-authenticated API operation provides a code that Amazon Cognito sent to your
+    /// user when they signed up in your user pool. After your user enters their code, they
+    /// confirm ownership of the email address or phone number that they provided, and their
+    /// user account becomes active. Depending on your user pool configuration, your users
+    /// will receive their confirmation code in an email or SMS message.
     /// 
+    ///  
+    /// <para>
+    /// Local users who signed up in your user pool are the only type of user who can confirm
+    /// sign-up with a code. Users who federate through an external identity provider (IdP)
+    /// have already been confirmed by their IdP. Administrator-created users confirm their
+    /// accounts when they respond to their invitation email message and choose a password.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -119,7 +129,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name for which you want to confirm user registration.
+        /// The username of the user that you want to query or modify. The value of this parameter
+        /// is typically your user's username, but it can be any of their alias attributes. If
+        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
+        /// their <code>sub</code> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

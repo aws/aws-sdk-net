@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        /// The users returned in the request to list users.
+        /// A list of users in the group, and their attributes.
         /// </para>
         /// </summary>
         public List<UserType> Users

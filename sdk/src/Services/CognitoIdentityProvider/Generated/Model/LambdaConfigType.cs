@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _preAuthentication;
         private string _preSignUp;
         private string _preTokenGeneration;
+        private PreTokenGenerationVersionConfigType _preTokenGenerationConfig;
         private string _userMigration;
         private string _verifyAuthChallengeResponse;
 
@@ -240,7 +241,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreTokenGeneration. 
         /// <para>
-        /// A Lambda trigger that is invoked before token generation.
+        /// The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda
+        /// trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>,
+        /// its value must be identical to <code>PreTokenGeneration</code>. For new instances
+        /// of pre token generation triggers, set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set <code/> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -254,6 +266,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPreTokenGeneration()
         {
             return this._preTokenGeneration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreTokenGenerationConfig. 
+        /// <para>
+        /// The detailed configuration of a pre token generation trigger. If you also set an ARN
+        /// in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+        /// </para>
+        /// </summary>
+        public PreTokenGenerationVersionConfigType PreTokenGenerationConfig
+        {
+            get { return this._preTokenGenerationConfig; }
+            set { this._preTokenGenerationConfig = value; }
+        }
+
+        // Check to see if PreTokenGenerationConfig property is set
+        internal bool IsSetPreTokenGenerationConfig()
+        {
+            return this._preTokenGenerationConfig != null;
         }
 
         /// <summary>

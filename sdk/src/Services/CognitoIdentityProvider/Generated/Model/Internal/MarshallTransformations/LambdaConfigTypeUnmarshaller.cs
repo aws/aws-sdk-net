@@ -129,6 +129,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreTokenGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreTokenGenerationConfig", targetDepth))
+                {
+                    var unmarshaller = PreTokenGenerationVersionConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.PreTokenGenerationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserMigration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

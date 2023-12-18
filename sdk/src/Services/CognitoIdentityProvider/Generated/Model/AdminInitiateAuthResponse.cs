@@ -129,7 +129,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before
         /// they can sign in. The MFA types activated for the user pool will be listed in the
-        /// challenge parameters <code>MFA_CAN_SETUP</code> value. 
+        /// challenge parameters <code>MFAS_CAN_SETUP</code> value. 
         /// </para>
         ///  
         /// <para>
