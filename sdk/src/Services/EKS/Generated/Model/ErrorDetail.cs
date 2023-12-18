@@ -58,7 +58,7 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free
+        ///  <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available
         /// IP addresses.
         /// </para>
         ///  </li> <li> 

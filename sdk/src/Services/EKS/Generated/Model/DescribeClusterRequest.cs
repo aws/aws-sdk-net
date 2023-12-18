@@ -30,14 +30,14 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCluster operation.
-    /// Returns descriptive information about an Amazon EKS cluster.
+    /// Describes an Amazon EKS cluster.
     /// 
     ///  
     /// <para>
     /// The API server endpoint and certificate authority data returned by this operation
     /// are required for <code>kubelet</code> and <code>kubectl</code> to communicate with
-    /// your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
-    /// a kubeconfig for Amazon EKS</a>.
+    /// your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Creating
+    /// or updating a <code>kubeconfig</code> file for an Amazon EKS cluster</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster to describe.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

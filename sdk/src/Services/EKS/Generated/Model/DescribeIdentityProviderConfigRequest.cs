@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIdentityProviderConfig operation.
-    /// Returns descriptive information about an identity provider configuration.
+    /// Describes an identity provider configuration.
     /// </summary>
     public partial class DescribeIdentityProviderConfigRequest : AmazonEKSRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The cluster name that the identity provider configuration is associated to.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

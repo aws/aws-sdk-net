@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Amazon EKS Pod Identity associations provide the ability to manage credentials for
-    /// your applications, similar to the way that 7EC2l instance profiles provide credentials
+    /// your applications, similar to the way that Amazon EC2 instance profiles provide credentials
     /// to Amazon EC2 instances.
     /// </summary>
     public partial class PodIdentityAssociation
@@ -197,8 +197,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to a resource to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         ///  
         /// <para>

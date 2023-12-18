@@ -57,7 +57,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// Specifies the resources to be encrypted. The only supported value is "secrets".
+        /// Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
         /// </para>
         /// </summary>
         public List<string> Resources

@@ -32,14 +32,14 @@ namespace Amazon.EKS.Model
     /// Container for the parameters to the UpdateClusterConfig operation.
     /// Updates an Amazon EKS cluster configuration. Your cluster continues to function during
     /// the update. The response output includes an update ID that you can use to track the
-    /// status of your cluster update with the <a>DescribeUpdate</a> API operation.
+    /// status of your cluster update with <code>DescribeUpdate</code>"/&gt;.
     /// 
     ///  
     /// <para>
     /// You can use this API operation to enable or disable exporting the Kubernetes control
     /// plane logs for your cluster to CloudWatch Logs. By default, cluster control plane
     /// logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-    /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+    /// EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -73,16 +73,35 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class UpdateClusterConfigRequest : AmazonEKSRequest
     {
+        private UpdateAccessConfigRequest _accessConfig;
         private string _clientRequestToken;
         private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
 
         /// <summary>
+        /// Gets and sets the property AccessConfig. 
+        /// <para>
+        /// The access configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public UpdateAccessConfigRequest AccessConfig
+        {
+            get { return this._accessConfig; }
+            set { this._accessConfig = value; }
+        }
+
+        // Check to see if AccessConfig property is set
+        internal bool IsSetAccessConfig()
+        {
+            return this._accessConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken

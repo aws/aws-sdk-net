@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Deletes specified tags from a resource.
+    /// Deletes specified tags from an Amazon EKS resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonEKSRequest
     {
@@ -40,8 +40,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently,
-        /// the supported resources are Amazon EKS clusters and managed node groups.
+        /// The Amazon Resource Name (ARN) of the resource to delete tags from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +59,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of the tags to be removed.
+        /// The keys of the tags to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

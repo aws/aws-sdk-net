@@ -41,6 +41,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EKS.Model.ListAccessEntriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.ListAccessPoliciesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EKS.Model.ListAddonsRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>
@@ -48,6 +58,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.ListAddonsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.ListAssociatedAccessPoliciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>

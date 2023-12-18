@@ -30,9 +30,17 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNodegroup operation.
-    /// Creates a managed node group for an Amazon EKS cluster. You can only create a node
-    /// group for your cluster that is equal to the current Kubernetes version for the cluster.
+    /// Creates a managed node group for an Amazon EKS cluster.
     /// 
+    ///  
+    /// <para>
+    /// You can only create a node group for your cluster that is equal to the current Kubernetes
+    /// version for the cluster. All node groups are created with the latest AMI release version
+    /// for the respective minor Kubernetes version of the cluster, unless you deploy a custom
+    /// AMI using a launch template. For more information about using launch templates, see
+    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+    /// template support</a>.
+    /// </para>
     ///  
     /// <para>
     /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
@@ -42,8 +50,8 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Windows AMI types are only supported for commercial Regions that support Windows Amazon
-    /// EKS.
+    /// Windows AMI types are only supported for commercial Amazon Web Services Regions that
+    /// support Windows on Amazon EKS.
     /// </para>
     ///  </note>
     /// </summary>
@@ -113,8 +121,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -132,7 +140,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster to create the node group in.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -203,7 +211,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// The Kubernetes labels to be applied to the nodes in the node group when they are created.
+        /// The Kubernetes <code>labels</code> to apply to the nodes in the node group when they
+        /// are created.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Labels
@@ -267,10 +276,9 @@ namespace Amazon.EKS.Model
         /// them into a cluster, you must create an IAM role for those nodes to use when they
         /// are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
         /// EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify
-        /// <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-        /// <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment
-        /// will fail. For more information about using launch templates with Amazon EKS, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// <code>launchTemplate</code>, then don't specify <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+        /// </code> in your launch template, or the node group deployment will fail. For more
+        /// information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -364,9 +372,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The subnets to use for the Auto Scaling group that is created for your node group.
-        /// If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-        /// <code>SubnetId</code> </a> in your launch template, or the node group deployment will
-        /// fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// If you specify <code>launchTemplate</code>, then don't specify <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+        /// </code> in your launch template, or the node group deployment will fail. For more
+        /// information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -386,10 +394,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata to apply to the node group to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both. Node group tags
-        /// do not propagate to any other resources associated with the node group, such as the
-        /// Amazon EC2 instances or subnets.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

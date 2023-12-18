@@ -91,12 +91,12 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Between /24 and /12.
+        /// Between <code>/24</code> and <code>/12</code>.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// You can only specify a custom CIDR block when you create a cluster and can't change
-        /// this value once the cluster is created.
+        /// You can only specify a custom CIDR block when you create a cluster. You can't change
+        /// this value after the cluster is created.
         /// </para>
         ///  </important>
         /// </summary>

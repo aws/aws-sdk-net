@@ -31,7 +31,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// An object representing the details of an update to a taints payload. For more information,
     /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-    /// taints on managed node groups</a>.
+    /// taints on managed node groups</a> in the <i>Amazon EKS User Guide</i>.
     /// </summary>
     public partial class UpdateTaintsPayload
     {

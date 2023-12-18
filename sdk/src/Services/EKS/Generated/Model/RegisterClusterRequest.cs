@@ -50,9 +50,9 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  
     /// <para>
-    /// After the Manifest is updated and applied, then the connected cluster is visible to
-    /// the Amazon EKS control plane. If the Manifest is not applied within three days, then
-    /// the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.
+    /// After the manifest is updated and applied, the connected cluster is visible to the
+    /// Amazon EKS control plane. If the manifest isn't applied within three days, the connected
+    /// cluster will no longer be visible and must be deregistered using <code>DeregisterCluster</code>.
     /// </para>
     /// </summary>
     public partial class RegisterClusterRequest : AmazonEKSRequest
@@ -65,8 +65,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -104,7 +104,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Define a unique name for this cluster for your Region.
+        /// A unique name for this cluster in your Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -123,9 +123,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. Cluster
-        /// tags do not propagate to any other resources associated with the cluster.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

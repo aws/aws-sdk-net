@@ -30,8 +30,8 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-    /// Amazon EKS clusters and node groups are Region-specific.
+    /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+    /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

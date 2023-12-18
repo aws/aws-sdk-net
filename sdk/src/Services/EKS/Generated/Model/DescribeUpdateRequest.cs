@@ -30,8 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUpdate operation.
-    /// Returns descriptive information about an update against your Amazon EKS cluster or
-    /// associated managed node group or Amazon EKS add-on.
+    /// Describes an update to an Amazon EKS resource.
     /// 
     ///  
     /// <para>

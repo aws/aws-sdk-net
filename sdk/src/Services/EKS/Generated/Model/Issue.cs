@@ -93,8 +93,8 @@ namespace Amazon.EKS.Model
         /// into it. If you want your instances to be assigned a public IP address, then you need
         /// to enable the <code>auto-assign public IP address</code> setting for the subnet. See
         /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-        /// the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User
-        /// Guide</i>.
+        /// the public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon
+        /// VPC User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

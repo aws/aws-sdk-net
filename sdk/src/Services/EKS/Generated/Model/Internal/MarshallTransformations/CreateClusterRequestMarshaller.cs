@@ -65,6 +65,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessConfig())
+                {
+                    context.Writer.WritePropertyName("accessConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateAccessConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AccessConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("clientRequestToken");

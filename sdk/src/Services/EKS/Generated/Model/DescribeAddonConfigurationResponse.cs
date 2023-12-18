@@ -78,8 +78,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSchema. 
         /// <para>
-        /// A JSON schema that's used to validate the configuration values that you provide when
-        /// an addon is created or updated.
+        /// A JSON schema that's used to validate the configuration values you provide when an
+        /// add-on is created or updated.
         /// </para>
         /// </summary>
         public string ConfigurationSchema

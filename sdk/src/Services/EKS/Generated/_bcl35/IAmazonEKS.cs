@@ -30,10 +30,9 @@ namespace Amazon.EKS
     /// Interface for accessing EKS
     ///
     /// Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it
-    /// easy for you to run Kubernetes on Amazon Web Services without needing to stand up
-    /// or maintain your own Kubernetes control plane. Kubernetes is an open-source system
-    /// for automating the deployment, scaling, and management of containerized applications.
-    /// 
+    /// easy for you to run Kubernetes on Amazon Web Services without needing to setup or
+    /// maintain your own Kubernetes control plane. Kubernetes is an open-source system for
+    /// automating the deployment, scaling, and management of containerized applications.
     /// 
     ///  
     /// <para>
@@ -58,17 +57,75 @@ namespace Amazon.EKS
 
 
         
+        #region  AssociateAccessPolicy
+
+
+        /// <summary>
+        /// Associates an access policy and its scope to an access entry. For more information
+        /// about associating access policies, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-policies.html">Associating
+        /// and disassociating access policies to and from access entries</a> in the <i>Amazon
+        /// EKS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAccessPolicy service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateAccessPolicy">REST API Reference for AssociateAccessPolicy Operation</seealso>
+        AssociateAccessPolicyResponse AssociateAccessPolicy(AssociateAccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAccessPolicy operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAccessPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateAccessPolicy">REST API Reference for AssociateAccessPolicy Operation</seealso>
+        IAsyncResult BeginAssociateAccessPolicy(AssociateAccessPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  AssociateAccessPolicyResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateAccessPolicy">REST API Reference for AssociateAccessPolicy Operation</seealso>
+        AssociateAccessPolicyResponse EndAssociateAccessPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateEncryptionConfig
 
 
         /// <summary>
-        /// Associate encryption configuration to an existing cluster.
+        /// Associates an encryption configuration to an existing cluster.
         /// 
         ///  
         /// <para>
-        /// You can use this API to enable encryption on existing clusters which do not have encryption
-        /// already enabled. This allows you to implement a defense-in-depth security strategy
-        /// without migrating applications to new Amazon EKS clusters.
+        /// Use this API to enable encryption on existing clusters that don't already have encryption
+        /// enabled. This allows you to implement a defense-in-depth security strategy without
+        /// migrating applications to new Amazon EKS clusters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateEncryptionConfig service method.</param>
@@ -92,8 +149,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -133,16 +190,16 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Associate an identity provider configuration to a cluster.
+        /// Associates an identity provider configuration to a cluster.
         /// 
         ///  
         /// <para>
         /// If you want to authenticate identities using an identity provider, you can create
         /// an identity provider configuration and associate it to your cluster. After configuring
-        /// authentication to your cluster you can create Kubernetes <code>roles</code> and <code>clusterroles</code>
-        /// to assign permissions to the roles, and then bind the roles to the identities using
-        /// Kubernetes <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
-        /// information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
+        /// authentication to your cluster you can create Kubernetes <code>Role</code> and <code>ClusterRole</code>
+        /// objects, assign permissions to them, and then bind them to the identities using Kubernetes
+        /// <code>RoleBinding</code> and <code>ClusterRoleBinding</code> objects. For more information
+        /// see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
         /// RBAC Authorization</a> in the Kubernetes documentation.
         /// </para>
         /// </summary>
@@ -167,8 +224,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -201,6 +258,86 @@ namespace Amazon.EKS
         /// <returns>Returns a  AssociateIdentityProviderConfigResult from EKS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">REST API Reference for AssociateIdentityProviderConfig Operation</seealso>
         AssociateIdentityProviderConfigResponse EndAssociateIdentityProviderConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAccessEntry
+
+
+        /// <summary>
+        /// Creates an access entry.
+        /// 
+        ///  
+        /// <para>
+        /// An access entry allows an IAM principal to access your cluster. Access entries can
+        /// replace the need to maintain entries in the <code>aws-auth</code> <code>ConfigMap</code>
+        /// for authentication. You have the following options for authorizing an IAM principal
+        /// to access Kubernetes objects on your cluster: Kubernetes role-based access control
+        /// (RBAC), Amazon EKS, or both. Kubernetes RBAC authorization requires you to create
+        /// and manage Kubernetes <code>Role</code>, <code>ClusterRole</code>, <code>RoleBinding</code>,
+        /// and <code>ClusterRoleBinding</code> objects, in addition to managing access entries.
+        /// If you use Amazon EKS authorization exclusively, you don't need to create and manage
+        /// Kubernetes <code>Role</code>, <code>ClusterRole</code>, <code>RoleBinding</code>,
+        /// and <code>ClusterRoleBinding</code> objects.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about access entries, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html">Access
+        /// entries</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessEntry service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessEntry service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAccessEntry">REST API Reference for CreateAccessEntry Operation</seealso>
+        CreateAccessEntryResponse CreateAccessEntry(CreateAccessEntryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessEntry operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessEntry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAccessEntry">REST API Reference for CreateAccessEntry Operation</seealso>
+        IAsyncResult BeginCreateAccessEntry(CreateAccessEntryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessEntry.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessEntryResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAccessEntry">REST API Reference for CreateAccessEntry Operation</seealso>
+        CreateAccessEntryResponse EndCreateAccessEntry(IAsyncResult asyncResult);
 
         #endregion
         
@@ -238,8 +375,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -279,7 +416,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Creates an Amazon EKS control plane. 
+        /// Creates an Amazon EKS control plane.
         /// 
         ///  
         /// <para>
@@ -500,7 +637,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
-        /// Profile</a> in the <i>Amazon EKS User Guide</i>.
+        /// profile</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFargateProfile service method.</param>
@@ -565,9 +702,17 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Creates a managed node group for an Amazon EKS cluster. You can only create a node
-        /// group for your cluster that is equal to the current Kubernetes version for the cluster.
+        /// Creates a managed node group for an Amazon EKS cluster.
         /// 
+        ///  
+        /// <para>
+        /// You can only create a node group for your cluster that is equal to the current Kubernetes
+        /// version for the cluster. All node groups are created with the latest AMI release version
+        /// for the respective minor Kubernetes version of the cluster, unless you deploy a custom
+        /// AMI using a launch template. For more information about using launch templates, see
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// template support</a>.
+        /// </para>
         ///  
         /// <para>
         /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
@@ -577,8 +722,8 @@ namespace Amazon.EKS
         /// </para>
         ///  <note> 
         /// <para>
-        /// Windows AMI types are only supported for commercial Regions that support Windows Amazon
-        /// EKS.
+        /// Windows AMI types are only supported for commercial Amazon Web Services Regions that
+        /// support Windows on Amazon EKS.
         /// </para>
         ///  </note>
         /// </summary>
@@ -652,7 +797,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// Amazon EKS Pod Identity associations provide the ability to manage credentials for
-        /// your applications, similar to the way that 7EC2l instance profiles provide credentials
+        /// your applications, similar to the way that Amazon EC2 instance profiles provide credentials
         /// to Amazon EC2 instances.
         /// </para>
         ///  
@@ -687,8 +832,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -724,16 +869,75 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DeleteAccessEntry
+
+
+        /// <summary>
+        /// Deletes an access entry.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting an access entry of a type other than <code>Standard</code> can cause your
+        /// cluster to function improperly. If you delete an access entry in error, you can recreate
+        /// it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessEntry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessEntry service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAccessEntry">REST API Reference for DeleteAccessEntry Operation</seealso>
+        DeleteAccessEntryResponse DeleteAccessEntry(DeleteAccessEntryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessEntry operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessEntry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAccessEntry">REST API Reference for DeleteAccessEntry Operation</seealso>
+        IAsyncResult BeginDeleteAccessEntry(DeleteAccessEntryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessEntry.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessEntryResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAccessEntry">REST API Reference for DeleteAccessEntry Operation</seealso>
+        DeleteAccessEntryResponse EndDeleteAccessEntry(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAddon
 
 
         /// <summary>
-        /// Delete an Amazon EKS add-on.
+        /// Deletes an Amazon EKS add-on.
         /// 
         ///  
         /// <para>
-        /// When you remove the add-on, it will also be deleted from the cluster. You can always
-        /// manually start an add-on on the cluster using the Kubernetes API.
+        /// When you remove an add-on, it's deleted from the cluster. You can always manually
+        /// start an add-on on the cluster using the Kubernetes API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAddon service method.</param>
@@ -754,8 +958,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -795,7 +999,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Deletes the Amazon EKS cluster control plane.
+        /// Deletes an Amazon EKS cluster control plane.
         /// 
         ///  
         /// <para>
@@ -803,12 +1007,12 @@ namespace Amazon.EKS
         /// you must delete those services before deleting the cluster so that the load balancers
         /// are deleted properly. Otherwise, you can have orphaned resources in your VPC that
         /// prevent you from being able to delete the VPC. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
-        /// a Cluster</a> in the <i>Amazon EKS User Guide</i>.
+        /// a cluster</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you have managed node groups or Fargate profiles attached to the cluster, you must
-        /// delete them first. For more information, see <a>DeleteNodegroup</a> and <a>DeleteFargateProfile</a>.
+        /// delete them first. For more information, see <code>DeleteNodgroup</code> and <code>DeleteFargateProfile</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -825,8 +1029,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -889,8 +1093,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -934,10 +1138,11 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When you delete a Fargate profile, any pods running on Fargate that were created with
-        /// the profile are deleted. If those pods match another Fargate profile, then they are
-        /// scheduled on Fargate with that profile. If they no longer match any Fargate profiles,
-        /// then they are not scheduled on Fargate and they may remain in a pending state.
+        /// When you delete a Fargate profile, any <code>Pod</code> running on Fargate that was
+        /// created with the profile is deleted. If the <code>Pod</code> matches another Fargate
+        /// profile, then it is scheduled on Fargate with that profile. If it no longer matches
+        /// any Fargate profiles, then it's not scheduled on Fargate and may remain in a pending
+        /// state.
         /// </para>
         ///  
         /// <para>
@@ -960,8 +1165,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1001,7 +1206,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Deletes an Amazon EKS node group for a cluster.
+        /// Deletes a managed node group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNodegroup service method.</param>
         /// 
@@ -1020,8 +1225,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1085,8 +1290,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1127,6 +1332,13 @@ namespace Amazon.EKS
 
         /// <summary>
         /// Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+        /// 
+        ///  
+        /// <para>
+        /// A connected cluster is a Kubernetes cluster that you've connected to your control
+        /// plane using the <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html">Amazon
+        /// EKS Connector</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterCluster service method.</param>
         /// 
@@ -1148,8 +1360,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1188,6 +1400,58 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeAccessEntry
+
+
+        /// <summary>
+        /// Describes an access entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessEntry service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccessEntry service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAccessEntry">REST API Reference for DescribeAccessEntry Operation</seealso>
+        DescribeAccessEntryResponse DescribeAccessEntry(DescribeAccessEntryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessEntry operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccessEntry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAccessEntry">REST API Reference for DescribeAccessEntry Operation</seealso>
+        IAsyncResult BeginDescribeAccessEntry(DescribeAccessEntryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccessEntry.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccessEntryResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAccessEntry">REST API Reference for DescribeAccessEntry Operation</seealso>
+        DescribeAccessEntryResponse EndDescribeAccessEntry(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeAddon
 
 
@@ -1212,8 +1476,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1263,8 +1527,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1304,9 +1568,14 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Describes the versions for an add-on. Information such as the Kubernetes versions
-        /// that you can use the add-on with, the <code>owner</code>, <code>publisher</code>,
-        /// and the <code>type</code> of the add-on are returned.
+        /// Describes the versions for an add-on.
+        /// 
+        ///  
+        /// <para>
+        /// Information such as the Kubernetes versions that you can use the add-on with, the
+        /// <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on
+        /// are returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddonVersions service method.</param>
         /// 
@@ -1316,8 +1585,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1357,14 +1626,14 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Returns descriptive information about an Amazon EKS cluster.
+        /// Describes an Amazon EKS cluster.
         /// 
         ///  
         /// <para>
         /// The API server endpoint and certificate authority data returned by this operation
         /// are required for <code>kubelet</code> and <code>kubectl</code> to communicate with
-        /// your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
-        /// a kubeconfig for Amazon EKS</a>.
+        /// your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Creating
+        /// or updating a <code>kubeconfig</code> file for an Amazon EKS cluster</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1384,8 +1653,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1441,8 +1710,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1485,7 +1754,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Returns descriptive information about an Fargate profile.
+        /// Describes an Fargate profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFargateProfile service method.</param>
         /// 
@@ -1501,8 +1770,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1542,7 +1811,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Returns descriptive information about an identity provider configuration.
+        /// Describes an identity provider configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProviderConfig service method.</param>
         /// 
@@ -1558,8 +1827,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1602,7 +1871,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Returns descriptive information about an Amazon EKS node group.
+        /// Describes a managed node group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNodegroup service method.</param>
         /// 
@@ -1618,8 +1887,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1684,8 +1953,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1725,8 +1994,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Returns descriptive information about an update against your Amazon EKS cluster or
-        /// associated managed node group or Amazon EKS add-on.
+        /// Describes an update to an Amazon EKS resource.
         /// 
         ///  
         /// <para>
@@ -1749,8 +2017,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1786,14 +2054,70 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DisassociateAccessPolicy
+
+
+        /// <summary>
+        /// Disassociates an access policy from an access entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAccessPolicy service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateAccessPolicy">REST API Reference for DisassociateAccessPolicy Operation</seealso>
+        DisassociateAccessPolicyResponse DisassociateAccessPolicy(DisassociateAccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAccessPolicy operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateAccessPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateAccessPolicy">REST API Reference for DisassociateAccessPolicy Operation</seealso>
+        IAsyncResult BeginDisassociateAccessPolicy(DisassociateAccessPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateAccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  DisassociateAccessPolicyResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateAccessPolicy">REST API Reference for DisassociateAccessPolicy Operation</seealso>
+        DisassociateAccessPolicyResponse EndDisassociateAccessPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateIdentityProviderConfig
 
 
         /// <summary>
-        /// Disassociates an identity provider configuration from a cluster. If you disassociate
-        /// an identity provider from your cluster, users included in the provider can no longer
-        /// access the cluster. However, you can still access the cluster with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-        /// principals</a>.
+        /// Disassociates an identity provider configuration from a cluster.
+        /// 
+        ///  
+        /// <para>
+        /// If you disassociate an identity provider from your cluster, users included in the
+        /// provider can no longer access the cluster. However, you can still access the cluster
+        /// with IAM principals.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateIdentityProviderConfig service method.</param>
         /// 
@@ -1816,8 +2140,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1853,6 +2177,104 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListAccessEntries
+
+
+        /// <summary>
+        /// Lists the access entries for your cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessEntries service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessEntries service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessEntries">REST API Reference for ListAccessEntries Operation</seealso>
+        ListAccessEntriesResponse ListAccessEntries(ListAccessEntriesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessEntries operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessEntries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessEntries">REST API Reference for ListAccessEntries Operation</seealso>
+        IAsyncResult BeginListAccessEntries(ListAccessEntriesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessEntries.</param>
+        /// 
+        /// <returns>Returns a  ListAccessEntriesResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessEntries">REST API Reference for ListAccessEntries Operation</seealso>
+        ListAccessEntriesResponse EndListAccessEntries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAccessPolicies
+
+
+        /// <summary>
+        /// Lists the available access policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessPolicies service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
+        ListAccessPoliciesResponse ListAccessPolicies(ListAccessPoliciesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPolicies operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
+        IAsyncResult BeginListAccessPolicies(ListAccessPoliciesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListAccessPoliciesResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
+        ListAccessPoliciesResponse EndListAccessPolicies(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAddons
 
 
@@ -1877,8 +2299,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1914,12 +2336,64 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListAssociatedAccessPolicies
+
+
+        /// <summary>
+        /// Lists the access policies associated with an access entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedAccessPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAssociatedAccessPolicies service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAssociatedAccessPolicies">REST API Reference for ListAssociatedAccessPolicies Operation</seealso>
+        ListAssociatedAccessPoliciesResponse ListAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssociatedAccessPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedAccessPolicies operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociatedAccessPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAssociatedAccessPolicies">REST API Reference for ListAssociatedAccessPolicies Operation</seealso>
+        IAsyncResult BeginListAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssociatedAccessPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociatedAccessPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListAssociatedAccessPoliciesResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAssociatedAccessPolicies">REST API Reference for ListAssociatedAccessPolicies Operation</seealso>
+        ListAssociatedAccessPoliciesResponse EndListAssociatedAccessPolicies(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListClusters
 
 
         /// <summary>
         /// Lists the Amazon EKS clusters in your Amazon Web Services account in the specified
-        /// Region.
+        /// Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -2030,7 +2504,7 @@ namespace Amazon.EKS
 
         /// <summary>
         /// Lists the Fargate profiles associated with the specified cluster in your Amazon Web
-        /// Services account in the specified Region.
+        /// Services account in the specified Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFargateProfiles service method.</param>
         /// 
@@ -2046,8 +2520,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2087,7 +2561,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// A list of identity provider configurations.
+        /// Lists the identity provider configurations for your cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviderConfigs service method.</param>
         /// 
@@ -2103,8 +2577,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2147,9 +2621,9 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the Amazon EKS managed node groups associated with the specified cluster in
-        /// your Amazon Web Services account in the specified Region. Self-managed node groups
-        /// are not listed.
+        /// Lists the managed node groups associated with the specified cluster in your Amazon
+        /// Web Services account in the specified Amazon Web Services Region. Self-managed node
+        /// groups aren't listed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
         /// 
@@ -2165,8 +2639,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2224,8 +2698,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2313,8 +2787,8 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the updates associated with an Amazon EKS cluster or managed node group in your
-        /// Amazon Web Services account, in the specified Region.
+        /// Lists the updates associated with an Amazon EKS resource in your Amazon Web Services
+        /// account, in the specified Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
         /// 
@@ -2330,8 +2804,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2391,9 +2865,9 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// After the Manifest is updated and applied, then the connected cluster is visible to
-        /// the Amazon EKS control plane. If the Manifest is not applied within three days, then
-        /// the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.
+        /// After the manifest is updated and applied, the connected cluster is visible to the
+        /// Amazon EKS control plane. If the manifest isn't applied within three days, the connected
+        /// cluster will no longer be visible and must be deregistered using <code>DeregisterCluster</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCluster service method.</param>
@@ -2465,13 +2939,13 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-        /// If existing tags on a resource are not specified in the request parameters, they are
-        /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well. Tags that you create for Amazon EKS resources do not propagate to
-        /// any other resources associated with the cluster. For example, if you tag a cluster
-        /// with this operation, that tag does not automatically propagate to the subnets and
-        /// nodes associated with the cluster.
+        /// Associates the specified tags to an Amazon EKS resource with the specified <code>resourceArn</code>.
+        /// If existing tags on a resource are not specified in the request parameters, they aren't
+        /// changed. When a resource is deleted, the tags associated with that resource are also
+        /// deleted. Tags that you create for Amazon EKS resources don't propagate to any other
+        /// resources associated with the cluster. For example, if you tag a cluster with this
+        /// operation, that tag doesn't automatically propagate to the subnets and nodes associated
+        /// with the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2519,7 +2993,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Deletes specified tags from a resource.
+        /// Deletes specified tags from an Amazon EKS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2563,6 +3037,61 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  UpdateAccessEntry
+
+
+        /// <summary>
+        /// Updates an access entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessEntry service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccessEntry service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAccessEntry">REST API Reference for UpdateAccessEntry Operation</seealso>
+        UpdateAccessEntryResponse UpdateAccessEntry(UpdateAccessEntryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessEntry operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccessEntry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAccessEntry">REST API Reference for UpdateAccessEntry Operation</seealso>
+        IAsyncResult BeginUpdateAccessEntry(UpdateAccessEntryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccessEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccessEntry.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccessEntryResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAccessEntry">REST API Reference for UpdateAccessEntry Operation</seealso>
+        UpdateAccessEntryResponse EndUpdateAccessEntry(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateAddon
 
 
@@ -2590,8 +3119,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2633,14 +3162,14 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster configuration. Your cluster continues to function during
         /// the update. The response output includes an update ID that you can use to track the
-        /// status of your cluster update with the <a>DescribeUpdate</a> API operation.
+        /// status of your cluster update with <code>DescribeUpdate</code>"/&gt;.
         /// 
         ///  
         /// <para>
         /// You can use this API operation to enable or disable exporting the Kubernetes control
         /// plane logs for your cluster to CloudWatch Logs. By default, cluster control plane
         /// logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-        /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2693,8 +3222,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2774,8 +3303,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2836,8 +3365,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2904,8 +3433,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -2973,9 +3502,10 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// When a node in a managed node group is terminated due to a scaling action or update,
-        /// the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully
-        /// and will fail if it is unable to do so. You can <code>force</code> the update if Amazon
-        /// EKS is unable to drain the nodes as a result of a pod disruption budget issue.
+        /// every <code>Pod</code> on that node is drained first. Amazon EKS attempts to drain
+        /// the nodes gracefully and will fail if it is unable to do so. You can <code>force</code>
+        /// the update if Amazon EKS is unable to drain the nodes as a result of a <code>Pod</code>
+        /// disruption budget issue.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupVersion service method.</param>
@@ -2999,8 +3529,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -3042,7 +3572,7 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates a EKS Pod Identity association. Only the IAM role can be changed; an association
         /// can't be moved between clusters, namespaces, or service accounts. If you need to edit
-        /// the namespace or service account, you need to remove the association and then create
+        /// the namespace or service account, you need to delete the association and then create
         /// a new association with your desired settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePodIdentityAssociation service method.</param>
@@ -3057,8 +3587,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
-        /// Amazon EKS clusters and node groups are Region-specific.
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.

@@ -30,13 +30,13 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateEncryptionConfig operation.
-    /// Associate encryption configuration to an existing cluster.
+    /// Associates an encryption configuration to an existing cluster.
     /// 
     ///  
     /// <para>
-    /// You can use this API to enable encryption on existing clusters which do not have encryption
-    /// already enabled. This allows you to implement a defense-in-depth security strategy
-    /// without migrating applications to new Amazon EKS clusters.
+    /// Use this API to enable encryption on existing clusters that don't already have encryption
+    /// enabled. This allows you to implement a defense-in-depth security strategy without
+    /// migrating applications to new Amazon EKS clusters.
     /// </para>
     /// </summary>
     public partial class AssociateEncryptionConfigRequest : AmazonEKSRequest
@@ -48,7 +48,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The client request token you are using with the encryption configuration.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -66,7 +67,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster that you are associating with encryption configuration.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

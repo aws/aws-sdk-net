@@ -98,7 +98,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster that the managed node group resides in.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         public string ClusterName
@@ -116,7 +116,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the managed node group was created.
+        /// The Unix epoch timestamp at object creation.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -193,12 +193,12 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// The Kubernetes labels applied to the nodes in the node group.
+        /// The Kubernetes <code>labels</code> applied to the nodes in the node group.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Only labels that are applied with the Amazon EKS API are shown here. There may be
-        /// other Kubernetes labels applied to the nodes in this group.
+        /// Only <code>labels</code> that are applied with the Amazon EKS API are shown here.
+        /// There may be other Kubernetes <code>labels</code> applied to the nodes in this group.
         /// </para>
         ///  </note>
         /// </summary>
@@ -236,7 +236,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the managed node group was last modified.
+        /// The Unix epoch timestamp for the last modification to the object.
         /// </para>
         /// </summary>
         public DateTime ModifiedAt
@@ -426,10 +426,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata applied to the node group to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both. Node group tags
-        /// do not propagate to any other resources associated with the node group, such as the
-        /// Amazon EC2 instances or subnets. 
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -33,6 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class Cluster
     {
+        private AccessConfigResponse _accessConfig;
         private string _arn;
         private Certificate _certificateAuthority;
         private string _clientRequestToken;
@@ -53,6 +54,24 @@ namespace Amazon.EKS.Model
         private ClusterStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property AccessConfig. 
+        /// <para>
+        /// The access configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public AccessConfigResponse AccessConfig
+        {
+            get { return this._accessConfig; }
+            set { this._accessConfig = value; }
+        }
+
+        // Check to see if AccessConfig property is set
+        internal bool IsSetAccessConfig()
+        {
+            return this._accessConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -93,8 +112,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -130,7 +149,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the cluster was created.
+        /// The Unix epoch timestamp at object creation.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -278,7 +297,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         public string Name
@@ -316,8 +335,11 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
-        /// Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// The platform version of your Amazon EKS cluster. For more information about clusters
+        /// deployed on the Amazon Web Services Cloud, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+        /// versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>. For more information about
+        /// local clusters deployed on an Outpost, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon
+        /// EKS local cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -338,8 +360,8 @@ namespace Amazon.EKS.Model
         /// The VPC configuration used by the cluster control plane. Amazon EKS VPC resources
         /// have specific requirements to work properly with Kubernetes. For more information,
         /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
-        /// VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-        /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.
+        /// VPC considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+        /// security group considerations</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         public VpcConfigResponse ResourcesVpcConfig
@@ -394,9 +416,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both. Cluster tags do
-        /// not propagate to any other resources associated with the cluster.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

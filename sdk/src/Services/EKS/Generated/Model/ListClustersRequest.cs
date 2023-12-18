@@ -31,7 +31,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Container for the parameters to the ListClusters operation.
     /// Lists the Amazon EKS clusters in your Amazon Web Services account in the specified
-    /// Region.
+    /// Amazon Web Services Region.
     /// </summary>
     public partial class ListClustersRequest : AmazonEKSRequest
     {
@@ -43,8 +43,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Include. 
         /// <para>
         /// Indicates whether external clusters are included in the returned list. Use '<code>all</code>'
-        /// to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>'
-        /// must be in lowercase otherwise an error occurs.
+        /// to return <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html">https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html</a>connected
+        /// clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be
+        /// in lowercase otherwise an error occurs.
         /// </para>
         /// </summary>
         public List<string> Include
@@ -62,13 +63,12 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of cluster results returned by <code>ListClusters</code> in paginated
-        /// output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You
-        /// can see the remaining results of the initial request by sending another <code>ListClusters</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of results, returned in paginated output. You receive <code>maxResults</code>
+        /// in a single page, along with a <code>nextToken</code> response element. You can see
+        /// the remaining results of the initial request by sending another request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 100. If you don't use
+        /// this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+        /// returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -87,10 +87,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value.
+        /// The <code>nextToken</code> value returned from a previous paginated request, where
+        /// <code>maxResults</code> was used and the results exceeded the value of that parameter.
+        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+        /// value. This value is null when there are no more results to return.
         /// </para>
         ///  <note> 
         /// <para>

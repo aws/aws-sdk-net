@@ -70,7 +70,7 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
-    /// Profile</a> in the <i>Amazon EKS User Guide</i>.
+    /// profile</a> in the <i>Amazon EKS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateFargateProfileRequest : AmazonEKSRequest
@@ -86,8 +86,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -105,7 +105,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the Amazon EKS cluster to apply the Fargate profile to.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,11 +143,12 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PodExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the pod execution role to use for pods that match
-        /// the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure
-        /// to register with your cluster as a node, and it provides read access to Amazon ECR
-        /// image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
-        /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+        /// The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a
+        /// <code>Pod</code> that matches the selectors in the Fargate profile. The <code>Pod</code>
+        /// execution role allows Fargate infrastructure to register with your cluster as a node,
+        /// and it provides read access to Amazon ECR image repositories. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
+        /// <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,9 +167,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Selectors. 
         /// <para>
-        /// The selectors to match for pods to use this Fargate profile. Each selector must have
-        /// an associated namespace. Optionally, you can also specify labels for a namespace.
-        /// You may specify up to five selectors in a Fargate profile.
+        /// The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector
+        /// must have an associated Kubernetes <code>namespace</code>. Optionally, you can also
+        /// specify <code>labels</code> for a <code>namespace</code>. You may specify up to five
+        /// selectors in a Fargate profile.
         /// </para>
         /// </summary>
         public List<FargateProfileSelector> Selectors
@@ -186,9 +188,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The IDs of subnets to launch your pods into. At this time, pods running on Fargate
-        /// are not assigned public IP addresses, so only private subnets (with no direct route
-        /// to an Internet Gateway) are accepted for this parameter.
+        /// The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on
+        /// Fargate isn't assigned a public IP address, so only private subnets (with no direct
+        /// route to an Internet Gateway) are accepted for this parameter.
         /// </para>
         /// </summary>
         public List<string> Subnets
@@ -206,10 +208,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata to apply to the Fargate profile to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both. Fargate profile
-        /// tags do not propagate to any other resources associated with the Fargate profile,
-        /// such as the pods that are scheduled with it.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

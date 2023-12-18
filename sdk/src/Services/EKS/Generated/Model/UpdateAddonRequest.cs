@@ -85,8 +85,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -104,7 +104,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -124,7 +124,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ConfigurationValues. 
         /// <para>
         /// The set of configuration values for the add-on that's created. The values that you
-        /// provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.
+        /// provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.
         /// </para>
         /// </summary>
         public string ConfigurationValues

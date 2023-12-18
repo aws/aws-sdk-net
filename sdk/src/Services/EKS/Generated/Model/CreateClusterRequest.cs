@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// Creates an Amazon EKS control plane. 
+    /// Creates an Amazon EKS control plane.
     /// 
     ///  
     /// <para>
@@ -88,6 +88,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonEKSRequest
     {
+        private CreateAccessConfigRequest _accessConfig;
         private string _clientRequestToken;
         private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
@@ -100,10 +101,28 @@ namespace Amazon.EKS.Model
         private string _version;
 
         /// <summary>
+        /// Gets and sets the property AccessConfig. 
+        /// <para>
+        /// The access configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public CreateAccessConfigRequest AccessConfig
+        {
+            get { return this._accessConfig; }
+            set { this._accessConfig = value; }
+        }
+
+        // Check to see if AccessConfig property is set
+        internal bool IsSetAccessConfig()
+        {
+            return this._accessConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -274,8 +293,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

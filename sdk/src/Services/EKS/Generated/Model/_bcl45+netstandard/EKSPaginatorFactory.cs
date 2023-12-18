@@ -44,11 +44,35 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccessEntries operation
+        ///</summary>
+        public IListAccessEntriesPaginator ListAccessEntries(ListAccessEntriesRequest request) 
+        {
+            return new ListAccessEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAccessPolicies operation
+        ///</summary>
+        public IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request) 
+        {
+            return new ListAccessPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAddons operation
         ///</summary>
         public IListAddonsPaginator ListAddons(ListAddonsRequest request) 
         {
             return new ListAddonsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssociatedAccessPolicies operation
+        ///</summary>
+        public IListAssociatedAccessPoliciesPaginator ListAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request) 
+        {
+            return new ListAssociatedAccessPoliciesPaginator(this.client, request);
         }
 
         /// <summary>

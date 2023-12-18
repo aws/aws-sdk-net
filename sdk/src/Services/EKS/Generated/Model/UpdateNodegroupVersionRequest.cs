@@ -58,9 +58,10 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// When a node in a managed node group is terminated due to a scaling action or update,
-    /// the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully
-    /// and will fail if it is unable to do so. You can <code>force</code> the update if Amazon
-    /// EKS is unable to drain the nodes as a result of a pod disruption budget issue.
+    /// every <code>Pod</code> on that node is drained first. Amazon EKS attempts to drain
+    /// the nodes gracefully and will fail if it is unable to do so. You can <code>force</code>
+    /// the update if Amazon EKS is unable to drain the nodes as a result of a <code>Pod</code>
+    /// disruption budget issue.
     /// </para>
     /// </summary>
     public partial class UpdateNodegroupVersionRequest : AmazonEKSRequest
@@ -76,8 +77,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -95,8 +96,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the Amazon EKS cluster that is associated with the managed node group
-        /// to update.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -115,10 +115,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Force the update if the existing node group's pods are unable to be drained due to
-        /// a pod disruption budget issue. If an update fails because pods could not be drained,
-        /// you can force the update after it fails to terminate the old node whether or not any
-        /// pods are running on the node.
+        /// Force the update if any <code>Pod</code> on the existing node group can't be drained
+        /// due to a <code>Pod</code> disruption budget issue. If an update fails because all
+        /// Pods can't be drained, you can force the update after it fails to terminate the old
+        /// node whether or not any <code>Pod</code> is running on the node.
         /// </para>
         /// </summary>
         public bool Force

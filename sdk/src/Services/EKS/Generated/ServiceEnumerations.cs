@@ -25,6 +25,56 @@ namespace Amazon.EKS
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessScopeType.
+    /// </summary>
+    public class AccessScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cluster for AccessScopeType
+        /// </summary>
+        public static readonly AccessScopeType Cluster = new AccessScopeType("cluster");
+        /// <summary>
+        /// Constant Namespace for AccessScopeType
+        /// </summary>
+        public static readonly AccessScopeType Namespace = new AccessScopeType("namespace");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessScopeType FindValue(string value)
+        {
+            return FindValue<AccessScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AddonIssueCode.
     /// </summary>
     public class AddonIssueCode : ConstantClass
@@ -256,6 +306,60 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AMITypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthenticationMode.
+    /// </summary>
+    public class AuthenticationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API for AuthenticationMode
+        /// </summary>
+        public static readonly AuthenticationMode API = new AuthenticationMode("API");
+        /// <summary>
+        /// Constant API_AND_CONFIG_MAP for AuthenticationMode
+        /// </summary>
+        public static readonly AuthenticationMode API_AND_CONFIG_MAP = new AuthenticationMode("API_AND_CONFIG_MAP");
+        /// <summary>
+        /// Constant CONFIG_MAP for AuthenticationMode
+        /// </summary>
+        public static readonly AuthenticationMode CONFIG_MAP = new AuthenticationMode("CONFIG_MAP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationMode FindValue(string value)
+        {
+            return FindValue<AuthenticationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationMode(string value)
         {
             return FindValue(value);
         }
@@ -1433,6 +1537,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType AddonVersion = new UpdateParamType("AddonVersion");
         /// <summary>
+        /// Constant AuthenticationMode for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType AuthenticationMode = new UpdateParamType("AuthenticationMode");
+        /// <summary>
         /// Constant ClusterLogging for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ClusterLogging = new UpdateParamType("ClusterLogging");
@@ -1632,6 +1740,10 @@ namespace Amazon.EKS
     public class UpdateType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AccessConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType AccessConfigUpdate = new UpdateType("AccessConfigUpdate");
         /// <summary>
         /// Constant AddonUpdate for UpdateType
         /// </summary>

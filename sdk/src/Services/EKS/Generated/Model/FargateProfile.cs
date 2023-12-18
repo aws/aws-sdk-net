@@ -46,7 +46,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the Amazon EKS cluster that the Fargate profile belongs to.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         public string ClusterName
@@ -64,7 +64,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the Fargate profile was created.
+        /// The Unix epoch timestamp at object creation.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -118,9 +118,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PodExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the pod execution role to use for pods that match
-        /// the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
-        /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+        /// The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for any
+        /// <code>Pod</code> that matches the selectors in the Fargate profile. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
+        /// <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         public string PodExecutionRoleArn
@@ -138,7 +139,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Selectors. 
         /// <para>
-        /// The selectors to match for pods to use this Fargate profile.
+        /// The selectors to match for a <code>Pod</code> to use this Fargate profile.
         /// </para>
         /// </summary>
         public List<FargateProfileSelector> Selectors
@@ -174,7 +175,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The IDs of subnets to launch pods into.
+        /// The IDs of subnets to launch a <code>Pod</code> into.
         /// </para>
         /// </summary>
         public List<string> Subnets
@@ -192,10 +193,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata applied to the Fargate profile to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both. Fargate profile
-        /// tags do not propagate to any other resources associated with the Fargate profile,
-        /// such as the pods that are scheduled with it.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

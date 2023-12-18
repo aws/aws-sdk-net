@@ -106,7 +106,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -143,7 +143,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the add-on was created.
+        /// The Unix epoch timestamp at object creation.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -197,7 +197,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
-        /// The date and time that the add-on was last modified.
+        /// The Unix epoch timestamp for the last modification to the object.
         /// </para>
         /// </summary>
         public DateTime ModifiedAt
@@ -251,8 +251,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceAccountRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service
-        /// account that the add-on uses.
+        /// The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code>
+        /// object that the add-on uses.
         /// </para>
         /// </summary>
         public string ServiceAccountRoleArn
@@ -288,9 +288,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to the add-on to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both. Add-on tags do
-        /// not propagate to any other resources associated with the cluster. 
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

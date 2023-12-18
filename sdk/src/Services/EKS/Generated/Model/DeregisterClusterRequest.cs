@@ -31,6 +31,13 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Container for the parameters to the DeregisterCluster operation.
     /// Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+    /// 
+    ///  
+    /// <para>
+    /// A connected cluster is a Kubernetes cluster that you've connected to your control
+    /// plane using the <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html">Amazon
+    /// EKS Connector</a>.
+    /// </para>
     /// </summary>
     public partial class DeregisterClusterRequest : AmazonEKSRequest
     {

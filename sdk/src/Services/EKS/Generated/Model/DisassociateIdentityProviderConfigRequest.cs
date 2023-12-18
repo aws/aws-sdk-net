@@ -30,10 +30,14 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateIdentityProviderConfig operation.
-    /// Disassociates an identity provider configuration from a cluster. If you disassociate
-    /// an identity provider from your cluster, users included in the provider can no longer
-    /// access the cluster. However, you can still access the cluster with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
-    /// principals</a>.
+    /// Disassociates an identity provider configuration from a cluster.
+    /// 
+    ///  
+    /// <para>
+    /// If you disassociate an identity provider from your cluster, users included in the
+    /// provider can no longer access the cluster. However, you can still access the cluster
+    /// with IAM principals.
+    /// </para>
     /// </summary>
     public partial class DisassociateIdentityProviderConfigRequest : AmazonEKSRequest
     {
@@ -63,7 +67,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster to disassociate an identity provider from.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

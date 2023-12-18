@@ -53,8 +53,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AddonName. 
         /// <para>
-        /// The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code> </a> returns.
+        /// The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +111,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster to create the add-on for.
+        /// The name of your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -132,8 +131,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ConfigurationValues. 
         /// <para>
         /// The set of configuration values for the add-on that's created. The values that you
-        /// provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
-        /// <code>DescribeAddonConfiguration</code> </a>.
+        /// provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.
         /// </para>
         /// </summary>
         public string ConfigurationValues
@@ -224,8 +222,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

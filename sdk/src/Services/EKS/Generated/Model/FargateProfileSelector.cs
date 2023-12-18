@@ -58,7 +58,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Kubernetes namespace that the selector should match.
+        /// The Kubernetes <code>namespace</code> that the selector should match.
         /// </para>
         /// </summary>
         public string Namespace
