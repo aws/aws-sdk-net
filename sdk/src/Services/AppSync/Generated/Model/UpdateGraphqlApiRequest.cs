@@ -37,12 +37,15 @@ namespace Amazon.AppSync.Model
         private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
         private string _apiId;
         private AuthenticationType _authenticationType;
+        private GraphQLApiIntrospectionConfig _introspectionConfig;
         private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
         private string _mergedApiExecutionRoleArn;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
         private string _ownerContact;
+        private int? _queryDepthLimit;
+        private int? _resolverCountLimit;
         private UserPoolConfig _userPoolConfig;
         private bool? _xrayEnabled;
 
@@ -99,6 +102,32 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntrospectionConfig. 
+        /// <para>
+        /// Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+        /// introspection. If no value is provided, the introspection configuration will be set
+        /// to <code>ENABLED</code> by default. This field will produce an error if the operation
+        /// attempts to use the introspection feature while this field is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+        /// introspection</a>.
+        /// </para>
+        /// </summary>
+        public GraphQLApiIntrospectionConfig IntrospectionConfig
+        {
+            get { return this._introspectionConfig; }
+            set { this._introspectionConfig = value; }
+        }
+
+        // Check to see if IntrospectionConfig property is set
+        internal bool IsSetIntrospectionConfig()
+        {
+            return this._introspectionConfig != null;
         }
 
         /// <summary>
@@ -215,6 +244,56 @@ namespace Amazon.AppSync.Model
         internal bool IsSetOwnerContact()
         {
             return this._ownerContact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryDepthLimit. 
+        /// <para>
+        /// The maximum depth a query can have in a single request. Depth refers to the amount
+        /// of nested levels allowed in the body of query. The default value is <code>0</code>
+        /// (or unspecified), which indicates there's no depth limit. If you set a limit, it can
+        /// be between <code>1</code> and <code>75</code> nested levels. This field will produce
+        /// a limit error if the operation falls out of bounds.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that fields can still be set to nullable or non-nullable. If a non-nullable field
+        /// produces an error, the error will be thrown upwards to the first nullable field available.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=75)]
+        public int QueryDepthLimit
+        {
+            get { return this._queryDepthLimit.GetValueOrDefault(); }
+            set { this._queryDepthLimit = value; }
+        }
+
+        // Check to see if QueryDepthLimit property is set
+        internal bool IsSetQueryDepthLimit()
+        {
+            return this._queryDepthLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolverCountLimit. 
+        /// <para>
+        /// The maximum number of resolvers that can be invoked in a single request. The default
+        /// value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>.
+        /// When specified, the limit value can be between <code>1</code> and <code>10000</code>.
+        /// This field will produce a limit error if the operation falls out of bounds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public int ResolverCountLimit
+        {
+            get { return this._resolverCountLimit.GetValueOrDefault(); }
+            set { this._resolverCountLimit = value; }
+        }
+
+        // Check to see if ResolverCountLimit property is set
+        internal bool IsSetResolverCountLimit()
+        {
+            return this._resolverCountLimit.HasValue; 
         }
 
         /// <summary>

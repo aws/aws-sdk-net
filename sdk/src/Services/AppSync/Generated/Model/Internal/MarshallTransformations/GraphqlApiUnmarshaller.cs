@@ -99,6 +99,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("introspectionConfig", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IntrospectionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
                 {
                     var unmarshaller = LambdaAuthorizerConfigUnmarshaller.Instance;
@@ -139,6 +145,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerContact = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryDepthLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.QueryDepthLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resolverCountLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ResolverCountLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

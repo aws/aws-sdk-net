@@ -93,6 +93,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthenticationType);
                 }
 
+                if(publicRequest.IsSetIntrospectionConfig())
+                {
+                    context.Writer.WritePropertyName("introspectionConfig");
+                    context.Writer.Write(publicRequest.IntrospectionConfig);
+                }
+
                 if(publicRequest.IsSetLambdaAuthorizerConfig())
                 {
                     context.Writer.WritePropertyName("lambdaAuthorizerConfig");
@@ -142,6 +148,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ownerContact");
                     context.Writer.Write(publicRequest.OwnerContact);
+                }
+
+                if(publicRequest.IsSetQueryDepthLimit())
+                {
+                    context.Writer.WritePropertyName("queryDepthLimit");
+                    context.Writer.Write(publicRequest.QueryDepthLimit);
+                }
+
+                if(publicRequest.IsSetResolverCountLimit())
+                {
+                    context.Writer.WritePropertyName("resolverCountLimit");
+                    context.Writer.Write(publicRequest.ResolverCountLimit);
                 }
 
                 if(publicRequest.IsSetTags())

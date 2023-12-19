@@ -65,6 +65,16 @@
     <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateGraphqlApiRequest.QueryDepthLimit</property>
+    <min>0</min>
+    <max>75</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateGraphqlApiRequest.ResolverCountLimit</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.Code</property>
     <min>1</min>
     <max>32768</max>
@@ -481,6 +491,16 @@
     <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateGraphqlApiRequest.QueryDepthLimit</property>
+    <min>0</min>
+    <max>75</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateGraphqlApiRequest.ResolverCountLimit</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.Code</property>
     <min>1</min>
     <max>32768</max>
@@ -601,6 +621,16 @@
     <min>1</min>
     <max>65536</max>
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.GraphqlApi.QueryDepthLimit</property>
+    <min>0</min>
+    <max>75</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.GraphqlApi.ResolverCountLimit</property>
+    <min>0</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.LambdaAuthorizerConfig.AuthorizerResultTtlInSeconds</property>
