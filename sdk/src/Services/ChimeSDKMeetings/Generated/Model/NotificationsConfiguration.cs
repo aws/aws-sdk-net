@@ -41,7 +41,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionArn. 
         /// <para>
-        /// The ARN of the AWS Lambda function in the notifications configuration.
+        /// The ARN of the Amazon Web Services Lambda function in the notifications configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

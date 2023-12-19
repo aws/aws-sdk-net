@@ -112,7 +112,8 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        /// Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+        /// Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+        /// <code>us-gov-west-1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]
@@ -223,8 +224,8 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified AWS Region for the AWS
-        /// account.
+        /// You can only tag resources that are located in the specified Amazon Web Services Region
+        /// for the Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>

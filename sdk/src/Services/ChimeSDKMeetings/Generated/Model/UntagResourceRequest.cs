@@ -43,8 +43,8 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can only tag resources that are located in the specified AWS Region for the calling
-    /// AWS account.
+    /// You can only tag resources that are located in the specified Amazon Web Services Region
+    /// for the calling Amazon Web Services account.
     /// </para>
     ///  </li> </ul> 
     /// <para>

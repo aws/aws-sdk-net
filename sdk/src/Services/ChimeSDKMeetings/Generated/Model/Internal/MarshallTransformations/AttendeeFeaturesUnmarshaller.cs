@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MeetingFeaturesConfiguration Object
+    /// Response Unmarshaller for AttendeeFeatures Object
     /// </summary>  
-    public class MeetingFeaturesConfigurationUnmarshaller : IUnmarshaller<MeetingFeaturesConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MeetingFeaturesConfiguration, JsonUnmarshallerContext>
+    public class AttendeeFeaturesUnmarshaller : IUnmarshaller<AttendeeFeatures, XmlUnmarshallerContext>, IUnmarshaller<AttendeeFeatures, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MeetingFeaturesConfiguration IUnmarshaller<MeetingFeaturesConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttendeeFeatures IUnmarshaller<AttendeeFeatures, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MeetingFeaturesConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AttendeeFeatures Unmarshall(JsonUnmarshallerContext context)
         {
-            MeetingFeaturesConfiguration unmarshalledObject = new MeetingFeaturesConfiguration();
+            AttendeeFeatures unmarshalledObject = new AttendeeFeatures();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,10 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Attendee", targetDepth))
+                if (context.TestExpression("MaxCount", targetDepth))
                 {
-                    var unmarshaller = AttendeeFeaturesUnmarshaller.Instance;
-                    unmarshalledObject.Attendee = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Audio", targetDepth))
-                {
-                    var unmarshaller = AudioFeaturesUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Content", targetDepth))
-                {
-                    var unmarshaller = ContentFeaturesUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Video", targetDepth))
-                {
-                    var unmarshaller = VideoFeaturesUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +74,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         }
 
 
-        private static MeetingFeaturesConfigurationUnmarshaller _instance = new MeetingFeaturesConfigurationUnmarshaller();        
+        private static AttendeeFeaturesUnmarshaller _instance = new AttendeeFeaturesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MeetingFeaturesConfigurationUnmarshaller Instance
+        public static AttendeeFeaturesUnmarshaller Instance
         {
             get
             {

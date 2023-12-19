@@ -29,19 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// The media capabilities of an attendee: audio, video, or content. 
+    /// The media capabilities of an attendee: audio, video, or content.
     /// 
     ///  <note> 
     /// <para>
     /// You use the capabilities with a set of values that control what the capabilities can
-    /// do, such as <code>SendReceive</code> data. For more information about those values,
-    /// see .
+    /// do, such as <code>SendReceive</code> data. For more information, refer to and .
     /// </para>
     ///  </note> 
     /// <para>
     /// When using capabilities, be aware of these corner cases:
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
+    /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
+    /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
+    /// with <code>ValidationError 400</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
+    /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
+    /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
+    /// with <code>ValidationError 400</code>.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
     /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
@@ -53,16 +66,16 @@ namespace Amazon.ChimeSDKMeetings.Model
     ///  </li> <li> 
     /// <para>
     /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
-    /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
-    /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+    /// to <code>Send</code> or <code>SendReceive</code> , and an attendee unmutes their microphone,
+    /// audio flows from the attendee to the other meeting participants.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
-    /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-    /// the attendee turned on their video or content streams, remote attendees can receive
-    /// those streams, but only after media renegotiation between the client and the Amazon
-    /// Chime back-end server.
+    /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and the
+    /// attendee turns on their video or content streams, remote attendees can receive those
+    /// streams, but only after media renegotiation between the client and the Amazon Chime
+    /// back-end server.
     /// </para>
     ///  </li> </ul>
     /// </summary>

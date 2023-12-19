@@ -132,7 +132,8 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        /// Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+        /// Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+        /// <code>us-gov-west-1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]

@@ -33,7 +33,28 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </summary>
     public partial class MeetingFeaturesConfiguration
     {
+        private AttendeeFeatures _attendee;
         private AudioFeatures _audio;
+        private ContentFeatures _content;
+        private VideoFeatures _video;
+
+        /// <summary>
+        /// Gets and sets the property Attendee. 
+        /// <para>
+        /// The configuration settings for the attendee features available to a meeting.
+        /// </para>
+        /// </summary>
+        public AttendeeFeatures Attendee
+        {
+            get { return this._attendee; }
+            set { this._attendee = value; }
+        }
+
+        // Check to see if Attendee property is set
+        internal bool IsSetAttendee()
+        {
+            return this._attendee != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Audio. 
@@ -51,6 +72,42 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetAudio()
         {
             return this._audio != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The configuration settings for the content features available to a meeting.
+        /// </para>
+        /// </summary>
+        public ContentFeatures Content
+        {
+            get { return this._content; }
+            set { this._content = value; }
+        }
+
+        // Check to see if Content property is set
+        internal bool IsSetContent()
+        {
+            return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video. 
+        /// <para>
+        /// The configuration settings for the video features available to a meeting.
+        /// </para>
+        /// </summary>
+        public VideoFeatures Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
     }

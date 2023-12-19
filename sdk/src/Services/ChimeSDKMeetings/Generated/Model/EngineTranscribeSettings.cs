@@ -339,7 +339,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region in which to use Amazon Transcribe.
+        /// The Amazon Web Services Region in which to use Amazon Transcribe.
         /// </para>
         ///  
         /// <para>

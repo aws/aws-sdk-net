@@ -36,9 +36,9 @@ namespace Amazon.ChimeSDKMeetings
     /// Implementation for accessing ChimeSDKMeetings
     ///
     /// The Amazon Chime SDK meetings APIs in this section allow software developers to create
-    /// Amazon Chime SDK meetings, set the AWS Regions for meetings, create and manage users,
-    /// and send and receive meeting notifications. For more information about the meeting
-    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
+    /// Amazon Chime SDK meetings, set the Amazon Web Services Regions for meetings, create
+    /// and manage users, and send and receive meeting notifications. For more information
+    /// about the meeting APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
     /// Chime SDK meetings</a>.
     /// </summary>
     public partial class AmazonChimeSDKMeetingsClient : AmazonServiceClient, IAmazonChimeSDKMeetings
@@ -367,6 +367,20 @@ namespace Amazon.ChimeSDKMeetings
         /// When using capabilities, be aware of these corner cases:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
+        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
+        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
+        /// with <code>ValidationError 400</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
+        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
+        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
+        /// with <code>ValidationError 400</code>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
         /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
@@ -1192,14 +1206,21 @@ namespace Amazon.ChimeSDKMeetings
         /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
         /// API in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
-        /// Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
-        /// Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS Service
-        /// Terms</a>, including the terms specific to the AWS Machine Learning and Artificial
-        /// Intelligence Services.
+        /// By default, Amazon Transcribe may use and store audio content processed by the service
+        /// to develop and improve Amazon Web Services AI/ML services as further described in
+        /// section 50 of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services
+        /// Service Terms</a>. Using Amazon Transcribe may be subject to federal and state laws
+        /// or regulations regarding the recording or interception of electronic communications.
+        /// It is your and your end users’ responsibility to comply with all applicable laws regarding
+        /// the recording, including properly notifying all participants in a recorded session
+        /// or communication that the session or communication is being recorded, and obtaining
+        /// all necessary consents. You can opt out from Amazon Web Services using audio content
+        /// to develop and improve AWS AI/ML services by configuring an AI services opt out policy
+        /// using Amazon Web Services Organizations.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription service method.</param>
         /// 
@@ -1287,10 +1308,17 @@ namespace Amazon.ChimeSDKMeetings
         /// 
         ///  <important> 
         /// <para>
-        /// Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
-        /// Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS Service
-        /// Terms</a>, including the terms specific to the AWS Machine Learning and Artificial
-        /// Intelligence Services.
+        /// By default, Amazon Transcribe may use and store audio content processed by the service
+        /// to develop and improve Amazon Web Services AI/ML services as further described in
+        /// section 50 of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services
+        /// Service Terms</a>. Using Amazon Transcribe may be subject to federal and state laws
+        /// or regulations regarding the recording or interception of electronic communications.
+        /// It is your and your end users’ responsibility to comply with all applicable laws regarding
+        /// the recording, including properly notifying all participants in a recorded session
+        /// or communication that the session or communication is being recorded, and obtaining
+        /// all necessary consents. You can opt out from Amazon Web Services using audio content
+        /// to develop and improve Amazon Web Services AI/ML services by configuring an AI services
+        /// opt out policy using Amazon Web Services Organizations.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1464,8 +1492,8 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified AWS Region for the calling
-        /// AWS account.
+        /// You can only tag resources that are located in the specified Amazon Web Services Region
+        /// for the calling Amazon Web Services account.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1576,6 +1604,20 @@ namespace Amazon.ChimeSDKMeetings
         /// When using capabilities, be aware of these corner cases:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
+        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
+        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
+        /// with <code>ValidationError 400</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
+        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
+        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
+        /// with <code>ValidationError 400</code>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
         /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or

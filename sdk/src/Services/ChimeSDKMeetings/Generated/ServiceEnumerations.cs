@@ -25,6 +25,60 @@ namespace Amazon.ChimeSDKMeetings
 {
 
     /// <summary>
+    /// Constants used for properties of type ContentResolution.
+    /// </summary>
+    public class ContentResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FHD for ContentResolution
+        /// </summary>
+        public static readonly ContentResolution FHD = new ContentResolution("FHD");
+        /// <summary>
+        /// Constant None for ContentResolution
+        /// </summary>
+        public static readonly ContentResolution None = new ContentResolution("None");
+        /// <summary>
+        /// Constant UHD for ContentResolution
+        /// </summary>
+        public static readonly ContentResolution UHD = new ContentResolution("UHD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentResolution FindValue(string value)
+        {
+            return FindValue<ContentResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MediaCapabilities.
     /// </summary>
     public class MediaCapabilities : ConstantClass
@@ -796,6 +850,60 @@ namespace Amazon.ChimeSDKMeetings
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TranscribeVocabularyFilterMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoResolution.
+    /// </summary>
+    public class VideoResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FHD for VideoResolution
+        /// </summary>
+        public static readonly VideoResolution FHD = new VideoResolution("FHD");
+        /// <summary>
+        /// Constant HD for VideoResolution
+        /// </summary>
+        public static readonly VideoResolution HD = new VideoResolution("HD");
+        /// <summary>
+        /// Constant None for VideoResolution
+        /// </summary>
+        public static readonly VideoResolution None = new VideoResolution("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoResolution FindValue(string value)
+        {
+            return FindValue<VideoResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoResolution(string value)
         {
             return FindValue(value);
         }
