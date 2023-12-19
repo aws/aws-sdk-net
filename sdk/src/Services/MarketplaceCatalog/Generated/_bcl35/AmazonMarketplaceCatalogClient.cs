@@ -272,6 +272,92 @@ namespace Amazon.MarketplaceCatalog
         #endregion
 
 
+        #region  BatchDescribeEntities
+
+        /// <summary>
+        /// Returns metadata and content for multiple entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeEntities service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeEntities service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">REST API Reference for BatchDescribeEntities Operation</seealso>
+        public virtual BatchDescribeEntitiesResponse BatchDescribeEntities(BatchDescribeEntitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeEntitiesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeEntitiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDescribeEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeEntities operation on AmazonMarketplaceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDescribeEntities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">REST API Reference for BatchDescribeEntities Operation</seealso>
+        public virtual IAsyncResult BeginBatchDescribeEntities(BatchDescribeEntitiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeEntitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDescribeEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDescribeEntities.</param>
+        /// 
+        /// <returns>Returns a  BatchDescribeEntitiesResult from MarketplaceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">REST API Reference for BatchDescribeEntities Operation</seealso>
+        public virtual BatchDescribeEntitiesResponse EndBatchDescribeEntities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDescribeEntitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelChangeSet
 
         /// <summary>

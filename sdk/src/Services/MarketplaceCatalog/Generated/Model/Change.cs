@@ -64,8 +64,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <para>
         /// Change types are single string values that describe your intention for the change.
         /// Each change type is unique for each <code>EntityType</code> provided in the change's
-        /// scope. For more information on change types available for single-AMI products, see
-        /// <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+        /// scope. For more information about change types available for single-AMI products,
+        /// see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
         /// with single-AMI products</a>. Also, for more information about change types available
         /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
         /// with container products</a>.

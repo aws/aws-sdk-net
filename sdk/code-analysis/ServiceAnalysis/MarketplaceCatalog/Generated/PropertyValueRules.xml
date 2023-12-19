@@ -275,6 +275,18 @@
     <pattern>^(.)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.BatchDescribeErrorDetail.ErrorCode</property>
+    <min>1</min>
+    <max>72</max>
+    <pattern>^[a-zA-Z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.BatchDescribeErrorDetail.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Change.ChangeName</property>
     <min>1</min>
     <max>72</max>
@@ -399,6 +411,42 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.EntityDetail.EntityArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:*/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.EntityDetail.EntityIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-@]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.EntityDetail.EntityType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.EntityDetail.LastModifiedDate</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.EntityRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.EntityRequest.EntityId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.EntitySummary.EntityArn</property>

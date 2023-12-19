@@ -66,10 +66,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityType. 
         /// <para>
-        /// The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>,
-        /// <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>,
-        /// <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
-        /// <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.
+        /// The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>,
+        /// <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+        /// <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>,
+        /// <code>Seller</code>, <code>ResaleAuthorization</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

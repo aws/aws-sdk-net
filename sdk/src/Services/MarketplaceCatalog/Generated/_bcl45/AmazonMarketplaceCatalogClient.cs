@@ -272,6 +272,111 @@ namespace Amazon.MarketplaceCatalog
         #endregion
 
 
+        #region  BatchDescribeEntities
+
+
+        /// <summary>
+        /// Returns metadata and content for multiple entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeEntities service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeEntities service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">REST API Reference for BatchDescribeEntities Operation</seealso>
+        public virtual BatchDescribeEntitiesResponse BatchDescribeEntities(BatchDescribeEntitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeEntitiesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeEntitiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns metadata and content for multiple entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeEntities service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">REST API Reference for BatchDescribeEntities Operation</seealso>
+        public virtual Task<BatchDescribeEntitiesResponse> BatchDescribeEntitiesAsync(BatchDescribeEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeEntitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDescribeEntitiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelChangeSet
 
 
