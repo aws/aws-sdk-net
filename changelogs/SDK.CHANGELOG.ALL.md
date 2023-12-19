@@ -1,3 +1,20 @@
+### 3.7.712.0 (2023-12-19 19:18 UTC)
+* AppSync (3.7.302.0)
+	* This release adds additional configurations on GraphQL APIs for limits on query depth, resolver count, and introspection
+* ChimeSDKMeetings (3.7.301.0)
+	* Add meeting features to specify a maximum camera resolution, a maximum content sharing resolution, and a maximum number of attendees for a given meeting.
+* EC2 (3.7.310.0)
+	* Provision BYOIPv4 address ranges and advertise them by specifying the network border groups option in Los Angeles, Phoenix and Dallas AWS Local Zones.
+* FSx (3.7.303.0)
+	* Added support for FSx for OpenZFS on-demand data replication across AWS accounts and/or regions.Added the IncludeShared attribute for DescribeSnapshots.Added the CopyStrategy attribute for OpenZFSVolumeConfiguration.
+* MarketplaceCatalog (3.7.302.0)
+	* AWS Marketplace now supports a new API, BatchDescribeEntities, which returns metadata and content for multiple entities.
+* RDS (3.7.302.0)
+	* RDS - The release adds two new APIs: DescribeDBRecommendations and ModifyDBRecommendation
+* Core 3.7.300.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.711.0 (2023-12-18 19:20 UTC)
 * CognitoIdentityProvider (3.7.301.0)
 	* Amazon Cognito now supports trigger versions that define the fields in the request sent to pre token generation Lambda triggers.
