@@ -5585,6 +5585,36 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBRecommendations
+
+
+        /// <summary>
+        /// Describes the recommendations to resolve the issues for your DB instances, DB clusters,
+        /// and DB parameter groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBRecommendations service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        DescribeDBRecommendationsResponse DescribeDBRecommendations(DescribeDBRecommendationsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the recommendations to resolve the issues for your DB instances, DB clusters,
+        /// and DB parameter groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBRecommendations service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        Task<DescribeDBRecommendationsResponse> DescribeDBRecommendationsAsync(DescribeDBRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDBSecurityGroups
 
 
@@ -8513,6 +8543,36 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
         Task<ModifyDBProxyTargetGroupResponse> ModifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyDBRecommendation
+
+
+        /// <summary>
+        /// Updates the recommendation status and recommended action status for the specified
+        /// recommendation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBRecommendation service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        ModifyDBRecommendationResponse ModifyDBRecommendation(ModifyDBRecommendationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the recommendation status and recommended action status for the specified
+        /// recommendation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBRecommendation service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        Task<ModifyDBRecommendationResponse> ModifyDBRecommendationAsync(ModifyDBRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

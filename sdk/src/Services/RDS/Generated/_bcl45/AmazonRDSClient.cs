@@ -6789,6 +6789,49 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBRecommendations
+
+
+        /// <summary>
+        /// Describes the recommendations to resolve the issues for your DB instances, DB clusters,
+        /// and DB parameter groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBRecommendations service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        public virtual DescribeDBRecommendationsResponse DescribeDBRecommendations(DescribeDBRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBRecommendationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the recommendations to resolve the issues for your DB instances, DB clusters,
+        /// and DB parameter groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBRecommendations service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        public virtual Task<DescribeDBRecommendationsResponse> DescribeDBRecommendationsAsync(DescribeDBRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBRecommendationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDBRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDBSecurityGroups
 
 
@@ -10268,6 +10311,49 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyDBProxyTargetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBRecommendation
+
+
+        /// <summary>
+        /// Updates the recommendation status and recommended action status for the specified
+        /// recommendation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBRecommendation service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        public virtual ModifyDBRecommendationResponse ModifyDBRecommendation(ModifyDBRecommendationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBRecommendationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the recommendation status and recommended action status for the specified
+        /// recommendation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBRecommendation service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        public virtual Task<ModifyDBRecommendationResponse> ModifyDBRecommendationAsync(ModifyDBRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBRecommendationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyDBRecommendationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -60,6 +60,10 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>DescribeDBRecommendations</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DescribePendingMaintenanceActions</code> 
     /// </para>
     ///  </li> </ul>

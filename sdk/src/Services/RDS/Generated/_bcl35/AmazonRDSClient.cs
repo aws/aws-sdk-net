@@ -6031,6 +6031,61 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBRecommendations
+
+        /// <summary>
+        /// Describes the recommendations to resolve the issues for your DB instances, DB clusters,
+        /// and DB parameter groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBRecommendations service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        public virtual DescribeDBRecommendationsResponse DescribeDBRecommendations(DescribeDBRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBRecommendations operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDBRecommendations(DescribeDBRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBRecommendations.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBRecommendationsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
+        public virtual DescribeDBRecommendationsResponse EndDescribeDBRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDBSecurityGroups
 
         /// <summary>
@@ -9057,6 +9112,61 @@ namespace Amazon.RDS
         public virtual ModifyDBProxyTargetGroupResponse EndModifyDBProxyTargetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyDBProxyTargetGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyDBRecommendation
+
+        /// <summary>
+        /// Updates the recommendation status and recommended action status for the specified
+        /// recommendation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBRecommendation service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        public virtual ModifyDBRecommendationResponse ModifyDBRecommendation(ModifyDBRecommendationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBRecommendationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBRecommendation operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        public virtual IAsyncResult BeginModifyDBRecommendation(ModifyDBRecommendationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBRecommendationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBRecommendation.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBRecommendationResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
+        public virtual ModifyDBRecommendationResponse EndModifyDBRecommendation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyDBRecommendationResponse>(asyncResult);
         }
 
         #endregion

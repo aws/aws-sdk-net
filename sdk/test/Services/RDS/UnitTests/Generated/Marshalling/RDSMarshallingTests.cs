@@ -7888,6 +7888,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeDBRecommendationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBRecommendationsRequest>(operation);
+            var marshaller = new DescribeDBRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBRecommendationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeDBSecurityGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDBSecurityGroups");
@@ -11063,6 +11085,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyDBRecommendationMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBRecommendation");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBRecommendationRequest>(operation);
+            var marshaller = new ModifyDBRecommendationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBRecommendationResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBRecommendationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         [TestMethod]
