@@ -33,6 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class OpenZFSVolumeConfiguration
     {
+        private OpenZFSCopyStrategy _copyStrategy;
         private bool? _copyTagsToSnapshots;
         private OpenZFSDataCompressionType _dataCompressionType;
         private bool? _deleteClonedVolumes;
@@ -50,6 +51,48 @@ namespace Amazon.FSx.Model
         private int? _storageCapacityReservationGiB;
         private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
         private string _volumePath;
+
+        /// <summary>
+        /// Gets and sets the property CopyStrategy. 
+        /// <para>
+        /// Specifies the strategy used when copying data from the snapshot to the new volume.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning
+        /// a snapshot is faster than copying data from the snapshot to a new volume and doesn't
+        /// consume disk throughput. However, the origin snapshot can't be deleted if there is
+        /// a volume using its copied data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this option to create the volume from a snapshot on another FSx for OpenZFS
+        /// file system.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+        /// using a snapshot from another FSx for OpenZFS file system. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public OpenZFSCopyStrategy CopyStrategy
+        {
+            get { return this._copyStrategy; }
+            set { this._copyStrategy = value; }
+        }
+
+        // Check to see if CopyStrategy property is set
+        internal bool IsSetCopyStrategy()
+        {
+            return this._copyStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshots. 

@@ -83,6 +83,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetIncludeShared())
+                {
+                    context.Writer.WritePropertyName("IncludeShared");
+                    context.Writer.Write(publicRequest.IncludeShared);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

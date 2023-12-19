@@ -328,7 +328,13 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         /// The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code>
-        /// are not the same value
+        /// are not the same value for file systems with one HA pair.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code>
+        /// / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and
+        /// 6).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -70,6 +70,7 @@ namespace Amazon.FSx.Model
     public partial class DescribeSnapshotsRequest : AmazonFSxRequest
     {
         private List<SnapshotFilter> _filters = new List<SnapshotFilter>();
+        private bool? _includeShared;
         private int? _maxResults;
         private string _nextToken;
         private List<string> _snapshotIds = new List<string>();
@@ -91,6 +92,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeShared. 
+        /// <para>
+        /// Set to <code>false</code> (default) if you want to only see the snapshots in your
+        /// Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots
+        /// in your account and the ones shared with you from another account.
+        /// </para>
+        /// </summary>
+        public bool IncludeShared
+        {
+            get { return this._includeShared.GetValueOrDefault(); }
+            set { this._includeShared = value; }
+        }
+
+        // Check to see if IncludeShared property is set
+        internal bool IsSetIncludeShared()
+        {
+            return this._includeShared.HasValue; 
         }
 
         /// <summary>
