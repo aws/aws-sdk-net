@@ -89,6 +89,13 @@ namespace Amazon.EC2.Model
         /// more than one network interface in the request. If launching into a default subnet,
         /// the default value is <code>true</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4
+        /// addresses, including public IPv4 addresses associated with running instances and Elastic
+        /// IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
+        /// <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+        /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress
         {

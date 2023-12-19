@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MultiRegion", StringUtils.FromBool(publicRequest.MultiRegion));
                 }
+                if(publicRequest.IsSetNetworkBorderGroup())
+                {
+                    request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
+                }
                 if(publicRequest.IsSetPoolTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

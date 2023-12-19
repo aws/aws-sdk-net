@@ -471,7 +471,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceResource.
+        /// Gets and sets the property SourceResource. 
+        /// <para>
+        /// The resource used to provision CIDRs to a resource planning pool.
+        /// </para>
         /// </summary>
         public IpamPoolSourceResource SourceResource
         {

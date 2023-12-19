@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private List<AsnAssociation> _asnAssociations = new List<AsnAssociation>();
         private string _cidr;
         private string _description;
+        private string _networkBorderGroup;
         private ByoipCidrState _state;
         private string _statusMessage;
 
@@ -92,6 +93,50 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+        /// Zones</a> enabled, you can choose a network border group for Local Zones when you
+        /// provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully
+        /// as the EIP and the Amazon Web Services resource it is associated with must reside
+        /// in the same network border group.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can provision BYOIP address ranges to and advertise them in the following Local
+        /// Zone network border groups:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// us-east-1-dfw-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// us-west-2-lax-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// us-west-2-phx-2
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
         }
 
         /// <summary>
