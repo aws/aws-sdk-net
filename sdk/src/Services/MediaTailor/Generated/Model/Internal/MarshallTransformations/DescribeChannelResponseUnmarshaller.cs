@@ -117,6 +117,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.Tier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimeShiftConfiguration", targetDepth))
+                {
+                    var unmarshaller = TimeShiftConfigurationUnmarshaller.Instance;
+                    response.TimeShiftConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
         private string _channelName;
         private SlateSource _fillerSlate;
         private List<RequestOutputItem> _outputs = new List<RequestOutputItem>();
+        private TimeShiftConfiguration _timeShiftConfiguration;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -95,6 +96,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetOutputs()
         {
             return this._outputs != null && this._outputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeShiftConfiguration. 
+        /// <para>
+        ///  The time-shifted viewing configuration you want to associate to the channel. 
+        /// </para>
+        /// </summary>
+        public TimeShiftConfiguration TimeShiftConfiguration
+        {
+            get { return this._timeShiftConfiguration; }
+            set { this._timeShiftConfiguration = value; }
+        }
+
+        // Check to see if TimeShiftConfiguration property is set
+        internal bool IsSetTimeShiftConfiguration()
+        {
+            return this._timeShiftConfiguration != null;
         }
 
     }

@@ -121,6 +121,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Tier);
                 }
 
+                if(publicRequest.IsSetTimeShiftConfiguration())
+                {
+                    context.Writer.WritePropertyName("TimeShiftConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimeShiftConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeShiftConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
