@@ -2323,6 +2323,64 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeInsight
+
+
+        /// <summary>
+        /// Returns details about an insight that you specify using its ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsight service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsight service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
+        DescribeInsightResponse DescribeInsight(DescribeInsightRequest request);
+
+
+
+        /// <summary>
+        /// Returns details about an insight that you specify using its ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsight service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsight service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
+        Task<DescribeInsightResponse> DescribeInsightAsync(DescribeInsightRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeNodegroup
 
 
@@ -3144,6 +3202,68 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">REST API Reference for ListIdentityProviderConfigs Operation</seealso>
         Task<ListIdentityProviderConfigsResponse> ListIdentityProviderConfigsAsync(ListIdentityProviderConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInsights
+
+
+        /// <summary>
+        /// Returns a list of all insights checked for against the specified cluster. You can
+        /// filter which insights are returned by category, associated Kubernetes version, and
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListInsights service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        ListInsightsResponse ListInsights(ListInsightsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of all insights checked for against the specified cluster. You can
+        /// filter which insights are returned by category, associated Kubernetes version, and
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInsights service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        Task<ListInsightsResponse> ListInsightsAsync(ListInsightsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

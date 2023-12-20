@@ -417,6 +417,52 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type Category.
+    /// </summary>
+    public class Category : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UPGRADE_READINESS for Category
+        /// </summary>
+        public static readonly Category UPGRADE_READINESS = new Category("UPGRADE_READINESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Category(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Category FindValue(string value)
+        {
+            return FindValue<Category>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Category(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterIssueCode.
     /// </summary>
     public class ClusterIssueCode : ConstantClass
@@ -1056,6 +1102,64 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FargateProfileStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightStatusValue.
+    /// </summary>
+    public class InsightStatusValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for InsightStatusValue
+        /// </summary>
+        public static readonly InsightStatusValue ERROR = new InsightStatusValue("ERROR");
+        /// <summary>
+        /// Constant PASSING for InsightStatusValue
+        /// </summary>
+        public static readonly InsightStatusValue PASSING = new InsightStatusValue("PASSING");
+        /// <summary>
+        /// Constant UNKNOWN for InsightStatusValue
+        /// </summary>
+        public static readonly InsightStatusValue UNKNOWN = new InsightStatusValue("UNKNOWN");
+        /// <summary>
+        /// Constant WARNING for InsightStatusValue
+        /// </summary>
+        public static readonly InsightStatusValue WARNING = new InsightStatusValue("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightStatusValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightStatusValue FindValue(string value)
+        {
+            return FindValue<InsightStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightStatusValue(string value)
         {
             return FindValue(value);
         }

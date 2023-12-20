@@ -2450,6 +2450,75 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeInsight
+
+        /// <summary>
+        /// Returns details about an insight that you specify using its ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsight service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsight service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
+        public virtual DescribeInsightResponse DescribeInsight(DescribeInsightRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInsightResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsight operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInsight
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInsight(DescribeInsightRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInsight.</param>
+        /// 
+        /// <returns>Returns a  DescribeInsightResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
+        public virtual DescribeInsightResponse EndDescribeInsight(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInsightResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeNodegroup
 
         /// <summary>
@@ -3378,6 +3447,77 @@ namespace Amazon.EKS
         public virtual ListIdentityProviderConfigsResponse EndListIdentityProviderConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIdentityProviderConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInsights
+
+        /// <summary>
+        /// Returns a list of all insights checked for against the specified cluster. You can
+        /// filter which insights are returned by category, associated Kubernetes version, and
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListInsights service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        public virtual ListInsightsResponse ListInsights(ListInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInsightsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        public virtual IAsyncResult BeginListInsights(ListInsightsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInsights.</param>
+        /// 
+        /// <returns>Returns a  ListInsightsResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        public virtual ListInsightsResponse EndListInsights(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInsightsResponse>(asyncResult);
         }
 
         #endregion

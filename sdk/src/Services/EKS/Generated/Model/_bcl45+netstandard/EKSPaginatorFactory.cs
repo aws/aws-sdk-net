@@ -108,6 +108,14 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for ListInsights operation
+        ///</summary>
+        public IListInsightsPaginator ListInsights(ListInsightsRequest request) 
+        {
+            return new ListInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNodegroups operation
         ///</summary>
         public IListNodegroupsPaginator ListNodegroups(ListNodegroupsRequest request) 

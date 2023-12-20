@@ -29,45 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// This is the response object from the ListIdentityProviderConfigs operation.
+    /// This is the response object from the ListInsights operation.
     /// </summary>
-    public partial class ListIdentityProviderConfigsResponse : AmazonWebServiceResponse
+    public partial class ListInsightsResponse : AmazonWebServiceResponse
     {
-        private List<IdentityProviderConfig> _identityProviderConfigs = new List<IdentityProviderConfig>();
+        private List<InsightSummary> _insights = new List<InsightSummary>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property IdentityProviderConfigs. 
+        /// Gets and sets the property Insights. 
         /// <para>
-        /// The identity provider configurations for the cluster.
+        /// The returned list of insights.
         /// </para>
         /// </summary>
-        public List<IdentityProviderConfig> IdentityProviderConfigs
+        public List<InsightSummary> Insights
         {
-            get { return this._identityProviderConfigs; }
-            set { this._identityProviderConfigs = value; }
+            get { return this._insights; }
+            set { this._insights = value; }
         }
 
-        // Check to see if IdentityProviderConfigs property is set
-        internal bool IsSetIdentityProviderConfigs()
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
         {
-            return this._identityProviderConfigs != null && this._identityProviderConfigs.Count > 0; 
+            return this._insights != null && this._insights.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>ListIdentityProviderConfigsResponse</code>
-        /// request. When the results of a <code>ListIdentityProviderConfigsResponse</code> request
-        /// exceed <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to return.
+        /// The <code>nextToken</code> value to include in a future <code>ListInsights</code>
+        /// request. When the results of a <code>ListInsights</code> request exceed <code>maxResults</code>,
+        /// you can use this value to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This token should be treated as an opaque identifier that is used only to retrieve
-        /// the next items in a list and not for other programmatic purposes.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string NextToken
         {
