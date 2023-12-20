@@ -69,6 +69,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaximumLength", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Permission", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

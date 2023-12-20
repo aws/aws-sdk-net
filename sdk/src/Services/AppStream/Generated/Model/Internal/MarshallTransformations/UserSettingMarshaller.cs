@@ -51,6 +51,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Action);
             }
 
+            if(requestObject.IsSetMaximumLength())
+            {
+                context.Writer.WritePropertyName("MaximumLength");
+                context.Writer.Write(requestObject.MaximumLength);
+            }
+
             if(requestObject.IsSetPermission())
             {
                 context.Writer.WritePropertyName("Permission");

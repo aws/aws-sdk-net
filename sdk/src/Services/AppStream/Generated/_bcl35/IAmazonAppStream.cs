@@ -1047,6 +1047,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
