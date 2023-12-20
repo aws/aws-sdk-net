@@ -93,6 +93,11 @@ namespace Amazon
         public static readonly RegionEndpoint CACentral1 = GetEndpoint("ca-central-1", "Canada (Central)");
 
         /// <summary>
+        /// The Canada West (Calgary) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint CAWest1 = GetEndpoint("ca-west-1", "Canada West (Calgary)");
+
+        /// <summary>
         /// The Europe (Frankfurt) endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUCentral1 = GetEndpoint("eu-central-1", "Europe (Frankfurt)");
