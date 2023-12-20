@@ -43,6 +43,13 @@ namespace Amazon.GuardDuty.Model
     /// </para>
     ///  
     /// <para>
+    /// When you use CreateMembers as an Organizations delegated administrator, GuardDuty
+    /// applies your organization's auto-enable settings to the member accounts in this request,
+    /// irrespective of the accounts being new or existing members. For more information about
+    /// the existing auto-enable settings for your organization, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html">DescribeOrganizationConfiguration</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
     /// use <code>CreateMembers</code> after GuardDuty has been enabled in potential member
     /// accounts.

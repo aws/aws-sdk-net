@@ -2341,6 +2341,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly UsageStatisticType SUM_BY_RESOURCE = new UsageStatisticType("SUM_BY_RESOURCE");
         /// <summary>
+        /// Constant TOP_ACCOUNTS_BY_FEATURE for UsageStatisticType
+        /// </summary>
+        public static readonly UsageStatisticType TOP_ACCOUNTS_BY_FEATURE = new UsageStatisticType("TOP_ACCOUNTS_BY_FEATURE");
+        /// <summary>
         /// Constant TOP_RESOURCES for UsageStatisticType
         /// </summary>
         public static readonly UsageStatisticType TOP_RESOURCES = new UsageStatisticType("TOP_RESOURCES");

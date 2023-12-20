@@ -87,6 +87,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.SumByResource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("topAccountsByFeature", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UsageTopAccountsResult, UsageTopAccountsResultUnmarshaller>(UsageTopAccountsResultUnmarshaller.Instance);
+                    unmarshalledObject.TopAccountsByFeature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("topResources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);

@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private List<UsageDataSourceResult> _sumByDataSource = new List<UsageDataSourceResult>();
         private List<UsageFeatureResult> _sumByFeature = new List<UsageFeatureResult>();
         private List<UsageResourceResult> _sumByResource = new List<UsageResourceResult>();
+        private List<UsageTopAccountsResult> _topAccountsByFeature = new List<UsageTopAccountsResult>();
         private List<UsageResourceResult> _topResources = new List<UsageResourceResult>();
 
         /// <summary>
@@ -110,6 +111,29 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetSumByResource()
         {
             return this._sumByResource != null && this._sumByResource.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopAccountsByFeature. 
+        /// <para>
+        /// Lists the top 50 accounts by feature that have generated the most GuardDuty usage,
+        /// in the order from most to least expensive.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+        /// </para>
+        /// </summary>
+        public List<UsageTopAccountsResult> TopAccountsByFeature
+        {
+            get { return this._topAccountsByFeature; }
+            set { this._topAccountsByFeature = value; }
+        }
+
+        // Check to see if TopAccountsByFeature property is set
+        internal bool IsSetTopAccountsByFeature()
+        {
+            return this._topAccountsByFeature != null && this._topAccountsByFeature.Count > 0; 
         }
 
         /// <summary>

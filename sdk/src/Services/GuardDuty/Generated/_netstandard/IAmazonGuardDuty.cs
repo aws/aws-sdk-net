@@ -257,6 +257,13 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
+        /// When you use CreateMembers as an Organizations delegated administrator, GuardDuty
+        /// applies your organization's auto-enable settings to the member accounts in this request,
+        /// irrespective of the accounts being new or existing members. For more information about
+        /// the existing auto-enable settings for your organization, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html">DescribeOrganizationConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
         /// use <code>CreateMembers</code> after GuardDuty has been enabled in potential member
         /// accounts.
@@ -869,8 +876,8 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Retrieves aggregated statistics for your account. If you are a GuardDuty administrator,
         /// you can retrieve the statistics for all the resources associated with the active member
-        /// accounts in your organization who have enabled EKS Runtime Monitoring and have the
-        /// GuardDuty agent running on their EKS nodes.
+        /// accounts in your organization who have enabled Runtime Monitoring and have the GuardDuty
+        /// security agent running on their resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -1157,6 +1164,38 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  GetOrganizationStatistics
+
+
+
+        /// <summary>
+        /// Retrieves how many active member accounts in your Amazon Web Services organization
+        /// have each feature enabled within GuardDuty. Only a delegated GuardDuty administrator
+        /// of an organization can run this API.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a new Amazon Web Services organization, it might take up to 24 hours
+        /// to generate the statistics for the entire organization.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOrganizationStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetOrganizationStatistics">REST API Reference for GetOrganizationStatistics Operation</seealso>
+        Task<GetOrganizationStatisticsResponse> GetOrganizationStatisticsAsync(GetOrganizationStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetRemainingFreeTrialDays
 
 
@@ -1295,8 +1334,8 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
-        /// Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running
-        /// on their EKS nodes.
+        /// Make sure the accounts have Runtime Monitoring enabled and GuardDuty agent running
+        /// on their resources.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>

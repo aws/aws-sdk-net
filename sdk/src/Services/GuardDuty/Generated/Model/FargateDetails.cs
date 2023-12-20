@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about AWS Fargate details associated with an Amazon ECS cluster.
+    /// Contains information about Amazon Web Services Fargate details associated with an
+    /// Amazon ECS cluster.
     /// </summary>
     public partial class FargateDetails
     {
@@ -39,7 +40,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Issues. 
         /// <para>
-        /// Runtime coverage issues identified for the resource running on AWS Fargate.
+        /// Runtime coverage issues identified for the resource running on Amazon Web Services
+        /// Fargate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -67,15 +69,15 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage
-        /// the GuardDuty security agent updates for this resource.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent
         /// is disabled for this resource.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>MANUAL</code> status doesn't apply to the Amazon Web Services Fargate (Amazon
+        /// ECS only) woprkloads.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ManagementType ManagementType
         {

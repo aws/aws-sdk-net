@@ -32,7 +32,9 @@ namespace Amazon.GuardDuty.Model
     /// <note> 
     /// <para>
     /// This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2
-    /// instances (currently in preview release) and is subject to change.
+    /// instances (currently in preview release) and is subject to change. The use of this
+    /// API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon
+    /// Web Services Service Terms</a> ("Betas and Previews").
     /// </para>
     ///  </note> 
     /// <para>
@@ -137,7 +139,7 @@ namespace Amazon.GuardDuty.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-        /// EKS clusters that run on Amazon EC2 instances.
+        /// EKS clusters.
         /// </para>
         ///  </note>
         /// </summary>

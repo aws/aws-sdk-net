@@ -36,8 +36,8 @@ namespace Amazon.GuardDuty.Model
     /// 
     ///  
     /// <para>
-    /// Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running
-    /// on their EKS nodes.
+    /// Make sure the accounts have Runtime Monitoring enabled and GuardDuty agent running
+    /// on their resources.
     /// </para>
     /// </summary>
     public partial class ListCoverageRequest : AmazonGuardDutyRequest
