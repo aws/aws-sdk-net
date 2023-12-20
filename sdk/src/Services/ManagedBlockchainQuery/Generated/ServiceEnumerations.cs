@@ -25,6 +25,52 @@ namespace Amazon.ManagedBlockchainQuery
 {
 
     /// <summary>
+    /// Constants used for properties of type ConfirmationStatus.
+    /// </summary>
+    public class ConfirmationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FINAL for ConfirmationStatus
+        /// </summary>
+        public static readonly ConfirmationStatus FINAL = new ConfirmationStatus("FINAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfirmationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfirmationStatus FindValue(string value)
+        {
+            return FindValue<ConfirmationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfirmationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorType.
     /// </summary>
     public class ErrorType : ConstantClass
@@ -68,6 +114,56 @@ namespace Amazon.ManagedBlockchainQuery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus SUCCEEDED = new ExecutionStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
         {
             return FindValue(value);
         }

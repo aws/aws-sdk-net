@@ -75,6 +75,12 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     unmarshalledObject.BlockNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("confirmationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfirmationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("contractAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EffectiveGasPrice = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("executionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("from", targetDepth))

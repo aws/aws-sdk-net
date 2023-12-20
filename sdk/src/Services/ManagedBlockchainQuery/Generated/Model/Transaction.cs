@@ -48,9 +48,11 @@ namespace Amazon.ManagedBlockchainQuery.Model
     {
         private string _blockHash;
         private string _blockNumber;
+        private ConfirmationStatus _confirmationStatus;
         private string _contractAddress;
         private string _cumulativeGasUsed;
         private string _effectiveGasPrice;
+        private ExecutionStatus _executionStatus;
         private string _from;
         private string _gasUsed;
         private QueryNetwork _network;
@@ -105,6 +107,24 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfirmationStatus. 
+        /// <para>
+        /// Specifies whether the transaction has reached Finality.
+        /// </para>
+        /// </summary>
+        public ConfirmationStatus ConfirmationStatus
+        {
+            get { return this._confirmationStatus; }
+            set { this._confirmationStatus = value; }
+        }
+
+        // Check to see if ConfirmationStatus property is set
+        internal bool IsSetConfirmationStatus()
+        {
+            return this._confirmationStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ContractAddress. 
         /// <para>
         /// The blockchain address for the contract.
@@ -156,6 +176,24 @@ namespace Amazon.ManagedBlockchainQuery.Model
         internal bool IsSetEffectiveGasPrice()
         {
             return this._effectiveGasPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionStatus. 
+        /// <para>
+        /// Identifies whether the transaction has succeeded or failed.
+        /// </para>
+        /// </summary>
+        public ExecutionStatus ExecutionStatus
+        {
+            get { return this._executionStatus; }
+            set { this._executionStatus = value; }
+        }
+
+        // Check to see if ExecutionStatus property is set
+        internal bool IsSetExecutionStatus()
+        {
+            return this._executionStatus != null;
         }
 
         /// <summary>
@@ -292,8 +330,25 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <para>
         /// The status of the transaction.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This property is deprecated. You must use the <code>confirmationStatus</code> and
+        /// the <code>executionStatus</code> properties to determine if the <code>status</code>
+        /// of the transaction is <code>FINAL</code> or <code>FAILED</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code>
+        /// set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code>
+        /// set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields.")]
         public QueryTransactionStatus Status
         {
             get { return this._status; }
