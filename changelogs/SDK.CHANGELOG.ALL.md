@@ -1,3 +1,21 @@
+### 3.7.713.0 (2023-12-20 19:33 UTC)
+* AppStream (3.7.302.0)
+	* This release introduces configurable clipboard, allowing admins to specify the maximum length of text that can be copied by the users from their device to the remote session and vice-versa.
+* EKS (3.7.303.0)
+	* Add support for cluster insights, new EKS capability that surfaces potentially upgrade impacting issues.
+* GuardDuty (3.7.302.0)
+	* This release 1) introduces a new API: GetOrganizationStatistics , and 2) adds a new UsageStatisticType TOP_ACCOUNTS_BY_FEATURE for GetUsageStatistics API
+* ManagedBlockchainQuery (3.7.301.0)
+	* Adding Confirmation Status and Execution Status to GetTransaction Response.
+* MediaTailor (3.7.302.0)
+	* Adds the ability to configure time shifting on MediaTailor channels using the TimeShiftConfiguration field
+* Route53 (3.7.301.0)
+	* Amazon Route 53 now supports the Canada West (Calgary) Region (ca-west-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Core 3.7.300.23
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.712.0 (2023-12-19 19:18 UTC)
 * AppSync (3.7.302.0)
 	* This release adds additional configurations on GraphQL APIs for limits on query depth, resolver count, and introspection
