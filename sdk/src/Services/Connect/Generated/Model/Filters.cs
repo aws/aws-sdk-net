@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
         private List<string> _channels = new List<string>();
         private List<string> _queues = new List<string>();
         private List<string> _routingProfiles = new List<string>();
+        private List<string> _routingStepExpressions = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Channels. 
@@ -95,6 +96,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetRoutingProfiles()
         {
             return this._routingProfiles != null && this._routingProfiles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingStepExpressions. 
+        /// <para>
+        /// A list of expressions as a filter, in which an expression is an object of a step in
+        /// a routing criteria.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> RoutingStepExpressions
+        {
+            get { return this._routingStepExpressions; }
+            set { this._routingStepExpressions = value; }
+        }
+
+        // Check to see if RoutingStepExpressions property is set
+        internal bool IsSetRoutingStepExpressions()
+        {
+            return this._routingStepExpressions != null && this._routingStepExpressions.Count > 0; 
         }
 
     }

@@ -30,6 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// A leaf node condition which can be used to specify a string condition.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The currently supported values for <code>FieldName</code> are <code>name</code> and
+    /// <code>description</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StringCondition
     {

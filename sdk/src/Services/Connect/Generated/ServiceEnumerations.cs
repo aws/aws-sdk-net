@@ -1674,6 +1674,10 @@ namespace Amazon.Connect
         /// Constant ROUTING_PROFILE for Grouping
         /// </summary>
         public static readonly Grouping ROUTING_PROFILE = new Grouping("ROUTING_PROFILE");
+        /// <summary>
+        /// Constant ROUTING_STEP_EXPRESSION for Grouping
+        /// </summary>
+        public static readonly Grouping ROUTING_STEP_EXPRESSION = new Grouping("ROUTING_STEP_EXPRESSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4841,6 +4845,114 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type SearchContactsMatchType.
+    /// </summary>
+    public class SearchContactsMatchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATCH_ALL for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_ALL = new SearchContactsMatchType("MATCH_ALL");
+        /// <summary>
+        /// Constant MATCH_ANY for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_ANY = new SearchContactsMatchType("MATCH_ANY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchContactsMatchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchContactsMatchType FindValue(string value)
+        {
+            return FindValue<SearchContactsMatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchContactsMatchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchContactsTimeRangeType.
+    /// </summary>
+    public class SearchContactsTimeRangeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED_TO_AGENT_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType CONNECTED_TO_AGENT_TIMESTAMP = new SearchContactsTimeRangeType("CONNECTED_TO_AGENT_TIMESTAMP");
+        /// <summary>
+        /// Constant DISCONNECT_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType DISCONNECT_TIMESTAMP = new SearchContactsTimeRangeType("DISCONNECT_TIMESTAMP");
+        /// <summary>
+        /// Constant INITIATION_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType INITIATION_TIMESTAMP = new SearchContactsTimeRangeType("INITIATION_TIMESTAMP");
+        /// <summary>
+        /// Constant SCHEDULED_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType SCHEDULED_TIMESTAMP = new SearchContactsTimeRangeType("SCHEDULED_TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchContactsTimeRangeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchContactsTimeRangeType FindValue(string value)
+        {
+            return FindValue<SearchContactsTimeRangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchContactsTimeRangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SingleSelectQuestionRuleCategoryAutomationCondition.
     /// </summary>
     public class SingleSelectQuestionRuleCategoryAutomationCondition : ConstantClass
@@ -4884,6 +4996,72 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SingleSelectQuestionRuleCategoryAutomationCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortableFieldName.
+    /// </summary>
+    public class SortableFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHANNEL for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName CHANNEL = new SortableFieldName("CHANNEL");
+        /// <summary>
+        /// Constant CONNECTED_TO_AGENT_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName CONNECTED_TO_AGENT_TIMESTAMP = new SortableFieldName("CONNECTED_TO_AGENT_TIMESTAMP");
+        /// <summary>
+        /// Constant DISCONNECT_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName DISCONNECT_TIMESTAMP = new SortableFieldName("DISCONNECT_TIMESTAMP");
+        /// <summary>
+        /// Constant INITIATION_METHOD for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName INITIATION_METHOD = new SortableFieldName("INITIATION_METHOD");
+        /// <summary>
+        /// Constant INITIATION_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName INITIATION_TIMESTAMP = new SortableFieldName("INITIATION_TIMESTAMP");
+        /// <summary>
+        /// Constant SCHEDULED_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName SCHEDULED_TIMESTAMP = new SortableFieldName("SCHEDULED_TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortableFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortableFieldName FindValue(string value)
+        {
+            return FindValue<SortableFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortableFieldName(string value)
         {
             return FindValue(value);
         }

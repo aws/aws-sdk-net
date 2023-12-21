@@ -146,6 +146,11 @@ namespace Amazon.Connect.Model
         IListPhoneNumbersV2Paginator ListPhoneNumbersV2(ListPhoneNumbersV2Request request);
 
         /// <summary>
+        /// Paginator for ListPredefinedAttributes operation
+        ///</summary>
+        IListPredefinedAttributesPaginator ListPredefinedAttributes(ListPredefinedAttributesRequest request);
+
+        /// <summary>
         /// Paginator for ListPrompts operation
         ///</summary>
         IListPromptsPaginator ListPrompts(ListPromptsRequest request);
@@ -231,6 +236,11 @@ namespace Amazon.Connect.Model
         IListUserHierarchyGroupsPaginator ListUserHierarchyGroups(ListUserHierarchyGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListUserProficiencies operation
+        ///</summary>
+        IListUserProficienciesPaginator ListUserProficiencies(ListUserProficienciesRequest request);
+
+        /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
         IListUsersPaginator ListUsers(ListUsersRequest request);
@@ -251,9 +261,19 @@ namespace Amazon.Connect.Model
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for SearchContacts operation
+        ///</summary>
+        ISearchContactsPaginator SearchContacts(SearchContactsRequest request);
+
+        /// <summary>
         /// Paginator for SearchHoursOfOperations operation
         ///</summary>
         ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchPredefinedAttributes operation
+        ///</summary>
+        ISearchPredefinedAttributesPaginator SearchPredefinedAttributes(SearchPredefinedAttributesRequest request);
 
         /// <summary>
         /// Paginator for SearchPrompts operation

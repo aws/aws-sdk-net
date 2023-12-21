@@ -1358,6 +1358,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateUserProficiencies
+
+        /// <summary>
+        /// &gt;Associates a set of proficiencies with a user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies service method.</param>
+        /// 
+        /// <returns>The response from the AssociateUserProficiencies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateUserProficiencies">REST API Reference for AssociateUserProficiencies Operation</seealso>
+        public virtual AssociateUserProficienciesResponse AssociateUserProficiencies(AssociateUserProficienciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserProficienciesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateUserProficienciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateUserProficiencies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateUserProficiencies">REST API Reference for AssociateUserProficiencies Operation</seealso>
+        public virtual IAsyncResult BeginAssociateUserProficiencies(AssociateUserProficienciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserProficienciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateUserProficiencies.</param>
+        /// 
+        /// <returns>Returns a  AssociateUserProficienciesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateUserProficiencies">REST API Reference for AssociateUserProficiencies Operation</seealso>
+        public virtual AssociateUserProficienciesResponse EndAssociateUserProficiencies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateUserProficienciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchAssociateAnalyticsDataSet
 
         /// <summary>
@@ -2474,6 +2543,81 @@ namespace Amazon.Connect
         public virtual CreatePersistentContactAssociationResponse EndCreatePersistentContactAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePersistentContactAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePredefinedAttribute
+
+        /// <summary>
+        /// Creates a new predefined attribute for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
+        /// 
+        /// <returns>The response from the CreatePredefinedAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">REST API Reference for CreatePredefinedAttribute Operation</seealso>
+        public virtual CreatePredefinedAttributeResponse CreatePredefinedAttribute(CreatePredefinedAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePredefinedAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePredefinedAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">REST API Reference for CreatePredefinedAttribute Operation</seealso>
+        public virtual IAsyncResult BeginCreatePredefinedAttribute(CreatePredefinedAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePredefinedAttribute.</param>
+        /// 
+        /// <returns>Returns a  CreatePredefinedAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">REST API Reference for CreatePredefinedAttribute Operation</seealso>
+        public virtual CreatePredefinedAttributeResponse EndCreatePredefinedAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePredefinedAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -4200,6 +4344,78 @@ namespace Amazon.Connect
         public virtual DeleteIntegrationAssociationResponse EndDeleteIntegrationAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePredefinedAttribute
+
+        /// <summary>
+        /// Deletes a predefined attribute from the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePredefinedAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DeletePredefinedAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePredefinedAttribute">REST API Reference for DeletePredefinedAttribute Operation</seealso>
+        public virtual DeletePredefinedAttributeResponse DeletePredefinedAttribute(DeletePredefinedAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePredefinedAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePredefinedAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePredefinedAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePredefinedAttribute">REST API Reference for DeletePredefinedAttribute Operation</seealso>
+        public virtual IAsyncResult BeginDeletePredefinedAttribute(DeletePredefinedAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePredefinedAttribute.</param>
+        /// 
+        /// <returns>Returns a  DeletePredefinedAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePredefinedAttribute">REST API Reference for DeletePredefinedAttribute Operation</seealso>
+        public virtual DeletePredefinedAttributeResponse EndDeletePredefinedAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePredefinedAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -6035,6 +6251,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribePredefinedAttribute
+
+        /// <summary>
+        /// Describes a predefined attribute for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribePredefinedAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">REST API Reference for DescribePredefinedAttribute Operation</seealso>
+        public virtual DescribePredefinedAttributeResponse DescribePredefinedAttribute(DescribePredefinedAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePredefinedAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePredefinedAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">REST API Reference for DescribePredefinedAttribute Operation</seealso>
+        public virtual IAsyncResult BeginDescribePredefinedAttribute(DescribePredefinedAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePredefinedAttribute.</param>
+        /// 
+        /// <returns>Returns a  DescribePredefinedAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">REST API Reference for DescribePredefinedAttribute Operation</seealso>
+        public virtual DescribePredefinedAttributeResponse EndDescribePredefinedAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePredefinedAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribePrompt
 
         /// <summary>
@@ -7775,6 +8060,75 @@ namespace Amazon.Connect
         public virtual DisassociateTrafficDistributionGroupUserResponse EndDisassociateTrafficDistributionGroupUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateTrafficDistributionGroupUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateUserProficiencies
+
+        /// <summary>
+        /// Disassociates a set of proficiencies from a user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserProficiencies service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateUserProficiencies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateUserProficiencies">REST API Reference for DisassociateUserProficiencies Operation</seealso>
+        public virtual DisassociateUserProficienciesResponse DisassociateUserProficiencies(DisassociateUserProficienciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserProficienciesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateUserProficienciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserProficiencies operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateUserProficiencies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateUserProficiencies">REST API Reference for DisassociateUserProficiencies Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateUserProficiencies(DisassociateUserProficienciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserProficienciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateUserProficiencies.</param>
+        /// 
+        /// <returns>Returns a  DisassociateUserProficienciesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateUserProficiencies">REST API Reference for DisassociateUserProficiencies Operation</seealso>
+        public virtual DisassociateUserProficienciesResponse EndDisassociateUserProficiencies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateUserProficienciesResponse>(asyncResult);
         }
 
         #endregion
@@ -10229,6 +10583,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListPredefinedAttributes
+
+        /// <summary>
+        /// Lists predefined attributes for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListPredefinedAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">REST API Reference for ListPredefinedAttributes Operation</seealso>
+        public virtual ListPredefinedAttributesResponse ListPredefinedAttributes(ListPredefinedAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPredefinedAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPredefinedAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPredefinedAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPredefinedAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPredefinedAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">REST API Reference for ListPredefinedAttributes Operation</seealso>
+        public virtual IAsyncResult BeginListPredefinedAttributes(ListPredefinedAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPredefinedAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPredefinedAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPredefinedAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPredefinedAttributes.</param>
+        /// 
+        /// <returns>Returns a  ListPredefinedAttributesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">REST API Reference for ListPredefinedAttributes Operation</seealso>
+        public virtual ListPredefinedAttributesResponse EndListPredefinedAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPredefinedAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPrompts
 
         /// <summary>
@@ -11521,6 +11944,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListUserProficiencies
+
+        /// <summary>
+        /// Lists proficiencies associated with a user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserProficiencies service method.</param>
+        /// 
+        /// <returns>The response from the ListUserProficiencies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserProficiencies">REST API Reference for ListUserProficiencies Operation</seealso>
+        public virtual ListUserProficienciesResponse ListUserProficiencies(ListUserProficienciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserProficienciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserProficienciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserProficiencies operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserProficiencies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserProficiencies">REST API Reference for ListUserProficiencies Operation</seealso>
+        public virtual IAsyncResult BeginListUserProficiencies(ListUserProficienciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserProficienciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserProficiencies.</param>
+        /// 
+        /// <returns>Returns a  ListUserProficienciesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserProficiencies">REST API Reference for ListUserProficiencies Operation</seealso>
+        public virtual ListUserProficienciesResponse EndListUserProficiencies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUserProficienciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListUsers
 
         /// <summary>
@@ -12394,6 +12886,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchContacts
+
+        /// <summary>
+        /// Searches contacts in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
+        /// 
+        /// <returns>The response from the SearchContacts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual SearchContactsResponse SearchContacts(SearchContactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual IAsyncResult BeginSearchContacts(SearchContactsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchContacts.</param>
+        /// 
+        /// <returns>Returns a  SearchContactsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual SearchContactsResponse EndSearchContacts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchContactsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchHoursOfOperations
 
         /// <summary>
@@ -12459,6 +13020,75 @@ namespace Amazon.Connect
         public virtual SearchHoursOfOperationsResponse EndSearchHoursOfOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchPredefinedAttributes
+
+        /// <summary>
+        /// Predefined attributes that meet certain criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
+        /// 
+        /// <returns>The response from the SearchPredefinedAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">REST API Reference for SearchPredefinedAttributes Operation</seealso>
+        public virtual SearchPredefinedAttributesResponse SearchPredefinedAttributes(SearchPredefinedAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchPredefinedAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchPredefinedAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchPredefinedAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchPredefinedAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchPredefinedAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">REST API Reference for SearchPredefinedAttributes Operation</seealso>
+        public virtual IAsyncResult BeginSearchPredefinedAttributes(SearchPredefinedAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchPredefinedAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchPredefinedAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchPredefinedAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchPredefinedAttributes.</param>
+        /// 
+        /// <returns>Returns a  SearchPredefinedAttributesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">REST API Reference for SearchPredefinedAttributes Operation</seealso>
+        public virtual SearchPredefinedAttributesResponse EndSearchPredefinedAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchPredefinedAttributesResponse>(asyncResult);
         }
 
         #endregion
@@ -15251,6 +15881,92 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateContactRoutingData
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates routing priority and age on the contact (<b>QueuePriority</b> and <b>QueueTimeAdjustmentInSeconds</b>).
+        /// These properties can be used to change a customer's position in the queue. For example,
+        /// you can move a contact to the back of the queue by setting a lower routing priority
+        /// relative to other contacts in queue; or you can move a contact to the front of the
+        /// queue by increasing the routing age which will make the contact look artificially
+        /// older and therefore higher up in the first-in-first-out routing order. Note that adjusting
+        /// the routing age of a contact affects only its position in queue, and not its actual
+        /// queue wait time as reported through metrics. These properties can also be updated
+        /// by using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/change-routing-priority.html">the
+        /// Set routing priority / age flow block</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactRoutingData service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactRoutingData service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactRoutingData">REST API Reference for UpdateContactRoutingData Operation</seealso>
+        public virtual UpdateContactRoutingDataResponse UpdateContactRoutingData(UpdateContactRoutingDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRoutingDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactRoutingDataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactRoutingDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContactRoutingData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactRoutingData operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContactRoutingData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactRoutingData">REST API Reference for UpdateContactRoutingData Operation</seealso>
+        public virtual IAsyncResult BeginUpdateContactRoutingData(UpdateContactRoutingDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRoutingDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactRoutingDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContactRoutingData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContactRoutingData.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactRoutingDataResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactRoutingData">REST API Reference for UpdateContactRoutingData Operation</seealso>
+        public virtual UpdateContactRoutingDataResponse EndUpdateContactRoutingData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateContactRoutingDataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateContactSchedule
 
         /// <summary>
@@ -15898,6 +16614,75 @@ namespace Amazon.Connect
         public virtual UpdatePhoneNumberMetadataResponse EndUpdatePhoneNumberMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePhoneNumberMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePredefinedAttribute
+
+        /// <summary>
+        /// Updates a predefined attribute for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePredefinedAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">REST API Reference for UpdatePredefinedAttribute Operation</seealso>
+        public virtual UpdatePredefinedAttributeResponse UpdatePredefinedAttribute(UpdatePredefinedAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePredefinedAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePredefinedAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">REST API Reference for UpdatePredefinedAttribute Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePredefinedAttribute(UpdatePredefinedAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePredefinedAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePredefinedAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePredefinedAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePredefinedAttribute.</param>
+        /// 
+        /// <returns>Returns a  UpdatePredefinedAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">REST API Reference for UpdatePredefinedAttribute Operation</seealso>
+        public virtual UpdatePredefinedAttributeResponse EndUpdatePredefinedAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePredefinedAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -17530,6 +18315,75 @@ namespace Amazon.Connect
         public virtual UpdateUserPhoneConfigResponse EndUpdateUserPhoneConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserPhoneConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUserProficiencies
+
+        /// <summary>
+        /// Updates the properties associated with the proficiencies of a user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserProficiencies service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserProficiencies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserProficiencies">REST API Reference for UpdateUserProficiencies Operation</seealso>
+        public virtual UpdateUserProficienciesResponse UpdateUserProficiencies(UpdateUserProficienciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserProficienciesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserProficienciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserProficiencies operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserProficiencies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserProficiencies">REST API Reference for UpdateUserProficiencies Operation</seealso>
+        public virtual IAsyncResult BeginUpdateUserProficiencies(UpdateUserProficienciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserProficienciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserProficienciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUserProficiencies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserProficiencies.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserProficienciesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserProficiencies">REST API Reference for UpdateUserProficiencies Operation</seealso>
+        public virtual UpdateUserProficienciesResponse EndUpdateUserProficiencies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUserProficienciesResponse>(asyncResult);
         }
 
         #endregion

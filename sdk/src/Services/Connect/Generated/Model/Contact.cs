@@ -48,6 +48,8 @@ namespace Amazon.Connect.Model
         private string _name;
         private string _previousContactId;
         private QueueInfo _queueInfo;
+        private long? _queuePriority;
+        private int? _queueTimeAdjustmentSeconds;
         private string _relatedContactId;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -334,6 +336,49 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueInfo()
         {
             return this._queueInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueuePriority. 
+        /// <para>
+        /// An integer that represents the queue priority to be applied to the contact (lower
+        /// priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds
+        /// is specified. Must be statically defined, must be larger than zero, and a valid integer
+        /// value. Default Value is 5.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=9223372036854775807)]
+        public long QueuePriority
+        {
+            get { return this._queuePriority.GetValueOrDefault(); }
+            set { this._queuePriority = value; }
+        }
+
+        // Check to see if QueuePriority property is set
+        internal bool IsSetQueuePriority()
+        {
+            return this._queuePriority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueueTimeAdjustmentSeconds. 
+        /// <para>
+        /// An integer that represents the queue time adjust to be applied to the contact, in
+        /// seconds (longer / larger queue time are routed preferentially). Cannot be specified
+        /// if the QueuePriority is specified. Must be statically defined and a valid integer
+        /// value.
+        /// </para>
+        /// </summary>
+        public int QueueTimeAdjustmentSeconds
+        {
+            get { return this._queueTimeAdjustmentSeconds.GetValueOrDefault(); }
+            set { this._queueTimeAdjustmentSeconds = value; }
+        }
+
+        // Check to see if QueueTimeAdjustmentSeconds property is set
+        internal bool IsSetQueueTimeAdjustmentSeconds()
+        {
+            return this._queueTimeAdjustmentSeconds.HasValue; 
         }
 
         /// <summary>

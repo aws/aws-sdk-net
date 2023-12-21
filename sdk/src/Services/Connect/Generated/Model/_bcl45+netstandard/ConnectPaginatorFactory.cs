@@ -228,6 +228,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListPredefinedAttributes operation
+        ///</summary>
+        public IListPredefinedAttributesPaginator ListPredefinedAttributes(ListPredefinedAttributesRequest request) 
+        {
+            return new ListPredefinedAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPrompts operation
         ///</summary>
         public IListPromptsPaginator ListPrompts(ListPromptsRequest request) 
@@ -364,6 +372,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListUserProficiencies operation
+        ///</summary>
+        public IListUserProficienciesPaginator ListUserProficiencies(ListUserProficienciesRequest request) 
+        {
+            return new ListUserProficienciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
         public IListUsersPaginator ListUsers(ListUsersRequest request) 
@@ -396,11 +412,27 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchContacts operation
+        ///</summary>
+        public ISearchContactsPaginator SearchContacts(SearchContactsRequest request) 
+        {
+            return new SearchContactsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchHoursOfOperations operation
         ///</summary>
         public ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request) 
         {
             return new SearchHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchPredefinedAttributes operation
+        ///</summary>
+        public ISearchPredefinedAttributesPaginator SearchPredefinedAttributes(SearchPredefinedAttributesRequest request) 
+        {
+            return new SearchPredefinedAttributesPaginator(this.client, request);
         }
 
         /// <summary>

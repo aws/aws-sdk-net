@@ -78,6 +78,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRoutingStepExpressions())
+            {
+                context.Writer.WritePropertyName("RoutingStepExpressions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRoutingStepExpressionsListValue in requestObject.RoutingStepExpressions)
+                {
+                        context.Writer.Write(requestObjectRoutingStepExpressionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

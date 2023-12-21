@@ -81,6 +81,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RoutingStepExpression", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoutingStepExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

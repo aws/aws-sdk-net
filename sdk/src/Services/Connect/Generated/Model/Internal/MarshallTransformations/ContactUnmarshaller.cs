@@ -153,6 +153,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueueInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueuePriority", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.QueuePriority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QueueTimeAdjustmentSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.QueueTimeAdjustmentSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RelatedContactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
