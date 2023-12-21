@@ -89,11 +89,14 @@ namespace Amazon.RDSDataService.Model
         /// <para>
         /// Values for fields generated during a DML request.
         /// </para>
-        ///  <pre><code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data
-        /// isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the
-        /// &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
-        /// Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt;
-        /// </code></pre>
+        ///  <note> 
+        /// <para>
+        /// The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get
+        /// the values of generated fields, use the <code>RETURNING</code> clause. For more information,
+        /// see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data
+        /// From Modified Rows</a> in the PostgreSQL documentation.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Field> GeneratedFields
         {

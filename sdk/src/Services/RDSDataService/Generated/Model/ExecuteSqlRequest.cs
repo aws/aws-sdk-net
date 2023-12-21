@@ -34,8 +34,9 @@ namespace Amazon.RDSDataService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
-    /// operation.
+    /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
+    /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
+    /// Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.
     /// </para>
     ///  </note>
     /// </summary>
