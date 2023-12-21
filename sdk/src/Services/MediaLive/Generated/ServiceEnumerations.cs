@@ -8375,6 +8375,80 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputDeviceConfigurableAudioChannelPairProfile.
+    /// </summary>
+    public class InputDeviceConfigurableAudioChannelPairProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CBRAAC_HQ192000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile CBRAAC_HQ192000 = new InputDeviceConfigurableAudioChannelPairProfile("CBR-AAC_HQ-192000");
+        /// <summary>
+        /// Constant CBRAAC_HQ256000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile CBRAAC_HQ256000 = new InputDeviceConfigurableAudioChannelPairProfile("CBR-AAC_HQ-256000");
+        /// <summary>
+        /// Constant CBRAAC_HQ384000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile CBRAAC_HQ384000 = new InputDeviceConfigurableAudioChannelPairProfile("CBR-AAC_HQ-384000");
+        /// <summary>
+        /// Constant CBRAAC_HQ512000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile CBRAAC_HQ512000 = new InputDeviceConfigurableAudioChannelPairProfile("CBR-AAC_HQ-512000");
+        /// <summary>
+        /// Constant DISABLED for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile DISABLED = new InputDeviceConfigurableAudioChannelPairProfile("DISABLED");
+        /// <summary>
+        /// Constant VBRAAC_HE64000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile VBRAAC_HE64000 = new InputDeviceConfigurableAudioChannelPairProfile("VBR-AAC_HE-64000");
+        /// <summary>
+        /// Constant VBRAAC_HHE16000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile VBRAAC_HHE16000 = new InputDeviceConfigurableAudioChannelPairProfile("VBR-AAC_HHE-16000");
+        /// <summary>
+        /// Constant VBRAAC_LC128000 for InputDeviceConfigurableAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceConfigurableAudioChannelPairProfile VBRAAC_LC128000 = new InputDeviceConfigurableAudioChannelPairProfile("VBR-AAC_LC-128000");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceConfigurableAudioChannelPairProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceConfigurableAudioChannelPairProfile FindValue(string value)
+        {
+            return FindValue<InputDeviceConfigurableAudioChannelPairProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceConfigurableAudioChannelPairProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputDeviceConfiguredInput.
     /// </summary>
     public class InputDeviceConfiguredInput : ConstantClass
@@ -8776,6 +8850,80 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputDeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceUhdAudioChannelPairProfile.
+    /// </summary>
+    public class InputDeviceUhdAudioChannelPairProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CBRAAC_HQ192000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile CBRAAC_HQ192000 = new InputDeviceUhdAudioChannelPairProfile("CBR-AAC_HQ-192000");
+        /// <summary>
+        /// Constant CBRAAC_HQ256000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile CBRAAC_HQ256000 = new InputDeviceUhdAudioChannelPairProfile("CBR-AAC_HQ-256000");
+        /// <summary>
+        /// Constant CBRAAC_HQ384000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile CBRAAC_HQ384000 = new InputDeviceUhdAudioChannelPairProfile("CBR-AAC_HQ-384000");
+        /// <summary>
+        /// Constant CBRAAC_HQ512000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile CBRAAC_HQ512000 = new InputDeviceUhdAudioChannelPairProfile("CBR-AAC_HQ-512000");
+        /// <summary>
+        /// Constant DISABLED for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile DISABLED = new InputDeviceUhdAudioChannelPairProfile("DISABLED");
+        /// <summary>
+        /// Constant VBRAAC_HE64000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile VBRAAC_HE64000 = new InputDeviceUhdAudioChannelPairProfile("VBR-AAC_HE-64000");
+        /// <summary>
+        /// Constant VBRAAC_HHE16000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile VBRAAC_HHE16000 = new InputDeviceUhdAudioChannelPairProfile("VBR-AAC_HHE-16000");
+        /// <summary>
+        /// Constant VBRAAC_LC128000 for InputDeviceUhdAudioChannelPairProfile
+        /// </summary>
+        public static readonly InputDeviceUhdAudioChannelPairProfile VBRAAC_LC128000 = new InputDeviceUhdAudioChannelPairProfile("VBR-AAC_LC-128000");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceUhdAudioChannelPairProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceUhdAudioChannelPairProfile FindValue(string value)
+        {
+            return FindValue<InputDeviceUhdAudioChannelPairProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceUhdAudioChannelPairProfile(string value)
         {
             return FindValue(value);
         }

@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class InputDeviceUhdSettings
     {
         private InputDeviceActiveInput _activeInput;
+        private List<InputDeviceUhdAudioChannelPairConfig> _audioChannelPairs = new List<InputDeviceUhdAudioChannelPairConfig>();
         private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
         private InputDeviceState _deviceState;
@@ -60,6 +61,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetActiveInput()
         {
             return this._activeInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioChannelPairs. An array of eight audio configurations,
+        /// one for each audio pair in the source. Each audio configuration specifies either to
+        /// exclude the pair, or to format it and include it in the output from the UHD device.
+        /// Applies only when the device is configured as the source for a MediaConnect flow.
+        /// </summary>
+        public List<InputDeviceUhdAudioChannelPairConfig> AudioChannelPairs
+        {
+            get { return this._audioChannelPairs; }
+            set { this._audioChannelPairs = value; }
+        }
+
+        // Check to see if AudioChannelPairs property is set
+        internal bool IsSetAudioChannelPairs()
+        {
+            return this._audioChannelPairs != null && this._audioChannelPairs.Count > 0; 
         }
 
         /// <summary>

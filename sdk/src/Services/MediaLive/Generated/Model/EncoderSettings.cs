@@ -126,7 +126,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorCorrectionSettings. Color correction settings
+        /// Gets and sets the property ColorCorrectionSettings. Color Correction Settings
         /// </summary>
         public ColorCorrectionSettings ColorCorrectionSettings
         {

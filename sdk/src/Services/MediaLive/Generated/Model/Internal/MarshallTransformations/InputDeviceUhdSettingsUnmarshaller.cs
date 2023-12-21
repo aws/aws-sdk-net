@@ -69,6 +69,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioChannelPairs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InputDeviceUhdAudioChannelPairConfig, InputDeviceUhdAudioChannelPairConfigUnmarshaller>(InputDeviceUhdAudioChannelPairConfigUnmarshaller.Instance);
+                    unmarshalledObject.AudioChannelPairs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

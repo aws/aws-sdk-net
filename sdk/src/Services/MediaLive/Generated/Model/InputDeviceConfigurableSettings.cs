@@ -33,11 +33,32 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputDeviceConfigurableSettings
     {
+        private List<InputDeviceConfigurableAudioChannelPairConfig> _audioChannelPairs = new List<InputDeviceConfigurableAudioChannelPairConfig>();
         private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
         private int? _latencyMs;
         private int? _maxBitrate;
         private InputDeviceMediaConnectConfigurableSettings _mediaconnectSettings;
+
+        /// <summary>
+        /// Gets and sets the property AudioChannelPairs. An array of eight audio configurations,
+        /// one for each audio pair in the source. Set up each audio configuration either to exclude
+        /// the pair, or to format it and include it in the output from the device. This parameter
+        /// applies only to UHD devices, and only when the device is configured as the source
+        /// for a MediaConnect flow. For an HD device, you configure the audio by setting up audio
+        /// selectors in the channel configuration.
+        /// </summary>
+        public List<InputDeviceConfigurableAudioChannelPairConfig> AudioChannelPairs
+        {
+            get { return this._audioChannelPairs; }
+            set { this._audioChannelPairs = value; }
+        }
+
+        // Check to see if AudioChannelPairs property is set
+        internal bool IsSetAudioChannelPairs()
+        {
+            return this._audioChannelPairs != null && this._audioChannelPairs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Codec. Choose the codec for the video that the device produces.
