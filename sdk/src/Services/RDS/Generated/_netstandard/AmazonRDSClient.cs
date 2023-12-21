@@ -5775,6 +5775,60 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DisableHttpEndpoint
+
+        internal virtual DisableHttpEndpointResponse DisableHttpEndpoint(DisableHttpEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableHttpEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableHttpEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DisableHttpEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables the HTTP endpoint for the specified DB cluster. Disabling this endpoint disables
+        /// RDS Data API.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+        /// clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
+        /// <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code> operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableHttpEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableHttpEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InvalidResourceStateException">
+        /// The operation can't be performed because another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">REST API Reference for DisableHttpEndpoint Operation</seealso>
+        public virtual Task<DisableHttpEndpointResponse> DisableHttpEndpointAsync(DisableHttpEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableHttpEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableHttpEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableHttpEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
         internal virtual DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
@@ -5816,6 +5870,66 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DownloadDBLogFilePortionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableHttpEndpoint
+
+        internal virtual EnableHttpEndpointResponse EnableHttpEndpoint(EnableHttpEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableHttpEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableHttpEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<EnableHttpEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't
+        /// enabled.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, this endpoint provides a connectionless web service API (RDS Data API)
+        /// for running SQL queries on the Aurora DB cluster. You can also query your database
+        /// from inside the RDS console with the RDS query editor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+        /// clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
+        /// <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code> operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableHttpEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableHttpEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InvalidResourceStateException">
+        /// The operation can't be performed because another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">REST API Reference for EnableHttpEndpoint Operation</seealso>
+        public virtual Task<EnableHttpEndpointResponse> EnableHttpEndpointAsync(EnableHttpEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableHttpEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableHttpEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableHttpEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion

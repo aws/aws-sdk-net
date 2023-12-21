@@ -5990,6 +5990,66 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DisableHttpEndpoint
+
+
+        /// <summary>
+        /// Disables the HTTP endpoint for the specified DB cluster. Disabling this endpoint disables
+        /// RDS Data API.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+        /// clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
+        /// <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code> operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableHttpEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DisableHttpEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InvalidResourceStateException">
+        /// The operation can't be performed because another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">REST API Reference for DisableHttpEndpoint Operation</seealso>
+        DisableHttpEndpointResponse DisableHttpEndpoint(DisableHttpEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableHttpEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableHttpEndpoint operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableHttpEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">REST API Reference for DisableHttpEndpoint Operation</seealso>
+        IAsyncResult BeginDisableHttpEndpoint(DisableHttpEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableHttpEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableHttpEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DisableHttpEndpointResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">REST API Reference for DisableHttpEndpoint Operation</seealso>
+        DisableHttpEndpointResponse EndDisableHttpEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
 
@@ -6038,6 +6098,72 @@ namespace Amazon.RDS
         /// <returns>Returns a  DownloadDBLogFilePortionResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         DownloadDBLogFilePortionResponse EndDownloadDBLogFilePortion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableHttpEndpoint
+
+
+        /// <summary>
+        /// Enables the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't
+        /// enabled.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, this endpoint provides a connectionless web service API (RDS Data API)
+        /// for running SQL queries on the Aurora DB cluster. You can also query your database
+        /// from inside the RDS console with the RDS query editor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+        /// clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
+        /// <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code> operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableHttpEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the EnableHttpEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InvalidResourceStateException">
+        /// The operation can't be performed because another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">REST API Reference for EnableHttpEndpoint Operation</seealso>
+        EnableHttpEndpointResponse EnableHttpEndpoint(EnableHttpEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableHttpEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableHttpEndpoint operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableHttpEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">REST API Reference for EnableHttpEndpoint Operation</seealso>
+        IAsyncResult BeginEnableHttpEndpoint(EnableHttpEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableHttpEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableHttpEndpoint.</param>
+        /// 
+        /// <returns>Returns a  EnableHttpEndpointResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">REST API Reference for EnableHttpEndpoint Operation</seealso>
+        EnableHttpEndpointResponse EndEnableHttpEndpoint(IAsyncResult asyncResult);
 
         #endregion
         

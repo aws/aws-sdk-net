@@ -662,19 +662,31 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableHttpEndpoint. 
         /// <para>
-        /// Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster.
-        /// By default, the HTTP endpoint is disabled.
+        /// Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the
+        /// HTTP endpoint isn't enabled.
         /// </para>
         ///  
         /// <para>
-        /// When enabled, the HTTP endpoint provides a connectionless web service API for running
-        /// SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database
-        /// from inside the RDS console with the query editor.
+        /// When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data
+        /// API) for running SQL queries on the DB cluster. You can also query your database from
+        /// inside the RDS console with the RDS query editor.
         /// </para>
         ///  
+        /// <para>
+        /// RDS Data API is supported with the following DB clusters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Aurora PostgreSQL Serverless v2 and provisioned
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora PostgreSQL and Aurora MySQL Serverless v1
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-        /// the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
+        /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
