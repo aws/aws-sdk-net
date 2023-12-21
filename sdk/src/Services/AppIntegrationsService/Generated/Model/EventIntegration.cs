@@ -46,7 +46,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The event integration description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }

@@ -105,6 +105,17 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Namespace);
                 }
 
+                if(publicRequest.IsSetPermissions())
+                {
+                    context.Writer.WritePropertyName("Permissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    {
+                            context.Writer.Write(publicRequestPermissionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPublications())
                 {
                     context.Writer.WritePropertyName("Publications");

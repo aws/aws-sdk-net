@@ -61,8 +61,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetArn())
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field Arn set");
-            request.AddPathResource("{Arn}", StringUtils.FromString(publicRequest.Arn));
-            request.ResourcePath = "/applications/{Arn}";
+            request.AddPathResource("{ApplicationIdentifier}", StringUtils.FromString(publicRequest.Arn));
+            request.ResourcePath = "/applications/{ApplicationIdentifier}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -89,6 +89,17 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPermissions())
+                {
+                    context.Writer.WritePropertyName("Permissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    {
+                            context.Writer.Write(publicRequestPermissionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetPublications())

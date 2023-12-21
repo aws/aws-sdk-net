@@ -29,49 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// The configuration of an event that the application subscribes.
+    /// Container for the parameters to the DeleteApplication operation.
+    /// Deletes the Application. Only Applications that don't have any Application Associations
+    /// can be deleted.
     /// </summary>
-    public partial class Subscription
+    public partial class DeleteApplicationRequest : AmazonAppIntegrationsServiceRequest
     {
-        private string _description;
-        private string _event;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The description of the subscription.
+        /// The Amazon Resource Name (ARN) of the Application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
-        public string Description
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string Arn
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Event. 
-        /// <para>
-        /// The name of the subscription.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Event
-        {
-            get { return this._event; }
-            set { this._event = value; }
-        }
-
-        // Check to see if Event property is set
-        internal bool IsSetEvent()
-        {
-            return this._event != null;
+            return this._arn != null;
         }
 
     }

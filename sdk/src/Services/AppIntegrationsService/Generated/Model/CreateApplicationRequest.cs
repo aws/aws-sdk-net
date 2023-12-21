@@ -44,6 +44,7 @@ namespace Amazon.AppIntegrationsService.Model
         private string _description;
         private string _name;
         private string _awsNamespace;
+        private List<string> _permissions = new List<string>();
         private List<Publication> _publications = new List<Publication>();
         private List<Subscription> _subscriptions = new List<Subscription>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -95,7 +96,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The description of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -147,11 +148,31 @@ namespace Amazon.AppIntegrationsService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// The configuration of events or requests that the application has access to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public List<string> Permissions
+        {
+            get { return this._permissions; }
+            set { this._permissions = value; }
+        }
+
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
+        {
+            return this._permissions != null && this._permissions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Publications. 
         /// <para>
         /// The events that the application publishes.
         /// </para>
         /// </summary>
+        [Obsolete("Publications has been replaced with Permissions")]
         [AWSProperty(Min=0, Max=50)]
         public List<Publication> Publications
         {
@@ -171,6 +192,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The events that the application subscribes.
         /// </para>
         /// </summary>
+        [Obsolete("Subscriptions has been replaced with Permissions")]
         [AWSProperty(Min=0, Max=50)]
         public List<Subscription> Subscriptions
         {

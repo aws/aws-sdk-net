@@ -30,6 +30,20 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
             #endregion
         }
 
+        public void AppIntegrationsServiceDeleteApplication()
+        {
+            #region delete-an-application
+
+            var client = new AmazonAppIntegrationsServiceClient();
+            var response = client.DeleteApplication(new DeleteApplicationRequest 
+            {
+                Arn = "arn:aws:app-integrations:us-west-2:0123456789012:application/98542c53-e8ac-4570-9c85-c6552c8d9c5e"
+            });
+
+
+            #endregion
+        }
+
         public void AppIntegrationsServiceGetApplication()
         {
             #region get-an-application
@@ -44,6 +58,22 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
             string description = response.Description;
             string name = response.Name;
             string awsNamespace = response.Namespace;
+
+            #endregion
+        }
+
+        public void AppIntegrationsServiceListApplicationAssociations()
+        {
+            #region list-application-associations
+
+            var client = new AmazonAppIntegrationsServiceClient();
+            var response = client.ListApplicationAssociations(new ListApplicationAssociationsRequest 
+            {
+                ApplicationId = "98542c53-e8ac-4570-9c85-c6552c8d9c5e"
+            });
+
+            List<ApplicationAssociationSummary> applicationAssociations = response.ApplicationAssociations;
+            string nextToken = response.NextToken;
 
             #endregion
         }

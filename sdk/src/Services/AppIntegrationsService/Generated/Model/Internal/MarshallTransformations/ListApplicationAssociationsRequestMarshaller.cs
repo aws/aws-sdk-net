@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetApplication Request Marshaller
+    /// ListApplicationAssociations Request Marshaller
     /// </summary>       
-    public class GetApplicationRequestMarshaller : IMarshaller<IRequest, GetApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListApplicationAssociationsRequestMarshaller : IMarshaller<IRequest, ListApplicationAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetApplicationRequest)input);
+            return this.Marshall((ListApplicationAssociationsRequest)input);
         }
 
         /// <summary>
@@ -52,22 +52,29 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetApplicationRequest publicRequest)
+        public IRequest Marshall(ListApplicationAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppIntegrationsService");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetArn())
-                throw new AmazonAppIntegrationsServiceException("Request object does not have required field Arn set");
-            request.AddPathResource("{ApplicationIdentifier}", StringUtils.FromString(publicRequest.Arn));
-            request.ResourcePath = "/applications/{ApplicationIdentifier}";
+            if (!publicRequest.IsSetApplicationId())
+                throw new AmazonAppIntegrationsServiceException("Request object does not have required field ApplicationId set");
+            request.AddPathResource("{ApplicationIdentifier}", StringUtils.FromString(publicRequest.ApplicationId));
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/applications/{ApplicationIdentifier}/associations";
+            request.UseQueryString = true;
 
             return request;
         }
-        private static GetApplicationRequestMarshaller _instance = new GetApplicationRequestMarshaller();        
+        private static ListApplicationAssociationsRequestMarshaller _instance = new ListApplicationAssociationsRequestMarshaller();        
 
-        internal static GetApplicationRequestMarshaller GetInstance()
+        internal static ListApplicationAssociationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -75,7 +82,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetApplicationRequestMarshaller Instance
+        public static ListApplicationAssociationsRequestMarshaller Instance
         {
             get
             {

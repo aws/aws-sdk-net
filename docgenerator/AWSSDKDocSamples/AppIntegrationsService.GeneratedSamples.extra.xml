@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.DeleteApplication(Amazon.AppIntegrationsService.Model.DeleteApplicationRequest)" />
+            <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.DeleteApplication(Amazon.AppIntegrationsService.Model.DeleteApplicationRequest)" />
+            <member name="T:Amazon.AppIntegrationsService.Model.DeleteApplicationRequest" />
+            <member name="T:Amazon.AppIntegrationsService.Model.DeleteApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following deletes an application.
+                </para>
+                <code
+                    title="To delete an application"
+                    source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
+                    region="delete-an-application" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.GetApplication(Amazon.AppIntegrationsService.Model.GetApplicationRequest)" />
             <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.GetApplication(Amazon.AppIntegrationsService.Model.GetApplicationRequest)" />
             <member name="T:Amazon.AppIntegrationsService.Model.GetApplicationRequest" />
@@ -35,6 +54,25 @@
                     title="To get an application"
                     source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
                     region="get-an-application" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.ListApplicationAssociations(Amazon.AppIntegrationsService.Model.ListApplicationAssociationsRequest)" />
+            <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.ListApplicationAssociations(Amazon.AppIntegrationsService.Model.ListApplicationAssociationsRequest)" />
+            <member name="T:Amazon.AppIntegrationsService.Model.ListApplicationAssociationsRequest" />
+            <member name="T:Amazon.AppIntegrationsService.Model.ListApplicationAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following retrives application associations of an application
+                </para>
+                <code
+                    title="To list application associations of an application"
+                    source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
+                    region="list-application-associations" />
             </example>
         </value>
     </doc>

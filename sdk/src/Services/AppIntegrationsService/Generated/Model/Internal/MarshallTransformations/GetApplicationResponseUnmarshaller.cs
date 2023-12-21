@@ -99,6 +99,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     response.Namespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Permissions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Permissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Publications", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Publication, PublicationUnmarshaller>(PublicationUnmarshaller.Instance);

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateApplication operation
+    /// Response Unmarshaller for ListApplicationAssociations operation
     /// </summary>  
-    public class CreateApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListApplicationAssociationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateApplicationResponse response = new CreateApplicationResponse();
+            ListApplicationAssociationsResponse response = new ListApplicationAssociationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("ApplicationAssociations", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ApplicationAssociationSummary, ApplicationAssociationSummaryUnmarshaller>(ApplicationAssociationSummaryUnmarshaller.Instance);
+                    response.ApplicationAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,10 +90,6 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateResourceException"))
-                {
-                    return DuplicateResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
                 {
                     return InternalServiceErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -102,25 +98,21 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceQuotaExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
-                {
-                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonAppIntegrationsServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateApplicationResponseUnmarshaller _instance = new CreateApplicationResponseUnmarshaller();        
+        private static ListApplicationAssociationsResponseUnmarshaller _instance = new ListApplicationAssociationsResponseUnmarshaller();        
 
-        internal static CreateApplicationResponseUnmarshaller GetInstance()
+        internal static ListApplicationAssociationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +120,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApplicationResponseUnmarshaller Instance
+        public static ListApplicationAssociationsResponseUnmarshaller Instance
         {
             get
             {

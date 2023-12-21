@@ -8,7 +8,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateApplicationRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -42,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -78,7 +78,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -112,7 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateEventIntegrationRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -133,6 +133,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.DeleteApplicationRequest.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})(:[\w\$]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.DeleteDataIntegrationRequest.DataIntegrationIdentifier</property>
@@ -160,7 +166,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -194,7 +200,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetDataIntegrationResponse.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -228,7 +234,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetEventIntegrationResponse.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -249,6 +255,29 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ListApplicationAssociationsRequest.ApplicationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})(:[\w\$]+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ListApplicationAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ListApplicationAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ListApplicationAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.ListApplicationsRequest.MaxResults</property>
@@ -373,7 +402,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.UpdateApplicationRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -385,7 +414,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.UpdateDataIntegrationRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -403,7 +432,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.UpdateEventIntegrationRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -412,6 +441,24 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ApplicationAssociationSummary.ApplicationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ApplicationAssociationSummary.ApplicationAssociationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.ApplicationAssociationSummary.ClientId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.ApplicationSummary.Arn</property>
@@ -479,7 +526,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.EventIntegration.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -537,7 +584,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.Publication.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -573,7 +620,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.Subscription.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
   </property-value-rule>

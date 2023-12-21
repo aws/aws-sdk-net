@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetApplication Request Marshaller
+    /// DeleteApplication Request Marshaller
     /// </summary>       
-    public class GetApplicationRequestMarshaller : IMarshaller<IRequest, GetApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteApplicationRequestMarshaller : IMarshaller<IRequest, DeleteApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetApplicationRequest)input);
+            return this.Marshall((DeleteApplicationRequest)input);
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetApplicationRequest publicRequest)
+        public IRequest Marshall(DeleteApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppIntegrationsService");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetArn())
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field Arn set");
@@ -65,9 +65,9 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetApplicationRequestMarshaller _instance = new GetApplicationRequestMarshaller();        
+        private static DeleteApplicationRequestMarshaller _instance = new DeleteApplicationRequestMarshaller();        
 
-        internal static GetApplicationRequestMarshaller GetInstance()
+        internal static DeleteApplicationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -75,7 +75,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetApplicationRequestMarshaller Instance
+        public static DeleteApplicationRequestMarshaller Instance
         {
             get
             {

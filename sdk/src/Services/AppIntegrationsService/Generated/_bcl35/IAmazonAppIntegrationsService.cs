@@ -86,6 +86,9 @@ namespace Amazon.AppIntegrationsService
         /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
 
@@ -241,6 +244,62 @@ namespace Amazon.AppIntegrationsService
         /// <returns>Returns a  CreateEventIntegrationResult from AppIntegrationsService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateEventIntegration">REST API Reference for CreateEventIntegration Operation</seealso>
         CreateEventIntegrationResponse EndCreateEventIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteApplication
+
+
+        /// <summary>
+        /// Deletes the Application. Only Applications that don't have any Application Associations
+        /// can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult);
 
         #endregion
         
@@ -542,6 +601,61 @@ namespace Amazon.AppIntegrationsService
         /// <returns>Returns a  GetEventIntegrationResult from AppIntegrationsService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">REST API Reference for GetEventIntegration Operation</seealso>
         GetEventIntegrationResponse EndGetEventIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListApplicationAssociations
+
+
+        /// <summary>
+        /// Returns a paginated list of application associations for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationAssociations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplicationAssociations">REST API Reference for ListApplicationAssociations Operation</seealso>
+        ListApplicationAssociationsResponse ListApplicationAssociations(ListApplicationAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssociations operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplicationAssociations">REST API Reference for ListApplicationAssociations Operation</seealso>
+        IAsyncResult BeginListApplicationAssociations(ListApplicationAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationAssociationsResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplicationAssociations">REST API Reference for ListApplicationAssociations Operation</seealso>
+        ListApplicationAssociationsResponse EndListApplicationAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1018,6 +1132,9 @@ namespace Amazon.AppIntegrationsService
         /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);

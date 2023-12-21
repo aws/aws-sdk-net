@@ -26,6 +26,11 @@ namespace Amazon.AppIntegrationsService.Model
     {
 
         /// <summary>
+        /// Paginator for ListApplicationAssociations operation
+        ///</summary>
+        IListApplicationAssociationsPaginator ListApplicationAssociations(ListApplicationAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
