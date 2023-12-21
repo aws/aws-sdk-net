@@ -1126,7 +1126,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PineconeConfiguration.CredentialsSecretArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9/_+=.@-]{1,63}</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PineconeConfiguration.Namespace</property>
@@ -1158,8 +1158,52 @@
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsConfiguration.CredentialsSecretArn</property>
+    <pattern>arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsConfiguration.DatabaseName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsConfiguration.ResourceArn</property>
+    <pattern>arn:aws(|-cn|-us-gov):rds:[a-zA-Z0-9-]*:[0-9]{12}:cluster:[a-zA-Z0-9-]{1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsConfiguration.TableName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9_\.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsFieldMapping.MetadataField</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsFieldMapping.PrimaryKeyField</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsFieldMapping.TextField</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RdsFieldMapping.VectorField</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.RedisEnterpriseCloudConfiguration.CredentialsSecretArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9/_+=.@-]{1,63}</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.RedisEnterpriseCloudConfiguration.Endpoint</property>

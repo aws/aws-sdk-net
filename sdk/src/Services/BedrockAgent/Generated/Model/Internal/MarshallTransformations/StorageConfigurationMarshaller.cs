@@ -67,6 +67,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRdsConfiguration())
+            {
+                context.Writer.WritePropertyName("rdsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RdsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RdsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedisEnterpriseCloudConfiguration())
             {
                 context.Writer.WritePropertyName("redisEnterpriseCloudConfiguration");

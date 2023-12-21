@@ -779,6 +779,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly KnowledgeBaseStorageType PINECONE = new KnowledgeBaseStorageType("PINECONE");
         /// <summary>
+        /// Constant RDS for KnowledgeBaseStorageType
+        /// </summary>
+        public static readonly KnowledgeBaseStorageType RDS = new KnowledgeBaseStorageType("RDS");
+        /// <summary>
         /// Constant REDIS_ENTERPRISE_CLOUD for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType REDIS_ENTERPRISE_CLOUD = new KnowledgeBaseStorageType("REDIS_ENTERPRISE_CLOUD");

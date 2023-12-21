@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StorageConfiguration Object
+    /// Response Unmarshaller for RdsFieldMapping Object
     /// </summary>  
-    public class StorageConfigurationUnmarshaller : IUnmarshaller<StorageConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StorageConfiguration, JsonUnmarshallerContext>
+    public class RdsFieldMappingUnmarshaller : IUnmarshaller<RdsFieldMapping, XmlUnmarshallerContext>, IUnmarshaller<RdsFieldMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StorageConfiguration IUnmarshaller<StorageConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RdsFieldMapping IUnmarshaller<RdsFieldMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StorageConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RdsFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
-            StorageConfiguration unmarshalledObject = new StorageConfiguration();
+            RdsFieldMapping unmarshalledObject = new RdsFieldMapping();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,28 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("opensearchServerlessConfiguration", targetDepth))
-                {
-                    var unmarshaller = OpenSearchServerlessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OpensearchServerlessConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pineconeConfiguration", targetDepth))
-                {
-                    var unmarshaller = PineconeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PineconeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rdsConfiguration", targetDepth))
-                {
-                    var unmarshaller = RdsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RdsConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("redisEnterpriseCloudConfiguration", targetDepth))
-                {
-                    var unmarshaller = RedisEnterpriseCloudConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RedisEnterpriseCloudConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("metadataField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetadataField = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("primaryKeyField", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryKeyField = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("textField", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TextField = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vectorField", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VectorField = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -98,12 +92,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static StorageConfigurationUnmarshaller _instance = new StorageConfigurationUnmarshaller();        
+        private static RdsFieldMappingUnmarshaller _instance = new RdsFieldMappingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StorageConfigurationUnmarshaller Instance
+        public static RdsFieldMappingUnmarshaller Instance
         {
             get
             {

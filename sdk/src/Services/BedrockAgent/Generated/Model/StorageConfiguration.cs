@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     {
         private OpenSearchServerlessConfiguration _opensearchServerlessConfiguration;
         private PineconeConfiguration _pineconeConfiguration;
+        private RdsConfiguration _rdsConfiguration;
         private RedisEnterpriseCloudConfiguration _redisEnterpriseCloudConfiguration;
         private KnowledgeBaseStorageType _type;
 
@@ -66,6 +67,21 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetPineconeConfiguration()
         {
             return this._pineconeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsConfiguration.
+        /// </summary>
+        public RdsConfiguration RdsConfiguration
+        {
+            get { return this._rdsConfiguration; }
+            set { this._rdsConfiguration = value; }
+        }
+
+        // Check to see if RdsConfiguration property is set
+        internal bool IsSetRdsConfiguration()
+        {
+            return this._rdsConfiguration != null;
         }
 
         /// <summary>
