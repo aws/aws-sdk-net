@@ -39,6 +39,7 @@ namespace Amazon.CodeCommit.Model
         private string _cloneUrlSsh;
         private DateTime? _creationDate;
         private string _defaultBranch;
+        private string _kmsKeyId;
         private DateTime? _lastModifiedDate;
         private string _repositoryDescription;
         private string _repositoryId;
@@ -151,6 +152,25 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetDefaultBranch()
         {
             return this._defaultBranch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the Key Management Service encryption key used to encrypt and decrypt the
+        /// repository.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

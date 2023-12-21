@@ -34,9 +34,36 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class CreateRepositoryRequest : AmazonCodeCommitRequest
     {
+        private string _kmsKeyId;
         private string _repositoryDescription;
         private string _repositoryName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the encryption key. You can view the ID of an encryption key in the KMS
+        /// console, or use the KMS APIs to programmatically retrieve a key ID. For more information
+        /// about acceptable values for kmsKeyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+        /// in the Decrypt API description in the <i>Key Management Service API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services
+        /// managed key is used.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RepositoryDescription. 

@@ -80,6 +80,11 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>UpdateRepositoryEncryptionKey</a>, which updates the Key Management Service encryption
+    /// key used to encrypt and decrypt a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change
     /// the name of a repository, no other users of that repository can access it until you
     /// send them the new HTTPS or SSH URL to use.
@@ -2545,6 +2550,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
         /// The encryption key is disabled.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidIdException">
+        /// The Key Management Service encryption key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidUsageException">
+        /// A KMS encryption key was used to try and encrypt or decrypt a repository, but either
+        /// the repository or the key was not in a valid state to support the operation.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
         /// No encryption key was found.
         /// </exception>
@@ -2614,6 +2626,13 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
         /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidIdException">
+        /// The Key Management Service encryption key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidUsageException">
+        /// A KMS encryption key was used to try and encrypt or decrypt a repository, but either
+        /// the repository or the key was not in a valid state to support the operation.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
         /// No encryption key was found.
@@ -12245,6 +12264,133 @@ namespace Amazon.CodeCommit
             options.ResponseUnmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRepositoryDescriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRepositoryEncryptionKey
+
+
+        /// <summary>
+        /// Updates the Key Management Service encryption key used to encrypt and decrypt a CodeCommit
+        /// repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRepositoryEncryptionKey service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidIdException">
+        /// The Key Management Service encryption key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidUsageException">
+        /// A KMS encryption key was used to try and encrypt or decrypt a repository, but either
+        /// the repository or the key was not in a valid state to support the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyRequiredException">
+        /// A KMS encryption key ID is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryEncryptionKey">REST API Reference for UpdateRepositoryEncryptionKey Operation</seealso>
+        public virtual UpdateRepositoryEncryptionKeyResponse UpdateRepositoryEncryptionKey(UpdateRepositoryEncryptionKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRepositoryEncryptionKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRepositoryEncryptionKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRepositoryEncryptionKeyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the Key Management Service encryption key used to encrypt and decrypt a CodeCommit
+        /// repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryEncryptionKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRepositoryEncryptionKey service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidIdException">
+        /// The Key Management Service encryption key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyInvalidUsageException">
+        /// A KMS encryption key was used to try and encrypt or decrypt a repository, but either
+        /// the repository or the key was not in a valid state to support the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyRequiredException">
+        /// A KMS encryption key ID is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryEncryptionKey">REST API Reference for UpdateRepositoryEncryptionKey Operation</seealso>
+        public virtual Task<UpdateRepositoryEncryptionKeyResponse> UpdateRepositoryEncryptionKeyAsync(UpdateRepositoryEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRepositoryEncryptionKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRepositoryEncryptionKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRepositoryEncryptionKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -51,6 +51,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("errors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BatchGetRepositoriesError, BatchGetRepositoriesErrorUnmarshaller>(BatchGetRepositoriesErrorUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("repositories", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<RepositoryMetadata, RepositoryMetadataUnmarshaller>(RepositoryMetadataUnmarshaller.Instance);

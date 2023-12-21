@@ -99,6 +99,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultBranch = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastModifiedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

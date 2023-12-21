@@ -33,8 +33,28 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class BatchGetRepositoriesResponse : AmazonWebServiceResponse
     {
+        private List<BatchGetRepositoriesError> _errors = new List<BatchGetRepositoriesError>();
         private List<RepositoryMetadata> _repositories = new List<RepositoryMetadata>();
         private List<string> _repositoriesNotFound = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Returns information about any errors returned when attempting to retrieve information
+        /// about the repositories.
+        /// </para>
+        /// </summary>
+        public List<BatchGetRepositoriesError> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Repositories. 

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRepository Request Marshaller
+    /// UpdateRepositoryEncryptionKey Request Marshaller
     /// </summary>       
-    public class CreateRepositoryRequestMarshaller : IMarshaller<IRequest, CreateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateRepositoryEncryptionKeyRequestMarshaller : IMarshaller<IRequest, UpdateRepositoryEncryptionKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRepositoryRequest)input);
+            return this.Marshall((UpdateRepositoryEncryptionKeyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRepositoryRequest publicRequest)
+        public IRequest Marshall(UpdateRepositoryEncryptionKeyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeCommit");
-            string target = "CodeCommit_20150413.CreateRepository";
+            string target = "CodeCommit_20150413.UpdateRepositoryEncryptionKey";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";
@@ -73,30 +73,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
-                if(publicRequest.IsSetRepositoryDescription())
-                {
-                    context.Writer.WritePropertyName("repositoryDescription");
-                    context.Writer.Write(publicRequest.RepositoryDescription);
-                }
-
                 if(publicRequest.IsSetRepositoryName())
                 {
                     context.Writer.WritePropertyName("repositoryName");
                     context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -107,9 +87,9 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRepositoryRequestMarshaller _instance = new CreateRepositoryRequestMarshaller();        
+        private static UpdateRepositoryEncryptionKeyRequestMarshaller _instance = new UpdateRepositoryEncryptionKeyRequestMarshaller();        
 
-        internal static CreateRepositoryRequestMarshaller GetInstance()
+        internal static UpdateRepositoryEncryptionKeyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +97,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryRequestMarshaller Instance
+        public static UpdateRepositoryEncryptionKeyRequestMarshaller Instance
         {
             get
             {

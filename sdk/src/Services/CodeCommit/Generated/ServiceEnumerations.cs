@@ -75,6 +75,72 @@ namespace Amazon.CodeCommit
 
 
     /// <summary>
+    /// Constants used for properties of type BatchGetRepositoriesErrorCodeEnum.
+    /// </summary>
+    public class BatchGetRepositoriesErrorCodeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EncryptionIntegrityChecksFailedException for BatchGetRepositoriesErrorCodeEnum
+        /// </summary>
+        public static readonly BatchGetRepositoriesErrorCodeEnum EncryptionIntegrityChecksFailedException = new BatchGetRepositoriesErrorCodeEnum("EncryptionIntegrityChecksFailedException");
+        /// <summary>
+        /// Constant EncryptionKeyAccessDeniedException for BatchGetRepositoriesErrorCodeEnum
+        /// </summary>
+        public static readonly BatchGetRepositoriesErrorCodeEnum EncryptionKeyAccessDeniedException = new BatchGetRepositoriesErrorCodeEnum("EncryptionKeyAccessDeniedException");
+        /// <summary>
+        /// Constant EncryptionKeyDisabledException for BatchGetRepositoriesErrorCodeEnum
+        /// </summary>
+        public static readonly BatchGetRepositoriesErrorCodeEnum EncryptionKeyDisabledException = new BatchGetRepositoriesErrorCodeEnum("EncryptionKeyDisabledException");
+        /// <summary>
+        /// Constant EncryptionKeyNotFoundException for BatchGetRepositoriesErrorCodeEnum
+        /// </summary>
+        public static readonly BatchGetRepositoriesErrorCodeEnum EncryptionKeyNotFoundException = new BatchGetRepositoriesErrorCodeEnum("EncryptionKeyNotFoundException");
+        /// <summary>
+        /// Constant EncryptionKeyUnavailableException for BatchGetRepositoriesErrorCodeEnum
+        /// </summary>
+        public static readonly BatchGetRepositoriesErrorCodeEnum EncryptionKeyUnavailableException = new BatchGetRepositoriesErrorCodeEnum("EncryptionKeyUnavailableException");
+        /// <summary>
+        /// Constant RepositoryDoesNotExistException for BatchGetRepositoriesErrorCodeEnum
+        /// </summary>
+        public static readonly BatchGetRepositoriesErrorCodeEnum RepositoryDoesNotExistException = new BatchGetRepositoriesErrorCodeEnum("RepositoryDoesNotExistException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetRepositoriesErrorCodeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetRepositoriesErrorCodeEnum FindValue(string value)
+        {
+            return FindValue<BatchGetRepositoriesErrorCodeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetRepositoriesErrorCodeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeTypeEnum.
     /// </summary>
     public class ChangeTypeEnum : ConstantClass

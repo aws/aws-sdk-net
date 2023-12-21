@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateRepository operation
+    /// Response Unmarshaller for UpdateRepositoryEncryptionKey operation
     /// </summary>  
-    public class CreateRepositoryResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateRepositoryEncryptionKeyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,28 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateRepositoryResponse response = new CreateRepositoryResponse();
+            UpdateRepositoryEncryptionKeyResponse response = new UpdateRepositoryEncryptionKeyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("repositoryMetadata", targetDepth))
+                if (context.TestExpression("kmsKeyId", targetDepth))
                 {
-                    var unmarshaller = RepositoryMetadataUnmarshaller.Instance;
-                    response.RepositoryMetadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("originalKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OriginalKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("repositoryId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RepositoryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,53 +116,33 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 {
                     return EncryptionKeyNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyRequiredException"))
+                {
+                    return EncryptionKeyRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyUnavailableException"))
                 {
                     return EncryptionKeyUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRepositoryDescriptionException"))
-                {
-                    return InvalidRepositoryDescriptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRepositoryNameException"))
                 {
                     return InvalidRepositoryNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSystemTagUsageException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryDoesNotExistException"))
                 {
-                    return InvalidSystemTagUsageExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagsMapException"))
-                {
-                    return InvalidTagsMapExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryLimitExceededException"))
-                {
-                    return RepositoryLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNameExistsException"))
-                {
-                    return RepositoryNameExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return RepositoryDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNameRequiredException"))
                 {
                     return RepositoryNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TagPolicyException"))
-                {
-                    return TagPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
-                {
-                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonCodeCommitException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateRepositoryResponseUnmarshaller _instance = new CreateRepositoryResponseUnmarshaller();        
+        private static UpdateRepositoryEncryptionKeyResponseUnmarshaller _instance = new UpdateRepositoryEncryptionKeyResponseUnmarshaller();        
 
-        internal static CreateRepositoryResponseUnmarshaller GetInstance()
+        internal static UpdateRepositoryEncryptionKeyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +150,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryResponseUnmarshaller Instance
+        public static UpdateRepositoryEncryptionKeyResponseUnmarshaller Instance
         {
             get
             {
