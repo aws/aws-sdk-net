@@ -34,6 +34,7 @@ namespace Amazon.PrometheusService.Model
     public partial class CreateWorkspaceResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _kmsKeyArn;
         private WorkspaceStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workspaceId;
@@ -55,6 +56,25 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// Customer managed KMS key ARN for this workspace
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

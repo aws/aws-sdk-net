@@ -82,6 +82,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetKmsKeyArn())
+                {
+                    context.Writer.WritePropertyName("kmsKeyArn");
+                    context.Writer.Write(publicRequest.KmsKeyArn);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

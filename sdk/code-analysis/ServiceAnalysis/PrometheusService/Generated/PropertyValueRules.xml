@@ -81,8 +81,20 @@
     <pattern>[!-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateWorkspaceRequest.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:[a-z0-9\-]+:\d+:key/[a-f0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateWorkspaceResponse.Arn</property>
     <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateWorkspaceResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:[a-z0-9\-]+:\d+:key/[a-f0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateWorkspaceResponse.WorkspaceId</property>
@@ -401,6 +413,12 @@
     <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceDescription.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:[a-z0-9\-]+:\d+:key/[a-f0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.PrometheusEndpoint</property>
     <min>1</min>
     <max>1024</max>
@@ -419,6 +437,12 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceSummary.Arn</property>
     <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceSummary.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:[a-z0-9\-]+:\d+:key/[a-f0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceSummary.WorkspaceId</property>
