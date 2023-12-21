@@ -32,7 +32,7 @@ namespace Amazon.CodeCommit
     public partial class AmazonCodeCommitConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeCommit", "3.7.300.23");
+            InternalSDKUtils.BuildUserAgentString("CodeCommit", "3.7.301.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

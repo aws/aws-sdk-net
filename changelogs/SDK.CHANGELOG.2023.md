@@ -1,3 +1,30 @@
+### 3.7.714.0 (2023-12-21 19:22 UTC)
+* AppIntegrationsService (3.7.301.0)
+	* The Amazon AppIntegrations service adds DeleteApplication API for deleting applications, and updates APIs to support third party applications reacting to workspace events and make data requests to Amazon Connect for agent and contact events.
+* BedrockAgent (3.7.301.0)
+	* This release introduces Amazon Aurora as a vector store on Knowledge Bases for Amazon Bedrock
+* CodeCommit (3.7.301.0)
+	* AWS CodeCommit now supports customer managed keys from AWS Key Management Service. UpdateRepositoryEncryptionKey is added for updating the key configuration. CreateRepository, GetRepository, BatchGetRepositories are updated with new input or output parameters.
+* Connect (3.7.307.0)
+	* Adds APIs to manage User Proficiencies and Predefined Attributes. Enhances StartOutboundVoiceContact API input. Introduces SearchContacts API. Enhances DescribeContact API. Adds an API to update Routing Attributes in QueuePriority and QueueTimeAdjustmentSeconds.
+* MediaLive (3.7.303.0)
+	* MediaLive now supports the ability to configure the audio that an AWS Elemental Link UHD device produces, when the device is configured as the source for a flow in AWS Elemental MediaConnect.
+* NeptuneGraph (3.7.301.0)
+	* Adds Waiters for successful creation and deletion of Graph, Graph Snapshot, Import Task and Private Endpoints for Neptune Analytics
+* PrometheusService (3.7.302.0)
+	* This release updates Amazon Managed Service for Prometheus APIs to support customer managed KMS keys.
+* RDS (3.7.303.0)
+	* This release adds support for using RDS Data API with Aurora PostgreSQL Serverless v2 and provisioned DB clusters.
+* RDSDataService (3.7.301.0)
+	* This release adds support for using RDS Data API with Aurora PostgreSQL Serverless v2 and provisioned DB clusters.
+* S3 (3.7.304.13)
+	* Fixed a bug where the part size specified on the request was being ignored for uploading non seekable streams via the transfer utility
+* SageMaker (3.7.307.0)
+	* Amazon SageMaker Training now provides model training container access for debugging purposes. Amazon SageMaker Search now provides the ability to use visibility conditions to limit resource access to a single domain or multiple domains.
+* Core 3.7.300.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.713.0 (2023-12-20 19:33 UTC)
 * AppStream (3.7.302.0)
 	* This release introduces configurable clipboard, allowing admins to specify the maximum length of text that can be copied by the users from their device to the remote session and vice-versa.
