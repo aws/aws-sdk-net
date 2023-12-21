@@ -195,10 +195,6 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </dd> <dt>Training</dt> <dd> <ul> <li> 
         /// <para>
-        /// Downloading the training image.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Training image download completed. Training in progress.
         /// </para>
         ///  </li> </ul> </dd> </dl> <important> 

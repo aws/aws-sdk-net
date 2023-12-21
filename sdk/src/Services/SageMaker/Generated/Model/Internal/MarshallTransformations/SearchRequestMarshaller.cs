@@ -114,6 +114,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SortOrder);
                 }
 
+                if(publicRequest.IsSetVisibilityConditions())
+                {
+                    context.Writer.WritePropertyName("VisibilityConditions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVisibilityConditionsListValue in publicRequest.VisibilityConditions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VisibilityConditionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVisibilityConditionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
         private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
         private List<ProfilerRuleEvaluationStatus> _profilerRuleEvaluationStatuses = new List<ProfilerRuleEvaluationStatus>();
         private ProfilingStatus _profilingStatus;
+        private RemoteDebugConfig _remoteDebugConfig;
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
@@ -574,6 +575,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProfilingStatus()
         {
             return this._profilingStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteDebugConfig. 
+        /// <para>
+        /// Configuration for remote debugging. To learn more about the remote debugging functionality
+        /// of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+        /// a training container through Amazon Web Services Systems Manager (SSM) for remote
+        /// debugging</a>.
+        /// </para>
+        /// </summary>
+        public RemoteDebugConfig RemoteDebugConfig
+        {
+            get { return this._remoteDebugConfig; }
+            set { this._remoteDebugConfig = value; }
+        }
+
+        // Check to see if RemoteDebugConfig property is set
+        internal bool IsSetRemoteDebugConfig()
+        {
+            return this._remoteDebugConfig != null;
         }
 
         /// <summary>

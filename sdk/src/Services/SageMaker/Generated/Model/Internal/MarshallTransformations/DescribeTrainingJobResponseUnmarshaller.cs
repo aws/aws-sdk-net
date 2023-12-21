@@ -207,6 +207,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ProfilingStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RemoteDebugConfig", targetDepth))
+                {
+                    var unmarshaller = RemoteDebugConfigUnmarshaller.Instance;
+                    response.RemoteDebugConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceConfig", targetDepth))
                 {
                     var unmarshaller = ResourceConfigUnmarshaller.Instance;

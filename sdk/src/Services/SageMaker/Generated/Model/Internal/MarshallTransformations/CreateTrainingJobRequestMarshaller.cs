@@ -238,6 +238,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetRemoteDebugConfig())
+                {
+                    context.Writer.WritePropertyName("RemoteDebugConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RemoteDebugConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RemoteDebugConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourceConfig())
                 {
                     context.Writer.WritePropertyName("ResourceConfig");
