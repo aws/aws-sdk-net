@@ -3884,7 +3884,9 @@ namespace Amazon.Omics
         #region  ListMultipartReadSetUploads
 
         /// <summary>
-        /// Lists all multipart read set uploads and their statuses.
+        /// Lists multipart read set uploads and for in progress uploads. Once the upload is
+        /// completed, a read set is created and the upload will no longer be returned in the
+        /// respone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads service method.</param>
         /// 
