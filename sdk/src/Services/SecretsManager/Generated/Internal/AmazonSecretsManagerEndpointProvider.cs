@@ -72,6 +72,14 @@ namespace Amazon.SecretsManager.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
+                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://secretsmanager-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://secretsmanager-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://secretsmanager-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
@@ -88,6 +96,18 @@ namespace Amazon.SecretsManager.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
+                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://secretsmanager.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals("aws-cn", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://secretsmanager.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://secretsmanager.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://secretsmanager.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");

@@ -444,7 +444,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonSecretsManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://secretsmanager-fips.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://secretsmanager-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonSecretsManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://secretsmanager.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://secretsmanager.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -534,7 +534,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonSecretsManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://secretsmanager.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://secretsmanager.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -609,7 +609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonSecretsManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://secretsmanager-fips.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://secretsmanager-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -624,7 +624,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonSecretsManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://secretsmanager.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://secretsmanager.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
