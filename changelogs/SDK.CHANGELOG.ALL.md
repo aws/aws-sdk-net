@@ -1,3 +1,24 @@
+### 3.7.715.0 (2023-12-22 19:22 UTC)
+* BedrockAgent (3.7.302.0)
+	* Adding Claude 2.1 support to Bedrock Agents
+* Glue (3.7.305.0)
+	* This release adds additional configurations for Query Session Context on the following APIs: GetUnfilteredTableMetadata, GetUnfilteredPartitionMetadata, GetUnfilteredPartitionsMetadata.
+* LakeFormation (3.7.302.0)
+	* This release adds additional configurations on GetTemporaryGlueTableCredentials for Query Session Context.
+* MediaConnect (3.7.301.0)
+	* This release adds the DescribeSourceMetadata API. This API can be used to view the stream information of the flow's source.
+* NetworkMonitor (3.7.300.0)
+	* CloudWatch Network Monitor is a new service within CloudWatch that will help network administrators and operators continuously monitor network performance metrics such as round-trip-time and packet loss between their AWS-hosted applications and their on-premises locations.
+* Omics (3.7.300.25)
+	* Provides minor corrections and an updated description of APIs.
+* S3 (3.7.305.0)
+	* Added additional examples for some operations.
+* SecretsManager (3.7.302.0)
+	* Update endpoint rules and examples.
+* Core 3.7.300.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.714.0 (2023-12-21 19:22 UTC)
 * AppIntegrationsService (3.7.301.0)
 	* The Amazon AppIntegrations service adds DeleteApplication API for deleting applications, and updates APIs to support third party applications reacting to workspace events and make data requests to Amazon Connect for agent and contact events.
