@@ -1619,6 +1619,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredPartitionMetadataRequest.Region</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetUnfilteredPartitionMetadataRequest.TableName</property>
     <min>1</min>
     <max>255</max>
@@ -1644,6 +1648,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredPartitionsMetadataRequest.Region</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetUnfilteredPartitionsMetadataRequest.TableName</property>
     <min>1</min>
     <max>255</max>
@@ -1662,6 +1670,20 @@
     <property>Amazon.Glue.Model.GetUnfilteredTableMetadataRequest.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredTableMetadataRequest.Region</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredTableMetadataResponse.QueryAuthorizationId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredTableMetadataResponse.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetUserDefinedFunctionRequest.CatalogId</property>
@@ -4516,6 +4538,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.QuerySessionContext.QueryAuthorizationId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.QuerySessionContext.QueryId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Recipe.Name</property>
   </property-value-rule>
   <property-value-rule>
@@ -5070,6 +5102,11 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.StringColumnStatisticsData.NumberOfNulls</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SupportedDialect.DialectVersion</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Table.CatalogId</property>

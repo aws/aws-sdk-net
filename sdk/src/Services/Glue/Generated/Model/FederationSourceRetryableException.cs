@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// A federation source failed, but the operation may be retried.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

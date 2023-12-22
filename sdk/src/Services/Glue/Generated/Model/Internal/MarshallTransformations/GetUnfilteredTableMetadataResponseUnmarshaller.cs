@@ -69,6 +69,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Permissions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Permissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QueryAuthorizationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.QueryAuthorizationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = TableUnmarshaller.Instance;

@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the CreateConnection operation.
     /// Creates a connection definition in the Data Catalog.
+    /// 
+    ///  
+    /// <para>
+    /// Connections used for creating federated resources require the IAM <code>glue:PassConnection</code>
+    /// permission.
+    /// </para>
     /// </summary>
     public partial class CreateConnectionRequest : AmazonGlueRequest
     {

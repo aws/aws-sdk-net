@@ -96,6 +96,45 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPermissions())
+                {
+                    context.Writer.WritePropertyName("Permissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    {
+                            context.Writer.Write(publicRequestPermissionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetQuerySessionContext())
+                {
+                    context.Writer.WritePropertyName("QuerySessionContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QuerySessionContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRegion())
+                {
+                    context.Writer.WritePropertyName("Region");
+                    context.Writer.Write(publicRequest.Region);
+                }
+
+                if(publicRequest.IsSetSupportedDialect())
+                {
+                    context.Writer.WritePropertyName("SupportedDialect");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SupportedDialectMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SupportedDialect, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSupportedPermissionTypes())
                 {
                     context.Writer.WritePropertyName("SupportedPermissionTypes");

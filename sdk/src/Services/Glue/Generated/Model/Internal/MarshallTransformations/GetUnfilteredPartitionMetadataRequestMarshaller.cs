@@ -101,6 +101,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetQuerySessionContext())
+                {
+                    context.Writer.WritePropertyName("QuerySessionContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QuerySessionContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRegion())
+                {
+                    context.Writer.WritePropertyName("Region");
+                    context.Writer.Write(publicRequest.Region);
+                }
+
                 if(publicRequest.IsSetSupportedPermissionTypes())
                 {
                     context.Writer.WritePropertyName("SupportedPermissionTypes");

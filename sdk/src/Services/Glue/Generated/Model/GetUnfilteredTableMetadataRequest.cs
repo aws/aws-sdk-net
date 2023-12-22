@@ -43,6 +43,10 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private string _name;
+        private List<string> _permissions = new List<string>();
+        private QuerySessionContext _querySessionContext;
+        private string _region;
+        private SupportedDialect _supportedDialect;
         private List<string> _supportedPermissionTypes = new List<string>();
 
         /// <summary>
@@ -118,6 +122,82 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// The Lake Formation data permissions of the caller on the table. Used to authorize
+        /// the call when no view context is found.
+        /// </para>
+        /// </summary>
+        public List<string> Permissions
+        {
+            get { return this._permissions; }
+            set { this._permissions = value; }
+        }
+
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
+        {
+            return this._permissions != null && this._permissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuerySessionContext. 
+        /// <para>
+        /// A structure used as a protocol between query engines and Lake Formation or Glue. Contains
+        /// both a Lake Formation generated authorization identifier and information from the
+        /// request's authorization context.
+        /// </para>
+        /// </summary>
+        public QuerySessionContext QuerySessionContext
+        {
+            get { return this._querySessionContext; }
+            set { this._querySessionContext = value; }
+        }
+
+        // Check to see if QuerySessionContext property is set
+        internal bool IsSetQuerySessionContext()
+        {
+            return this._querySessionContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// Specified only if the base tables belong to a different Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedDialect. 
+        /// <para>
+        /// A structure specifying the dialect and dialect version used by the query engine.
+        /// </para>
+        /// </summary>
+        public SupportedDialect SupportedDialect
+        {
+            get { return this._supportedDialect; }
+            set { this._supportedDialect = value; }
+        }
+
+        // Check to see if SupportedDialect property is set
+        internal bool IsSetSupportedDialect()
+        {
+            return this._supportedDialect != null;
         }
 
         /// <summary>

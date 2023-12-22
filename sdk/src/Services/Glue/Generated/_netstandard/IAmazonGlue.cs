@@ -409,7 +409,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -798,6 +798,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a connection definition in the Data Catalog.
+        /// 
+        ///  
+        /// <para>
+        /// Connections used for creating federated resources require the IAM <code>glue:PassConnection</code>
+        /// permission.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// <param name="cancellationToken">
@@ -3587,7 +3593,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -3659,7 +3665,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -4091,7 +4097,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -4163,7 +4169,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -4363,7 +4369,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -4410,7 +4416,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -4457,7 +4463,7 @@ namespace Amazon.Glue
         /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
-        /// 
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
