@@ -93,6 +93,23 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetQuerySessionContext())
+                {
+                    context.Writer.WritePropertyName("QuerySessionContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QuerySessionContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetS3Path())
+                {
+                    context.Writer.WritePropertyName("S3Path");
+                    context.Writer.Write(publicRequest.S3Path);
+                }
+
                 if(publicRequest.IsSetSupportedPermissionTypes())
                 {
                     context.Writer.WritePropertyName("SupportedPermissionTypes");

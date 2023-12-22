@@ -40,6 +40,8 @@ namespace Amazon.LakeFormation.Model
         private AuditContext _auditContext;
         private int? _durationSeconds;
         private List<string> _permissions = new List<string>();
+        private QuerySessionContext _querySessionContext;
+        private string _s3Path;
         private List<string> _supportedPermissionTypes = new List<string>();
         private string _tableArn;
 
@@ -98,6 +100,44 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetPermissions()
         {
             return this._permissions != null && this._permissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuerySessionContext. 
+        /// <para>
+        /// A structure used as a protocol between query engines and Lake Formation or Glue. Contains
+        /// both a Lake Formation generated authorization identifier and information from the
+        /// request's authorization context.
+        /// </para>
+        /// </summary>
+        public QuerySessionContext QuerySessionContext
+        {
+            get { return this._querySessionContext; }
+            set { this._querySessionContext = value; }
+        }
+
+        // Check to see if QuerySessionContext property is set
+        internal bool IsSetQuerySessionContext()
+        {
+            return this._querySessionContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Path. 
+        /// <para>
+        /// The Amazon S3 path for the table.
+        /// </para>
+        /// </summary>
+        public string S3Path
+        {
+            get { return this._s3Path; }
+            set { this._s3Path = value; }
+        }
+
+        // Check to see if S3Path property is set
+        internal bool IsSetS3Path()
+        {
+            return this._s3Path != null;
         }
 
         /// <summary>

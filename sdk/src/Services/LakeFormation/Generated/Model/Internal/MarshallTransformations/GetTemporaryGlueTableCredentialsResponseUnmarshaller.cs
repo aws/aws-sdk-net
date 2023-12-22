@@ -75,6 +75,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     response.SessionToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VendedS3Path", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.VendedS3Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

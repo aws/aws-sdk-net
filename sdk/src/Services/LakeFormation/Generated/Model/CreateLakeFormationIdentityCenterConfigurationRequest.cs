@@ -64,7 +64,7 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property ExternalFiltering. 
         /// <para>
         /// A list of the account IDs of Amazon Web Services accounts of third-party applications
-        /// that are allowed to to access data managed by Lake Formation.
+        /// that are allowed to access data managed by Lake Formation.
         /// </para>
         /// </summary>
         public ExternalFilteringConfiguration ExternalFiltering
