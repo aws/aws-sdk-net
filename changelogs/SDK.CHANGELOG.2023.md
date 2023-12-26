@@ -1,3 +1,10 @@
+### 3.7.715.1 (2023-12-26 19:15 UTC)
+* IdentityManagement (3.7.300.26)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* Core 3.7.300.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.715.0 (2023-12-22 19:22 UTC)
 * BedrockAgent (3.7.302.0)
 	* Adding Claude 2.1 support to Bedrock Agents
