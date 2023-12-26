@@ -436,6 +436,36 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
         [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
         public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
@@ -504,21 +534,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void Missing_region_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
-            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("IdentityManagement")]
-        [Description("Partition doesn't support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Partition_doesnt_support_DualStack_Test()
-        {
-            var parameters = new IdentityManagementServiceEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
         }
 
