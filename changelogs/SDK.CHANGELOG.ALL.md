@@ -1,3 +1,10 @@
+### 3.7.716.0 (2023-12-27 19:15 UTC)
+* ElasticMapReduce (3.7.303.0)
+	* Add support for customers to modify cluster attribute auto-terminate post cluster launch
+* Core 3.7.300.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.715.1 (2023-12-26 19:15 UTC)
 * IdentityManagement (3.7.300.26)
 	* Documentation updates for AWS Identity and Access Management (IAM).
