@@ -2550,6 +2550,55 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  SetKeepJobFlowAliveWhenNoSteps
+
+        internal virtual SetKeepJobFlowAliveWhenNoStepsResponse SetKeepJobFlowAliveWhenNoSteps(SetKeepJobFlowAliveWhenNoStepsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetKeepJobFlowAliveWhenNoStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetKeepJobFlowAliveWhenNoStepsResponseUnmarshaller.Instance;
+
+            return Invoke<SetKeepJobFlowAliveWhenNoStepsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// You can use the <code>SetKeepJobFlowAliveWhenNoSteps</code> to configure a cluster
+        /// (job flow) to terminate after the step execution, i.e., all your steps are executed.
+        /// If you want a transient cluster that shuts down after the last of the current executing
+        /// steps are completed, you can configure <code>SetKeepJobFlowAliveWhenNoSteps</code>
+        /// to false. If you want a long running cluster, configure <code>SetKeepJobFlowAliveWhenNoSteps</code>
+        /// to true.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+        /// Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetKeepJobFlowAliveWhenNoSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetKeepJobFlowAliveWhenNoSteps service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps">REST API Reference for SetKeepJobFlowAliveWhenNoSteps Operation</seealso>
+        public virtual Task<SetKeepJobFlowAliveWhenNoStepsResponse> SetKeepJobFlowAliveWhenNoStepsAsync(SetKeepJobFlowAliveWhenNoStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetKeepJobFlowAliveWhenNoStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetKeepJobFlowAliveWhenNoStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetKeepJobFlowAliveWhenNoStepsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetTerminationProtection
 
         internal virtual SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)

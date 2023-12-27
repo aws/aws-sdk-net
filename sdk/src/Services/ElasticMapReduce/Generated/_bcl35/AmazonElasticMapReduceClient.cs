@@ -3422,6 +3422,75 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  SetKeepJobFlowAliveWhenNoSteps
+
+        /// <summary>
+        /// You can use the <code>SetKeepJobFlowAliveWhenNoSteps</code> to configure a cluster
+        /// (job flow) to terminate after the step execution, i.e., all your steps are executed.
+        /// If you want a transient cluster that shuts down after the last of the current executing
+        /// steps are completed, you can configure <code>SetKeepJobFlowAliveWhenNoSteps</code>
+        /// to false. If you want a long running cluster, configure <code>SetKeepJobFlowAliveWhenNoSteps</code>
+        /// to true.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+        /// Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetKeepJobFlowAliveWhenNoSteps service method.</param>
+        /// 
+        /// <returns>The response from the SetKeepJobFlowAliveWhenNoSteps service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps">REST API Reference for SetKeepJobFlowAliveWhenNoSteps Operation</seealso>
+        public virtual SetKeepJobFlowAliveWhenNoStepsResponse SetKeepJobFlowAliveWhenNoSteps(SetKeepJobFlowAliveWhenNoStepsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetKeepJobFlowAliveWhenNoStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetKeepJobFlowAliveWhenNoStepsResponseUnmarshaller.Instance;
+
+            return Invoke<SetKeepJobFlowAliveWhenNoStepsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetKeepJobFlowAliveWhenNoSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetKeepJobFlowAliveWhenNoSteps operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetKeepJobFlowAliveWhenNoSteps
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps">REST API Reference for SetKeepJobFlowAliveWhenNoSteps Operation</seealso>
+        public virtual IAsyncResult BeginSetKeepJobFlowAliveWhenNoSteps(SetKeepJobFlowAliveWhenNoStepsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetKeepJobFlowAliveWhenNoStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetKeepJobFlowAliveWhenNoStepsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetKeepJobFlowAliveWhenNoSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetKeepJobFlowAliveWhenNoSteps.</param>
+        /// 
+        /// <returns>Returns a  SetKeepJobFlowAliveWhenNoStepsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps">REST API Reference for SetKeepJobFlowAliveWhenNoSteps Operation</seealso>
+        public virtual SetKeepJobFlowAliveWhenNoStepsResponse EndSetKeepJobFlowAliveWhenNoSteps(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetKeepJobFlowAliveWhenNoStepsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SetTerminationProtection
 
         /// <summary>
