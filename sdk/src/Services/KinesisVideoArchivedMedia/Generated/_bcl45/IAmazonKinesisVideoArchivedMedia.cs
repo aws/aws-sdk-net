@@ -123,8 +123,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// No codec private data was found in at least one of tracks of the video stream.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
-        /// A streaming session was requested for a stream that does not retain data (that is,
-        /// has a <code>DataRetentionInHours</code> of 0).
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -235,8 +235,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// No codec private data was found in at least one of tracks of the video stream.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
-        /// A streaming session was requested for a stream that does not retain data (that is,
-        /// has a <code>DataRetentionInHours</code> of 0).
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -463,8 +463,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// No codec private data was found in at least one of tracks of the video stream.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
-        /// A streaming session was requested for a stream that does not retain data (that is,
-        /// has a <code>DataRetentionInHours</code> of 0).
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -691,8 +691,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// No codec private data was found in at least one of tracks of the video stream.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
-        /// A streaming session was requested for a stream that does not retain data (that is,
-        /// has a <code>DataRetentionInHours</code> of 0).
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -961,8 +961,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// No codec private data was found in at least one of tracks of the video stream.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
-        /// A streaming session was requested for a stream that does not retain data (that is,
-        /// has a <code>DataRetentionInHours</code> of 0).
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -1231,8 +1231,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// No codec private data was found in at least one of tracks of the video stream.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
-        /// A streaming session was requested for a stream that does not retain data (that is,
-        /// has a <code>DataRetentionInHours</code> of 0).
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -1266,7 +1266,7 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
         /// <summary>
-        /// Retrieves a list of Images corresponding to each timestamp for a given time range,
+        /// Retrieves a list of images corresponding to each timestamp for a given time range,
         /// sampling interval, and image format configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImages service method.</param>
@@ -1279,6 +1279,10 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given
@@ -1303,7 +1307,7 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
         /// <summary>
-        /// Retrieves a list of Images corresponding to each timestamp for a given time range,
+        /// Retrieves a list of images corresponding to each timestamp for a given time range,
         /// sampling interval, and image format configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImages service method.</param>
@@ -1319,6 +1323,10 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
+        /// <code>GetImages</code> was requested for a stream that does not retain data (that
+        /// is, has a <code>DataRetentionInHours</code> of 0).
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
         /// Status Code: 403, The caller is not authorized to perform an operation on the given

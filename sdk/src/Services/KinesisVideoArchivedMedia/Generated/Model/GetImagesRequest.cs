@@ -30,7 +30,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
     /// Container for the parameters to the GetImages operation.
-    /// Retrieves a list of Images corresponding to each timestamp for a given time range,
+    /// Retrieves a list of images corresponding to each timestamp for a given time range,
     /// sampling interval, and image format configuration.
     /// </summary>
     public partial class GetImagesRequest : AmazonKinesisVideoArchivedMediaRequest
@@ -206,15 +206,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property SamplingInterval. 
         /// <para>
         /// The time interval in milliseconds (ms) at which the images need to be generated from
-        /// the stream, with a default of 3000 ms. The minimum value that can be provided is 200
-        /// ms. If the timestamp range is less than the sampling interval, the Image from the
-        /// <code>startTimestamp</code> will be returned if available. 
+        /// the stream. The minimum value that can be provided is 200 ms (5 images per second).
+        /// If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code>
+        /// will be returned if available. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The minimum value of 200 ms is a hard limit.
-        /// </para>
-        ///  </note>
         /// </summary>
         public int SamplingInterval
         {

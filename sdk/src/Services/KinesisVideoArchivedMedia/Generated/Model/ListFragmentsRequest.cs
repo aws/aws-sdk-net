@@ -91,6 +91,11 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// Describes the timestamp range and timestamp origin for the range of fragments to return.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only required when the <code>NextToken</code> isn't passed in the API.
+        /// </para>
+        ///  </note>
         /// </summary>
         public FragmentSelector FragmentSelector
         {
