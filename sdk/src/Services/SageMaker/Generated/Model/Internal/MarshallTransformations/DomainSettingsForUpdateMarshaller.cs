@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainSettingsForUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDockerSettings())
+            {
+                context.Writer.WritePropertyName("DockerSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DockerSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DockerSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExecutionRoleIdentityConfig())
             {
                 context.Writer.WritePropertyName("ExecutionRoleIdentityConfig");

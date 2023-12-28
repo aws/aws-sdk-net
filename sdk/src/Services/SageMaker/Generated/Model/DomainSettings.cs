@@ -34,9 +34,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DomainSettings
     {
+        private DockerSettings _dockerSettings;
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettings _rStudioServerProDomainSettings;
         private List<string> _securityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property DockerSettings. 
+        /// <para>
+        /// A collection of settings that configure the domain's Docker interaction.
+        /// </para>
+        /// </summary>
+        public DockerSettings DockerSettings
+        {
+            get { return this._dockerSettings; }
+            set { this._dockerSettings = value; }
+        }
+
+        // Check to see if DockerSettings property is set
+        internal bool IsSetDockerSettings()
+        {
+            return this._dockerSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionRoleIdentityConfig. 

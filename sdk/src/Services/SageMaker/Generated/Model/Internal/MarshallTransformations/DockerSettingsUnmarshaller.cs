@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainSettings Object
+    /// Response Unmarshaller for DockerSettings Object
     /// </summary>  
-    public class DomainSettingsUnmarshaller : IUnmarshaller<DomainSettings, XmlUnmarshallerContext>, IUnmarshaller<DomainSettings, JsonUnmarshallerContext>
+    public class DockerSettingsUnmarshaller : IUnmarshaller<DockerSettings, XmlUnmarshallerContext>, IUnmarshaller<DockerSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainSettings IUnmarshaller<DomainSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DockerSettings IUnmarshaller<DockerSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DomainSettings Unmarshall(JsonUnmarshallerContext context)
+        public DockerSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            DomainSettings unmarshalledObject = new DomainSettings();
+            DockerSettings unmarshalledObject = new DockerSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DockerSettings", targetDepth))
-                {
-                    var unmarshaller = DockerSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DockerSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExecutionRoleIdentityConfig", targetDepth))
+                if (context.TestExpression("EnableDockerAccess", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleIdentityConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableDockerAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RStudioServerProDomainSettings", targetDepth))
-                {
-                    var unmarshaller = RStudioServerProDomainSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RStudioServerProDomainSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("VpcOnlyTrustedAccounts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcOnlyTrustedAccounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainSettingsUnmarshaller _instance = new DomainSettingsUnmarshaller();        
+        private static DockerSettingsUnmarshaller _instance = new DockerSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainSettingsUnmarshaller Instance
+        public static DockerSettingsUnmarshaller Instance
         {
             get
             {
