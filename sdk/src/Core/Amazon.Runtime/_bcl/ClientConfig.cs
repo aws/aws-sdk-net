@@ -38,25 +38,6 @@ namespace Amazon.Runtime
             return FallbackRegionFactory.GetRegionEndpoint();
         }
 
-        private static WebProxy GetWebProxyWithCredentials(string value)
-        {
-            if (!string.IsNullOrEmpty(value))
-            {
-                var asUri = new Uri(value);
-                var parsedProxy = new WebProxy(asUri);
-                if (!string.IsNullOrEmpty(asUri.UserInfo)) {
-                    var userAndPass = asUri.UserInfo.Split(':');
-                    parsedProxy.Credentials = new NetworkCredential(
-                        userAndPass[0],
-                        userAndPass.Length > 1 ? userAndPass[1] : string.Empty
-                    );
-                }
-                return parsedProxy;
-            }
-
-            return null;
-        }
-
         /// <summary>
         /// Gets and sets of the ProxyHost property.
         /// </summary>
@@ -150,34 +131,6 @@ namespace Amazon.Runtime
             }
 
             return proxy;
-        }
-
-        /// <summary>
-        /// Returns a WebProxy instance to use for HTTPS connections if an
-        /// explicit web proxy hasn't been configured.
-        /// </summary>
-        public WebProxy GetHttpsProxy()
-        {
-            var explicitProxy = GetWebProxy();
-            if (explicitProxy != null)
-            {
-                return explicitProxy;
-            }
-            return ClientConfig.GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
-        }
-
-        /// <summary>
-        /// Returns a WebProxy instance to use for HTTP connections if an
-        /// explicit web proxy hasn't been configured.
-        /// </summary>
-        public WebProxy GetHttpProxy()
-        {
-            var explicitProxy = GetWebProxy();
-            if (explicitProxy != null)
-            {
-                return explicitProxy;
-            }
-            return ClientConfig.GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
         }
 
         /// <summary>

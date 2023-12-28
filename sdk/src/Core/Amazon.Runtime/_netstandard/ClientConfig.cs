@@ -37,25 +37,6 @@ namespace Amazon.Runtime
             return FallbackRegionFactory.GetRegionEndpoint();
         }
 
-        private static Amazon.Runtime.Internal.Util.WebProxy? GetWebProxyWithCredentials(string value)
-        {
-            if (!string.IsNullOrEmpty(value))
-            {
-                var asUri = new Uri(value);
-                var parsedProxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
-                if (!string.IsNullOrEmpty(asUri.UserInfo)) {
-                    var userAndPass = asUri.UserInfo.Split(':');
-                    parsedProxy.Credentials = new NetworkCredential(
-                        userAndPass[0],
-                        userAndPass.Length > 1 ? userAndPass[1] : string.Empty
-                    );
-                }
-                return parsedProxy;
-            }
-
-            return null;
-        }
-
         /// <summary>
         /// Returns a WebProxy instance configured to match the proxy settings
         /// in the client configuration.
@@ -63,32 +44,6 @@ namespace Amazon.Runtime
         public IWebProxy GetWebProxy()
         {
             return proxy;
-        }
-
-        /// <summary>
-        /// Returns a WebProxy instance to use for HTTPS connections if an
-        /// explicit web proxy hasn't been configured.
-        /// </summary>
-        public IWebProxy GetHttpsProxy()
-        {
-            if (proxy != null)
-            {
-                return proxy;
-            }
-            return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
-        }
-
-        /// <summary>
-        /// Returns a WebProxy instance to use for HTTP connections if an
-        /// explicit web proxy hasn't been configured.
-        /// </summary>
-        public IWebProxy GetHttpProxy()
-        {
-            if (proxy != null)
-            {
-                return proxy;
-            }
-            return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
         }
 
         /// <summary>
