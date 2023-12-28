@@ -1,3 +1,14 @@
+### 3.7.717.0 (2023-12-28 19:41 UTC)
+* CodeStarconnections (3.7.304.0)
+	* New integration with the GitLab self-managed provider type.
+* KinesisVideoArchivedMedia (3.7.301.0)
+	* NoDataRetentionException thrown when GetImages requested for a Stream that does not retain data (that is, has a DataRetentionInHours of 0).
+* SageMaker (3.7.308.0)
+	* Amazon SageMaker Studio now supports Docker access from within app container
+* Core 3.7.300.28
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.716.0 (2023-12-27 19:15 UTC)
 * ElasticMapReduce (3.7.303.0)
 	* Add support for customers to modify cluster attribute auto-terminate post cluster launch

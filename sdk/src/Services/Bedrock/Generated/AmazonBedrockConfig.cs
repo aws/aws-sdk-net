@@ -32,7 +32,7 @@ namespace Amazon.Bedrock
     public partial class AmazonBedrockConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock", "3.7.301.16");
+            InternalSDKUtils.BuildUserAgentString("Bedrock", "3.7.301.17");
 
         private string _userAgent = UserAgentString;
         ///<summary>
