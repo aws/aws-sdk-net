@@ -1,3 +1,11 @@
+### 3.7.718.0 (2023-12-29 19:14 UTC)
+* AppRunner (3.7.301.0)
+	* AWS App Runner adds Python 3.11 and Node.js 18 runtimes.
+* LocationService (3.7.303.0)
+	* This release introduces a new parameter to bypasses an API key's expiry conditions and delete the key.
+* QuickSight (3.7.304.0)
+	* Add LinkEntityArn support for different partitions; Add UnsupportedUserEditionException in UpdateDashboardLinks API; Add support for New Reader Experience Topics
+
 ### 3.7.717.0 (2023-12-28 19:41 UTC)
 * CodeStarconnections (3.7.304.0)
 	* New integration with the GitLab self-managed provider type.
