@@ -777,6 +777,10 @@ namespace Amazon.AppRunner
         /// </summary>
         public static readonly Runtime NODEJS_16 = new Runtime("NODEJS_16");
         /// <summary>
+        /// Constant NODEJS_18 for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_18 = new Runtime("NODEJS_18");
+        /// <summary>
         /// Constant PHP_81 for Runtime
         /// </summary>
         public static readonly Runtime PHP_81 = new Runtime("PHP_81");
@@ -784,6 +788,10 @@ namespace Amazon.AppRunner
         /// Constant PYTHON_3 for Runtime
         /// </summary>
         public static readonly Runtime PYTHON_3 = new Runtime("PYTHON_3");
+        /// <summary>
+        /// Constant PYTHON_311 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_311 = new Runtime("PYTHON_311");
         /// <summary>
         /// Constant RUBY_31 for Runtime
         /// </summary>
