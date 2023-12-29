@@ -73,6 +73,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetUserExperienceVersion())
+            {
+                context.Writer.WritePropertyName("UserExperienceVersion");
+                context.Writer.Write(requestObject.UserExperienceVersion);
+            }
+
         }
 
         /// <summary>

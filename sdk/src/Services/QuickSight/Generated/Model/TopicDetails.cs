@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private List<DatasetMetadata> _dataSets = new List<DatasetMetadata>();
         private string _description;
         private string _name;
+        private TopicUserExperienceVersion _userExperienceVersion;
 
         /// <summary>
         /// Gets and sets the property DataSets. 
@@ -92,6 +93,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserExperienceVersion. 
+        /// <para>
+        /// The user experience version of a topic.
+        /// </para>
+        /// </summary>
+        public TopicUserExperienceVersion UserExperienceVersion
+        {
+            get { return this._userExperienceVersion; }
+            set { this._userExperienceVersion = value; }
+        }
+
+        // Check to see if UserExperienceVersion property is set
+        internal bool IsSetUserExperienceVersion()
+        {
+            return this._userExperienceVersion != null;
         }
 
     }
