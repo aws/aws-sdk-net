@@ -182,7 +182,7 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Other than wildcards, you must include the full ARN, including the <code>arn</code>,
         /// <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code>
-        /// and <code>resource-id</code>, delimited by colons (:).
+        /// and <code>resource-id</code> delimited by colons (:).
         /// </para>
         ///  </li> <li> 
         /// <para>

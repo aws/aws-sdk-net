@@ -61,7 +61,11 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetKeyName())
                 throw new AmazonLocationServiceException("Request object does not have required field KeyName set");
             request.AddPathResource("{KeyName}", StringUtils.FromString(publicRequest.KeyName));
+            
+            if (publicRequest.IsSetForceDelete())
+                request.Parameters.Add("forceDelete", StringUtils.FromBool(publicRequest.ForceDelete));
             request.ResourcePath = "/metadata/v0/keys/{KeyName}";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"cp.metadata.";
 
