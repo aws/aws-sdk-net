@@ -105,6 +105,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxLuminance", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxLuminance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sampleRangeConversion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoSelector Object
+    /// Response Unmarshaller for UncompressedSettings Object
     /// </summary>  
-    public class VideoSelectorUnmarshaller : IUnmarshaller<VideoSelector, XmlUnmarshallerContext>, IUnmarshaller<VideoSelector, JsonUnmarshallerContext>
+    public class UncompressedSettingsUnmarshaller : IUnmarshaller<UncompressedSettings, XmlUnmarshallerContext>, IUnmarshaller<UncompressedSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoSelector IUnmarshaller<VideoSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UncompressedSettings IUnmarshaller<UncompressedSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoSelector Unmarshall(JsonUnmarshallerContext context)
+        public UncompressedSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            VideoSelector unmarshalledObject = new VideoSelector();
+            UncompressedSettings unmarshalledObject = new UncompressedSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,70 +63,58 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("alphaBehavior", targetDepth))
+                if (context.TestExpression("fourcc", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlphaBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Fourcc = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("colorSpace", targetDepth))
+                if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateControl = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("colorSpaceUsage", targetDepth))
+                if (context.TestExpression("framerateConversionAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpaceUsage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateConversionAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("embeddedTimecodeOverride", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddedTimecodeOverride = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hdr10Metadata", targetDepth))
-                {
-                    var unmarshaller = Hdr10MetadataUnmarshaller.Instance;
-                    unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("maxLuminance", targetDepth))
+                if (context.TestExpression("framerateDenominator", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxLuminance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("padVideo", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PadVideo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pid", targetDepth))
+                if (context.TestExpression("framerateNumerator", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Pid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("programNumber", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rotate", targetDepth))
+                if (context.TestExpression("interlaceMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Rotate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InterlaceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sampleRange", targetDepth))
+                if (context.TestExpression("scanTypeConversionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SampleRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanTypeConversionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("slowPal", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SlowPal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("telecine", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Telecine = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -134,12 +122,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoSelectorUnmarshaller _instance = new VideoSelectorUnmarshaller();        
+        private static UncompressedSettingsUnmarshaller _instance = new UncompressedSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoSelectorUnmarshaller Instance
+        public static UncompressedSettingsUnmarshaller Instance
         {
             get
             {

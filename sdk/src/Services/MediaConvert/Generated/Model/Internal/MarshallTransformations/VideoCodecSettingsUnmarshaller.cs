@@ -111,6 +111,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProresSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("uncompressedSettings", targetDepth))
+                {
+                    var unmarshaller = UncompressedSettingsUnmarshaller.Instance;
+                    unmarshalledObject.UncompressedSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vc3Settings", targetDepth))
                 {
                     var unmarshaller = Vc3SettingsUnmarshaller.Instance;

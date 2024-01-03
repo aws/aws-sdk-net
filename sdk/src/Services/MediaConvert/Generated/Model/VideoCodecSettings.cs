@@ -34,8 +34,8 @@ namespace Amazon.MediaConvert.Model
     /// For each codec enum that you choose, define the corresponding settings object. The
     /// following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
     /// AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265,
-    /// H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
-    /// VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings
+    /// * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     /// </summary>
     public partial class VideoCodecSettings
     {
@@ -47,6 +47,7 @@ namespace Amazon.MediaConvert.Model
         private H265Settings _h265Settings;
         private Mpeg2Settings _mpeg2Settings;
         private ProresSettings _proresSettings;
+        private UncompressedSettings _uncompressedSettings;
         private Vc3Settings _vc3Settings;
         private Vp8Settings _vp8Settings;
         private Vp9Settings _vp9Settings;
@@ -184,6 +185,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProresSettings()
         {
             return this._proresSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UncompressedSettings. Required when you set Codec, under
+        /// VideoDescription>CodecSettings to the value UNCOMPRESSED.
+        /// </summary>
+        public UncompressedSettings UncompressedSettings
+        {
+            get { return this._uncompressedSettings; }
+            set { this._uncompressedSettings = value; }
+        }
+
+        // Check to see if UncompressedSettings property is set
+        internal bool IsSetUncompressedSettings()
+        {
+            return this._uncompressedSettings != null;
         }
 
         /// <summary>

@@ -62,6 +62,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetColorConversion3DLUTSettings())
+            {
+                context.Writer.WritePropertyName("colorConversion3DLUTSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectColorConversion3DLUTSettingsListValue in requestObject.ColorConversion3DLUTSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ColorConversion3DLUTSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectColorConversion3DLUTSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEsam())
             {
                 context.Writer.WritePropertyName("esam");

@@ -350,6 +350,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ColorConversion3DLUTSetting.FileInput</property>
+    <min>14</min>
+    <pattern>^((s3://(.*?)\.(cube|CUBE))|(https?://(.*?)\.(cube|CUBE)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ColorConversion3DLUTSetting.InputMasteringLuminance</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ColorConversion3DLUTSetting.OutputMasteringLuminance</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ColorCorrector.Brightness</property>
     <min>1</min>
     <max>100</max>
@@ -363,6 +378,11 @@
     <property>Amazon.MediaConvert.Model.ColorCorrector.Hue</property>
     <min>-180</min>
     <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ColorCorrector.MaxLuminance</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.ColorCorrector.Saturation</property>
@@ -1789,6 +1809,16 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.UncompressedSettings.FramerateDenominator</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.UncompressedSettings.FramerateNumerator</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Vc3Settings.FramerateDenominator</property>
     <min>1</min>
     <max>1001</max>
@@ -1843,6 +1873,11 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VideoOverlayInputClipping.StartTimecode</property>
     <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoSelector.MaxLuminance</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VideoSelector.Pid</property>

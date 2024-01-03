@@ -97,6 +97,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Hue);
             }
 
+            if(requestObject.IsSetMaxLuminance())
+            {
+                context.Writer.WritePropertyName("maxLuminance");
+                context.Writer.Write(requestObject.MaxLuminance);
+            }
+
             if(requestObject.IsSetSampleRangeConversion())
             {
                 context.Writer.WritePropertyName("sampleRangeConversion");

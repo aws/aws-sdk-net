@@ -5646,6 +5646,10 @@ namespace Amazon.MediaConvert
         /// Constant WEBM for ContainerType
         /// </summary>
         public static readonly ContainerType WEBM = new ContainerType("WEBM");
+        /// <summary>
+        /// Constant Y4M for ContainerType
+        /// </summary>
+        public static readonly ContainerType Y4M = new ContainerType("Y4M");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -20763,6 +20767,364 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type UncompressedFourcc.
+    /// </summary>
+    public class UncompressedFourcc : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant I420 for UncompressedFourcc
+        /// </summary>
+        public static readonly UncompressedFourcc I420 = new UncompressedFourcc("I420");
+        /// <summary>
+        /// Constant I422 for UncompressedFourcc
+        /// </summary>
+        public static readonly UncompressedFourcc I422 = new UncompressedFourcc("I422");
+        /// <summary>
+        /// Constant I444 for UncompressedFourcc
+        /// </summary>
+        public static readonly UncompressedFourcc I444 = new UncompressedFourcc("I444");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedFourcc(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedFourcc FindValue(string value)
+        {
+            return FindValue<UncompressedFourcc>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedFourcc(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UncompressedFramerateControl.
+    /// </summary>
+    public class UncompressedFramerateControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for UncompressedFramerateControl
+        /// </summary>
+        public static readonly UncompressedFramerateControl INITIALIZE_FROM_SOURCE = new UncompressedFramerateControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for UncompressedFramerateControl
+        /// </summary>
+        public static readonly UncompressedFramerateControl SPECIFIED = new UncompressedFramerateControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedFramerateControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedFramerateControl FindValue(string value)
+        {
+            return FindValue<UncompressedFramerateControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedFramerateControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UncompressedFramerateConversionAlgorithm.
+    /// </summary>
+    public class UncompressedFramerateConversionAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_DROP for UncompressedFramerateConversionAlgorithm
+        /// </summary>
+        public static readonly UncompressedFramerateConversionAlgorithm DUPLICATE_DROP = new UncompressedFramerateConversionAlgorithm("DUPLICATE_DROP");
+        /// <summary>
+        /// Constant FRAMEFORMER for UncompressedFramerateConversionAlgorithm
+        /// </summary>
+        public static readonly UncompressedFramerateConversionAlgorithm FRAMEFORMER = new UncompressedFramerateConversionAlgorithm("FRAMEFORMER");
+        /// <summary>
+        /// Constant INTERPOLATE for UncompressedFramerateConversionAlgorithm
+        /// </summary>
+        public static readonly UncompressedFramerateConversionAlgorithm INTERPOLATE = new UncompressedFramerateConversionAlgorithm("INTERPOLATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedFramerateConversionAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedFramerateConversionAlgorithm FindValue(string value)
+        {
+            return FindValue<UncompressedFramerateConversionAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedFramerateConversionAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UncompressedInterlaceMode.
+    /// </summary>
+    public class UncompressedInterlaceMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for UncompressedInterlaceMode
+        /// </summary>
+        public static readonly UncompressedInterlaceMode INTERLACED = new UncompressedInterlaceMode("INTERLACED");
+        /// <summary>
+        /// Constant PROGRESSIVE for UncompressedInterlaceMode
+        /// </summary>
+        public static readonly UncompressedInterlaceMode PROGRESSIVE = new UncompressedInterlaceMode("PROGRESSIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedInterlaceMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedInterlaceMode FindValue(string value)
+        {
+            return FindValue<UncompressedInterlaceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedInterlaceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UncompressedScanTypeConversionMode.
+    /// </summary>
+    public class UncompressedScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for UncompressedScanTypeConversionMode
+        /// </summary>
+        public static readonly UncompressedScanTypeConversionMode INTERLACED = new UncompressedScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for UncompressedScanTypeConversionMode
+        /// </summary>
+        public static readonly UncompressedScanTypeConversionMode INTERLACED_OPTIMIZE = new UncompressedScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<UncompressedScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedScanTypeConversionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UncompressedSlowPal.
+    /// </summary>
+    public class UncompressedSlowPal : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for UncompressedSlowPal
+        /// </summary>
+        public static readonly UncompressedSlowPal DISABLED = new UncompressedSlowPal("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for UncompressedSlowPal
+        /// </summary>
+        public static readonly UncompressedSlowPal ENABLED = new UncompressedSlowPal("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedSlowPal(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedSlowPal FindValue(string value)
+        {
+            return FindValue<UncompressedSlowPal>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedSlowPal(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UncompressedTelecine.
+    /// </summary>
+    public class UncompressedTelecine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HARD for UncompressedTelecine
+        /// </summary>
+        public static readonly UncompressedTelecine HARD = new UncompressedTelecine("HARD");
+        /// <summary>
+        /// Constant NONE for UncompressedTelecine
+        /// </summary>
+        public static readonly UncompressedTelecine NONE = new UncompressedTelecine("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UncompressedTelecine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UncompressedTelecine FindValue(string value)
+        {
+            return FindValue<UncompressedTelecine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UncompressedTelecine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Vc3Class.
     /// </summary>
     public class Vc3Class : ConstantClass
@@ -21208,6 +21570,10 @@ namespace Amazon.MediaConvert
         /// Constant PRORES for VideoCodec
         /// </summary>
         public static readonly VideoCodec PRORES = new VideoCodec("PRORES");
+        /// <summary>
+        /// Constant UNCOMPRESSED for VideoCodec
+        /// </summary>
+        public static readonly VideoCodec UNCOMPRESSED = new VideoCodec("UNCOMPRESSED");
         /// <summary>
         /// Constant VC3 for VideoCodec
         /// </summary>

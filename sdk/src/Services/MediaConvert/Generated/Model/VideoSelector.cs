@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private ColorSpaceUsage _colorSpaceUsage;
         private EmbeddedTimecodeOverride _embeddedTimecodeOverride;
         private Hdr10Metadata _hdr10Metadata;
+        private int? _maxLuminance;
         private PadVideo _padVideo;
         private int? _pid;
         private int? _programNumber;
@@ -155,6 +156,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHdr10Metadata()
         {
             return this._hdr10Metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxLuminance. Specify the maximum mastering display luminance.
+        /// Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter
+        /// 10000000 for 1000 nits.
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int MaxLuminance
+        {
+            get { return this._maxLuminance.GetValueOrDefault(); }
+            set { this._maxLuminance = value; }
+        }
+
+        // Check to see if MaxLuminance property is set
+        internal bool IsSetMaxLuminance()
+        {
+            return this._maxLuminance.HasValue; 
         }
 
         /// <summary>

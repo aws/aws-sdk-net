@@ -128,6 +128,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUncompressedSettings())
+            {
+                context.Writer.WritePropertyName("uncompressedSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UncompressedSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.UncompressedSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVc3Settings())
             {
                 context.Writer.WritePropertyName("vc3Settings");

@@ -80,6 +80,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMaxLuminance())
+            {
+                context.Writer.WritePropertyName("maxLuminance");
+                context.Writer.Write(requestObject.MaxLuminance);
+            }
+
             if(requestObject.IsSetPadVideo())
             {
                 context.Writer.WritePropertyName("padVideo");

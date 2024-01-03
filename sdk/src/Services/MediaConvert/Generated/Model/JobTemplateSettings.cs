@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _adAvailOffset;
         private AvailBlanking _availBlanking;
+        private List<ColorConversion3DLUTSetting> _colorConversion3DLUTSettings = new List<ColorConversion3DLUTSetting>();
         private EsamSettings _esam;
         private ExtendedDataServices _extendedDataServices;
         private int? _followSource;
@@ -80,6 +81,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAvailBlanking()
         {
             return this._availBlanking != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColorConversion3DLUTSettings. Use 3D LUTs to specify custom
+        /// color mapping behavior when you convert from one color space into another. You can
+        /// include up to 8 different 3D LUTs.
+        /// </summary>
+        public List<ColorConversion3DLUTSetting> ColorConversion3DLUTSettings
+        {
+            get { return this._colorConversion3DLUTSettings; }
+            set { this._colorConversion3DLUTSettings = value; }
+        }
+
+        // Check to see if ColorConversion3DLUTSettings property is set
+        internal bool IsSetColorConversion3DLUTSettings()
+        {
+            return this._colorConversion3DLUTSettings != null && this._colorConversion3DLUTSettings.Count > 0; 
         }
 
         /// <summary>

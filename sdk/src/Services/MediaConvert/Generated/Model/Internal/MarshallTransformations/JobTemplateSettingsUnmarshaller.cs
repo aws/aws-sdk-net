@@ -75,6 +75,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailBlanking = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("colorConversion3DLUTSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ColorConversion3DLUTSetting, ColorConversion3DLUTSettingUnmarshaller>(ColorConversion3DLUTSettingUnmarshaller.Instance);
+                    unmarshalledObject.ColorConversion3DLUTSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("esam", targetDepth))
                 {
                     var unmarshaller = EsamSettingsUnmarshaller.Instance;
