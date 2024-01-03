@@ -44,6 +44,18 @@ namespace Amazon.Runtime
         IWebProxy GetWebProxy();
 
         /// <summary>
+        /// Returns a WebProxy instance to use for HTTPS connections if an
+        /// explicit web proxy hasn't been configured.
+        /// </summary>
+        IWebProxy GetHttpsProxy();
+
+        /// <summary>
+        /// Returns a WebProxy instance to use for HTTP connections if an
+        /// explicit web proxy hasn't been configured.
+        /// </summary>
+        IWebProxy GetHttpProxy();
+
+        /// <summary>
         /// HttpClientFactory used to create new HttpClients.
         /// If null, an HttpClient will be created by the SDK.
         /// Note that IClientConfig members such as ProxyHost, ProxyPort, GetWebProxy, and AllowAutoRedirect

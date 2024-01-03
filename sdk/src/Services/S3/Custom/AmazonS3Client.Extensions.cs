@@ -482,6 +482,17 @@ namespace Amazon.S3
             {
                 httpRequest.Proxy.Credentials = Config.ProxyCredentials;
             }
+            if (httpRequest.Proxy == null)
+            {
+                if (httpRequest.RequestUri.Scheme == Uri.UriSchemeHttp)
+                {
+                    httpRequest.Proxy = Config.GetHttpProxy();
+                }
+                else if (httpRequest.RequestUri.Scheme == Uri.UriSchemeHttps)
+                {
+                    httpRequest.Proxy = Config.GetHttpsProxy();
+                }
+            }
         }
 
 
