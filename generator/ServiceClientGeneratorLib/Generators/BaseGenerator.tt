@@ -92,7 +92,7 @@
         documentation = CleanupDocumentation(documentation);
 #>
     /// <summary>
-    /// Implementation for accessing <#= this.Config.ClassName #>
+    /// <para>Implementation for accessing <#= this.Config.ClassName #></para>
     ///
 <#+
         WriteCommentBlock("    ", documentation);
@@ -107,7 +107,7 @@
         documentation = CleanupDocumentation(documentation);
 #>
     /// <summary>
-    /// Interface for accessing <#= this.Config.ClassName #>
+    /// <para>Interface for accessing <#= this.Config.ClassName #></para>
     ///
 <#+
         WriteCommentBlock("    ", documentation);

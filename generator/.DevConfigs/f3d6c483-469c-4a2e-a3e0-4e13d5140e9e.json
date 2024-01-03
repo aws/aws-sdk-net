@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update generator to add line breaks in service client documentation"
+        ]
+    }
+}
