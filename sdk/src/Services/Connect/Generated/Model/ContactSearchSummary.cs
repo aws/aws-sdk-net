@@ -66,7 +66,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact
+        /// The Amazon Resource Name (ARN) of the contact.
         /// </para>
         /// </summary>
         public string Arn
@@ -176,12 +176,13 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitiationTimestamp. 
         /// <para>
-        /// The date and time this contact was initiated, in UTC time. For INBOUND, this is when
-        /// the contact arrived. For OUTBOUND, this is when the agent began dialing. For CALLBACK,
-        /// this is when the callback contact was created. For TRANSFER and QUEUE_TRANSFER, this
-        /// is when the transfer was initiated. For API, this is when the request arrived. For
-        /// EXTERNAL_OUTBOUND, this is when the agent started dialing the external participant.
-        /// For MONITOR, this is when the supervisor started listening to a contact.
+        /// The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>,
+        /// this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent
+        /// began dialing. For <code>CALLBACK</code>, this is when the callback contact was created.
+        /// For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+        /// was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>,
+        /// this is when the agent started dialing the external participant. For <code>MONITOR</code>,
+        /// this is when the supervisor started listening to a contact.
         /// </para>
         /// </summary>
         public DateTime InitiationTimestamp

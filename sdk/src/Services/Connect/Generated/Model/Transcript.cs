@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The transcript object used to search results.
+    /// A structure that defines search criteria and matching logic to search for contacts
+    /// by matching text with transcripts analyzed by Amazon Connect Contact Lens.
     /// </summary>
     public partial class Transcript
     {
@@ -39,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Criteria. 
         /// <para>
-        /// The array of transcript search criteria
+        /// The list of search criteria based on Contact Lens conversational analytics transcript.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=6)]
@@ -58,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MatchType. 
         /// <para>
-        /// The match type of multiple transcript criteira
+        /// The match type combining search criteria using multiple transcript criteria.
         /// </para>
         /// </summary>
         public SearchContactsMatchType MatchType

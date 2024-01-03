@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The identifier of Amazon Connect instance. You can find the instance ID in the Amazon
-        /// Resource Name (ARN) of the instance
+        /// Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -121,7 +121,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// Specifies a field to sort by and a sort order
+        /// Specifies a field to sort by and a sort order.
         /// </para>
         /// </summary>
         public Sort Sort
@@ -139,7 +139,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TimeRange. 
         /// <para>
-        /// Time range that you want to search results
+        /// Time range that you want to search results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A structure of search criteria to be used to return contacts
+    /// A structure of search criteria to be used to return contacts.
     /// </summary>
     public partial class SearchCriteria
     {
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AgentHierarchyGroups. 
         /// <para>
-        /// The agent hierarchy groups
+        /// The agent hierarchy groups of the agent at the time of handling the contact.
         /// </para>
         /// </summary>
         public AgentHierarchyGroups AgentHierarchyGroups
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The array of agent ids
+        /// The identifiers of agents who handled the contacts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -81,7 +81,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Channels. 
         /// <para>
-        /// The array of channels
+        /// The list of channels associated with contacts.
         /// </para>
         /// </summary>
         public List<string> Channels
@@ -99,7 +99,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactAnalysis. 
         /// <para>
-        /// The ContactAnalysis object used in search criteria
+        /// Search criteria based on analysis outputs from Amazon Connect Contact Lens.
         /// </para>
         /// </summary>
         public ContactAnalysis ContactAnalysis
@@ -117,7 +117,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitiationMethods. 
         /// <para>
-        /// The array of initiaton methods
+        /// The list of initiation methods associated with contacts.
         /// </para>
         /// </summary>
         public List<string> InitiationMethods
@@ -135,7 +135,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property QueueIds. 
         /// <para>
-        /// The array of queue ids.
+        /// The list of queue IDs associated with contacts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -154,8 +154,17 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SearchableContactAttributes. 
         /// <para>
-        /// The SearchableContactAttributes object used in search criteria
+        /// The search criteria based on user-defined contact attributes that have been configured
+        /// for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search
+        /// by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code>
+        /// action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions
+        /// defined by Amazon Connect.
+        /// </para>
+        ///  </important>
         /// </summary>
         public SearchableContactAttributes SearchableContactAttributes
         {

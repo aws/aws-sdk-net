@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A structure that defines searchable contact attributes which can be used to filter
-    /// search results.
+    /// A structure that defines search criteria based on user-defined contact attributes
+    /// that are configured for contact search.
     /// </summary>
     public partial class SearchableContactAttributes
     {
@@ -40,7 +40,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Criteria. 
         /// <para>
-        /// The array of searhale contact attribute criteria
+        /// The list of criteria based on user-defined contact attributes that are configured
+        /// for contact search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=15)]
@@ -59,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MatchType. 
         /// <para>
-        /// The match type of multiple searchable contact attributes criteria.
+        /// The match type combining search criteria using multiple searchable contact attributes.
         /// </para>
         /// </summary>
         public SearchContactsMatchType MatchType

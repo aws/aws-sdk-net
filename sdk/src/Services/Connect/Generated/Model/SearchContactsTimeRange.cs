@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A structure of time range that you want to search results
+    /// A structure of time range that you want to search results.
     /// </summary>
     public partial class SearchContactsTimeRange
     {
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of timestamp to search
+        /// The type of timestamp to search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

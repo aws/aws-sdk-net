@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The criteria of searchable contact attributes.
+    /// The search criteria based on user-defned contact attribute key and values to search
+    /// on.
     /// </summary>
     public partial class SearchableContactAttributesCriteria
     {
@@ -39,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The searchable contact attribute key
+        /// The key containing a searchable user-defined contact attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=100)]
@@ -58,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The array of contact attribute values used to filter search results.
+        /// The list of values to search for within a user-defined contact attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]

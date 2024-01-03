@@ -106,12 +106,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A leaf node condition which can be used to specify a string condition.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
-        /// and <code>resourceID</code>.
+        /// The currently supported values for <code>FieldName</code> are <code>username</code>,
+        /// <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>,
+        /// <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.
         /// </para>
-        ///  </note>
         /// </summary>
         public StringCondition StringCondition
         {
