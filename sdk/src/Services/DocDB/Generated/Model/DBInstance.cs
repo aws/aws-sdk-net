@@ -54,6 +54,8 @@ namespace Amazon.DocDB.Model
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private PendingModifiedValues _pendingModifiedValues;
+        private bool? _performanceInsightsEnabled;
+        private string _performanceInsightsKMSKeyId;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
@@ -447,6 +449,45 @@ namespace Amazon.DocDB.Model
         internal bool IsSetPendingModifiedValues()
         {
             return this._pendingModifiedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsEnabled. 
+        /// <para>
+        /// Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB
+        /// instance, and otherwise <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool PerformanceInsightsEnabled
+        {
+            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            set { this._performanceInsightsEnabled = value; }
+        }
+
+        // Check to see if PerformanceInsightsEnabled property is set
+        internal bool IsSetPerformanceInsightsEnabled()
+        {
+            return this._performanceInsightsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId. 
+        /// <para>
+        /// The KMS key identifier for encryption of Performance Insights data. The KMS key ID
+        /// is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+        /// KMS encryption key.
+        /// </para>
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
         }
 
         /// <summary>
