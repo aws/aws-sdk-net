@@ -69,6 +69,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoScalingGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managedDraining", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManagedDraining = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("managedScaling", targetDepth))
                 {
                     var unmarshaller = ManagedScalingUnmarshaller.Instance;

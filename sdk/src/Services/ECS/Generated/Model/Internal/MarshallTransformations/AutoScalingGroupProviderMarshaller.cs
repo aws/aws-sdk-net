@@ -51,6 +51,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AutoScalingGroupArn);
             }
 
+            if(requestObject.IsSetManagedDraining())
+            {
+                context.Writer.WritePropertyName("managedDraining");
+                context.Writer.Write(requestObject.ManagedDraining);
+            }
+
             if(requestObject.IsSetManagedScaling())
             {
                 context.Writer.WritePropertyName("managedScaling");

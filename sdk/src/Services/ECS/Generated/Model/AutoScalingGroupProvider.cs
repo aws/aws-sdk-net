@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     public partial class AutoScalingGroupProvider
     {
         private string _autoScalingGroupArn;
+        private ManagedDraining _managedDraining;
         private ManagedScaling _managedScaling;
         private ManagedTerminationProtection _managedTerminationProtection;
 
@@ -55,6 +56,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetAutoScalingGroupArn()
         {
             return this._autoScalingGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedDraining. 
+        /// <para>
+        /// The managed draining option for the Auto Scaling group capacity provider. When you
+        /// enable this, Amazon ECS manages and gracefully drains the EC2 container instances
+        /// that are in the Auto Scaling group capacity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>ENABLED</code>.
+        /// </para>
+        /// </summary>
+        public ManagedDraining ManagedDraining
+        {
+            get { return this._managedDraining; }
+            set { this._managedDraining = value; }
+        }
+
+        // Check to see if ManagedDraining property is set
+        internal bool IsSetManagedDraining()
+        {
+            return this._managedDraining != null;
         }
 
         /// <summary>
