@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _id;
+        private string _idempotencyToken;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -82,6 +83,27 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdempotencyToken. 
+        /// <para>
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests from
+        /// the same Amazon Web Services account use the same idempotency token, the same response
+        /// is returned for each repeated request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string IdempotencyToken
+        {
+            get { return this._idempotencyToken; }
+            set { this._idempotencyToken = value; }
+        }
+
+        // Check to see if IdempotencyToken property is set
+        internal bool IsSetIdempotencyToken()
+        {
+            return this._idempotencyToken != null;
         }
 
     }

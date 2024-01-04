@@ -35,6 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class AssociateServiceActionWithProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
+        private string _idempotencyToken;
         private string _productId;
         private string _provisioningArtifactId;
         private string _serviceActionId;
@@ -65,6 +66,27 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetAcceptLanguage()
         {
             return this._acceptLanguage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdempotencyToken. 
+        /// <para>
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests from
+        /// the same Amazon Web Services account use the same idempotency token, the same response
+        /// is returned for each repeated request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string IdempotencyToken
+        {
+            get { return this._idempotencyToken; }
+            set { this._idempotencyToken = value; }
+        }
+
+        // Check to see if IdempotencyToken property is set
+        internal bool IsSetIdempotencyToken()
+        {
+            return this._idempotencyToken != null;
         }
 
         /// <summary>

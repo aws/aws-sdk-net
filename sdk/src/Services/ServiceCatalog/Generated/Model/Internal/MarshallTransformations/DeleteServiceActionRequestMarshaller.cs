@@ -79,6 +79,17 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Id);
                 }
 
+                if(publicRequest.IsSetIdempotencyToken())
+                {
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(publicRequest.IdempotencyToken);
+                }
+
+                else if(!(publicRequest.IsSetIdempotencyToken()))
+                {
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

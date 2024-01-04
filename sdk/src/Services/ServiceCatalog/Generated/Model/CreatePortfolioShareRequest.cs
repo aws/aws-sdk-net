@@ -169,8 +169,13 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SharePrincipals. 
         /// <para>
+        /// This parameter is only supported for portfolios with an <b>OrganizationalNode</b>
+        /// Type of <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. 
+        /// </para>
+        ///  
+        /// <para>
         /// Enables or disables <code>Principal</code> sharing when creating the portfolio share.
-        /// If this flag is not provided, principal sharing is disabled. 
+        /// If you do <b>not</b> provide this flag, principal sharing is disabled. 
         /// </para>
         ///  
         /// <para>

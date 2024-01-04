@@ -63,6 +63,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.AssociateServiceActionWithProvisioningArtifactRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.AssociateServiceActionWithProvisioningArtifactRequest.ProductId</property>
     <min>1</min>
     <max>100</max>
@@ -435,6 +441,12 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DeleteServiceActionRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DeleteTagOptionRequest.Id</property>
     <min>1</min>
     <max>100</max>
@@ -763,6 +775,12 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DisassociateServiceActionFromProvisioningArtifactRequest.AcceptLanguage</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DisassociateServiceActionFromProvisioningArtifactRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DisassociateServiceActionFromProvisioningArtifactRequest.ProductId</property>
