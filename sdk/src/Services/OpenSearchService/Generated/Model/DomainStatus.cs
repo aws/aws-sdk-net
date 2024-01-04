@@ -367,7 +367,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints..
+        /// The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.
         /// Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
         /// </para>
         /// </summary>
@@ -384,7 +384,13 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointV2.
+        /// Gets and sets the property EndpointV2. 
+        /// <para>
+        /// If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain
+        /// endpoint is provisioned. This endpoint functions like a normal endpoint, except that
+        /// it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4
+        /// IP addresses. 
+        /// </para>
         /// </summary>
         public string EndpointV2
         {

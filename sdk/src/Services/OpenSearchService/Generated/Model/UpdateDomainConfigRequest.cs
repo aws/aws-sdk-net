@@ -318,7 +318,10 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IPAddressType. 
         /// <para>
-        /// The type of IP addresses supported by the endpoint for the domain.
+        /// Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to
+        /// share domain resources across IPv4 and IPv6 address types, and is the recommended
+        /// option. If your IP address type is currently set to dual stack, you can't change it.
+        /// 
         /// </para>
         /// </summary>
         public IPAddressType IPAddressType

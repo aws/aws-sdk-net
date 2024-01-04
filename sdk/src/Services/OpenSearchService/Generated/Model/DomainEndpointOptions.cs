@@ -130,6 +130,11 @@ namespace Amazon.OpenSearchService.Model
         ///  <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version
         /// 1.2
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS version
+        /// 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public TLSSecurityPolicy TLSSecurityPolicy

@@ -2542,6 +2542,10 @@ namespace Amazon.OpenSearchService
         /// Constant PolicyMinTLS12201907 for TLSSecurityPolicy
         /// </summary>
         public static readonly TLSSecurityPolicy PolicyMinTLS12201907 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-2019-07");
+        /// <summary>
+        /// Constant PolicyMinTLS12PFS202310 for TLSSecurityPolicy
+        /// </summary>
+        public static readonly TLSSecurityPolicy PolicyMinTLS12PFS202310 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-PFS-2023-10");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
