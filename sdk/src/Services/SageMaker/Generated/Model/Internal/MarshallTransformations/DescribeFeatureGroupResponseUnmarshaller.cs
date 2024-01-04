@@ -153,6 +153,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ThroughputConfig", targetDepth))
+                {
+                    var unmarshaller = ThroughputConfigDescriptionUnmarshaller.Instance;
+                    response.ThroughputConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

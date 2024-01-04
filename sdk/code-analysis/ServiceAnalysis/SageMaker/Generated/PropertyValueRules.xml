@@ -10675,6 +10675,36 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ThroughputConfig.ProvisionedReadCapacityUnits</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ThroughputConfig.ProvisionedWriteCapacityUnits</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ThroughputConfigDescription.ProvisionedReadCapacityUnits</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ThroughputConfigDescription.ProvisionedWriteCapacityUnits</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ThroughputConfigUpdate.ProvisionedReadCapacityUnits</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ThroughputConfigUpdate.ProvisionedWriteCapacityUnits</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TimeSeriesConfig.ItemIdentifierAttributeName</property>
     <min>1</min>
     <max>256</max>

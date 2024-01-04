@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         private long? _onlineStoreTotalSizeBytes;
         private string _recordIdentifierFeatureName;
         private string _roleArn;
+        private ThroughputConfigDescription _throughputConfig;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -407,6 +408,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputConfig.
+        /// </summary>
+        public ThroughputConfigDescription ThroughputConfig
+        {
+            get { return this._throughputConfig; }
+            set { this._throughputConfig = value; }
+        }
+
+        // Check to see if ThroughputConfig property is set
+        internal bool IsSetThroughputConfig()
+        {
+            return this._throughputConfig != null;
         }
 
     }

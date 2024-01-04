@@ -100,6 +100,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetThroughputConfig())
+                {
+                    context.Writer.WritePropertyName("ThroughputConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThroughputConfigUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThroughputConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

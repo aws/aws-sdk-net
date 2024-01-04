@@ -67,6 +67,7 @@ namespace Amazon.SageMaker.Model
         private string _recordIdentifierFeatureName;
         private string _roleArn;
         private List<Tag> _tags = new List<Tag>();
+        private ThroughputConfig _throughputConfig;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -348,6 +349,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputConfig.
+        /// </summary>
+        public ThroughputConfig ThroughputConfig
+        {
+            get { return this._throughputConfig; }
+            set { this._throughputConfig = value; }
+        }
+
+        // Check to see if ThroughputConfig property is set
+        internal bool IsSetThroughputConfig()
+        {
+            return this._throughputConfig != null;
         }
 
     }

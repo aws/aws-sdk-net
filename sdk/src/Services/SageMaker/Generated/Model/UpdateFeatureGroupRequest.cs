@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         private List<FeatureDefinition> _featureAdditions = new List<FeatureDefinition>();
         private string _featureGroupName;
         private OnlineStoreConfigUpdate _onlineStoreConfig;
+        private ThroughputConfigUpdate _throughputConfig;
 
         /// <summary>
         /// Gets and sets the property FeatureAdditions. 
@@ -111,6 +112,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOnlineStoreConfig()
         {
             return this._onlineStoreConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputConfig.
+        /// </summary>
+        public ThroughputConfigUpdate ThroughputConfig
+        {
+            get { return this._throughputConfig; }
+            set { this._throughputConfig = value; }
+        }
+
+        // Check to see if ThroughputConfig property is set
+        internal bool IsSetThroughputConfig()
+        {
+            return this._throughputConfig != null;
         }
 
     }
