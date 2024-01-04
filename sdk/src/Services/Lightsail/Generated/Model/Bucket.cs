@@ -299,7 +299,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type of the bucket (for example, <code>Bucket</code>).
+        /// The Lightsail resource type of the bucket.
         /// </para>
         /// </summary>
         public string ResourceType

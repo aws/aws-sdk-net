@@ -711,6 +711,52 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateProvider.
+    /// </summary>
+    public class CertificateProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LetsEncrypt for CertificateProvider
+        /// </summary>
+        public static readonly CertificateProvider LetsEncrypt = new CertificateProvider("LetsEncrypt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateProvider FindValue(string value)
+        {
+            return FindValue<CertificateProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateStatus.
     /// </summary>
     public class CertificateStatus : ConstantClass
@@ -3987,6 +4033,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType SetResourceAccessForBucket = new OperationType("SetResourceAccessForBucket");
         /// <summary>
+        /// Constant SetupInstanceHttps for OperationType
+        /// </summary>
+        public static readonly OperationType SetupInstanceHttps = new OperationType("SetupInstanceHttps");
+        /// <summary>
         /// Constant StartGUISession for OperationType
         /// </summary>
         public static readonly OperationType StartGUISession = new OperationType("StartGUISession");
@@ -4964,6 +5014,60 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SetupStatus.
+    /// </summary>
+    public class SetupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for SetupStatus
+        /// </summary>
+        public static readonly SetupStatus Failed = new SetupStatus("failed");
+        /// <summary>
+        /// Constant InProgress for SetupStatus
+        /// </summary>
+        public static readonly SetupStatus InProgress = new SetupStatus("inProgress");
+        /// <summary>
+        /// Constant Succeeded for SetupStatus
+        /// </summary>
+        public static readonly SetupStatus Succeeded = new SetupStatus("succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SetupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SetupStatus FindValue(string value)
+        {
+            return FindValue<SetupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SetupStatus(string value)
         {
             return FindValue(value);
         }

@@ -69,8 +69,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name (e.g., <code>example.com</code>) for which you want to create the
-        /// domain entry.
+        /// The domain name (<code>example.com</code>) for which you want to create the domain
+        /// entry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

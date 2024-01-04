@@ -64,7 +64,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property CertificateAlternativeNames. 
         /// <para>
         /// The optional alternative domains and subdomains to use with your SSL/TLS certificate
-        /// (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>,
+        /// (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>,
         /// <code>blog.example.com</code>).
         /// </para>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CertificateDomainName. 
         /// <para>
-        /// The domain name with which your certificate is associated (e.g., <code>example.com</code>).
+        /// The domain name with which your certificate is associated (<code>example.com</code>).
         /// </para>
         ///  
         /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property HealthCheckPath. 
         /// <para>
         /// The path you provided to perform the load balancer health check. If you didn't specify
-        /// a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).
+        /// a health check path, Lightsail uses the root path of your website (<code>"/"</code>).
         /// </para>
         ///  
         /// <para>

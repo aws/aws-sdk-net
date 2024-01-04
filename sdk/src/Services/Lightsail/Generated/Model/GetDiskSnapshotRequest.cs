@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskSnapshotName. 
         /// <para>
-        /// The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+        /// The name of the disk snapshot (<code>my-disk-snapshot</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -73,7 +73,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).
+        /// The unique name of the source disk (<code>Disk-Virginia-1</code>).
         /// </para>
         ///  <note> 
         /// <para>
@@ -98,8 +98,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskSnapshotName. 
         /// <para>
-        /// The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based
-        /// on the source disk.
+        /// The name of the destination disk snapshot (<code>my-disk-snapshot</code>) based on
+        /// the source disk.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>).
+        /// The unique name of the source instance (<code>Amazon_Linux-512MB-Virginia-1</code>).
         /// When this is defined, a snapshot of the instance's system volume is created.
         /// </para>
         ///  <note> 

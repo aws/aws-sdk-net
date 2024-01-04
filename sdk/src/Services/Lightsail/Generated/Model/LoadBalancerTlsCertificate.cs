@@ -328,7 +328,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+        /// The name of the SSL/TLS certificate (<code>my-certificate</code>).
         /// </para>
         /// </summary>
         public string Name
@@ -400,7 +400,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
+        /// The resource type (<code>LoadBalancerTlsCertificate</code>).
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -570,8 +570,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
-        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.
+        /// An array of strings that specify the alternate domains (<code>example2.com</code>)
+        /// and subdomains (<code>blog.example.com</code>) for the certificate.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames

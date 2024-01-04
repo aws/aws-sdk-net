@@ -542,6 +542,22 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetSetupHistoryRequest.PageToken</property>
+    <min>24</min>
+    <max>40</max>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetSetupHistoryRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetSetupHistoryResponse.NextPageToken</property>
+    <min>24</min>
+    <max>40</max>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.GetStaticIpRequest.StaticIpName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -605,6 +621,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetResourceAccessForBucketRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupInstanceHttpsRequest.EmailAddress</property>
+    <min>6</min>
+    <max>254</max>
+    <pattern>^[\w!#$%&amp;.'*+\/=?^_\x60{|}~\-]{1,64}@[a-zA-Z0-9\-]{1,63}(\.[a-zA-Z0-9\-]{1,63}){0,8}(\.[a-zA-Z]{2,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupInstanceHttpsRequest.InstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1320,6 +1346,26 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Session.Url</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupExecutionDetails.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupHistory.OperationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupHistoryResource.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupHistoryResource.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetupRequest.InstanceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StaticIp.Arn</property>

@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOperationsForResource operation.
-    /// Gets operations for a specific resource (e.g., an instance or a static IP).
+    /// Gets operations for a specific resource (an instance or a static IP).
     /// </summary>
     public partial class GetOperationsForResourceRequest : AmazonLightsailRequest
     {

@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name (e.g., <code>example.com</code>) for the certificate.
+        /// The domain name (<code>example.com</code>) for the certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -97,8 +97,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
-        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.
+        /// An array of strings that specify the alternate domains (<code>example2.com</code>)
+        /// and subdomains (<code>blog.example.com</code>) for the certificate.
         /// </para>
         ///  
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+        /// Wildcard domain entries (<code>*.example.com</code>) are not supported.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames

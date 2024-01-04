@@ -76,7 +76,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).
+        /// The Lightsail resource type (<code>ExportSnapshotRecord</code>).
         /// </para>
         /// </summary>
         public CloudFormationStackRecordSourceType ResourceType

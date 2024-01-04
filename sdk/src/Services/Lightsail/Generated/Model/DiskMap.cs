@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NewDiskName. 
         /// <para>
-        /// The new disk name (e.g., <code>my-new-disk</code>).
+        /// The new disk name (<code>my-new-disk</code>).
         /// </para>
         /// </summary>
         public string NewDiskName

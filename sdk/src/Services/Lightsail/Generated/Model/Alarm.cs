@@ -301,7 +301,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (e.g., <code>Alarm</code>).
+        /// The Lightsail resource type of the alarm.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

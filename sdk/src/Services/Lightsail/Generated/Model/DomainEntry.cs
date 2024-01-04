@@ -102,12 +102,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// (Deprecated) The options for the domain entry.
+        /// (Discontinued) The options for the domain entry.
         /// </para>
         ///  <note> 
         /// <para>
         /// In releases prior to November 29, 2017, this parameter was not included in the API
-        /// response. It is now deprecated.
+        /// response. It is now discontinued.
         /// </para>
         ///  </note>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+        /// The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).
         /// </para>
         ///  
         /// <para>

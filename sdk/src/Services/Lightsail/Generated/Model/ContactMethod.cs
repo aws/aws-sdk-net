@@ -163,7 +163,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (e.g., <code>ContactMethod</code>).
+        /// The Lightsail resource type of the contact method.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

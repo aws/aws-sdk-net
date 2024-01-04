@@ -131,7 +131,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.
+        /// The name of the load balancer that you want to modify (<code>my-load-balancer</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// Creates a domain resource for the specified domain (e.g., example.com).
+    /// Creates a domain resource for the specified domain (example.com).
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name to manage (e.g., <code>example.com</code>).
+        /// The domain name to manage (<code>example.com</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

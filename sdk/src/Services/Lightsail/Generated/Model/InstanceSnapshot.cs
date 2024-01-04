@@ -53,7 +53,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string Arn
@@ -71,7 +71,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+        /// The timestamp when the snapshot was created (<code>1479907467.024</code>).
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -107,7 +107,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBlueprintId. 
         /// <para>
-        /// The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>).
+        /// The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>).
         /// A blueprint is a virtual private server (or <i>instance</i>) image used to create
         /// instances quickly.
         /// </para>
@@ -127,7 +127,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBundleId. 
         /// <para>
-        /// The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+        /// The bundle ID from which you created the snapshot (<code>micro_1_0</code>).
         /// </para>
         /// </summary>
         public string FromBundleId
@@ -146,7 +146,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property FromInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the instance from which the snapshot was created
-        /// (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+        /// (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string FromInstanceArn

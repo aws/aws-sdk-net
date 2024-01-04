@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path of the disk (e.g., <code>/dev/xvdf</code>).
+        /// The path of the disk (<code>/dev/xvdf</code>).
         /// </para>
         /// </summary>
         public string Path

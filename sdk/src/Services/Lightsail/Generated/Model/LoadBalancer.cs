@@ -226,8 +226,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>).
-        /// Lightsail automatically creates your load balancer across Availability Zones.
+        /// The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail
+        /// automatically creates your load balancer across Availability Zones.
         /// </para>
         /// </summary>
         public ResourceLocation Location
@@ -245,7 +245,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the load balancer (e.g., <code>my-load-balancer</code>).
+        /// The name of the load balancer (<code>my-load-balancer</code>).
         /// </para>
         /// </summary>
         public string Name
@@ -304,7 +304,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type (e.g., <code>LoadBalancer</code>.
+        /// The resource type (<code>LoadBalancer</code>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

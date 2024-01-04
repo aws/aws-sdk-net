@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// An array of strings listing alternative domains and subdomains for your SSL/TLS certificate.
         /// Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative
-        /// names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).
+        /// names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).
         /// </para>
         /// </summary>
         public List<string> CertificateAlternativeNames
@@ -75,7 +75,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CertificateDomainName. 
         /// <para>
-        /// The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+        /// The domain name (<code>example.com</code>) for your SSL/TLS certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

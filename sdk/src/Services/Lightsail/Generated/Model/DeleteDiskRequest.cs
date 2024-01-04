@@ -53,7 +53,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+        /// The unique name of the disk you want to delete (<code>my-disk</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

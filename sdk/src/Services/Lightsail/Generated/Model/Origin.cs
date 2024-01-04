@@ -104,7 +104,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type of the origin resource (e.g., <i>Instance</i>).
+        /// The resource type of the origin resource (<i>Instance</i>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

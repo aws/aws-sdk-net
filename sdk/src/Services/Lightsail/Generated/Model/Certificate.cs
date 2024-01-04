@@ -229,7 +229,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the certificate (e.g., <code>my-certificate</code>).
+        /// The name of the certificate (<code>my-certificate</code>).
         /// </para>
         /// </summary>
         public string Name
@@ -454,8 +454,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
-        /// and subdomains (e.g., <code>blog.example.com</code>) of the certificate.
+        /// An array of strings that specify the alternate domains (<code>example2.com</code>)
+        /// and subdomains (<code>blog.example.com</code>) of the certificate.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames

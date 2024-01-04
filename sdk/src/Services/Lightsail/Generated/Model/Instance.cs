@@ -77,7 +77,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string Arn
@@ -95,7 +95,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintId. 
         /// <para>
-        /// The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).
+        /// The blueprint ID (<code>os_amlinux_2016_03</code>).
         /// </para>
         /// </summary>
         public string BlueprintId
@@ -113,7 +113,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintName. 
         /// <para>
-        /// The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).
+        /// The friendly name of the blueprint (<code>Amazon Linux</code>).
         /// </para>
         /// </summary>
         public string BlueprintName
@@ -131,7 +131,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The bundle for the instance (e.g., <code>micro_1_0</code>).
+        /// The bundle for the instance (<code>micro_1_0</code>).
         /// </para>
         /// </summary>
         public string BundleId
@@ -149,8 +149,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in
-        /// Unix time format.
+        /// The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time
+        /// format.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -281,7 +281,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+        /// The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).
         /// </para>
         /// </summary>
         public string Name
@@ -371,7 +371,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SshKeyName. 
         /// <para>
-        /// The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).
+        /// The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).
         /// </para>
         /// </summary>
         public string SshKeyName
@@ -389,7 +389,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The status code and the state (e.g., <code>running</code>) for the instance.
+        /// The status code and the state (<code>running</code>) for the instance.
         /// </para>
         /// </summary>
         public InstanceState State
@@ -447,7 +447,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name for connecting to the instance (e.g., <code>ec2-user</code>).
+        /// The user name for connecting to the instance (<code>ec2-user</code>).
         /// </para>
         /// </summary>
         public string Username

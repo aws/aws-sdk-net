@@ -31,7 +31,7 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the CreateDisk operation.
     /// Creates a block storage disk that can be attached to an Amazon Lightsail instance
-    /// in the same Availability Zone (e.g., <code>us-east-2a</code>).
+    /// in the same Availability Zone (<code>us-east-2a</code>).
     /// 
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
+        /// The Availability Zone where you want to create the disk (<code>us-east-2a</code>).
         /// Use the same Availability Zone as the Lightsail instance to which you want to attach
         /// the disk.
         /// </para>
@@ -95,7 +95,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique Lightsail disk name (e.g., <code>my-disk</code>).
+        /// The unique Lightsail disk name (<code>my-disk</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,7 +114,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SizeInGb. 
         /// <para>
-        /// The size of the disk in GB (e.g., <code>32</code>).
+        /// The size of the disk in GB (<code>32</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

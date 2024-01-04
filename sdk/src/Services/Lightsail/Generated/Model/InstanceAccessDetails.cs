@@ -48,7 +48,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property CertKey. 
         /// <para>
         /// For SSH access, the public key to use when accessing your instance For OpenSSH clients
-        /// (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.
+        /// (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.
         /// </para>
         /// </summary>
         public string CertKey
@@ -191,8 +191,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PrivateKey. 
         /// <para>
-        /// For SSH access, the temporary private key. For OpenSSH clients (e.g., command line
-        /// SSH), you should save this value to <code>tempkey</code>).
+        /// For SSH access, the temporary private key. For OpenSSH clients (command line SSH),
+        /// you should save this value to <code>tempkey</code>).
         /// </para>
         /// </summary>
         public string PrivateKey

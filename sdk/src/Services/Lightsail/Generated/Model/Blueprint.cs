@@ -73,8 +73,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintId. 
         /// <para>
-        /// The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code>
-        /// or <code>app_lamp_7_0</code>).
+        /// The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).
         /// </para>
         /// </summary>
         public string BlueprintId
@@ -110,7 +109,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The group name of the blueprint (e.g., <code>amazon-linux</code>).
+        /// The group name of the blueprint (<code>amazon-linux</code>).
         /// </para>
         /// </summary>
         public string Group
@@ -188,7 +187,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).
+        /// The friendly name of the blueprint (<code>Amazon Linux</code>).
         /// </para>
         /// </summary>
         public string Name
@@ -243,7 +242,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the blueprint (e.g., <code>os</code> or <code>app</code>).
+        /// The type of the blueprint (<code>os</code> or <code>app</code>).
         /// </para>
         /// </summary>
         public BlueprintType Type
@@ -261,7 +260,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).
+        /// The version number of the operating system, application, or stack ( <code>2016.03.0</code>).
         /// </para>
         /// </summary>
         public string Version

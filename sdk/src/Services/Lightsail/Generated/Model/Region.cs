@@ -61,7 +61,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ContinentCode. 
         /// <para>
-        /// The continent code (e.g., <code>NA</code>, meaning North America).
+        /// The continent code (<code>NA</code>, meaning North America).
         /// </para>
         /// </summary>
         public string ContinentCode
@@ -79,7 +79,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the Amazon Web Services Region (e.g., <code>This region is recommended
+        /// The description of the Amazon Web Services Region (<code>This region is recommended
         /// to serve users in the eastern United States and eastern Canada</code>).
         /// </para>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name (e.g., <code>Ohio</code>).
+        /// The display name (<code>Ohio</code>).
         /// </para>
         /// </summary>
         public string DisplayName
@@ -116,7 +116,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The region name (e.g., <code>us-east-2</code>).
+        /// The region name (<code>us-east-2</code>).
         /// </para>
         /// </summary>
         public RegionName Name

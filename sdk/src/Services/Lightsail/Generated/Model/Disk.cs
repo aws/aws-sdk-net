@@ -109,12 +109,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AttachmentState. 
         /// <para>
-        /// (Deprecated) The attachment state of the disk.
+        /// (Discontinued) The attachment state of the disk.
         /// </para>
         ///  <note> 
         /// <para>
         /// In releases prior to November 14, 2017, this parameter returned <code>attached</code>
-        /// for system disks in the API response. It is now deprecated, but still included in
+        /// for system disks in the API response. It is now discontinued, but still included in
         /// the response. Use <code>isAttached</code> instead.
         /// </para>
         ///  </note>
@@ -176,12 +176,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property GbInUse. 
         /// <para>
-        /// (Deprecated) The number of GB in use by the disk.
+        /// (Discontinued) The number of GB in use by the disk.
         /// </para>
         ///  <note> 
         /// <para>
         /// In releases prior to November 14, 2017, this parameter was not included in the API
-        /// response. It is now deprecated.
+        /// response. It is now discontinued.
         /// </para>
         ///  </note>
         /// </summary>
@@ -310,7 +310,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (e.g., <code>Disk</code>).
+        /// The Lightsail resource type (<code>Disk</code>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

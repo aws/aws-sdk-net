@@ -38,7 +38,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SizeInGb. 
         /// <para>
-        /// The size of the disk in GB (e.g., <code>32</code>).
+        /// The size of the disk in GB (<code>32</code>).
         /// </para>
         /// </summary>
         public int SizeInGb

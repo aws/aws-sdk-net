@@ -49,7 +49,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+        /// The timestamp when the operation was initialized (<code>1479816991.349</code>).
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -157,7 +157,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property OperationDetails. 
         /// <para>
-        /// Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+        /// Details about the operation (<code>Debian-1GB-Ohio-1</code>).
         /// </para>
         /// </summary>
         public string OperationDetails
@@ -247,7 +247,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property StatusChangedAt. 
         /// <para>
-        /// The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+        /// The timestamp when the status was changed (<code>1479816991.349</code>).
         /// </para>
         /// </summary>
         public DateTime StatusChangedAt

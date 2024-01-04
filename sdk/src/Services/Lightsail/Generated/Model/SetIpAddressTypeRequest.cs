@@ -95,7 +95,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+        /// The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
         /// </para>
         ///  <note> 
         /// <para>

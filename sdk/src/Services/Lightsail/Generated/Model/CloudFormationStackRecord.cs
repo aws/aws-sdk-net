@@ -146,7 +146,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).
+        /// The Lightsail resource type (<code>CloudFormationStackRecord</code>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

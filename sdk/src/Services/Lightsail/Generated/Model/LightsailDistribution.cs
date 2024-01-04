@@ -369,7 +369,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (e.g., <code>Distribution</code>).
+        /// The Lightsail resource type (<code>Distribution</code>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

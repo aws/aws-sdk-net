@@ -77,7 +77,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type (e.g., <code>Instance</code> or <code>Disk</code>).
+        /// The resource type of the automatic snapshot. The possible values are <code>Instance</code>,
+        /// and <code>Disk</code>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

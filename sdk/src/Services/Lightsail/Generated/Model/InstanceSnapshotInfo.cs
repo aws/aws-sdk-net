@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBlueprintId. 
         /// <para>
-        /// The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+        /// The blueprint ID from which the source instance (<code>os_debian_8_3</code>).
         /// </para>
         /// </summary>
         public string FromBlueprintId
@@ -58,7 +58,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBundleId. 
         /// <para>
-        /// The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+        /// The bundle ID from which the source instance was created (<code>micro_1_0</code>).
         /// </para>
         /// </summary>
         public string FromBundleId

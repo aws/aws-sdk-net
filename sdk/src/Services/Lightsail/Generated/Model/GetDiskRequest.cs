@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The name of the disk (e.g., <code>my-disk</code>).
+        /// The name of the disk (<code>my-disk</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1010,7 +1010,7 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Creates a block storage disk that can be attached to an Amazon Lightsail instance
-        /// in the same Availability Zone (e.g., <code>us-east-2a</code>).
+        /// in the same Availability Zone (<code>us-east-2a</code>).
         /// 
         ///  
         /// <para>
@@ -1069,7 +1069,7 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting
         /// disk can be attached to an Amazon Lightsail instance in the same Availability Zone
-        /// (e.g., <code>us-east-2a</code>).
+        /// (<code>us-east-2a</code>).
         /// 
         ///  
         /// <para>
@@ -1262,7 +1262,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Creates a domain resource for the specified domain (e.g., example.com).
+        /// Creates a domain resource for the specified domain (example.com).
         /// 
         ///  
         /// <para>
@@ -6082,7 +6082,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Gets operations for a specific resource (e.g., an instance or a static IP).
+        /// Gets operations for a specific resource (an instance or a static IP).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOperationsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -6810,6 +6810,50 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots">REST API Reference for GetRelationalDatabaseSnapshots Operation</seealso>
         Task<GetRelationalDatabaseSnapshotsResponse> GetRelationalDatabaseSnapshotsAsync(GetRelationalDatabaseSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSetupHistory
+
+
+
+        /// <summary>
+        /// Returns detailed information for five of the most recent <code>SetupInstanceHttps</code>
+        /// requests that were ran on the target instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSetupHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSetupHistory service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <code>us-east-1</code> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSetupHistory">REST API Reference for GetSetupHistory Operation</seealso>
+        Task<GetSetupHistoryResponse> GetSetupHistoryAsync(GetSetupHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7695,6 +7739,56 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">REST API Reference for SetResourceAccessForBucket Operation</seealso>
         Task<SetResourceAccessForBucketResponse> SetResourceAccessForBucketAsync(SetResourceAccessForBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetupInstanceHttps
+
+
+
+        /// <summary>
+        /// Creates an SSL/TLS certificate that secures traffic for your website. After the certificate
+        /// is created, it is installed on the specified Lightsail instance.
+        /// 
+        ///  
+        /// <para>
+        /// If you provide more than one domain name in the request, at least one name must be
+        /// less than or equal to 63 characters in length.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetupInstanceHttps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetupInstanceHttps service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <code>us-east-1</code> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetupInstanceHttps">REST API Reference for SetupInstanceHttps Operation</seealso>
+        Task<SetupInstanceHttpsResponse> SetupInstanceHttpsAsync(SetupInstanceHttpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

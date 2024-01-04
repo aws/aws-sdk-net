@@ -347,7 +347,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+        /// The Lightsail resource type of the container service.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

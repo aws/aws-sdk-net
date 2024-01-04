@@ -110,22 +110,22 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Activating</code> - The deployment is being created.
+        ///  <code>ACTIVATING</code> - The deployment is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Active</code> - The deployment was successfully created, and it's currently
+        ///  <code>ACTIVE</code> - The deployment was successfully created, and it's currently
         /// running on the container service. The container service can have only one deployment
         /// in an active state at a time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Inactive</code> - The deployment was previously successfully created, but it
+        ///  <code>INACTIVE</code> - The deployment was previously successfully created, but it
         /// is not currently running on the container service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code>
+        ///  <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code>
         /// action to view the log events for the containers in the deployment to try to determine
         /// the reason for the failure.
         /// </para>

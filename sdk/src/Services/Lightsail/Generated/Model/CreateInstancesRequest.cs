@@ -96,9 +96,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintId. 
         /// <para>
-        /// The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-        /// <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return
-        /// a list of available images (or <i>blueprints</i>).
+        /// The ID for a virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).
+        /// Use the <code>get blueprints</code> operation to return a list of available images
+        /// (or <i>blueprints</i>).
         /// </para>
         ///  <note> 
         /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property BundleId. 
         /// <para>
         /// The bundle of specification information for your virtual private server (or <i>instance</i>),
-        /// including the pricing plan (e.g., <code>micro_1_0</code>).
+        /// including the pricing plan (<code>micro_1_0</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,12 +145,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CustomImageName. 
         /// <para>
-        /// (Deprecated) The name for your custom image.
+        /// (Discontinued) The name for your custom image.
         /// </para>
         ///  <note> 
         /// <para>
         /// In releases prior to June 12, 2017, this parameter was ignored by the API. It is now
-        /// deprecated.
+        /// discontinued.
         /// </para>
         ///  </note>
         /// </summary>

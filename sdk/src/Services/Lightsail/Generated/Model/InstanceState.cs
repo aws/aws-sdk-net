@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The state of the instance (e.g., <code>running</code> or <code>pending</code>).
+        /// The state of the instance (<code>running</code> or <code>pending</code>).
         /// </para>
         /// </summary>
         public string Name

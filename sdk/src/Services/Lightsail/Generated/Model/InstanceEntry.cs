@@ -62,7 +62,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+        /// The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -75,7 +75,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique Lightsail disk name (e.g., <code>my-disk</code>).
+        /// The unique Lightsail disk name (<code>my-disk</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,7 +94,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskPath. 
         /// <para>
-        /// The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+        /// The disk path to expose to the instance (<code>/dev/xvdf</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

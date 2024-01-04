@@ -40,13 +40,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NextPageCount. 
         /// <para>
-        /// (Deprecated) Returns the number of pages of results that remain.
+        /// (Discontinued) Returns the number of pages of results that remain.
         /// </para>
         ///  <note> 
         /// <para>
         /// In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
-        /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
-        /// instead.
+        /// API. It is now discontinued, and the API returns the <code>next page token</code>
+        /// parameter instead.
         /// </para>
         ///  </note>
         /// </summary>
