@@ -128,6 +128,33 @@ namespace Amazon.Runtime
             }
         }
 
+#if BCL
+        private static WebProxy GetWebProxyWithCredentials(string value)
+#else
+        private static Amazon.Runtime.Internal.Util.WebProxy? GetWebProxyWithCredentials(string value)
+#endif
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                var asUri = new Uri(value);
+#if BCL
+                var parsedProxy = new WebProxy(asUri);
+#else
+                var parsedProxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
+#endif
+                if (!string.IsNullOrEmpty(asUri.UserInfo)) {
+                    var userAndPass = asUri.UserInfo.Split(':');
+                    parsedProxy.Credentials = new NetworkCredential(
+                        userAndPass[0],
+                        userAndPass.Length > 1 ? userAndPass[1] : string.Empty
+                    );
+                }
+                return parsedProxy;
+            }
+
+            return null;
+        }
+
         /// <inheritdoc />
         public IAWSTokenProvider AWSTokenProvider
         {
@@ -645,6 +672,34 @@ namespace Amazon.Runtime
                 return this.proxyCredentials;
             }
             set { this.proxyCredentials = value; }
+        }
+
+#if BCL
+        public WebProxy GetHttpProxy()
+#else
+        public IWebProxy GetHttpProxy()
+#endif
+        {
+            var explicitProxy = GetWebProxy();
+            if (explicitProxy != null)
+            {
+                return explicitProxy;
+            }
+            return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("http_proxy"));
+        }
+
+#if BCL
+        public WebProxy GetHttpsProxy()
+#else
+        public IWebProxy GetHttpsProxy()
+#endif
+        {
+            var explicitProxy = GetWebProxy();
+            if (explicitProxy != null)
+            {
+                return explicitProxy;
+            }
+            return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
         }
 
 #if BCL

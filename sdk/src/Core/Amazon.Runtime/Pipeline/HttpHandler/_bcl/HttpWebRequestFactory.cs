@@ -474,6 +474,14 @@ namespace Amazon.Runtime.Internal
                 requestContext.Metrics.AddProperty(Metric.ProxyPort, requestContext.ClientConfig.ProxyPort);
                 _request.Proxy = proxy;
             }
+            else if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
+            {
+                _request.Proxy = requestContext.ClientConfig.GetHttpProxy();
+            }
+            else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
+            {
+                _request.Proxy = requestContext.ClientConfig.GetHttpsProxy();
+            }
 
             // Set service point properties.
             _request.ServicePoint.ConnectionLimit = clientConfig.ConnectionLimit;

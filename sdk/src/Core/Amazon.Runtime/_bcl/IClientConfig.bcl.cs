@@ -70,5 +70,16 @@ namespace Amazon.Runtime
         /// </summary>
         WebProxy GetWebProxy();
 
+        /// <summary>
+        /// Returns a WebProxy instance to use for HTTPS connections if an
+        /// explicit web proxy hasn't been configured.
+        /// </summary>
+        WebProxy GetHttpsProxy();
+
+        /// <summary>
+        /// Returns a WebProxy instance to use for HTTP connections if an
+        /// explicit web proxy hasn't been configured.
+        /// </summary>
+        WebProxy GetHttpProxy();
     }
 }

@@ -112,15 +112,19 @@ namespace Amazon.S3
 
         private static void SetProxyIfAvailableAndConfigured(IClientConfig config, HttpWebRequest httpWebRequest)
         {
-            var proxy = GetProxyIfAvailableAndConfigured(config);
+            var proxy = config.GetWebProxy();
             if (proxy != null)
             {
                 httpWebRequest.Proxy = proxy;
             }
-        }
-        private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
-        {
-            return config.GetWebProxy();
+            else if (httpWebRequest.RequestUri.Scheme == Uri.UriSchemeHttp)
+            {
+                httpWebRequest.Proxy = config.GetHttpProxy();
+            }
+            else if (httpWebRequest.RequestUri.Scheme == Uri.UriSchemeHttps)
+            {
+                httpWebRequest.Proxy = config.GetHttpsProxy();
+            }
         }
     }
 }
