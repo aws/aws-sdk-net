@@ -1905,6 +1905,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSAppStreamDirectoryConfig = new ResourceType("AWS::AppStream::DirectoryConfig");
         /// <summary>
+        /// Constant AWSAppStreamFleet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppStreamFleet = new ResourceType("AWS::AppStream::Fleet");
+        /// <summary>
         /// Constant AWSAppStreamStack for ResourceType
         /// </summary>
         public static readonly ResourceType AWSAppStreamStack = new ResourceType("AWS::AppStream::Stack");
@@ -2056,6 +2060,18 @@ namespace Amazon.ConfigService
         /// Constant AWSCodePipelinePipeline for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCodePipelinePipeline = new ResourceType("AWS::CodePipeline::Pipeline");
+        /// <summary>
+        /// Constant AWSCognitoUserPool for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCognitoUserPool = new ResourceType("AWS::Cognito::UserPool");
+        /// <summary>
+        /// Constant AWSCognitoUserPoolClient for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCognitoUserPoolClient = new ResourceType("AWS::Cognito::UserPoolClient");
+        /// <summary>
+        /// Constant AWSCognitoUserPoolGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCognitoUserPoolGroup = new ResourceType("AWS::Cognito::UserPoolGroup");
         /// <summary>
         /// Constant AWSConfigConformancePackCompliance for ResourceType
         /// </summary>
@@ -2229,9 +2245,17 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2NetworkAcl = new ResourceType("AWS::EC2::NetworkAcl");
         /// <summary>
+        /// Constant AWSEC2NetworkInsightsAccessScope for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2NetworkInsightsAccessScope = new ResourceType("AWS::EC2::NetworkInsightsAccessScope");
+        /// <summary>
         /// Constant AWSEC2NetworkInsightsAccessScopeAnalysis for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2NetworkInsightsAccessScopeAnalysis = new ResourceType("AWS::EC2::NetworkInsightsAccessScopeAnalysis");
+        /// <summary>
+        /// Constant AWSEC2NetworkInsightsAnalysis for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2NetworkInsightsAnalysis = new ResourceType("AWS::EC2::NetworkInsightsAnalysis");
         /// <summary>
         /// Constant AWSEC2NetworkInsightsPath for ResourceType
         /// </summary>
@@ -2521,6 +2545,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSGlueMLTransform = new ResourceType("AWS::Glue::MLTransform");
         /// <summary>
+        /// Constant AWSGrafanaWorkspace for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSGrafanaWorkspace = new ResourceType("AWS::Grafana::Workspace");
+        /// <summary>
         /// Constant AWSGreengrassV2ComponentVersion for ResourceType
         /// </summary>
         public static readonly ResourceType AWSGreengrassV2ComponentVersion = new ResourceType("AWS::GreengrassV2::ComponentVersion");
@@ -2528,6 +2556,10 @@ namespace Amazon.ConfigService
         /// Constant AWSGroundStationConfig for ResourceType
         /// </summary>
         public static readonly ResourceType AWSGroundStationConfig = new ResourceType("AWS::GroundStation::Config");
+        /// <summary>
+        /// Constant AWSGroundStationDataflowEndpointGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSGroundStationDataflowEndpointGroup = new ResourceType("AWS::GroundStation::DataflowEndpointGroup");
         /// <summary>
         /// Constant AWSGroundStationMissionProfile for ResourceType
         /// </summary>
@@ -2592,6 +2624,10 @@ namespace Amazon.ConfigService
         /// Constant AWSImageBuilderImagePipeline for ResourceType
         /// </summary>
         public static readonly ResourceType AWSImageBuilderImagePipeline = new ResourceType("AWS::ImageBuilder::ImagePipeline");
+        /// <summary>
+        /// Constant AWSImageBuilderImageRecipe for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSImageBuilderImageRecipe = new ResourceType("AWS::ImageBuilder::ImageRecipe");
         /// <summary>
         /// Constant AWSImageBuilderInfrastructureConfiguration for ResourceType
         /// </summary>
@@ -2777,6 +2813,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSKinesisVideoStream = new ResourceType("AWS::KinesisVideo::Stream");
         /// <summary>
+        /// Constant AWSKMSAlias for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKMSAlias = new ResourceType("AWS::KMS::Alias");
+        /// <summary>
         /// Constant AWSKMSKey for ResourceType
         /// </summary>
         public static readonly ResourceType AWSKMSKey = new ResourceType("AWS::KMS::Key");
@@ -2824,6 +2864,10 @@ namespace Amazon.ConfigService
         /// Constant AWSLookoutVisionProject for ResourceType
         /// </summary>
         public static readonly ResourceType AWSLookoutVisionProject = new ResourceType("AWS::LookoutVision::Project");
+        /// <summary>
+        /// Constant AWSM2Environment for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSM2Environment = new ResourceType("AWS::M2::Environment");
         /// <summary>
         /// Constant AWSMediaConnectFlowEntitlement for ResourceType
         /// </summary>
@@ -2965,6 +3009,18 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSQLDBLedger = new ResourceType("AWS::QLDB::Ledger");
         /// <summary>
+        /// Constant AWSQuickSightDataSource for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSQuickSightDataSource = new ResourceType("AWS::QuickSight::DataSource");
+        /// <summary>
+        /// Constant AWSQuickSightTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSQuickSightTemplate = new ResourceType("AWS::QuickSight::Template");
+        /// <summary>
+        /// Constant AWSQuickSightTheme for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSQuickSightTheme = new ResourceType("AWS::QuickSight::Theme");
+        /// <summary>
         /// Constant AWSRDSDBCluster for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRDSDBCluster = new ResourceType("AWS::RDS::DBCluster");
@@ -2997,6 +3053,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSRDSGlobalCluster = new ResourceType("AWS::RDS::GlobalCluster");
         /// <summary>
+        /// Constant AWSRDSOptionGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSOptionGroup = new ResourceType("AWS::RDS::OptionGroup");
+        /// <summary>
         /// Constant AWSRedshiftCluster for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRedshiftCluster = new ResourceType("AWS::Redshift::Cluster");
@@ -3016,6 +3076,10 @@ namespace Amazon.ConfigService
         /// Constant AWSRedshiftClusterSubnetGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRedshiftClusterSubnetGroup = new ResourceType("AWS::Redshift::ClusterSubnetGroup");
+        /// <summary>
+        /// Constant AWSRedshiftEndpointAccess for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftEndpointAccess = new ResourceType("AWS::Redshift::EndpointAccess");
         /// <summary>
         /// Constant AWSRedshiftEventSubscription for ResourceType
         /// </summary>
@@ -3088,6 +3152,10 @@ namespace Amazon.ConfigService
         /// Constant AWSRoute53ResolverFirewallDomainList for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRoute53ResolverFirewallDomainList = new ResourceType("AWS::Route53Resolver::FirewallDomainList");
+        /// <summary>
+        /// Constant AWSRoute53ResolverFirewallRuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRoute53ResolverFirewallRuleGroup = new ResourceType("AWS::Route53Resolver::FirewallRuleGroup");
         /// <summary>
         /// Constant AWSRoute53ResolverFirewallRuleGroupAssociation for ResourceType
         /// </summary>
@@ -3244,6 +3312,10 @@ namespace Amazon.ConfigService
         /// Constant AWSSSMAssociationCompliance for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSSMAssociationCompliance = new ResourceType("AWS::SSM::AssociationCompliance");
+        /// <summary>
+        /// Constant AWSSSMDocument for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSSMDocument = new ResourceType("AWS::SSM::Document");
         /// <summary>
         /// Constant AWSSSMFileData for ResourceType
         /// </summary>
