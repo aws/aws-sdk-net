@@ -30,9 +30,8 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// The request was rejected because the specified Amazon VPC endpoint service is already
-    /// associated with an external key store in the Amazon Web Services account and Region.
-    /// Each external key store in an Amazon Web Services account and Region must use a different
-    /// Amazon VPC endpoint service.
+    /// associated with another external key store in this Amazon Web Services Region. Each
+    /// external key store in a Region must use a different Amazon VPC endpoint service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

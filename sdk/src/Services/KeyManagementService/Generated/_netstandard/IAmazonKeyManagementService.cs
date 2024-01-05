@@ -1132,9 +1132,8 @@ namespace Amazon.KeyManagementService
         /// the credentials or in the identification of the external key store proxy.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidConfigurationException">
-        /// The request was rejected because the Amazon VPC endpoint service configuration does
-        /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message.
+        /// The request was rejected because the external key store proxy is not configured correctly.
+        /// To identify the cause, see the error message that accompanies the exception.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidResponseException">
         /// KMS cannot interpret the response it received from the external key store proxy. The
@@ -1142,16 +1141,15 @@ namespace Amazon.KeyManagementService
         /// issue. If you see this error repeatedly, report it to the proxy vendor.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriEndpointInUseException">
-        /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
-        /// is already associated with an external key store in the Amazon Web Services account
-        /// and Region. Each external key store in an account and Region must use a unique external
-        /// key store proxy address.
+        /// The request was rejected because the <code>XksProxyUriEndpoint</code> is already associated
+        /// with another external key store in this Amazon Web Services Region. To identify the
+        /// cause, see the error message that accompanies the exception.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriInUseException">
         /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
-        /// and <code>XksProxyUriPath</code> is already associated with an external key store
-        /// in the Amazon Web Services account and Region. Each external key store in an account
-        /// and Region must use a unique external key store proxy API address.
+        /// and <code>XksProxyUriPath</code> is already associated with another external key store
+        /// in this Amazon Web Services Region. Each external key store in a Region must use a
+        /// unique external key store proxy API address.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriUnreachableException">
         /// KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must
@@ -1165,14 +1163,13 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInUseException">
         /// The request was rejected because the specified Amazon VPC endpoint service is already
-        /// associated with an external key store in the Amazon Web Services account and Region.
-        /// Each external key store in an Amazon Web Services account and Region must use a different
-        /// Amazon VPC endpoint service.
+        /// associated with another external key store in this Amazon Web Services Region. Each
+        /// external key store in a Region must use a different Amazon VPC endpoint service.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
         /// The request was rejected because the Amazon VPC endpoint service configuration does
-        /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// not fulfill the requirements for an external key store. To identify the cause, see
+        /// the error message that accompanies the exception and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
         /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
         /// key store.
         /// </exception>
@@ -1723,8 +1720,8 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksKeyAlreadyInUseException">
         /// The request was rejected because the (<code>XksKeyId</code>) is already associated
-        /// with a KMS key in this external key store. Each KMS key in an external key store must
-        /// be associated with a different external key.
+        /// with another KMS key in this external key store. Each KMS key in an external key store
+        /// must be associated with a different external key.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksKeyInvalidConfigurationException">
         /// The request was rejected because the external key specified by the <code>XksKeyId</code>
@@ -9606,9 +9603,8 @@ namespace Amazon.KeyManagementService
         /// the credentials or in the identification of the external key store proxy.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidConfigurationException">
-        /// The request was rejected because the Amazon VPC endpoint service configuration does
-        /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message.
+        /// The request was rejected because the external key store proxy is not configured correctly.
+        /// To identify the cause, see the error message that accompanies the exception.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidResponseException">
         /// KMS cannot interpret the response it received from the external key store proxy. The
@@ -9616,16 +9612,15 @@ namespace Amazon.KeyManagementService
         /// issue. If you see this error repeatedly, report it to the proxy vendor.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriEndpointInUseException">
-        /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
-        /// is already associated with an external key store in the Amazon Web Services account
-        /// and Region. Each external key store in an account and Region must use a unique external
-        /// key store proxy address.
+        /// The request was rejected because the <code>XksProxyUriEndpoint</code> is already associated
+        /// with another external key store in this Amazon Web Services Region. To identify the
+        /// cause, see the error message that accompanies the exception.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriInUseException">
         /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
-        /// and <code>XksProxyUriPath</code> is already associated with an external key store
-        /// in the Amazon Web Services account and Region. Each external key store in an account
-        /// and Region must use a unique external key store proxy API address.
+        /// and <code>XksProxyUriPath</code> is already associated with another external key store
+        /// in this Amazon Web Services Region. Each external key store in a Region must use a
+        /// unique external key store proxy API address.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriUnreachableException">
         /// KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must
@@ -9639,14 +9634,13 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInUseException">
         /// The request was rejected because the specified Amazon VPC endpoint service is already
-        /// associated with an external key store in the Amazon Web Services account and Region.
-        /// Each external key store in an Amazon Web Services account and Region must use a different
-        /// Amazon VPC endpoint service.
+        /// associated with another external key store in this Amazon Web Services Region. Each
+        /// external key store in a Region must use a different Amazon VPC endpoint service.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
         /// The request was rejected because the Amazon VPC endpoint service configuration does
-        /// not fulfill the requirements for an external key store proxy. For details, see the
-        /// exception message and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// not fulfill the requirements for an external key store. To identify the cause, see
+        /// the error message that accompanies the exception and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
         /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
         /// key store.
         /// </exception>

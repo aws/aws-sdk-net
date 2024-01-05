@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the Amazon VPC endpoint service configuration does
-    /// not fulfill the requirements for an external key store proxy. For details, see the
-    /// exception message.
+    /// The request was rejected because the external key store proxy is not configured correctly.
+    /// To identify the cause, see the error message that accompanies the exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

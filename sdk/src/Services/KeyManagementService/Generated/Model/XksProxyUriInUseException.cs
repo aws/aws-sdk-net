@@ -30,9 +30,9 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
-    /// and <code>XksProxyUriPath</code> is already associated with an external key store
-    /// in the Amazon Web Services account and Region. Each external key store in an account
-    /// and Region must use a unique external key store proxy API address.
+    /// and <code>XksProxyUriPath</code> is already associated with another external key store
+    /// in this Amazon Web Services Region. Each external key store in a Region must use a
+    /// unique external key store proxy API address.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

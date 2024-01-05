@@ -427,7 +427,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// An external key store with <code>PUBLIC_ENDPOINT</code> connectivity cannot use the
         /// same <code>XksProxyUriEndpoint</code> value as an external key store with <code>VPC_ENDPOINT_SERVICE</code>
-        /// connectivity in the same Amazon Web Services Region.
+        /// connectivity in this Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
