@@ -27,7 +27,7 @@ using Amazon.Macie2.Model;
 namespace Amazon.Macie2
 {
     /// <summary>
-    /// Interface for accessing Macie2
+    /// <para>Interface for accessing Macie2</para>
     ///
     /// Amazon Macie
     /// </summary>

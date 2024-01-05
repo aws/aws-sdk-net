@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Lightsail
 {
     /// <summary>
-    /// Implementation for accessing Lightsail
+    /// <para>Implementation for accessing Lightsail</para>
     ///
     /// Amazon Lightsail is the easiest way to get started with Amazon Web Services (Amazon
     /// Web Services) for developers who need to build websites or web applications. It includes

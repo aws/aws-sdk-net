@@ -27,7 +27,7 @@ using Amazon.CloudTrail.Model;
 namespace Amazon.CloudTrail
 {
     /// <summary>
-    /// Interface for accessing CloudTrail
+    /// <para>Interface for accessing CloudTrail</para>
     ///
     /// CloudTrail 
     /// <para>

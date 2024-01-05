@@ -27,7 +27,7 @@ using Amazon.LexRuntimeV2.Model;
 namespace Amazon.LexRuntimeV2
 {
     /// <summary>
-    /// Interface for accessing LexRuntimeV2
+    /// <para>Interface for accessing LexRuntimeV2</para>
     ///
     /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
     /// </summary>

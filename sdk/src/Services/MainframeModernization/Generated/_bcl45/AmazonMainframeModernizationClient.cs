@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MainframeModernization
 {
     /// <summary>
-    /// Implementation for accessing MainframeModernization
+    /// <para>Implementation for accessing MainframeModernization</para>
     ///
     /// Amazon Web Services Mainframe Modernization provides tools and resources to help you
     /// plan and implement migration and modernization from mainframes to Amazon Web Services

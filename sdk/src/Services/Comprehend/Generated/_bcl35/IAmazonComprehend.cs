@@ -27,7 +27,7 @@ using Amazon.Comprehend.Model;
 namespace Amazon.Comprehend
 {
     /// <summary>
-    /// Interface for accessing Comprehend
+    /// <para>Interface for accessing Comprehend</para>
     ///
     /// Amazon Comprehend is an Amazon Web Services service for gaining insight into the content
     /// of documents. Use these actions to determine the topics contained in your documents,

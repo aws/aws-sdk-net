@@ -29,7 +29,7 @@ using Amazon.ElasticFileSystem.Model;
 namespace Amazon.ElasticFileSystem
 {
     /// <summary>
-    /// Interface for accessing ElasticFileSystem
+    /// <para>Interface for accessing ElasticFileSystem</para>
     ///
     /// Amazon Elastic File System 
     /// <para>

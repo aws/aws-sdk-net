@@ -27,7 +27,7 @@ using Amazon.ElasticBeanstalk.Model;
 namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
-    /// Interface for accessing ElasticBeanstalk
+    /// <para>Interface for accessing ElasticBeanstalk</para>
     ///
     /// AWS Elastic Beanstalk 
     /// <para>

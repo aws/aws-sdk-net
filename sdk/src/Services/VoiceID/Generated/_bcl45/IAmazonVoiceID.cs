@@ -29,7 +29,7 @@ using Amazon.VoiceID.Model;
 namespace Amazon.VoiceID
 {
     /// <summary>
-    /// Interface for accessing VoiceID
+    /// <para>Interface for accessing VoiceID</para>
     ///
     /// Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection,
     /// which make voice interactions in contact centers more secure and efficient.

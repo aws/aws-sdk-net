@@ -29,7 +29,7 @@ using Amazon.IoT1ClickDevicesService.Model;
 namespace Amazon.IoT1ClickDevicesService
 {
     /// <summary>
-    /// Interface for accessing IoT1ClickDevicesService
+    /// <para>Interface for accessing IoT1ClickDevicesService</para>
     ///
     /// Describes all of the AWS IoT 1-Click device-related API operations for the service.
     /// Also provides sample requests, responses, and errors for the supported web services

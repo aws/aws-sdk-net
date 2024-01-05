@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ApplicationDiscoveryService
 {
     /// <summary>
-    /// Implementation for accessing ApplicationDiscoveryService
+    /// <para>Implementation for accessing ApplicationDiscoveryService</para>
     ///
     /// Amazon Web Services Application Discovery Service 
     /// <para>

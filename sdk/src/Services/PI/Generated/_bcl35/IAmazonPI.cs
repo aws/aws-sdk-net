@@ -27,7 +27,7 @@ using Amazon.PI.Model;
 namespace Amazon.PI
 {
     /// <summary>
-    /// Interface for accessing PI
+    /// <para>Interface for accessing PI</para>
     ///
     /// Amazon RDS Performance Insights 
     /// <para>

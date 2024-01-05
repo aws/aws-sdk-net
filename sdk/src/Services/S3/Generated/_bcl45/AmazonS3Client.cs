@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.S3
 {
     /// <summary>
-    /// Implementation for accessing S3
+    /// <para>Implementation for accessing S3</para>
     ///
     /// 
     /// </summary>

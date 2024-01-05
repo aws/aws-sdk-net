@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AutoScalingPlans
 {
     /// <summary>
-    /// Implementation for accessing AutoScalingPlans
+    /// <para>Implementation for accessing AutoScalingPlans</para>
     ///
     /// AWS Auto Scaling 
     /// <para>

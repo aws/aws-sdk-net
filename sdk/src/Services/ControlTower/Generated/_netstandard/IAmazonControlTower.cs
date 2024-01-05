@@ -29,7 +29,7 @@ using Amazon.ControlTower.Model;
 namespace Amazon.ControlTower
 {
     /// <summary>
-    /// Interface for accessing ControlTower
+    /// <para>Interface for accessing ControlTower</para>
     ///
     /// These interfaces allow you to apply the Amazon Web Services library of pre-defined
     /// <i>controls</i> to your organizational units, programmatically. In Amazon Web Services

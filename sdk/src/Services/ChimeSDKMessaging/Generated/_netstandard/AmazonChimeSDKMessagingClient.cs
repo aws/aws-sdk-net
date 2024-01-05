@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ChimeSDKMessaging
 {
     /// <summary>
-    /// Implementation for accessing ChimeSDKMessaging
+    /// <para>Implementation for accessing ChimeSDKMessaging</para>
     ///
     /// The Amazon Chime SDK messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks

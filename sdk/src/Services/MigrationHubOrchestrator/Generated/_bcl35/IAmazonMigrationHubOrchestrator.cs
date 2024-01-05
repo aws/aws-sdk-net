@@ -27,7 +27,7 @@ using Amazon.MigrationHubOrchestrator.Model;
 namespace Amazon.MigrationHubOrchestrator
 {
     /// <summary>
-    /// Interface for accessing MigrationHubOrchestrator
+    /// <para>Interface for accessing MigrationHubOrchestrator</para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
     /// the actions and data types for AWS Migration Hub Orchestrator. he topic for each action

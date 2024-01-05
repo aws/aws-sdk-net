@@ -29,7 +29,7 @@ using Amazon.Backup.Model;
 namespace Amazon.Backup
 {
     /// <summary>
-    /// Interface for accessing Backup
+    /// <para>Interface for accessing Backup</para>
     ///
     /// Backup 
     /// <para>

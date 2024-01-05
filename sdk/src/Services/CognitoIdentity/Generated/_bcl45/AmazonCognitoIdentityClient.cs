@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CognitoIdentity
 {
     /// <summary>
-    /// Implementation for accessing CognitoIdentity
+    /// <para>Implementation for accessing CognitoIdentity</para>
     ///
     /// Amazon Cognito Federated Identities 
     /// <para>

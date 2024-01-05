@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SecurityHub
 {
     /// <summary>
-    /// Implementation for accessing SecurityHub
+    /// <para>Implementation for accessing SecurityHub</para>
     ///
     /// Security Hub provides you with a comprehensive view of the security state of your
     /// Amazon Web Services environment and resources. It also provides you with the readiness

@@ -29,7 +29,7 @@ using Amazon.SecurityHub.Model;
 namespace Amazon.SecurityHub
 {
     /// <summary>
-    /// Interface for accessing SecurityHub
+    /// <para>Interface for accessing SecurityHub</para>
     ///
     /// Security Hub provides you with a comprehensive view of the security state of your
     /// Amazon Web Services environment and resources. It also provides you with the readiness

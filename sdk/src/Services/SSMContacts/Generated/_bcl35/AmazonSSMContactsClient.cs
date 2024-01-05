@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SSMContacts
 {
     /// <summary>
-    /// Implementation for accessing SSMContacts
+    /// <para>Implementation for accessing SSMContacts</para>
     ///
     /// Systems Manager Incident Manager is an incident management console designed to help
     /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted

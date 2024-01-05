@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.GreengrassV2
 {
     /// <summary>
-    /// Implementation for accessing GreengrassV2
+    /// <para>Implementation for accessing GreengrassV2</para>
     ///
     /// IoT Greengrass brings local compute, messaging, data management, sync, and ML inference
     /// capabilities to edge devices. This enables devices to collect and analyze data closer

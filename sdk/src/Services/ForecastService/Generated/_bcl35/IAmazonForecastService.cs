@@ -27,7 +27,7 @@ using Amazon.ForecastService.Model;
 namespace Amazon.ForecastService
 {
     /// <summary>
-    /// Interface for accessing ForecastService
+    /// <para>Interface for accessing ForecastService</para>
     ///
     /// Provides APIs for creating and managing Amazon Forecast resources.
     /// </summary>

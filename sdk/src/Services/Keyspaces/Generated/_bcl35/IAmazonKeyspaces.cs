@@ -27,7 +27,7 @@ using Amazon.Keyspaces.Model;
 namespace Amazon.Keyspaces
 {
     /// <summary>
-    /// Interface for accessing Keyspaces
+    /// <para>Interface for accessing Keyspaces</para>
     ///
     /// Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed
     /// Apache Cassandra-compatible database service. Amazon Keyspaces makes it easy to migrate,

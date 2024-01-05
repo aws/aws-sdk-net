@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFrontKeyValueStore
 {
     /// <summary>
-    /// Implementation for accessing CloudFrontKeyValueStore
+    /// <para>Implementation for accessing CloudFrontKeyValueStore</para>
     ///
     /// Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
     /// </summary>

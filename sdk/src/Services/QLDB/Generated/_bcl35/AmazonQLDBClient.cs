@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.QLDB
 {
     /// <summary>
-    /// Implementation for accessing QLDB
+    /// <para>Implementation for accessing QLDB</para>
     ///
     /// The resource management API for Amazon QLDB
     /// </summary>

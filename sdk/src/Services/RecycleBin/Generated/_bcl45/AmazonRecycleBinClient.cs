@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RecycleBin
 {
     /// <summary>
-    /// Implementation for accessing RecycleBin
+    /// <para>Implementation for accessing RecycleBin</para>
     ///
     /// This is the <i>Recycle Bin API Reference</i>. This documentation provides descriptions
     /// and syntax for each of the actions and data types in Recycle Bin.

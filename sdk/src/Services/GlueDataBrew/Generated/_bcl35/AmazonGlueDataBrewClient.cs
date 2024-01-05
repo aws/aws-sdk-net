@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.GlueDataBrew
 {
     /// <summary>
-    /// Implementation for accessing GlueDataBrew
+    /// <para>Implementation for accessing GlueDataBrew</para>
     ///
     /// Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies
     /// data preparation tasks, targeting data issues that are hard to spot and time-consuming

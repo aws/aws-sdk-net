@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTFleetWise
 {
     /// <summary>
-    /// Implementation for accessing IoTFleetWise
+    /// <para>Implementation for accessing IoTFleetWise</para>
     ///
     /// Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect,
     /// model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon

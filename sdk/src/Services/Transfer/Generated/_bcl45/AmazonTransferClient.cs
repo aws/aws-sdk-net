@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Transfer
 {
     /// <summary>
-    /// Implementation for accessing Transfer
+    /// <para>Implementation for accessing Transfer</para>
     ///
     /// Transfer Family is a fully managed service that enables the transfer of files over
     /// the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or Secure

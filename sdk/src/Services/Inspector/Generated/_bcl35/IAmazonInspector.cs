@@ -27,7 +27,7 @@ using Amazon.Inspector.Model;
 namespace Amazon.Inspector
 {
     /// <summary>
-    /// Interface for accessing Inspector
+    /// <para>Interface for accessing Inspector</para>
     ///
     /// Amazon Inspector 
     /// <para>

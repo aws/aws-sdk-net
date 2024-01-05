@@ -29,7 +29,7 @@ using Amazon.KendraRanking.Model;
 namespace Amazon.KendraRanking
 {
     /// <summary>
-    /// Interface for accessing KendraRanking
+    /// <para>Interface for accessing KendraRanking</para>
     ///
     /// Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities
     /// to intelligently re-rank a search service's results.

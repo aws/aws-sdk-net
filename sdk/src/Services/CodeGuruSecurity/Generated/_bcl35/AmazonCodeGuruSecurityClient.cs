@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeGuruSecurity
 {
     /// <summary>
-    /// Implementation for accessing CodeGuruSecurity
+    /// <para>Implementation for accessing CodeGuruSecurity</para>
     ///
     /// <note> 
     /// <para>

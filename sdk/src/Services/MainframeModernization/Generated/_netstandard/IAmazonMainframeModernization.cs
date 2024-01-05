@@ -29,7 +29,7 @@ using Amazon.MainframeModernization.Model;
 namespace Amazon.MainframeModernization
 {
     /// <summary>
-    /// Interface for accessing MainframeModernization
+    /// <para>Interface for accessing MainframeModernization</para>
     ///
     /// Amazon Web Services Mainframe Modernization provides tools and resources to help you
     /// plan and implement migration and modernization from mainframes to Amazon Web Services

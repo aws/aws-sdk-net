@@ -29,7 +29,7 @@ using Amazon.AmplifyBackend.Model;
 namespace Amazon.AmplifyBackend
 {
     /// <summary>
-    /// Interface for accessing AmplifyBackend
+    /// <para>Interface for accessing AmplifyBackend</para>
     ///
     /// AWS Amplify Admin API
     /// </summary>

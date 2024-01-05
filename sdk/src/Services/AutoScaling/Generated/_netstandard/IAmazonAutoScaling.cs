@@ -29,7 +29,7 @@ using Amazon.AutoScaling.Model;
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// Interface for accessing AutoScaling
+    /// <para>Interface for accessing AutoScaling</para>
     ///
     /// Amazon EC2 Auto Scaling 
     /// <para>

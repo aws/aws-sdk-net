@@ -27,7 +27,7 @@ using Amazon.WorkSpacesThinClient.Model;
 namespace Amazon.WorkSpacesThinClient
 {
     /// <summary>
-    /// Interface for accessing WorkSpacesThinClient
+    /// <para>Interface for accessing WorkSpacesThinClient</para>
     ///
     /// Amazon WorkSpaces Thin Client is a affordable device built to work with Amazon Web
     /// Services End User Computing (EUC) virtual desktops to provide users with a complete

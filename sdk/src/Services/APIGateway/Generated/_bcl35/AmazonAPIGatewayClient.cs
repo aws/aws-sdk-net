@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.APIGateway
 {
     /// <summary>
-    /// Implementation for accessing APIGateway
+    /// <para>Implementation for accessing APIGateway</para>
     ///
     /// Amazon API Gateway 
     /// <para>

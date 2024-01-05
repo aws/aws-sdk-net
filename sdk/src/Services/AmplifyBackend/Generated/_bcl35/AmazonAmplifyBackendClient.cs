@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AmplifyBackend
 {
     /// <summary>
-    /// Implementation for accessing AmplifyBackend
+    /// <para>Implementation for accessing AmplifyBackend</para>
     ///
     /// AWS Amplify Admin API
     /// </summary>

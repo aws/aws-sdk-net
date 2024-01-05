@@ -27,7 +27,7 @@ using Amazon.RestJsonTest.Model;
 namespace Amazon.RestJsonTest
 {
     /// <summary>
-    /// Interface for accessing RestJsonTest
+    /// <para>Interface for accessing RestJsonTest</para>
     ///
     /// 
     /// </summary>

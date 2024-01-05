@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Mgn
 {
     /// <summary>
-    /// Implementation for accessing Mgn
+    /// <para>Implementation for accessing Mgn</para>
     ///
     /// The Application Migration Service service.
     /// </summary>

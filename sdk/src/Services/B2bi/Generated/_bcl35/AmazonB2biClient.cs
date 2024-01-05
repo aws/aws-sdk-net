@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.B2bi
 {
     /// <summary>
-    /// Implementation for accessing B2bi
+    /// <para>Implementation for accessing B2bi</para>
     ///
     /// This is the <i>Amazon Web Services B2B Data Interchange API Reference</i>. It provides
     /// descriptions, API request parameters, and the XML response for each of the B2BI API

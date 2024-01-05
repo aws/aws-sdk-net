@@ -27,7 +27,7 @@ using Amazon.Elasticsearch.Model;
 namespace Amazon.Elasticsearch
 {
     /// <summary>
-    /// Interface for accessing Elasticsearch
+    /// <para>Interface for accessing Elasticsearch</para>
     ///
     /// Amazon Elasticsearch Configuration Service 
     /// <para>

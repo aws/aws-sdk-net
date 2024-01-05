@@ -27,7 +27,7 @@ using Amazon.ApplicationAutoScaling.Model;
 namespace Amazon.ApplicationAutoScaling
 {
     /// <summary>
-    /// Interface for accessing ApplicationAutoScaling
+    /// <para>Interface for accessing ApplicationAutoScaling</para>
     ///
     /// With Application Auto Scaling, you can configure automatic scaling for the following
     /// resources:

@@ -27,7 +27,7 @@ using Amazon.FraudDetector.Model;
 namespace Amazon.FraudDetector
 {
     /// <summary>
-    /// Interface for accessing FraudDetector
+    /// <para>Interface for accessing FraudDetector</para>
     ///
     /// This is the Amazon Fraud Detector API Reference. This guide is for developers who
     /// need detailed information about Amazon Fraud Detector API actions, data types, and

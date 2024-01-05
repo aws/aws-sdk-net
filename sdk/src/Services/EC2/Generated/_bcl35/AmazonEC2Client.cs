@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EC2
 {
     /// <summary>
-    /// Implementation for accessing EC2
+    /// <para>Implementation for accessing EC2</para>
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>

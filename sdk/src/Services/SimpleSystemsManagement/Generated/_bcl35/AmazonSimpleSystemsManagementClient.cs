@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SimpleSystemsManagement
 {
     /// <summary>
-    /// Implementation for accessing SimpleSystemsManagement
+    /// <para>Implementation for accessing SimpleSystemsManagement</para>
     ///
     /// Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services
     /// applications and resources and a secure end-to-end management solution for hybrid

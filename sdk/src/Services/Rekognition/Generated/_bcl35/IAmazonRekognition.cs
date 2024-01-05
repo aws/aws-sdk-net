@@ -27,7 +27,7 @@ using Amazon.Rekognition.Model;
 namespace Amazon.Rekognition
 {
     /// <summary>
-    /// Interface for accessing Rekognition
+    /// <para>Interface for accessing Rekognition</para>
     ///
     /// This is the API Reference for <a href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
     /// Rekognition Image</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon

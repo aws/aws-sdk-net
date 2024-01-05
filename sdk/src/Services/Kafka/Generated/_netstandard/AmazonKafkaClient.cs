@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Kafka
 {
     /// <summary>
-    /// Implementation for accessing Kafka
+    /// <para>Implementation for accessing Kafka</para>
     ///
     /// The operations for managing an Amazon MSK cluster.
     /// </summary>

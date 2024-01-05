@@ -29,7 +29,7 @@ using Amazon.Mobile.Model;
 namespace Amazon.Mobile
 {
     /// <summary>
-    /// Interface for accessing Mobile
+    /// <para>Interface for accessing Mobile</para>
     ///
     /// AWS Mobile Service provides mobile app and website developers with capabilities required
     /// to configure AWS resources and bootstrap their developer desktop projects with the

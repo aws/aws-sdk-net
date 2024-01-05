@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EBS
 {
     /// <summary>
-    /// Implementation for accessing EBS
+    /// <para>Implementation for accessing EBS</para>
     ///
     /// You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create Amazon
     /// EBS snapshots, write data directly to your snapshots, read data on your snapshots,

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeArtifact
 {
     /// <summary>
-    /// Implementation for accessing CodeArtifact
+    /// <para>Implementation for accessing CodeArtifact</para>
     ///
     /// CodeArtifact is a fully managed artifact repository compatible with language-native
     /// package managers and build tools such as npm, Apache Maven, pip, and dotnet. You can

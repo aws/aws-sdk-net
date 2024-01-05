@@ -27,7 +27,7 @@ using Amazon.ACMPCA.Model;
 namespace Amazon.ACMPCA
 {
     /// <summary>
-    /// Interface for accessing ACMPCA
+    /// <para>Interface for accessing ACMPCA</para>
     ///
     /// This is the <i>Amazon Web Services Private Certificate Authority API Reference</i>.
     /// It provides descriptions, syntax, and usage examples for each of the actions and data

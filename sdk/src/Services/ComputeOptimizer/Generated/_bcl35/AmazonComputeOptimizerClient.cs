@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ComputeOptimizer
 {
     /// <summary>
-    /// Implementation for accessing ComputeOptimizer
+    /// <para>Implementation for accessing ComputeOptimizer</para>
     ///
     /// Compute Optimizer is a service that analyzes the configuration and utilization metrics
     /// of your Amazon Web Services compute resources, such as Amazon EC2 instances, Amazon

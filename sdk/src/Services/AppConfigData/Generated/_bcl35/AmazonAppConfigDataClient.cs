@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppConfigData
 {
     /// <summary>
-    /// Implementation for accessing AppConfigData
+    /// <para>Implementation for accessing AppConfigData</para>
     ///
     /// AppConfig Data provides the data plane APIs your application uses to retrieve configuration
     /// data. Here's how it works:

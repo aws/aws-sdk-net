@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KinesisAnalytics
 {
     /// <summary>
-    /// Implementation for accessing KinesisAnalytics
+    /// <para>Implementation for accessing KinesisAnalytics</para>
     ///
     /// Amazon Kinesis Analytics 
     /// <para>

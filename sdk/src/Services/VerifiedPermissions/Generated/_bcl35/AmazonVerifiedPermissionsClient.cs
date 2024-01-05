@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.VerifiedPermissions
 {
     /// <summary>
-    /// Implementation for accessing VerifiedPermissions
+    /// <para>Implementation for accessing VerifiedPermissions</para>
     ///
     /// Amazon Verified Permissions is a permissions management service from Amazon Web Services.
     /// You can use Verified Permissions to manage permissions for your application, and authorize

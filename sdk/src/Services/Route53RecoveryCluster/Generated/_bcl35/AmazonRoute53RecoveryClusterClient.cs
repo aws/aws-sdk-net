@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53RecoveryCluster
 {
     /// <summary>
-    /// Implementation for accessing Route53RecoveryCluster
+    /// <para>Implementation for accessing Route53RecoveryCluster</para>
     ///
     /// Welcome to the Routing Control (Recovery Cluster) API Reference Guide for Amazon Route
     /// 53 Application Recovery Controller.

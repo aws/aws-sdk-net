@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LexModelsV2
 {
     /// <summary>
-    /// Implementation for accessing LexModelsV2
+    /// <para>Implementation for accessing LexModelsV2</para>
     ///
     /// 
     /// </summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IdentityManagement
 {
     /// <summary>
-    /// Implementation for accessing IdentityManagementService
+    /// <para>Implementation for accessing IdentityManagementService</para>
     ///
     /// Identity and Access Management 
     /// <para>

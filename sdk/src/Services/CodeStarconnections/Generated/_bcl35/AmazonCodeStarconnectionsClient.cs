@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeStarconnections
 {
     /// <summary>
-    /// Implementation for accessing CodeStarconnections
+    /// <para>Implementation for accessing CodeStarconnections</para>
     ///
     /// AWS CodeStar Connections 
     /// <para>

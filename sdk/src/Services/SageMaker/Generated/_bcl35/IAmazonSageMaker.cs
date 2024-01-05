@@ -27,7 +27,7 @@ using Amazon.SageMaker.Model;
 namespace Amazon.SageMaker
 {
     /// <summary>
-    /// Interface for accessing SageMaker
+    /// <para>Interface for accessing SageMaker</para>
     ///
     /// Provides APIs for creating and managing SageMaker resources. 
     /// 

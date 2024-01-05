@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CostAndUsageReport
 {
     /// <summary>
-    /// Implementation for accessing CostAndUsageReport
+    /// <para>Implementation for accessing CostAndUsageReport</para>
     ///
     /// You can use the Amazon Web Services Cost and Usage Report API to programmatically
     /// create, query, and delete Amazon Web Services Cost and Usage Report definitions.

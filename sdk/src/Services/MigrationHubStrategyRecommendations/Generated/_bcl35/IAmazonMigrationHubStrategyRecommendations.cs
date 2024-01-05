@@ -27,7 +27,7 @@ using Amazon.MigrationHubStrategyRecommendations.Model;
 namespace Amazon.MigrationHubStrategyRecommendations
 {
     /// <summary>
-    /// Interface for accessing MigrationHubStrategyRecommendations
+    /// <para>Interface for accessing MigrationHubStrategyRecommendations</para>
     ///
     /// Migration Hub Strategy Recommendations 
     /// <para>

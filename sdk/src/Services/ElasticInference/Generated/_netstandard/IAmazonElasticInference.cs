@@ -29,7 +29,7 @@ using Amazon.ElasticInference.Model;
 namespace Amazon.ElasticInference
 {
     /// <summary>
-    /// Interface for accessing ElasticInference
+    /// <para>Interface for accessing ElasticInference</para>
     ///
     /// Elastic Inference public APIs. 
     /// 

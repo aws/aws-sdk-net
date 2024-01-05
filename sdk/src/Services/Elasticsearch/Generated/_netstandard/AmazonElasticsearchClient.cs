@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Elasticsearch
 {
     /// <summary>
-    /// Implementation for accessing Elasticsearch
+    /// <para>Implementation for accessing Elasticsearch</para>
     ///
     /// Amazon Elasticsearch Configuration Service 
     /// <para>

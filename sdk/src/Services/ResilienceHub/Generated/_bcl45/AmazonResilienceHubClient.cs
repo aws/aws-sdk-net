@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ResilienceHub
 {
     /// <summary>
-    /// Implementation for accessing ResilienceHub
+    /// <para>Implementation for accessing ResilienceHub</para>
     ///
     /// Resilience Hub helps you proactively prepare and protect your Amazon Web Services
     /// applications from disruptions. It offers continual resiliency assessment and validation

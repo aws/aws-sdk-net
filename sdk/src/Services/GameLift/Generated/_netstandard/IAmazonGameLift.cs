@@ -29,7 +29,7 @@ using Amazon.GameLift.Model;
 namespace Amazon.GameLift
 {
     /// <summary>
-    /// Interface for accessing GameLift
+    /// <para>Interface for accessing GameLift</para>
     ///
     /// Amazon GameLift provides solutions for hosting session-based multiplayer game servers
     /// in the cloud, including tools for deploying, operating, and scaling game servers.

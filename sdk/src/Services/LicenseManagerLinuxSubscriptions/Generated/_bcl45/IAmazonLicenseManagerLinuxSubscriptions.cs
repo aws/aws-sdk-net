@@ -29,7 +29,7 @@ using Amazon.LicenseManagerLinuxSubscriptions.Model;
 namespace Amazon.LicenseManagerLinuxSubscriptions
 {
     /// <summary>
-    /// Interface for accessing LicenseManagerLinuxSubscriptions
+    /// <para>Interface for accessing LicenseManagerLinuxSubscriptions</para>
     ///
     /// With License Manager, you can discover and track your commercial Linux subscriptions
     /// on running Amazon EC2 instances.

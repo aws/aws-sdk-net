@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Neptune
 {
     /// <summary>
-    /// Implementation for accessing Neptune
+    /// <para>Implementation for accessing Neptune</para>
     ///
     /// Amazon Neptune 
     /// <para>

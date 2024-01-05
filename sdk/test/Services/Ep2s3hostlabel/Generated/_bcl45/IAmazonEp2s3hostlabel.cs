@@ -29,7 +29,7 @@ using Amazon.Ep2s3hostlabel.Model;
 namespace Amazon.Ep2s3hostlabel
 {
     /// <summary>
-    /// Interface for accessing Ep2s3hostlabel
+    /// <para>Interface for accessing Ep2s3hostlabel</para>
     ///
     /// 
     /// </summary>

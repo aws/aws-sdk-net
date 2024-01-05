@@ -27,7 +27,7 @@ using Amazon.SimpleNotificationService.Model;
 namespace Amazon.SimpleNotificationService
 {
     /// <summary>
-    /// Interface for accessing SimpleNotificationService
+    /// <para>Interface for accessing SimpleNotificationService</para>
     ///
     /// Amazon Simple Notification Service 
     /// <para>

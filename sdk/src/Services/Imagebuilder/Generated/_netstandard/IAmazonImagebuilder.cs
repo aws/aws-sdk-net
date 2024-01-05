@@ -29,7 +29,7 @@ using Amazon.Imagebuilder.Model;
 namespace Amazon.Imagebuilder
 {
     /// <summary>
-    /// Interface for accessing Imagebuilder
+    /// <para>Interface for accessing Imagebuilder</para>
     ///
     /// EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier
     /// to automate the creation, management, and deployment of customized, secure, and up-to-date

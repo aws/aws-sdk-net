@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Pinpoint
 {
     /// <summary>
-    /// Implementation for accessing Pinpoint
+    /// <para>Implementation for accessing Pinpoint</para>
     ///
     /// Doc Engage API - Amazon Pinpoint API
     /// </summary>

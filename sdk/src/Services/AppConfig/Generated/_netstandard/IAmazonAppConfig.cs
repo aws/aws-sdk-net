@@ -29,7 +29,7 @@ using Amazon.AppConfig.Model;
 namespace Amazon.AppConfig
 {
     /// <summary>
-    /// Interface for accessing AppConfig
+    /// <para>Interface for accessing AppConfig</para>
     ///
     /// Use AppConfig, a capability of Amazon Web Services Systems Manager, to create, manage,
     /// and quickly deploy application configurations. AppConfig supports controlled deployments

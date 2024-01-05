@@ -29,7 +29,7 @@ using Amazon.IdentityManagement.Model;
 namespace Amazon.IdentityManagement
 {
     /// <summary>
-    /// Interface for accessing IdentityManagementService
+    /// <para>Interface for accessing IdentityManagementService</para>
     ///
     /// Identity and Access Management 
     /// <para>

@@ -27,7 +27,7 @@ using Amazon.CloudTrailData.Model;
 namespace Amazon.CloudTrailData
 {
     /// <summary>
-    /// Interface for accessing CloudTrailData
+    /// <para>Interface for accessing CloudTrailData</para>
     ///
     /// The CloudTrail Data Service lets you ingest events into CloudTrail from any source
     /// in your hybrid environments, such as in-house or SaaS applications hosted on-premises

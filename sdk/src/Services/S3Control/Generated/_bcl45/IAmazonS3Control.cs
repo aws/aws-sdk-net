@@ -29,7 +29,7 @@ using Amazon.S3Control.Model;
 namespace Amazon.S3Control
 {
     /// <summary>
-    /// Interface for accessing S3Control
+    /// <para>Interface for accessing S3Control</para>
     ///
     /// Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
     /// </summary>

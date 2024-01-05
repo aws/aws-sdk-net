@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WellArchitected
 {
     /// <summary>
-    /// Implementation for accessing WellArchitected
+    /// <para>Implementation for accessing WellArchitected</para>
     ///
     /// Well-Architected Tool 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.FIS.Model;
 namespace Amazon.FIS
 {
     /// <summary>
-    /// Interface for accessing FIS
+    /// <para>Interface for accessing FIS</para>
     ///
     /// Fault Injection Simulator is a managed service that enables you to perform fault injection
     /// experiments on your Amazon Web Services workloads. For more information, see the <a

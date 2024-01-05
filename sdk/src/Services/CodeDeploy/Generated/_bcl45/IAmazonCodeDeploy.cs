@@ -29,7 +29,7 @@ using Amazon.CodeDeploy.Model;
 namespace Amazon.CodeDeploy
 {
     /// <summary>
-    /// Interface for accessing CodeDeploy
+    /// <para>Interface for accessing CodeDeploy</para>
     ///
     /// CodeDeploy is a deployment service that automates application deployments to Amazon
     /// EC2 instances, on-premises instances running in your own facility, serverless Lambda

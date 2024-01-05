@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Lex
 {
     /// <summary>
-    /// Implementation for accessing Lex
+    /// <para>Implementation for accessing Lex</para>
     ///
     /// Amazon Lex provides both build and runtime endpoints. Each endpoint provides a set
     /// of operations (API). Your conversational bot uses the runtime API to understand user

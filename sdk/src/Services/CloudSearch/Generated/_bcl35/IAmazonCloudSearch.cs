@@ -27,7 +27,7 @@ using Amazon.CloudSearch.Model;
 namespace Amazon.CloudSearch
 {
     /// <summary>
-    /// Interface for accessing CloudSearch
+    /// <para>Interface for accessing CloudSearch</para>
     ///
     /// Amazon CloudSearch Configuration Service 
     /// <para>

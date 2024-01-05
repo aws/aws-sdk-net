@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AWSMarketplaceCommerceAnalytics
 {
     /// <summary>
-    /// Implementation for accessing AWSMarketplaceCommerceAnalytics
+    /// <para>Implementation for accessing AWSMarketplaceCommerceAnalytics</para>
     ///
     /// Provides AWS Marketplace business intelligence data on-demand.
     /// </summary>

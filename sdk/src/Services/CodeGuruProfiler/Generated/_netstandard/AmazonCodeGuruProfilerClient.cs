@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeGuruProfiler
 {
     /// <summary>
-    /// Implementation for accessing CodeGuruProfiler
+    /// <para>Implementation for accessing CodeGuruProfiler</para>
     ///
     /// This section provides documentation for the Amazon CodeGuru Profiler API operations.
     /// 

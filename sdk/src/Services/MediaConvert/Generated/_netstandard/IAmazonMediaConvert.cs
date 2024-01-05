@@ -29,7 +29,7 @@ using Amazon.MediaConvert.Model;
 namespace Amazon.MediaConvert
 {
     /// <summary>
-    /// Interface for accessing MediaConvert
+    /// <para>Interface for accessing MediaConvert</para>
     ///
     /// AWS Elemental MediaConvert
     /// </summary>

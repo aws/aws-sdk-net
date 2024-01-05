@@ -27,7 +27,7 @@ using Amazon.WorkMailMessageFlow.Model;
 namespace Amazon.WorkMailMessageFlow
 {
     /// <summary>
-    /// Interface for accessing WorkMailMessageFlow
+    /// <para>Interface for accessing WorkMailMessageFlow</para>
     ///
     /// The WorkMail Message Flow API provides access to email messages as they are being
     /// sent and received by a WorkMail organization.

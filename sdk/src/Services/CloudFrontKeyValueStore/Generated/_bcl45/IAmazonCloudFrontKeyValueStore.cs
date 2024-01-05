@@ -29,7 +29,7 @@ using Amazon.CloudFrontKeyValueStore.Model;
 namespace Amazon.CloudFrontKeyValueStore
 {
     /// <summary>
-    /// Interface for accessing CloudFrontKeyValueStore
+    /// <para>Interface for accessing CloudFrontKeyValueStore</para>
     ///
     /// Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
     /// </summary>

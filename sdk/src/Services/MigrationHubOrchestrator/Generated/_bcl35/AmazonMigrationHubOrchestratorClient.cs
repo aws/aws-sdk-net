@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MigrationHubOrchestrator
 {
     /// <summary>
-    /// Implementation for accessing MigrationHubOrchestrator
+    /// <para>Implementation for accessing MigrationHubOrchestrator</para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
     /// the actions and data types for AWS Migration Hub Orchestrator. he topic for each action

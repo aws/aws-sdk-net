@@ -29,7 +29,7 @@ using Amazon.Tnb.Model;
 namespace Amazon.Tnb
 {
     /// <summary>
-    /// Interface for accessing Tnb
+    /// <para>Interface for accessing Tnb</para>
     ///
     /// Amazon Web Services Telco Network Builder (TNB) is a network automation service that
     /// helps you deploy and manage telecom networks. AWS TNB helps you with the lifecycle

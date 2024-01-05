@@ -29,7 +29,7 @@ using Amazon.StepFunctions.Model;
 namespace Amazon.StepFunctions
 {
     /// <summary>
-    /// Interface for accessing StepFunctions
+    /// <para>Interface for accessing StepFunctions</para>
     ///
     /// Step Functions 
     /// <para>

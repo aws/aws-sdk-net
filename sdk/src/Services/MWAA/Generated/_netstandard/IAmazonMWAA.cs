@@ -29,7 +29,7 @@ using Amazon.MWAA.Model;
 namespace Amazon.MWAA
 {
     /// <summary>
-    /// Interface for accessing MWAA
+    /// <para>Interface for accessing MWAA</para>
     ///
     /// Amazon Managed Workflows for Apache Airflow 
     /// <para>

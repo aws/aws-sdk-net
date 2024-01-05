@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTSecureTunneling
 {
     /// <summary>
-    /// Implementation for accessing IoTSecureTunneling
+    /// <para>Implementation for accessing IoTSecureTunneling</para>
     ///
     /// IoT Secure Tunneling 
     /// <para>

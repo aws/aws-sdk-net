@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.OSIS
 {
     /// <summary>
-    /// Implementation for accessing OSIS
+    /// <para>Implementation for accessing OSIS</para>
     ///
     /// Use the Amazon OpenSearch Ingestion API to create and manage ingestion pipelines.
     /// OpenSearch Ingestion is a fully managed data collector that delivers real-time log

@@ -27,7 +27,7 @@ using Amazon.LaunchWizard.Model;
 namespace Amazon.LaunchWizard
 {
     /// <summary>
-    /// Interface for accessing LaunchWizard
+    /// <para>Interface for accessing LaunchWizard</para>
     ///
     /// Launch Wizard offers a guided way of sizing, configuring, and deploying Amazon Web
     /// Services resources for third party applications, such as Microsoft SQL Server Always

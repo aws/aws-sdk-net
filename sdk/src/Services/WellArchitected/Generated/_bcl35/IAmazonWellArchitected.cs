@@ -27,7 +27,7 @@ using Amazon.WellArchitected.Model;
 namespace Amazon.WellArchitected
 {
     /// <summary>
-    /// Interface for accessing WellArchitected
+    /// <para>Interface for accessing WellArchitected</para>
     ///
     /// Well-Architected Tool 
     /// <para>

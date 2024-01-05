@@ -29,7 +29,7 @@ using Amazon.Route53RecoveryControlConfig.Model;
 namespace Amazon.Route53RecoveryControlConfig
 {
     /// <summary>
-    /// Interface for accessing Route53RecoveryControlConfig
+    /// <para>Interface for accessing Route53RecoveryControlConfig</para>
     ///
     /// Recovery Control Configuration API Reference for Amazon Route 53 Application Recovery
     /// Controller

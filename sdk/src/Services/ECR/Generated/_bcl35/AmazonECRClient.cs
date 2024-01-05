@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ECR
 {
     /// <summary>
-    /// Implementation for accessing ECR
+    /// <para>Implementation for accessing ECR</para>
     ///
     /// Amazon Elastic Container Registry 
     /// <para>

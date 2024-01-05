@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MedicalImaging
 {
     /// <summary>
-    /// Implementation for accessing MedicalImaging
+    /// <para>Implementation for accessing MedicalImaging</para>
     ///
     /// This is the <i>AWS HealthImaging API Reference</i>. AWS HealthImaging is a HIPAA-eligible
     /// service that helps health care providers and their medical imaging ISV partners store,

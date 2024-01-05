@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MarketplaceAgreement
 {
     /// <summary>
-    /// Implementation for accessing MarketplaceAgreement
+    /// <para>Implementation for accessing MarketplaceAgreement</para>
     ///
     /// AWS Marketplace is a curated digital catalog that customers can use to find, buy,
     /// deploy, and manage third-party software, data, and services to build solutions and

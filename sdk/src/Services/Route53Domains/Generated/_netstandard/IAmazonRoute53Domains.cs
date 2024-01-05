@@ -29,7 +29,7 @@ using Amazon.Route53Domains.Model;
 namespace Amazon.Route53Domains
 {
     /// <summary>
-    /// Interface for accessing Route53Domains
+    /// <para>Interface for accessing Route53Domains</para>
     ///
     /// Amazon Route 53 API actions let you register domain names and perform related operations.
     /// </summary>

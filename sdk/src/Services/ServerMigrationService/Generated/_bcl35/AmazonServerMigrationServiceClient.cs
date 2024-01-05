@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ServerMigrationService
 {
     /// <summary>
-    /// Implementation for accessing ServerMigrationService
+    /// <para>Implementation for accessing ServerMigrationService</para>
     ///
     /// <important> 
     /// <para>

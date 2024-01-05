@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DocDBElastic
 {
     /// <summary>
-    /// Implementation for accessing DocDBElastic
+    /// <para>Implementation for accessing DocDBElastic</para>
     ///
     /// The new Amazon Elastic DocumentDB service endpoint.
     /// </summary>

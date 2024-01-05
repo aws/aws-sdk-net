@@ -29,7 +29,7 @@ using Amazon.PinpointEmail.Model;
 namespace Amazon.PinpointEmail
 {
     /// <summary>
-    /// Interface for accessing PinpointEmail
+    /// <para>Interface for accessing PinpointEmail</para>
     ///
     /// Amazon Pinpoint Email Service 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.AppSync.Model;
 namespace Amazon.AppSync
 {
     /// <summary>
-    /// Interface for accessing AppSync
+    /// <para>Interface for accessing AppSync</para>
     ///
     /// AppSync provides API actions for creating and interacting with data sources using
     /// GraphQL from your application.

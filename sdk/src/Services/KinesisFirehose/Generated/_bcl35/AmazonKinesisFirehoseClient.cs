@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KinesisFirehose
 {
     /// <summary>
-    /// Implementation for accessing KinesisFirehose
+    /// <para>Implementation for accessing KinesisFirehose</para>
     ///
     /// Amazon Kinesis Data Firehose API Reference 
     /// <para>

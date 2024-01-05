@@ -27,7 +27,7 @@ using Amazon.Lambda.Model;
 namespace Amazon.Lambda
 {
     /// <summary>
-    /// Interface for accessing Lambda
+    /// <para>Interface for accessing Lambda</para>
     ///
     /// Lambda 
     /// <para>

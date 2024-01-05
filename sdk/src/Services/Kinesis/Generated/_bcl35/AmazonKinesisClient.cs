@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Kinesis
 {
     /// <summary>
-    /// Implementation for accessing Kinesis
+    /// <para>Implementation for accessing Kinesis</para>
     ///
     /// Amazon Kinesis Data Streams Service API Reference 
     /// <para>

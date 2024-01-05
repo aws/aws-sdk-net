@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTRoboRunner
 {
     /// <summary>
-    /// Implementation for accessing IoTRoboRunner
+    /// <para>Implementation for accessing IoTRoboRunner</para>
     ///
     /// An example service, deployed with the Octane Service creator, which will echo the
     /// string

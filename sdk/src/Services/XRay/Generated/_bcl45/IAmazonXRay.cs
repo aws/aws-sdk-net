@@ -29,7 +29,7 @@ using Amazon.XRay.Model;
 namespace Amazon.XRay
 {
     /// <summary>
-    /// Interface for accessing XRay
+    /// <para>Interface for accessing XRay</para>
     ///
     /// Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service
     /// maps and other data created by processing those traces.

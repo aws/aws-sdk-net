@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFormation
 {
     /// <summary>
-    /// Implementation for accessing CloudFormation
+    /// <para>Implementation for accessing CloudFormation</para>
     ///
     /// CloudFormation 
     /// <para>

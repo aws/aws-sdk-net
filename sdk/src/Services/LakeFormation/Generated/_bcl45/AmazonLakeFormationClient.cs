@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LakeFormation
 {
     /// <summary>
-    /// Implementation for accessing LakeFormation
+    /// <para>Implementation for accessing LakeFormation</para>
     ///
     /// Lake Formation 
     /// <para>

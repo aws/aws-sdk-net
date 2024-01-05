@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MWAA
 {
     /// <summary>
-    /// Implementation for accessing MWAA
+    /// <para>Implementation for accessing MWAA</para>
     ///
     /// Amazon Managed Workflows for Apache Airflow 
     /// <para>

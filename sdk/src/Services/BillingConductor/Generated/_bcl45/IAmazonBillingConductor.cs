@@ -29,7 +29,7 @@ using Amazon.BillingConductor.Model;
 namespace Amazon.BillingConductor
 {
     /// <summary>
-    /// Interface for accessing BillingConductor
+    /// <para>Interface for accessing BillingConductor</para>
     ///
     /// Amazon Web Services Billing Conductor is a fully managed service that you can use
     /// to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">proforma</a>

@@ -29,7 +29,7 @@ using Amazon.DirectConnect.Model;
 namespace Amazon.DirectConnect
 {
     /// <summary>
-    /// Interface for accessing DirectConnect
+    /// <para>Interface for accessing DirectConnect</para>
     ///
     /// Direct Connect links your internal network to an Direct Connect location over a standard
     /// Ethernet fiber-optic cable. One end of the cable is connected to your router, the

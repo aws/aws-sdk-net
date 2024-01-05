@@ -27,7 +27,7 @@ using Amazon.Appflow.Model;
 namespace Amazon.Appflow
 {
     /// <summary>
-    /// Interface for accessing Appflow
+    /// <para>Interface for accessing Appflow</para>
     ///
     /// Welcome to the Amazon AppFlow API reference. This guide is for developers who need
     /// detailed information about the Amazon AppFlow API operations, data types, and errors.

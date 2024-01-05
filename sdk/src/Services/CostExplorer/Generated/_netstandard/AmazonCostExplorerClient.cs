@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CostExplorer
 {
     /// <summary>
-    /// Implementation for accessing CostExplorer
+    /// <para>Implementation for accessing CostExplorer</para>
     ///
     /// You can use the Cost Explorer API to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.

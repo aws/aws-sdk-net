@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Backup
 {
     /// <summary>
-    /// Implementation for accessing Backup
+    /// <para>Implementation for accessing Backup</para>
     ///
     /// Backup 
     /// <para>

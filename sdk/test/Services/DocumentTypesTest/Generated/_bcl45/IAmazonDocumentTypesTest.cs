@@ -29,7 +29,7 @@ using Amazon.DocumentTypesTest.Model;
 namespace Amazon.DocumentTypesTest
 {
     /// <summary>
-    /// Interface for accessing DocumentTypesTest
+    /// <para>Interface for accessing DocumentTypesTest</para>
     ///
     /// 
     /// </summary>

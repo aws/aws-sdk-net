@@ -29,7 +29,7 @@ using Amazon.LexModelBuildingService.Model;
 namespace Amazon.LexModelBuildingService
 {
     /// <summary>
-    /// Interface for accessing LexModelBuildingService
+    /// <para>Interface for accessing LexModelBuildingService</para>
     ///
     /// Amazon Lex Build-Time Actions 
     /// <para>

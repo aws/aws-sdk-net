@@ -29,7 +29,7 @@ using Amazon.Glue.Model;
 namespace Amazon.Glue
 {
     /// <summary>
-    /// Interface for accessing Glue
+    /// <para>Interface for accessing Glue</para>
     ///
     /// Glue 
     /// <para>

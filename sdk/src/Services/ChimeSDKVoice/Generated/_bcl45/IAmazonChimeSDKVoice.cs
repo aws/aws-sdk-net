@@ -29,7 +29,7 @@ using Amazon.ChimeSDKVoice.Model;
 namespace Amazon.ChimeSDKVoice
 {
     /// <summary>
-    /// Interface for accessing ChimeSDKVoice
+    /// <para>Interface for accessing ChimeSDKVoice</para>
     ///
     /// The Amazon Chime SDK telephony APIs in this section enable developers to create PSTN
     /// calling solutions that use Amazon Chime SDK Voice Connectors, and Amazon Chime SDK

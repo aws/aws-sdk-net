@@ -27,7 +27,7 @@ using Amazon.LicenseManager.Model;
 namespace Amazon.LicenseManager
 {
     /// <summary>
-    /// Interface for accessing LicenseManager
+    /// <para>Interface for accessing LicenseManager</para>
     ///
     /// License Manager makes it easier to manage licenses from software vendors across multiple
     /// Amazon Web Services accounts and on-premises servers.

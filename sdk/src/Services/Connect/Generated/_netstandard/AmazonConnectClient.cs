@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Connect
 {
     /// <summary>
-    /// Implementation for accessing Connect
+    /// <para>Implementation for accessing Connect</para>
     ///
     /// Amazon Connect is a cloud-based contact center solution that you use to set up and
     /// manage a customer contact center and provide reliable customer engagement at any scale.

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CleanRooms
 {
     /// <summary>
-    /// Implementation for accessing CleanRooms
+    /// <para>Implementation for accessing CleanRooms</para>
     ///
     /// Welcome to the <i>Clean Rooms API Reference</i>.
     /// 

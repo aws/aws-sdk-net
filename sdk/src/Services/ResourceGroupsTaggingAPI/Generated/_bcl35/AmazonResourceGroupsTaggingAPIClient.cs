@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ResourceGroupsTaggingAPI
 {
     /// <summary>
-    /// Implementation for accessing ResourceGroupsTaggingAPI
+    /// <para>Implementation for accessing ResourceGroupsTaggingAPI</para>
     ///
     /// Resource Groups Tagging API
     /// </summary>

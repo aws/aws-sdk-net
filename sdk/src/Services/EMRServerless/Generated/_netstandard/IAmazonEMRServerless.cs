@@ -29,7 +29,7 @@ using Amazon.EMRServerless.Model;
 namespace Amazon.EMRServerless
 {
     /// <summary>
-    /// Interface for accessing EMRServerless
+    /// <para>Interface for accessing EMRServerless</para>
     ///
     /// Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless
     /// provides a serverless runtime environment that simplifies running analytics applications

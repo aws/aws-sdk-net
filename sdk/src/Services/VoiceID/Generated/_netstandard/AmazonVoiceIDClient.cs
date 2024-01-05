@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.VoiceID
 {
     /// <summary>
-    /// Implementation for accessing VoiceID
+    /// <para>Implementation for accessing VoiceID</para>
     ///
     /// Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection,
     /// which make voice interactions in contact centers more secure and efficient.

@@ -27,7 +27,7 @@ using Amazon.ImportExport.Model;
 namespace Amazon.ImportExport
 {
     /// <summary>
-    /// Interface for accessing ImportExport
+    /// <para>Interface for accessing ImportExport</para>
     ///
     /// AWS Import/Export Service AWS Import/Export accelerates transferring large amounts
     /// of data between the AWS cloud and portable storage devices that you mail to us. AWS

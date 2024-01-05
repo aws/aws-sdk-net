@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppRegistry
 {
     /// <summary>
-    /// Implementation for accessing AppRegistry
+    /// <para>Implementation for accessing AppRegistry</para>
     ///
     /// Amazon Web Services Service Catalog AppRegistry enables organizations to understand
     /// the application context of their Amazon Web Services resources. AppRegistry provides

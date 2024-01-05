@@ -27,7 +27,7 @@ using Amazon.Schemas.Model;
 namespace Amazon.Schemas
 {
     /// <summary>
-    /// Interface for accessing Schemas
+    /// <para>Interface for accessing Schemas</para>
     ///
     /// Amazon EventBridge Schema Registry
     /// </summary>

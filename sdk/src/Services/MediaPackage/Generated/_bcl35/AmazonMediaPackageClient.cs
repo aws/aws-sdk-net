@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaPackage
 {
     /// <summary>
-    /// Implementation for accessing MediaPackage
+    /// <para>Implementation for accessing MediaPackage</para>
     ///
     /// AWS Elemental MediaPackage
     /// </summary>

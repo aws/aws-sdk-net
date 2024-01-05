@@ -29,7 +29,7 @@ using Amazon.InspectorScan.Model;
 namespace Amazon.InspectorScan
 {
     /// <summary>
-    /// Interface for accessing InspectorScan
+    /// <para>Interface for accessing InspectorScan</para>
     ///
     /// Amazon Inspector Scan is a vulnerability discovery service that scans a provided Software
     /// Bill of Materials (SBOM) for security vulnerabilities.

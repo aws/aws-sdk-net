@@ -29,7 +29,7 @@ using Amazon.QuickSight.Model;
 namespace Amazon.QuickSight
 {
     /// <summary>
-    /// Interface for accessing QuickSight
+    /// <para>Interface for accessing QuickSight</para>
     ///
     /// Amazon QuickSight API Reference 
     /// <para>

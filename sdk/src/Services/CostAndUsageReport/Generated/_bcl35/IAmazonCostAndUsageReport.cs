@@ -27,7 +27,7 @@ using Amazon.CostAndUsageReport.Model;
 namespace Amazon.CostAndUsageReport
 {
     /// <summary>
-    /// Interface for accessing CostAndUsageReport
+    /// <para>Interface for accessing CostAndUsageReport</para>
     ///
     /// You can use the Amazon Web Services Cost and Usage Report API to programmatically
     /// create, query, and delete Amazon Web Services Cost and Usage Report definitions.

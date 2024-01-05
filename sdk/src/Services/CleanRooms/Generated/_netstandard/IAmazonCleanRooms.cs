@@ -29,7 +29,7 @@ using Amazon.CleanRooms.Model;
 namespace Amazon.CleanRooms
 {
     /// <summary>
-    /// Interface for accessing CleanRooms
+    /// <para>Interface for accessing CleanRooms</para>
     ///
     /// Welcome to the <i>Clean Rooms API Reference</i>.
     /// 

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CustomerProfiles
 {
     /// <summary>
-    /// Implementation for accessing CustomerProfiles
+    /// <para>Implementation for accessing CustomerProfiles</para>
     ///
     /// Amazon Connect Customer Profiles 
     /// <para>

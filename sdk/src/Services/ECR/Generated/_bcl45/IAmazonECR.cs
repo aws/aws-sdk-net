@@ -29,7 +29,7 @@ using Amazon.ECR.Model;
 namespace Amazon.ECR
 {
     /// <summary>
-    /// Interface for accessing ECR
+    /// <para>Interface for accessing ECR</para>
     ///
     /// Amazon Elastic Container Registry 
     /// <para>

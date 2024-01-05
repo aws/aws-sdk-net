@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BearerTokenAuthTest
 {
     /// <summary>
-    /// Implementation for accessing BearerTokenAuthTest
+    /// <para>Implementation for accessing BearerTokenAuthTest</para>
     ///
     /// 
     /// </summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PinpointEmail
 {
     /// <summary>
-    /// Implementation for accessing PinpointEmail
+    /// <para>Implementation for accessing PinpointEmail</para>
     ///
     /// Amazon Pinpoint Email Service 
     /// <para>

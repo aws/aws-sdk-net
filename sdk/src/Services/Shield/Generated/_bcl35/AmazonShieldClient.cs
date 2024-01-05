@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Shield
 {
     /// <summary>
-    /// Implementation for accessing Shield
+    /// <para>Implementation for accessing Shield</para>
     ///
     /// Shield Advanced 
     /// <para>

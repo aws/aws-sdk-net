@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ForecastService
 {
     /// <summary>
-    /// Implementation for accessing ForecastService
+    /// <para>Implementation for accessing ForecastService</para>
     ///
     /// Provides APIs for creating and managing Amazon Forecast resources.
     /// </summary>

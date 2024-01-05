@@ -29,7 +29,7 @@ using Amazon.IVS.Model;
 namespace Amazon.IVS
 {
     /// <summary>
-    /// Interface for accessing IVS
+    /// <para>Interface for accessing IVS</para>
     ///
     /// <b>Introduction</b> 
     /// 

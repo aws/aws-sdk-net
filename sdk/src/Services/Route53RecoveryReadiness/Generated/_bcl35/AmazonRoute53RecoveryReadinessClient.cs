@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53RecoveryReadiness
 {
     /// <summary>
-    /// Implementation for accessing Route53RecoveryReadiness
+    /// <para>Implementation for accessing Route53RecoveryReadiness</para>
     ///
     /// Recovery readiness
     /// </summary>

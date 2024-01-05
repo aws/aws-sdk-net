@@ -27,7 +27,7 @@ using Amazon.RedshiftDataAPIService.Model;
 namespace Amazon.RedshiftDataAPIService
 {
     /// <summary>
-    /// Interface for accessing RedshiftDataAPIService
+    /// <para>Interface for accessing RedshiftDataAPIService</para>
     ///
     /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
     /// You can run SQL statements, which are committed if the statement succeeds. 

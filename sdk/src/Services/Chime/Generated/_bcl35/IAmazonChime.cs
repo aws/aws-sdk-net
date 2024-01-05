@@ -27,7 +27,7 @@ using Amazon.Chime.Model;
 namespace Amazon.Chime
 {
     /// <summary>
-    /// Interface for accessing Chime
+    /// <para>Interface for accessing Chime</para>
     ///
     /// <important> 
     /// <para>

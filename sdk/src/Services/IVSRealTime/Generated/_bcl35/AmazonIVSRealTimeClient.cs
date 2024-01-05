@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IVSRealTime
 {
     /// <summary>
-    /// Implementation for accessing IVSRealTime
+    /// <para>Implementation for accessing IVSRealTime</para>
     ///
     /// <b>Introduction</b> 
     /// 

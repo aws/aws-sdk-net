@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BCMDataExports
 {
     /// <summary>
-    /// Implementation for accessing BCMDataExports
+    /// <para>Implementation for accessing BCMDataExports</para>
     ///
     /// You can use the Data Exports API to create customized exports from multiple Amazon
     /// Web Services cost management and billing datasets, such as cost and usage data and

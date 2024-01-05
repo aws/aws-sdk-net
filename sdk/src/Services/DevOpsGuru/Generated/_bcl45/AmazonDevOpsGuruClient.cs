@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DevOpsGuru
 {
     /// <summary>
-    /// Implementation for accessing DevOpsGuru
+    /// <para>Implementation for accessing DevOpsGuru</para>
     ///
     /// Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior
     /// in business critical operational applications. You specify the Amazon Web Services

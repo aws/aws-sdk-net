@@ -27,7 +27,7 @@ using Amazon.ApiGatewayV2.Model;
 namespace Amazon.ApiGatewayV2
 {
     /// <summary>
-    /// Interface for accessing ApiGatewayV2
+    /// <para>Interface for accessing ApiGatewayV2</para>
     ///
     /// Amazon API Gateway V2
     /// </summary>

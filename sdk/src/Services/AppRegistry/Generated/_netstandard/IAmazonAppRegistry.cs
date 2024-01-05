@@ -29,7 +29,7 @@ using Amazon.AppRegistry.Model;
 namespace Amazon.AppRegistry
 {
     /// <summary>
-    /// Interface for accessing AppRegistry
+    /// <para>Interface for accessing AppRegistry</para>
     ///
     /// Amazon Web Services Service Catalog AppRegistry enables organizations to understand
     /// the application context of their Amazon Web Services resources. AppRegistry provides

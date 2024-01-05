@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Organizations
 {
     /// <summary>
-    /// Implementation for accessing Organizations
+    /// <para>Implementation for accessing Organizations</para>
     ///
     /// Organizations is a web service that enables you to consolidate your multiple Amazon
     /// Web Services accounts into an <i>organization</i> and centrally manage your accounts

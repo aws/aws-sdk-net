@@ -29,7 +29,7 @@ using Amazon.ManagedGrafana.Model;
 namespace Amazon.ManagedGrafana
 {
     /// <summary>
-    /// Interface for accessing ManagedGrafana
+    /// <para>Interface for accessing ManagedGrafana</para>
     ///
     /// Amazon Managed Grafana is a fully managed and secure data visualization service that
     /// you can use to instantly query, correlate, and visualize operational metrics, logs,

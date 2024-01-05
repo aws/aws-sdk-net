@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WAFV2
 {
     /// <summary>
-    /// Implementation for accessing WAFV2
+    /// <para>Implementation for accessing WAFV2</para>
     ///
     /// WAF <note> 
     /// <para>

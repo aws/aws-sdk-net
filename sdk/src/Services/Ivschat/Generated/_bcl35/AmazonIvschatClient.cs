@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Ivschat
 {
     /// <summary>
-    /// Implementation for accessing Ivschat
+    /// <para>Implementation for accessing Ivschat</para>
     ///
     /// <b>Introduction</b> 
     /// 

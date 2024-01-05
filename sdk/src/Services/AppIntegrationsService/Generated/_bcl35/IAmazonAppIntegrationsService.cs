@@ -27,7 +27,7 @@ using Amazon.AppIntegrationsService.Model;
 namespace Amazon.AppIntegrationsService
 {
     /// <summary>
-    /// Interface for accessing AppIntegrationsService
+    /// <para>Interface for accessing AppIntegrationsService</para>
     ///
     /// The Amazon AppIntegrations service enables you to configure and reuse connections
     /// to external applications.

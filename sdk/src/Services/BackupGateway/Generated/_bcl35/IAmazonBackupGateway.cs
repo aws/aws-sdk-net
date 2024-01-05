@@ -27,7 +27,7 @@ using Amazon.BackupGateway.Model;
 namespace Amazon.BackupGateway
 {
     /// <summary>
-    /// Interface for accessing BackupGateway
+    /// <para>Interface for accessing BackupGateway</para>
     ///
     /// Backup gateway 
     /// <para>

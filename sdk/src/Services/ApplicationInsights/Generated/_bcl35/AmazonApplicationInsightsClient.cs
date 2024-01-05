@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ApplicationInsights
 {
     /// <summary>
-    /// Implementation for accessing ApplicationInsights
+    /// <para>Implementation for accessing ApplicationInsights</para>
     ///
     /// Amazon CloudWatch Application Insights 
     /// <para>

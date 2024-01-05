@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Ep2parsearn
 {
     /// <summary>
-    /// Implementation for accessing Ep2parsearn
+    /// <para>Implementation for accessing Ep2parsearn</para>
     ///
     /// Endpoints 2.0 parse-arn tests
     /// </summary>

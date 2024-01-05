@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Greengrass
 {
     /// <summary>
-    /// Implementation for accessing Greengrass
+    /// <para>Implementation for accessing Greengrass</para>
     ///
     /// AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally
     /// on the data they generate, while still using the cloud for management, analytics,

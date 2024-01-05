@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudSearchDomain
 {
     /// <summary>
-    /// Implementation for accessing CloudSearchDomain
+    /// <para>Implementation for accessing CloudSearchDomain</para>
     ///
     /// You use the AmazonCloudSearch2013 API to upload documents to a search domain and search
     /// those documents. 

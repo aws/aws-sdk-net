@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DataExchange
 {
     /// <summary>
-    /// Implementation for accessing DataExchange
+    /// <para>Implementation for accessing DataExchange</para>
     ///
     /// AWS Data Exchange is a service that makes it easy for AWS customers to exchange data
     /// in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and

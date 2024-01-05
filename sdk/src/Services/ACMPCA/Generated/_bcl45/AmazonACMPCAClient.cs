@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ACMPCA
 {
     /// <summary>
-    /// Implementation for accessing ACMPCA
+    /// <para>Implementation for accessing ACMPCA</para>
     ///
     /// This is the <i>Amazon Web Services Private Certificate Authority API Reference</i>.
     /// It provides descriptions, syntax, and usage examples for each of the actions and data

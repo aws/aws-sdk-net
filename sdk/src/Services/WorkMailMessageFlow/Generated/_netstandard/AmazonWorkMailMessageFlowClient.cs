@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkMailMessageFlow
 {
     /// <summary>
-    /// Implementation for accessing WorkMailMessageFlow
+    /// <para>Implementation for accessing WorkMailMessageFlow</para>
     ///
     /// The WorkMail Message Flow API provides access to email messages as they are being
     /// sent and received by a WorkMail organization.

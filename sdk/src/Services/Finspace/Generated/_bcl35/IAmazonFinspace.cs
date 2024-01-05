@@ -27,7 +27,7 @@ using Amazon.Finspace.Model;
 namespace Amazon.Finspace
 {
     /// <summary>
-    /// Interface for accessing Finspace
+    /// <para>Interface for accessing Finspace</para>
     ///
     /// The FinSpace management service provides the APIs for managing FinSpace environments.
     /// </summary>

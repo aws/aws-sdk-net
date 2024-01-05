@@ -29,7 +29,7 @@ using Amazon.WAFRegional.Model;
 namespace Amazon.WAFRegional
 {
     /// <summary>
-    /// Interface for accessing WAFRegional
+    /// <para>Interface for accessing WAFRegional</para>
     ///
     /// <note> 
     /// <para>

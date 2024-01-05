@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KinesisVideoSignalingChannels
 {
     /// <summary>
-    /// Implementation for accessing KinesisVideoSignalingChannels
+    /// <para>Implementation for accessing KinesisVideoSignalingChannels</para>
     ///
     /// Kinesis Video Streams Signaling Service is a intermediate service that establishes
     /// a communication channel for discovering peers, transmitting offers and answers in

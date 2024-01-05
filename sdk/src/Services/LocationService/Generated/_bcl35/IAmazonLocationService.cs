@@ -27,7 +27,7 @@ using Amazon.LocationService.Model;
 namespace Amazon.LocationService
 {
     /// <summary>
-    /// Interface for accessing LocationService
+    /// <para>Interface for accessing LocationService</para>
     ///
     /// "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
     /// </summary>

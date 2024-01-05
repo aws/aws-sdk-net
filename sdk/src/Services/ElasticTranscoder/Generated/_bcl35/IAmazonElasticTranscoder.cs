@@ -27,7 +27,7 @@ using Amazon.ElasticTranscoder.Model;
 namespace Amazon.ElasticTranscoder
 {
     /// <summary>
-    /// Interface for accessing ElasticTranscoder
+    /// <para>Interface for accessing ElasticTranscoder</para>
     ///
     /// AWS Elastic Transcoder Service 
     /// <para>

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MigrationHubConfig
 {
     /// <summary>
-    /// Implementation for accessing MigrationHubConfig
+    /// <para>Implementation for accessing MigrationHubConfig</para>
     ///
     /// The AWS Migration Hub home region APIs are available specifically for working with
     /// your Migration Hub home region. You can use these APIs to determine a home region,

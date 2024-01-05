@@ -29,7 +29,7 @@ using Amazon.MediaPackageVod.Model;
 namespace Amazon.MediaPackageVod
 {
     /// <summary>
-    /// Interface for accessing MediaPackageVod
+    /// <para>Interface for accessing MediaPackageVod</para>
     ///
     /// AWS Elemental MediaPackage VOD
     /// </summary>

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KinesisVideoWebRTCStorage
 {
     /// <summary>
-    /// Implementation for accessing KinesisVideoWebRTCStorage
+    /// <para>Implementation for accessing KinesisVideoWebRTCStorage</para>
     ///
     /// 
     /// </summary>

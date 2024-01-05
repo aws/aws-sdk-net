@@ -27,7 +27,7 @@ using Amazon.CodeArtifact.Model;
 namespace Amazon.CodeArtifact
 {
     /// <summary>
-    /// Interface for accessing CodeArtifact
+    /// <para>Interface for accessing CodeArtifact</para>
     ///
     /// CodeArtifact is a fully managed artifact repository compatible with language-native
     /// package managers and build tools such as npm, Apache Maven, pip, and dotnet. You can

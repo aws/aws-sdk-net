@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SSOAdmin
 {
     /// <summary>
-    /// Implementation for accessing SSOAdmin
+    /// <para>Implementation for accessing SSOAdmin</para>
     ///
     /// IAM Identity Center (successor to Single Sign-On) helps you securely create, or connect,
     /// your workforce identities and manage their access centrally across Amazon Web Services

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IVS
 {
     /// <summary>
-    /// Implementation for accessing IVS
+    /// <para>Implementation for accessing IVS</para>
     ///
     /// <b>Introduction</b> 
     /// 

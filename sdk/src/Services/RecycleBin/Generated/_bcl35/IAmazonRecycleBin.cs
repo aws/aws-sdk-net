@@ -27,7 +27,7 @@ using Amazon.RecycleBin.Model;
 namespace Amazon.RecycleBin
 {
     /// <summary>
-    /// Interface for accessing RecycleBin
+    /// <para>Interface for accessing RecycleBin</para>
     ///
     /// This is the <i>Recycle Bin API Reference</i>. This documentation provides descriptions
     /// and syntax for each of the actions and data types in Recycle Bin.

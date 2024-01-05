@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Textract
 {
     /// <summary>
-    /// Implementation for accessing Textract
+    /// <para>Implementation for accessing Textract</para>
     ///
     /// Amazon Textract detects and analyzes text in documents and converts it into machine-readable
     /// text. This is the API reference documentation for Amazon Textract.

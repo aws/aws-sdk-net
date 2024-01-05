@@ -27,7 +27,7 @@ using Amazon.CloudWatchEvents.Model;
 namespace Amazon.CloudWatchEvents
 {
     /// <summary>
-    /// Interface for accessing CloudWatchEvents
+    /// <para>Interface for accessing CloudWatchEvents</para>
     ///
     /// Amazon EventBridge helps you to respond to state changes in your Amazon Web Services
     /// resources. When your resources change state, they automatically send events to an

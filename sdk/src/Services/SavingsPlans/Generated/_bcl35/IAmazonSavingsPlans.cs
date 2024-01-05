@@ -27,7 +27,7 @@ using Amazon.SavingsPlans.Model;
 namespace Amazon.SavingsPlans
 {
     /// <summary>
-    /// Interface for accessing SavingsPlans
+    /// <para>Interface for accessing SavingsPlans</para>
     ///
     /// Savings Plans are a pricing model that offer significant savings on AWS usage (for
     /// example, on Amazon EC2 instances). You commit to a consistent amount of usage, in

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ApiGatewayV2
 {
     /// <summary>
-    /// Implementation for accessing ApiGatewayV2
+    /// <para>Implementation for accessing ApiGatewayV2</para>
     ///
     /// Amazon API Gateway V2
     /// </summary>

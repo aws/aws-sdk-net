@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.OpenSearchServerless
 {
     /// <summary>
-    /// Implementation for accessing OpenSearchServerless
+    /// <para>Implementation for accessing OpenSearchServerless</para>
     ///
     /// Use the Amazon OpenSearch Serverless API to create, configure, and manage OpenSearch
     /// Serverless collections and security policies.

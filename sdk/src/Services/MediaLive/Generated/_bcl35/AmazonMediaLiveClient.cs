@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaLive
 {
     /// <summary>
-    /// Implementation for accessing MediaLive
+    /// <para>Implementation for accessing MediaLive</para>
     ///
     /// API for AWS Elemental MediaLive
     /// </summary>

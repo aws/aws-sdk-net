@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RestJsonTest
 {
     /// <summary>
-    /// Implementation for accessing RestJsonTest
+    /// <para>Implementation for accessing RestJsonTest</para>
     ///
     /// 
     /// </summary>

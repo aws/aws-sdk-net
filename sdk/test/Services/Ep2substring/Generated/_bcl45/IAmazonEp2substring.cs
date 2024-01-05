@@ -29,7 +29,7 @@ using Amazon.Ep2substring.Model;
 namespace Amazon.Ep2substring
 {
     /// <summary>
-    /// Interface for accessing Ep2substring
+    /// <para>Interface for accessing Ep2substring</para>
     ///
     /// 
     /// </summary>

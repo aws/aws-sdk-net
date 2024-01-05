@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Glue
 {
     /// <summary>
-    /// Implementation for accessing Glue
+    /// <para>Implementation for accessing Glue</para>
     ///
     /// Glue 
     /// <para>

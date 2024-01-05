@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SimpleWorkflow
 {
     /// <summary>
-    /// Implementation for accessing SimpleWorkflow
+    /// <para>Implementation for accessing SimpleWorkflow</para>
     ///
     /// Amazon Simple Workflow Service 
     /// <para>

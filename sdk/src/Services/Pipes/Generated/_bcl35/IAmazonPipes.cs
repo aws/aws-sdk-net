@@ -27,7 +27,7 @@ using Amazon.Pipes.Model;
 namespace Amazon.Pipes
 {
     /// <summary>
-    /// Interface for accessing Pipes
+    /// <para>Interface for accessing Pipes</para>
     ///
     /// Amazon EventBridge Pipes connects event sources to targets. Pipes reduces the need
     /// for specialized knowledge and integration code when developing event driven architectures.

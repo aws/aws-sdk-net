@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ECRPublic
 {
     /// <summary>
-    /// Implementation for accessing ECRPublic
+    /// <para>Implementation for accessing ECRPublic</para>
     ///
     /// Amazon Elastic Container Registry Public 
     /// <para>

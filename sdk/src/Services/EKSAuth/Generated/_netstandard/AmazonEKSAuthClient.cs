@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EKSAuth
 {
     /// <summary>
-    /// Implementation for accessing EKSAuth
+    /// <para>Implementation for accessing EKSAuth</para>
     ///
     /// The Amazon EKS Auth API and the <code>AssumeRoleForPodIdentity</code> action are only
     /// used by the EKS Pod Identity Agent.

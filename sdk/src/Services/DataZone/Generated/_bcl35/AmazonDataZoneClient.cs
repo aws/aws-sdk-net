@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DataZone
 {
     /// <summary>
-    /// Implementation for accessing DataZone
+    /// <para>Implementation for accessing DataZone</para>
     ///
     /// Amazon DataZone is a data management service that enables you to catalog, discover,
     /// govern, share, and analyze your data. With Amazon DataZone, you can share and access

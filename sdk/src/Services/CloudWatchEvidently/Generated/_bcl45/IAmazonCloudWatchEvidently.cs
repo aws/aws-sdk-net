@@ -29,7 +29,7 @@ using Amazon.CloudWatchEvidently.Model;
 namespace Amazon.CloudWatchEvidently
 {
     /// <summary>
-    /// Interface for accessing CloudWatchEvidently
+    /// <para>Interface for accessing CloudWatchEvidently</para>
     ///
     /// You can use Amazon CloudWatch Evidently to safely validate new features by serving
     /// them to a specified percentage of your users while you roll out the feature. You can

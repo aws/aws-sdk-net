@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ChimeSDKVoice
 {
     /// <summary>
-    /// Implementation for accessing ChimeSDKVoice
+    /// <para>Implementation for accessing ChimeSDKVoice</para>
     ///
     /// The Amazon Chime SDK telephony APIs in this section enable developers to create PSTN
     /// calling solutions that use Amazon Chime SDK Voice Connectors, and Amazon Chime SDK

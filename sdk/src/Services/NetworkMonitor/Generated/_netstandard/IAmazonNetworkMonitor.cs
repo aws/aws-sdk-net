@@ -29,7 +29,7 @@ using Amazon.NetworkMonitor.Model;
 namespace Amazon.NetworkMonitor
 {
     /// <summary>
-    /// Interface for accessing NetworkMonitor
+    /// <para>Interface for accessing NetworkMonitor</para>
     ///
     /// Amazon CloudWatch Network Monitor is an Amazon Web Services active network monitoring
     /// service that identifies if a network issues exists within the Amazon Web Services

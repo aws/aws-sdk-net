@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MemoryDB
 {
     /// <summary>
-    /// Implementation for accessing MemoryDB
+    /// <para>Implementation for accessing MemoryDB</para>
     ///
     /// MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database that delivers
     /// ultra-fast performance and Multi-AZ durability for modern applications built using

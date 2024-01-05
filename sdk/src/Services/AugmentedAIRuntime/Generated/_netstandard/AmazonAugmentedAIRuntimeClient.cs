@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AugmentedAIRuntime
 {
     /// <summary>
-    /// Implementation for accessing AugmentedAIRuntime
+    /// <para>Implementation for accessing AugmentedAIRuntime</para>
     ///
     /// Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine
     /// learning application. When an AI application can't evaluate data with a high degree

@@ -27,7 +27,7 @@ using Amazon.CloudWatchLogs.Model;
 namespace Amazon.CloudWatchLogs
 {
     /// <summary>
-    /// Interface for accessing CloudWatchLogs
+    /// <para>Interface for accessing CloudWatchLogs</para>
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// EC2 instances, CloudTrail, and other sources. You can then retrieve the associated

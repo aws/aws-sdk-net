@@ -29,7 +29,7 @@ using Amazon.CodeGuruProfiler.Model;
 namespace Amazon.CodeGuruProfiler
 {
     /// <summary>
-    /// Interface for accessing CodeGuruProfiler
+    /// <para>Interface for accessing CodeGuruProfiler</para>
     ///
     /// This section provides documentation for the Amazon CodeGuru Profiler API operations.
     /// 

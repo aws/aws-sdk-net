@@ -27,7 +27,7 @@ using Amazon.QLDBSession.Model;
 namespace Amazon.QLDBSession
 {
     /// <summary>
-    /// Interface for accessing QLDBSession
+    /// <para>Interface for accessing QLDBSession</para>
     ///
     /// The transactional data APIs for Amazon QLDB
     /// 

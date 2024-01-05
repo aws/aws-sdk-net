@@ -29,7 +29,7 @@ using Amazon.AppFabric.Model;
 namespace Amazon.AppFabric
 {
     /// <summary>
-    /// Interface for accessing AppFabric
+    /// <para>Interface for accessing AppFabric</para>
     ///
     /// Amazon Web Services AppFabric quickly connects software as a service (SaaS) applications
     /// across your organization. This allows IT and security teams to easily manage and secure

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DAX
 {
     /// <summary>
-    /// Implementation for accessing DAX
+    /// <para>Implementation for accessing DAX</para>
     ///
     /// DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically
     /// speeds up database reads by caching frequently-accessed data from DynamoDB, so applications

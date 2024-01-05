@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DynamoDBv2
 {
     /// <summary>
-    /// Implementation for accessing DynamoDBStreams
+    /// <para>Implementation for accessing DynamoDBStreams</para>
     ///
     /// Amazon DynamoDB 
     /// <para>

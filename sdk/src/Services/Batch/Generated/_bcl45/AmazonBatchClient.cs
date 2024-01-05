@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Batch
 {
     /// <summary>
-    /// Implementation for accessing Batch
+    /// <para>Implementation for accessing Batch</para>
     ///
     /// Batch 
     /// <para>

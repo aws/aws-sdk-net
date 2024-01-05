@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DatabaseMigrationService
 {
     /// <summary>
-    /// Implementation for accessing DatabaseMigrationService
+    /// <para>Implementation for accessing DatabaseMigrationService</para>
     ///
     /// Database Migration Service 
     /// <para>

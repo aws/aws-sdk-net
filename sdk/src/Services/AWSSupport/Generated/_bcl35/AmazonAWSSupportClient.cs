@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AWSSupport
 {
     /// <summary>
-    /// Implementation for accessing AWSSupport
+    /// <para>Implementation for accessing AWSSupport</para>
     ///
     /// Amazon Web Services Support 
     /// <para>

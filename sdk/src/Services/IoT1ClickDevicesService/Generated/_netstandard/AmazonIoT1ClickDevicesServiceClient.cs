@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoT1ClickDevicesService
 {
     /// <summary>
-    /// Implementation for accessing IoT1ClickDevicesService
+    /// <para>Implementation for accessing IoT1ClickDevicesService</para>
     ///
     /// Describes all of the AWS IoT 1-Click device-related API operations for the service.
     /// Also provides sample requests, responses, and errors for the supported web services

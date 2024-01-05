@@ -29,7 +29,7 @@ using Amazon.Cloud9.Model;
 namespace Amazon.Cloud9
 {
     /// <summary>
-    /// Interface for accessing Cloud9
+    /// <para>Interface for accessing Cloud9</para>
     ///
     /// Cloud9 
     /// <para>

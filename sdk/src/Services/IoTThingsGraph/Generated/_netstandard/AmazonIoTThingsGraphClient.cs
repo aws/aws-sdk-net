@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTThingsGraph
 {
     /// <summary>
-    /// Implementation for accessing IoTThingsGraph
+    /// <para>Implementation for accessing IoTThingsGraph</para>
     ///
     /// AWS IoT Things Graph 
     /// <para>

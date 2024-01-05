@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PrometheusService
 {
     /// <summary>
-    /// Implementation for accessing PrometheusService
+    /// <para>Implementation for accessing PrometheusService</para>
     ///
     /// Amazon Managed Service for Prometheus
     /// </summary>

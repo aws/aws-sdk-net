@@ -29,7 +29,7 @@ using Amazon.SQS.Model;
 namespace Amazon.SQS
 {
     /// <summary>
-    /// Interface for accessing SQS
+    /// <para>Interface for accessing SQS</para>
     ///
     /// Welcome to the <i>Amazon SQS API Reference</i>.
     /// 

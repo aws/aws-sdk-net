@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MachineLearning
 {
     /// <summary>
-    /// Implementation for accessing MachineLearning
+    /// <para>Implementation for accessing MachineLearning</para>
     ///
     /// Definition of the public APIs exposed by Amazon Machine Learning
     /// </summary>

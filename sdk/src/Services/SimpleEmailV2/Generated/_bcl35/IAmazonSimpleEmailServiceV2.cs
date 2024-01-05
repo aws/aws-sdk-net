@@ -27,7 +27,7 @@ using Amazon.SimpleEmailV2.Model;
 namespace Amazon.SimpleEmailV2
 {
     /// <summary>
-    /// Interface for accessing SimpleEmailServiceV2
+    /// <para>Interface for accessing SimpleEmailServiceV2</para>
     ///
     /// Amazon SES API v2 
     /// <para>

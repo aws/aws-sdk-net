@@ -29,7 +29,7 @@ using Amazon.EC2.Model;
 namespace Amazon.EC2
 {
     /// <summary>
-    /// Interface for accessing EC2
+    /// <para>Interface for accessing EC2</para>
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>

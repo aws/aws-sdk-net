@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PersonalizeRuntime
 {
     /// <summary>
-    /// Implementation for accessing PersonalizeRuntime
+    /// <para>Implementation for accessing PersonalizeRuntime</para>
     ///
     /// 
     /// </summary>

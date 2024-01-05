@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Comprehend
 {
     /// <summary>
-    /// Implementation for accessing Comprehend
+    /// <para>Implementation for accessing Comprehend</para>
     ///
     /// Amazon Comprehend is an Amazon Web Services service for gaining insight into the content
     /// of documents. Use these actions to determine the topics contained in your documents,

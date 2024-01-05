@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudWatchEvidently
 {
     /// <summary>
-    /// Implementation for accessing CloudWatchEvidently
+    /// <para>Implementation for accessing CloudWatchEvidently</para>
     ///
     /// You can use Amazon CloudWatch Evidently to safely validate new features by serving
     /// them to a specified percentage of your users while you roll out the feature. You can

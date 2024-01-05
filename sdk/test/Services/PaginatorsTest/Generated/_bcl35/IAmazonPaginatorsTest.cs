@@ -27,7 +27,7 @@ using Amazon.PaginatorsTest.Model;
 namespace Amazon.PaginatorsTest
 {
     /// <summary>
-    /// Interface for accessing PaginatorsTest
+    /// <para>Interface for accessing PaginatorsTest</para>
     ///
     /// 
     /// </summary>

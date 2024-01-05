@@ -27,7 +27,7 @@ using Amazon.MachineLearning.Model;
 namespace Amazon.MachineLearning
 {
     /// <summary>
-    /// Interface for accessing MachineLearning
+    /// <para>Interface for accessing MachineLearning</para>
     ///
     /// Definition of the public APIs exposed by Amazon Machine Learning
     /// </summary>

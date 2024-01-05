@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Ep2s3hostlabel
 {
     /// <summary>
-    /// Implementation for accessing Ep2s3hostlabel
+    /// <para>Implementation for accessing Ep2s3hostlabel</para>
     ///
     /// 
     /// </summary>

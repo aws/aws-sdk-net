@@ -29,7 +29,7 @@ using Amazon.ConnectParticipant.Model;
 namespace Amazon.ConnectParticipant
 {
     /// <summary>
-    /// Interface for accessing ConnectParticipant
+    /// <para>Interface for accessing ConnectParticipant</para>
     ///
     /// Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables
     /// companies of any size to deliver superior customer service at a lower cost. Amazon

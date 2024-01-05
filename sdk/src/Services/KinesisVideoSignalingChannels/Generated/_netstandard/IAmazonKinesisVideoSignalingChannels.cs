@@ -29,7 +29,7 @@ using Amazon.KinesisVideoSignalingChannels.Model;
 namespace Amazon.KinesisVideoSignalingChannels
 {
     /// <summary>
-    /// Interface for accessing KinesisVideoSignalingChannels
+    /// <para>Interface for accessing KinesisVideoSignalingChannels</para>
     ///
     /// Kinesis Video Streams Signaling Service is a intermediate service that establishes
     /// a communication channel for discovering peers, transmitting offers and answers in

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.FreeTier
 {
     /// <summary>
-    /// Implementation for accessing FreeTier
+    /// <para>Implementation for accessing FreeTier</para>
     ///
     /// You can use the Amazon Web Services Free Tier API to query programmatically your Free
     /// Tier usage data.

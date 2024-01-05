@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudWatch
 {
     /// <summary>
-    /// Implementation for accessing CloudWatch
+    /// <para>Implementation for accessing CloudWatch</para>
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
     /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch

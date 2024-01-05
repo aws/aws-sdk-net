@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudDirectory
 {
     /// <summary>
-    /// Implementation for accessing CloudDirectory
+    /// <para>Implementation for accessing CloudDirectory</para>
     ///
     /// Amazon Cloud Directory 
     /// <para>

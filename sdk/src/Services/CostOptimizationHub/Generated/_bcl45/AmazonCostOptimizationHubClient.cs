@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CostOptimizationHub
 {
     /// <summary>
-    /// Implementation for accessing CostOptimizationHub
+    /// <para>Implementation for accessing CostOptimizationHub</para>
     ///
     /// You can use the Cost Optimization Hub API to programmatically identify, filter, aggregate,
     /// and quantify savings for your cost optimization recommendations across multiple Amazon

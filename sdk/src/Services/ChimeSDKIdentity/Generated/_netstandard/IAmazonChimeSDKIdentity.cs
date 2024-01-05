@@ -29,7 +29,7 @@ using Amazon.ChimeSDKIdentity.Model;
 namespace Amazon.ChimeSDKIdentity
 {
     /// <summary>
-    /// Interface for accessing ChimeSDKIdentity
+    /// <para>Interface for accessing ChimeSDKIdentity</para>
     ///
     /// The Amazon Chime SDK Identity APIs in this section allow software developers to create
     /// and manage unique instances of their messaging applications. These APIs provide the

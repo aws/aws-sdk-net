@@ -27,7 +27,7 @@ using Amazon.Outposts.Model;
 namespace Amazon.Outposts
 {
     /// <summary>
-    /// Interface for accessing Outposts
+    /// <para>Interface for accessing Outposts</para>
     ///
     /// Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services
     /// infrastructure, APIs, and tools to customer premises. By providing local access to

@@ -27,7 +27,7 @@ using Amazon.DataPipeline.Model;
 namespace Amazon.DataPipeline
 {
     /// <summary>
-    /// Interface for accessing DataPipeline
+    /// <para>Interface for accessing DataPipeline</para>
     ///
     /// AWS Data Pipeline configures and manages a data-driven workflow called a pipeline.
     /// AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies

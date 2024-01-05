@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Lambda
 {
     /// <summary>
-    /// Implementation for accessing Lambda
+    /// <para>Implementation for accessing Lambda</para>
     ///
     /// Lambda 
     /// <para>

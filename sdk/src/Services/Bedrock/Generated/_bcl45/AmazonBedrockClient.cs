@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Bedrock
 {
     /// <summary>
-    /// Implementation for accessing Bedrock
+    /// <para>Implementation for accessing Bedrock</para>
     ///
     /// Describes the API operations for creating and managing Amazon Bedrock models.
     /// </summary>

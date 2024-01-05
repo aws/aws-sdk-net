@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RestXMLTest
 {
     /// <summary>
-    /// Implementation for accessing RestXMLTest
+    /// <para>Implementation for accessing RestXMLTest</para>
     ///
     /// 
     /// </summary>

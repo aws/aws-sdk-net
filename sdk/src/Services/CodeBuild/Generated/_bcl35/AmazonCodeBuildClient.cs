@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeBuild
 {
     /// <summary>
-    /// Implementation for accessing CodeBuild
+    /// <para>Implementation for accessing CodeBuild</para>
     ///
     /// CodeBuild 
     /// <para>

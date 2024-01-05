@@ -29,7 +29,7 @@ using Amazon.ServerMigrationService.Model;
 namespace Amazon.ServerMigrationService
 {
     /// <summary>
-    /// Interface for accessing ServerMigrationService
+    /// <para>Interface for accessing ServerMigrationService</para>
     ///
     /// <important> 
     /// <para>

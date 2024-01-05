@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Braket
 {
     /// <summary>
-    /// Implementation for accessing Braket
+    /// <para>Implementation for accessing Braket</para>
     ///
     /// The Amazon Braket API Reference provides information about the operations and structures
     /// supported in Amazon Braket.

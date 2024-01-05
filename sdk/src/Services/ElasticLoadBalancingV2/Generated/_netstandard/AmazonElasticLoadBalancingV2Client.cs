@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticLoadBalancingV2
 {
     /// <summary>
-    /// Implementation for accessing ElasticLoadBalancingV2
+    /// <para>Implementation for accessing ElasticLoadBalancingV2</para>
     ///
     /// Elastic Load Balancing 
     /// <para>

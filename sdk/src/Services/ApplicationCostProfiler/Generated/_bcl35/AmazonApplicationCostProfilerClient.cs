@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ApplicationCostProfiler
 {
     /// <summary>
-    /// Implementation for accessing ApplicationCostProfiler
+    /// <para>Implementation for accessing ApplicationCostProfiler</para>
     ///
     /// This reference provides descriptions of the AWS Application Cost Profiler API.
     /// 

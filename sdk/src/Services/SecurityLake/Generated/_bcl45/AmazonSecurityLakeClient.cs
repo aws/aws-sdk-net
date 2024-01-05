@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SecurityLake
 {
     /// <summary>
-    /// Implementation for accessing SecurityLake
+    /// <para>Implementation for accessing SecurityLake</para>
     ///
     /// Amazon Security Lake is a fully managed security data lake service. You can use Security
     /// Lake to automatically centralize security data from cloud, on-premises, and custom

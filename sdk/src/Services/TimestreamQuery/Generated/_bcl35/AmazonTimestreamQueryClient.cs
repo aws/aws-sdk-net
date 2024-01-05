@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.TimestreamQuery
 {
     /// <summary>
-    /// Implementation for accessing TimestreamQuery
+    /// <para>Implementation for accessing TimestreamQuery</para>
     ///
     /// Amazon Timestream Query
     /// </summary>

@@ -27,7 +27,7 @@ using Amazon.AppMesh.Model;
 namespace Amazon.AppMesh
 {
     /// <summary>
-    /// Interface for accessing AppMesh
+    /// <para>Interface for accessing AppMesh</para>
     ///
     /// App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
     /// and control microservices. App Mesh standardizes how your microservices communicate,

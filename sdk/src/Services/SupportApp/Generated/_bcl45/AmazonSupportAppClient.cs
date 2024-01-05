@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SupportApp
 {
     /// <summary>
-    /// Implementation for accessing SupportApp
+    /// <para>Implementation for accessing SupportApp</para>
     ///
     /// Amazon Web Services Support App in Slack 
     /// <para>

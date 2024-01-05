@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SimpleNotificationService
 {
     /// <summary>
-    /// Implementation for accessing SimpleNotificationService
+    /// <para>Implementation for accessing SimpleNotificationService</para>
     ///
     /// Amazon Simple Notification Service 
     /// <para>

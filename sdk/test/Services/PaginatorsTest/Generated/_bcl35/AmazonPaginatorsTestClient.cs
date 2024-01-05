@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PaginatorsTest
 {
     /// <summary>
-    /// Implementation for accessing PaginatorsTest
+    /// <para>Implementation for accessing PaginatorsTest</para>
     ///
     /// 
     /// </summary>

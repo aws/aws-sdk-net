@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.OpenSearchService
 {
     /// <summary>
-    /// Implementation for accessing OpenSearchService
+    /// <para>Implementation for accessing OpenSearchService</para>
     ///
     /// Use the Amazon OpenSearch Service configuration API to create, configure, and manage
     /// OpenSearch Service domains.

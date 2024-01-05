@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.FMS
 {
     /// <summary>
-    /// Implementation for accessing FMS
+    /// <para>Implementation for accessing FMS</para>
     ///
     /// This is the <i>Firewall Manager API Reference</i>. This guide is for developers who
     /// need detailed information about the Firewall Manager API actions, data types, and

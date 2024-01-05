@@ -29,7 +29,7 @@ using Amazon.ServiceCatalog.Model;
 namespace Amazon.ServiceCatalog
 {
     /// <summary>
-    /// Interface for accessing ServiceCatalog
+    /// <para>Interface for accessing ServiceCatalog</para>
     ///
     /// Service Catalog 
     /// <para>

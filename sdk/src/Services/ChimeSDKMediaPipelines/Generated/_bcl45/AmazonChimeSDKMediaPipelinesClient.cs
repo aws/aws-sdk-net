@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ChimeSDKMediaPipelines
 {
     /// <summary>
-    /// Implementation for accessing ChimeSDKMediaPipelines
+    /// <para>Implementation for accessing ChimeSDKMediaPipelines</para>
     ///
     /// The Amazon Chime SDK media pipeline APIs in this section allow software developers
     /// to create Amazon Chime SDK media pipelines that capture, concatenate, or stream your

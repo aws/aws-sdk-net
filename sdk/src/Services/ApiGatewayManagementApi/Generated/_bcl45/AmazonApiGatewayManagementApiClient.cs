@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ApiGatewayManagementApi
 {
     /// <summary>
-    /// Implementation for accessing ApiGatewayManagementApi
+    /// <para>Implementation for accessing ApiGatewayManagementApi</para>
     ///
     /// The Amazon API Gateway Management API allows you to directly manage runtime aspects
     /// of your deployed APIs. To use it, you must explicitly set the SDK's endpoint to point

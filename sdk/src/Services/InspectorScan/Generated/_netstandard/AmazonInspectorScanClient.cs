@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.InspectorScan
 {
     /// <summary>
-    /// Implementation for accessing InspectorScan
+    /// <para>Implementation for accessing InspectorScan</para>
     ///
     /// Amazon Inspector Scan is a vulnerability discovery service that scans a provided Software
     /// Bill of Materials (SBOM) for security vulnerabilities.

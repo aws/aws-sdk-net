@@ -27,7 +27,7 @@ using Amazon.IoTEvents.Model;
 namespace Amazon.IoTEvents
 {
     /// <summary>
-    /// Interface for accessing IoTEvents
+    /// <para>Interface for accessing IoTEvents</para>
     ///
     /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
     /// operation, and triggers actions when such events occur. You can use AWS IoT Events

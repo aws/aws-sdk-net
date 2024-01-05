@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.GlobalAccelerator
 {
     /// <summary>
-    /// Implementation for accessing GlobalAccelerator
+    /// <para>Implementation for accessing GlobalAccelerator</para>
     ///
     /// Global Accelerator 
     /// <para>

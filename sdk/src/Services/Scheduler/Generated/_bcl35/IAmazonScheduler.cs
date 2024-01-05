@@ -27,7 +27,7 @@ using Amazon.Scheduler.Model;
 namespace Amazon.Scheduler
 {
     /// <summary>
-    /// Interface for accessing Scheduler
+    /// <para>Interface for accessing Scheduler</para>
     ///
     /// Amazon EventBridge Scheduler is a serverless scheduler that allows you to create,
     /// run, and manage tasks from one central, managed service. EventBridge Scheduler delivers

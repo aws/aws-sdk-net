@@ -29,7 +29,7 @@ using Amazon.CertificateManager.Model;
 namespace Amazon.CertificateManager
 {
     /// <summary>
-    /// Interface for accessing CertificateManager
+    /// <para>Interface for accessing CertificateManager</para>
     ///
     /// Certificate Manager 
     /// <para>

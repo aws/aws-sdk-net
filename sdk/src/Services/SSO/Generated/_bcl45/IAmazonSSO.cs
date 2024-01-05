@@ -29,7 +29,7 @@ using Amazon.SSO.Model;
 namespace Amazon.SSO
 {
     /// <summary>
-    /// Interface for accessing SSO
+    /// <para>Interface for accessing SSO</para>
     ///
     /// AWS IAM Identity Center (successor to AWS Single Sign-On) Portal is a web service
     /// that makes it easy for you to assign user access to IAM Identity Center resources

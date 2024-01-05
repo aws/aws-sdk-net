@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticInference
 {
     /// <summary>
-    /// Implementation for accessing ElasticInference
+    /// <para>Implementation for accessing ElasticInference</para>
     ///
     /// Elastic Inference public APIs. 
     /// 

@@ -29,7 +29,7 @@ using Amazon.CloudControlApi.Model;
 namespace Amazon.CloudControlApi
 {
     /// <summary>
-    /// Interface for accessing CloudControlApi
+    /// <para>Interface for accessing CloudControlApi</para>
     ///
     /// For more information about Amazon Web Services Cloud Control API, see the <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
     /// Web Services Cloud Control API User Guide</a>.

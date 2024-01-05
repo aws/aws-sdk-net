@@ -29,7 +29,7 @@ using Amazon.FSx.Model;
 namespace Amazon.FSx
 {
     /// <summary>
-    /// Interface for accessing FSx
+    /// <para>Interface for accessing FSx</para>
     ///
     /// Amazon FSx is a fully managed service that makes it easy for storage and application
     /// administrators to launch and use shared file storage.

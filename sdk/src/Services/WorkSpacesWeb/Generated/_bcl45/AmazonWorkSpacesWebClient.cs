@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkSpacesWeb
 {
     /// <summary>
-    /// Implementation for accessing WorkSpacesWeb
+    /// <para>Implementation for accessing WorkSpacesWeb</para>
     ///
     /// WorkSpaces Web is a low cost, fully managed WorkSpace built specifically to facilitate
     /// secure, web-based workloads. WorkSpaces Web makes it easy for customers to safely

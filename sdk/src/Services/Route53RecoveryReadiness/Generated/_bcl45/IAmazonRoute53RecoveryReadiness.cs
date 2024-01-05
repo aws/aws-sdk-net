@@ -29,7 +29,7 @@ using Amazon.Route53RecoveryReadiness.Model;
 namespace Amazon.Route53RecoveryReadiness
 {
     /// <summary>
-    /// Interface for accessing Route53RecoveryReadiness
+    /// <para>Interface for accessing Route53RecoveryReadiness</para>
     ///
     /// Recovery readiness
     /// </summary>

@@ -29,7 +29,7 @@ using Amazon.ManagedBlockchainQuery.Model;
 namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
-    /// Interface for accessing ManagedBlockchainQuery
+    /// <para>Interface for accessing ManagedBlockchainQuery</para>
     ///
     /// Amazon Managed Blockchain (AMB) Query provides you with convenient access to multi-blockchain
     /// network data, which makes it easier for you to extract contextual data related to

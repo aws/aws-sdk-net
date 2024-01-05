@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Glacier
 {
     /// <summary>
-    /// Implementation for accessing Glacier
+    /// <para>Implementation for accessing Glacier</para>
     ///
     /// Amazon S3 Glacier (Glacier) is a storage solution for "cold data."
     /// 

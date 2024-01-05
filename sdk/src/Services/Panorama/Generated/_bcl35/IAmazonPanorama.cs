@@ -27,7 +27,7 @@ using Amazon.Panorama.Model;
 namespace Amazon.Panorama
 {
     /// <summary>
-    /// Interface for accessing Panorama
+    /// <para>Interface for accessing Panorama</para>
     ///
     /// AWS Panorama 
     /// <para>

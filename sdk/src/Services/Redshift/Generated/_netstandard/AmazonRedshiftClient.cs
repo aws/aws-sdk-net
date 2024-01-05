@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Redshift
 {
     /// <summary>
-    /// Implementation for accessing Redshift
+    /// <para>Implementation for accessing Redshift</para>
     ///
     /// Amazon Redshift 
     /// <para>

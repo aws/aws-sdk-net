@@ -29,7 +29,7 @@ using Amazon.IoTThingsGraph.Model;
 namespace Amazon.IoTThingsGraph
 {
     /// <summary>
-    /// Interface for accessing IoTThingsGraph
+    /// <para>Interface for accessing IoTThingsGraph</para>
     ///
     /// AWS IoT Things Graph 
     /// <para>

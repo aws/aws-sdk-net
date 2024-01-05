@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.GuardDuty
 {
     /// <summary>
-    /// Implementation for accessing GuardDuty
+    /// <para>Implementation for accessing GuardDuty</para>
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
     /// the following foundational data sources - VPC flow logs, Amazon Web Services CloudTrail

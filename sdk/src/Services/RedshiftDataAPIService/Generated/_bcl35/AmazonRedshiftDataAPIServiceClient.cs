@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RedshiftDataAPIService
 {
     /// <summary>
-    /// Implementation for accessing RedshiftDataAPIService
+    /// <para>Implementation for accessing RedshiftDataAPIService</para>
     ///
     /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
     /// You can run SQL statements, which are committed if the statement succeeds. 

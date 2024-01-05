@@ -27,7 +27,7 @@ using Amazon.TimestreamQuery.Model;
 namespace Amazon.TimestreamQuery
 {
     /// <summary>
-    /// Interface for accessing TimestreamQuery
+    /// <para>Interface for accessing TimestreamQuery</para>
     ///
     /// Amazon Timestream Query
     /// </summary>

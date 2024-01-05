@@ -27,7 +27,7 @@ using Amazon.SimSpaceWeaver.Model;
 namespace Amazon.SimSpaceWeaver
 {
     /// <summary>
-    /// Interface for accessing SimSpaceWeaver
+    /// <para>Interface for accessing SimSpaceWeaver</para>
     ///
     /// SimSpace Weaver (SimSpace Weaver) is a service that you can use to build and run large-scale
     /// spatial simulations in the Amazon Web Services Cloud. For example, you can create

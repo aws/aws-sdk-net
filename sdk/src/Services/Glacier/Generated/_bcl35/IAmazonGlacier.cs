@@ -27,7 +27,7 @@ using Amazon.Glacier.Model;
 namespace Amazon.Glacier
 {
     /// <summary>
-    /// Interface for accessing Glacier
+    /// <para>Interface for accessing Glacier</para>
     ///
     /// Amazon S3 Glacier (Glacier) is a storage solution for "cold data."
     /// 

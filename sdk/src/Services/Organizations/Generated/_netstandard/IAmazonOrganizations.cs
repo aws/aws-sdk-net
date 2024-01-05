@@ -29,7 +29,7 @@ using Amazon.Organizations.Model;
 namespace Amazon.Organizations
 {
     /// <summary>
-    /// Interface for accessing Organizations
+    /// <para>Interface for accessing Organizations</para>
     ///
     /// Organizations is a web service that enables you to consolidate your multiple Amazon
     /// Web Services accounts into an <i>organization</i> and centrally manage your accounts

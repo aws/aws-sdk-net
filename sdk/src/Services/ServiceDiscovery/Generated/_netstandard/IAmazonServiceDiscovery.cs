@@ -29,7 +29,7 @@ using Amazon.ServiceDiscovery.Model;
 namespace Amazon.ServiceDiscovery
 {
     /// <summary>
-    /// Interface for accessing ServiceDiscovery
+    /// <para>Interface for accessing ServiceDiscovery</para>
     ///
     /// Cloud Map 
     /// <para>

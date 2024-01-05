@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkSpacesThinClient
 {
     /// <summary>
-    /// Implementation for accessing WorkSpacesThinClient
+    /// <para>Implementation for accessing WorkSpacesThinClient</para>
     ///
     /// Amazon WorkSpaces Thin Client is a affordable device built to work with Amazon Web
     /// Services End User Computing (EUC) virtual desktops to provide users with a complete

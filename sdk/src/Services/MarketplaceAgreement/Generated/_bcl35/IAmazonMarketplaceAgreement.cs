@@ -27,7 +27,7 @@ using Amazon.MarketplaceAgreement.Model;
 namespace Amazon.MarketplaceAgreement
 {
     /// <summary>
-    /// Interface for accessing MarketplaceAgreement
+    /// <para>Interface for accessing MarketplaceAgreement</para>
     ///
     /// AWS Marketplace is a curated digital catalog that customers can use to find, buy,
     /// deploy, and manage third-party software, data, and services to build solutions and

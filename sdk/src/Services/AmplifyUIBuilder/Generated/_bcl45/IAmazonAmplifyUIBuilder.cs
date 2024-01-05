@@ -29,7 +29,7 @@ using Amazon.AmplifyUIBuilder.Model;
 namespace Amazon.AmplifyUIBuilder
 {
     /// <summary>
-    /// Interface for accessing AmplifyUIBuilder
+    /// <para>Interface for accessing AmplifyUIBuilder</para>
     ///
     /// The Amplify UI Builder API provides a programmatic interface for creating and configuring
     /// user interface (UI) component libraries and themes for use in your Amplify applications.

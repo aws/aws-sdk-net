@@ -27,7 +27,7 @@ using Amazon.RAM.Model;
 namespace Amazon.RAM
 {
     /// <summary>
-    /// Interface for accessing RAM
+    /// <para>Interface for accessing RAM</para>
     ///
     /// This is the <i>Resource Access Manager API Reference</i>. This documentation provides
     /// descriptions and syntax for each of the actions and data types in RAM. RAM is a service

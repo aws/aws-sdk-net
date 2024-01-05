@@ -27,7 +27,7 @@ using Amazon.ElastiCache.Model;
 namespace Amazon.ElastiCache
 {
     /// <summary>
-    /// Interface for accessing ElastiCache
+    /// <para>Interface for accessing ElastiCache</para>
     ///
     /// Amazon ElastiCache 
     /// <para>

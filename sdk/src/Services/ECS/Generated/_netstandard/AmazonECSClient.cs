@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ECS
 {
     /// <summary>
-    /// Implementation for accessing ECS
+    /// <para>Implementation for accessing ECS</para>
     ///
     /// Amazon Elastic Container Service 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.PinpointSMSVoiceV2.Model;
 namespace Amazon.PinpointSMSVoiceV2
 {
     /// <summary>
-    /// Interface for accessing PinpointSMSVoiceV2
+    /// <para>Interface for accessing PinpointSMSVoiceV2</para>
     ///
     /// Welcome to the <i>Amazon Pinpoint SMS and Voice, version 2 API Reference</i>. This
     /// guide provides information about Amazon Pinpoint SMS and Voice, version 2 API resources,

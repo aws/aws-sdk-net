@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ComprehendMedical
 {
     /// <summary>
-    /// Implementation for accessing ComprehendMedical
+    /// <para>Implementation for accessing ComprehendMedical</para>
     ///
     /// Amazon Comprehend Medical extracts structured information from unstructured clinical
     /// text. Use these actions to gain insight in your documents. Amazon Comprehend Medical

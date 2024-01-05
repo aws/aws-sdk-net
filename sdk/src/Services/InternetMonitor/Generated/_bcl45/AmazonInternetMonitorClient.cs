@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.InternetMonitor
 {
     /// <summary>
-    /// Implementation for accessing InternetMonitor
+    /// <para>Implementation for accessing InternetMonitor</para>
     ///
     /// Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact
     /// the performance and availability between your applications hosted on Amazon Web Services

@@ -27,7 +27,7 @@ using Amazon.MediaStore.Model;
 namespace Amazon.MediaStore
 {
     /// <summary>
-    /// Interface for accessing MediaStore
+    /// <para>Interface for accessing MediaStore</para>
     ///
     /// An AWS Elemental MediaStore container is a namespace that holds folders and objects.
     /// You use a container endpoint to create, read, and delete objects.

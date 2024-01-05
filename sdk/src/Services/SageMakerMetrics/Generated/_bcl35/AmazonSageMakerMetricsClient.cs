@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SageMakerMetrics
 {
     /// <summary>
-    /// Implementation for accessing SageMakerMetrics
+    /// <para>Implementation for accessing SageMakerMetrics</para>
     ///
     /// Contains all data plane API operations and data types for Amazon SageMaker Metrics.
     /// Use these APIs to put and retrieve (get) features related to your training run.

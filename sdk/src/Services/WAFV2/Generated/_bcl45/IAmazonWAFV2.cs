@@ -29,7 +29,7 @@ using Amazon.WAFV2.Model;
 namespace Amazon.WAFV2
 {
     /// <summary>
-    /// Interface for accessing WAFV2
+    /// <para>Interface for accessing WAFV2</para>
     ///
     /// WAF <note> 
     /// <para>

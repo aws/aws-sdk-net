@@ -27,7 +27,7 @@ using Amazon.GreengrassV2.Model;
 namespace Amazon.GreengrassV2
 {
     /// <summary>
-    /// Interface for accessing GreengrassV2
+    /// <para>Interface for accessing GreengrassV2</para>
     ///
     /// IoT Greengrass brings local compute, messaging, data management, sync, and ML inference
     /// capabilities to edge devices. This enables devices to collect and analyze data closer

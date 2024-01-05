@@ -27,7 +27,7 @@ using Amazon.DataExchange.Model;
 namespace Amazon.DataExchange
 {
     /// <summary>
-    /// Interface for accessing DataExchange
+    /// <para>Interface for accessing DataExchange</para>
     ///
     /// AWS Data Exchange is a service that makes it easy for AWS customers to exchange data
     /// in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and

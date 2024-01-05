@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.TranscribeService
 {
     /// <summary>
-    /// Implementation for accessing TranscribeService
+    /// <para>Implementation for accessing TranscribeService</para>
     ///
     /// Amazon Transcribe offers three main types of batch transcription: <b>Standard</b>,
     /// <b>Medical</b>, and <b>Call Analytics</b>.

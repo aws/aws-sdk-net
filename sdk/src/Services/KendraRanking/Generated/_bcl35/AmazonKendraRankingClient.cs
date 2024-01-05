@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KendraRanking
 {
     /// <summary>
-    /// Implementation for accessing KendraRanking
+    /// <para>Implementation for accessing KendraRanking</para>
     ///
     /// Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities
     /// to intelligently re-rank a search service's results.

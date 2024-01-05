@@ -29,7 +29,7 @@ using Amazon.Translate.Model;
 namespace Amazon.Translate
 {
     /// <summary>
-    /// Interface for accessing Translate
+    /// <para>Interface for accessing Translate</para>
     ///
     /// Provides translation of the input content from the source language to the target language.
     /// </summary>

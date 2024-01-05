@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticTranscoder
 {
     /// <summary>
-    /// Implementation for accessing ElasticTranscoder
+    /// <para>Implementation for accessing ElasticTranscoder</para>
     ///
     /// AWS Elastic Transcoder Service 
     /// <para>

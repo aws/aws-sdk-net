@@ -27,7 +27,7 @@ using Amazon.IotData.Model;
 namespace Amazon.IotData
 {
     /// <summary>
-    /// Interface for accessing IotData
+    /// <para>Interface for accessing IotData</para>
     ///
     /// IoT data 
     /// <para>

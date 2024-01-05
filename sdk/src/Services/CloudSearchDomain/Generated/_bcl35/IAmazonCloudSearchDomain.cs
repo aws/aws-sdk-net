@@ -27,7 +27,7 @@ using Amazon.CloudSearchDomain.Model;
 namespace Amazon.CloudSearchDomain
 {
     /// <summary>
-    /// Interface for accessing CloudSearchDomain
+    /// <para>Interface for accessing CloudSearchDomain</para>
     ///
     /// You use the AmazonCloudSearch2013 API to upload documents to a search domain and search
     /// those documents. 

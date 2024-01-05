@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ManagedBlockchain
 {
     /// <summary>
-    /// Implementation for accessing ManagedBlockchain
+    /// <para>Implementation for accessing ManagedBlockchain</para>
     ///
     /// Amazon Managed Blockchain is a fully managed service for creating and managing blockchain
     /// networks using open-source frameworks. Blockchain allows you to build applications

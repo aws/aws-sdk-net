@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ControlTower
 {
     /// <summary>
-    /// Implementation for accessing ControlTower
+    /// <para>Implementation for accessing ControlTower</para>
     ///
     /// These interfaces allow you to apply the Amazon Web Services library of pre-defined
     /// <i>controls</i> to your organizational units, programmatically. In Amazon Web Services

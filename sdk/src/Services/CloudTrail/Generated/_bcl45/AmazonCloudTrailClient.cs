@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudTrail
 {
     /// <summary>
-    /// Implementation for accessing CloudTrail
+    /// <para>Implementation for accessing CloudTrail</para>
     ///
     /// CloudTrail 
     /// <para>

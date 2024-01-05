@@ -29,7 +29,7 @@ using Amazon.ManagedBlockchain.Model;
 namespace Amazon.ManagedBlockchain
 {
     /// <summary>
-    /// Interface for accessing ManagedBlockchain
+    /// <para>Interface for accessing ManagedBlockchain</para>
     ///
     /// Amazon Managed Blockchain is a fully managed service for creating and managing blockchain
     /// networks using open-source frameworks. Blockchain allows you to build applications

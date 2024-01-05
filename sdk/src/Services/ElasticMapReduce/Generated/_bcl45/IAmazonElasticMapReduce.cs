@@ -29,7 +29,7 @@ using Amazon.ElasticMapReduce.Model;
 namespace Amazon.ElasticMapReduce
 {
     /// <summary>
-    /// Interface for accessing ElasticMapReduce
+    /// <para>Interface for accessing ElasticMapReduce</para>
     ///
     /// Amazon EMR is a web service that makes it easier to process large amounts of data
     /// efficiently. Amazon EMR uses Hadoop processing combined with several Amazon Web Services

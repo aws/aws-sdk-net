@@ -29,7 +29,7 @@ using Amazon.AccessAnalyzer.Model;
 namespace Amazon.AccessAnalyzer
 {
     /// <summary>
-    /// Interface for accessing AccessAnalyzer
+    /// <para>Interface for accessing AccessAnalyzer</para>
     ///
     /// Identity and Access Management Access Analyzer helps you to set, verify, and refine
     /// your IAM policies by providing a suite of capabilities. Its features include findings

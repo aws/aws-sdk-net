@@ -29,7 +29,7 @@ using Amazon.CodeCommit.Model;
 namespace Amazon.CodeCommit
 {
     /// <summary>
-    /// Interface for accessing CodeCommit
+    /// <para>Interface for accessing CodeCommit</para>
     ///
     /// CodeCommit 
     /// <para>

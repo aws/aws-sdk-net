@@ -27,7 +27,7 @@ using Amazon.ConnectCases.Model;
 namespace Amazon.ConnectCases
 {
     /// <summary>
-    /// Interface for accessing ConnectCases
+    /// <para>Interface for accessing ConnectCases</para>
     ///
     /// With Amazon Connect Cases, your agents can track and manage customer issues that require
     /// multiple interactions, follow-up tasks, and teams in your contact center. A case represents

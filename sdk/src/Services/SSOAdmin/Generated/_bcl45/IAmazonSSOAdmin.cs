@@ -29,7 +29,7 @@ using Amazon.SSOAdmin.Model;
 namespace Amazon.SSOAdmin
 {
     /// <summary>
-    /// Interface for accessing SSOAdmin
+    /// <para>Interface for accessing SSOAdmin</para>
     ///
     /// IAM Identity Center (successor to Single Sign-On) helps you securely create, or connect,
     /// your workforce identities and manage their access centrally across Amazon Web Services

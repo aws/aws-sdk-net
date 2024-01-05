@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
-    /// Implementation for accessing ElasticBeanstalk
+    /// <para>Implementation for accessing ElasticBeanstalk</para>
     ///
     /// AWS Elastic Beanstalk 
     /// <para>

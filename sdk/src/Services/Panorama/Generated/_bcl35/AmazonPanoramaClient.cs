@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Panorama
 {
     /// <summary>
-    /// Implementation for accessing Panorama
+    /// <para>Implementation for accessing Panorama</para>
     ///
     /// AWS Panorama 
     /// <para>

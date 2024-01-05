@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MigrationHubRefactorSpaces
 {
     /// <summary>
-    /// Implementation for accessing MigrationHubRefactorSpaces
+    /// <para>Implementation for accessing MigrationHubRefactorSpaces</para>
     ///
     /// Amazon Web Services Migration Hub Refactor Spaces 
     /// <para>

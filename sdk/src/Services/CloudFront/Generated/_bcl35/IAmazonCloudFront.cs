@@ -27,7 +27,7 @@ using Amazon.CloudFront.Model;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Interface for accessing CloudFront
+    /// <para>Interface for accessing CloudFront</para>
     ///
     /// Amazon CloudFront 
     /// <para>

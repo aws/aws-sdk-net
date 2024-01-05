@@ -29,7 +29,7 @@ using Amazon.MedicalImaging.Model;
 namespace Amazon.MedicalImaging
 {
     /// <summary>
-    /// Interface for accessing MedicalImaging
+    /// <para>Interface for accessing MedicalImaging</para>
     ///
     /// This is the <i>AWS HealthImaging API Reference</i>. AWS HealthImaging is a HIPAA-eligible
     /// service that helps health care providers and their medical imaging ISV partners store,

@@ -27,7 +27,7 @@ using Amazon.KinesisFirehose.Model;
 namespace Amazon.KinesisFirehose
 {
     /// <summary>
-    /// Interface for accessing KinesisFirehose
+    /// <para>Interface for accessing KinesisFirehose</para>
     ///
     /// Amazon Kinesis Data Firehose API Reference 
     /// <para>

@@ -27,7 +27,7 @@ using Amazon.IAMRolesAnywhere.Model;
 namespace Amazon.IAMRolesAnywhere
 {
     /// <summary>
-    /// Interface for accessing IAMRolesAnywhere
+    /// <para>Interface for accessing IAMRolesAnywhere</para>
     ///
     /// Identity and Access Management Roles Anywhere provides a secure way for your workloads
     /// such as servers, containers, and applications that run outside of Amazon Web Services

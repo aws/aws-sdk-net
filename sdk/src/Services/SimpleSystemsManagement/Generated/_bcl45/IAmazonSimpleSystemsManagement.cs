@@ -29,7 +29,7 @@ using Amazon.SimpleSystemsManagement.Model;
 namespace Amazon.SimpleSystemsManagement
 {
     /// <summary>
-    /// Interface for accessing SimpleSystemsManagement
+    /// <para>Interface for accessing SimpleSystemsManagement</para>
     ///
     /// Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services
     /// applications and resources and a secure end-to-end management solution for hybrid

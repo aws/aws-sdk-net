@@ -27,7 +27,7 @@ using Amazon.Route53Resolver.Model;
 namespace Amazon.Route53Resolver
 {
     /// <summary>
-    /// Interface for accessing Route53Resolver
+    /// <para>Interface for accessing Route53Resolver</para>
     ///
     /// When you create a VPC using Amazon VPC, you automatically get DNS resolution within
     /// the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaStore
 {
     /// <summary>
-    /// Implementation for accessing MediaStore
+    /// <para>Implementation for accessing MediaStore</para>
     ///
     /// An AWS Elemental MediaStore container is a namespace that holds folders and objects.
     /// You use a container endpoint to create, read, and delete objects.

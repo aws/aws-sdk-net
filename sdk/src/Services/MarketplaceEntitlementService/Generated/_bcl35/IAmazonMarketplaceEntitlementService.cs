@@ -27,7 +27,7 @@ using Amazon.MarketplaceEntitlementService.Model;
 namespace Amazon.MarketplaceEntitlementService
 {
     /// <summary>
-    /// Interface for accessing MarketplaceEntitlementService
+    /// <para>Interface for accessing MarketplaceEntitlementService</para>
     ///
     /// AWS Marketplace Entitlement Service 
     /// <para>

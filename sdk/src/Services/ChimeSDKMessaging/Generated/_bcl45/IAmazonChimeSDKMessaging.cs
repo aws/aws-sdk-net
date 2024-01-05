@@ -29,7 +29,7 @@ using Amazon.ChimeSDKMessaging.Model;
 namespace Amazon.ChimeSDKMessaging
 {
     /// <summary>
-    /// Interface for accessing ChimeSDKMessaging
+    /// <para>Interface for accessing ChimeSDKMessaging</para>
     ///
     /// The Amazon Chime SDK messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks

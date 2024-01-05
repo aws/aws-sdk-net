@@ -29,7 +29,7 @@ using Amazon.EntityResolution.Model;
 namespace Amazon.EntityResolution
 {
     /// <summary>
-    /// Interface for accessing EntityResolution
+    /// <para>Interface for accessing EntityResolution</para>
     ///
     /// Welcome to the <i>Entity Resolution API Reference</i>.
     /// 

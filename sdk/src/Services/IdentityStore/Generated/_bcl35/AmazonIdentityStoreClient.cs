@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IdentityStore
 {
     /// <summary>
-    /// Implementation for accessing IdentityStore
+    /// <para>Implementation for accessing IdentityStore</para>
     ///
     /// The Identity Store service used by IAM Identity Center provides a single place to
     /// retrieve all of your identities (users and groups). For more information, see the

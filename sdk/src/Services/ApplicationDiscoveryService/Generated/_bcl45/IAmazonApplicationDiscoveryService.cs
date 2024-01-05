@@ -29,7 +29,7 @@ using Amazon.ApplicationDiscoveryService.Model;
 namespace Amazon.ApplicationDiscoveryService
 {
     /// <summary>
-    /// Interface for accessing ApplicationDiscoveryService
+    /// <para>Interface for accessing ApplicationDiscoveryService</para>
     ///
     /// Amazon Web Services Application Discovery Service 
     /// <para>

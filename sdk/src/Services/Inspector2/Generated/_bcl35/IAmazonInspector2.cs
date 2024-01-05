@@ -27,7 +27,7 @@ using Amazon.Inspector2.Model;
 namespace Amazon.Inspector2
 {
     /// <summary>
-    /// Interface for accessing Inspector2
+    /// <para>Interface for accessing Inspector2</para>
     ///
     /// Amazon Inspector is a vulnerability discovery service that automates continuous scanning
     /// for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services

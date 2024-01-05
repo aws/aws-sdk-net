@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Mobile
 {
     /// <summary>
-    /// Implementation for accessing Mobile
+    /// <para>Implementation for accessing Mobile</para>
     ///
     /// AWS Mobile Service provides mobile app and website developers with capabilities required
     /// to configure AWS resources and bootstrap their developer desktop projects with the

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AWSHealth
 {
     /// <summary>
-    /// Implementation for accessing AWSHealth
+    /// <para>Implementation for accessing AWSHealth</para>
     ///
     /// Health 
     /// <para>

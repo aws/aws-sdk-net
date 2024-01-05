@@ -27,7 +27,7 @@ using Amazon.CodeGuruSecurity.Model;
 namespace Amazon.CodeGuruSecurity
 {
     /// <summary>
-    /// Interface for accessing CodeGuruSecurity
+    /// <para>Interface for accessing CodeGuruSecurity</para>
     ///
     /// <note> 
     /// <para>

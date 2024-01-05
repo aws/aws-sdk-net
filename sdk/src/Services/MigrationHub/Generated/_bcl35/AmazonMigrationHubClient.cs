@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MigrationHub
 {
     /// <summary>
-    /// Implementation for accessing MigrationHub
+    /// <para>Implementation for accessing MigrationHub</para>
     ///
     /// The AWS Migration Hub API methods help to obtain server and application migration
     /// status and integrate your resource-specific migration tool by providing a programmatic

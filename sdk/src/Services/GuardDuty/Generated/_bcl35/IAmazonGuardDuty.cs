@@ -27,7 +27,7 @@ using Amazon.GuardDuty.Model;
 namespace Amazon.GuardDuty
 {
     /// <summary>
-    /// Interface for accessing GuardDuty
+    /// <para>Interface for accessing GuardDuty</para>
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
     /// the following foundational data sources - VPC flow logs, Amazon Web Services CloudTrail

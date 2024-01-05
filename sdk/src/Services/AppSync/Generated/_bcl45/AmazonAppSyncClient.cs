@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppSync
 {
     /// <summary>
-    /// Implementation for accessing AppSync
+    /// <para>Implementation for accessing AppSync</para>
     ///
     /// AppSync provides API actions for creating and interacting with data sources using
     /// GraphQL from your application.

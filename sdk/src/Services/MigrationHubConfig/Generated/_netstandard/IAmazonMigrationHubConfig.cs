@@ -29,7 +29,7 @@ using Amazon.MigrationHubConfig.Model;
 namespace Amazon.MigrationHubConfig
 {
     /// <summary>
-    /// Interface for accessing MigrationHubConfig
+    /// <para>Interface for accessing MigrationHubConfig</para>
     ///
     /// The AWS Migration Hub home region APIs are available specifically for working with
     /// your Migration Hub home region. You can use these APIs to determine a home region,

@@ -29,7 +29,7 @@ using Amazon.ResourceExplorer2.Model;
 namespace Amazon.ResourceExplorer2
 {
     /// <summary>
-    /// Interface for accessing ResourceExplorer2
+    /// <para>Interface for accessing ResourceExplorer2</para>
     ///
     /// Amazon Web Services Resource Explorer is a resource search and discovery service.
     /// By using Resource Explorer, you can explore your resources using an internet search

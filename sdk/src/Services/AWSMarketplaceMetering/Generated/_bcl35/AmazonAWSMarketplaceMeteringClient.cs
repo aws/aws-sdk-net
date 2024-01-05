@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AWSMarketplaceMetering
 {
     /// <summary>
-    /// Implementation for accessing AWSMarketplaceMetering
+    /// <para>Implementation for accessing AWSMarketplaceMetering</para>
     ///
     /// AWS Marketplace Metering Service 
     /// <para>

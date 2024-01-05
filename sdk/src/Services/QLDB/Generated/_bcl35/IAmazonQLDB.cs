@@ -27,7 +27,7 @@ using Amazon.QLDB.Model;
 namespace Amazon.QLDB
 {
     /// <summary>
-    /// Interface for accessing QLDB
+    /// <para>Interface for accessing QLDB</para>
     ///
     /// The resource management API for Amazon QLDB
     /// </summary>

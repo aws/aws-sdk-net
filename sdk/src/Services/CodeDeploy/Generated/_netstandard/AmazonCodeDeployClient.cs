@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeDeploy
 {
     /// <summary>
-    /// Implementation for accessing CodeDeploy
+    /// <para>Implementation for accessing CodeDeploy</para>
     ///
     /// CodeDeploy is a deployment service that automates application deployments to Amazon
     /// EC2 instances, on-premises instances running in your own facility, serverless Lambda

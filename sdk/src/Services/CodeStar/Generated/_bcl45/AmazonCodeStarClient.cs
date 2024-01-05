@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeStar
 {
     /// <summary>
-    /// Implementation for accessing CodeStar
+    /// <para>Implementation for accessing CodeStar</para>
     ///
     /// AWS CodeStar 
     /// <para>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PinpointSMSVoiceV2
 {
     /// <summary>
-    /// Implementation for accessing PinpointSMSVoiceV2
+    /// <para>Implementation for accessing PinpointSMSVoiceV2</para>
     ///
     /// Welcome to the <i>Amazon Pinpoint SMS and Voice, version 2 API Reference</i>. This
     /// guide provides information about Amazon Pinpoint SMS and Voice, version 2 API resources,

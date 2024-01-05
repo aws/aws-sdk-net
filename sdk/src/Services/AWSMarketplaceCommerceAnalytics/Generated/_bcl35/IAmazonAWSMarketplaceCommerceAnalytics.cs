@@ -27,7 +27,7 @@ using Amazon.AWSMarketplaceCommerceAnalytics.Model;
 namespace Amazon.AWSMarketplaceCommerceAnalytics
 {
     /// <summary>
-    /// Interface for accessing AWSMarketplaceCommerceAnalytics
+    /// <para>Interface for accessing AWSMarketplaceCommerceAnalytics</para>
     ///
     /// Provides AWS Marketplace business intelligence data on-demand.
     /// </summary>

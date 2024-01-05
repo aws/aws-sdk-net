@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Synthetics
 {
     /// <summary>
-    /// Implementation for accessing Synthetics
+    /// <para>Implementation for accessing Synthetics</para>
     ///
     /// Amazon CloudWatch Synthetics 
     /// <para>

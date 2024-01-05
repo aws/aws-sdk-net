@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CognitoSync
 {
     /// <summary>
-    /// Implementation for accessing CognitoSync
+    /// <para>Implementation for accessing CognitoSync</para>
     ///
     /// Amazon Cognito Sync 
     /// <para>

@@ -27,7 +27,7 @@ using Amazon.GlobalAccelerator.Model;
 namespace Amazon.GlobalAccelerator
 {
     /// <summary>
-    /// Interface for accessing GlobalAccelerator
+    /// <para>Interface for accessing GlobalAccelerator</para>
     ///
     /// Global Accelerator 
     /// <para>

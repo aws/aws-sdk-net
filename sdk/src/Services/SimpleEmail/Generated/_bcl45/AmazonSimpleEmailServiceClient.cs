@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SimpleEmail
 {
     /// <summary>
-    /// Implementation for accessing SimpleEmailService
+    /// <para>Implementation for accessing SimpleEmailService</para>
     ///
     /// Amazon Simple Email Service 
     /// <para>

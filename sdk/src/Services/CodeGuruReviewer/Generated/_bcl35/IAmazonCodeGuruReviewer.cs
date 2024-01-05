@@ -27,7 +27,7 @@ using Amazon.CodeGuruReviewer.Model;
 namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
-    /// Interface for accessing CodeGuruReviewer
+    /// <para>Interface for accessing CodeGuruReviewer</para>
     ///
     /// This section provides documentation for the Amazon CodeGuru Reviewer API operations.
     /// CodeGuru Reviewer is a service that uses program analysis and machine learning to

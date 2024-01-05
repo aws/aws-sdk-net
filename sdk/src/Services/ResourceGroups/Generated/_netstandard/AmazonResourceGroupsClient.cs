@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ResourceGroups
 {
     /// <summary>
-    /// Implementation for accessing ResourceGroups
+    /// <para>Implementation for accessing ResourceGroups</para>
     ///
     /// Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic
     /// Compute Cloud instances, Amazon Relational Database Service databases, and Amazon

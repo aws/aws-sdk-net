@@ -27,7 +27,7 @@ using Amazon.OAM.Model;
 namespace Amazon.OAM
 {
     /// <summary>
-    /// Interface for accessing OAM
+    /// <para>Interface for accessing OAM</para>
     ///
     /// Use Amazon CloudWatch Observability Access Manager to create and manage links between
     /// source accounts and monitoring accounts by using <i>CloudWatch cross-account observability</i>.

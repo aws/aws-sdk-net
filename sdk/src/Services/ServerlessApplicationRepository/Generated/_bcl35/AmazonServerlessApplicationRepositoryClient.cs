@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ServerlessApplicationRepository
 {
     /// <summary>
-    /// Implementation for accessing ServerlessApplicationRepository
+    /// <para>Implementation for accessing ServerlessApplicationRepository</para>
     ///
     /// The AWS Serverless Application Repository makes it easy for developers and enterprises
     /// to quickly find and deploy serverless applications in the AWS Cloud. For more information

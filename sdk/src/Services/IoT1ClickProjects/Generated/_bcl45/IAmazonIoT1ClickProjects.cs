@@ -29,7 +29,7 @@ using Amazon.IoT1ClickProjects.Model;
 namespace Amazon.IoT1ClickProjects
 {
     /// <summary>
-    /// Interface for accessing IoT1ClickProjects
+    /// <para>Interface for accessing IoT1ClickProjects</para>
     ///
     /// The AWS IoT 1-Click Projects API Reference
     /// </summary>

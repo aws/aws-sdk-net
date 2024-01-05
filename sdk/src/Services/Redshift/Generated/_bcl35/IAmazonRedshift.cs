@@ -27,7 +27,7 @@ using Amazon.Redshift.Model;
 namespace Amazon.Redshift
 {
     /// <summary>
-    /// Interface for accessing Redshift
+    /// <para>Interface for accessing Redshift</para>
     ///
     /// Amazon Redshift 
     /// <para>

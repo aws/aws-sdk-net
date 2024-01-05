@@ -27,7 +27,7 @@ using Amazon.Private5G.Model;
 namespace Amazon.Private5G
 {
     /// <summary>
-    /// Interface for accessing Private5G
+    /// <para>Interface for accessing Private5G</para>
     ///
     /// Amazon Web Services Private 5G is a managed service that makes it easy to deploy,
     /// operate, and scale your own private mobile network at your on-premises location. Private

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.FinSpaceData
 {
     /// <summary>
-    /// Implementation for accessing FinSpaceData
+    /// <para>Implementation for accessing FinSpaceData</para>
     ///
     /// The FinSpace APIs let you take actions inside the FinSpace.
     /// </summary>

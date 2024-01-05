@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.QueryCompatible
 {
     /// <summary>
-    /// Implementation for accessing QueryCompatible
+    /// <para>Implementation for accessing QueryCompatible</para>
     ///
     /// 
     /// </summary>

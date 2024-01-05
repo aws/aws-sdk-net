@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BedrockAgentRuntime
 {
     /// <summary>
-    /// Implementation for accessing BedrockAgentRuntime
+    /// <para>Implementation for accessing BedrockAgentRuntime</para>
     ///
     /// Amazon Bedrock Agent
     /// </summary>

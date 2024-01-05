@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SimpleDB
 {
     /// <summary>
-    /// Implementation for accessing SimpleDB
+    /// <para>Implementation for accessing SimpleDB</para>
     ///
     /// Amazon SimpleDB is a web service providing the core database functions of data indexing
     /// and querying in the cloud. By offloading the time and effort associated with building

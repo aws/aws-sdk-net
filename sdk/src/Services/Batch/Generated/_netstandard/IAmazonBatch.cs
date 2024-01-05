@@ -29,7 +29,7 @@ using Amazon.Batch.Model;
 namespace Amazon.Batch
 {
     /// <summary>
-    /// Interface for accessing Batch
+    /// <para>Interface for accessing Batch</para>
     ///
     /// Batch 
     /// <para>

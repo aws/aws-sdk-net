@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Omics
 {
     /// <summary>
-    /// Implementation for accessing Omics
+    /// <para>Implementation for accessing Omics</para>
     ///
     /// This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a>

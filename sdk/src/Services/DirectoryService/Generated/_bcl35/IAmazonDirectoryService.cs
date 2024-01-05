@@ -27,7 +27,7 @@ using Amazon.DirectoryService.Model;
 namespace Amazon.DirectoryService
 {
     /// <summary>
-    /// Interface for accessing DirectoryService
+    /// <para>Interface for accessing DirectoryService</para>
     ///
     /// Directory Service 
     /// <para>

@@ -27,7 +27,7 @@ using Amazon.EKSAuth.Model;
 namespace Amazon.EKSAuth
 {
     /// <summary>
-    /// Interface for accessing EKSAuth
+    /// <para>Interface for accessing EKSAuth</para>
     ///
     /// The Amazon EKS Auth API and the <code>AssumeRoleForPodIdentity</code> action are only
     /// used by the EKS Pod Identity Agent.

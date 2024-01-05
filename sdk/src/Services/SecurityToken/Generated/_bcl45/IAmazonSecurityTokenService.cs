@@ -29,7 +29,7 @@ using Amazon.SecurityToken.Model;
 namespace Amazon.SecurityToken
 {
     /// <summary>
-    /// Interface for accessing SecurityTokenService
+    /// <para>Interface for accessing SecurityTokenService</para>
     ///
     /// Security Token Service 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Pinpoint.Model;
 namespace Amazon.Pinpoint
 {
     /// <summary>
-    /// Interface for accessing Pinpoint
+    /// <para>Interface for accessing Pinpoint</para>
     ///
     /// Doc Engage API - Amazon Pinpoint API
     /// </summary>

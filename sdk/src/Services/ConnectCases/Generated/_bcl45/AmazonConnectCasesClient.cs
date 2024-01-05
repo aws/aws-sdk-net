@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ConnectCases
 {
     /// <summary>
-    /// Implementation for accessing ConnectCases
+    /// <para>Implementation for accessing ConnectCases</para>
     ///
     /// With Amazon Connect Cases, your agents can track and manage customer issues that require
     /// multiple interactions, follow-up tasks, and teams in your contact center. A case represents

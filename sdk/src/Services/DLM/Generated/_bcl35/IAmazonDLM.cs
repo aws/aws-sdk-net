@@ -27,7 +27,7 @@ using Amazon.DLM.Model;
 namespace Amazon.DLM
 {
     /// <summary>
-    /// Interface for accessing DLM
+    /// <para>Interface for accessing DLM</para>
     ///
     /// Amazon Data Lifecycle Manager 
     /// <para>

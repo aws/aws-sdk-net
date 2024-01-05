@@ -29,7 +29,7 @@ using Amazon.LicenseManagerUserSubscriptions.Model;
 namespace Amazon.LicenseManagerUserSubscriptions
 {
     /// <summary>
-    /// Interface for accessing LicenseManagerUserSubscriptions
+    /// <para>Interface for accessing LicenseManagerUserSubscriptions</para>
     ///
     /// With License Manager, you can create user-based subscriptions to utilize licensed
     /// software with a per user subscription fee on Amazon EC2 instances.

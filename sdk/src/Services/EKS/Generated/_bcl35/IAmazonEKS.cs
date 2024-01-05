@@ -27,7 +27,7 @@ using Amazon.EKS.Model;
 namespace Amazon.EKS
 {
     /// <summary>
-    /// Interface for accessing EKS
+    /// <para>Interface for accessing EKS</para>
     ///
     /// Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it
     /// easy for you to run Kubernetes on Amazon Web Services without needing to setup or

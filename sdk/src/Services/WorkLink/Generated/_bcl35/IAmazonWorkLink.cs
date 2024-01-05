@@ -27,7 +27,7 @@ using Amazon.WorkLink.Model;
 namespace Amazon.WorkLink
 {
     /// <summary>
-    /// Interface for accessing WorkLink
+    /// <para>Interface for accessing WorkLink</para>
     ///
     /// Amazon WorkLink is a cloud-based service that provides secure access to internal websites
     /// and web apps from iOS and Android phones. In a single step, your users, such as employees,

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppStream
 {
     /// <summary>
-    /// Implementation for accessing AppStream
+    /// <para>Implementation for accessing AppStream</para>
     ///
     /// Amazon AppStream 2.0 
     /// <para>

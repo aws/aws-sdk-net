@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LicenseManagerUserSubscriptions
 {
     /// <summary>
-    /// Implementation for accessing LicenseManagerUserSubscriptions
+    /// <para>Implementation for accessing LicenseManagerUserSubscriptions</para>
     ///
     /// With License Manager, you can create user-based subscriptions to utilize licensed
     /// software with a per user subscription fee on Amazon EC2 instances.

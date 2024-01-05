@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SnowDeviceManagement
 {
     /// <summary>
-    /// Implementation for accessing SnowDeviceManagement
+    /// <para>Implementation for accessing SnowDeviceManagement</para>
     ///
     /// Amazon Web Services Snow Device Management documentation.
     /// </summary>

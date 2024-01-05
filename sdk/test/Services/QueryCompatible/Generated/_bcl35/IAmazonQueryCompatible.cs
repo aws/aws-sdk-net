@@ -27,7 +27,7 @@ using Amazon.QueryCompatible.Model;
 namespace Amazon.QueryCompatible
 {
     /// <summary>
-    /// Interface for accessing QueryCompatible
+    /// <para>Interface for accessing QueryCompatible</para>
     ///
     /// 
     /// </summary>

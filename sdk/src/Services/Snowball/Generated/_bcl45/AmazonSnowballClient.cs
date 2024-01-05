@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Snowball
 {
     /// <summary>
-    /// Implementation for accessing Snowball
+    /// <para>Implementation for accessing Snowball</para>
     ///
     /// The Amazon Web Services Snow Family provides a petabyte-scale data transport solution
     /// that uses secure devices to transfer large amounts of data between your on-premises

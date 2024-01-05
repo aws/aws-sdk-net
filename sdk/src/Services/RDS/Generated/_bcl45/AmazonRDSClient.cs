@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RDS
 {
     /// <summary>
-    /// Implementation for accessing RDS
+    /// <para>Implementation for accessing RDS</para>
     ///
     /// Amazon Relational Database Service  
     /// <para>

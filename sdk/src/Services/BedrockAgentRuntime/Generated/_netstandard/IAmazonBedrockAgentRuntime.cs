@@ -29,7 +29,7 @@ using Amazon.BedrockAgentRuntime.Model;
 namespace Amazon.BedrockAgentRuntime
 {
     /// <summary>
-    /// Interface for accessing BedrockAgentRuntime
+    /// <para>Interface for accessing BedrockAgentRuntime</para>
     ///
     /// Amazon Bedrock Agent
     /// </summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MobileAnalytics
 {
     /// <summary>
-    /// Implementation for accessing MobileAnalytics
+    /// <para>Implementation for accessing MobileAnalytics</para>
     ///
     /// Amazon Mobile Analytics is a service for collecting, visualizing, and understanding
     /// app usage data at scale.

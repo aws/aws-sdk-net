@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EntityResolution
 {
     /// <summary>
-    /// Implementation for accessing EntityResolution
+    /// <para>Implementation for accessing EntityResolution</para>
     ///
     /// Welcome to the <i>Entity Resolution API Reference</i>.
     /// 

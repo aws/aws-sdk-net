@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTEventsData
 {
     /// <summary>
-    /// Implementation for accessing IoTEventsData
+    /// <para>Implementation for accessing IoTEventsData</para>
     ///
     /// IoT Events monitors your equipment or device fleets for failures or changes in operation,
     /// and triggers actions when such events occur. You can use IoT Events Data API commands

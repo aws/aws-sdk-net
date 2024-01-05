@@ -27,7 +27,7 @@ using Amazon.FMS.Model;
 namespace Amazon.FMS
 {
     /// <summary>
-    /// Interface for accessing FMS
+    /// <para>Interface for accessing FMS</para>
     ///
     /// This is the <i>Firewall Manager API Reference</i>. This guide is for developers who
     /// need detailed information about the Firewall Manager API actions, data types, and

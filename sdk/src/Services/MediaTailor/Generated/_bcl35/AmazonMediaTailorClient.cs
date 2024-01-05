@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaTailor
 {
     /// <summary>
-    /// Implementation for accessing MediaTailor
+    /// <para>Implementation for accessing MediaTailor</para>
     ///
     /// Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion
     /// and linear channels. With MediaTailor, you can assemble existing content into a linear

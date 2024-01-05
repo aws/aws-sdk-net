@@ -29,7 +29,7 @@ using Amazon.Polly.Model;
 namespace Amazon.Polly
 {
     /// <summary>
-    /// Interface for accessing Polly
+    /// <para>Interface for accessing Polly</para>
     ///
     /// Amazon Polly is a web service that makes it easy to synthesize speech from text.
     /// 

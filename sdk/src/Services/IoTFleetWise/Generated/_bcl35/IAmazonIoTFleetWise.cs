@@ -27,7 +27,7 @@ using Amazon.IoTFleetWise.Model;
 namespace Amazon.IoTFleetWise
 {
     /// <summary>
-    /// Interface for accessing IoTFleetWise
+    /// <para>Interface for accessing IoTFleetWise</para>
     ///
     /// Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect,
     /// model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon

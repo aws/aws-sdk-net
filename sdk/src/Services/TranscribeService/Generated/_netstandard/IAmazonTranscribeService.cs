@@ -29,7 +29,7 @@ using Amazon.TranscribeService.Model;
 namespace Amazon.TranscribeService
 {
     /// <summary>
-    /// Interface for accessing TranscribeService
+    /// <para>Interface for accessing TranscribeService</para>
     ///
     /// Amazon Transcribe offers three main types of batch transcription: <b>Standard</b>,
     /// <b>Medical</b>, and <b>Call Analytics</b>.

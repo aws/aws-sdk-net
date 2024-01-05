@@ -27,7 +27,7 @@ using Amazon.IoTDeviceAdvisor.Model;
 namespace Amazon.IoTDeviceAdvisor
 {
     /// <summary>
-    /// Interface for accessing IoTDeviceAdvisor
+    /// <para>Interface for accessing IoTDeviceAdvisor</para>
     ///
     /// Amazon Web Services IoT Core Device Advisor is a cloud-based, fully managed test capability
     /// for validating IoT devices during device software development. Device Advisor provides

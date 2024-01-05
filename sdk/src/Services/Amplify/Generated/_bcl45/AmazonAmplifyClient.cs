@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Amplify
 {
     /// <summary>
-    /// Implementation for accessing Amplify
+    /// <para>Implementation for accessing Amplify</para>
     ///
     /// Amplify enables developers to develop and deploy cloud-powered mobile and web apps.
     /// Amplify Hosting provides a continuous delivery and hosting service for web applications.

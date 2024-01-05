@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodePipeline
 {
     /// <summary>
-    /// Implementation for accessing CodePipeline
+    /// <para>Implementation for accessing CodePipeline</para>
     ///
     /// CodePipeline 
     /// <para>

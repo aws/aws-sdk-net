@@ -27,7 +27,7 @@ using Amazon.GlueDataBrew.Model;
 namespace Amazon.GlueDataBrew
 {
     /// <summary>
-    /// Interface for accessing GlueDataBrew
+    /// <para>Interface for accessing GlueDataBrew</para>
     ///
     /// Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies
     /// data preparation tasks, targeting data issues that are hard to spot and time-consuming

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppIntegrationsService
 {
     /// <summary>
-    /// Implementation for accessing AppIntegrationsService
+    /// <para>Implementation for accessing AppIntegrationsService</para>
     ///
     /// The Amazon AppIntegrations service enables you to configure and reuse connections
     /// to external applications.

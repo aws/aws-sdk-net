@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
-    /// Implementation for accessing CodeGuruReviewer
+    /// <para>Implementation for accessing CodeGuruReviewer</para>
     ///
     /// This section provides documentation for the Amazon CodeGuru Reviewer API operations.
     /// CodeGuru Reviewer is a service that uses program analysis and machine learning to

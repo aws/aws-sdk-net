@@ -27,7 +27,7 @@ using Amazon.DynamoDBv2.Model;
 namespace Amazon.DynamoDBv2
 {
     /// <summary>
-    /// Interface for accessing DynamoDBStreams
+    /// <para>Interface for accessing DynamoDBStreams</para>
     ///
     /// Amazon DynamoDB 
     /// <para>

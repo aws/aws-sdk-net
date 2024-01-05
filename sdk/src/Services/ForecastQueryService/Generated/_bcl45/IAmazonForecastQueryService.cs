@@ -29,7 +29,7 @@ using Amazon.ForecastQueryService.Model;
 namespace Amazon.ForecastQueryService
 {
     /// <summary>
-    /// Interface for accessing ForecastQueryService
+    /// <para>Interface for accessing ForecastQueryService</para>
     ///
     /// Provides APIs for creating and managing Amazon Forecast resources.
     /// </summary>

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.NetworkMonitor
 {
     /// <summary>
-    /// Implementation for accessing NetworkMonitor
+    /// <para>Implementation for accessing NetworkMonitor</para>
     ///
     /// Amazon CloudWatch Network Monitor is an Amazon Web Services active network monitoring
     /// service that identifies if a network issues exists within the Amazon Web Services

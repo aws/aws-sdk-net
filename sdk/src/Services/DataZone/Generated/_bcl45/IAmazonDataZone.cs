@@ -29,7 +29,7 @@ using Amazon.DataZone.Model;
 namespace Amazon.DataZone
 {
     /// <summary>
-    /// Interface for accessing DataZone
+    /// <para>Interface for accessing DataZone</para>
     ///
     /// Amazon DataZone is a data management service that enables you to catalog, discover,
     /// govern, share, and analyze your data. With Amazon DataZone, you can share and access

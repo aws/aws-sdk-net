@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudHSMV2
 {
     /// <summary>
-    /// Implementation for accessing CloudHSMV2
+    /// <para>Implementation for accessing CloudHSMV2</para>
     ///
     /// For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS
     /// CloudHSM</a> and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS

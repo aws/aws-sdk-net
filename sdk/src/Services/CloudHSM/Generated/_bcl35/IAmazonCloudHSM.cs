@@ -27,7 +27,7 @@ using Amazon.CloudHSM.Model;
 namespace Amazon.CloudHSM
 {
     /// <summary>
-    /// Interface for accessing CloudHSM
+    /// <para>Interface for accessing CloudHSM</para>
     ///
     /// AWS CloudHSM Service 
     /// <para>

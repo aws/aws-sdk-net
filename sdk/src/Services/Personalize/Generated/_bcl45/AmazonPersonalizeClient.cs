@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Personalize
 {
     /// <summary>
-    /// Implementation for accessing Personalize
+    /// <para>Implementation for accessing Personalize</para>
     ///
     /// Amazon Personalize is a machine learning service that makes it easy to add individualized
     /// recommendations to customers.

@@ -29,7 +29,7 @@ using Amazon.WorkDocs.Model;
 namespace Amazon.WorkDocs
 {
     /// <summary>
-    /// Interface for accessing WorkDocs
+    /// <para>Interface for accessing WorkDocs</para>
     ///
     /// The Amazon WorkDocs API is designed for the following use cases:
     /// 

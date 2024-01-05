@@ -29,7 +29,7 @@ using Amazon.ApplicationInsights.Model;
 namespace Amazon.ApplicationInsights
 {
     /// <summary>
-    /// Interface for accessing ApplicationInsights
+    /// <para>Interface for accessing ApplicationInsights</para>
     ///
     /// Amazon CloudWatch Application Insights 
     /// <para>

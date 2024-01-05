@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Macie2
 {
     /// <summary>
-    /// Implementation for accessing Macie2
+    /// <para>Implementation for accessing Macie2</para>
     ///
     /// Amazon Macie
     /// </summary>

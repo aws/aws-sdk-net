@@ -27,7 +27,7 @@ using Amazon.ConnectCampaignService.Model;
 namespace Amazon.ConnectCampaignService
 {
     /// <summary>
-    /// Interface for accessing ConnectCampaignService
+    /// <para>Interface for accessing ConnectCampaignService</para>
     ///
     /// Provide APIs to create and manage Amazon Connect Campaigns.
     /// </summary>

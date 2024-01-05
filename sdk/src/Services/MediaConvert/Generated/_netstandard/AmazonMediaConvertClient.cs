@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaConvert
 {
     /// <summary>
-    /// Implementation for accessing MediaConvert
+    /// <para>Implementation for accessing MediaConvert</para>
     ///
     /// AWS Elemental MediaConvert
     /// </summary>

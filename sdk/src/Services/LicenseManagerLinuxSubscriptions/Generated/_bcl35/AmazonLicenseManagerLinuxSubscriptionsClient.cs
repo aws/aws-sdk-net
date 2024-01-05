@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LicenseManagerLinuxSubscriptions
 {
     /// <summary>
-    /// Implementation for accessing LicenseManagerLinuxSubscriptions
+    /// <para>Implementation for accessing LicenseManagerLinuxSubscriptions</para>
     ///
     /// With License Manager, you can discover and track your commercial Linux subscriptions
     /// on running Amazon EC2 instances.

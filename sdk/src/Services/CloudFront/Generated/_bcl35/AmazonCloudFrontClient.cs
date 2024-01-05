@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Implementation for accessing CloudFront
+    /// <para>Implementation for accessing CloudFront</para>
     ///
     /// Amazon CloudFront 
     /// <para>

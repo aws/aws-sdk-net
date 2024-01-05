@@ -27,7 +27,7 @@ using Amazon.CloudDirectory.Model;
 namespace Amazon.CloudDirectory
 {
     /// <summary>
-    /// Interface for accessing CloudDirectory
+    /// <para>Interface for accessing CloudDirectory</para>
     ///
     /// Amazon Cloud Directory 
     /// <para>

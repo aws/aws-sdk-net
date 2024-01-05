@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeStarNotifications
 {
     /// <summary>
-    /// Implementation for accessing CodeStarNotifications
+    /// <para>Implementation for accessing CodeStarNotifications</para>
     ///
     /// This AWS CodeStar Notifications API Reference provides descriptions and usage examples
     /// of the operations and data types for the AWS CodeStar Notifications API. You can use

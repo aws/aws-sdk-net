@@ -29,7 +29,7 @@ using Amazon.EMRContainers.Model;
 namespace Amazon.EMRContainers
 {
     /// <summary>
-    /// Interface for accessing EMRContainers
+    /// <para>Interface for accessing EMRContainers</para>
     ///
     /// Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run
     /// open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS).

@@ -27,7 +27,7 @@ using Amazon.Repostspace.Model;
 namespace Amazon.Repostspace
 {
     /// <summary>
-    /// Interface for accessing Repostspace
+    /// <para>Interface for accessing Repostspace</para>
     ///
     /// AWS re:Post Private is a private version of AWS re:Post for enterprises with Enterprise
     /// Support or Enterprise On-Ramp Support plans. It provides access to knowledge and experts

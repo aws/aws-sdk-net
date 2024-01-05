@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoT1ClickProjects
 {
     /// <summary>
-    /// Implementation for accessing IoT1ClickProjects
+    /// <para>Implementation for accessing IoT1ClickProjects</para>
     ///
     /// The AWS IoT 1-Click Projects API Reference
     /// </summary>

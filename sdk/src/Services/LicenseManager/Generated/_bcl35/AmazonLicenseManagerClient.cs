@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LicenseManager
 {
     /// <summary>
-    /// Implementation for accessing LicenseManager
+    /// <para>Implementation for accessing LicenseManager</para>
     ///
     /// License Manager makes it easier to manage licenses from software vendors across multiple
     /// Amazon Web Services accounts and on-premises servers.

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ConnectParticipant
 {
     /// <summary>
-    /// Implementation for accessing ConnectParticipant
+    /// <para>Implementation for accessing ConnectParticipant</para>
     ///
     /// Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables
     /// companies of any size to deliver superior customer service at a lower cost. Amazon

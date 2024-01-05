@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Chime
 {
     /// <summary>
-    /// Implementation for accessing Chime
+    /// <para>Implementation for accessing Chime</para>
     ///
     /// <important> 
     /// <para>

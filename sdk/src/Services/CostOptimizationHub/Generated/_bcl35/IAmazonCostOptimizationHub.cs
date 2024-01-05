@@ -27,7 +27,7 @@ using Amazon.CostOptimizationHub.Model;
 namespace Amazon.CostOptimizationHub
 {
     /// <summary>
-    /// Interface for accessing CostOptimizationHub
+    /// <para>Interface for accessing CostOptimizationHub</para>
     ///
     /// You can use the Cost Optimization Hub API to programmatically identify, filter, aggregate,
     /// and quantify savings for your cost optimization recommendations across multiple Amazon

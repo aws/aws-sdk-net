@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AccessAnalyzer
 {
     /// <summary>
-    /// Implementation for accessing AccessAnalyzer
+    /// <para>Implementation for accessing AccessAnalyzer</para>
     ///
     /// Identity and Access Management Access Analyzer helps you to set, verify, and refine
     /// your IAM policies by providing a suite of capabilities. Its features include findings

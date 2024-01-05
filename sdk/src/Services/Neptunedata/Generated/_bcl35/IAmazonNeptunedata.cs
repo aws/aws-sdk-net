@@ -27,7 +27,7 @@ using Amazon.Neptunedata.Model;
 namespace Amazon.Neptunedata
 {
     /// <summary>
-    /// Interface for accessing Neptunedata
+    /// <para>Interface for accessing Neptunedata</para>
     ///
     /// Neptune Data API 
     /// <para>

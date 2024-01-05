@@ -27,7 +27,7 @@ using Amazon.CleanRoomsML.Model;
 namespace Amazon.CleanRoomsML
 {
     /// <summary>
-    /// Interface for accessing CleanRoomsML
+    /// <para>Interface for accessing CleanRoomsML</para>
     ///
     /// Welcome to the <i>Amazon Web Services Clean Rooms ML API Reference</i>.
     /// 

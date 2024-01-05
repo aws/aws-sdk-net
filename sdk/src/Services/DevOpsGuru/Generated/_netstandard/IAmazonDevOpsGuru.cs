@@ -29,7 +29,7 @@ using Amazon.DevOpsGuru.Model;
 namespace Amazon.DevOpsGuru
 {
     /// <summary>
-    /// Interface for accessing DevOpsGuru
+    /// <para>Interface for accessing DevOpsGuru</para>
     ///
     /// Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior
     /// in business critical operational applications. You specify the Amazon Web Services

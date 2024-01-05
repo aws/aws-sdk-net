@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.StepFunctions
 {
     /// <summary>
-    /// Implementation for accessing StepFunctions
+    /// <para>Implementation for accessing StepFunctions</para>
     ///
     /// Step Functions 
     /// <para>

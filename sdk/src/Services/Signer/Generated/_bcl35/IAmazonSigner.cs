@@ -27,7 +27,7 @@ using Amazon.Signer.Model;
 namespace Amazon.Signer
 {
     /// <summary>
-    /// Interface for accessing Signer
+    /// <para>Interface for accessing Signer</para>
     ///
     /// AWS Signer is a fully managed code-signing service to help you ensure the trust and
     /// integrity of your code. 

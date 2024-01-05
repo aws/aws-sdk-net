@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LookoutforVision
 {
     /// <summary>
-    /// Implementation for accessing LookoutforVision
+    /// <para>Implementation for accessing LookoutforVision</para>
     ///
     /// This is the Amazon Lookout for Vision API Reference. It provides descriptions of actions,
     /// data types, common parameters, and common errors.

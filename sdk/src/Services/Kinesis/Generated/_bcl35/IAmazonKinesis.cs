@@ -27,7 +27,7 @@ using Amazon.Kinesis.Model;
 namespace Amazon.Kinesis
 {
     /// <summary>
-    /// Interface for accessing Kinesis
+    /// <para>Interface for accessing Kinesis</para>
     ///
     /// Amazon Kinesis Data Streams Service API Reference 
     /// <para>

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ChimeSDKMeetings
 {
     /// <summary>
-    /// Implementation for accessing ChimeSDKMeetings
+    /// <para>Implementation for accessing ChimeSDKMeetings</para>
     ///
     /// The Amazon Chime SDK meetings APIs in this section allow software developers to create
     /// Amazon Chime SDK meetings, set the Amazon Web Services Regions for meetings, create

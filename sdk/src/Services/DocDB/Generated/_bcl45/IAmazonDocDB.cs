@@ -29,7 +29,7 @@ using Amazon.DocDB.Model;
 namespace Amazon.DocDB
 {
     /// <summary>
-    /// Interface for accessing DocDB
+    /// <para>Interface for accessing DocDB</para>
     ///
     /// Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon
     /// DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SSMIncidents
 {
     /// <summary>
-    /// Implementation for accessing SSMIncidents
+    /// <para>Implementation for accessing SSMIncidents</para>
     ///
     /// Systems Manager Incident Manager is an incident management console designed to help
     /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTAnalytics
 {
     /// <summary>
-    /// Implementation for accessing IoTAnalytics
+    /// <para>Implementation for accessing IoTAnalytics</para>
     ///
     /// IoT Analytics allows you to collect large amounts of device data, process messages,
     /// and store them. You can then query the data and run sophisticated analytics on it.

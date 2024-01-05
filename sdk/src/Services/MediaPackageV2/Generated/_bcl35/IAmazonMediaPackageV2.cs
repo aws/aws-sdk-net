@@ -27,7 +27,7 @@ using Amazon.MediaPackageV2.Model;
 namespace Amazon.MediaPackageV2
 {
     /// <summary>
-    /// Interface for accessing MediaPackageV2
+    /// <para>Interface for accessing MediaPackageV2</para>
     ///
     /// <note> 
     /// <para>

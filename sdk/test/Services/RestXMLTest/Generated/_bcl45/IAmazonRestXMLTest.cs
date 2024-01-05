@@ -29,7 +29,7 @@ using Amazon.RestXMLTest.Model;
 namespace Amazon.RestXMLTest
 {
     /// <summary>
-    /// Interface for accessing RestXMLTest
+    /// <para>Interface for accessing RestXMLTest</para>
     ///
     /// 
     /// </summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Translate
 {
     /// <summary>
-    /// Implementation for accessing Translate
+    /// <para>Implementation for accessing Translate</para>
     ///
     /// Provides translation of the input content from the source language to the target language.
     /// </summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.QConnect
 {
     /// <summary>
-    /// Implementation for accessing QConnect
+    /// <para>Implementation for accessing QConnect</para>
     ///
     /// <note> 
     /// <para>

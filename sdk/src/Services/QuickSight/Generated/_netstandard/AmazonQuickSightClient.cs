@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.QuickSight
 {
     /// <summary>
-    /// Implementation for accessing QuickSight
+    /// <para>Implementation for accessing QuickSight</para>
     ///
     /// Amazon QuickSight API Reference 
     /// <para>

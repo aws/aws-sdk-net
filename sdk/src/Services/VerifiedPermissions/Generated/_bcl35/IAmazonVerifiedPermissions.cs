@@ -27,7 +27,7 @@ using Amazon.VerifiedPermissions.Model;
 namespace Amazon.VerifiedPermissions
 {
     /// <summary>
-    /// Interface for accessing VerifiedPermissions
+    /// <para>Interface for accessing VerifiedPermissions</para>
     ///
     /// Amazon Verified Permissions is a permissions management service from Amazon Web Services.
     /// You can use Verified Permissions to manage permissions for your application, and authorize

@@ -27,7 +27,7 @@ using Amazon.MTurk.Model;
 namespace Amazon.MTurk
 {
     /// <summary>
-    /// Interface for accessing MTurk
+    /// <para>Interface for accessing MTurk</para>
     ///
     /// Amazon Mechanical Turk API Reference
     /// </summary>

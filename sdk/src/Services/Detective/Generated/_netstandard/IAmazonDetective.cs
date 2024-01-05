@@ -29,7 +29,7 @@ using Amazon.Detective.Model;
 namespace Amazon.Detective
 {
     /// <summary>
-    /// Interface for accessing Detective
+    /// <para>Interface for accessing Detective</para>
     ///
     /// Detective uses machine learning and purpose-built visualizations to help you to analyze
     /// and investigate security issues across your Amazon Web Services (Amazon Web Services)

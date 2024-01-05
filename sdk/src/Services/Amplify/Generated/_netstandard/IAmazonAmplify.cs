@@ -29,7 +29,7 @@ using Amazon.Amplify.Model;
 namespace Amazon.Amplify
 {
     /// <summary>
-    /// Interface for accessing Amplify
+    /// <para>Interface for accessing Amplify</para>
     ///
     /// Amplify enables developers to develop and deploy cloud-powered mobile and web apps.
     /// Amplify Hosting provides a continuous delivery and hosting service for web applications.

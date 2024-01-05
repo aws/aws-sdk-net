@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DocDB
 {
     /// <summary>
-    /// Implementation for accessing DocDB
+    /// <para>Implementation for accessing DocDB</para>
     ///
     /// Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon
     /// DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases

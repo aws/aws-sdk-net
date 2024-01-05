@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppFabric
 {
     /// <summary>
-    /// Implementation for accessing AppFabric
+    /// <para>Implementation for accessing AppFabric</para>
     ///
     /// Amazon Web Services AppFabric quickly connects software as a service (SaaS) applications
     /// across your organization. This allows IT and security teams to easily manage and secure

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.VPCLattice
 {
     /// <summary>
-    /// Implementation for accessing VPCLattice
+    /// <para>Implementation for accessing VPCLattice</para>
     ///
     /// Amazon VPC Lattice is a fully managed application networking service that you use
     /// to connect, secure, and monitor all of your services across multiple accounts and

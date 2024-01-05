@@ -27,7 +27,7 @@ using Amazon.RDS.Model;
 namespace Amazon.RDS
 {
     /// <summary>
-    /// Interface for accessing RDS
+    /// <para>Interface for accessing RDS</para>
     ///
     /// Amazon Relational Database Service  
     /// <para>

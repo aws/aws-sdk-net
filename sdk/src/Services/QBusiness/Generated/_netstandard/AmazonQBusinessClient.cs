@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.QBusiness
 {
     /// <summary>
-    /// Implementation for accessing QBusiness
+    /// <para>Implementation for accessing QBusiness</para>
     ///
     /// 
     /// </summary>

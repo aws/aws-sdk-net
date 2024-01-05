@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaConnect
 {
     /// <summary>
-    /// Implementation for accessing MediaConnect
+    /// <para>Implementation for accessing MediaConnect</para>
     ///
     /// API for AWS Elemental MediaConnect
     /// </summary>

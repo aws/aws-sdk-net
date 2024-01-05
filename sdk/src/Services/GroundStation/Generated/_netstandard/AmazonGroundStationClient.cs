@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.GroundStation
 {
     /// <summary>
-    /// Implementation for accessing GroundStation
+    /// <para>Implementation for accessing GroundStation</para>
     ///
     /// Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed
     /// service that enables you to control satellite communications, downlink and process

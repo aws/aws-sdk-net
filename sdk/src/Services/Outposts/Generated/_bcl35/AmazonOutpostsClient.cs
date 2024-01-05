@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Outposts
 {
     /// <summary>
-    /// Implementation for accessing Outposts
+    /// <para>Implementation for accessing Outposts</para>
     ///
     /// Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services
     /// infrastructure, APIs, and tools to customer premises. By providing local access to

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Imagebuilder
 {
     /// <summary>
-    /// Implementation for accessing Imagebuilder
+    /// <para>Implementation for accessing Imagebuilder</para>
     ///
     /// EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier
     /// to automate the creation, management, and deployment of customized, secure, and up-to-date

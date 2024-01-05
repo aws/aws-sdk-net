@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Appflow
 {
     /// <summary>
-    /// Implementation for accessing Appflow
+    /// <para>Implementation for accessing Appflow</para>
     ///
     /// Welcome to the Amazon AppFlow API reference. This guide is for developers who need
     /// detailed information about the Amazon AppFlow API operations, data types, and errors.

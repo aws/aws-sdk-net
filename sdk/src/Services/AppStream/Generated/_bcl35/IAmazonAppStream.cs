@@ -27,7 +27,7 @@ using Amazon.AppStream.Model;
 namespace Amazon.AppStream
 {
     /// <summary>
-    /// Interface for accessing AppStream
+    /// <para>Interface for accessing AppStream</para>
     ///
     /// Amazon AppStream 2.0 
     /// <para>

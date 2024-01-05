@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkSpaces
 {
     /// <summary>
-    /// Implementation for accessing WorkSpaces
+    /// <para>Implementation for accessing WorkSpaces</para>
     ///
     /// Amazon WorkSpaces Service 
     /// <para>

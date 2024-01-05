@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.XRay
 {
     /// <summary>
-    /// Implementation for accessing XRay
+    /// <para>Implementation for accessing XRay</para>
     ///
     /// Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service
     /// maps and other data created by processing those traces.

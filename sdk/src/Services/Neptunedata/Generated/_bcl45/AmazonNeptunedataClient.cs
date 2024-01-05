@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Neptunedata
 {
     /// <summary>
-    /// Implementation for accessing Neptunedata
+    /// <para>Implementation for accessing Neptunedata</para>
     ///
     /// Neptune Data API 
     /// <para>

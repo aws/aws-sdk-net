@@ -29,7 +29,7 @@ using Amazon.SsmSap.Model;
 namespace Amazon.SsmSap
 {
     /// <summary>
-    /// Interface for accessing SsmSap
+    /// <para>Interface for accessing SsmSap</para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
     /// the actions and data types for AWS Systems Manager for SAP. The topic for each action

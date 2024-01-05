@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Cloud9
 {
     /// <summary>
-    /// Implementation for accessing Cloud9
+    /// <para>Implementation for accessing Cloud9</para>
     ///
     /// Cloud9 
     /// <para>

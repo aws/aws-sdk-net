@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkDocs
 {
     /// <summary>
-    /// Implementation for accessing WorkDocs
+    /// <para>Implementation for accessing WorkDocs</para>
     ///
     /// The Amazon WorkDocs API is designed for the following use cases:
     /// 

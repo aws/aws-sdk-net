@@ -27,7 +27,7 @@ using Amazon.Personalize.Model;
 namespace Amazon.Personalize
 {
     /// <summary>
-    /// Interface for accessing Personalize
+    /// <para>Interface for accessing Personalize</para>
     ///
     /// Amazon Personalize is a machine learning service that makes it easy to add individualized
     /// recommendations to customers.

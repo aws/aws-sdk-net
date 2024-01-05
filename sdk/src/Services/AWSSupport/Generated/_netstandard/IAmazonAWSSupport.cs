@@ -29,7 +29,7 @@ using Amazon.AWSSupport.Model;
 namespace Amazon.AWSSupport
 {
     /// <summary>
-    /// Interface for accessing AWSSupport
+    /// <para>Interface for accessing AWSSupport</para>
     ///
     /// Amazon Web Services Support 
     /// <para>

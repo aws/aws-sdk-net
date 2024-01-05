@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.S3Outposts
 {
     /// <summary>
-    /// Implementation for accessing S3Outposts
+    /// <para>Implementation for accessing S3Outposts</para>
     ///
     /// Amazon S3 on Outposts provides access to S3 on Outposts operations.
     /// </summary>

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RDSDataService
 {
     /// <summary>
-    /// Implementation for accessing RDSDataService
+    /// <para>Implementation for accessing RDSDataService</para>
     ///
     /// RDS Data API 
     /// <para>

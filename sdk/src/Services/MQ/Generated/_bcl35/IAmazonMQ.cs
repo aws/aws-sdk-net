@@ -27,7 +27,7 @@ using Amazon.MQ.Model;
 namespace Amazon.MQ
 {
     /// <summary>
-    /// Interface for accessing MQ
+    /// <para>Interface for accessing MQ</para>
     ///
     /// Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that
     /// makes it easy to set up and operate message brokers in the cloud. A message broker

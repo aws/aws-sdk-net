@@ -29,7 +29,7 @@ using Amazon.AugmentedAIRuntime.Model;
 namespace Amazon.AugmentedAIRuntime
 {
     /// <summary>
-    /// Interface for accessing AugmentedAIRuntime
+    /// <para>Interface for accessing AugmentedAIRuntime</para>
     ///
     /// Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine
     /// learning application. When an AI application can't evaluate data with a high degree

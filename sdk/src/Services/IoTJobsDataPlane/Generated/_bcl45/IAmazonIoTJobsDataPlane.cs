@@ -29,7 +29,7 @@ using Amazon.IoTJobsDataPlane.Model;
 namespace Amazon.IoTJobsDataPlane
 {
     /// <summary>
-    /// Interface for accessing IoTJobsDataPlane
+    /// <para>Interface for accessing IoTJobsDataPlane</para>
     ///
     /// AWS IoT Jobs is a service that allows you to define a set of jobs — remote operations
     /// that are sent to and executed on one or more devices connected to AWS IoT. For example,

@@ -27,7 +27,7 @@ using Amazon.MediaPackage.Model;
 namespace Amazon.MediaPackage
 {
     /// <summary>
-    /// Interface for accessing MediaPackage
+    /// <para>Interface for accessing MediaPackage</para>
     ///
     /// AWS Elemental MediaPackage
     /// </summary>

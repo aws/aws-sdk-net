@@ -27,7 +27,7 @@ using Amazon.Mgn.Model;
 namespace Amazon.Mgn
 {
     /// <summary>
-    /// Interface for accessing Mgn
+    /// <para>Interface for accessing Mgn</para>
     ///
     /// The Application Migration Service service.
     /// </summary>

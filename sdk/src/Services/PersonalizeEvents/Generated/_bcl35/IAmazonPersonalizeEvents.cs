@@ -27,7 +27,7 @@ using Amazon.PersonalizeEvents.Model;
 namespace Amazon.PersonalizeEvents
 {
     /// <summary>
-    /// Interface for accessing PersonalizeEvents
+    /// <para>Interface for accessing PersonalizeEvents</para>
     ///
     /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
     /// <i>click</i> data, and use it for model training either alone or combined with historical

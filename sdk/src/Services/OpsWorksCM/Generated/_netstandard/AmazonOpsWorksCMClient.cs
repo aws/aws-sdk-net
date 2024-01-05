@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.OpsWorksCM
 {
     /// <summary>
-    /// Implementation for accessing OpsWorksCM
+    /// <para>Implementation for accessing OpsWorksCM</para>
     ///
     /// AWS OpsWorks CM 
     /// <para>

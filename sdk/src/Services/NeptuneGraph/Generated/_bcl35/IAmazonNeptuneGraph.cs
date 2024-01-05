@@ -27,7 +27,7 @@ using Amazon.NeptuneGraph.Model;
 namespace Amazon.NeptuneGraph
 {
     /// <summary>
-    /// Interface for accessing NeptuneGraph
+    /// <para>Interface for accessing NeptuneGraph</para>
     ///
     /// Neptune Analytics is a serverless in-memory graph database service for analytics that
     /// delivers high-performance analytics and real-time queries for any graph type. It complements

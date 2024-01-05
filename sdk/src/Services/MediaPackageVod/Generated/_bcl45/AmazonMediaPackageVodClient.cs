@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaPackageVod
 {
     /// <summary>
-    /// Implementation for accessing MediaPackageVod
+    /// <para>Implementation for accessing MediaPackageVod</para>
     ///
     /// AWS Elemental MediaPackage VOD
     /// </summary>

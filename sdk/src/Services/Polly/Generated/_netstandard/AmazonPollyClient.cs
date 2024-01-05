@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Polly
 {
     /// <summary>
-    /// Implementation for accessing Polly
+    /// <para>Implementation for accessing Polly</para>
     ///
     /// Amazon Polly is a web service that makes it easy to synthesize speech from text.
     /// 

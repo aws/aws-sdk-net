@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.QLDBSession
 {
     /// <summary>
-    /// Implementation for accessing QLDBSession
+    /// <para>Implementation for accessing QLDBSession</para>
     ///
     /// The transactional data APIs for Amazon QLDB
     /// 

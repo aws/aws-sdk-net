@@ -27,7 +27,7 @@ using Amazon.AppConfigData.Model;
 namespace Amazon.AppConfigData
 {
     /// <summary>
-    /// Interface for accessing AppConfigData
+    /// <para>Interface for accessing AppConfigData</para>
     ///
     /// AppConfig Data provides the data plane APIs your application uses to retrieve configuration
     /// data. Here's how it works:

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ChimeSDKIdentity
 {
     /// <summary>
-    /// Implementation for accessing ChimeSDKIdentity
+    /// <para>Implementation for accessing ChimeSDKIdentity</para>
     ///
     /// The Amazon Chime SDK Identity APIs in this section allow software developers to create
     /// and manage unique instances of their messaging applications. These APIs provide the

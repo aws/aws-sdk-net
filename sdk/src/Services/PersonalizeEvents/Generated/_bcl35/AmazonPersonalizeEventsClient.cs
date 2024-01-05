@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PersonalizeEvents
 {
     /// <summary>
-    /// Implementation for accessing PersonalizeEvents
+    /// <para>Implementation for accessing PersonalizeEvents</para>
     ///
     /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
     /// <i>click</i> data, and use it for model training either alone or combined with historical

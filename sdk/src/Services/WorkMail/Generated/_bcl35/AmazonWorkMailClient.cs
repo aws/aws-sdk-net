@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkMail
 {
     /// <summary>
-    /// Implementation for accessing WorkMail
+    /// <para>Implementation for accessing WorkMail</para>
     ///
     /// WorkMail is a secure, managed business email and calendaring service with support
     /// for existing desktop and mobile email clients. You can access your email, contacts,

@@ -27,7 +27,7 @@ using Amazon.PrometheusService.Model;
 namespace Amazon.PrometheusService
 {
     /// <summary>
-    /// Interface for accessing PrometheusService
+    /// <para>Interface for accessing PrometheusService</para>
     ///
     /// Amazon Managed Service for Prometheus
     /// </summary>

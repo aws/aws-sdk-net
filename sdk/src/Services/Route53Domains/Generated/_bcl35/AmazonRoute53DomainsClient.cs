@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53Domains
 {
     /// <summary>
-    /// Implementation for accessing Route53Domains
+    /// <para>Implementation for accessing Route53Domains</para>
     ///
     /// Amazon Route 53 API actions let you register domain names and perform related operations.
     /// </summary>

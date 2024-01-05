@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.HealthLake
 {
     /// <summary>
-    /// Implementation for accessing HealthLake
+    /// <para>Implementation for accessing HealthLake</para>
     ///
     /// AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform,
     /// query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.

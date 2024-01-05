@@ -27,7 +27,7 @@ using Amazon.OpsWorks.Model;
 namespace Amazon.OpsWorks
 {
     /// <summary>
-    /// Interface for accessing OpsWorks
+    /// <para>Interface for accessing OpsWorks</para>
     ///
     /// AWS OpsWorks 
     /// <para>

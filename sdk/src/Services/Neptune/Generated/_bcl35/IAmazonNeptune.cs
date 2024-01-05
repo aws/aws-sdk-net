@@ -27,7 +27,7 @@ using Amazon.Neptune.Model;
 namespace Amazon.Neptune
 {
     /// <summary>
-    /// Interface for accessing Neptune
+    /// <para>Interface for accessing Neptune</para>
     ///
     /// Amazon Neptune 
     /// <para>

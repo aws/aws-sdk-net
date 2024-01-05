@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Keyspaces
 {
     /// <summary>
-    /// Implementation for accessing Keyspaces
+    /// <para>Implementation for accessing Keyspaces</para>
     ///
     /// Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed
     /// Apache Cassandra-compatible database service. Amazon Keyspaces makes it easy to migrate,

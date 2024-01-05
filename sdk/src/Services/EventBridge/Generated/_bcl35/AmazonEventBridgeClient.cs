@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EventBridge
 {
     /// <summary>
-    /// Implementation for accessing EventBridge
+    /// <para>Implementation for accessing EventBridge</para>
     ///
     /// Amazon EventBridge helps you to respond to state changes in your Amazon Web Services
     /// resources. When your resources change state, they automatically send events to an

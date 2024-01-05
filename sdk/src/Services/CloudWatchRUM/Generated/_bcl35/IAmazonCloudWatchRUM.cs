@@ -27,7 +27,7 @@ using Amazon.CloudWatchRUM.Model;
 namespace Amazon.CloudWatchRUM
 {
     /// <summary>
-    /// Interface for accessing CloudWatchRUM
+    /// <para>Interface for accessing CloudWatchRUM</para>
     ///
     /// With Amazon CloudWatch RUM, you can perform real-user monitoring to collect client-side
     /// data about your web application performance from actual user sessions in real time.

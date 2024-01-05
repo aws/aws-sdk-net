@@ -27,7 +27,7 @@ using Amazon.Kafka.Model;
 namespace Amazon.Kafka
 {
     /// <summary>
-    /// Interface for accessing Kafka
+    /// <para>Interface for accessing Kafka</para>
     ///
     /// The operations for managing an Amazon MSK cluster.
     /// </summary>

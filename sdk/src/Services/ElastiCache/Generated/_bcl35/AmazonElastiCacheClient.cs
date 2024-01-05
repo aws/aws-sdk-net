@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElastiCache
 {
     /// <summary>
-    /// Implementation for accessing ElastiCache
+    /// <para>Implementation for accessing ElastiCache</para>
     ///
     /// Amazon ElastiCache 
     /// <para>

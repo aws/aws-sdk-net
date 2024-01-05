@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudHSM
 {
     /// <summary>
-    /// Implementation for accessing CloudHSM
+    /// <para>Implementation for accessing CloudHSM</para>
     ///
     /// AWS CloudHSM Service 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Budgets.Model;
 namespace Amazon.Budgets
 {
     /// <summary>
-    /// Interface for accessing Budgets
+    /// <para>Interface for accessing Budgets</para>
     ///
     /// Use the Amazon Web Services Budgets API to plan your service usage, service costs,
     /// and instance reservations. This API reference provides descriptions, syntax, and usage

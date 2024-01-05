@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Pipes
 {
     /// <summary>
-    /// Implementation for accessing Pipes
+    /// <para>Implementation for accessing Pipes</para>
     ///
     /// Amazon EventBridge Pipes connects event sources to targets. Pipes reduces the need
     /// for specialized knowledge and integration code when developing event driven architectures.

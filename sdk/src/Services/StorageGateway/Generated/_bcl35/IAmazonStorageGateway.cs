@@ -27,7 +27,7 @@ using Amazon.StorageGateway.Model;
 namespace Amazon.StorageGateway
 {
     /// <summary>
-    /// Interface for accessing StorageGateway
+    /// <para>Interface for accessing StorageGateway</para>
     ///
     /// Storage Gateway Service 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.CostExplorer.Model;
 namespace Amazon.CostExplorer
 {
     /// <summary>
-    /// Interface for accessing CostExplorer
+    /// <para>Interface for accessing CostExplorer</para>
     ///
     /// You can use the Cost Explorer API to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.

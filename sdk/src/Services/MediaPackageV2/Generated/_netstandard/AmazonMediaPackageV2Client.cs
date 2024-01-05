@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaPackageV2
 {
     /// <summary>
-    /// Implementation for accessing MediaPackageV2
+    /// <para>Implementation for accessing MediaPackageV2</para>
     ///
     /// <note> 
     /// <para>

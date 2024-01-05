@@ -29,7 +29,7 @@ using Amazon.FinSpaceData.Model;
 namespace Amazon.FinSpaceData
 {
     /// <summary>
-    /// Interface for accessing FinSpaceData
+    /// <para>Interface for accessing FinSpaceData</para>
     ///
     /// The FinSpace APIs let you take actions inside the FinSpace.
     /// </summary>

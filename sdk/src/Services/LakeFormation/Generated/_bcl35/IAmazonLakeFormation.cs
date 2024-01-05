@@ -27,7 +27,7 @@ using Amazon.LakeFormation.Model;
 namespace Amazon.LakeFormation
 {
     /// <summary>
-    /// Interface for accessing LakeFormation
+    /// <para>Interface for accessing LakeFormation</para>
     ///
     /// Lake Formation 
     /// <para>

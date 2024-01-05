@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MediaStoreData
 {
     /// <summary>
-    /// Implementation for accessing MediaStoreData
+    /// <para>Implementation for accessing MediaStoreData</para>
     ///
     /// An AWS Elemental MediaStore asset is an object, similar to an object in the Amazon
     /// S3 service. Objects are the fundamental entities that are stored in AWS Elemental

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppRunner
 {
     /// <summary>
-    /// Implementation for accessing AppRunner
+    /// <para>Implementation for accessing AppRunner</para>
     ///
     /// App Runner 
     /// <para>

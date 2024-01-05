@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ServiceQuotas
 {
     /// <summary>
-    /// Implementation for accessing ServiceQuotas
+    /// <para>Implementation for accessing ServiceQuotas</para>
     ///
     /// With Service Quotas, you can view and manage your quotas easily as your Amazon Web
     /// Services workloads grow. Quotas, also referred to as limits, are the maximum number

@@ -27,7 +27,7 @@ using Amazon.ResourceGroups.Model;
 namespace Amazon.ResourceGroups
 {
     /// <summary>
-    /// Interface for accessing ResourceGroups
+    /// <para>Interface for accessing ResourceGroups</para>
     ///
     /// Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic
     /// Compute Cloud instances, Amazon Relational Database Service databases, and Amazon

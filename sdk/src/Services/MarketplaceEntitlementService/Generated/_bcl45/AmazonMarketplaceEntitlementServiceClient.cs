@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MarketplaceEntitlementService
 {
     /// <summary>
-    /// Implementation for accessing MarketplaceEntitlementService
+    /// <para>Implementation for accessing MarketplaceEntitlementService</para>
     ///
     /// AWS Marketplace Entitlement Service 
     /// <para>

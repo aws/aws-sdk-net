@@ -27,7 +27,7 @@ using Amazon.ResourceGroupsTaggingAPI.Model;
 namespace Amazon.ResourceGroupsTaggingAPI
 {
     /// <summary>
-    /// Interface for accessing ResourceGroupsTaggingAPI
+    /// <para>Interface for accessing ResourceGroupsTaggingAPI</para>
     ///
     /// Resource Groups Tagging API
     /// </summary>

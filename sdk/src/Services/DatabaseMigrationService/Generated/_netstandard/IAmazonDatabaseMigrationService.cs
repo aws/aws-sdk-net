@@ -29,7 +29,7 @@ using Amazon.DatabaseMigrationService.Model;
 namespace Amazon.DatabaseMigrationService
 {
     /// <summary>
-    /// Interface for accessing DatabaseMigrationService
+    /// <para>Interface for accessing DatabaseMigrationService</para>
     ///
     /// Database Migration Service 
     /// <para>

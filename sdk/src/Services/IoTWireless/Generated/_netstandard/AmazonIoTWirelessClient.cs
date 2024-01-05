@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTWireless
 {
     /// <summary>
-    /// Implementation for accessing IoTWireless
+    /// <para>Implementation for accessing IoTWireless</para>
     ///
     /// AWS IoT Wireless provides bi-directional communication between internet-connected
     /// wireless devices and the AWS Cloud. To onboard both LoRaWAN and Sidewalk devices to

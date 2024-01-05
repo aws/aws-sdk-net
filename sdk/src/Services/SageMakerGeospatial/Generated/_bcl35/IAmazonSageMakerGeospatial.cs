@@ -27,7 +27,7 @@ using Amazon.SageMakerGeospatial.Model;
 namespace Amazon.SageMakerGeospatial
 {
     /// <summary>
-    /// Interface for accessing SageMakerGeospatial
+    /// <para>Interface for accessing SageMakerGeospatial</para>
     ///
     /// Provides APIs for creating and managing SageMaker geospatial resources.
     /// </summary>

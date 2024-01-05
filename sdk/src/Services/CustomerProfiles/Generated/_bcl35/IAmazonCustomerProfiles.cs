@@ -27,7 +27,7 @@ using Amazon.CustomerProfiles.Model;
 namespace Amazon.CustomerProfiles
 {
     /// <summary>
-    /// Interface for accessing CustomerProfiles
+    /// <para>Interface for accessing CustomerProfiles</para>
     ///
     /// Amazon Connect Customer Profiles 
     /// <para>

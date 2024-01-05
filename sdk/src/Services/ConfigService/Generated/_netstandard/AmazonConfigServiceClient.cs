@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ConfigService
 {
     /// <summary>
-    /// Implementation for accessing ConfigService
+    /// <para>Implementation for accessing ConfigService</para>
     ///
     /// Config 
     /// <para>

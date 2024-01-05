@@ -29,7 +29,7 @@ using Amazon.PaymentCryptographyData.Model;
 namespace Amazon.PaymentCryptographyData
 {
     /// <summary>
-    /// Interface for accessing PaymentCryptographyData
+    /// <para>Interface for accessing PaymentCryptographyData</para>
     ///
     /// You use the Amazon Web Services Payment Cryptography Data Plane to manage how encryption
     /// keys are used for payment-related transaction processing and associated cryptographic

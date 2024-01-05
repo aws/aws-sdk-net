@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LocationService
 {
     /// <summary>
-    /// Implementation for accessing LocationService
+    /// <para>Implementation for accessing LocationService</para>
     ///
     /// "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
     /// </summary>

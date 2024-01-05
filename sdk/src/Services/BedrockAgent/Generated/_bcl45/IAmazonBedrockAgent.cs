@@ -29,7 +29,7 @@ using Amazon.BedrockAgent.Model;
 namespace Amazon.BedrockAgent
 {
     /// <summary>
-    /// Interface for accessing BedrockAgent
+    /// <para>Interface for accessing BedrockAgent</para>
     ///
     /// An example service, deployed with the Octane Service creator, which will echo the
     /// string

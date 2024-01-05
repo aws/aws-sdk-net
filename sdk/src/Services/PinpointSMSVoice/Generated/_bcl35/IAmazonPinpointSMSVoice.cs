@@ -27,7 +27,7 @@ using Amazon.PinpointSMSVoice.Model;
 namespace Amazon.PinpointSMSVoice
 {
     /// <summary>
-    /// Interface for accessing PinpointSMSVoice
+    /// <para>Interface for accessing PinpointSMSVoice</para>
     ///
     /// Pinpoint SMS and Voice Messaging public facing APIs
     /// </summary>

@@ -27,7 +27,7 @@ using Amazon.MediaConnect.Model;
 namespace Amazon.MediaConnect
 {
     /// <summary>
-    /// Interface for accessing MediaConnect
+    /// <para>Interface for accessing MediaConnect</para>
     ///
     /// API for AWS Elemental MediaConnect
     /// </summary>

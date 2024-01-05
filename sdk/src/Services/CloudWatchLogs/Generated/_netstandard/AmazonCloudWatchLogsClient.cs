@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudWatchLogs
 {
     /// <summary>
-    /// Implementation for accessing CloudWatchLogs
+    /// <para>Implementation for accessing CloudWatchLogs</para>
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// EC2 instances, CloudTrail, and other sources. You can then retrieve the associated

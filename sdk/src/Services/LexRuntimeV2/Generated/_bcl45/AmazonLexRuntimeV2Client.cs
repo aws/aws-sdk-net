@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LexRuntimeV2
 {
     /// <summary>
-    /// Implementation for accessing LexRuntimeV2
+    /// <para>Implementation for accessing LexRuntimeV2</para>
     ///
     /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
     /// </summary>

@@ -29,7 +29,7 @@ using Amazon.NetworkManager.Model;
 namespace Amazon.NetworkManager
 {
     /// <summary>
-    /// Interface for accessing NetworkManager
+    /// <para>Interface for accessing NetworkManager</para>
     ///
     /// Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud
     /// WAN core network and your Transit Gateway network across Amazon Web Services accounts,

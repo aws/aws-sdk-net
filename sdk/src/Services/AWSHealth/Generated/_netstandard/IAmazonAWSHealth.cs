@@ -29,7 +29,7 @@ using Amazon.AWSHealth.Model;
 namespace Amazon.AWSHealth
 {
     /// <summary>
-    /// Interface for accessing AWSHealth
+    /// <para>Interface for accessing AWSHealth</para>
     ///
     /// Health 
     /// <para>

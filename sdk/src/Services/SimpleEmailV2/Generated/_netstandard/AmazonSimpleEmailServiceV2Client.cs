@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SimpleEmailV2
 {
     /// <summary>
-    /// Implementation for accessing SimpleEmailServiceV2
+    /// <para>Implementation for accessing SimpleEmailServiceV2</para>
     ///
     /// Amazon SES API v2 
     /// <para>

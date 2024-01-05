@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AppMesh
 {
     /// <summary>
-    /// Implementation for accessing AppMesh
+    /// <para>Implementation for accessing AppMesh</para>
     ///
     /// App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
     /// and control microservices. App Mesh standardizes how your microservices communicate,

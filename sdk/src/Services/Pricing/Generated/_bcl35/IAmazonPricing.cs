@@ -27,7 +27,7 @@ using Amazon.Pricing.Model;
 namespace Amazon.Pricing
 {
     /// <summary>
-    /// Interface for accessing Pricing
+    /// <para>Interface for accessing Pricing</para>
     ///
     /// The Amazon Web Services Price List API is a centralized and convenient way to programmatically
     /// query Amazon Web Services for services, products, and pricing information. The Amazon

@@ -29,7 +29,7 @@ using Amazon.WorkSpaces.Model;
 namespace Amazon.WorkSpaces
 {
     /// <summary>
-    /// Interface for accessing WorkSpaces
+    /// <para>Interface for accessing WorkSpaces</para>
     ///
     /// Amazon WorkSpaces Service 
     /// <para>

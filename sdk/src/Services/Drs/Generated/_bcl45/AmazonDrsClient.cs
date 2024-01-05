@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Drs
 {
     /// <summary>
-    /// Implementation for accessing Drs
+    /// <para>Implementation for accessing Drs</para>
     ///
     /// AWS Elastic Disaster Recovery Service.
     /// </summary>

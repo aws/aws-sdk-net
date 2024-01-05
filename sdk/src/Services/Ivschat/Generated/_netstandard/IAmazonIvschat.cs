@@ -29,7 +29,7 @@ using Amazon.Ivschat.Model;
 namespace Amazon.Ivschat
 {
     /// <summary>
-    /// Interface for accessing Ivschat
+    /// <para>Interface for accessing Ivschat</para>
     ///
     /// <b>Introduction</b> 
     /// 

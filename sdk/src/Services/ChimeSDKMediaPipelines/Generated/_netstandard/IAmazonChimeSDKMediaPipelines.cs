@@ -29,7 +29,7 @@ using Amazon.ChimeSDKMediaPipelines.Model;
 namespace Amazon.ChimeSDKMediaPipelines
 {
     /// <summary>
-    /// Interface for accessing ChimeSDKMediaPipelines
+    /// <para>Interface for accessing ChimeSDKMediaPipelines</para>
     ///
     /// The Amazon Chime SDK media pipeline APIs in this section allow software developers
     /// to create Amazon Chime SDK media pipelines that capture, concatenate, or stream your

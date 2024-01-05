@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BedrockAgent
 {
     /// <summary>
-    /// Implementation for accessing BedrockAgent
+    /// <para>Implementation for accessing BedrockAgent</para>
     ///
     /// An example service, deployed with the Octane Service creator, which will echo the
     /// string

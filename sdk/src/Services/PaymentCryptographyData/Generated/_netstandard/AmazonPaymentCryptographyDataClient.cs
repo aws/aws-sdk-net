@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PaymentCryptographyData
 {
     /// <summary>
-    /// Implementation for accessing PaymentCryptographyData
+    /// <para>Implementation for accessing PaymentCryptographyData</para>
     ///
     /// You use the Amazon Web Services Payment Cryptography Data Plane to manage how encryption
     /// keys are used for payment-related transaction processing and associated cryptographic

@@ -29,7 +29,7 @@ using Amazon.AlexaForBusiness.Model;
 namespace Amazon.AlexaForBusiness
 {
     /// <summary>
-    /// Interface for accessing AlexaForBusiness
+    /// <para>Interface for accessing AlexaForBusiness</para>
     ///
     /// Alexa for Business has been retired and is no longer supported.
     /// </summary>

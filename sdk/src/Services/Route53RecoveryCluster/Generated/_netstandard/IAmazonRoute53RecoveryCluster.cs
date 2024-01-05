@@ -29,7 +29,7 @@ using Amazon.Route53RecoveryCluster.Model;
 namespace Amazon.Route53RecoveryCluster
 {
     /// <summary>
-    /// Interface for accessing Route53RecoveryCluster
+    /// <para>Interface for accessing Route53RecoveryCluster</para>
     ///
     /// Welcome to the Routing Control (Recovery Cluster) API Reference Guide for Amazon Route
     /// 53 Application Recovery Controller.

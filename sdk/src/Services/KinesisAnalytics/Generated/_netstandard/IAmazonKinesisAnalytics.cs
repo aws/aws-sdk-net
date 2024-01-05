@@ -29,7 +29,7 @@ using Amazon.KinesisAnalytics.Model;
 namespace Amazon.KinesisAnalytics
 {
     /// <summary>
-    /// Interface for accessing KinesisAnalytics
+    /// <para>Interface for accessing KinesisAnalytics</para>
     ///
     /// Amazon Kinesis Analytics 
     /// <para>

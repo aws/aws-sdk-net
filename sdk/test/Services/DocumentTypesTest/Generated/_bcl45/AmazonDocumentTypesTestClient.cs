@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DocumentTypesTest
 {
     /// <summary>
-    /// Implementation for accessing DocumentTypesTest
+    /// <para>Implementation for accessing DocumentTypesTest</para>
     ///
     /// 
     /// </summary>

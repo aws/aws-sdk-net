@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ConnectWisdomService
 {
     /// <summary>
-    /// Implementation for accessing ConnectWisdomService
+    /// <para>Implementation for accessing ConnectWisdomService</para>
     ///
     /// Amazon Connect Wisdom delivers agents the information they need to solve customer
     /// issues as they're actively speaking with customers. Agents can search across connected

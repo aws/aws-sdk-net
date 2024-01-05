@@ -29,7 +29,7 @@ using Amazon.SSOOIDC.Model;
 namespace Amazon.SSOOIDC
 {
     /// <summary>
-    /// Interface for accessing SSOOIDC
+    /// <para>Interface for accessing SSOOIDC</para>
     ///
     /// IAM Identity Center OpenID Connect (OIDC) is a web service that enables a client (such
     /// as CLI or a native application) to register with IAM Identity Center. The service

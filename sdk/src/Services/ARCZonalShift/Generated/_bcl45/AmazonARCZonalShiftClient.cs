@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ARCZonalShift
 {
     /// <summary>
-    /// Implementation for accessing ARCZonalShift
+    /// <para>Implementation for accessing ARCZonalShift</para>
     ///
     /// Welcome to the Zonal Shift API Reference Guide for Amazon Route 53 Application Recovery
     /// Controller (Route 53 ARC).

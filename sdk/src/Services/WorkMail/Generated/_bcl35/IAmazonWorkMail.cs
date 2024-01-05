@@ -27,7 +27,7 @@ using Amazon.WorkMail.Model;
 namespace Amazon.WorkMail
 {
     /// <summary>
-    /// Interface for accessing WorkMail
+    /// <para>Interface for accessing WorkMail</para>
     ///
     /// WorkMail is a secure, managed business email and calendaring service with support
     /// for existing desktop and mobile email clients. You can access your email, contacts,

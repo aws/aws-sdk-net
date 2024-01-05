@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Schemas
 {
     /// <summary>
-    /// Implementation for accessing Schemas
+    /// <para>Implementation for accessing Schemas</para>
     ///
     /// Amazon EventBridge Schema Registry
     /// </summary>

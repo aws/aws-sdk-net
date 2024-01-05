@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
-    /// Implementation for accessing ManagedBlockchainQuery
+    /// <para>Implementation for accessing ManagedBlockchainQuery</para>
     ///
     /// Amazon Managed Blockchain (AMB) Query provides you with convenient access to multi-blockchain
     /// network data, which makes it easier for you to extract contextual data related to

@@ -29,7 +29,7 @@ using Amazon.SimpleWorkflow.Model;
 namespace Amazon.SimpleWorkflow
 {
     /// <summary>
-    /// Interface for accessing SimpleWorkflow
+    /// <para>Interface for accessing SimpleWorkflow</para>
     ///
     /// Amazon Simple Workflow Service 
     /// <para>

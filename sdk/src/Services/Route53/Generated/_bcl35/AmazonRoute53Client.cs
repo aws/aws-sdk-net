@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Implementation for accessing Route53
+    /// <para>Implementation for accessing Route53</para>
     ///
     /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
     /// 

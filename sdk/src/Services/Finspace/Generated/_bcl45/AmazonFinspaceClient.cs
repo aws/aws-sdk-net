@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Finspace
 {
     /// <summary>
-    /// Implementation for accessing Finspace
+    /// <para>Implementation for accessing Finspace</para>
     ///
     /// The FinSpace management service provides the APIs for managing FinSpace environments.
     /// </summary>

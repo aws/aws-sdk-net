@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.NimbleStudio
 {
     /// <summary>
-    /// Implementation for accessing NimbleStudio
+    /// <para>Implementation for accessing NimbleStudio</para>
     ///
     /// Welcome to the Amazon Nimble Studio API reference. This API reference provides methods,
     /// schema, resources, parameters, and more to help you get the most out of Nimble Studio.

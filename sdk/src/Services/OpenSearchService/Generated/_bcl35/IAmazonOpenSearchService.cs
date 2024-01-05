@@ -27,7 +27,7 @@ using Amazon.OpenSearchService.Model;
 namespace Amazon.OpenSearchService
 {
     /// <summary>
-    /// Interface for accessing OpenSearchService
+    /// <para>Interface for accessing OpenSearchService</para>
     ///
     /// Use the Amazon OpenSearch Service configuration API to create, configure, and manage
     /// OpenSearch Service domains.

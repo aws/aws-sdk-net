@@ -27,7 +27,7 @@ using Amazon.ChimeSDKMeetings.Model;
 namespace Amazon.ChimeSDKMeetings
 {
     /// <summary>
-    /// Interface for accessing ChimeSDKMeetings
+    /// <para>Interface for accessing ChimeSDKMeetings</para>
     ///
     /// The Amazon Chime SDK meetings APIs in this section allow software developers to create
     /// Amazon Chime SDK meetings, set the Amazon Web Services Regions for meetings, create

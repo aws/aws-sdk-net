@@ -29,7 +29,7 @@ using Amazon.CognitoSync.Model;
 namespace Amazon.CognitoSync
 {
     /// <summary>
-    /// Interface for accessing CognitoSync
+    /// <para>Interface for accessing CognitoSync</para>
     ///
     /// Amazon Cognito Sync 
     /// <para>

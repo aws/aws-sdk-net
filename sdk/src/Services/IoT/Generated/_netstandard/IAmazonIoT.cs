@@ -29,7 +29,7 @@ using Amazon.IoT.Model;
 namespace Amazon.IoT
 {
     /// <summary>
-    /// Interface for accessing IoT
+    /// <para>Interface for accessing IoT</para>
     ///
     /// IoT 
     /// <para>

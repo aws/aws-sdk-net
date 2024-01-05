@@ -27,7 +27,7 @@ using Amazon.BedrockRuntime.Model;
 namespace Amazon.BedrockRuntime
 {
     /// <summary>
-    /// Interface for accessing BedrockRuntime
+    /// <para>Interface for accessing BedrockRuntime</para>
     ///
     /// Describes the API operations for running inference using Bedrock models.
     /// </summary>

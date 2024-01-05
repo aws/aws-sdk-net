@@ -29,7 +29,7 @@ using Amazon.Shield.Model;
 namespace Amazon.Shield
 {
     /// <summary>
-    /// Interface for accessing Shield
+    /// <para>Interface for accessing Shield</para>
     ///
     /// Shield Advanced 
     /// <para>

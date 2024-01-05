@@ -29,7 +29,7 @@ using Amazon.BackupStorage.Model;
 namespace Amazon.BackupStorage
 {
     /// <summary>
-    /// Interface for accessing BackupStorage
+    /// <para>Interface for accessing BackupStorage</para>
     ///
     /// The frontend service for Cryo Storage.
     /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Greengrass.Model;
 namespace Amazon.Greengrass
 {
     /// <summary>
-    /// Interface for accessing Greengrass
+    /// <para>Interface for accessing Greengrass</para>
     ///
     /// AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally
     /// on the data they generate, while still using the cloud for management, analytics,

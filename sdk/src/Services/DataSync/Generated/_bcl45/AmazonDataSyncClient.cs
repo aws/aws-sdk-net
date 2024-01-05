@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DataSync
 {
     /// <summary>
-    /// Implementation for accessing DataSync
+    /// <para>Implementation for accessing DataSync</para>
     ///
     /// DataSync 
     /// <para>

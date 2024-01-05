@@ -27,7 +27,7 @@ using Amazon.Account.Model;
 namespace Amazon.Account
 {
     /// <summary>
-    /// Interface for accessing Account
+    /// <para>Interface for accessing Account</para>
     ///
     /// Operations for Amazon Web Services Account Management
     /// </summary>

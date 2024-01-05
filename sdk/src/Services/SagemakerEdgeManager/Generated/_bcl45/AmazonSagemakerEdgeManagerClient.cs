@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SagemakerEdgeManager
 {
     /// <summary>
-    /// Implementation for accessing SagemakerEdgeManager
+    /// <para>Implementation for accessing SagemakerEdgeManager</para>
     ///
     /// SageMaker Edge Manager dataplane service for communicating with active agents.
     /// </summary>

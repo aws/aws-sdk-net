@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudWatchRUM
 {
     /// <summary>
-    /// Implementation for accessing CloudWatchRUM
+    /// <para>Implementation for accessing CloudWatchRUM</para>
     ///
     /// With Amazon CloudWatch RUM, you can perform real-user monitoring to collect client-side
     /// data about your web application performance from actual user sessions in real time.

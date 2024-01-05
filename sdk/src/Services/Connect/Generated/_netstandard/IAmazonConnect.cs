@@ -29,7 +29,7 @@ using Amazon.Connect.Model;
 namespace Amazon.Connect
 {
     /// <summary>
-    /// Interface for accessing Connect
+    /// <para>Interface for accessing Connect</para>
     ///
     /// Amazon Connect is a cloud-based contact center solution that you use to set up and
     /// manage a customer contact center and provide reliable customer engagement at any scale.

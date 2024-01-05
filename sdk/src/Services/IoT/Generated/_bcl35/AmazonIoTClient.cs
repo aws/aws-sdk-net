@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoT
 {
     /// <summary>
-    /// Implementation for accessing IoT
+    /// <para>Implementation for accessing IoT</para>
     ///
     /// IoT 
     /// <para>

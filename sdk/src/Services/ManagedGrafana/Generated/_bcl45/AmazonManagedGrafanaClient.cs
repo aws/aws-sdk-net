@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ManagedGrafana
 {
     /// <summary>
-    /// Implementation for accessing ManagedGrafana
+    /// <para>Implementation for accessing ManagedGrafana</para>
     ///
     /// Amazon Managed Grafana is a fully managed and secure data visualization service that
     /// you can use to instantly query, correlate, and visualize operational metrics, logs,

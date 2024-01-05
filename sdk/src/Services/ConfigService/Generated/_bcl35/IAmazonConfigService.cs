@@ -27,7 +27,7 @@ using Amazon.ConfigService.Model;
 namespace Amazon.ConfigService
 {
     /// <summary>
-    /// Interface for accessing ConfigService
+    /// <para>Interface for accessing ConfigService</para>
     ///
     /// Config 
     /// <para>

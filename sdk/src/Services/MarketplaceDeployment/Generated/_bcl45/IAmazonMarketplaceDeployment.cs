@@ -29,7 +29,7 @@ using Amazon.MarketplaceDeployment.Model;
 namespace Amazon.MarketplaceDeployment
 {
     /// <summary>
-    /// Interface for accessing MarketplaceDeployment
+    /// <para>Interface for accessing MarketplaceDeployment</para>
     ///
     /// The AWS Marketplace Deployment Service supports the Quick Launch experience, which
     /// is a deployment option for software as a service (SaaS) products. Quick Launch simplifies

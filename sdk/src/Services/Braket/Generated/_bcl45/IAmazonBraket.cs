@@ -29,7 +29,7 @@ using Amazon.Braket.Model;
 namespace Amazon.Braket
 {
     /// <summary>
-    /// Interface for accessing Braket
+    /// <para>Interface for accessing Braket</para>
     ///
     /// The Amazon Braket API Reference provides information about the operations and structures
     /// supported in Amazon Braket.

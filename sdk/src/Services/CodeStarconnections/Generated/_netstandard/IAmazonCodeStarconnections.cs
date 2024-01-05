@@ -29,7 +29,7 @@ using Amazon.CodeStarconnections.Model;
 namespace Amazon.CodeStarconnections
 {
     /// <summary>
-    /// Interface for accessing CodeStarconnections
+    /// <para>Interface for accessing CodeStarconnections</para>
     ///
     /// AWS CodeStar Connections 
     /// <para>

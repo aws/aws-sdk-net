@@ -27,7 +27,7 @@ using Amazon.Drs.Model;
 namespace Amazon.Drs
 {
     /// <summary>
-    /// Interface for accessing Drs
+    /// <para>Interface for accessing Drs</para>
     ///
     /// AWS Elastic Disaster Recovery Service.
     /// </summary>

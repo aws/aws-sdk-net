@@ -29,7 +29,7 @@ using Amazon.LookoutEquipment.Model;
 namespace Amazon.LookoutEquipment
 {
     /// <summary>
-    /// Interface for accessing LookoutEquipment
+    /// <para>Interface for accessing LookoutEquipment</para>
     ///
     /// Amazon Lookout for Equipment is a machine learning service that uses advanced analytics
     /// to identify anomalies in machines from sensor data for use in predictive maintenance.

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SQS
 {
     /// <summary>
-    /// Implementation for accessing SQS
+    /// <para>Implementation for accessing SQS</para>
     ///
     /// Welcome to the <i>Amazon SQS API Reference</i>.
     /// 

@@ -27,7 +27,7 @@ using Amazon.IoTWireless.Model;
 namespace Amazon.IoTWireless
 {
     /// <summary>
-    /// Interface for accessing IoTWireless
+    /// <para>Interface for accessing IoTWireless</para>
     ///
     /// AWS IoT Wireless provides bi-directional communication between internet-connected
     /// wireless devices and the AWS Cloud. To onboard both LoRaWAN and Sidewalk devices to

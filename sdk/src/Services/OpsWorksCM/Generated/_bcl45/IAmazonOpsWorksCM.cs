@@ -29,7 +29,7 @@ using Amazon.OpsWorksCM.Model;
 namespace Amazon.OpsWorksCM
 {
     /// <summary>
-    /// Interface for accessing OpsWorksCM
+    /// <para>Interface for accessing OpsWorksCM</para>
     ///
     /// AWS OpsWorks CM 
     /// <para>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BackupGateway
 {
     /// <summary>
-    /// Implementation for accessing BackupGateway
+    /// <para>Implementation for accessing BackupGateway</para>
     ///
     /// Backup gateway 
     /// <para>

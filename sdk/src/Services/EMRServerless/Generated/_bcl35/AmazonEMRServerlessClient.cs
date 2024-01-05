@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EMRServerless
 {
     /// <summary>
-    /// Implementation for accessing EMRServerless
+    /// <para>Implementation for accessing EMRServerless</para>
     ///
     /// Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless
     /// provides a serverless runtime environment that simplifies running analytics applications

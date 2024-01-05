@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DeviceFarm
 {
     /// <summary>
-    /// Implementation for accessing DeviceFarm
+    /// <para>Implementation for accessing DeviceFarm</para>
     ///
     /// Welcome to the AWS Device Farm API documentation, which contains APIs for:
     /// 

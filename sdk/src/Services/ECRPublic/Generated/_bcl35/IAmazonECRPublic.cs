@@ -27,7 +27,7 @@ using Amazon.ECRPublic.Model;
 namespace Amazon.ECRPublic
 {
     /// <summary>
-    /// Interface for accessing ECRPublic
+    /// <para>Interface for accessing ECRPublic</para>
     ///
     /// Amazon Elastic Container Registry Public 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.CognitoIdentity.Model;
 namespace Amazon.CognitoIdentity
 {
     /// <summary>
-    /// Interface for accessing CognitoIdentity
+    /// <para>Interface for accessing CognitoIdentity</para>
     ///
     /// Amazon Cognito Federated Identities 
     /// <para>

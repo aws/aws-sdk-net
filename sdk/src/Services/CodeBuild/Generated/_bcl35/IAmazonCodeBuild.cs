@@ -27,7 +27,7 @@ using Amazon.CodeBuild.Model;
 namespace Amazon.CodeBuild
 {
     /// <summary>
-    /// Interface for accessing CodeBuild
+    /// <para>Interface for accessing CodeBuild</para>
     ///
     /// CodeBuild 
     /// <para>

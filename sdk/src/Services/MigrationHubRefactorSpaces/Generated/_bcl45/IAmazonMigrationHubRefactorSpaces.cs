@@ -29,7 +29,7 @@ using Amazon.MigrationHubRefactorSpaces.Model;
 namespace Amazon.MigrationHubRefactorSpaces
 {
     /// <summary>
-    /// Interface for accessing MigrationHubRefactorSpaces
+    /// <para>Interface for accessing MigrationHubRefactorSpaces</para>
     ///
     /// Amazon Web Services Migration Hub Refactor Spaces 
     /// <para>

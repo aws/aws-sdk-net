@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SecretsManager
 {
     /// <summary>
-    /// Implementation for accessing SecretsManager
+    /// <para>Implementation for accessing SecretsManager</para>
     ///
     /// Amazon Web Services Secrets Manager 
     /// <para>

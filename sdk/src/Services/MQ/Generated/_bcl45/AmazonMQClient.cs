@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MQ
 {
     /// <summary>
-    /// Implementation for accessing MQ
+    /// <para>Implementation for accessing MQ</para>
     ///
     /// Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that
     /// makes it easy to set up and operate message brokers in the cloud. A message broker

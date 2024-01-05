@@ -27,7 +27,7 @@ using Amazon.SecretsManager.Model;
 namespace Amazon.SecretsManager
 {
     /// <summary>
-    /// Interface for accessing SecretsManager
+    /// <para>Interface for accessing SecretsManager</para>
     ///
     /// Amazon Web Services Secrets Manager 
     /// <para>

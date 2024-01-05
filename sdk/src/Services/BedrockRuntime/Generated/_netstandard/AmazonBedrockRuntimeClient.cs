@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BedrockRuntime
 {
     /// <summary>
-    /// Implementation for accessing BedrockRuntime
+    /// <para>Implementation for accessing BedrockRuntime</para>
     ///
     /// Describes the API operations for running inference using Bedrock models.
     /// </summary>

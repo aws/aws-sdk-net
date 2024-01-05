@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DataPipeline
 {
     /// <summary>
-    /// Implementation for accessing DataPipeline
+    /// <para>Implementation for accessing DataPipeline</para>
     ///
     /// AWS Data Pipeline configures and manages a data-driven workflow called a pipeline.
     /// AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies

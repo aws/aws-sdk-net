@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ServiceCatalog
 {
     /// <summary>
-    /// Implementation for accessing ServiceCatalog
+    /// <para>Implementation for accessing ServiceCatalog</para>
     ///
     /// Service Catalog 
     /// <para>

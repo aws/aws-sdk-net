@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticFileSystem
 {
     /// <summary>
-    /// Implementation for accessing ElasticFileSystem
+    /// <para>Implementation for accessing ElasticFileSystem</para>
     ///
     /// Amazon Elastic File System 
     /// <para>

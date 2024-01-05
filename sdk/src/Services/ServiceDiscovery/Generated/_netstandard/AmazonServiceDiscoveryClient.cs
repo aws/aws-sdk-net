@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ServiceDiscovery
 {
     /// <summary>
-    /// Implementation for accessing ServiceDiscovery
+    /// <para>Implementation for accessing ServiceDiscovery</para>
     ///
     /// Cloud Map 
     /// <para>

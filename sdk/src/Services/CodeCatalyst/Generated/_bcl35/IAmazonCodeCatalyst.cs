@@ -27,7 +27,7 @@ using Amazon.CodeCatalyst.Model;
 namespace Amazon.CodeCatalyst
 {
     /// <summary>
-    /// Interface for accessing CodeCatalyst
+    /// <para>Interface for accessing CodeCatalyst</para>
     ///
     /// Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions
     /// of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst

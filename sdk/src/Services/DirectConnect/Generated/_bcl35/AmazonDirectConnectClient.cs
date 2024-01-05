@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DirectConnect
 {
     /// <summary>
-    /// Implementation for accessing DirectConnect
+    /// <para>Implementation for accessing DirectConnect</para>
     ///
     /// Direct Connect links your internal network to an Direct Connect location over a standard
     /// Ethernet fiber-optic cable. One end of the cable is connected to your router, the

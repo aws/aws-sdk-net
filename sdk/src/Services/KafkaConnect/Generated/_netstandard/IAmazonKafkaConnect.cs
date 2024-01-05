@@ -29,7 +29,7 @@ using Amazon.KafkaConnect.Model;
 namespace Amazon.KafkaConnect
 {
     /// <summary>
-    /// Interface for accessing KafkaConnect
+    /// <para>Interface for accessing KafkaConnect</para>
     ///
     /// 
     /// </summary>

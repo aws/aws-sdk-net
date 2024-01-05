@@ -27,7 +27,7 @@ using Amazon.KinesisAnalyticsV2.Model;
 namespace Amazon.KinesisAnalyticsV2
 {
     /// <summary>
-    /// Interface for accessing KinesisAnalyticsV2
+    /// <para>Interface for accessing KinesisAnalyticsV2</para>
     ///
     /// Amazon Kinesis Data Analytics is a fully managed service that you can use to process
     /// and analyze streaming data using Java, SQL, or Scala. The service enables you to quickly

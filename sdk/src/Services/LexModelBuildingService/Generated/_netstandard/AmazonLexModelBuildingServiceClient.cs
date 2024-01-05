@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LexModelBuildingService
 {
     /// <summary>
-    /// Implementation for accessing LexModelBuildingService
+    /// <para>Implementation for accessing LexModelBuildingService</para>
     ///
     /// Amazon Lex Build-Time Actions 
     /// <para>

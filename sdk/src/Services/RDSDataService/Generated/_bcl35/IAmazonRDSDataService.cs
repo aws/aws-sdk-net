@@ -27,7 +27,7 @@ using Amazon.RDSDataService.Model;
 namespace Amazon.RDSDataService
 {
     /// <summary>
-    /// Interface for accessing RDSDataService
+    /// <para>Interface for accessing RDSDataService</para>
     ///
     /// RDS Data API 
     /// <para>

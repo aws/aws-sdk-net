@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudControlApi
 {
     /// <summary>
-    /// Implementation for accessing CloudControlApi
+    /// <para>Implementation for accessing CloudControlApi</para>
     ///
     /// For more information about Amazon Web Services Cloud Control API, see the <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
     /// Web Services Cloud Control API User Guide</a>.

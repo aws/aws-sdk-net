@@ -29,7 +29,7 @@ using Amazon.IoTFleetHub.Model;
 namespace Amazon.IoTFleetHub
 {
     /// <summary>
-    /// Interface for accessing IoTFleetHub
+    /// <para>Interface for accessing IoTFleetHub</para>
     ///
     /// With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications
     /// for monitoring the health of your device fleets.

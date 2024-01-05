@@ -29,7 +29,7 @@ using Amazon.Snowball.Model;
 namespace Amazon.Snowball
 {
     /// <summary>
-    /// Interface for accessing Snowball
+    /// <para>Interface for accessing Snowball</para>
     ///
     /// The Amazon Web Services Snow Family provides a petabyte-scale data transport solution
     /// that uses secure devices to transfer large amounts of data between your on-premises

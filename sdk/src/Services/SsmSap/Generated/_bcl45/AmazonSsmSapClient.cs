@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SsmSap
 {
     /// <summary>
-    /// Implementation for accessing SsmSap
+    /// <para>Implementation for accessing SsmSap</para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
     /// the actions and data types for AWS Systems Manager for SAP. The topic for each action

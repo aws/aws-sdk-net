@@ -27,7 +27,7 @@ using Amazon.Omics.Model;
 namespace Amazon.Omics
 {
     /// <summary>
-    /// Interface for accessing Omics
+    /// <para>Interface for accessing Omics</para>
     ///
     /// This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a>

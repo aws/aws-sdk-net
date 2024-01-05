@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KafkaConnect
 {
     /// <summary>
-    /// Implementation for accessing KafkaConnect
+    /// <para>Implementation for accessing KafkaConnect</para>
     ///
     /// 
     /// </summary>

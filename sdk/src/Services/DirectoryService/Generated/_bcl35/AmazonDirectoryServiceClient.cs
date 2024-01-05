@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DirectoryService
 {
     /// <summary>
-    /// Implementation for accessing DirectoryService
+    /// <para>Implementation for accessing DirectoryService</para>
     ///
     /// Directory Service 
     /// <para>

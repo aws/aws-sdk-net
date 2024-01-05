@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Kendra
 {
     /// <summary>
-    /// Implementation for accessing Kendra
+    /// <para>Implementation for accessing Kendra</para>
     ///
     /// Amazon Kendra is a service for indexing large document sets.
     /// </summary>

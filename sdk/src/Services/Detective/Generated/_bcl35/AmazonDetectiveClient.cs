@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Detective
 {
     /// <summary>
-    /// Implementation for accessing Detective
+    /// <para>Implementation for accessing Detective</para>
     ///
     /// Detective uses machine learning and purpose-built visualizations to help you to analyze
     /// and investigate security issues across your Amazon Web Services (Amazon Web Services)

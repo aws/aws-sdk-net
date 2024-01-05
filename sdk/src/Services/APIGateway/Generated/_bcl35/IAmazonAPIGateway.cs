@@ -27,7 +27,7 @@ using Amazon.APIGateway.Model;
 namespace Amazon.APIGateway
 {
     /// <summary>
-    /// Interface for accessing APIGateway
+    /// <para>Interface for accessing APIGateway</para>
     ///
     /// Amazon API Gateway 
     /// <para>

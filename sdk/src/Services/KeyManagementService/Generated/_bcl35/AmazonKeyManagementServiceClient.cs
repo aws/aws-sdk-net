@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KeyManagementService
 {
     /// <summary>
-    /// Implementation for accessing KeyManagementService
+    /// <para>Implementation for accessing KeyManagementService</para>
     ///
     /// Key Management Service 
     /// <para>

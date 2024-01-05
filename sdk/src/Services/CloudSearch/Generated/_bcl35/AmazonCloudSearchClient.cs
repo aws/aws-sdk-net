@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudSearch
 {
     /// <summary>
-    /// Implementation for accessing CloudSearch
+    /// <para>Implementation for accessing CloudSearch</para>
     ///
     /// Amazon CloudSearch Configuration Service 
     /// <para>

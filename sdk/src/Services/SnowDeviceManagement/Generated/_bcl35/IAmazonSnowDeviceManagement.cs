@@ -27,7 +27,7 @@ using Amazon.SnowDeviceManagement.Model;
 namespace Amazon.SnowDeviceManagement
 {
     /// <summary>
-    /// Interface for accessing SnowDeviceManagement
+    /// <para>Interface for accessing SnowDeviceManagement</para>
     ///
     /// Amazon Web Services Snow Device Management documentation.
     /// </summary>

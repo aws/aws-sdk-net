@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ConnectCampaignService
 {
     /// <summary>
-    /// Implementation for accessing ConnectCampaignService
+    /// <para>Implementation for accessing ConnectCampaignService</para>
     ///
     /// Provide APIs to create and manage Amazon Connect Campaigns.
     /// </summary>

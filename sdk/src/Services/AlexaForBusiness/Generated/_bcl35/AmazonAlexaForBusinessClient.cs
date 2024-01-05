@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AlexaForBusiness
 {
     /// <summary>
-    /// Implementation for accessing AlexaForBusiness
+    /// <para>Implementation for accessing AlexaForBusiness</para>
     ///
     /// Alexa for Business has been retired and is no longer supported.
     /// </summary>

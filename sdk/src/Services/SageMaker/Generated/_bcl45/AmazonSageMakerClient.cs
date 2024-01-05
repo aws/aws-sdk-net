@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SageMaker
 {
     /// <summary>
-    /// Implementation for accessing SageMaker
+    /// <para>Implementation for accessing SageMaker</para>
     ///
     /// Provides APIs for creating and managing SageMaker resources. 
     /// 

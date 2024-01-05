@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PaymentCryptography
 {
     /// <summary>
-    /// Implementation for accessing PaymentCryptography
+    /// <para>Implementation for accessing PaymentCryptography</para>
     ///
     /// Amazon Web Services Payment Cryptography Control Plane APIs manage encryption keys
     /// for use during payment-related cryptographic operations. You can create, import, export,

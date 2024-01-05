@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeCommit
 {
     /// <summary>
-    /// Implementation for accessing CodeCommit
+    /// <para>Implementation for accessing CodeCommit</para>
     ///
     /// CodeCommit 
     /// <para>

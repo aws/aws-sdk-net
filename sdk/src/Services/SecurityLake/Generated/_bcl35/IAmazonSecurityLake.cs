@@ -27,7 +27,7 @@ using Amazon.SecurityLake.Model;
 namespace Amazon.SecurityLake
 {
     /// <summary>
-    /// Interface for accessing SecurityLake
+    /// <para>Interface for accessing SecurityLake</para>
     ///
     /// Amazon Security Lake is a fully managed security data lake service. You can use Security
     /// Lake to automatically centralize security data from cloud, on-premises, and custom

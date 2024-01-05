@@ -27,7 +27,7 @@ using Amazon.S3Outposts.Model;
 namespace Amazon.S3Outposts
 {
     /// <summary>
-    /// Interface for accessing S3Outposts
+    /// <para>Interface for accessing S3Outposts</para>
     ///
     /// Amazon S3 on Outposts provides access to S3 on Outposts operations.
     /// </summary>

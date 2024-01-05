@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.StorageGateway
 {
     /// <summary>
-    /// Implementation for accessing StorageGateway
+    /// <para>Implementation for accessing StorageGateway</para>
     ///
     /// Storage Gateway Service 
     /// <para>

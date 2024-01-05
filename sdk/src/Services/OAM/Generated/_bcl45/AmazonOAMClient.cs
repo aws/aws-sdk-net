@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.OAM
 {
     /// <summary>
-    /// Implementation for accessing OAM
+    /// <para>Implementation for accessing OAM</para>
     ///
     /// Use Amazon CloudWatch Observability Access Manager to create and manage links between
     /// source accounts and monitoring accounts by using <i>CloudWatch cross-account observability</i>.

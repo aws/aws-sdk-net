@@ -27,7 +27,7 @@ using Amazon.Proton.Model;
 namespace Amazon.Proton
 {
     /// <summary>
-    /// Interface for accessing Proton
+    /// <para>Interface for accessing Proton</para>
     ///
     /// This is the Proton Service API Reference. It provides descriptions, syntax and usage
     /// examples for each of the <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Operations.html">actions</a>

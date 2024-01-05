@@ -29,7 +29,7 @@ using Amazon.EBS.Model;
 namespace Amazon.EBS
 {
     /// <summary>
-    /// Interface for accessing EBS
+    /// <para>Interface for accessing EBS</para>
     ///
     /// You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create Amazon
     /// EBS snapshots, write data directly to your snapshots, read data on your snapshots,

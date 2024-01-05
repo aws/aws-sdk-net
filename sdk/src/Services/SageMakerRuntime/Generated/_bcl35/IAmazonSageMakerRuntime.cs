@@ -27,7 +27,7 @@ using Amazon.SageMakerRuntime.Model;
 namespace Amazon.SageMakerRuntime
 {
     /// <summary>
-    /// Interface for accessing SageMakerRuntime
+    /// <para>Interface for accessing SageMakerRuntime</para>
     ///
     /// The Amazon SageMaker runtime API.
     /// </summary>

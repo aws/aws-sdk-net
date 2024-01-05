@@ -29,7 +29,7 @@ using Amazon.IVSRealTime.Model;
 namespace Amazon.IVSRealTime
 {
     /// <summary>
-    /// Interface for accessing IVSRealTime
+    /// <para>Interface for accessing IVSRealTime</para>
     ///
     /// <b>Introduction</b> 
     /// 

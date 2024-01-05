@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MTurk
 {
     /// <summary>
-    /// Implementation for accessing MTurk
+    /// <para>Implementation for accessing MTurk</para>
     ///
     /// Amazon Mechanical Turk API Reference
     /// </summary>

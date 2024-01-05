@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EKS
 {
     /// <summary>
-    /// Implementation for accessing EKS
+    /// <para>Implementation for accessing EKS</para>
     ///
     /// Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it
     /// easy for you to run Kubernetes on Amazon Web Services without needing to setup or

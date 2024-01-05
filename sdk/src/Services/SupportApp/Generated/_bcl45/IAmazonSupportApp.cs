@@ -29,7 +29,7 @@ using Amazon.SupportApp.Model;
 namespace Amazon.SupportApp
 {
     /// <summary>
-    /// Interface for accessing SupportApp
+    /// <para>Interface for accessing SupportApp</para>
     ///
     /// Amazon Web Services Support App in Slack 
     /// <para>

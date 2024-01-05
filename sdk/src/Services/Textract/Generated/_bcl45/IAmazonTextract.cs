@@ -29,7 +29,7 @@ using Amazon.Textract.Model;
 namespace Amazon.Textract
 {
     /// <summary>
-    /// Interface for accessing Textract
+    /// <para>Interface for accessing Textract</para>
     ///
     /// Amazon Textract detects and analyzes text in documents and converts it into machine-readable
     /// text. This is the API reference documentation for Amazon Textract.

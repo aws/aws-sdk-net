@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ApplicationAutoScaling
 {
     /// <summary>
-    /// Implementation for accessing ApplicationAutoScaling
+    /// <para>Implementation for accessing ApplicationAutoScaling</para>
     ///
     /// With Application Auto Scaling, you can configure automatic scaling for the following
     /// resources:

@@ -27,7 +27,7 @@ using Amazon.SagemakerEdgeManager.Model;
 namespace Amazon.SagemakerEdgeManager
 {
     /// <summary>
-    /// Interface for accessing SagemakerEdgeManager
+    /// <para>Interface for accessing SagemakerEdgeManager</para>
     ///
     /// SageMaker Edge Manager dataplane service for communicating with active agents.
     /// </summary>

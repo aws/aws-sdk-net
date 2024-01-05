@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CertificateManager
 {
     /// <summary>
-    /// Implementation for accessing CertificateManager
+    /// <para>Implementation for accessing CertificateManager</para>
     ///
     /// Certificate Manager 
     /// <para>

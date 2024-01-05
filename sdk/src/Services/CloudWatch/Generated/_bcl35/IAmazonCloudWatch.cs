@@ -27,7 +27,7 @@ using Amazon.CloudWatch.Model;
 namespace Amazon.CloudWatch
 {
     /// <summary>
-    /// Interface for accessing CloudWatch
+    /// <para>Interface for accessing CloudWatch</para>
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
     /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch

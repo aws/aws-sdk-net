@@ -27,7 +27,7 @@ using Amazon.Bedrock.Model;
 namespace Amazon.Bedrock
 {
     /// <summary>
-    /// Interface for accessing Bedrock
+    /// <para>Interface for accessing Bedrock</para>
     ///
     /// Describes the API operations for creating and managing Amazon Bedrock models.
     /// </summary>

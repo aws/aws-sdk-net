@@ -27,7 +27,7 @@ using Amazon.ElasticLoadBalancing.Model;
 namespace Amazon.ElasticLoadBalancing
 {
     /// <summary>
-    /// Interface for accessing ElasticLoadBalancing
+    /// <para>Interface for accessing ElasticLoadBalancing</para>
     ///
     /// Elastic Load Balancing 
     /// <para>

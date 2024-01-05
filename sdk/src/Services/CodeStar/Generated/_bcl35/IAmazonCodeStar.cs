@@ -27,7 +27,7 @@ using Amazon.CodeStar.Model;
 namespace Amazon.CodeStar
 {
     /// <summary>
-    /// Interface for accessing CodeStar
+    /// <para>Interface for accessing CodeStar</para>
     ///
     /// AWS CodeStar 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.IoTSecureTunneling.Model;
 namespace Amazon.IoTSecureTunneling
 {
     /// <summary>
-    /// Interface for accessing IoTSecureTunneling
+    /// <para>Interface for accessing IoTSecureTunneling</para>
     ///
     /// IoT Secure Tunneling 
     /// <para>

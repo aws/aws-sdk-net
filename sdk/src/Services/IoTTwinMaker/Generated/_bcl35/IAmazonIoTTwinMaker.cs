@@ -27,7 +27,7 @@ using Amazon.IoTTwinMaker.Model;
 namespace Amazon.IoTTwinMaker
 {
     /// <summary>
-    /// Interface for accessing IoTTwinMaker
+    /// <para>Interface for accessing IoTTwinMaker</para>
     ///
     /// IoT TwinMaker is a service with which you can build operational digital twins of physical
     /// systems. IoT TwinMaker overlays measurements and analysis from real-world sensors,

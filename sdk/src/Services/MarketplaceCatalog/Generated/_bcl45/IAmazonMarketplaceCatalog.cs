@@ -29,7 +29,7 @@ using Amazon.MarketplaceCatalog.Model;
 namespace Amazon.MarketplaceCatalog
 {
     /// <summary>
-    /// Interface for accessing MarketplaceCatalog
+    /// <para>Interface for accessing MarketplaceCatalog</para>
     ///
     /// Catalog API actions allow you to manage your entities through list, describe, and
     /// update capabilities. An entity can be a product or an offer on AWS Marketplace. 

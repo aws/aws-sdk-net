@@ -29,7 +29,7 @@ using Amazon.QBusiness.Model;
 namespace Amazon.QBusiness
 {
     /// <summary>
-    /// Interface for accessing QBusiness
+    /// <para>Interface for accessing QBusiness</para>
     ///
     /// 
     /// </summary>

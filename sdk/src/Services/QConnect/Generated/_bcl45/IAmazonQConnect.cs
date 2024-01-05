@@ -29,7 +29,7 @@ using Amazon.QConnect.Model;
 namespace Amazon.QConnect
 {
     /// <summary>
-    /// Interface for accessing QConnect
+    /// <para>Interface for accessing QConnect</para>
     ///
     /// <note> 
     /// <para>

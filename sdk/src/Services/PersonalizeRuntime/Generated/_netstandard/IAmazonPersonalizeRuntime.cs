@@ -29,7 +29,7 @@ using Amazon.PersonalizeRuntime.Model;
 namespace Amazon.PersonalizeRuntime
 {
     /// <summary>
-    /// Interface for accessing PersonalizeRuntime
+    /// <para>Interface for accessing PersonalizeRuntime</para>
     ///
     /// 
     /// </summary>

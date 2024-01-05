@@ -27,7 +27,7 @@ using Amazon.Synthetics.Model;
 namespace Amazon.Synthetics
 {
     /// <summary>
-    /// Interface for accessing Synthetics
+    /// <para>Interface for accessing Synthetics</para>
     ///
     /// Amazon CloudWatch Synthetics 
     /// <para>

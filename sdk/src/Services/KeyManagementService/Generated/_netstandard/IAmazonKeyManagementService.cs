@@ -29,7 +29,7 @@ using Amazon.KeyManagementService.Model;
 namespace Amazon.KeyManagementService
 {
     /// <summary>
-    /// Interface for accessing KeyManagementService
+    /// <para>Interface for accessing KeyManagementService</para>
     ///
     /// Key Management Service 
     /// <para>

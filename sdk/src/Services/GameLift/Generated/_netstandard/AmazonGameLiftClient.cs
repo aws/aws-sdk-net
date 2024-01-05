@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.GameLift
 {
     /// <summary>
-    /// Implementation for accessing GameLift
+    /// <para>Implementation for accessing GameLift</para>
     ///
     /// Amazon GameLift provides solutions for hosting session-based multiplayer game servers
     /// in the cloud, including tools for deploying, operating, and scaling game servers.

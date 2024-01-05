@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SageMakerFeatureStoreRuntime
 {
     /// <summary>
-    /// Implementation for accessing SageMakerFeatureStoreRuntime
+    /// <para>Implementation for accessing SageMakerFeatureStoreRuntime</para>
     ///
     /// Contains all data plane API operations and data types for the Amazon SageMaker Feature
     /// Store. Use this API to put, delete, and retrieve (get) features from a feature store.

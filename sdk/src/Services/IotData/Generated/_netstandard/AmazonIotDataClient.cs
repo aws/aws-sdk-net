@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IotData
 {
     /// <summary>
-    /// Implementation for accessing IotData
+    /// <para>Implementation for accessing IotData</para>
     ///
     /// IoT data 
     /// <para>

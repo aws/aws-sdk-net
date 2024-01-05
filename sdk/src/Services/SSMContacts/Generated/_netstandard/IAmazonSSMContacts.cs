@@ -29,7 +29,7 @@ using Amazon.SSMContacts.Model;
 namespace Amazon.SSMContacts
 {
     /// <summary>
-    /// Interface for accessing SSMContacts
+    /// <para>Interface for accessing SSMContacts</para>
     ///
     /// Systems Manager Incident Manager is an incident management console designed to help
     /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted

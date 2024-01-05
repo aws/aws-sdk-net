@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WAF
 {
     /// <summary>
-    /// Implementation for accessing WAF
+    /// <para>Implementation for accessing WAF</para>
     ///
     /// <note> 
     /// <para>

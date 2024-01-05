@@ -29,7 +29,7 @@ using Amazon.IoTRoboRunner.Model;
 namespace Amazon.IoTRoboRunner
 {
     /// <summary>
-    /// Interface for accessing IoTRoboRunner
+    /// <para>Interface for accessing IoTRoboRunner</para>
     ///
     /// An example service, deployed with the Octane Service creator, which will echo the
     /// string

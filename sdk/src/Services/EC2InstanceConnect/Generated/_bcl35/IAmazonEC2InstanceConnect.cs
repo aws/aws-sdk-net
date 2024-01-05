@@ -27,7 +27,7 @@ using Amazon.EC2InstanceConnect.Model;
 namespace Amazon.EC2InstanceConnect
 {
     /// <summary>
-    /// Interface for accessing EC2InstanceConnect
+    /// <para>Interface for accessing EC2InstanceConnect</para>
     ///
     /// Amazon EC2 Instance Connect enables system administrators to publish one-time use
     /// SSH public keys to EC2, providing users a simple and secure way to connect to their

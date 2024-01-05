@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Account
 {
     /// <summary>
-    /// Implementation for accessing Account
+    /// <para>Implementation for accessing Account</para>
     ///
     /// Operations for Amazon Web Services Account Management
     /// </summary>

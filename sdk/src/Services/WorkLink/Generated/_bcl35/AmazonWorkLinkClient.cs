@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.WorkLink
 {
     /// <summary>
-    /// Implementation for accessing WorkLink
+    /// <para>Implementation for accessing WorkLink</para>
     ///
     /// Amazon WorkLink is a cloud-based service that provides secure access to internal websites
     /// and web apps from iOS and Android phones. In a single step, your users, such as employees,

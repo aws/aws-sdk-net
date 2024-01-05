@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.KinesisVideo
 {
     /// <summary>
-    /// Implementation for accessing KinesisVideo
+    /// <para>Implementation for accessing KinesisVideo</para>
     ///
     /// 
     /// </summary>

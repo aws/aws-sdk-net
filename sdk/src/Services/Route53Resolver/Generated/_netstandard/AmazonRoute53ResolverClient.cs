@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53Resolver
 {
     /// <summary>
-    /// Implementation for accessing Route53Resolver
+    /// <para>Implementation for accessing Route53Resolver</para>
     ///
     /// When you create a VPC using Amazon VPC, you automatically get DNS resolution within
     /// the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain

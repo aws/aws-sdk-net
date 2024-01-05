@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SecurityToken
 {
     /// <summary>
-    /// Implementation for accessing SecurityTokenService
+    /// <para>Implementation for accessing SecurityTokenService</para>
     ///
     /// Security Token Service 
     /// <para>

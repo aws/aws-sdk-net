@@ -29,7 +29,7 @@ using Amazon.LookoutforVision.Model;
 namespace Amazon.LookoutforVision
 {
     /// <summary>
-    /// Interface for accessing LookoutforVision
+    /// <para>Interface for accessing LookoutforVision</para>
     ///
     /// This is the Amazon Lookout for Vision API Reference. It provides descriptions of actions,
     /// data types, common parameters, and common errors.

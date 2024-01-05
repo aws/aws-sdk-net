@@ -29,7 +29,7 @@ using Amazon.LexModelsV2.Model;
 namespace Amazon.LexModelsV2
 {
     /// <summary>
-    /// Interface for accessing LexModelsV2
+    /// <para>Interface for accessing LexModelsV2</para>
     ///
     /// 
     /// </summary>

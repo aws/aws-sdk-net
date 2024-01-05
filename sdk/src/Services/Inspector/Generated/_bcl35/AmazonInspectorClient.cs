@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Inspector
 {
     /// <summary>
-    /// Implementation for accessing Inspector
+    /// <para>Implementation for accessing Inspector</para>
     ///
     /// Amazon Inspector 
     /// <para>

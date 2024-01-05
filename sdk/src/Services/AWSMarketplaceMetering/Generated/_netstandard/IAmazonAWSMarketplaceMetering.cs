@@ -29,7 +29,7 @@ using Amazon.AWSMarketplaceMetering.Model;
 namespace Amazon.AWSMarketplaceMetering
 {
     /// <summary>
-    /// Interface for accessing AWSMarketplaceMetering
+    /// <para>Interface for accessing AWSMarketplaceMetering</para>
     ///
     /// AWS Marketplace Metering Service 
     /// <para>

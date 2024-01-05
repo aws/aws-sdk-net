@@ -27,7 +27,7 @@ using Amazon.RoboMaker.Model;
 namespace Amazon.RoboMaker
 {
     /// <summary>
-    /// Interface for accessing RoboMaker
+    /// <para>Interface for accessing RoboMaker</para>
     ///
     /// This section provides documentation for the AWS RoboMaker API operations.
     /// </summary>

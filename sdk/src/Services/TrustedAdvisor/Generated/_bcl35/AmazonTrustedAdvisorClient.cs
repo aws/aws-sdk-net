@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.TrustedAdvisor
 {
     /// <summary>
-    /// Implementation for accessing TrustedAdvisor
+    /// <para>Implementation for accessing TrustedAdvisor</para>
     ///
     /// TrustedAdvisor Public API
     /// </summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Ep2substring
 {
     /// <summary>
-    /// Implementation for accessing Ep2substring
+    /// <para>Implementation for accessing Ep2substring</para>
     ///
     /// 
     /// </summary>

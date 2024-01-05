@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Athena
 {
     /// <summary>
-    /// Implementation for accessing Athena
+    /// <para>Implementation for accessing Athena</para>
     ///
     /// Amazon Athena is an interactive query service that lets you use standard SQL to analyze
     /// data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run

@@ -29,7 +29,7 @@ using Amazon.Ep2parsearn.Model;
 namespace Amazon.Ep2parsearn
 {
     /// <summary>
-    /// Interface for accessing Ep2parsearn
+    /// <para>Interface for accessing Ep2parsearn</para>
     ///
     /// Endpoints 2.0 parse-arn tests
     /// </summary>

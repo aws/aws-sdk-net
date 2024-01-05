@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.S3Control
 {
     /// <summary>
-    /// Implementation for accessing S3Control
+    /// <para>Implementation for accessing S3Control</para>
     ///
     /// Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
     /// </summary>

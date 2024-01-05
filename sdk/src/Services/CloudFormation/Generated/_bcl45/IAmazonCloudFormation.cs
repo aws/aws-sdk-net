@@ -29,7 +29,7 @@ using Amazon.CloudFormation.Model;
 namespace Amazon.CloudFormation
 {
     /// <summary>
-    /// Interface for accessing CloudFormation
+    /// <para>Interface for accessing CloudFormation</para>
     ///
     /// CloudFormation 
     /// <para>

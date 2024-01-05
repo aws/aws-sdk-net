@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RoboMaker
 {
     /// <summary>
-    /// Implementation for accessing RoboMaker
+    /// <para>Implementation for accessing RoboMaker</para>
     ///
     /// This section provides documentation for the AWS RoboMaker API operations.
     /// </summary>

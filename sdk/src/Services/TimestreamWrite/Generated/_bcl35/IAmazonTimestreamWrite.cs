@@ -27,7 +27,7 @@ using Amazon.TimestreamWrite.Model;
 namespace Amazon.TimestreamWrite
 {
     /// <summary>
-    /// Interface for accessing TimestreamWrite
+    /// <para>Interface for accessing TimestreamWrite</para>
     ///
     /// Amazon Timestream Write 
     /// <para>

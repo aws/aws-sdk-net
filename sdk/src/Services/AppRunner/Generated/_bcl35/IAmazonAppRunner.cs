@@ -27,7 +27,7 @@ using Amazon.AppRunner.Model;
 namespace Amazon.AppRunner
 {
     /// <summary>
-    /// Interface for accessing AppRunner
+    /// <para>Interface for accessing AppRunner</para>
     ///
     /// App Runner 
     /// <para>

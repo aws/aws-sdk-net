@@ -27,7 +27,7 @@ using Amazon.CodeStarNotifications.Model;
 namespace Amazon.CodeStarNotifications
 {
     /// <summary>
-    /// Interface for accessing CodeStarNotifications
+    /// <para>Interface for accessing CodeStarNotifications</para>
     ///
     /// This AWS CodeStar Notifications API Reference provides descriptions and usage examples
     /// of the operations and data types for the AWS CodeStar Notifications API. You can use

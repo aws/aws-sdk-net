@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTSiteWise
 {
     /// <summary>
-    /// Implementation for accessing IoTSiteWise
+    /// <para>Implementation for accessing IoTSiteWise</para>
     ///
     /// Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services
     /// service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial

@@ -29,7 +29,7 @@ using Amazon.SimpleDB.Model;
 namespace Amazon.SimpleDB
 {
     /// <summary>
-    /// Interface for accessing SimpleDB
+    /// <para>Interface for accessing SimpleDB</para>
     ///
     /// Amazon SimpleDB is a web service providing the core database functions of data indexing
     /// and querying in the cloud. By offloading the time and effort associated with building

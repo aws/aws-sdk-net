@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.SageMakerGeospatial
 {
     /// <summary>
-    /// Implementation for accessing SageMakerGeospatial
+    /// <para>Implementation for accessing SageMakerGeospatial</para>
     ///
     /// Provides APIs for creating and managing SageMaker geospatial resources.
     /// </summary>

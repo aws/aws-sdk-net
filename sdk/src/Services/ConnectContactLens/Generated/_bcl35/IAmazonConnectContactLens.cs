@@ -27,7 +27,7 @@ using Amazon.ConnectContactLens.Model;
 namespace Amazon.ConnectContactLens
 {
     /// <summary>
-    /// Interface for accessing ConnectContactLens
+    /// <para>Interface for accessing ConnectContactLens</para>
     ///
     /// Contact Lens for Amazon Connect enables you to analyze conversations between customer
     /// and agents, by using speech transcription, natural language processing, and intelligent

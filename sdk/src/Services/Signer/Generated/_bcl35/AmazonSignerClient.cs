@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Signer
 {
     /// <summary>
-    /// Implementation for accessing Signer
+    /// <para>Implementation for accessing Signer</para>
     ///
     /// AWS Signer is a fully managed code-signing service to help you ensure the trust and
     /// integrity of your code. 

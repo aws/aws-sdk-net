@@ -27,7 +27,7 @@ using Amazon.CodePipeline.Model;
 namespace Amazon.CodePipeline
 {
     /// <summary>
-    /// Interface for accessing CodePipeline
+    /// <para>Interface for accessing CodePipeline</para>
     ///
     /// CodePipeline 
     /// <para>

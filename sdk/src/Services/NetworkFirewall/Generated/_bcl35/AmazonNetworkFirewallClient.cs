@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.NetworkFirewall
 {
     /// <summary>
-    /// Implementation for accessing NetworkFirewall
+    /// <para>Implementation for accessing NetworkFirewall</para>
     ///
     /// This is the API Reference for Network Firewall. This guide is for developers who need
     /// detailed information about the Network Firewall API actions, data types, and errors.

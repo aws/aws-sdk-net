@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Honeycode
 {
     /// <summary>
-    /// Implementation for accessing Honeycode
+    /// <para>Implementation for accessing Honeycode</para>
     ///
     /// Amazon Honeycode is a fully managed service that allows you to quickly build mobile
     /// and web apps for teams—without programming. Build Honeycode apps for managing almost

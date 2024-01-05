@@ -29,7 +29,7 @@ using Amazon.MediaLive.Model;
 namespace Amazon.MediaLive
 {
     /// <summary>
-    /// Interface for accessing MediaLive
+    /// <para>Interface for accessing MediaLive</para>
     ///
     /// API for AWS Elemental MediaLive
     /// </summary>

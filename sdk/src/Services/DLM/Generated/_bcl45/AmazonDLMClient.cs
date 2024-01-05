@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.DLM
 {
     /// <summary>
-    /// Implementation for accessing DLM
+    /// <para>Implementation for accessing DLM</para>
     ///
     /// Amazon Data Lifecycle Manager 
     /// <para>

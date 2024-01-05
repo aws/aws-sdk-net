@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.MigrationHubStrategyRecommendations
 {
     /// <summary>
-    /// Implementation for accessing MigrationHubStrategyRecommendations
+    /// <para>Implementation for accessing MigrationHubStrategyRecommendations</para>
     ///
     /// Migration Hub Strategy Recommendations 
     /// <para>

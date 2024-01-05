@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CognitoIdentityProvider
 {
     /// <summary>
-    /// Implementation for accessing CognitoIdentityProvider
+    /// <para>Implementation for accessing CognitoIdentityProvider</para>
     ///
     /// With the Amazon Cognito user pools API, you can configure user pools and authenticate
     /// users. To authenticate users from third-party identity providers (IdPs) in this API,

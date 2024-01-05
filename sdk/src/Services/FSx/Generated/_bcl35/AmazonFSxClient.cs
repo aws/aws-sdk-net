@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.FSx
 {
     /// <summary>
-    /// Implementation for accessing FSx
+    /// <para>Implementation for accessing FSx</para>
     ///
     /// Amazon FSx is a fully managed service that makes it easy for storage and application
     /// administrators to launch and use shared file storage.

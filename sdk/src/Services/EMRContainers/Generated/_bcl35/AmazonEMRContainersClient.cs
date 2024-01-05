@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.EMRContainers
 {
     /// <summary>
-    /// Implementation for accessing EMRContainers
+    /// <para>Implementation for accessing EMRContainers</para>
     ///
     /// Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run
     /// open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS).

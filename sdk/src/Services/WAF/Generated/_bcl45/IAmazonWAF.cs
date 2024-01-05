@@ -29,7 +29,7 @@ using Amazon.WAF.Model;
 namespace Amazon.WAF
 {
     /// <summary>
-    /// Interface for accessing WAF
+    /// <para>Interface for accessing WAF</para>
     ///
     /// <note> 
     /// <para>

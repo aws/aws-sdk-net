@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.PI
 {
     /// <summary>
-    /// Implementation for accessing PI
+    /// <para>Implementation for accessing PI</para>
     ///
     /// Amazon RDS Performance Insights 
     /// <para>

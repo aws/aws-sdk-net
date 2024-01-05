@@ -27,7 +27,7 @@ using Amazon.DeviceFarm.Model;
 namespace Amazon.DeviceFarm
 {
     /// <summary>
-    /// Interface for accessing DeviceFarm
+    /// <para>Interface for accessing DeviceFarm</para>
     ///
     /// Welcome to the AWS Device Farm API documentation, which contains APIs for:
     /// 

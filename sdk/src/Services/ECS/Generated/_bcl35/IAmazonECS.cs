@@ -27,7 +27,7 @@ using Amazon.ECS.Model;
 namespace Amazon.ECS
 {
     /// <summary>
-    /// Interface for accessing ECS
+    /// <para>Interface for accessing ECS</para>
     ///
     /// Amazon Elastic Container Service 
     /// <para>

@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.LookoutEquipment
 {
     /// <summary>
-    /// Implementation for accessing LookoutEquipment
+    /// <para>Implementation for accessing LookoutEquipment</para>
     ///
     /// Amazon Lookout for Equipment is a machine learning service that uses advanced analytics
     /// to identify anomalies in machines from sensor data for use in predictive maintenance.

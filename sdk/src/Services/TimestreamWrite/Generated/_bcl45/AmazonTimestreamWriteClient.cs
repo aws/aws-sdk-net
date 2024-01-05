@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.TimestreamWrite
 {
     /// <summary>
-    /// Implementation for accessing TimestreamWrite
+    /// <para>Implementation for accessing TimestreamWrite</para>
     ///
     /// Amazon Timestream Write 
     /// <para>

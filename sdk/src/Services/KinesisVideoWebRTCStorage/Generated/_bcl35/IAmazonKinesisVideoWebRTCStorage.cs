@@ -27,7 +27,7 @@ using Amazon.KinesisVideoWebRTCStorage.Model;
 namespace Amazon.KinesisVideoWebRTCStorage
 {
     /// <summary>
-    /// Interface for accessing KinesisVideoWebRTCStorage
+    /// <para>Interface for accessing KinesisVideoWebRTCStorage</para>
     ///
     /// 
     /// </summary>

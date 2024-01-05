@@ -29,7 +29,7 @@ using Amazon.S3.Model;
 namespace Amazon.S3
 {
     /// <summary>
-    /// Interface for accessing S3
+    /// <para>Interface for accessing S3</para>
     ///
     /// 
     /// </summary>

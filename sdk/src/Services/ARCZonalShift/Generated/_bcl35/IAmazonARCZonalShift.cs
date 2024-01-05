@@ -27,7 +27,7 @@ using Amazon.ARCZonalShift.Model;
 namespace Amazon.ARCZonalShift
 {
     /// <summary>
-    /// Interface for accessing ARCZonalShift
+    /// <para>Interface for accessing ARCZonalShift</para>
     ///
     /// Welcome to the Zonal Shift API Reference Guide for Amazon Route 53 Application Recovery
     /// Controller (Route 53 ARC).

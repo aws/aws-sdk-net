@@ -29,7 +29,7 @@ using Amazon.TrustedAdvisor.Model;
 namespace Amazon.TrustedAdvisor
 {
     /// <summary>
-    /// Interface for accessing TrustedAdvisor
+    /// <para>Interface for accessing TrustedAdvisor</para>
     ///
     /// TrustedAdvisor Public API
     /// </summary>

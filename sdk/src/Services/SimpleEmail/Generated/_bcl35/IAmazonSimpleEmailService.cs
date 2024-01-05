@@ -27,7 +27,7 @@ using Amazon.SimpleEmail.Model;
 namespace Amazon.SimpleEmail
 {
     /// <summary>
-    /// Interface for accessing SimpleEmailService
+    /// <para>Interface for accessing SimpleEmailService</para>
     ///
     /// Amazon Simple Email Service 
     /// <para>

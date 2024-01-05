@@ -29,7 +29,7 @@ using Amazon.B2bi.Model;
 namespace Amazon.B2bi
 {
     /// <summary>
-    /// Interface for accessing B2bi
+    /// <para>Interface for accessing B2bi</para>
     ///
     /// This is the <i>Amazon Web Services B2B Data Interchange API Reference</i>. It provides
     /// descriptions, API request parameters, and the XML response for each of the B2BI API

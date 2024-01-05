@@ -29,7 +29,7 @@ using Amazon.KinesisVideo.Model;
 namespace Amazon.KinesisVideo
 {
     /// <summary>
-    /// Interface for accessing KinesisVideo
+    /// <para>Interface for accessing KinesisVideo</para>
     ///
     /// 
     /// </summary>

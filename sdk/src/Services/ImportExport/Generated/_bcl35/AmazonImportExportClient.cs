@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ImportExport
 {
     /// <summary>
-    /// Implementation for accessing ImportExport
+    /// <para>Implementation for accessing ImportExport</para>
     ///
     /// AWS Import/Export Service AWS Import/Export accelerates transferring large amounts
     /// of data between the AWS cloud and portable storage devices that you mail to us. AWS

@@ -27,7 +27,7 @@ using Amazon.BearerTokenAuthTest.Model;
 namespace Amazon.BearerTokenAuthTest
 {
     /// <summary>
-    /// Interface for accessing BearerTokenAuthTest
+    /// <para>Interface for accessing BearerTokenAuthTest</para>
     ///
     /// 
     /// </summary>

@@ -27,7 +27,7 @@ using Amazon.DataSync.Model;
 namespace Amazon.DataSync
 {
     /// <summary>
-    /// Interface for accessing DataSync
+    /// <para>Interface for accessing DataSync</para>
     ///
     /// DataSync 
     /// <para>

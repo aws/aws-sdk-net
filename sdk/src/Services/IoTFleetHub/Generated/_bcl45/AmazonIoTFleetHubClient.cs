@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.IoTFleetHub
 {
     /// <summary>
-    /// Implementation for accessing IoTFleetHub
+    /// <para>Implementation for accessing IoTFleetHub</para>
     ///
     /// With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications
     /// for monitoring the health of your device fleets.

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BillingConductor
 {
     /// <summary>
-    /// Implementation for accessing BillingConductor
+    /// <para>Implementation for accessing BillingConductor</para>
     ///
     /// Amazon Web Services Billing Conductor is a fully managed service that you can use
     /// to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">proforma</a>

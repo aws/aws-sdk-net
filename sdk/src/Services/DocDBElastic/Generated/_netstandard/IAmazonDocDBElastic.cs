@@ -29,7 +29,7 @@ using Amazon.DocDBElastic.Model;
 namespace Amazon.DocDBElastic
 {
     /// <summary>
-    /// Interface for accessing DocDBElastic
+    /// <para>Interface for accessing DocDBElastic</para>
     ///
     /// The new Amazon Elastic DocumentDB service endpoint.
     /// </summary>

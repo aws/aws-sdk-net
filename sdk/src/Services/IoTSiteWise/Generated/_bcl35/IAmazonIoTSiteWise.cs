@@ -27,7 +27,7 @@ using Amazon.IoTSiteWise.Model;
 namespace Amazon.IoTSiteWise
 {
     /// <summary>
-    /// Interface for accessing IoTSiteWise
+    /// <para>Interface for accessing IoTSiteWise</para>
     ///
     /// Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services
     /// service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial

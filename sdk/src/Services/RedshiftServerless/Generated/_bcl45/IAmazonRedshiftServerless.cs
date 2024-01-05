@@ -29,7 +29,7 @@ using Amazon.RedshiftServerless.Model;
 namespace Amazon.RedshiftServerless
 {
     /// <summary>
-    /// Interface for accessing RedshiftServerless
+    /// <para>Interface for accessing RedshiftServerless</para>
     ///
     /// This is an interface reference for Amazon Redshift Serverless. It contains documentation
     /// for one of the programming or command line interfaces you can use to manage Amazon

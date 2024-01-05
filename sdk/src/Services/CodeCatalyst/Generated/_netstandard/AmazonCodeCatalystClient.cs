@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CodeCatalyst
 {
     /// <summary>
-    /// Implementation for accessing CodeCatalyst
+    /// <para>Implementation for accessing CodeCatalyst</para>
     ///
     /// Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions
     /// of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst

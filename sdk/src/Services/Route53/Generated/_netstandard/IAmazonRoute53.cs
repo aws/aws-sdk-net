@@ -29,7 +29,7 @@ using Amazon.Route53.Model;
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Interface for accessing Route53
+    /// <para>Interface for accessing Route53</para>
     ///
     /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
     /// 

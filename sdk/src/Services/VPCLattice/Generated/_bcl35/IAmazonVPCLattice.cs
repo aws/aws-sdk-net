@@ -27,7 +27,7 @@ using Amazon.VPCLattice.Model;
 namespace Amazon.VPCLattice
 {
     /// <summary>
-    /// Interface for accessing VPCLattice
+    /// <para>Interface for accessing VPCLattice</para>
     ///
     /// Amazon VPC Lattice is a fully managed application networking service that you use
     /// to connect, secure, and monitor all of your services across multiple accounts and

@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.BackupStorage
 {
     /// <summary>
-    /// Implementation for accessing BackupStorage
+    /// <para>Implementation for accessing BackupStorage</para>
     ///
     /// The frontend service for Cryo Storage.
     /// </summary>

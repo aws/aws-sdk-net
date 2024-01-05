@@ -36,7 +36,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53RecoveryControlConfig
 {
     /// <summary>
-    /// Implementation for accessing Route53RecoveryControlConfig
+    /// <para>Implementation for accessing Route53RecoveryControlConfig</para>
     ///
     /// Recovery Control Configuration API Reference for Amazon Route 53 Application Recovery
     /// Controller

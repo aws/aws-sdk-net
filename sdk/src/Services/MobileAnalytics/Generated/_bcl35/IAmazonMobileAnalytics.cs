@@ -27,7 +27,7 @@ using Amazon.MobileAnalytics.Model;
 namespace Amazon.MobileAnalytics
 {
     /// <summary>
-    /// Interface for accessing MobileAnalytics
+    /// <para>Interface for accessing MobileAnalytics</para>
     ///
     /// Amazon Mobile Analytics is a service for collecting, visualizing, and understanding
     /// app usage data at scale.
