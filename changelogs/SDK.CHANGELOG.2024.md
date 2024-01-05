@@ -1,3 +1,14 @@
+### 3.7.721.0 (2024-01-05 19:22 UTC)
+* Connect (3.7.309.0)
+	* Minor trait updates for User APIs
+* KeyManagementService (3.7.300.31)
+	* Documentation updates for AWS Key Management Service (KMS).
+* RedshiftServerless (3.7.302.19)
+	* use_fips_ssl and require_ssl parameter support for Workgroup, UpdateWorkgroup, and CreateWorkgroup
+* Core 3.7.301.1
+	* Update generator to add line breaks in service client documentation
+	* All services packages updated to require new Core
+
 ### 3.7.720.0 (2024-01-04 19:56 UTC)
 * ConfigService (3.7.302.0)
 	* Updated ResourceType enum with new resource types onboarded by AWS Config in November and December 2023.
