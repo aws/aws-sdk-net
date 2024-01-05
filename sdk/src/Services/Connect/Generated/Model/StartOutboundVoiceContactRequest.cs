@@ -196,7 +196,7 @@ namespace Amazon.Connect.Model
         /// Panel (CCP).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
         {
             get { return this._description; }
@@ -255,7 +255,7 @@ namespace Amazon.Connect.Model
         /// (CCP).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string Name
         {
             get { return this._name; }

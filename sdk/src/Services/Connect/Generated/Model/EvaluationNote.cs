@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// The note for an item (section or question) in a contact evaluation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3072)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Value
         {
             get { return this._value; }

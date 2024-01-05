@@ -149,7 +149,7 @@ namespace Amazon.Connect.Model
         /// A description of the task that is shown to an agent in the Contact Control Panel (CCP).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
         {
             get { return this._description; }

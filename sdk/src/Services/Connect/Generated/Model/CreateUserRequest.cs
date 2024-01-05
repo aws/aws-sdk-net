@@ -151,6 +151,7 @@ namespace Amazon.Connect.Model
         /// Connect for identity management. Otherwise, it is an error to include a password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }

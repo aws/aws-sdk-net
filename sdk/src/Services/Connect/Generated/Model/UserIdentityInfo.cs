@@ -46,6 +46,7 @@ namespace Amazon.Connect.Model
         /// parameter, an error is returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Email
         {
             get { return this._email; }
@@ -65,7 +66,7 @@ namespace Amazon.Connect.Model
         /// management.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -85,7 +86,7 @@ namespace Amazon.Connect.Model
         /// management.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string LastName
         {
             get { return this._lastName; }
@@ -129,6 +130,7 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SecondaryEmail
         {
             get { return this._secondaryEmail; }

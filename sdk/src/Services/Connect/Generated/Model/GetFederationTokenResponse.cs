@@ -44,6 +44,7 @@ namespace Amazon.Connect.Model
         /// The credentials to use for federation.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Credentials Credentials
         {
             get { return this._credentials; }
