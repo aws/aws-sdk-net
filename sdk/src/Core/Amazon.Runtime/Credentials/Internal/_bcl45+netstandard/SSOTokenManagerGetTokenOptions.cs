@@ -44,6 +44,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <inheritdoc cref="GetSsoTokenRequest.ClientType"/>
         public string ClientType { get; set; } = SsoClientTypePublic;
 
+        /// <inheritdoc cref="GetSsoTokenRequest.Scopes"/>
         public IList<string> Scopes { get; set; }
 
         /// <inheritdoc cref="SSOAWSCredentialsOptions.SsoVerificationCallback"/>

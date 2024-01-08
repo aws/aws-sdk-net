@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 
@@ -65,6 +66,11 @@ namespace Amazon.Runtime
         /// The name of the sso_session section in the shared configuration file specified to be used when loading the token.
         /// </summary>
         public string SessionName { get; set; }
+
+        /// <summary>
+        /// The SSO scopes that are provided for authorization when using AWS SSO.
+        /// </summary>
+        public IList<string> Scopes { get; set; }
 
         /// <summary>
         /// A callback that is used to initiate the SSO Login flow with the user.
