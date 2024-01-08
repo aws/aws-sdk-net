@@ -163,6 +163,13 @@ namespace SDKDocGenerator.Writers
                 var content = new StringBuilder(writer.ToString());
                 content.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
+                // The XML documentation will use the "<c>" tag, but the corresponding HTML tag is "<code>".
+                // There's also a "<code>" tag in XML docs, but it has a different meaning (multiple lines of code); this can cause formatting issues such as
+                // https://github.com/aws/aws-sdk-net/issues/1934 and https://github.com/aws/aws-sdk-net/issues/1954
+                content
+                    .Replace("<c>", "<code>")
+                    .Replace("</c>", "</code>");
+
                 using (var fileWriter = new StreamWriter(filename))
                 {
                     fileWriter.Write(content);
