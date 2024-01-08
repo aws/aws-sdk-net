@@ -43,6 +43,7 @@ namespace Amazon.Route53Resolver.Model
         private string _firewallRuleGroupId;
         private string _name;
         private int? _priority;
+        private string _qtype;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -255,6 +256,78 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qtype. 
+        /// <para>
+        ///  The DNS query type you want the rule to evaluate. Allowed values are; 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  A: Returns an IPv4 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AAAA: Returns an Ipv6 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CNAME: Returns another domain name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DS: Record that identifies the DNSSEC signing key of a delegated zone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MX: Specifies mail servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NAPTR: Regular-expression-based rewriting of domain names.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NS: Authoritative name servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PTR: Maps an IP address to a domain name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SOA: Start of authority record for the zone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SPF: Lists the servers authorized to send emails from a domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SRV: Application specific values that identify servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TXT: Verifies email senders and application-specific values.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=16)]
+        public string Qtype
+        {
+            get { return this._qtype; }
+            set { this._qtype = value; }
+        }
+
+        // Check to see if Qtype property is set
+        internal bool IsSetQtype()
+        {
+            return this._qtype != null;
         }
 
     }
