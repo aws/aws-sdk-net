@@ -10505,6 +10505,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R7izLarge = new InstanceType("r7iz.large");
         /// <summary>
+        /// Constant R7izMetal16xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7izMetal16xl = new InstanceType("r7iz.metal-16xl");
+        /// <summary>
+        /// Constant R7izMetal32xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7izMetal32xl = new InstanceType("r7iz.metal-32xl");
+        /// <summary>
         /// Constant R7izXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R7izXlarge = new InstanceType("r7iz.xlarge");
