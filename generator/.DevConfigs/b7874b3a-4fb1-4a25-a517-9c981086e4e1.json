@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Added SSO registration scopes to SSOAWSCredentialsOptions"
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

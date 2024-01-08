@@ -1,3 +1,14 @@
+### 3.7.722.0 (2024-01-08 19:16 UTC)
+* CodeBuild (3.7.301.0)
+	* Aws CodeBuild now supports new compute type BUILD_GENERAL1_XLARGE
+* EC2 (3.7.311.0)
+	* Amazon EC2 R7iz bare metal instances are powered by custom 4th generation Intel Xeon Scalable processors.
+* Route53Resolver (3.7.302.0)
+	* This release adds support for query type configuration on firewall rules that enables customers for granular action (ALLOW, ALERT, BLOCK) by DNS query type.
+* Core 3.7.301.2
+	* Added SSO registration scopes to SSOAWSCredentialsOptions
+	* All services packages updated to require new Core
+
 ### 3.7.721.0 (2024-01-05 19:22 UTC)
 * Connect (3.7.309.0)
 	* Minor trait updates for User APIs
