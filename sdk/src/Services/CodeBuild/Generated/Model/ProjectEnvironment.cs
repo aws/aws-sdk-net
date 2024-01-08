@@ -82,6 +82,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds,
+        /// depending on your environment type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB
         /// of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.
         /// </para>

@@ -623,6 +623,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly ComputeType BUILD_GENERAL1_SMALL = new ComputeType("BUILD_GENERAL1_SMALL");
         /// <summary>
+        /// Constant BUILD_GENERAL1_XLARGE for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_GENERAL1_XLARGE = new ComputeType("BUILD_GENERAL1_XLARGE");
+        /// <summary>
         /// Constant BUILD_LAMBDA_10GB for ComputeType
         /// </summary>
         public static readonly ComputeType BUILD_LAMBDA_10GB = new ComputeType("BUILD_LAMBDA_10GB");
