@@ -91,7 +91,7 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Whether the error was attributable to <c>Sender</c> or <c>Reciever</c>.
+        /// Whether the error was attributable to <c>Sender</c> or <c>Receiver</c>.
         /// </summary>
         public ErrorType ErrorType
         {
