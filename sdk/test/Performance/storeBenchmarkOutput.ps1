@@ -39,6 +39,10 @@ Function SaveToCloudWatch {
       $platform = $($result.Platform)
       $runtime = $($result.Runtime)
       $meanWithUnits = $($result.Mean)
+      $p50WithUnits = $($result.P50)
+      $p90WithUnits = $($result.P90)
+      $p95WithUnits = $($result.P95)
+      $stdDevWithUnits = $($result.StdDev)
       $lambdaRuntime = $($result.LambdaRuntime)
       $lambdaArchitecture = $($result.Architecture)
       $lambdaMemorySize = $($result.MemorySize)
@@ -46,19 +50,11 @@ Function SaveToCloudWatch {
 
       Write-Host $method took $meanWithUnits mean on $platform on $runtime
 
-      $units = $meanWithUnits.substring($meanWithUnits.length - 2)
-      $rawMean = [int]$meanWithUnits.substring(0, $meanWithUnits.length - 3)
-          
-      $Metric = New-Object -TypeName Amazon.CloudWatch.Model.MetricDatum
-      #convert all values in terms of milliseconds
-      if ($units -eq "ms") {
-        $Metric.Value = $rawMean
-        $Metric.Unit = "Milliseconds"
-      }
-          
-      $Metric.Timestamp = [DateTime]::UtcNow
-      $Metric.MetricName = $method
 
+      $methodDimension = [Amazon.CloudWatch.Model.Dimension]::new()
+      $methodDimension.Name = 'Method'
+      $methodDimension.Value = $method
+      
       $platformDimension = [Amazon.CloudWatch.Model.Dimension]::new()
       $platformDimension.Name = 'Platform'
       $platformDimension.Value = $platform
@@ -67,39 +63,78 @@ Function SaveToCloudWatch {
       $runtimeDimension.Name = 'Runtime'
       $runtimeDimension.Value = $runtime
 
-      $Metric.Dimensions = $environmentType, $platformDimension, $runtimeDimension
+      $Dimensions = @($methodDimension, $platformDimension, $runtimeDimension)
           
       if ($null -ne $lambdaRuntime) {
         $lambdaRuntimeDimension = [Amazon.CloudWatch.Model.Dimension]::new()
         $lambdaRuntimeDimension.Name = 'Lambda Runtime'
         $lambdaRuntimeDimension.Value = $lambdaRuntime
-        $Metric.Dimensions += $lambdaRuntimeDimension
+        $Dimensions += $lambdaRuntimeDimension
       }
 
       if ($null -ne $lambdaMemorySize) {
         $lambdaMemorySizeDimension = [Amazon.CloudWatch.Model.Dimension]::new()
         $lambdaMemorySizeDimension.Name = 'Lambda MemorySize'
         $lambdaMemorySizeDimension.Value = $lambdaMemorySize
-        $Metric.Dimensions += $lambdaMemorySizeDimension
+        $Dimensions += $lambdaMemorySizeDimension
       }
 
       if ($null -ne $lambdaArchitecture) {
         $lambdaArchitectureDimension = [Amazon.CloudWatch.Model.Dimension]::new()
         $lambdaArchitectureDimension.Name = 'Lambda Architecture'
         $lambdaArchitectureDimension.Value = $lambdaArchitecture
-        $Metric.Dimensions += $lambdaArchitectureDimension
+        $Dimensions += $lambdaArchitectureDimension
       }
 
       if ($null -ne $dynamoDBModelType) {
         $dynamoDBModelTypeDimension = [Amazon.CloudWatch.Model.Dimension]::new()
         $dynamoDBModelTypeDimension.Name = 'DynamoDB Model Type'
         $dynamoDBModelTypeDimension.Value = $dynamoDBModelType
-        $Metric.Dimensions += $dynamoDBModelTypeDimension
+        $Dimensions += $dynamoDBModelTypeDimension
       }
 
-      Write-Host About to push $Metric.Value $Metric.Unit for $Metric.MetricName to namespace $namespace 
-      Write-CWMetricData -Namespace $namespace -MetricData $Metric
+      Write-Host About to push $meanWithUnits for $method to namespace $namespace
+      
+      $Metrics = @()
+      $Metrics += (GetMetricDatum 'Mean' $meanWithUnits $Dimensions)
+      $Metrics += (GetMetricDatum 'P50' $p50WithUnits $Dimensions)
+      $Metrics += (GetMetricDatum 'P90' $p90WithUnits $Dimensions)
+      $Metrics += (GetMetricDatum 'P95' $p95WithUnits $Dimensions)
+      $Metrics += (GetMetricDatum 'StdDev' $stdDevWithUnits $Dimensions)
+
+      Write-CWMetricData -Namespace $namespace -MetricData $Metrics
     }
+  }
+}
+
+Function GetMetricDatum {
+  Param
+  (
+    [Parameter(Mandatory = $true)]
+    $MetricName,
+    [Parameter(Mandatory = $true)]
+    $MetricWithUnit,
+    [Parameter(Mandatory = $true)]
+    $Dimensions
+
+  )
+  Process {
+    $units = $MetricWithUnit.substring($MetricWithUnit.length - 2)
+    $rawValue = [int]$MetricWithUnit.substring(0, $MetricWithUnit.length - 3)
+        
+    $Metric = New-Object -TypeName Amazon.CloudWatch.Model.MetricDatum
+    #convert all values in terms of milliseconds
+    if ($units -eq "ms") {
+      $Metric.Value = $rawValue
+      $Metric.Unit = "Milliseconds"
+    }
+    
+    $Metric.Timestamp = [DateTime]::UtcNow
+    $Metric.MetricName = $MetricName
+    
+    $Metric.Dimensions = $Dimensions
+
+    return $Metric
   }
 }
 

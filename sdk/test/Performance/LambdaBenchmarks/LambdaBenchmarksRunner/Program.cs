@@ -23,7 +23,7 @@ using BenchmarkDotNet.Exporters.Csv;
 var config = ManualConfig.Create(DefaultConfig.Instance);
 var summaryStyle = new SummaryStyle(
     cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
-    printUnitsInHeader: false, 
+    printUnitsInHeader: false,
     timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
 config.WithSummaryStyle(summaryStyle);
 
@@ -34,6 +34,10 @@ var csvConfig = new SummaryStyle(
     timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
 var csvExporter = new CsvExporter(CsvSeparator.CurrentCulture, csvConfig);
 config.AddExporter(csvExporter);
+
+config.AddColumn(StatisticColumn.P50);
+config.AddColumn(StatisticColumn.P90);
+config.AddColumn(StatisticColumn.P95);
 
 BenchmarkRunner.Run<DynamoDBBenchmarksRunner>(config);
 BenchmarkRunner.Run<S3BenchmarksRunner>(config);
